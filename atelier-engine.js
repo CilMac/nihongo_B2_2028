@@ -1,8 +1,9 @@
 (function(root){
  'use strict';
  const compact=s=>String(s||'').replace(/\s/g,'');
- function build(lessons,vocab,analyzer,level,scope){
-  const selected=lessons.filter(r=>r.Ligne!=='S00'&&(scope==='lesson'?Number(r.Leçon.slice(1))===level:Number(r.Leçon.slice(1))<=level));
+ function build(lessons,vocab,analyzer,level,scope,start=1){
+  if(scope==='range'&&(!Number.isInteger(start)||start<1||start>level))return {vocab:[],grammar:[],rowCount:0,invalid:true};
+  const selected=lessons.filter(r=>r.Ligne!=='S00'&&(scope==='lesson'?Number(r.Leçon.slice(1))===level:Number(r.Leçon.slice(1))<=level&&(scope!=='range'||Number(r.Leçon.slice(1))>=start)));
   const byId=new Map(selected.map(r=>[r.Leçon+'-'+r.Ligne,r]));
   const words=[];
   for(const word of vocab){

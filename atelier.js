@@ -1,29 +1,52 @@
 'use strict';
-let atelierSettings={level:null,scope:'through',type:'mixed',count:10};
+let atelierSettings={level:null,start:1,scope:'through',type:'mixed',count:10};
 let atelierSession=null;
-function renderAtelier(){
+function renderAtelier(r={}){
+ if(lessonIds.includes(r.id)&&['lesson','through'].includes(r.line)){
+  const nextLevel=Number(r.id.slice(1));
+  if(atelierSettings.level!==nextLevel||atelierSettings.scope!==r.line)atelierSession=null;
+  atelierSettings.level=nextLevel;atelierSettings.scope=r.line;
+ }
  const level=atelierSettings.level||Number(settings.lesson.slice(1))||1;
  atelierSettings.level=level;
  $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez votre leçon et entraînez-vous à votre rythme.')+`<section class="panel"><div class="atelier-settings">
- <label>Leçon<select id="atelier-level">${lessonIds.map(id=>`<option value="${id.slice(1)}" ${Number(id.slice(1))===level?'selected':''}>Leçon ${id.slice(1)}</option>`).join('')}</select></label>
- <label>Périmètre<select id="atelier-scope"><option value="through">Tout jusqu’à cette leçon</option><option value="lesson">Cette leçon uniquement</option></select></label>
+ <label><span id="atelier-level-label">Leçon</span><select id="atelier-level">${lessonIds.map(id=>`<option value="${id.slice(1)}" ${Number(id.slice(1))===level?'selected':''}>${esc(lessonLabel(id))}</option>`).join('')}</select></label>
+ <label>Périmètre<select id="atelier-scope"><option value="through">Tout jusqu’à cette leçon</option><option value="lesson">Cette leçon uniquement</option><option value="range">Une plage de leçons</option></select></label>
+ <label id="atelier-start-label" hidden>De la leçon<select id="atelier-from">${lessonIds.map(id=>`<option value="${id.slice(1)}">${esc(lessonLabel(id))}</option>`).join('')}</select></label>
  <label>Activités<select id="atelier-type"><option value="mixed">Vocabulaire et grammaire</option><option value="vocab">Vocabulaire</option><option value="grammar">Grammaire · formes verbales</option></select></label>
  <label>Longueur<select id="atelier-count"><option value="5">5 questions</option><option value="10">10 questions</option><option value="20">20 questions</option></select></label></div>
  <p class="muted">Vocabulaire : retrouvez le sens, puis révélez la réponse. Grammaire : reconnaissez les formes verbales polies rencontrées dans votre périmètre.</p>
- <p id="atelier-pool" role="status"></p><button id="atelier-start" class="audio">Commencer une séance</button></section><section id="atelier-work" class="panel atelier-work" aria-label="Séance d’entraînement"></section>`;
+ <p id="atelier-pool" role="status"></p><div class="atelier-catalogs"><details id="atelier-vocab-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-grammar-list"><summary></summary><div class="atelier-catalog"></div></details></div><button id="atelier-start" class="audio">Commencer une séance</button></section><section id="atelier-work" class="panel atelier-work" aria-label="Séance d’entraînement"></section>`;
  for(const field of ['scope','type','count'])$('#atelier-'+field).value=atelierSettings[field];
+ $('#atelier-from').value=atelierSettings.start;
+ let currentPool;
+ const fillList=(kind)=>{
+  const detail=$('#atelier-'+kind+'-list');
+  if(detail.open)detail.querySelector('.atelier-catalog').innerHTML=atelierCatalog(currentPool[kind]);
+ };
+ for(const kind of ['vocab','grammar'])$('#atelier-'+kind+'-list').ontoggle=()=>fillList(kind);
  const refresh=()=>{
-  const pool=AtelierEngine.build(lessons,vocab,DecorticageAuto.create(vocab),atelierSettings.level,atelierSettings.scope);
+  const pool=AtelierEngine.build(lessons,vocab,DecorticageAuto.create(vocab),atelierSettings.level,atelierSettings.scope,atelierSettings.start);
+  currentPool=pool;
+  $('#atelier-start-label').hidden=atelierSettings.scope!=='range';
+  for(const [id,order] of [['atelier-scope',-3],['atelier-from',-2],['atelier-level',-1]])$('#'+id).closest('label').style.order=atelierSettings.scope==='range'?order:'';
+  $('#atelier-level-label').textContent=atelierSettings.scope==='range'?'Jusqu’à la leçon':'Leçon';
+  for(const [kind,label] of [['vocab','mots ou expressions'],['grammar','formes verbales']]){
+   $('#atelier-'+kind+'-list summary').textContent=`${pool[kind].length} ${label} — afficher la liste`;
+   fillList(kind);
+  }
   $('#atelier-pool').textContent=`${pool.vocab.length} mots ou expressions · ${pool.grammar.length} formes verbales disponibles.`;
   const available=atelierSettings.type==='mixed'?pool.vocab.length+pool.grammar.length:pool[atelierSettings.type].length;
   $('#atelier-start').disabled=!available;
-  if(!available)$('#atelier-pool').textContent+=' Aucun exercice de ce type dans ce périmètre : choisissez une autre activité ou une autre leçon.';
+  if(pool.invalid)$('#atelier-pool').textContent='La première leçon doit précéder ou être égale à la dernière.';
+  else if(!available)$('#atelier-pool').textContent+=' Aucun exercice de ce type dans ce périmètre : choisissez une autre activité ou une autre leçon.';
   return pool;
  };
  for(const field of ['level','scope','type','count'])$('#atelier-'+field).onchange=e=>{
   stopAudio();atelierSettings[field]=['level','count'].includes(field)?Number(e.target.value):e.target.value;
   atelierSession=null;refresh();renderAtelierQuestion();
  };
+ $('#atelier-from').onchange=e=>{stopAudio();atelierSettings.start=Number(e.target.value);atelierSession=null;refresh();renderAtelierQuestion();};
  $('#atelier-start').onclick=()=>{stopAudio();atelierSession={questions:AtelierEngine.session(refresh(),atelierSettings.type,atelierSettings.count),index:0,results:[],revealed:false,choice:null};renderAtelierQuestion();};
  refresh();renderAtelierQuestion();
 }
@@ -53,4 +76,12 @@ function renderAtelierQuestion(){
  target.querySelectorAll('[data-form]').forEach(b=>b.onclick=()=>reveal(b.dataset.form));
  // Restore an answered question when returning from another module.
  if(s.revealed){const choice=s.choice;s.revealed=false;reveal(choice);}
+}
+
+function atelierCatalog(items){
+ if(!items.length)return '<p class="muted">Aucun élément dans ce périmètre.</p>';
+ return '<ul>'+items.map(q=>{
+  const t=q.type==='vocab'?{jp:q.word.mot,kana:q.word.kana,romaji:q.word.romaji,fr:q.word.fr}:q.part;
+  return `<li>${block(t,{audio:false})}${q.type==='grammar'?`<p>${esc(q.part.form)}</p>`:''}<p>${sourceLink(q.source)}</p></li>`;
+ }).join('')+'</ul>';
 }
