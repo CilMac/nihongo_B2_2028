@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "direction",
+      "match": "へ",
+      "kana": "へ",
+      "romaji": "e",
+      "meaning": "Vers, en direction de…",
+      "explanation": "La particule suit le lieu de destination. Elle s’écrit avec le kana « he », mais se prononce « e »."
+    },
+    {
+      "id": "object",
+      "match": "を",
+      "kana": "を",
+      "romaji": "o",
+      "meaning": "Marque de l’objet",
+      "explanation": "Dans les phrases retenues, indique ce qui est fabriqué ou rangé. Elle se prononce « o »."
+    },
+    {
+      "id": "question",
+      "match": "か",
+      "kana": "か",
+      "romaji": "ka",
+      "meaning": "Question",
+      "explanation": "Placée en fin de phrase, cette particule marque ici une question."
+    },
+    {
+      "id": "link",
+      "match": "の",
+      "kana": "の",
+      "romaji": "no",
+      "meaning": "Lien entre deux noms",
+      "explanation": "Le premier élément précise le second. La relation exacte dépend des noms : temps, lieu, appartenance…"
+    },
+    {
+      "id": "from",
+      "match": "から",
+      "kana": "から",
+      "romaji": "kara",
+      "meaning": "Depuis, de…",
+      "explanation": "Dans cet exemple, marque le point de départ du déplacement."
+    },
+    {
+      "id": "until",
+      "match": "まで",
+      "kana": "まで",
+      "romaji": "made",
+      "meaning": "Jusqu’à…",
+      "explanation": "Marque la limite atteinte, ici la destination du déplacement."
+    },
+    {
+      "id": "go-present",
+      "match": "行きます",
+      "kana": "いきます",
+      "romaji": "ikimasu",
+      "meaning": "Aller",
+      "explanation": "Forme polie affirmative non passée. Selon le contexte, elle exprime le présent, une habitude ou le futur. Le verbe ne précise pas à lui seul « je » ou « vous ».",
+      "base": "行く"
+    },
+    {
+      "id": "go-past",
+      "match": "行きました",
+      "kana": "いきました",
+      "romaji": "ikimashita",
+      "meaning": "Être allé",
+      "explanation": "Forme polie affirmative passée. La personne qui se déplace est donnée par le contexte.",
+      "base": "行く"
+    },
+    {
+      "id": "exist",
+      "match": "あります",
+      "kana": "あります",
+      "romaji": "arimasu",
+      "meaning": "Il y a ; se trouver",
+      "explanation": "Forme polie non passée du verbe d’existence employé notamment pour les choses et les lieux. Ce mot ne signifie pas à lui seul « oui ».",
+      "base": "ある"
+    },
+    {
+      "id": "mainly",
+      "match": "主 に",
+      "kana": "おも に",
+      "romaji": "omo ni",
+      "meaning": "Principalement",
+      "explanation": "Ces deux éléments forment ensemble une expression adverbiale."
+    },
+    {
+      "id": "products",
+      "match": "電気 製品",
+      "kana": "でんき せいひん",
+      "romaji": "denki seihin",
+      "meaning": "Appareils électriques",
+      "explanation": "Le premier nom précise le second : électricité + produits."
+    },
+    {
+      "id": "making",
+      "match": "作って います",
+      "kana": "つくって います",
+      "romaji": "tsukutte imasu",
+      "meaning": "Fabriquer : activité en cours ou habituelle",
+      "explanation": "Forme en -te du verbe + auxiliaire poli. Le contexte permet de choisir entre activité en cours et activité habituelle.",
+      "base": "作る"
+    },
+    {
+      "id": "coming",
+      "match": "出て くる",
+      "kana": "でて くる",
+      "romaji": "dete kuru",
+      "meaning": "Sortir et venir ; arriver",
+      "explanation": "Forme en -te suivie de « venir » : le déplacement est envisagé vers le lieu de référence du locuteur.",
+      "base": "出る"
+    },
+    {
+      "id": "because",
+      "match": "ので",
+      "kana": "ので",
+      "romaji": "node",
+      "meaning": "Parce que ; comme…",
+      "explanation": "Relie une cause, exprimée avant, à sa conséquence, exprimée après."
+    },
+    {
+      "id": "obligation",
+      "match": "片付けなければ いけない",
+      "kana": "かたづけなければ いけない",
+      "romaji": "katazukenakereba ikenai",
+      "meaning": "Il faut ranger",
+      "explanation": "Le conditionnel négatif du verbe est suivi d’une expression signifiant que cela ne convient pas : l’ensemble exprime une obligation.",
+      "base": "片付ける"
+    },
+    {
+      "id": "explanatory",
+      "match": "ん だ",
+      "kana": "ん だ",
+      "romaji": "n da",
+      "meaning": "Tournure explicative familière",
+      "explanation": "La fin de phrase présente ce qui précède comme une explication de la situation."
+    },
+    {
+      "id": "just-ready",
+      "match": "できた ところ でした",
+      "kana": "できた ところ でした",
+      "romaji": "dekita tokoro deshita",
+      "meaning": "Venait juste d’être prêt",
+      "explanation": "Forme en -ta + « tokoro » + forme polie passée : la préparation venait de s’achever au moment évoqué. Ici « tokoro » ne désigne pas un lieu.",
+      "base": "できる"
+    }
+  ],
+  "samples": [
+    {
+      "id": "N5-S01",
+      "label": "5 · Demander une destination",
+      "text": "どこ へ 行きます か。",
+      "structure": null,
+      "note": "",
+      "partial": false,
+      "annotations": [],
+      "literal": "où [direction] aller [poli, non-passé] [question]"
+    },
+    {
+      "id": "N5-S02",
+      "label": "5 · Dire où l’on va",
+      "text": "デパート へ 行きます。",
+      "structure": null,
+      "note": "",
+      "partial": false,
+      "annotations": [],
+      "literal": "grand-magasin [direction] aller [poli, non-passé]"
+    },
+    {
+      "id": "N20-S01",
+      "label": "20 · Demander si un lieu existe",
+      "text": "この 辺 に タバコ屋 が あります か。",
+      "structure": null,
+      "note": "",
+      "partial": false,
+      "annotations": [
+        {
+          "at": 2,
+          "match": "に",
+          "meaning": "Dans ces environs",
+          "explanation": "Situe le lieu dans lequel on cherche le bureau de tabac."
+        },
+        {
+          "at": 4,
+          "match": "が",
+          "meaning": "Marque du sujet",
+          "explanation": "Présente le bureau de tabac comme l’élément dont on demande s’il existe."
+        }
+      ],
+      "literal": "ces environs [lieu] bureau-de-tabac [sujet] il-y-a [poli, non-passé] [question]"
+    },
+    {
+      "id": "N20-S02",
+      "label": "20 · Comprendre une réponse courte",
+      "text": "あります。",
+      "structure": "Verbe d’existence seul ; le lieu et la chose dont on parle sont repris implicitement de la question précédente.",
+      "note": "La question précédente demande s’il y a un bureau de tabac dans les environs. La réponse signifie « Il y en a un », d’où la traduction naturelle « Oui ».",
+      "partial": false,
+      "annotations": [],
+      "literal": "il-y-a [poli, non-passé]"
+    },
+    {
+      "id": "N40-S03",
+      "label": "40 · Décrire une activité",
+      "text": "ここ で は 電気 製品 を 主 に 作って います。",
+      "structure": "Lieu présenté comme thème → objet fabriqué → précision « principalement » → activité.",
+      "note": "Dans cette visite d’usine, le verbe décrit l’activité habituelle de fabrication, pas nécessairement une action observée à cet instant.",
+      "partial": false,
+      "annotations": [
+        {
+          "at": 1,
+          "match": "で",
+          "meaning": "À cet endroit",
+          "explanation": "Marque le lieu où l’activité de fabrication se déroule."
+        },
+        {
+          "at": 2,
+          "match": "は",
+          "meaning": "Quant à ce lieu…",
+          "explanation": "Met en thème le lieu déjà marqué par la particule précédente."
+        }
+      ],
+      "literal": "ici [lieu de l’action] [thème] produits-électriques [objet] principalement fabriquer [activité habituelle, poli]"
+    },
+    {
+      "id": "N60-S01",
+      "label": "60 · Raconter un déplacement",
+      "text": "先週 新幹線 で 九州 の 孫 の ところ まで 行きました。",
+      "structure": "Moment → moyen de transport → groupe de destination → limite du déplacement → verbe au passé.",
+      "note": "Les noms reliés décrivent le lieu où se trouve le petit-enfant à Kyūshū. Le sujet et le possessif « mon » sont fournis par le contexte de la traduction.",
+      "partial": false,
+      "annotations": [
+        {
+          "at": 2,
+          "match": "で",
+          "meaning": "En Shinkansen",
+          "explanation": "Marque ici le moyen de transport, et non le lieu d’une action."
+        }
+      ],
+      "literal": "semaine-dernière Shinkansen [moyen] Kyūshū [relation] petit-enfant [relation] endroit jusqu’à être-allé [poli]"
+    },
+    {
+      "id": "N80-S01",
+      "label": "80 · Relier cause et obligation",
+      "text": "今週 の 金曜日 に おふくろ が 田舎 から 出て くる ので、少し 部屋 を 片付けなければ いけない ん だ。",
+      "structure": "Cause : la mère arrive vendredi depuis la province → conséquence : il faut ranger un peu la chambre. La fin présente cette obligation comme une explication.",
+      "note": "La tournure familière pour « ma mère » et le point de vue du déplacement demandent une lecture en contexte. Le moteur reconnaît plusieurs groupes ; leurs relations sont annotées pour cette phrase.",
+      "partial": false,
+      "annotations": [
+        {
+          "at": 3,
+          "match": "に",
+          "meaning": "Vendredi",
+          "explanation": "Marque le moment de l’arrivée."
+        },
+        {
+          "at": 5,
+          "match": "が",
+          "meaning": "Marque du sujet",
+          "explanation": "Identifie la mère comme la personne qui arrive."
+        }
+      ],
+      "literal": "cette-semaine [relation] vendredi [moment] ma-mère [sujet] campagne [point de départ] sortir-et-venir [cause], un-peu chambre [objet] il-faut-ranger [explication familière]"
+    },
+    {
+      "id": "N98-S01",
+      "label": "98 · Situer deux événements",
+      "text": "夜 七時 に 家 に 帰った 時、ちょうど 食事 の 準備 が できた ところ でした。",
+      "structure": null,
+      "note": "Le groupe final exprime que le repas venait d’être prêt. Le lien temporel avec le retour à la maison reste à analyser : le prototype ne donne pas encore la construction complète.",
+      "partial": true,
+      "annotations": [
+        {
+          "at": 2,
+          "match": "に",
+          "meaning": "À sept heures",
+          "explanation": "Marque l’heure du retour."
+        },
+        {
+          "at": 4,
+          "match": "に",
+          "meaning": "À la maison",
+          "explanation": "Marque la destination du retour."
+        },
+        {
+          "at": 6,
+          "match": "時",
+          "meaning": "Au moment où…",
+          "explanation": "Le groupe précédent précise le moment : lorsque la personne est rentrée. La lecture est « toki », et non le suffixe horaire « ji »."
+        },
+        {
+          "at": 12,
+          "match": "が",
+          "meaning": "Marque du sujet",
+          "explanation": "Le groupe « préparation du repas » est le sujet de la proposition finale."
+        }
+      ],
+      "literal": "soir sept-heures [moment] maison [destination] être-rentré au-moment-où, juste repas [relation] préparation [sujet] venait-d’être-prête [poli]"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Japan Foundation · déplacement et formes polies",
+      "url": "https://yg.jpf.go.jp/wp-content/uploads/2020/10/X_syllabus.pdf"
+    },
+    {
+      "title": "Japan Foundation · les emplois de la forme en -te suivie de iru",
+      "url": "https://www.jpf.go.jp/j/project/japanese/teach/tsushin/grammar/201312.html"
+    },
+    {
+      "title": "Japan Foundation · obligation",
+      "url": "https://www.irodori-online.jpf.go.jp/a2-1/learning/14-050-09-01/"
+    },
+    {
+      "title": "Japan Foundation · les emplois de tokoro",
+      "url": "https://www.jpf.go.jp/j/project/japanese/teach/tsushin/grammar/201106.html"
+    }
+  ]
+}
