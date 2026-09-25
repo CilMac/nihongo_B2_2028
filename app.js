@@ -18,7 +18,7 @@ function star(id){return `<button class="favorite" data-favorite="${esc(id)}" ar
 function jp(text){return esc(text).replace(/\p{Script=Han}+/gu,'<span class="kanji">$&</span>');}
 function block(t,{audio=true,fr=true}={}) {
  const sameText = String(t.jp).normalize('NFC').replace(/\s/g, '') === String(t.kana).normalize('NFC').replace(/\s/g, '');
- const japanese = sameText ? '<span class="kana-idem" lang="fr" title="Identique au texte kana">idem</span>' : jp(t.jp);
+ const japanese = sameText ? '<span class="kana-idem" lang="fr" title="Identique au texte kana">---</span>' : jp(t.jp);
  return `<div class="language-block"><button type="button" class="kana kana-audio" lang="ja" data-speak="${esc(t.audioKana || t.kana)}" aria-label="Écouter : ${esc(t.kana)}">${esc(t.kana)}<span class="sound-note" aria-hidden="true"> ♪</span></button><p class="jp" lang="ja">${japanese}</p><p class="romaji">${esc(Romaji.display(t.romaji))}</p>${fr?`<p class="fr">${esc(t.fr)}</p>`:''}${audio?audioButton(t.kana):''}</div>`;
 }
 function intro(k,title,description){return `<div class="intro"><div class="eyebrow">${k}</div><h1>${esc(title)}</h1><p>${esc(description)}</p></div>`;}
@@ -72,7 +72,7 @@ function renderDecorticage(row) {
  const labels = {rule:'Règle réutilisable',dictionary:'Dictionnaire',annotation:'Précision de contexte',unknown:'À compléter'};
  return `<div class="analysis-heading"><h3>La phrase, morceau par morceau</h3><span class="analysis-state">${result.partial ? 'Décorticage partiel' : (result.literalOrigin === 'automatic' ? 'Construction reconnue' : 'Décorticage de l’échantillon')}</span></div>
  <h3>La construction</h3><p>${esc(result.structure || 'La construction complète n’est pas encore couverte. Les éléments ci-dessous constituent une aide partielle.')}</p>
- ${result.literal ? `<div class="analysis-literal fr"><h3>Dans l’ordre japonais</h3><p><em>(${esc(result.literal)})</em></p><p class="muted">${result.literalOrigin === 'automatic' ? 'Lecture indicative assemblée à partir des règles et du dictionnaire. ' : ''}Cette lecture suit les mots et les groupes japonais. Les crochets précisent leur rôle ou leur forme ; ce n’est pas une traduction française naturelle.</p></div>` : ''}
+ ${result.literal ? `<div class="analysis-literal"><h3>Dans l’ordre japonais</h3><p class="romaji analysis-romaji">${esc(Romaji.display(row.Romaji))}</p><p class="literal-gloss fr"><em>(${esc(result.literal)})</em></p><p class="muted">${result.literalOrigin === 'automatic' ? 'Lecture indicative assemblée à partir des règles et du dictionnaire. ' : ''}Cette lecture suit les mots et les groupes japonais. Les crochets précisent leur rôle ou leur forme ; ce n’est pas une traduction française naturelle.</p></div>` : ''}
  <p class="muted">Les groupes se lisent dans l’ordre japonais. Touchez une ligne de kana pour l’écouter.</p>
  <ol class="analysis-parts">${result.segments.map(part => `<li class="analysis-part">
  ${block({jp:part.jp,kana:part.kana,audioKana:part.audioKana,romaji:part.romaji,fr:part.fr},{audio:false})}
