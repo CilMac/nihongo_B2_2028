@@ -60,3 +60,109 @@
 .atelier-catalogs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:12px 0 22px}.atelier-catalogs details{margin:0;border:1px solid var(--line);padding:12px;border-radius:10px;background:#f6f7f1;min-width:0}.atelier-catalogs summary{min-height:44px}.atelier-catalog{max-height:480px;overflow:auto;overflow-wrap:anywhere}.atelier-catalog ul{list-style:none;padding:0;margin:0}.atelier-catalog li{border-top:1px solid var(--line);padding:14px 4px}@media(max-width:760px){.atelier-catalogs{grid-template-columns:1fr}}
 
 .analysis-literal .analysis-romaji{font-family:Georgia,'Times New Roman',serif;font-size:calc(var(--jp-size) * .82);font-style:normal;font-weight:400;color:#000;line-height:1.4;margin:0 0 12px;overflow-wrap:anywhere;}
+
+/* Particle choices keep reading aids separate from the answer action. */
+.particle-label {display:flex;flex-direction:column;align-items:center;gap:3px;}
+.hide-kana .particle-label .kana {display:none;}
+.particle-example {padding:12px 0;}
+.atelier-options [aria-pressed="true"] {outline:3px solid #687c65;outline-offset:2px;}
+
+/* Vue compacte du décorticage, suivie des cartes détaillées repliables. */
+.analysis-simple{width:100%;border-collapse:collapse;table-layout:fixed;margin:20px 0;}
+.analysis-simple caption{text-align:left;font-weight:600;margin-bottom:12px;}
+.analysis-simple th,.analysis-simple td{text-align:left;vertical-align:top;padding:12px 8px;border-bottom:1px solid var(--line);overflow-wrap:anywhere;}
+.analysis-simple th:nth-child(1){width:25%;}.analysis-simple th:nth-child(2){width:28%;}
+.analysis-simple .jp{color:var(--ink);font-size:var(--jp-size);line-height:1.5;}
+.analysis-simple .kana-audio{display:block;border:0;background:none;padding:0;text-align:left;font-size:var(--jp-size);line-height:1.5;max-width:100%;}
+.analysis-simple .romaji{display:block;font-size:calc(var(--jp-size) * .75);font-weight:400;font-style:normal;}
+.analysis-simple-role{display:block;margin-top:4px;font-size:14px;color:var(--muted);}
+.hide-kana .analysis-simple .kana,.hide-romaji .analysis-simple .romaji,.hide-fr .analysis-simple .fr{display:none;}
+.hide-kana.hide-romaji .analysis-simple .analysis-reading{display:none;}
+.analysis-detailed>summary{list-style:none;display:flex;align-items:center;gap:10px;min-height:44px;}
+.analysis-detailed>summary::-webkit-details-marker{display:none;}
+.analysis-detailed>summary::before{content:'⌄';font-size:24px;line-height:1;}
+.analysis-detailed[open]>summary::before{content:'⌃';}
+@media(max-width:520px){
+ .analysis-simple th,.analysis-simple td{padding:10px 4px;}
+ .analysis-simple th{font-size:13px;}.analysis-simple .fr{font-size:14px;}
+}
+@media(max-width:520px){
+ .analysis-simple thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+ .analysis-simple tbody{display:block;}
+ .analysis-simple tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--line);}
+ .analysis-simple td{display:block;padding:0;border:0;}
+ .analysis-simple td.analysis-meaning{grid-column:1/-1;margin-top:6px;}
+ .hide-kana.hide-romaji .analysis-simple tr{grid-template-columns:minmax(0,1fr);}
+}
+
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+.analysis-simple .analysis-meaning>.fr{margin:0;}
+.analysis-extra{margin:2px 0 0;padding:0;border:0;}
+.analysis-extra>summary{list-style:none;width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;color:var(--muted);}
+.analysis-extra>summary::-webkit-details-marker{display:none;}
+.analysis-extra>summary span{font-size:22px;line-height:1;}
+.analysis-extra[open]>summary span{transform:rotate(180deg);}
+.analysis-extra>p{font-size:14px;}
+.analysis-extra .language-block{margin:8px 0;}
+.analysis-extra .language-block .jp,.analysis-extra .language-block .kana{font-size:var(--jp-size);}
+.analysis-method,.analysis-context{font-size:14px;}
+
+/* Listes de l’atelier : une entrée compacte, sans modifier les cartes d’exercice. */
+.atelier-catalogs{grid-template-columns:minmax(0,1fr);align-items:start;gap:12px;}
+.atelier-catalogs>details{padding:10px;}
+.atelier-catalogs>details>summary{font-size:14px;min-height:34px;}
+.atelier-catalog li{padding:8px 10px;border-top:2px solid #bac5b5;}
+.atelier-catalog li:nth-child(even){background:#eaf0e6;}
+.atelier-catalog li:first-child{border-top:0;}
+.atelier-catalog .catalog-reading{display:flex;align-items:center;flex-wrap:wrap;gap:2px 12px;}
+.atelier-catalog .catalog-reading .kana-audio,.atelier-catalog .catalog-reading .jp{font-size:clamp(16px,calc(var(--jp-size) * .6),25px);line-height:1.4;margin:0;}
+.atelier-catalog .catalog-reading .kana-audio{padding:2px 0;min-height:30px;width:auto;max-width:100%;text-align:left;}
+.atelier-catalog .catalog-reading .romaji{font-size:13px;font-weight:400;line-height:1.4;margin:0;}
+.atelier-catalog .catalog-reading .fr{flex-basis:100%;font-size:13px;line-height:1.4;margin:0;}
+.atelier-catalog .catalog-identical{display:none;}
+.hide-kana .atelier-catalog .catalog-identical{display:inline;}
+.atelier-catalog .catalog-meta{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:12px;line-height:1.4;color:var(--muted);margin-top:3px;}
+.atelier-catalog li>p{font-size:13px;margin:3px 0;}
+.atelier-catalog li>a{font-size:12px;}
+
+/* Une entrée = une rangée horizontale sur ordinateur. */
+.atelier-catalog .catalog-item{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr) minmax(0,1.7fr) auto;align-items:center;gap:4px 16px;padding:5px 10px;min-height:42px;}
+.atelier-catalog .catalog-reading{display:contents;}
+.atelier-catalog .catalog-japanese{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;min-width:0;}
+.atelier-catalog .catalog-reading .fr{flex-basis:auto;}
+.atelier-catalog .catalog-meta{margin:0;justify-content:flex-end;max-width:180px;}
+.hide-fr .atelier-catalog .catalog-item{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr) auto;}
+.hide-romaji .atelier-catalog .catalog-item{grid-template-columns:minmax(0,1.2fr) minmax(0,1.7fr) auto;}
+.hide-fr.hide-romaji .atelier-catalog .catalog-item{grid-template-columns:minmax(0,1fr) auto;}
+@media(max-width:600px){
+ .atelier-catalog .catalog-item,.hide-fr .atelier-catalog .catalog-item,.hide-romaji .atelier-catalog .catalog-item,.hide-fr.hide-romaji .atelier-catalog .catalog-item{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3px 10px;}
+ .atelier-catalog .catalog-reading .fr{grid-column:1/-1;}
+ .atelier-catalog .catalog-meta{grid-column:1/-1;justify-content:flex-start;max-width:none;}
+}
+
+.atelier-return{display:inline-block;font-size:14px;margin-bottom:12px;padding:5px 0;}
+
+.dictionary-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;border:1px solid var(--line);border-radius:7px;background:var(--blue);margin-top:5px;vertical-align:middle;}
+
+.dictionary-view-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;}
+#dictionary-compact{font-size:13px;white-space:nowrap;}
+#dictionary-compact span{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:12px;background:var(--line);}
+#dictionary-compact[aria-checked="true"] span{background:#cdddca;color:#28482d;}
+#vocab-results.dictionary-compact{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.dictionary-compact .dictionary-card{display:flex;align-items:center;flex-wrap:wrap;gap:5px 14px;border:0;border-top:2px solid #bac5b5;border-radius:0;padding:7px 12px;}
+.dictionary-compact .dictionary-card:first-child{border-top:0;}
+.dictionary-compact .dictionary-card:nth-child(even){background:#eaf0e6;}
+.dictionary-compact .card-head{order:2;margin:0;}
+.dictionary-compact .card-head .number{display:none;}
+.dictionary-compact .card-actions button{font-size:14px;min-height:32px;padding:2px 8px;}
+.dictionary-compact .dictionary-main{flex:1 1 65%;display:flex;align-items:center;flex-wrap:wrap;gap:3px 14px;min-width:0;}
+.dictionary-compact .dictionary-main .kana-audio,.dictionary-compact .dictionary-main .jp{font-size:clamp(16px,calc(var(--jp-size) * .6),25px);line-height:1.4;margin:0;}
+.dictionary-compact .dictionary-main .kana-audio{width:auto;min-height:30px;padding:2px 0;}
+.dictionary-compact .dictionary-main .romaji{font-size:13px;font-weight:400;margin:0;}
+.dictionary-compact .dictionary-main .fr{flex:1 1 140px;font-size:13px;line-height:1.4;margin:0;}
+.dictionary-compact .dictionary-main .dictionary-identical{display:none;}
+.hide-kana .dictionary-compact .dictionary-main .dictionary-identical{display:block;}
+.dictionary-compact .dictionary-card>details{order:3;border:0;padding:0;margin:0;font-size:13px;}
+.dictionary-compact .dictionary-card>details[open]{flex-basis:100%;border-top:1px solid var(--line);padding-top:8px;}
+.dictionary-compact .dictionary-card>.note,.dictionary-compact .dictionary-card>.atelier-return{flex-basis:100%;font-size:13px;margin:0;}
+@media(max-width:600px){.dictionary-compact .dictionary-main{flex-basis:80%;}.dictionary-compact .dictionary-main .fr{flex-basis:100%;}}
