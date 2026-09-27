@@ -234,3 +234,5 @@
 .floating-audio[aria-pressed=true]{background:#f7e6cc;border-color:#c9a56d;color:#77551c}.floating-audio:disabled{opacity:.65}
 
 .audio-folder-setting{display:flex;flex-direction:column;gap:8px;font-size:14px;min-width:0}.audio-folder-setting small{font-size:13px}.audio-folder-setting button{text-align:left}
+
+.extra-listening{margin-top:1.5rem}.extra-listening summary{cursor:pointer;font-weight:600}.extra-listening section{margin:1rem 0}.extra-tracks{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.7rem}.extra-controls{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:1rem;padding-top:1rem;border-top:1px solid #d9d5cb}.extra-controls label{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.extra-controls p{width:100%;margin:0}.extra-controls input{max-width:100%}#extra-current{width:100%}

@@ -1,5 +1,6 @@
 'use strict';
 let localAudioFiles=null,selectedAudioFiles=null,recordedPlayer=null,audioPlayback=null;
+let selectedExtraFiles=null,localExtraFiles=null;
 const failedRecordings=new Set();
 const localAudioHost=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
 function updateAudioMode(){
@@ -11,35 +12,35 @@ function updateAudioMode(){
  document.getElementById('audio-mode-note').textContent=selectedAudioFiles
   ?`${Object.keys(selectedAudioFiles).length} enregistrements disponibles. Aucun fichier envoyé. À sélectionner de nouveau après rechargement.`
   :localAudioFiles?'Enregistrements du serveur local disponibles. Les mots isolés restent synthétiques.'
-  :'Choisissez votre dossier fichiers_audio_phrases. Les fichiers restent sur votre appareil. Sans dossier, la synthèse est utilisée.';
+  :'Choisissez votre dossier fichiers_audio_complet. Les fichiers restent sur votre appareil. Sans dossier, la synthèse est utilisée.';
 }
 function chooseAudioFolder(files){
- const found={},duplicates=new Set(),known=new Set(lessons.map(r=>r.Leçon+'-'+r.Ligne));
+ const extras={},found={},duplicates=new Set(),known=new Set(lessons.map(r=>r.Leçon+'-'+r.Ligne));
  for(const file of files){
   const match=/(?:^|\/)L(\d+)-[^/]+\/(S\d+)(?:-TITLE)?\.mp3$/i.exec(file.webkitRelativePath||'');
-  if(!match)continue;
+  if(!match){const extra=/(?:^|\/)L(\d+)-[^/]+\/(T\d+(?:-(?:TRANSLATE|DICTATION))?)\.mp3$/i.exec(file.webkitRelativePath||'');if(extra&&lessonIds.includes('N'+Number(extra[1]))){const id=`N${Number(extra[1])}-${extra[2].toUpperCase()}`;if(extras[id])duplicates.add(id);else extras[id]=file;}continue;}
   const id=`N${Number(match[1])}-${match[2].toUpperCase()}`;
   if(!known.has(id))continue;
   if(found[id])duplicates.add(id);else found[id]=file;
  }
  if(!Object.keys(found).length||duplicates.size){
-  document.getElementById('audio-mode-note').textContent=duplicates.size?'Plusieurs fichiers correspondent à une même phrase. Sélectionnez un seul dossier fichiers_audio_phrases.':'Aucun audio de phrase reconnu. Choisissez le dossier fichiers_audio_phrases contenant les dossiers L001…, L002…';
+  document.getElementById('audio-mode-note').textContent=duplicates.size?'Plusieurs fichiers correspondent à une même phrase. Sélectionnez un seul dossier fichiers_audio_complet.':'Aucun audio de phrase reconnu. Choisissez le dossier fichiers_audio_complet contenant les dossiers L001…, L002…';
   return;
  }
- stopAudio();selectedAudioFiles=found;failedRecordings.clear();settings.audioMode='recorded';save();updateAudioMode();
+ stopAudio();selectedAudioFiles=found;selectedExtraFiles=extras;failedRecordings.clear();settings.audioMode='recorded';save();updateAudioMode();renderExtraAudio();
 }
 function releaseRecordingURL(player){if(player?._objectURL){URL.revokeObjectURL(player._objectURL);player._objectURL=null;}}
 async function initLocalAudio(){
  updateAudioMode();if(!localAudioHost)return;
  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),3000);
  try{
-  const response=await fetch('fichiers_audio_phrases/index.json',{signal:controller.signal,cache:'no-cache'});
+  const response=await fetch('fichiers_audio_complet/index.json',{signal:controller.signal,cache:'no-cache'});
   if(!response.ok)throw new Error('Index absent');
   const index=await response.json();
   if(index.version!==1||!index.files||typeof index.files!=='object')throw new Error('Index invalide');
   const entries=Object.entries(index.files).filter(([id,file])=>/^N\d+-S\d+$/.test(id)&&typeof file==='string'&&/^L\d+-[^/]+\/S\d+(?:-TITLE)?\.mp3$/.test(file)&&!file.includes('..'));
-  if(entries.length)localAudioFiles=Object.fromEntries(entries);
- }catch{localAudioFiles=null;}finally{clearTimeout(timer);updateAudioMode();}
+  if(entries.length){localAudioFiles=Object.fromEntries(entries);localExtraFiles=Object.fromEntries(Object.entries(index.extras||{}).filter(([id,file])=>/^N\d+-T\d+(?:-(?:TRANSLATE|DICTATION))?$/.test(id)&&typeof file==='string'&&/^L\d+-[^/]+\/T\d+(?:-(?:TRANSLATE|DICTATION))?\.mp3$/.test(file)&&!file.includes('..')));}
+ }catch{localAudioFiles=null;}finally{clearTimeout(timer);updateAudioMode();renderExtraAudio();}
 }
 // Une référence seule ne suffit pas : les exercices à trous et les fragments restent synthétiques.
 function sentenceAudioRef(t){
@@ -55,6 +56,8 @@ function updatePauseButton(){
  button.setAttribute('aria-pressed',String(paused));
  button.setAttribute('aria-label',paused?'Reprendre l’écoute':'Mettre l’écoute en pause');
  button.title=paused?'Reprendre l’écoute':'Mettre l’écoute en pause';
+ const extraButton=document.getElementById('extra-pause');if(extraButton){extraButton.disabled=!audioPlayback?.extra;extraButton.textContent=paused?'▶ Reprendre':'Ⅱ Pause';}
+ const seek=document.getElementById('extra-seek');if(seek)seek.disabled=!audioPlayback?.extra||!recordedPlayer;
  button.querySelector('.audio-slash').style.display=paused?'':'none';
 }
 function toggleAudioPause(){
@@ -78,7 +81,7 @@ function speak(items){
   if(!audioPlayback.paused)audioTimer=setTimeout(()=>{timerTask=null;if(active())task();},delay);
  };
  const clearTimer=()=>{clearTimeout(audioTimer);timerTask=null;};
- audioPlayback={paused:false,pause(){
+ audioPlayback={extra:!!items[0]?.extra,paused:false,pause(){
   this.paused=true;savedStatus=$('#audio-status').textContent;
   if(timerTask){timerRemaining=Math.max(0,timerDue-performance.now());clearTimeout(audioTimer);}
   if(recordedPlayer)recordedPlayer.pause();else if(currentUtterance)speech?.pause();
@@ -101,20 +104,22 @@ function speak(items){
   u.onend=advance;u.onerror=e=>{if(active()&&e.error!=='canceled'&&e.error!=='interrupted')stopAudio('Lecture impossible. Essayez une autre voix japonaise dans les réglages.');};
   speech.speak(u);
  }
- function next(){
+ async function next(){
   if(!active())return;
   if(audioPlayback.paused){deferred=next;return;}
   if(index>=items.length){stopAudio('Écoute terminée.');return;}
   const raw=items[index++],item=typeof raw==='string'?{text:raw}:raw;
-  const file=settings.audioMode==='recorded'&&(selectedAudioFiles?selectedAudioFiles[item.ref]:(localAudioHost&&localAudioFiles?.[item.ref]));
-  if(!file||failedRecordings.has(file)){synthetic(item,!!file);return;}
+  let file=item.extra?item.file:settings.audioMode==='recorded'&&(selectedAudioFiles?selectedAudioFiles[item.ref]:(localAudioHost&&localAudioFiles?.[item.ref]));
+  if(!file||failedRecordings.has(file)){if(item.extra)stopAudio('Cet enregistrement est indisponible.');else synthetic(item,!!file);return;}
+  if(item.extra&&typeof file==='string'){try{const response=await fetch('fichiers_audio_complet/'+file.split('/').map(encodeURIComponent).join('/'));if(!response.ok)throw new Error();file=await response.blob();if(!active())return;}catch{if(active())stopAudio('Cet enregistrement est indisponible.');return;}}
   const player=new Audio();recordedPlayer=player;let settled=false;
   player.preload='none';player.preservesPitch=true;
   const release=()=>{clearTimer();resumeRecorded=null;player.onended=null;player.onerror=null;releaseRecordingURL(player);if(recordedPlayer===player)recordedPlayer=null;};
-  const fallback=()=>{if(settled||!active())return;settled=true;release();player.pause();player.removeAttribute('src');player.load();failedRecordings.add(file);synthetic(item,true);};
+  const fallback=()=>{if(settled||!active())return;settled=true;release();player.pause();player.removeAttribute('src');player.load();failedRecordings.add(file);if(item.extra)stopAudio('Cet enregistrement est indisponible.');else synthetic(item,true);};
   player.onended=()=>{if(settled||!active())return;settled=true;release();advance();};player.onerror=fallback;
-  if(file instanceof File){player._objectURL=URL.createObjectURL(file);player.src=player._objectURL;}
-  else player.src='fichiers_audio_phrases/'+file.split('/').map(encodeURIComponent).join('/');
+  if(file instanceof Blob){player._objectURL=URL.createObjectURL(file);player.src=player._objectURL;}
+  else player.src='fichiers_audio_complet/'+file.split('/').map(encodeURIComponent).join('/');
+  if(item.extra){document.getElementById('extra-current').textContent=item.label;player.onloadedmetadata=player.ontimeupdate=()=>{const seek=document.getElementById('extra-seek');if(seek&&Number.isFinite(player.duration)){seek.max=player.duration;seek.value=player.currentTime;seek.disabled=false;}};}
   player.defaultPlaybackRate=Number(settings.rate);player.playbackRate=Number(settings.rate);
   $('#audio-status').textContent=`Écoute ${index} / ${items.length} · enregistrement réel`;
   schedule(fallback,8000);
@@ -130,3 +135,23 @@ document.getElementById('pause-audio').addEventListener('click',toggleAudioPause
 
 document.getElementById('choose-audio-folder').onclick=()=>document.getElementById('audio-folder-input').click();
 document.getElementById('audio-folder-input').onchange=e=>{if(e.target.files.length)chooseAudioFolder(e.target.files);e.target.value='';};
+
+// Les compléments restent séparés du corpus et ne disposent pas de texte synthétique.
+function renderExtraAudio(){
+ const host=document.getElementById('extra-audio');if(!host)return;
+ const source=selectedExtraFiles||localExtraFiles;
+ const id=settings.lesson;
+ const entries=Object.entries(source||{}).filter(([key])=>key.startsWith(id+'-')).sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true}));
+ if(source&&!entries.length){host.innerHTML='';return;}
+ const opened=host.querySelector('details')?.open;
+ const groups=[['Traduction',entries.filter(([key])=>Number(/-T(\d+)/.exec(key)[1])<200)],['Dictée',entries.filter(([key])=>Number(/-T(\d+)/.exec(key)[1])>=200)]];
+ host.innerHTML=`<details class="panel extra-listening" ${opened?'open':''}><summary>Écoutes complémentaires</summary>${!source?'<p>Sélectionnez votre dossier fichiers_audio_complet pour accéder aux écoutes de cette leçon.</p><button id="extra-folder">Choisir mon dossier audio</button>':`<p class="muted">Écouter, répéter ou essayer de traduire. Pour la dictée, vous pouvez écrire sur papier. Texte et corrigé non disponibles.</p>${groups.filter(([,items])=>items.length).map(([title,items])=>`<section><h3>${title}</h3><div class="extra-tracks">${items.map(([key])=>`<button data-extra-track="${key}">${/-/.test(key.slice(id.length+1))?'▶ Consigne':'▶ '+Number(/-T(\d+)/.exec(key)[1])%100}</button>`).join('')}</div><button data-extra-group="${title}">▶ Tout écouter avec une pause</button></section>`).join('')}<div class="extra-controls"><span id="extra-current" aria-live="polite">Choisissez une piste.</span><div><button id="extra-pause" disabled>Ⅱ Pause</button> <button id="extra-stop">■ Arrêter</button></div><label>Position dans la piste <input id="extra-seek" type="range" min="0" max="1" step="0.1" value="0" disabled></label><label>Vitesse <select id="extra-rate">${[.5,.65,.8,.86,1,1.2].map(rate=>`<option value="${rate}">${rate} ×</option>`).join('')}</select></label><p class="muted">La pause entre les pistes suit les réglages des leçons.</p></div>`}</details>`;
+ host.querySelector('#extra-folder')?.addEventListener('click',()=>document.getElementById('audio-folder-input').click());
+ const play=items=>speak(items.map(([key,file])=>({extra:true,file,label:`${id} · ${key.slice(id.length+1)}`})));
+ host.querySelectorAll('[data-extra-track]').forEach(b=>b.onclick=()=>play(entries.filter(([key])=>key===b.dataset.extraTrack)));
+ host.querySelectorAll('[data-extra-group]').forEach(b=>b.onclick=()=>play(groups.find(([title])=>title===b.dataset.extraGroup)[1]));
+ const rate=host.querySelector('#extra-rate');if(rate){if(![...rate.options].some(o=>Number(o.value)===Number(settings.rate)))rate.add(new Option(settings.rate+' ×',settings.rate));rate.value=settings.rate;rate.onchange=()=>{settings.rate=Number(rate.value);if(recordedPlayer)recordedPlayer.playbackRate=settings.rate;applySettings();save();};}
+ host.querySelector('#extra-pause')?.addEventListener('click',toggleAudioPause);
+ host.querySelector('#extra-stop')?.addEventListener('click',()=>stopAudio('Lecture arrêtée.'));
+ host.querySelector('#extra-seek')?.addEventListener('input',e=>{if(recordedPlayer&&audioPlayback?.extra)recordedPlayer.currentTime=Number(e.target.value);});
+}
