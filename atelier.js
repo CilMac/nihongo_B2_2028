@@ -10,14 +10,13 @@ function renderAtelier(r={}){
  }
  const level=atelierSettings.level||Number(settings.lesson.slice(1))||1;
  atelierSettings.level=level;
- $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez votre leçon et entraînez-vous à votre rythme.')+`<section class="panel"><div class="atelier-settings">
- <label><span id="atelier-level-label">Leçon</span><select id="atelier-level">${lessonIds.map(id=>`<option value="${id.slice(1)}" ${Number(id.slice(1))===level?'selected':''}>${esc(lessonLabel(id))}</option>`).join('')}</select></label>
- <label>Périmètre<select id="atelier-scope"><option value="through">Tout jusqu’à cette leçon</option><option value="lesson">Cette leçon uniquement</option><option value="range">Une plage de leçons</option></select></label>
- <label id="atelier-start-label" hidden>De la leçon<select id="atelier-from">${lessonIds.map(id=>`<option value="${id.slice(1)}">${esc(lessonLabel(id))}</option>`).join('')}</select></label>
- <label>Activités<select id="atelier-type"><option value="mixed">Vocabulaire et grammaire</option><option value="vocab">Vocabulaire</option><option value="particles">Grammaire · particules</option><option value="grammar">Grammaire · formes verbales</option></select></label>
- <label>Longueur<select id="atelier-count"><option value="5">5 questions</option><option value="10">10 questions</option><option value="20">20 questions</option></select></label></div>
- <p class="muted">Vocabulaire : retrouvez le sens, puis révélez la réponse. Grammaire : travaillez les formes verbales ou les particules. Le mélange associe vocabulaire et formes verbales. Les particules disposent d’un premier ensemble d’exemples sélectionnés, des leçons 3 à 14.</p>
- <p id="atelier-pool" role="status"></p><div class="atelier-catalogs"><details id="atelier-vocab-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-grammar-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-particles-list"><summary></summary><div class="atelier-catalog"></div></details></div><button id="atelier-start" class="audio">Commencer une séance</button></section><section id="atelier-work" class="panel atelier-work" aria-label="Séance d’entraînement"></section>`;
+ const lessonOptions=lessonIds.map(id=>`<option value="${id.slice(1)}" ${Number(id.slice(1))===level?'selected':''}>${esc(lessonLabel(id).replace(' — Sans titre',''))}</option>`).join('');
+ $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez quoi réviser, puis commencez votre séance.')+`<section class="panel atelier-setup"><div class="atelier-settings">
+ <div class="atelier-setting-row"><label for="atelier-type">Quoi réviser ?</label><select id="atelier-type"><option value="mixed">Vocabulaire et formes verbales</option><option value="vocab">Vocabulaire</option><option value="particles">Particules</option><option value="grammar">Formes verbales</option></select></div>
+ <div class="atelier-setting-row"><label for="atelier-scope">Quelles leçons ?</label><div class="atelier-lesson-controls"><select id="atelier-scope"><option value="through">Depuis la première</option><option value="lesson">Une seule leçon</option><option value="range">Une plage</option></select><div class="atelier-bounds"><label id="atelier-start-label" hidden>De<select id="atelier-from" aria-label="Première leçon">${lessonOptions}</select></label><label><span id="atelier-level-label">à</span><select id="atelier-level" aria-label="Leçon de fin">${lessonOptions}</select></label></div></div></div>
+ <div class="atelier-setting-row"><label for="atelier-count">Combien de questions ?</label><select id="atelier-count"><option value="5">5 questions</option><option value="10">10 questions</option><option value="20">20 questions</option></select></div></div>
+ <p class="muted" id="atelier-description"></p><div class="atelier-launch"><button id="atelier-start" class="audio">Commencer</button><p id="atelier-pool" role="status"></p></div>
+ <details id="atelier-content"><summary>Voir le contenu à réviser</summary><div class="atelier-catalogs"><details id="atelier-vocab-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-grammar-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-particles-list"><summary></summary><div class="atelier-catalog"></div></details></div></details></section><section id="atelier-work" class="panel atelier-work" aria-label="Séance d’entraînement" hidden></section>`;
  for(const field of ['scope','type','count'])$('#atelier-'+field).value=atelierSettings[field];
  $('#atelier-from').value=atelierSettings.start;
  let currentPool;
@@ -30,17 +29,19 @@ function renderAtelier(r={}){
   const pool=AtelierEngine.build(lessons,vocab,DecorticageAuto.create(vocab),atelierSettings.level,atelierSettings.scope,atelierSettings.start);
   currentPool=pool;
   $('#atelier-start-label').hidden=atelierSettings.scope!=='range';
-  for(const [id,order] of [['atelier-scope',-3],['atelier-from',-2],['atelier-level',-1]])$('#'+id).closest('label').style.order=atelierSettings.scope==='range'?order:'';
-  $('#atelier-level-label').textContent=atelierSettings.scope==='range'?'Jusqu’à la leçon':'Leçon';
+  $('#atelier-level-label').textContent=atelierSettings.scope==='lesson'?'Leçon':'à';
+  $('#atelier-level').setAttribute('aria-label',atelierSettings.scope==='lesson'?'Leçon à réviser':'Dernière leçon');
+  $('#atelier-description').textContent={vocab:'Retrouvez le sens du mot, puis révélez la réponse.',grammar:'Reconnaissez les formes des verbes.',particles:'Complétez ou comparez les phrases pour choisir la bonne particule.',mixed:'Alternez vocabulaire et formes verbales.'}[atelierSettings.type];
   for(const [kind,label] of [['vocab','mots ou expressions'],['grammar','formes verbales'],['particles','exercices sur les particules']]){
    $('#atelier-'+kind+'-list summary').textContent=`${pool[kind].length} ${label}`;
    fillList(kind);
   }
-  $('#atelier-pool').textContent=`${pool.vocab.length} mots ou expressions · ${pool.grammar.length} formes verbales · ${pool.particles.length} exercices sur les particules disponibles.`;
   const available=atelierSettings.type==='mixed'?pool.vocab.length+pool.grammar.length:pool[atelierSettings.type].length;
+  const count=Math.min(available,atelierSettings.count);
+  $('#atelier-pool').textContent=`${available} exercice${available>1?'s':''} disponible${available>1?'s':''}${available<atelierSettings.count&&available?` · séance de ${count} question${count>1?'s':''}`:''}`;
   $('#atelier-start').disabled=!available;
   if(pool.invalid)$('#atelier-pool').textContent='La première leçon doit précéder ou être égale à la dernière.';
-  else if(!available)$('#atelier-pool').textContent+=' Aucun exercice de ce type dans ce périmètre : choisissez une autre activité ou une autre leçon.';
+  else if(!available)$('#atelier-pool').textContent='Aucun exercice disponible avec ces choix. Changez les leçons ou l’activité.';
   return pool;
  };
  for(const field of ['level','scope','type','count'])$('#atelier-'+field).onchange=e=>{
@@ -48,9 +49,10 @@ function renderAtelier(r={}){
   atelierSession=null;refresh();renderAtelierQuestion();
  };
  $('#atelier-from').onchange=e=>{stopAudio();atelierSettings.start=Number(e.target.value);atelierSession=null;refresh();renderAtelierQuestion();};
- $('#atelier-start').onclick=()=>{stopAudio();atelierSession={questions:AtelierEngine.session(refresh(),atelierSettings.type,atelierSettings.count),index:0,results:[],revealed:false,choice:null};renderAtelierQuestion();};
+ $('#atelier-start').onclick=()=>{stopAudio();atelierSession={questions:AtelierEngine.session(refresh(),atelierSettings.type,atelierSettings.count),index:0,results:[],revealed:false,choice:null};renderAtelierQuestion();$('#atelier-work').scrollIntoView({block:'start'});};
  refresh();renderAtelierQuestion();
  if(atelierListReturn && JSON.stringify(atelierSettings)===atelierListReturn.settings){
+  $('#atelier-content').open=true;
   for(const saved of atelierListReturn.lists){
    const detail=document.getElementById(saved.id);
    detail.open=saved.open;fillList(detail.id.replace('atelier-','').replace('-list',''));
@@ -65,7 +67,8 @@ function renderAtelier(r={}){
 }
 function renderAtelierQuestion(){
  const target=$('#atelier-work'),s=atelierSession;
- if(!s){target.innerHTML='<p class="muted">Les aides de lecture, dont le romaji, restent disponibles. Les résultats de cette première version sont conservés pendant la séance, sans historique enregistré.</p>';return;}
+ target.hidden=!s;
+ if(!s){target.innerHTML='';return;}
  if(s.index>=s.questions.length){
   const good=s.results.filter(r=>r.good).length;
   target.innerHTML=`<h2>Séance terminée</h2><p>${good} réponse${good>1?'s':''} réussie${good>1?'s':''} ou déclarée${good>1?'s':''} connue${good>1?'s':''} sur ${s.questions.length}.</p><p class="muted">Le vocabulaire est autoévalué ; ce résultat est un repère d’entraînement.</p><h3>À reprendre</h3>${s.results.some(r=>!r.good)?s.results.filter(r=>!r.good).map(r=>`<p>${sourceLink(r.q.source)} · ${esc(r.q.type==='vocab'?r.q.word.fr:r.q.type==='particles'?r.q.title:r.q.part.form)}</p>`).join(''):'<p>Aucun élément marqué à revoir dans cette séance.</p>'}<button id="atelier-again">Nouvelle séance</button>`;

@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "date": "2026-09-24",
+  "version": "1.2.0",
+  "date": "2026-09-27",
   "titre": "Grammaire des leçons — 20 premières fiches",
   "langue_explications": "fr",
   "affichage": {
@@ -166,7 +166,42 @@
         "N25",
         "N21"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Le thème vient avant は (wa) ; le commentaire vient ensuite.",
+          "Avec un nom, la terminaison indique affirmation, négation ou passé."
+        ],
+        "lignes": [
+          {
+            "usage": "Affirmer",
+            "exemple": {
+              "jp": "学生です",
+              "kana": "がくせいです",
+              "romaji": "gakusei desu",
+              "fr": "Je suis étudiant."
+            }
+          },
+          {
+            "usage": "Nier",
+            "exemple": {
+              "jp": "学生ではありません",
+              "kana": "がくせいではありません",
+              "romaji": "gakusei de wa arimasen",
+              "fr": "Je ne suis pas étudiant."
+            }
+          },
+          {
+            "usage": "Parler du passé",
+            "exemple": {
+              "jp": "学生でした",
+              "kana": "がくせいでした",
+              "romaji": "gakusei deshita",
+              "fr": "J’étais étudiant."
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G02",
@@ -333,7 +368,60 @@
         "N3",
         "N5"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Ajouter か (ka) à la fin, sans inverser les mots.",
+          "Le mot interrogatif prend la place de l’information recherchée."
+        ],
+        "lignes": [
+          {
+            "usage": "Affirmer",
+            "exemple": {
+              "jp": "食べます",
+              "kana": "たべます",
+              "romaji": "tabemasu",
+              "fr": "Je mange / je mangerai."
+            }
+          },
+          {
+            "usage": "Questionner · か",
+            "exemple": {
+              "jp": "食べますか",
+              "kana": "たべますか",
+              "romaji": "tabemasu ka",
+              "fr": "Mangez-vous ? / Voulez-vous en manger ?"
+            }
+          },
+          {
+            "usage": "Demander quoi",
+            "exemple": {
+              "jp": "何",
+              "kana": "なに",
+              "romaji": "nani",
+              "fr": "quoi"
+            }
+          },
+          {
+            "usage": "Demander où",
+            "exemple": {
+              "jp": "どこ",
+              "kana": "どこ",
+              "romaji": "doko",
+              "fr": "où"
+            }
+          },
+          {
+            "usage": "Demander qui",
+            "exemple": {
+              "jp": "だれ",
+              "kana": "だれ",
+              "romaji": "dare",
+              "fr": "qui"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G03",
@@ -471,15 +559,41 @@
         "N18",
         "N8"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Le nom principal vient à la fin.",
+          "の (no) relie deux noms : possession, domaine, origine…"
+        ],
+        "lignes": [
+          {
+            "usage": "Préciser le domaine",
+            "exemple": {
+              "jp": "料理の本",
+              "kana": "りょうりのほん",
+              "romaji": "ryouri no hon",
+              "fr": "livre de cuisine"
+            }
+          },
+          {
+            "usage": "Indiquer le possesseur",
+            "exemple": {
+              "jp": "私の本",
+              "kana": "わたしのほん",
+              "romaji": "watashi no hon",
+              "fr": "mon livre"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G04",
       "ordre": 4,
-      "titre": "Dire ceci, cela, ce livre…",
+      "titre": "Les démonstratifs : ceci, ce livre, ici…",
       "famille": "Premières phrases",
       "niveau": "débutant",
-      "objectif": "Choisir entre un pronom démonstratif et un mot placé devant un nom.",
+      "objectif": "Choisir une chose, accompagner un nom ou indiquer un lieu et une direction.",
       "explication": "Kore, sore et are désignent directement une chose. Kono, sono et ano doivent être suivis d’un nom. Dans la situation la plus simple, ko- est proche de moi, so- proche de toi, a- éloigné de nous deux.",
       "constructions": [
         {
@@ -552,6 +666,20 @@
             "fr": "cette photo"
           },
           "commentaire": "Kono est suivi du nom shashin."
+        },
+        {
+          "source": "N1-S05",
+          "jp": "あそこ へ。",
+          "kana": "あそこ へ。",
+          "romaji": "asoko e.",
+          "fr": "Là-bas.",
+          "cible": {
+            "jp": "あそこ へ",
+            "kana": "あそこ へ",
+            "romaji": "asoko e",
+            "fr": "vers là-bas"
+          },
+          "commentaire": "Asoko désigne le lieu éloigné ; la particule e indique la direction."
         }
       ],
       "exercice": {
@@ -608,9 +736,16 @@
         {
           "organisme": "The Japan Foundation",
           "titre": "Irodori — Grammar Notes",
-          "section": "Starter, leçon 16 : kore, sore, are et kono, sono, ano",
-          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=50",
-          "consulte_le": "2026-09-24"
+          "section": "Starter, leçon 16 : tableau des démonstratifs",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=52",
+          "consulte_le": "2026-09-26"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Starter, leçon 17 et Elementary 1, leçon 11 : interrogatifs",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=57",
+          "consulte_le": "2026-09-26"
         }
       ],
       "prerequis": [
@@ -619,9 +754,283 @@
       "pour_aller_plus_loin": "",
       "lecons": [
         "N17",
-        "N19"
+        "N19",
+        "N1"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "tableau": {
+        "colonnes": [
+          "Près de moi",
+          "Près de toi",
+          "Loin de nous deux",
+          "Pour demander"
+        ],
+        "lignes": [
+          {
+            "titre": "Une chose",
+            "cellules": [
+              {
+                "jp": "これ",
+                "kana": "これ",
+                "romaji": "kore",
+                "fr": "ceci"
+              },
+              {
+                "jp": "それ",
+                "kana": "それ",
+                "romaji": "sore",
+                "fr": "cela"
+              },
+              {
+                "jp": "あれ",
+                "kana": "あれ",
+                "romaji": "are",
+                "fr": "cela là-bas"
+              },
+              {
+                "jp": "どれ",
+                "kana": "どれ",
+                "romaji": "dore",
+                "fr": "lequel ?"
+              }
+            ]
+          },
+          {
+            "titre": "Devant un nom",
+            "cellules": [
+              {
+                "jp": "この本",
+                "kana": "このほん",
+                "romaji": "kono hon",
+                "fr": "ce livre-ci"
+              },
+              {
+                "jp": "その本",
+                "kana": "そのほん",
+                "romaji": "sono hon",
+                "fr": "ce livre près de toi"
+              },
+              {
+                "jp": "あの本",
+                "kana": "あのほん",
+                "romaji": "ano hon",
+                "fr": "ce livre là-bas"
+              },
+              {
+                "jp": "どの本",
+                "kana": "どのほん",
+                "romaji": "dono hon",
+                "fr": "quel livre ?"
+              }
+            ]
+          },
+          {
+            "titre": "Un lieu",
+            "cellules": [
+              {
+                "jp": "ここ",
+                "kana": "ここ",
+                "romaji": "koko",
+                "fr": "ici"
+              },
+              {
+                "jp": "そこ",
+                "kana": "そこ",
+                "romaji": "soko",
+                "fr": "là"
+              },
+              {
+                "jp": "あそこ",
+                "kana": "あそこ",
+                "romaji": "asoko",
+                "fr": "là-bas"
+              },
+              {
+                "jp": "どこ",
+                "kana": "どこ",
+                "romaji": "doko",
+                "fr": "où ?"
+              }
+            ]
+          },
+          {
+            "titre": "Une direction",
+            "cellules": [
+              {
+                "jp": "こちら",
+                "kana": "こちら",
+                "romaji": "kochira",
+                "fr": "par ici"
+              },
+              {
+                "jp": "そちら",
+                "kana": "そちら",
+                "romaji": "sochira",
+                "fr": "par là"
+              },
+              {
+                "jp": "あちら",
+                "kana": "あちら",
+                "romaji": "achira",
+                "fr": "par là-bas"
+              },
+              {
+                "jp": "どちら",
+                "kana": "どちら",
+                "romaji": "dochira",
+                "fr": "de quel côté ?"
+              }
+            ]
+          }
+        ]
+      },
+      "reperes": [
+        "Kore remplace un nom ; kono accompagne un nom : kono hon, « ce livre ». Même différence entre dore et dono + nom.",
+        "Les lieux utilisent koko / soko / asoko ; les directions, kochira / sochira / achira."
+      ],
+      "nuances": [
+        "Ce tableau décrit la situation où chacun a son espace. Quand les deux personnes sont côte à côte, ko- peut désigner ce qui est près des deux, so- ce qui est un peu plus loin.",
+        "So- peut aussi reprendre un élément déjà mentionné. Les distances seules ne suffisent donc pas toujours.",
+        "Kochira, sochira et achira peuvent aussi désigner un lieu poliment, ou une personne selon le contexte. Dochira peut demander lequel de deux choix ; dore sert normalement à choisir parmi trois possibilités ou plus."
+      ],
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Quel groupe signifie « ce livre-ci », près de moi ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "その本",
+              "kana": "そのほん",
+              "romaji": "sono hon",
+              "fr": "ce livre près de toi"
+            },
+            {
+              "id": "choix-2",
+              "jp": "この本",
+              "kana": "このほん",
+              "romaji": "kono hon",
+              "fr": "ce livre-ci"
+            },
+            {
+              "id": "choix-3",
+              "jp": "あの本",
+              "kana": "あのほん",
+              "romaji": "ano hon",
+              "fr": "ce livre là-bas"
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "Kono accompagne le nom hon et désigne ici ce qui est proche de la personne qui parle.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Un objet est près de ton interlocuteur, loin de toi. Quel mot le désigne sans ajouter son nom ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore",
+              "fr": "ceci"
+            },
+            {
+              "id": "choix-2",
+              "jp": "それ",
+              "kana": "それ",
+              "romaji": "sore",
+              "fr": "cela près de toi"
+            },
+            {
+              "id": "choix-3",
+              "jp": "あれ",
+              "kana": "あれ",
+              "romaji": "are",
+              "fr": "cela là-bas"
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "Sore désigne ici la chose près de la personne à qui tu parles. Sono demanderait un nom après lui.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Tu montres un endroit loin de vous deux. Quel mot signifie « là-bas » ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko",
+              "fr": "ici"
+            },
+            {
+              "id": "choix-2",
+              "jp": "そこ",
+              "kana": "そこ",
+              "romaji": "soko",
+              "fr": "là"
+            },
+            {
+              "id": "choix-3",
+              "jp": "あそこ",
+              "kana": "あそこ",
+              "romaji": "asoko",
+              "fr": "là-bas"
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "Asoko désigne cet endroit éloigné. Are désignerait une chose.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Parmi plusieurs livres, tu demandes « quel livre ? ». Quel groupe choisir ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "どの本",
+              "kana": "どのほん",
+              "romaji": "dono hon",
+              "fr": "quel livre ?"
+            },
+            {
+              "id": "choix-2",
+              "jp": "この本",
+              "kana": "このほん",
+              "romaji": "kono hon",
+              "fr": "ce livre-ci"
+            },
+            {
+              "id": "choix-3",
+              "jp": "その本",
+              "kana": "そのほん",
+              "romaji": "sono hon",
+              "fr": "ce livre près de toi"
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "Dono accompagne le nom hon. Dore signifie « lequel ? » et s’emploie sans ce nom.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ]
     },
     {
       "id": "G05",
@@ -788,7 +1197,51 @@
         "N2",
         "N13"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Garder la base avant masu, puis changer la terminaison.",
+          "Le non-passé peut parler d’une habitude ou du futur, selon le contexte."
+        ],
+        "lignes": [
+          {
+            "usage": "Non-passé · affirmatif",
+            "exemple": {
+              "jp": "行きます",
+              "kana": "いきます",
+              "romaji": "ikimasu",
+              "fr": "je vais / j’irai"
+            }
+          },
+          {
+            "usage": "Non-passé · négatif",
+            "exemple": {
+              "jp": "行きません",
+              "kana": "いきません",
+              "romaji": "ikimasen",
+              "fr": "je ne vais pas / je n’irai pas"
+            }
+          },
+          {
+            "usage": "Passé · affirmatif",
+            "exemple": {
+              "jp": "行きました",
+              "kana": "いきました",
+              "romaji": "ikimashita",
+              "fr": "je suis allé"
+            }
+          },
+          {
+            "usage": "Passé · négatif",
+            "exemple": {
+              "jp": "行きませんでした",
+              "kana": "いきませんでした",
+              "romaji": "ikimasen deshita",
+              "fr": "je ne suis pas allé"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G06",
@@ -926,7 +1379,33 @@
         "N3",
         "N5"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "La chose sur laquelle porte l’action vient avant を (o).",
+          "を s’écrit wo, mais se prononce o."
+        ],
+        "lignes": [
+          {
+            "usage": "Manger quoi ?",
+            "exemple": {
+              "jp": "パンを食べます",
+              "kana": "パンをたべます",
+              "romaji": "pan o tabemasu",
+              "fr": "Je mange du pain."
+            }
+          },
+          {
+            "usage": "Lire quoi ?",
+            "exemple": {
+              "jp": "本を読みます",
+              "kana": "ほんをよみます",
+              "romaji": "hon o yomimasu",
+              "fr": "Je lis un livre."
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G07",
@@ -1086,7 +1565,33 @@
         "N11",
         "N4"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "は (wa) annonce ce dont on parle ; が (ga) marque le sujet.",
+          "Le contexte et le contraste comptent : « connu / nouveau » ne suffit pas."
+        ],
+        "lignes": [
+          {
+            "usage": "が · présenter qui vient",
+            "exemple": {
+              "jp": "友達が来ました",
+              "kana": "ともだちがきました",
+              "romaji": "tomodachi ga kimashita",
+              "fr": "Un ami est venu."
+            }
+          },
+          {
+            "usage": "は · commenter le thème",
+            "exemple": {
+              "jp": "友達は来ました",
+              "kana": "ともだちはきました",
+              "romaji": "tomodachi wa kimashita",
+              "fr": "Quant à mon ami, il est venu."
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G08",
@@ -1236,7 +1741,42 @@
         "N4",
         "N15"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "あります : objets et plantes ; います : personnes et animaux, dans cet usage.",
+          "Le lieu de présence est marqué par に (ni)."
+        ],
+        "lignes": [
+          {
+            "usage": "Une chose · あります",
+            "exemple": {
+              "jp": "本があります",
+              "kana": "ほんがあります",
+              "romaji": "hon ga arimasu",
+              "fr": "Il y a un livre."
+            }
+          },
+          {
+            "usage": "Un être animé · います",
+            "exemple": {
+              "jp": "猫がいます",
+              "kana": "ねこがいます",
+              "romaji": "neko ga imasu",
+              "fr": "Il y a un chat."
+            }
+          },
+          {
+            "usage": "Une absence · いません",
+            "exemple": {
+              "jp": "猫はいません",
+              "kana": "ねこはいません",
+              "romaji": "neko wa imasen",
+              "fr": "Le chat n’est pas là."
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G09",
@@ -1386,7 +1926,42 @@
         "N5",
         "N11"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "に (ni) indique la destination ; へ (e) met l’accent sur la direction.",
+          "に peut aussi marquer une heure précise. へ se prononce e."
+        ],
+        "lignes": [
+          {
+            "usage": "に · destination",
+            "exemple": {
+              "jp": "駅に行きます",
+              "kana": "えきにいきます",
+              "romaji": "eki ni ikimasu",
+              "fr": "Je vais à la gare."
+            }
+          },
+          {
+            "usage": "へ · direction",
+            "exemple": {
+              "jp": "駅へ行きます",
+              "kana": "えきへいきます",
+              "romaji": "eki e ikimasu",
+              "fr": "Je vais vers la gare."
+            }
+          },
+          {
+            "usage": "に · heure précise",
+            "exemple": {
+              "jp": "十時に起きます",
+              "kana": "じゅうじにおきます",
+              "romaji": "juuji ni okimasu",
+              "fr": "Je me lève à dix heures."
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G10",
@@ -1552,7 +2127,42 @@
         "N14",
         "N6"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "で (de) indique ici le lieu de l’action ou le moyen utilisé.",
+          "Pour une présence avec arimasu / imasu, le lieu prend に (ni)."
+        ],
+        "lignes": [
+          {
+            "usage": "で · transport",
+            "exemple": {
+              "jp": "バスで行きます",
+              "kana": "バスでいきます",
+              "romaji": "basu de ikimasu",
+              "fr": "Je vais en bus."
+            }
+          },
+          {
+            "usage": "で · instrument",
+            "exemple": {
+              "jp": "フォークで食べます",
+              "kana": "フォークでたべます",
+              "romaji": "fooku de tabemasu",
+              "fr": "Je mange avec une fourchette."
+            }
+          },
+          {
+            "usage": "で · lieu de l’action",
+            "exemple": {
+              "jp": "店で買います",
+              "kana": "みせでかいます",
+              "romaji": "mise de kaimasu",
+              "fr": "J’achète dans le magasin."
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G11",
@@ -1696,7 +2306,33 @@
         "N6",
         "N11"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "から (kara) marque le départ ; まで (made) marque la limite.",
+          "On peut employer ces repères ensemble ou séparément."
+        ],
+        "lignes": [
+          {
+            "usage": "Un trajet",
+            "exemple": {
+              "jp": "駅から店まで",
+              "kana": "えきからみせまで",
+              "romaji": "eki kara mise made",
+              "fr": "de la gare au magasin"
+            }
+          },
+          {
+            "usage": "Une période",
+            "exemple": {
+              "jp": "三時から五時まで",
+              "kana": "さんじからごじまで",
+              "romaji": "sanji kara goji made",
+              "fr": "de trois heures à cinq heures"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G12",
@@ -1874,7 +2510,42 @@
         "N9",
         "N30"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "と (to) présente une liste de noms comme complète ; や (ya) donne des exemples.",
+          "も (mo) ajoute « aussi » ; avec une personne, と peut signifier « avec »."
+        ],
+        "lignes": [
+          {
+            "usage": "と · liste complète",
+            "exemple": {
+              "jp": "本とカメラ",
+              "kana": "ほんとカメラ",
+              "romaji": "hon to kamera",
+              "fr": "un livre et un appareil photo"
+            }
+          },
+          {
+            "usage": "や · liste ouverte",
+            "exemple": {
+              "jp": "本やカメラ",
+              "kana": "ほんやカメラ",
+              "romaji": "hon ya kamera",
+              "fr": "un livre, un appareil photo, entre autres"
+            }
+          },
+          {
+            "usage": "も · aussi",
+            "exemple": {
+              "jp": "私も",
+              "kana": "わたしも",
+              "romaji": "watashi mo",
+              "fr": "moi aussi"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G13",
@@ -2067,7 +2738,60 @@
         "N21",
         "N8"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Devant un nom, l’adjectif en i se place directement.",
+          "Pour la négation et le passé, modifier l’adjectif lui-même."
+        ],
+        "lignes": [
+          {
+            "usage": "Devant un nom",
+            "exemple": {
+              "jp": "高い本",
+              "kana": "たかいほん",
+              "romaji": "takai hon",
+              "fr": "un livre cher"
+            }
+          },
+          {
+            "usage": "Négatif · -kunai",
+            "exemple": {
+              "jp": "高くないです",
+              "kana": "たかくないです",
+              "romaji": "takakunai desu",
+              "fr": "Ce n’est pas cher."
+            }
+          },
+          {
+            "usage": "Passé · -katta",
+            "exemple": {
+              "jp": "高かったです",
+              "kana": "たかかったです",
+              "romaji": "takakatta desu",
+              "fr": "C’était cher."
+            }
+          },
+          {
+            "usage": "Autre négatif poli",
+            "exemple": {
+              "jp": "高くありません",
+              "kana": "たかくありません",
+              "romaji": "takaku arimasen",
+              "fr": "Ce n’est pas cher."
+            }
+          },
+          {
+            "usage": "Irrégulier · ii",
+            "exemple": {
+              "jp": "いい → よくない → よかった",
+              "kana": "いい → よくない → よかった",
+              "romaji": "ii → yokunai → yokatta",
+              "fr": "bon → pas bon → c’était bon"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G14",
@@ -2229,7 +2953,51 @@
         "N24",
         "N62"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Devant un nom : base + na + nom.",
+          "En fin de phrase polie : base + desu, sans na."
+        ],
+        "lignes": [
+          {
+            "usage": "Devant un nom · na",
+            "exemple": {
+              "jp": "便利な店",
+              "kana": "べんりなみせ",
+              "romaji": "benri na mise",
+              "fr": "un magasin pratique"
+            }
+          },
+          {
+            "usage": "Affirmatif · desu",
+            "exemple": {
+              "jp": "便利です",
+              "kana": "べんりです",
+              "romaji": "benri desu",
+              "fr": "C’est pratique."
+            }
+          },
+          {
+            "usage": "Passé · deshita",
+            "exemple": {
+              "jp": "便利でした",
+              "kana": "べんりでした",
+              "romaji": "benri deshita",
+              "fr": "C’était pratique."
+            }
+          },
+          {
+            "usage": "Négatif · de wa arimasen",
+            "exemple": {
+              "jp": "便利ではありません",
+              "kana": "べんりではありません",
+              "romaji": "benri de wa arimasen",
+              "fr": "Ce n’est pas pratique."
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G15",
@@ -2379,7 +3147,42 @@
         "N1",
         "N16"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Remplacer masu par mashou pour proposer une action commune.",
+          "Masen ka est souvent une invitation, malgré sa forme négative."
+        ],
+        "lignes": [
+          {
+            "usage": "Proposer · mashou",
+            "exemple": {
+              "jp": "行きます → 行きましょう",
+              "kana": "いきます → いきましょう",
+              "romaji": "ikimasu → ikimashou",
+              "fr": "aller → allons-y"
+            }
+          },
+          {
+            "usage": "Inviter · masen ka",
+            "exemple": {
+              "jp": "食べます → 食べませんか",
+              "kana": "たべます → たべませんか",
+              "romaji": "tabemasu → tabemasen ka",
+              "fr": "manger → voulez-vous manger avec moi ?"
+            }
+          },
+          {
+            "usage": "Proposer / offrir de l’aide",
+            "exemple": {
+              "jp": "V～ましょうか",
+              "kana": "V～ましょうか",
+              "romaji": "V…mashou ka",
+              "fr": "et si nous faisions V ? / voulez-vous que je fasse V ?"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G16",
@@ -2616,7 +3419,96 @@
         "N30",
         "N15"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Connaître le groupe du verbe avant de choisir la terminaison.",
+          "La forme en te relie les éléments ; elle n’est pas un temps à elle seule."
+        ],
+        "lignes": [
+          {
+            "usage": "Groupe 2 · ru → te",
+            "exemple": {
+              "jp": "食べる → 食べて",
+              "kana": "たべる → たべて",
+              "romaji": "taberu → tabete",
+              "fr": "manger → forme en te"
+            }
+          },
+          {
+            "usage": "Groupe 1 · u / tsu / ru → tte",
+            "exemple": {
+              "jp": "買う → 買って",
+              "kana": "かう → かって",
+              "romaji": "kau → katte",
+              "fr": "acheter → forme en te"
+            }
+          },
+          {
+            "usage": "Groupe 1 · mu / bu / nu → nde",
+            "exemple": {
+              "jp": "飲む → 飲んで",
+              "kana": "のむ → のんで",
+              "romaji": "nomu → nonde",
+              "fr": "boire → forme en te"
+            }
+          },
+          {
+            "usage": "Groupe 1 · ku → ite",
+            "exemple": {
+              "jp": "書く → 書いて",
+              "kana": "かく → かいて",
+              "romaji": "kaku → kaite",
+              "fr": "écrire → forme en te"
+            }
+          },
+          {
+            "usage": "Groupe 1 · gu → ide",
+            "exemple": {
+              "jp": "泳ぐ → 泳いで",
+              "kana": "およぐ → およいで",
+              "romaji": "oyogu → oyoide",
+              "fr": "nager → forme en te"
+            }
+          },
+          {
+            "usage": "Groupe 1 · su → shite",
+            "exemple": {
+              "jp": "話す → 話して",
+              "kana": "はなす → はなして",
+              "romaji": "hanasu → hanashite",
+              "fr": "parler → forme en te"
+            }
+          },
+          {
+            "usage": "Exception · iku → itte",
+            "exemple": {
+              "jp": "行く → 行って",
+              "kana": "いく → いって",
+              "romaji": "iku → itte",
+              "fr": "aller → forme en te"
+            }
+          },
+          {
+            "usage": "Irrégulier · suru → shite",
+            "exemple": {
+              "jp": "する → して",
+              "kana": "する → して",
+              "romaji": "suru → shite",
+              "fr": "faire → forme en te"
+            }
+          },
+          {
+            "usage": "Irrégulier · kuru → kite",
+            "exemple": {
+              "jp": "来る → 来て",
+              "kana": "くる → きて",
+              "romaji": "kuru → kite",
+              "fr": "venir → forme en te"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G17",
@@ -2754,7 +3646,33 @@
         "N17",
         "N46"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Demander une action : forme en te + kudasai.",
+          "Pour une chose, employer plutôt nom + o kudasai."
+        ],
+        "lignes": [
+          {
+            "usage": "Demander de montrer",
+            "exemple": {
+              "jp": "見せる → 見せて → 見せてください",
+              "kana": "みせる → みせて → みせてください",
+              "romaji": "miseru → misete → misete kudasai",
+              "fr": "montrer → forme en te → montrez-moi, s’il vous plaît"
+            }
+          },
+          {
+            "usage": "Demander d’attendre",
+            "exemple": {
+              "jp": "待つ → 待って → 待ってください",
+              "kana": "まつ → まって → まってください",
+              "romaji": "matsu → matte → matte kudasai",
+              "fr": "attendre → forme en te → attendez, s’il vous plaît"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G18",
@@ -2913,7 +3831,42 @@
         "N15",
         "N6"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Forme en te + imasu : le sens dépend du verbe.",
+          "Ce n’est pas toujours « être en train de » : cela peut décrire un état."
+        ],
+        "lignes": [
+          {
+            "usage": "Action en cours",
+            "exemple": {
+              "jp": "書いています",
+              "kana": "かいています",
+              "romaji": "kaite imasu",
+              "fr": "j’écris en ce moment"
+            }
+          },
+          {
+            "usage": "Situation durable",
+            "exemple": {
+              "jp": "住んでいます",
+              "kana": "すんでいます",
+              "romaji": "sunde imasu",
+              "fr": "j’habite"
+            }
+          },
+          {
+            "usage": "État · savoir / connaître",
+            "exemple": {
+              "jp": "知っています",
+              "kana": "しっています",
+              "romaji": "shitte imasu",
+              "fr": "je sais / je connais"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G19",
@@ -3069,7 +4022,51 @@
         "N29",
         "N27"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Enlever masu, puis ajouter tai (desu).",
+          "Tai se conjugue comme un adjectif en i."
+        ],
+        "lignes": [
+          {
+            "usage": "Exprimer une envie",
+            "exemple": {
+              "jp": "食べます → 食べたいです",
+              "kana": "たべます → たべたいです",
+              "romaji": "tabemasu → tabetai desu",
+              "fr": "manger → j’ai envie de manger"
+            }
+          },
+          {
+            "usage": "Autre verbe",
+            "exemple": {
+              "jp": "行きます → 行きたいです",
+              "kana": "いきます → いきたいです",
+              "romaji": "ikimasu → ikitai desu",
+              "fr": "aller → j’ai envie d’y aller"
+            }
+          },
+          {
+            "usage": "Ne pas avoir envie",
+            "exemple": {
+              "jp": "食べたくないです",
+              "kana": "たべたくないです",
+              "romaji": "tabetakunai desu",
+              "fr": "Je n’ai pas envie de manger."
+            }
+          },
+          {
+            "usage": "Avoir eu envie",
+            "exemple": {
+              "jp": "食べたかったです",
+              "kana": "たべたかったです",
+              "romaji": "tabetakatta desu",
+              "fr": "J’avais envie de manger."
+            }
+          }
+        ]
+      }
     },
     {
       "id": "G20",
@@ -3241,7 +4238,334 @@
         "N30",
         "N26"
       ],
-      "romaji_disponible": true
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Forme de dictionnaire + tsumori desu : une intention.",
+          "C’est plus engagé qu’une envie, sans garantir la réalisation."
+        ],
+        "lignes": [
+          {
+            "usage": "Intention positive",
+            "exemple": {
+              "jp": "行くつもりです",
+              "kana": "いくつもりです",
+              "romaji": "iku tsumori desu",
+              "fr": "J’ai l’intention d’y aller."
+            }
+          },
+          {
+            "usage": "Intention de ne pas faire",
+            "exemple": {
+              "jp": "行かないつもりです",
+              "kana": "いかないつもりです",
+              "romaji": "ikanai tsumori desu",
+              "fr": "J’ai l’intention de ne pas y aller."
+            }
+          },
+          {
+            "usage": "Intention passée",
+            "exemple": {
+              "jp": "行くつもりでした",
+              "kana": "いくつもりでした",
+              "romaji": "iku tsumori deshita",
+              "fr": "J’avais l’intention d’y aller."
+            }
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "tableau_particules": {
+    "titre": "Les particules en un coup d’œil",
+    "description": "Les usages de base à comparer. Une particule peut avoir plusieurs rôles : regarder aussi le verbe et le contexte.",
+    "lignes": [
+      {
+        "particule": {
+          "jp": "は",
+          "kana": "わ",
+          "romaji": "wa",
+          "fr": "Annoncer le thème"
+        },
+        "role": "Annoncer le thème",
+        "fiche": "G07",
+        "exemple": {
+          "jp": "友達は来ました",
+          "kana": "ともだちはきました",
+          "romaji": "tomodachi wa kimashita",
+          "fr": "Quant à mon ami, il est venu."
+        }
+      },
+      {
+        "particule": {
+          "jp": "が",
+          "kana": "が",
+          "romaji": "ga",
+          "fr": "Marquer le sujet"
+        },
+        "role": "Marquer le sujet",
+        "fiche": "G07",
+        "exemple": {
+          "jp": "友達が来ました",
+          "kana": "ともだちがきました",
+          "romaji": "tomodachi ga kimashita",
+          "fr": "Un ami est venu."
+        }
+      },
+      {
+        "particule": {
+          "jp": "を",
+          "kana": "お",
+          "romaji": "o",
+          "fr": "Marquer l’objet de l’action"
+        },
+        "role": "Marquer l’objet de l’action",
+        "fiche": "G06",
+        "exemple": {
+          "jp": "パンを食べます",
+          "kana": "パンをたべます",
+          "romaji": "pan o tabemasu",
+          "fr": "Je mange du pain."
+        }
+      },
+      {
+        "particule": {
+          "jp": "の",
+          "kana": "の",
+          "romaji": "no",
+          "fr": "Relier deux noms"
+        },
+        "role": "Relier deux noms",
+        "fiche": "G03",
+        "exemple": {
+          "jp": "料理の本",
+          "kana": "りょうりのほん",
+          "romaji": "ryouri no hon",
+          "fr": "livre de cuisine"
+        }
+      },
+      {
+        "particule": {
+          "jp": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "Indiquer la destination"
+        },
+        "role": "Indiquer la destination",
+        "fiche": "G09",
+        "exemple": {
+          "jp": "駅に行きます",
+          "kana": "えきにいきます",
+          "romaji": "eki ni ikimasu",
+          "fr": "Je vais à la gare."
+        }
+      },
+      {
+        "particule": {
+          "jp": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "Indiquer une heure précise"
+        },
+        "role": "Indiquer une heure précise",
+        "fiche": "G09",
+        "exemple": {
+          "jp": "十時に起きます",
+          "kana": "じゅうじにおきます",
+          "romaji": "juuji ni okimasu",
+          "fr": "Je me lève à dix heures."
+        }
+      },
+      {
+        "particule": {
+          "jp": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "lieu de présence"
+        },
+        "role": "Indiquer le lieu de présence",
+        "fiche": "G08",
+        "exemple": {
+          "jp": "部屋に猫がいます",
+          "kana": "へやにねこがいます",
+          "romaji": "heya ni neko ga imasu",
+          "fr": "Il y a un chat dans la chambre."
+        }
+      },
+      {
+        "particule": {
+          "jp": "へ",
+          "kana": "え",
+          "romaji": "e",
+          "fr": "Indiquer la direction"
+        },
+        "role": "Indiquer la direction",
+        "fiche": "G09",
+        "exemple": {
+          "jp": "駅へ行きます",
+          "kana": "えきへいきます",
+          "romaji": "eki e ikimasu",
+          "fr": "Je vais vers la gare."
+        }
+      },
+      {
+        "particule": {
+          "jp": "で",
+          "kana": "で",
+          "romaji": "de",
+          "fr": "Indiquer le lieu de l’action"
+        },
+        "role": "Indiquer le lieu de l’action",
+        "fiche": "G10",
+        "exemple": {
+          "jp": "店で買います",
+          "kana": "みせでかいます",
+          "romaji": "mise de kaimasu",
+          "fr": "J’achète dans le magasin."
+        }
+      },
+      {
+        "particule": {
+          "jp": "で",
+          "kana": "で",
+          "romaji": "de",
+          "fr": "Indiquer un moyen ou un instrument"
+        },
+        "role": "Indiquer un moyen ou un instrument",
+        "fiche": "G10",
+        "exemple": {
+          "jp": "フォークで食べます",
+          "kana": "フォークでたべます",
+          "romaji": "fooku de tabemasu",
+          "fr": "Je mange avec une fourchette."
+        }
+      },
+      {
+        "particule": {
+          "jp": "と",
+          "kana": "と",
+          "romaji": "to",
+          "fr": "Relier les noms d’une liste complète"
+        },
+        "role": "Relier les noms d’une liste complète",
+        "fiche": "G12",
+        "exemple": {
+          "jp": "本とカメラ",
+          "kana": "ほんとカメラ",
+          "romaji": "hon to kamera",
+          "fr": "un livre et un appareil photo"
+        }
+      },
+      {
+        "particule": {
+          "jp": "と",
+          "kana": "と",
+          "romaji": "to",
+          "fr": "avec"
+        },
+        "role": "Accompagner quelqu’un",
+        "fiche": "G12",
+        "exemple": {
+          "jp": "友達と行きます",
+          "kana": "ともだちといきます",
+          "romaji": "tomodachi to ikimasu",
+          "fr": "J’y vais avec un ami."
+        }
+      },
+      {
+        "particule": {
+          "jp": "や",
+          "kana": "や",
+          "romaji": "ya",
+          "fr": "Donner des exemples, liste ouverte"
+        },
+        "role": "Donner des exemples, liste ouverte",
+        "fiche": "G12",
+        "exemple": {
+          "jp": "本やカメラ",
+          "kana": "ほんやカメラ",
+          "romaji": "hon ya kamera",
+          "fr": "un livre, un appareil photo, entre autres"
+        }
+      },
+      {
+        "particule": {
+          "jp": "も",
+          "kana": "も",
+          "romaji": "mo",
+          "fr": "Ajouter « aussi »"
+        },
+        "role": "Ajouter « aussi »",
+        "fiche": "G12",
+        "exemple": {
+          "jp": "私も",
+          "kana": "わたしも",
+          "romaji": "watashi mo",
+          "fr": "moi aussi"
+        }
+      },
+      {
+        "particule": {
+          "jp": "から",
+          "kana": "から",
+          "romaji": "kara",
+          "fr": "Marquer le départ"
+        },
+        "role": "Marquer le départ",
+        "fiche": "G11",
+        "exemple": {
+          "jp": "駅から店まで",
+          "kana": "えきからみせまで",
+          "romaji": "eki kara mise made",
+          "fr": "de la gare au magasin"
+        }
+      },
+      {
+        "particule": {
+          "jp": "まで",
+          "kana": "まで",
+          "romaji": "made",
+          "fr": "Marquer la limite"
+        },
+        "role": "Marquer la limite",
+        "fiche": "G11",
+        "exemple": {
+          "jp": "三時から五時まで",
+          "kana": "さんじからごじまで",
+          "romaji": "sanji kara goji made",
+          "fr": "de trois heures à cinq heures"
+        }
+      },
+      {
+        "particule": {
+          "jp": "か",
+          "kana": "か",
+          "romaji": "ka",
+          "fr": "Poser une question polie"
+        },
+        "role": "Poser une question polie",
+        "fiche": "G02",
+        "exemple": {
+          "jp": "食べますか",
+          "kana": "たべますか",
+          "romaji": "tabemasu ka",
+          "fr": "Mangez-vous ? / Voulez-vous en manger ?"
+        }
+      }
+    ],
+    "reperes": [
+      "は se prononce wa, へ se prononce e, を se prononce o.",
+      "に : destination, heure ou présence ; で : action ou moyen.",
+      "Ces repères couvrent les premières fiches, pas tous les emplois des particules."
+    ],
+    "sources": [
+      {
+        "organisme": "The Japan Foundation",
+        "titre": "Irodori — Grammar Notes",
+        "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf",
+        "section": "Starter : thème, question, lieux, temps et moyens ; Elementary 1 : énumération avec ya",
+        "consulte_le": "2026-09-27"
+      }
+    ]
+  }
 }

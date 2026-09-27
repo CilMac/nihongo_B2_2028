@@ -190,3 +190,42 @@
 .dictionary-range{display:flex;align-items:center;gap:8px}
 .dictionary-range select{padding:9px 10px}
 @media(max-width:600px){.dictionary-filters #vocab-search{flex-basis:100%}.dictionary-filters #vocab-lesson,.dictionary-filters #vocab-category{flex:1 1 100%}.dictionary-range{width:100%}.dictionary-range label{flex:1;min-width:0}.dictionary-range select{min-width:0;width:100%}}
+
+/* Les fiches de grammaire commencent par leur synthèse, comme les démonstratifs. */
+.grammar-overview-link{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;margin:20px 0;background:var(--lavender);text-decoration:none;font-size:14px}
+.grammar-overview-link strong{font-size:17px}.grammar-index .grammar-card{padding:18px 20px;gap:5px}.grammar-index h2{font-size:18px}.grammar-index .grammar-card>a{font-size:14px;padding-top:5px}
+.grammar-breadcrumb{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;margin-top:20px}
+.grammar-sheet .grammar-synthesis{padding:16px 20px}.grammar-summary-scroll{overflow-x:auto}
+.grammar-summary-table{border-collapse:collapse;width:100%;table-layout:fixed;min-width:540px}
+.grammar-summary-table th,.grammar-summary-table td{padding:10px 12px;text-align:left;border-bottom:1px solid #c7cdbf;vertical-align:middle;overflow-wrap:anywhere}
+.grammar-summary-table thead th{font-size:14px;color:#845044}.grammar-summary-table th:first-child{width:27%}.grammar-summary-table th:nth-child(2){width:42%}.grammar-summary-table tbody th{font-size:14px;font-weight:500}
+.grammar-summary-table tbody tr:nth-child(even){background:#edf1e7}.grammar-summary-table td.fr{font-size:15px}
+.grammar-reading{display:flex;flex-direction:column;align-items:flex-start;gap:2px;font-weight:400}
+.grammar-reading .kana,.grammar-reading .jp{font-size:20px;line-height:1.5;margin:0}.grammar-reading .kana-audio{background:transparent;border:0;border-radius:5px;text-align:left;padding:0;min-height:36px;max-width:100%;white-space:normal;color:#24663f;font-family:var(--jp-font)}
+.grammar-reading .kana-audio:hover{background:#e2ebdf}.grammar-reading .romaji{font-size:15px;line-height:1.5;margin:0}.grammar-reading .same-reading{display:none}.hide-kana .grammar-reading .same-reading{display:block}
+.grammar-sheet .demo-rules{font-size:14px}.grammar-sheet .demo-rules p{margin:10px 0}.grammar-sheet details.panel{padding:12px 20px}.grammar-sheet details.panel>summary{min-height:28px;font-size:15px;font-weight:500}
+.grammar-sheet .grammar-more{font-size:15px}.grammar-form-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grammar-form-list>div{padding:10px;border-left:2px solid #d4dfcf}.grammar-form-list .fr{font-size:15px}
+.grammar-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.grammar-options .choice{min-width:0;margin:0;padding:10px;border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;gap:8px;background:#faf8fc}
+.grammar-options .grammar-reading{flex:1}.grammar-options .choose-answer{font-size:14px;min-height:40px;flex:0;padding:6px 10px}.grammar-options .kana-audio{flex:0;background:transparent;min-height:36px}
+.grammar-practice #feedback .language-block .jp,.grammar-practice #feedback .language-block .kana{font-size:22px}.grammar-practice #feedback{margin-top:12px}
+.particles-summary{min-width:560px}.particles-summary th:first-child{width:17%}.particles-summary th:nth-child(2){width:33%}.particles-summary td{font-size:15px}.particles-summary .fr{font-size:14px;margin:4px 0 0}.particle-sheet-link{display:block;font-size:13px;margin-top:6px}
+@media(max-width:760px){.grammar-overview-link{align-items:flex-start;flex-direction:column;gap:5px}.grammar-sheet .grammar-synthesis{padding:12px}.grammar-summary-table th,.grammar-summary-table td{padding:8px}.grammar-options{grid-template-columns:1fr}.grammar-options .choice{flex-direction:row;align-items:center}.grammar-options .choose-answer{flex:0 0 auto}.grammar-form-list{grid-template-columns:1fr}}
+
+.grammar-options .jp .kanji,.grammar-options .kana-audio span{display:inline}
+
+/* Configuration de l’atelier : trois questions, bornes réunies, puis lancement. */
+.atelier-setup .atelier-settings{display:flex;flex-direction:column;gap:14px}
+.atelier-setting-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;align-items:center}
+.atelier-setting-row>label{font-size:15px;font-weight:500}
+.atelier-setting-row>select{max-width:360px}
+.atelier-lesson-controls{display:flex;align-items:center;gap:12px;min-width:0}
+.atelier-lesson-controls>#atelier-scope{width:180px;flex:0 0 180px}
+.atelier-bounds{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+.atelier-setup .atelier-bounds label{display:flex;align-items:center;gap:8px;flex:1;min-width:0;font-size:14px}
+.atelier-bounds select{flex:1;min-width:0}
+.atelier-launch{display:flex;align-items:center;gap:16px;margin:18px 0 8px}
+.atelier-launch #atelier-pool{margin:0;font-size:14px;color:var(--muted)}
+.atelier-launch #atelier-start{font-weight:600;padding:10px 24px}
+#atelier-description{margin:18px 0 0}#atelier-content{margin-top:20px}#atelier-content>summary{font-size:14px}
+@media(max-width:950px){.atelier-setting-row{grid-template-columns:180px minmax(0,1fr)}.atelier-lesson-controls{flex-wrap:wrap}.atelier-bounds{flex-basis:100%}}
+@media(max-width:600px){.atelier-setting-row{grid-template-columns:1fr;gap:6px}.atelier-setting-row>select{max-width:none}.atelier-lesson-controls>#atelier-scope{width:100%;flex-basis:100%}.atelier-launch{align-items:flex-start;flex-direction:column;gap:8px}.atelier-setup .atelier-bounds{gap:8px}}
