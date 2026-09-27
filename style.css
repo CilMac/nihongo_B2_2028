@@ -229,3 +229,6 @@
 #atelier-description{margin:18px 0 0}#atelier-content{margin-top:20px}#atelier-content>summary{font-size:14px}
 @media(max-width:950px){.atelier-setting-row{grid-template-columns:180px minmax(0,1fr)}.atelier-lesson-controls{flex-wrap:wrap}.atelier-bounds{flex-basis:100%}}
 @media(max-width:600px){.atelier-setting-row{grid-template-columns:1fr;gap:6px}.atelier-setting-row>select{max-width:none}.atelier-lesson-controls>#atelier-scope{width:100%;flex-basis:100%}.atelier-launch{align-items:flex-start;flex-direction:column;gap:8px}.atelier-setup .atelier-bounds{gap:8px}}
+
+.floating-audio{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:1000;width:54px;height:54px;padding:12px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#e1ecf3;border:1px solid #9eb8c6;box-shadow:0 3px 14px #243b4430;color:#345564}
+.floating-audio[aria-pressed=true]{background:#f7e6cc;border-color:#c9a56d;color:#77551c}.floating-audio:disabled{opacity:.65}
