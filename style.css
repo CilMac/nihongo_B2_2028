@@ -232,3 +232,5 @@
 
 .floating-audio{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:1000;width:54px;height:54px;padding:12px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#e1ecf3;border:1px solid #9eb8c6;box-shadow:0 3px 14px #243b4430;color:#345564}
 .floating-audio[aria-pressed=true]{background:#f7e6cc;border-color:#c9a56d;color:#77551c}.floating-audio:disabled{opacity:.65}
+
+.audio-folder-setting{display:flex;flex-direction:column;gap:8px;font-size:14px;min-width:0}.audio-folder-setting small{font-size:13px}.audio-folder-setting button{text-align:left}
