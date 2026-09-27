@@ -166,3 +166,27 @@
 .dictionary-compact .dictionary-card>details[open]{flex-basis:100%;border-top:1px solid var(--line);padding-top:8px;}
 .dictionary-compact .dictionary-card>.note,.dictionary-compact .dictionary-card>.atelier-return{flex-basis:100%;font-size:13px;margin:0;}
 @media(max-width:600px){.dictionary-compact .dictionary-main{flex-basis:80%;}.dictionary-compact .dictionary-main .fr{flex-basis:100%;}}
+
+.grammar-table-detail{max-width:1050px;margin:auto;}.grammar-table-detail .panel{margin:18px 0;}
+.demo-table-scroll{overflow-x:auto;}.demo-table{width:100%;min-width:620px;border-collapse:collapse;table-layout:fixed;}
+.demo-table th,.demo-table td{padding:12px 10px;text-align:left;border-bottom:1px solid #c7cdbf;vertical-align:top;}
+.demo-table thead th{color:#845044;font-size:14px;}.demo-table th:first-child{width:16%;font-size:14px;}
+.demo-table tbody tr:nth-child(even){background:#edf1e7;}.demo-cell{display:flex;flex-direction:column;gap:3px;}
+.demo-jp{font-family:var(--jp-font);font-size:22px;border:0;background:transparent;padding:0;text-align:left;min-height:34px;}
+.demo-cell .romaji{font-size:15px;margin:0;font-style:normal;}.demo-cell .kana{font-size:18px;margin:0;}.demo-cell .fr{font-size:14px;margin:0;}
+.demo-rules{font-size:15px;}.demo-scroll-hint{display:none;font-size:12px;}
+.demo-examples .language-block .jp,.demo-examples .language-block .kana{font-size:22px;}.demo-examples .language-block .romaji,.demo-examples .language-block .fr{font-size:16px;}.demo-examples .example-block>p{font-size:14px;}
+.demo-options{display:flex;gap:12px;flex-wrap:wrap;}.demo-options button{flex:1;background:var(--lavender);}.demo-options span{display:block;}.demo-options .jp{font-size:22px;}.demo-options .romaji{font-size:16px;}
+.demo-options [aria-pressed="true"]{outline:2px solid #73866c;}.demo-solutions{font-size:14px;}
+@media(max-width:760px){.demo-scroll-hint{display:block;}.demo-options{gap:6px;}.demo-options button{padding:8px;}}
+
+.demo-actions{display:flex;justify-content:flex-end;margin-top:-12px;}
+
+/* Filtres du dictionnaire : commandes compactes, plage inclusive. */
+.dictionary-filters{gap:8px;font-size:14px}
+.dictionary-filters #vocab-search{flex:1 1 280px;min-width:0}
+.dictionary-filters #vocab-lesson{flex:0 1 280px;min-width:0}
+.dictionary-filters #vocab-category{flex:0 1 210px;min-width:0}
+.dictionary-range{display:flex;align-items:center;gap:8px}
+.dictionary-range select{padding:9px 10px}
+@media(max-width:600px){.dictionary-filters #vocab-search{flex-basis:100%}.dictionary-filters #vocab-lesson,.dictionary-filters #vocab-category{flex:1 1 100%}.dictionary-range{width:100%}.dictionary-range label{flex:1;min-width:0}.dictionary-range select{min-width:0;width:100%}}
