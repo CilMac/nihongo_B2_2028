@@ -109,6 +109,7 @@ function speak(items){
   if(audioPlayback.paused){deferred=next;return;}
   if(index>=items.length){stopAudio('Écoute terminée.');return;}
   const raw=items[index++],item=typeof raw==='string'?{text:raw}:raw;
+  if(item.extra)selectComplement(item.key);
   let file=item.extra?item.file:settings.audioMode==='recorded'&&(selectedAudioFiles?selectedAudioFiles[item.ref]:(localAudioHost&&localAudioFiles?.[item.ref]));
   if(!file||failedRecordings.has(file)){if(item.extra)stopAudio('Cet enregistrement est indisponible.');else synthetic(item,!!file);return;}
   if(item.extra&&typeof file==='string'){try{const response=await fetch('fichiers_audio_complet/'+file.split('/').map(encodeURIComponent).join('/'));if(!response.ok)throw new Error();file=await response.blob();if(!active())return;}catch{if(active())stopAudio('Cet enregistrement est indisponible.');return;}}
@@ -136,7 +137,7 @@ document.getElementById('pause-audio').addEventListener('click',toggleAudioPause
 document.getElementById('choose-audio-folder').onclick=()=>document.getElementById('audio-folder-input').click();
 document.getElementById('audio-folder-input').onchange=e=>{if(e.target.files.length)chooseAudioFolder(e.target.files);e.target.value='';};
 
-// Les compléments restent séparés du corpus et ne disposent pas de texte synthétique.
+// Les compléments restent séparés du corpus et utilisent leurs enregistrements réels.
 function renderExtraAudio(){
  const host=document.getElementById('extra-audio');if(!host)return;
  const source=selectedExtraFiles||localExtraFiles;
@@ -145,9 +146,10 @@ function renderExtraAudio(){
  if(source&&!entries.length){host.innerHTML='';return;}
  const opened=host.querySelector('details')?.open;
  const groups=[['Traduction',entries.filter(([key])=>Number(/-T(\d+)/.exec(key)[1])<200)],['Dictée',entries.filter(([key])=>Number(/-T(\d+)/.exec(key)[1])>=200)]];
- host.innerHTML=`<details class="panel extra-listening" ${opened?'open':''}><summary>Écoutes complémentaires</summary>${!source?'<p>Sélectionnez votre dossier fichiers_audio_complet pour accéder aux écoutes de cette leçon.</p><button id="extra-folder">Choisir mon dossier audio</button>':`<p class="muted">Écouter, répéter ou essayer de traduire. Pour la dictée, vous pouvez écrire sur papier. Texte et corrigé non disponibles.</p>${groups.filter(([,items])=>items.length).map(([title,items])=>`<section><h3>${title}</h3><div class="extra-tracks">${items.map(([key])=>`<button data-extra-track="${key}">${/-/.test(key.slice(id.length+1))?'▶ Consigne':'▶ '+Number(/-T(\d+)/.exec(key)[1])%100}</button>`).join('')}</div><button data-extra-group="${title}">▶ Tout écouter avec une pause</button></section>`).join('')}<div class="extra-controls"><span id="extra-current" aria-live="polite">Choisissez une piste.</span><div><button id="extra-pause" disabled>Ⅱ Pause</button> <button id="extra-stop">■ Arrêter</button></div><label>Position dans la piste <input id="extra-seek" type="range" min="0" max="1" step="0.1" value="0" disabled></label><label>Vitesse <select id="extra-rate">${[.5,.65,.8,.86,1,1.2].map(rate=>`<option value="${rate}">${rate} ×</option>`).join('')}</select></label><p class="muted">La pause entre les pistes suit les réglages des leçons.</p></div>`}</details>`;
+ host.innerHTML=`<details class="panel extra-listening" ${opened?'open':''}><summary>Écoutes complémentaires</summary>${!source?'<p>Sélectionnez votre dossier fichiers_audio_complet pour accéder aux écoutes de cette leçon.</p><button id="extra-folder">Choisir mon dossier audio</button>':`<p class="muted">Écouter, répéter ou essayer de traduire. Pour la dictée, vous pouvez écrire sur papier. Révélez le texte quand vous le souhaitez.</p>${groups.filter(([,items])=>items.length).map(([title,items])=>`<section><h3>${title}</h3><div class="extra-tracks">${items.map(([key])=>`<button data-extra-track="${key}">${/-/.test(key.slice(id.length+1))?'▶ Consigne':'▶ '+Number(/-T(\d+)/.exec(key)[1])%100}</button>`).join('')}</div><button data-extra-group="${title}">▶ Tout écouter avec une pause</button></section>`).join('')}<div id="extra-text"></div><div class="extra-controls"><span id="extra-current" aria-live="polite">Choisissez une piste.</span><div><button id="extra-pause" disabled>Ⅱ Pause</button> <button id="extra-stop">■ Arrêter</button></div><label>Position dans la piste <input id="extra-seek" type="range" min="0" max="1" step="0.1" value="0" disabled></label><label>Vitesse <select id="extra-rate">${[.5,.65,.8,.86,1,1.2].map(rate=>`<option value="${rate}">${rate} ×</option>`).join('')}</select></label><p class="muted">La pause entre les pistes suit les réglages des leçons.</p></div>`}</details>`;
+ mountComplementText();
  host.querySelector('#extra-folder')?.addEventListener('click',()=>document.getElementById('audio-folder-input').click());
- const play=items=>speak(items.map(([key,file])=>({extra:true,file,label:`${id} · ${key.slice(id.length+1)}`})));
+ const play=items=>speak(items.map(([key,file])=>({extra:true,file,key,label:`${id} · ${key.slice(id.length+1)}`})));
  host.querySelectorAll('[data-extra-track]').forEach(b=>b.onclick=()=>play(entries.filter(([key])=>key===b.dataset.extraTrack)));
  host.querySelectorAll('[data-extra-group]').forEach(b=>b.onclick=()=>play(groups.find(([title])=>title===b.dataset.extraGroup)[1]));
  const rate=host.querySelector('#extra-rate');if(rate){if(![...rate.options].some(o=>Number(o.value)===Number(settings.rate)))rate.add(new Option(settings.rate+' ×',settings.rate));rate.value=settings.rate;rate.onchange=()=>{settings.rate=Number(rate.value);if(recordedPlayer)recordedPlayer.playbackRate=settings.rate;applySettings();save();};}
