@@ -46,7 +46,7 @@ function renderDictionary(r){const selected=r.id.startsWith('vocab-')?vocab.find
  const high=Math.max(Number(from?.slice(1)),Number(to?.slice(1)));
  const categories=[...new Set(vocab.map(v=>v.categorie_grammaticale||'À préciser'))].sort((a,b)=>a.localeCompare(b,'fr'));
  const options=value=>lessonIds.map(n=>`<option value="${n}" ${n===value?'selected':''}>Leçon ${n.slice(1)}</option>`).join('');
- $('#main').innerHTML=intro('COMPRENDRE · RETROUVER','Le dictionnaire','Le sens des mots, leurs formes et leurs exemples en contexte.')+`<div class="toolbar dictionary-filters"><input id="vocab-search" type="search" placeholder="Un mot en japonais, romaji ou français…" aria-label="Rechercher dans le dictionnaire" value="${esc(search)}"><select id="vocab-lesson" aria-label="Filtrer par leçon"><option value="">Toutes les leçons</option><option value="plage" ${range?'selected':''}>Plage de leçons…</option>${lessonIds.map(n=>`<option value="${n}" ${filter===n?'selected':''}>${esc(lessonLabel(n))}</option>`).join('')}</select><span class="dictionary-range" ${range?'':'hidden'}><label>De <select id="vocab-from" aria-label="Première leçon">${options('N'+low)}</select></label><label>à <select id="vocab-to" aria-label="Dernière leçon">${options('N'+high)}</select></label></span><select id="vocab-category" aria-label="Catégorie grammaticale"><option value="">Toutes les catégories</option>${categories.map(c=>`<option value="${esc(c)}" ${dictionaryCategory===c?'selected':''}>${esc(c[0].toUpperCase()+c.slice(1))}</option>`).join('')}</select><label><input type="checkbox" id="favorites-only" ${onlyFavorites?'checked':''}> Mes favoris</label></div><div class="dictionary-view-bar"><p class="muted" id="result-count" role="status"></p><button id="dictionary-compact" role="switch" aria-checked="${settings.dictionaryCompact}" aria-controls="vocab-results">Mode compressé <span aria-hidden="true">${settings.dictionaryCompact?'ON':'OFF'}</span></button></div><div id="vocab-results" class="grid ${settings.dictionaryCompact?'dictionary-compact':''}"></div><div id="pagination"></div>`;function results(){let list=selected?[selected]:vocab.filter(v=>(!(filter||range)||[v.source,...(v.exemples_supplementaires||[]).map(e=>e.source)].some(s=>{const n=Number(/\bN(\d+)-/.exec(s||'')?.[1]);return n>=low&&n<=high;}))&&(!dictionaryCategory||(v.categorie_grammaticale||'À préciser')===dictionaryCategory)&&(!onlyFavorites||favorites.has(v.id))&&(!search||normalize([v.mot,v.kana,v.romaji,v.fr,v.forme_base].join(' ')).includes(normalize(search))));const max=Math.max(0,Math.ceil(list.length/pageSize)-1);page=Math.min(page,max);$('#result-count').textContent=`${list.length} mot${list.length>1?'s':''}${selected?' · accès depuis une fiche':''}`;$('#vocab-results').innerHTML=list.length?list.slice(page*pageSize,(page+1)*pageSize).map(vocabCard).join(''):'<p class="panel empty">Aucun mot trouvé. Essayez un autre terme ou retirez un filtre.</p>';$('#pagination').innerHTML=selected?'<a href="#dictionnaire">← Tout le dictionnaire</a>':`<div class="pager"><button id="prev-page" ${page===0?'disabled':''}>← Précédent</button><span>${page+1} / ${max+1}</span><button id="next-page" ${page===max?'disabled':''}>Suivant →</button></div>`;if(!selected){$('#prev-page').onclick=()=>{page--;results();$('#vocab-search').scrollIntoView();};$('#next-page').onclick=()=>{page++;results();$('#vocab-search').scrollIntoView();};}}$('#vocab-search').oninput=e=>{search=e.target.value;page=0;if(selected){location.hash='dictionnaire';}else results();};$('#favorites-only').onchange=e=>{onlyFavorites=e.target.checked;page=0;if(selected)location.hash='dictionnaire';else results();};$('#vocab-lesson').onchange=e=>{page=0;location.hash=e.target.value==='plage'?'dictionnaire/plage/'+lessonIds[0]+'-'+lessonIds[lessonIds.length-1]:'dictionnaire/'+e.target.value;};$('#vocab-category').onchange=e=>{dictionaryCategory=e.target.value;page=0;if(selected)location.hash='dictionnaire';else results();};
+ $('#main').innerHTML=intro('COMPRENDRE · RETROUVER','Le dictionnaire','Le sens des mots, leurs formes et leurs exemples en contexte.')+`<div class="toolbar dictionary-filters"><input id="vocab-search" type="search" placeholder="Un mot en japonais, romaji ou français…" aria-label="Rechercher dans le dictionnaire" value="${esc(search)}"><select id="vocab-lesson" aria-label="Filtrer par leçon"><option value="">Toutes les leçons</option><option value="plage" ${range?'selected':''}>Plage de leçons…</option>${lessonIds.map(n=>`<option value="${n}" ${filter===n?'selected':''}>${esc(lessonLabel(n))}</option>`).join('')}</select><span class="dictionary-range" ${range?'':'hidden'}><label>De <select id="vocab-from" aria-label="Première leçon">${options('N'+low)}</select></label><label>à <select id="vocab-to" aria-label="Dernière leçon">${options('N'+high)}</select></label></span><select id="vocab-category" aria-label="Catégorie grammaticale"><option value="">Toutes les catégories</option>${categories.map(c=>`<option value="${esc(c)}" ${dictionaryCategory===c?'selected':''}>${esc(c[0].toUpperCase()+c.slice(1))}</option>`).join('')}</select><label><input type="checkbox" id="favorites-only" ${onlyFavorites?'checked':''}> Mes favoris</label></div><div class="dictionary-view-bar"><p class="muted" id="result-count" role="status"></p><button id="dictionary-compact" role="switch" aria-checked="${settings.dictionaryCompact}" aria-controls="vocab-results">Mode compressé <span aria-hidden="true">${settings.dictionaryCompact?'ON':'OFF'}</span></button></div><div id="vocab-results" class="grid ${settings.dictionaryCompact?'dictionary-compact':''}"></div><div id="pagination"></div>`;function results(){let list=selected?[selected]:vocab.filter(v=>(!(filter||range)||[v.source,...(v.exemples_supplementaires||[]).map(e=>e.source)].some(s=>{const n=Number(/\bN(\d+)-/.exec(s||'')?.[1]);return n>=low&&n<=high;}))&&(!dictionaryCategory||(v.categorie_grammaticale||'À préciser')===dictionaryCategory)&&(!onlyFavorites||favorites.has(v.id))&&(!search||normalize([v.mot,v.kana,v.romaji,v.fr,v.forme_base].join(' ')).includes(normalize(search))));const max=Math.max(0,Math.ceil(list.length/pageSize)-1);page=Math.min(page,max);$('#result-count').textContent=`${list.length} mot${list.length>1?'s':''}${selected?' · accès depuis une fiche':''}`;$('#vocab-results').innerHTML=list.length?list.slice(page*pageSize,(page+1)*pageSize).map(vocabCard).join(''):'<p class="panel empty">Aucun mot trouvé. Essayez un autre terme ou retirez un filtre.</p>';$('#pagination').innerHTML=selected?'<a data-context-return href="#dictionnaire">← Tout le dictionnaire</a>':`<div class="pager"><button id="prev-page" ${page===0?'disabled':''}>← Précédent</button><span>${page+1} / ${max+1}</span><button id="next-page" ${page===max?'disabled':''}>Suivant →</button></div>`;if(!selected){$('#prev-page').onclick=()=>{page--;results();$('#vocab-search').scrollIntoView();};$('#next-page').onclick=()=>{page++;results();$('#vocab-search').scrollIntoView();};}}$('#vocab-search').oninput=e=>{search=e.target.value;page=0;if(selected){location.hash='dictionnaire';}else results();};$('#favorites-only').onchange=e=>{onlyFavorites=e.target.checked;page=0;if(selected)location.hash='dictionnaire';else results();};$('#vocab-lesson').onchange=e=>{page=0;location.hash=e.target.value==='plage'?'dictionnaire/plage/'+lessonIds[0]+'-'+lessonIds[lessonIds.length-1]:'dictionnaire/'+e.target.value;};$('#vocab-category').onchange=e=>{dictionaryCategory=e.target.value;page=0;if(selected)location.hash='dictionnaire';else results();};
  for(const id of ['vocab-from','vocab-to'])$('#'+id).onchange=()=>{
   let first=$('#vocab-from').value,last=$('#vocab-to').value;
   if(Number(first.slice(1))>Number(last.slice(1))){if(id==='vocab-from')last=first;else first=last;}
@@ -54,6 +54,7 @@ function renderDictionary(r){const selected=r.id.startsWith('vocab-')?vocab.find
  };
  $('#dictionary-compact').onclick=()=>{settings.dictionaryCompact=!settings.dictionaryCompact;save();$('#vocab-results').classList.toggle('dictionary-compact',settings.dictionaryCompact);$('#dictionary-compact').setAttribute('aria-checked',settings.dictionaryCompact);$('#dictionary-compact span').textContent=settings.dictionaryCompact?'ON':'OFF';};results();}
 $('#settings-toggle').onclick=()=>{const open=$('#settings').hidden;$('#settings').hidden=!open;$('#settings-toggle').setAttribute('aria-expanded',open);};for(const k of ['kana','romaji','fr'])$('#show-'+k).onchange=e=>{settings[k]=e.target.checked;applySettings();save();};for(const k of ['font','size','rate','gap'])$('#'+k).oninput=e=>{settings[k]=['size','rate','gap'].includes(k)?Number(e.target.value):e.target.value;applySettings();save();};$('#voice').onchange=e=>{stopAudio();settings.voice=e.target.value;save();};$('#audio-mode').onchange=e=>{stopAudio();settings.audioMode=e.target.value;save();updateAudioMode();};$('#stop-audio').onclick=()=>stopAudio('Lecture arrêtée.');document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.speak)speak([{text:b.dataset.speak,ref:b.dataset.audioRef}]);if(b.dataset.lesson)location.hash='lecons/'+b.dataset.lesson;if(b.dataset.favorite){const id=b.dataset.favorite;favorites.has(id)?favorites.delete(id):favorites.add(id);save();b.outerHTML=star(id);renderFavorites();if(onlyFavorites&&route().tab==='dictionnaire')renderDictionary(route());}});window.addEventListener('hashchange',event=>{
+ if(handleContextNavigation(event))return;
  const restore=dictionaryReturn && location.hash===dictionaryReturn.origin && new URL(event.oldURL).hash===dictionaryReturn.destination;
  page=restore?dictionaryReturn.page:0;
  if(restore){search=dictionaryReturn.search;onlyFavorites=dictionaryReturn.onlyFavorites;dictionaryCategory=dictionaryReturn.dictionaryCategory||'';}
@@ -64,7 +65,7 @@ $('#settings-toggle').onclick=()=>{const open=$('#settings').hidden;$('#settings
   requestAnimationFrame(()=>{if(location.hash!==saved.origin)return;document.getElementById(saved.cardId)?.querySelector('a[href="'+saved.destination+'"]')?.focus({preventScroll:true});window.scrollTo(0,saved.scrollY);});
  }
 });window.addEventListener('pagehide',()=>stopAudio());speech?.addEventListener('voiceschanged',updateVoices);applySettings();updateVoices();
-Promise.all(['leconsJap.json','dicoLeconsJap.json','grammaireLeconsJap.json','decorticage.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw new Error(url);return r.json();})).then(([l,v,g,d])=>{decorticageData=d;decorticage=Decorticage.create(v,d);lessons=l;vocab=v;grammar=g.fiches;grammarParticles=g.tableau_particules;lessonIds=[...new Set(l.map(x=>x.Leçon))].sort((a,b)=>Number(a.slice(1))-Number(b.slice(1)));render();renderFavorites();initLocalAudio();}).catch(()=>{$('#main').innerHTML='<div class="panel"><h1>Le carnet n’a pas pu se charger</h1><p>Ouvrez le site depuis son adresse Web ou avec le serveur local indiqué dans le fichier README, puis réessayez.</p><button onclick="location.reload()">Réessayer</button></div>';});
+Promise.all(['leconsJap.json','dicoLeconsJap.json','grammaireLeconsJap.json?v=20260928-titres','decorticage.json'].map(async url=>{const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw new Error(url);return r.json();})).then(([l,v,g,d])=>{decorticageData=d;decorticage=Decorticage.create(v,d);lessons=l;vocab=v;grammar=g.fiches;grammarParticles=g.tableau_particules;lessonIds=[...new Set(l.map(x=>x.Leçon))].sort((a,b)=>Number(a.slice(1))-Number(b.slice(1)));render();renderFavorites();initLocalAudio();}).catch(()=>{$('#main').innerHTML='<div class="panel"><h1>Le carnet n’a pas pu se charger</h1><p>Ouvrez le site depuis son adresse Web ou avec le serveur local indiqué dans le fichier README, puis réessayez.</p><button onclick="location.reload()">Réessayer</button></div>';});
 
 // Retrouver les favoris de tous les modules sans quitter la lecture en cours.
 function renderFavorites() {
@@ -204,3 +205,79 @@ projectInfo.addEventListener('keydown',event=>{
  if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
  else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
 });
+
+// Retours contextuels : conserver les vues et leurs gestionnaires pendant une excursion.
+// Le stockage est limité à la visite et à 20 étapes pour borner la mémoire.
+const navigationTrail=[];
+let navigationPending=null;
+const contextReturn=document.createElement('nav');
+contextReturn.id='context-return';contextReturn.hidden=true;
+contextReturn.setAttribute('aria-label','Retour au point de départ');
+$('#main').before(contextReturn);
+function updateContextReturn(){
+ const previous=navigationTrail.at(-1);
+ contextReturn.hidden=!previous;
+ contextReturn.replaceChildren();
+ if(!previous)return;
+ const link=document.createElement('a');link.href=previous.hash||'#lecons';
+ link.textContent='← '+previous.label;link.dataset.contextBack='true';
+ contextReturn.append(link);
+}
+function captureContext(link){
+ const tab=route().tab;
+ const label=link.closest('.analysis-word-link')?'Retour au décorticage':link.closest('.atelier-catalog')?'Retour à la liste':
+  {lecons:'Retour à la leçon',dictionnaire:'Retour au dictionnaire',grammaire:'Retour à la grammaire',atelier:'Retour à l’atelier',guide:guideQuery&&!route().id?'Retour à la recherche':'Retour au guide'}[tab];
+ return {hash:location.hash,nodes:[...$('#main').childNodes],scrollY:window.scrollY,focus:link,label,
+  scrolls:[...$('#main').querySelectorAll('*')].filter(el=>el.scrollTop||el.scrollLeft).map(el=>[el,el.scrollTop,el.scrollLeft]),
+  search,onlyFavorites,page,dictionaryCategory,guideQuery,guideView,guideFilter,lesson:settings.lesson,
+  atelierSettings:{...atelierSettings},atelierSession,currentComplement,complementRevealed};
+}
+document.addEventListener('click',event=>{
+ const link=event.target.closest('a[href^="#"]');
+ if(!link||event.button!==0||event.metaKey||event.ctrlKey||event.altKey||event.shiftKey||link.target==='_blank'||event.defaultPrevented)return;
+ const destination=link.hash;
+ if(!/^#(lecons|dictionnaire|grammaire|atelier|guide)(\/|$)/.test(destination)||destination===location.hash)return;
+ const ancestor=navigationTrail.findLastIndex(item=>(item.hash||'#lecons')===destination);
+ if(link.dataset.contextBack||(link.hasAttribute('data-context-return')&&ancestor>=0)){
+  navigationPending={destination,restore:link.dataset.contextBack?navigationTrail.length-1:ancestor};
+ }else if(link.closest('#main')||link.closest('#saved-list')){
+  navigationPending={destination,source:captureContext(link)};
+ }else{
+  navigationTrail.length=0;navigationPending=null;updateContextReturn();
+ }
+},true);
+function handleContextNavigation(event){
+ const pending=navigationPending;navigationPending=null;
+ if(pending?.destination===location.hash){
+  // Ces parcours sont désormais pris en charge ensemble, sans retours concurrents.
+  dictionaryReturn=null;analysisReturn=null;atelierListReturn=null;
+  if(pending.source){navigationTrail.push(pending.source);if(navigationTrail.length>20)navigationTrail.shift();updateContextReturn();return false;}
+  return restoreContext(pending.restore);
+ }
+ // Le bouton Précédent du navigateur retrouve lui aussi la vue conservée.
+ const previous=navigationTrail.at(-1);
+ if(previous&&(previous.hash||'#lecons')===(location.hash||'#lecons'))return restoreContext(navigationTrail.length-1);
+ navigationTrail.length=0;updateContextReturn();return false;
+}
+function restoreContext(index){
+ if(index<0)return false;
+ const saved=navigationTrail[index];navigationTrail.splice(index);
+ stopAudio();guideRenderRun++; // Invalider un éventuel chargement du guide encore en cours.
+ dictionaryReturn=null;analysisReturn=null;atelierListReturn=null;
+ search=saved.search;onlyFavorites=saved.onlyFavorites;page=saved.page;dictionaryCategory=saved.dictionaryCategory;guideQuery=saved.guideQuery;guideView=saved.guideView;guideFilter=saved.guideFilter;
+ if(route().tab==='atelier'){atelierSettings=saved.atelierSettings;atelierSession=saved.atelierSession;}
+ currentComplement=saved.currentComplement;complementRevealed=saved.complementRevealed;
+ settings.lesson=saved.lesson;save();
+ $('#main').replaceChildren(...saved.nodes);
+ document.querySelectorAll('[data-tab]').forEach(el=>{if(el.dataset.tab===route().tab)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+ // Les favoris et préférences peuvent avoir changé dans la vue consultée.
+ $('#main').querySelectorAll('[data-favorite]').forEach(el=>el.outerHTML=star(el.dataset.favorite));
+ $('#vocab-results')?.classList.toggle('dictionary-compact',settings.dictionaryCompact);
+ const compact=$('#dictionary-compact');if(compact){compact.setAttribute('aria-checked',settings.dictionaryCompact);compact.querySelector('span').textContent=settings.dictionaryCompact?'ON':'OFF';}
+ updateContextReturn();
+ requestAnimationFrame(()=>{if((location.hash||'#lecons')!==(saved.hash||'#lecons'))return;
+  for(const [el,top,left] of saved.scrolls){el.scrollTop=top;el.scrollLeft=left;}
+  if(saved.focus.isConnected)saved.focus.focus({preventScroll:true});window.scrollTo(0,saved.scrollY);
+ });
+ return true;
+}

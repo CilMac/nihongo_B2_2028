@@ -249,3 +249,10 @@ body.info-open{overflow:hidden}#project-info{width:min(800px,calc(100vw - 32px))
 /* Actions compactes : le nom reste accessible et visible au survol. */
 .masthead>.header-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;padding:0;font-size:24px;line-height:1}
 @media(max-width:760px){.masthead{justify-content:flex-start}}
+
+#context-return{position:sticky;top:0;z-index:20;background:var(--paper);padding:8px 0;margin-bottom:12px;border-bottom:1px solid var(--line)}
+#context-return a{display:inline-flex;align-items:center;min-height:44px;padding:6px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;text-decoration:none}
+
+.guide-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:16px 0 24px}.guide-tools button[aria-pressed=true]{background:#f4e9d2;border-color:#baa574}.guide-tools label{display:flex;gap:8px;align-items:center}.guide-tools [hidden]{display:none}.guide-table-result{margin:0;padding:16px;background:#fffefb;border:1px solid var(--line);border-radius:10px;min-width:0}.guide-table-result summary{padding:4px}.guide-table-result small,.guide-preview{display:block;margin-top:8px}.guide-table-result small{color:var(--muted)}.guide-table-result .guide-table-scroll{background:white}.guide-search-list mark{background:#f5e3a9;color:inherit}.guide-search-list .pill{display:inline-block;margin-right:8px;color:var(--ink)}.guide-search-list> a>strong{display:block;margin-top:6px}@media(max-width:760px){.guide-tools label{flex-wrap:wrap}.guide-tools select{max-width:100%}}
+
+.guide-table-group{margin:0;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:#fffefb;min-width:0}.guide-table-group>summary{padding:8px 0;min-height:44px}.guide-table-group>.guide-search-list{margin-top:14px}.guide-table-group>summary .pill{margin-left:8px;white-space:nowrap}

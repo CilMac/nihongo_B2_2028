@@ -29,7 +29,7 @@
     {
       "id": "G01",
       "ordre": 1,
-      "titre": "Dire ce que c’est et poser le thème",
+      "titre": "は (wa) et です (desu) : dire ce que c’est et poser le thème",
       "famille": "Premières phrases",
       "niveau": "débutant",
       "objectif": "Présenter une personne ou une chose avec une phrase polie.",
@@ -206,7 +206,7 @@
     {
       "id": "G02",
       "ordre": 2,
-      "titre": "Poser une question",
+      "titre": "か (ka) : poser une question",
       "famille": "Premières phrases",
       "niveau": "débutant",
       "objectif": "Transformer une phrase polie en question.",
@@ -426,7 +426,7 @@
     {
       "id": "G03",
       "ordre": 3,
-      "titre": "Relier deux noms",
+      "titre": "の (no) : relier deux noms",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Exprimer une appartenance, une origine ou un type.",
@@ -1246,7 +1246,7 @@
     {
       "id": "G06",
       "ordre": 6,
-      "titre": "Indiquer ce que l’on mange, boit ou regarde",
+      "titre": "を (o) : indiquer ce que l’on mange, boit ou regarde",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Reconnaître le complément direct avec o.",
@@ -1410,7 +1410,7 @@
     {
       "id": "G07",
       "ordre": 7,
-      "titre": "Distinguer le thème et le sujet",
+      "titre": "は (wa) et が (ga) : distinguer le thème et le sujet",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Comprendre les rôles de wa et ga sans chercher un équivalent français unique.",
@@ -1781,7 +1781,7 @@
     {
       "id": "G09",
       "ordre": 9,
-      "titre": "Indiquer une destination ou une heure",
+      "titre": "に (ni) et へ (e) : indiquer une destination ou une heure",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Utiliser ni et e dans leurs emplois de base.",
@@ -1966,7 +1966,7 @@
     {
       "id": "G10",
       "ordre": 10,
-      "titre": "Indiquer où et avec quoi on agit",
+      "titre": "で (de) : indiquer où et avec quoi on agit",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Reconnaître le lieu d’action et le moyen avec de.",
@@ -2167,7 +2167,7 @@
     {
       "id": "G11",
       "ordre": 11,
-      "titre": "Exprimer un point de départ et une limite",
+      "titre": "から (kara) et まで (made) : exprimer un point de départ et une limite",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Dire de… à… dans l’espace et le temps.",
@@ -2337,7 +2337,7 @@
     {
       "id": "G12",
       "ordre": 12,
-      "titre": "Ajouter, énumérer et dire « aussi »",
+      "titre": "と (to), や (ya) et も (mo) : ajouter, énumérer et dire « aussi »",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Distinguer to, ya et mo.",
