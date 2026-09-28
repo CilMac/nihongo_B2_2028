@@ -15,6 +15,7 @@ function updateAudioMode(){
   :'Choisissez votre dossier fichiers_audio_complet. Les fichiers restent sur votre appareil. Sans dossier, la synthèse est utilisée.';
 }
 function chooseAudioFolder(files){
+ files=Array.from(files);
  const extras={},found={},duplicates=new Set(),known=new Set(lessons.map(r=>r.Leçon+'-'+r.Ligne));
  for(const file of files){
   const match=/(?:^|\/)L(\d+)-[^/]+\/(S\d+)(?:-TITLE)?\.mp3$/i.exec(file.webkitRelativePath||'');
@@ -23,6 +24,7 @@ function chooseAudioFolder(files){
   if(!known.has(id))continue;
   if(found[id])duplicates.add(id);else found[id]=file;
  }
+ showAudioSelectionDiagnostic(files,found,extras,duplicates);
  if(!Object.keys(found).length||duplicates.size){
   document.getElementById('audio-mode-note').textContent=duplicates.size?'Plusieurs fichiers correspondent à une même phrase. Sélectionnez un seul dossier fichiers_audio_complet.':'Aucun audio de phrase reconnu. Choisissez le dossier fichiers_audio_complet contenant les dossiers L001…, L002…';
   return;
@@ -97,6 +99,8 @@ function speak(items){
  function synthetic(item,fallback=false){
   if(!active())return;
   if(audioPlayback.paused){deferred=()=>synthetic(item,fallback);return;}
+  if(item.extra){const seek=document.getElementById('extra-seek');if(seek){seek.disabled=true;seek.value=0;}}
+  if(!item.text){stopAudio('Le texte nécessaire à la synthèse est indisponible.');return;}
   if(!speech){stopAudio('La synthèse vocale est indisponible pour cette lecture.');return;}
   const u=new SpeechSynthesisUtterance(item.text);currentUtterance=u;u.lang='ja-JP';u.rate=Number(settings.rate);
   u.voice=voices.find(v=>v.voiceURI===settings.voice)||voices.find(v=>/kyoko|hana|haruka|mizuki|female/i.test(v.name))||voices[0]||null;
@@ -109,14 +113,15 @@ function speak(items){
   if(audioPlayback.paused){deferred=next;return;}
   if(index>=items.length){stopAudio('Écoute terminée.');return;}
   const raw=items[index++],item=typeof raw==='string'?{text:raw}:raw;
-  if(item.extra)selectComplement(item.key);
-  let file=item.extra?item.file:settings.audioMode==='recorded'&&(selectedAudioFiles?selectedAudioFiles[item.ref]:(localAudioHost&&localAudioFiles?.[item.ref]));
-  if(!file||failedRecordings.has(file)){if(item.extra)stopAudio('Cet enregistrement est indisponible.');else synthetic(item,!!file);return;}
-  if(item.extra&&typeof file==='string'){try{const response=await fetch('fichiers_audio_complet/'+file.split('/').map(encodeURIComponent).join('/'));if(!response.ok)throw new Error();file=await response.blob();if(!active())return;}catch{if(active())stopAudio('Cet enregistrement est indisponible.');return;}}
+  if(item.extra){selectComplement(item.key);document.getElementById('extra-current').textContent=item.label;const seek=document.getElementById('extra-seek');if(seek){seek.disabled=true;seek.value=0;}}
+  let file=settings.audioMode==='recorded'&&(item.extra?item.file:(selectedAudioFiles?selectedAudioFiles[item.ref]:(localAudioHost&&localAudioFiles?.[item.ref])));
+  if(!file||failedRecordings.has(file)){synthetic(item,!!file);return;}
+  const recordingKey=file;
+  if(item.extra&&typeof file==='string'){try{const response=await fetch('fichiers_audio_complet/'+file.split('/').map(encodeURIComponent).join('/'));if(!response.ok)throw new Error();file=await response.blob();if(!active())return;}catch{if(active()){failedRecordings.add(recordingKey);synthetic(item,true);}return;}}
   const player=new Audio();recordedPlayer=player;let settled=false;
   player.preload='none';player.preservesPitch=true;
   const release=()=>{clearTimer();resumeRecorded=null;player.onended=null;player.onerror=null;releaseRecordingURL(player);if(recordedPlayer===player)recordedPlayer=null;};
-  const fallback=()=>{if(settled||!active())return;settled=true;release();player.pause();player.removeAttribute('src');player.load();failedRecordings.add(file);if(item.extra)stopAudio('Cet enregistrement est indisponible.');else synthetic(item,true);};
+  const fallback=()=>{if(settled||!active())return;settled=true;release();player.pause();player.removeAttribute('src');player.load();failedRecordings.add(recordingKey);synthetic(item,true);};
   player.onended=()=>{if(settled||!active())return;settled=true;release();advance();};player.onerror=fallback;
   if(file instanceof Blob){player._objectURL=URL.createObjectURL(file);player.src=player._objectURL;}
   else player.src='fichiers_audio_complet/'+file.split('/').map(encodeURIComponent).join('/');
@@ -134,26 +139,48 @@ function speak(items){
 
 document.getElementById('pause-audio').addEventListener('click',toggleAudioPause);
 
-document.getElementById('choose-audio-folder').onclick=()=>document.getElementById('audio-folder-input').click();
-document.getElementById('audio-folder-input').onchange=e=>{if(e.target.files.length)chooseAudioFolder(e.target.files);e.target.value='';};
+document.getElementById('choose-audio-folder').onclick=()=>{document.getElementById('audio-diagnostic-report').textContent='Sélecteur demandé. En attente du retour du navigateur… Si ce message reste affiché après fermeture, aucun événement de sélection ou d’annulation n’a été reçu.';document.getElementById('audio-folder-input').click();};
+document.getElementById('audio-folder-input').onchange=e=>{chooseAudioFolder(e.target.files||[]);e.target.value='';};
+document.getElementById('audio-folder-input').addEventListener('cancel',()=>{document.getElementById('audio-diagnostic-report').textContent='Sélecteur fermé sans nouvelle sélection transmise (annulation ou sélection inchangée). Le choix audio précédent est conservé.';});
 
-// Les compléments restent séparés du corpus et utilisent leurs enregistrements réels.
+// Le catalogue vient du texte ; les MP3 sont une source de lecture facultative.
 function renderExtraAudio(){
  const host=document.getElementById('extra-audio');if(!host)return;
  const source=selectedExtraFiles||localExtraFiles;
  const id=settings.lesson;
- const entries=Object.entries(source||{}).filter(([key])=>key.startsWith(id+'-')).sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true}));
- if(source&&!entries.length){host.innerHTML='';return;}
+ if(!complementRows&&!complementError)loadComplements();
+ const catalog=new Map(Object.entries(source||{}).filter(([key])=>key.startsWith(id+'-')));
+ for(const [key,row] of complementRows||[]){if(row.Leçon!==id)continue;if(![...catalog.keys()].some(ref=>complementId(ref)===key))catalog.set(key,null);}
+ const entries=[...catalog].sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true}));
+ if(complementRows&&!entries.length){host.innerHTML='';return;}
  const opened=host.querySelector('details')?.open;
  const groups=[['Traduction',entries.filter(([key])=>Number(/-T(\d+)/.exec(key)[1])<200)],['Dictée',entries.filter(([key])=>Number(/-T(\d+)/.exec(key)[1])>=200)]];
- host.innerHTML=`<details class="panel extra-listening" ${opened?'open':''}><summary>Écoutes complémentaires</summary>${!source?'<p>Sélectionnez votre dossier fichiers_audio_complet pour accéder aux écoutes de cette leçon.</p><button id="extra-folder">Choisir mon dossier audio</button>':`<p class="muted">Écouter, répéter ou essayer de traduire. Pour la dictée, vous pouvez écrire sur papier. Révélez le texte quand vous le souhaitez.</p>${groups.filter(([,items])=>items.length).map(([title,items])=>`<section><h3>${title}</h3><div class="extra-tracks">${items.map(([key])=>`<button data-extra-track="${key}">${/-/.test(key.slice(id.length+1))?'▶ Consigne':'▶ '+Number(/-T(\d+)/.exec(key)[1])%100}</button>`).join('')}</div><button data-extra-group="${title}">▶ Tout écouter avec une pause</button></section>`).join('')}<div id="extra-text"></div><div class="extra-controls"><span id="extra-current" aria-live="polite">Choisissez une piste.</span><div><button id="extra-pause" disabled>Ⅱ Pause</button> <button id="extra-stop">■ Arrêter</button></div><label>Position dans la piste <input id="extra-seek" type="range" min="0" max="1" step="0.1" value="0" disabled></label><label>Vitesse <select id="extra-rate">${[.5,.65,.8,.86,1,1.2].map(rate=>`<option value="${rate}">${rate} ×</option>`).join('')}</select></label><p class="muted">La pause entre les pistes suit les réglages des leçons.</p></div>`}</details>`;
+ host.innerHTML=`<details class="panel extra-listening" ${opened?'open':''}><summary>Écoutes complémentaires</summary>${!entries.length?(complementError?'<p>Les écoutes complémentaires n’ont pas pu être chargées. Actualisez la page pour réessayer.</p>':'<p>Chargement des écoutes complémentaires…</p>'):`<p class="muted">Écouter, répéter ou essayer de traduire. Pour la dictée, vous pouvez écrire sur papier. Révélez le texte quand vous le souhaitez.</p>${groups.filter(([,items])=>items.length).map(([title,items])=>`<section><h3>${title}</h3><div class="extra-tracks">${items.map(([key])=>`<button data-extra-track="${key}">${Number(/-T(\d+)/.exec(key)[1])%100===0?'▶ Consigne':'▶ '+Number(/-T(\d+)/.exec(key)[1])%100}</button>`).join('')}</div><button data-extra-group="${title}">▶ Tout écouter avec une pause</button></section>`).join('')}<div id="extra-text"></div><div class="extra-controls"><span id="extra-current" aria-live="polite">Choisissez une piste.</span><div><button id="extra-pause" disabled>Ⅱ Pause</button> <button id="extra-stop">■ Arrêter</button></div><label>Position dans la piste <input id="extra-seek" type="range" min="0" max="1" step="0.1" value="0" disabled></label><label>Vitesse <select id="extra-rate">${[.5,.65,.8,.86,1,1.2].map(rate=>`<option value="${rate}">${rate} ×</option>`).join('')}</select></label><p class="muted">La pause entre les pistes suit les réglages des leçons.</p></div>`}</details>`;
  mountComplementText();
- host.querySelector('#extra-folder')?.addEventListener('click',()=>document.getElementById('audio-folder-input').click());
- const play=items=>speak(items.map(([key,file])=>({extra:true,file,key,label:`${id} · ${key.slice(id.length+1)}`})));
+ const play=items=>speak(items.map(([key])=>complementAudioItem(key)));
  host.querySelectorAll('[data-extra-track]').forEach(b=>b.onclick=()=>play(entries.filter(([key])=>key===b.dataset.extraTrack)));
  host.querySelectorAll('[data-extra-group]').forEach(b=>b.onclick=()=>play(groups.find(([title])=>title===b.dataset.extraGroup)[1]));
  const rate=host.querySelector('#extra-rate');if(rate){if(![...rate.options].some(o=>Number(o.value)===Number(settings.rate)))rate.add(new Option(settings.rate+' ×',settings.rate));rate.value=settings.rate;rate.onchange=()=>{settings.rate=Number(rate.value);if(recordedPlayer)recordedPlayer.playbackRate=settings.rate;applySettings();save();};}
  host.querySelector('#extra-pause')?.addEventListener('click',toggleAudioPause);
  host.querySelector('#extra-stop')?.addEventListener('click',()=>stopAudio('Lecture arrêtée.'));
  host.querySelector('#extra-seek')?.addEventListener('input',e=>{if(recordedPlayer&&audioPlayback?.extra)recordedPlayer.currentTime=Number(e.target.value);});
+}
+
+function showAudioSelectionDiagnostic(files,found,extras,duplicates){
+ const mp3=files.filter(file=>/\.mp3$/i.test(file.name));
+ const paths=files.filter(file=>!!file.webkitRelativePath);
+ const valid=Object.keys(found).length>0&&!duplicates.size;
+ let result=valid?'Sélection acceptée : enregistrements réels activés.':duplicates.size?'Sélection refusée : références en double.':!files.length?'Le navigateur a transmis une liste vide.':!mp3.length?'Aucun fichier portant l’extension .mp3 reçu.':!paths.length?'MP3 reçus sans chemin de dossier : impossible de retrouver leur leçon.':'Aucune phrase reconnue : les chemins ne correspondent pas aux leçons attendues.';
+ const sample=(mp3.length?mp3:files).slice(0,3).map((file,i)=>`Exemple ${i+1}
+Nom : ${file.name}
+Chemin relatif : ${file.webkitRelativePath||'(absent)'}
+Taille : ${file.size} octets
+Type : ${file.type||'(non fourni)'}`);
+ document.getElementById('audio-diagnostic-report').textContent=[
+  `Fichiers reçus : ${files.length}`,`MP3 reçus : ${mp3.length}`,`Fichiers avec chemin relatif : ${paths.length}`,`Fichiers de taille nulle : ${files.filter(file=>file.size===0).length}`,
+  `Phrases reconnues : ${Object.keys(found).length}`,`Compléments reconnus : ${Object.keys(extras).length}`,`Références en double : ${duplicates.size}`,'',result,'',...sample,
+  '', 'Exemple de chemin attendu : fichiers_audio_complet/L001-Japanese ASSIMIL/S01.mp3',
+  'Ce diagnostic examine les noms et chemins ; il ne confirme pas encore que le contenu audio peut être lu.'
+ ].join('\n');
+ if(!valid)document.getElementById('audio-diagnostic').open=true;
 }
