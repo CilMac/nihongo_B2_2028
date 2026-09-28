@@ -1,13 +1,14 @@
 'use strict';
 let guideData=null,guideLoading=null,guideQuery='',guideRenderRun=0;
 let guideView='rubriques',guideFilter='all';
-let guideTables=[];
+let guideTables=[],guideVocabulary=[];
+let guideVocabCategory='all',guideVocabSection='all';
 let guideChapters=[],guideSearchIndex=[];const guideNodeIds=new WeakMap();
 function guideSearchKey(text){return normalize(text).normalize('NFD').replace(/([a-z])[\u0300-\u036f]+/gi,'$1').normalize('NFC');}
 async function loadGuide(){
  if(guideData)return;
  if(!guideLoading)guideLoading=fetch('guideConversationJap.json').then(r=>{if(!r.ok)throw Error('Guide indisponible');return r.json();}).then(data=>{
-  guideData=data;guideChapters=[];guideSearchIndex=[];
+  guideData=data;guideChapters=[];guideSearchIndex=[];guideTables=[];guideVocabulary=[];
   for(const part of data.parts){for(const chapter of part.chapters){
    guideChapters.push({part,chapter});let index=0,tableNumber=0;
    const visit=(node,path=[],inTable=false)=>{if(!node||typeof node!=='object')return;if(Array.isArray(node)){node.forEach(n=>visit(n,path,inTable));return;}
@@ -26,6 +27,7 @@ async function loadGuide(){
     if(node.blocks)visit(node.blocks,nextPath,inTable);if(node.rows)visit(node.rows,nextPath,true);if(node.items)visit(node.items,nextPath,inTable);
    };visit(chapter.content);
   }}
+  buildGuideVocabulary();
  }).catch(error=>{guideLoading=null;throw error;});
  await guideLoading;
 }
@@ -77,13 +79,55 @@ function guidePreview(row){
  const text=pieces.slice(Math.max(0,first),Math.max(0,first)+6).join(' · ');
  return text.length>260?text.slice(0,260)+'…':text;
 }
+// Seules les lignes à trois cellules explicitement identifiées sont associées.
+// Les tableaux grammaticaux et les cellules ambiguës restent dans le lecteur source.
+function buildGuideVocabulary(){
+ guideVocabulary=[];
+ for(const table of guideTables){
+  if(!['Conversation','Les indispensables'].includes(table.part.title))continue;
+  table.node.rows.forEach((cells,index)=>{
+   if(cells.length!==3||!cells.every(c=>c&&c.type==='paragraph'))return;
+   const [fr,ja,reading]=cells;
+   if(fr.style!=='mentioned'||!ja.japanese||reading.style!=='foreign'||/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u.test(reading.text||''))return;
+   const spoken=ja.text.replace(/\[note \d+\]/gi,'').trim();
+   if(!fr.text?.trim()||!reading.text?.trim()||!/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u.test(spoken)||/[a-zA-ZÀ-ÖØ-öø-ÿ]/.test(spoken))return;
+   const section=table.path.at(-1)||'Autres mots et expressions';
+   guideVocabulary.push({id:table.id+'-v'+index,sourceId:guideNodeIds.get(ja),table,section,japanese:ja.text,spoken,reading:reading.text,french:fr.text,
+    search:guideSearchKey([fr.text,ja.text,reading.text,table.chapter.title,section].join(' '))});
+  });
+ }
+}
+function guideVocabCategories(){
+ return guideChapters.filter(c=>guideVocabulary.some(v=>v.table.chapter.id===c.chapter.id));
+}
+function updateGuideVocabulary(){
+ const target=$('#guide-results');
+ const categoryRows=guideVocabulary.filter(v=>guideVocabCategory==='all'||v.table.chapter.id===guideVocabCategory);
+ const sections=[...new Set(categoryRows.map(v=>v.section))];
+ if(!sections.includes(guideVocabSection))guideVocabSection='all';
+ $('#guide-vocab-section-filter').hidden=guideVocabCategory==='all'||sections.length<2;
+ $('#guide-vocab-section').innerHTML='<option value="all">Toutes les sous-catégories</option>'+sections.map(t=>`<option value="${esc(t)}">${esc(t)} · ${categoryRows.filter(v=>v.section===t).length}</option>`).join('');
+ $('#guide-vocab-section').value=guideVocabSection;
+ const terms=guideSearchKey(guideQuery.trim()).split(/\s+/).filter(Boolean);
+ const rows=categoryRows.filter(v=>(guideVocabSection==='all'||v.section===guideVocabSection)&&terms.every(t=>v.search.includes(t)));
+ const entry=v=>`<article class="guide-vocab-row"><div><button class="guide-speak guide-japanese" lang="ja" data-speak="${esc(v.spoken)}" aria-label="Écouter : ${esc(v.spoken)}">${guideMarked(v.japanese)} <span aria-hidden="true">♪</span></button><p class="romaji guide-pronunciation">${guideMarked(v.reading)}</p></div><p class="fr">${guideMarked(v.french)}</p><div class="guide-vocab-source"><small>${esc(v.section)}</small><a href="#guide/${v.table.chapter.id}/${v.sourceId}">Voir dans le guide →</a></div></article>`;
+ let content;
+ if(guideVocabCategory==='all')content=guideVocabCategories().map(({chapter})=>{
+  const matches=rows.filter(v=>v.table.chapter.id===chapter.id);if(!matches.length)return '';
+  return `<details class="guide-vocab-group guide-table-group" ${terms.length?'open':''}><summary><strong>${esc(chapter.title)}</strong> <span class="pill">${matches.length}</span></summary><div class="guide-vocab-list">${matches.map(entry).join('')}</div></details>`;
+ }).join('');else content=`<div class="guide-vocab-list">${rows.map(entry).join('')}</div>`;
+ target.innerHTML=`<p class="muted" role="status">${rows.length} ${rows.length===1?'entrée':'entrées'} · mots et expressions</p><p class="muted guide-vocab-note">Sélection issue des listes structurées du guide. Prononciation et traductions conservées telles qu’elles figurent dans la source ; certains textes extraits comportent des espacements irréguliers. Le lien permet de consulter le contexte et les notes.</p>${rows.length?content:'<p class="panel">Aucun mot trouvé. Changez la recherche ou la catégorie.</p>'}`;
+}
 function updateGuideSearch(){
  const target=document.getElementById('guide-results');if(!target)return;
  const terms=guideSearchKey(guideQuery.trim()).split(/\s+/).filter(Boolean);
- const tables=guideView==='tableaux';
- $('#guide-home-sections').hidden=tables||!!terms.length;
+ const tables=guideView==='tableaux',vocabulary=guideView==='vocabulaire';
+ $('#guide-home-sections').hidden=tables||vocabulary||!!terms.length;
+ $('#guide-vocab-category-filter').hidden=!vocabulary;
+ $('#guide-vocab-section-filter').hidden=true;
  $('#guide-table-filter').hidden=!tables;
  document.querySelectorAll('[data-guide-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.guideView===guideView)));
+ if(vocabulary){updateGuideVocabulary();return;}
  if(!terms.length&&!tables){target.innerHTML='';return;}
  const found=(tables?guideTables:guideSearchIndex).filter(row=>(!tables||guideFilter==='all'||row.category===guideFilter)&&terms.every(term=>row.search.includes(term)||row.context.includes(term)));
  found.sort((a,b)=>terms.reduce((sum,t)=>sum+(b.context.includes(t)?3:0)-(a.context.includes(t)?3:0),0));
@@ -116,11 +160,11 @@ async function renderGuide(r){
  let content='';
  if(selected){const {chapter,part}=selected;const siblings=part.chapters,i=siblings.indexOf(chapter);
   const notes=guideData.footnotes.filter(note=>(chapter.footnote_refs||[]).some(ref=>String(ref)===String(note.number))||JSON.stringify(chapter.content).includes(`[note ${note.number}]`));
-  content=`<div class="guide-breadcrumb"><a data-context-return href="#guide">← ${guideView==='tableaux'?'Retour aux tableaux':guideQuery?'Retour à la recherche':'Sommaire du guide'}</a><span>${esc(part.title)}</span></div>${intro('GUIDE · '+part.title,chapter.title,'')}<div class="guide-reader">${guideNodes(chapter.content,chapter.title)}${notes.length?`<details class="guide-section"><summary>Notes du chapitre</summary>${notes.map(n=>`<p><strong>Note ${esc(n.number)}.</strong> ${esc(n.text)}</p>`).join('')}</details>`:''}</div><nav class="guide-next" aria-label="Chapitres du guide">${i>0?`<a href="#guide/${siblings[i-1].id}">← ${esc(siblings[i-1].title)}</a>`:''}${i<siblings.length-1?`<a href="#guide/${siblings[i+1].id}">${esc(siblings[i+1].title)} →</a>`:''}</nav>`;
+  content=`<div class="guide-breadcrumb"><a data-context-return href="#guide">← ${guideView==='vocabulaire'?'Retour au vocabulaire':guideView==='tableaux'?'Retour aux tableaux':guideQuery?'Retour à la recherche':'Sommaire du guide'}</a><span>${esc(part.title)}</span></div>${intro('GUIDE · '+part.title,chapter.title,'')}<div class="guide-reader">${guideNodes(chapter.content,chapter.title)}${notes.length?`<details class="guide-section"><summary>Notes du chapitre</summary>${notes.map(n=>`<p><strong>Note ${esc(n.number)}.</strong> ${esc(n.text)}</p>`).join('')}</details>`:''}</div><nav class="guide-next" aria-label="Chapitres du guide">${i>0?`<a href="#guide/${siblings[i-1].id}">← ${esc(siblings[i-1].title)}</a>`:''}${i<siblings.length-1?`<a href="#guide/${siblings[i+1].id}">${esc(siblings[i+1].title)} →</a>`:''}</nav>`;
  }else{
-  content=intro('CONSULTER · ÉCOUTER · PARLER','Guide de conversation','Un accès par situation, indépendant des leçons et de l’atelier.')+`<div class="toolbar"><label for="guide-search">Chercher dans le guide</label><input id="guide-search" type="search" value="${esc(guideQuery)}" placeholder="Addition, gare, réservation…"><button id="guide-clear">Effacer</button></div><div class="guide-tools" role="group" aria-label="Explorer le guide"><button type="button" data-guide-view="rubriques" aria-pressed="true">Rubriques</button><button type="button" data-guide-view="tableaux" aria-pressed="false">Tableaux · 113</button><label id="guide-table-filter" hidden>Catégorie <select id="guide-category"><option value="all">Tous les tableaux</option><option value="grammar">Notes de grammaire</option><option value="numbers">Nombres et temps</option><option value="conversation">Conversation et vocabulaire</option><option value="other">Autres repères</option></select></label></div><div id="guide-results"></div>${guideHome()}`;
+  content=intro('CONSULTER · ÉCOUTER · PARLER','Guide de conversation','Un accès par situation, indépendant des leçons et de l’atelier.')+`<div class="toolbar"><label for="guide-search">Chercher dans le guide</label><input id="guide-search" type="search" value="${esc(guideQuery)}" placeholder="Addition, gare, réservation…"><button id="guide-clear">Effacer</button></div><div class="guide-tools" role="group" aria-label="Explorer le guide"><button type="button" data-guide-view="rubriques" aria-pressed="true">Rubriques</button><button type="button" data-guide-view="tableaux" aria-pressed="false">Tableaux · 113</button><button type="button" data-guide-view="vocabulaire" aria-pressed="false">Vocabulaire · ${guideVocabulary.length}</button><label id="guide-table-filter" hidden>Catégorie <select id="guide-category"><option value="all">Tous les tableaux</option><option value="grammar">Notes de grammaire</option><option value="numbers">Nombres et temps</option><option value="conversation">Conversation et vocabulaire</option><option value="other">Autres repères</option></select></label><label id="guide-vocab-category-filter" hidden>Catégorie <select id="guide-vocab-category"><option value="all">Toutes les catégories</option>${guideVocabCategories().map(({chapter})=>`<option value="${chapter.id}">${esc(chapter.title)} · ${guideVocabulary.filter(v=>v.table.chapter.id===chapter.id).length}</option>`).join('')}</select></label><label id="guide-vocab-section-filter" hidden>Sous-catégorie <select id="guide-vocab-section"></select></label></div><div id="guide-results"></div>${guideHome()}`;
  }
  $('#main').innerHTML=`<div class="guide-module">${content}<details class="guide-about"><summary>À propos de cette édition et des lectures</summary><p>Guide Assimil de Catherine Garnier et Takahashi Nozomi, édition 2013. Texte extrait de votre EPUB ; les tableaux et leur ordre sont conservés. Les informations pratiques et historiques sont celles de cette édition.</p><p>La prononciation reprend les conventions du guide, sans conversion en romaji standard. Le réglage Romaji permet de masquer ou d’afficher ses lignes de prononciation ; Français agit sur les lignes de traduction identifiées. Les explications restent lisibles. Le guide ne fournit pas de ligne kana séparée.</p><p>Cliquez sur une expression entièrement en japonais pour l’écouter en synthèse vocale. Les lectures peuvent varier selon la voix ; les extraits japonais mêlés aux explications ne sont pas lus automatiquement.</p></details></div>`;
- if(!selected){$('#guide-category').value=guideFilter;$('#guide-category').onchange=e=>{guideFilter=e.target.value;updateGuideSearch();};document.querySelectorAll('[data-guide-view]').forEach(b=>b.onclick=()=>{guideView=b.dataset.guideView;updateGuideSearch();});$('#guide-search').oninput=e=>{guideQuery=e.target.value;updateGuideSearch();};$('#guide-clear').onclick=()=>{guideQuery='';$('#guide-search').value='';updateGuideSearch();$('#guide-search').focus();};updateGuideSearch();}
+ if(!selected){$('#guide-vocab-category').value=guideVocabCategory;$('#guide-vocab-category').onchange=e=>{guideVocabCategory=e.target.value;guideVocabSection='all';updateGuideSearch();};$('#guide-vocab-section').onchange=e=>{guideVocabSection=e.target.value;updateGuideSearch();};$('#guide-category').value=guideFilter;$('#guide-category').onchange=e=>{guideFilter=e.target.value;updateGuideSearch();};document.querySelectorAll('[data-guide-view]').forEach(b=>b.onclick=()=>{guideView=b.dataset.guideView;updateGuideSearch();});$('#guide-search').oninput=e=>{guideQuery=e.target.value;updateGuideSearch();};$('#guide-clear').onclick=()=>{guideQuery='';$('#guide-search').value='';updateGuideSearch();$('#guide-search').focus();};updateGuideSearch();}
  if(r.line&&selected){const target=document.getElementById(r.line);if(target&&$('#main').contains(target)){let parent=target;while(parent&&parent!==$('#main')){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement;}target.querySelector('.guide-literal')?.setAttribute('open','');target.classList.add('guide-match');requestAnimationFrame(()=>{if(route().tab==='guide')target.scrollIntoView({block:'center'});});}}
 }

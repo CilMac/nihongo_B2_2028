@@ -229,7 +229,7 @@ function captureContext(link){
   {lecons:'Retour à la leçon',dictionnaire:'Retour au dictionnaire',grammaire:'Retour à la grammaire',atelier:'Retour à l’atelier',guide:guideQuery&&!route().id?'Retour à la recherche':'Retour au guide'}[tab];
  return {hash:location.hash,nodes:[...$('#main').childNodes],scrollY:window.scrollY,focus:link,label,
   scrolls:[...$('#main').querySelectorAll('*')].filter(el=>el.scrollTop||el.scrollLeft).map(el=>[el,el.scrollTop,el.scrollLeft]),
-  search,onlyFavorites,page,dictionaryCategory,guideQuery,guideView,guideFilter,lesson:settings.lesson,
+  search,onlyFavorites,page,dictionaryCategory,guideQuery,guideView,guideFilter,guideVocabCategory,guideVocabSection,lesson:settings.lesson,
   atelierSettings:{...atelierSettings},atelierSession,currentComplement,complementRevealed};
 }
 document.addEventListener('click',event=>{
@@ -264,7 +264,7 @@ function restoreContext(index){
  const saved=navigationTrail[index];navigationTrail.splice(index);
  stopAudio();guideRenderRun++; // Invalider un éventuel chargement du guide encore en cours.
  dictionaryReturn=null;analysisReturn=null;atelierListReturn=null;
- search=saved.search;onlyFavorites=saved.onlyFavorites;page=saved.page;dictionaryCategory=saved.dictionaryCategory;guideQuery=saved.guideQuery;guideView=saved.guideView;guideFilter=saved.guideFilter;
+ search=saved.search;onlyFavorites=saved.onlyFavorites;page=saved.page;dictionaryCategory=saved.dictionaryCategory;guideQuery=saved.guideQuery;guideView=saved.guideView;guideFilter=saved.guideFilter;guideVocabCategory=saved.guideVocabCategory;guideVocabSection=saved.guideVocabSection;
  if(route().tab==='atelier'){atelierSettings=saved.atelierSettings;atelierSession=saved.atelierSession;}
  currentComplement=saved.currentComplement;complementRevealed=saved.complementRevealed;
  settings.lesson=saved.lesson;save();
