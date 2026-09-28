@@ -190,3 +190,17 @@ function restoreAnalysisReturn(){
  });
 }
 
+
+// Informations du projet : dialogue natif, navigation clavier et retour au bouton.
+const projectInfo=document.getElementById('project-info');
+$('#info-toggle').onclick=()=>{projectInfo.showModal();document.body.classList.add('info-open');};
+$('#info-close').onclick=()=>projectInfo.close();
+projectInfo.addEventListener('close',()=>{document.body.classList.remove('info-open');$('#info-toggle').focus({preventScroll:true});});
+projectInfo.addEventListener('click',event=>{if(event.target!==projectInfo)return;const r=projectInfo.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)projectInfo.close();});
+projectInfo.addEventListener('keydown',event=>{
+ if(event.key!=='Tab')return;
+ const items=[...projectInfo.querySelectorAll('button:not(:disabled), summary, a[href], input:not(:disabled), select:not(:disabled), [tabindex="0"]')].filter(el=>el.getClientRects().length);
+ const first=items[0],last=items.at(-1);
+ if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+ else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+});
