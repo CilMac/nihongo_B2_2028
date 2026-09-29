@@ -262,3 +262,6 @@ body.info-open{overflow:hidden}#project-info{width:min(800px,calc(100vw - 32px))
 /* Une erreur doit se distinguer du retour positif, y compris par son libellé. */
 #atelier-feedback .feedback-error { background: #fff1f0; border-left-color: #b42318; }
 #atelier-feedback .feedback-error > h3 { color: #b42318; }
+
+/* Favoris du Guide : contrôles distincts de la lecture audio. */
+.guide-favorite-block{display:flow-root}.guide-favorite-block>.favorite,.guide-table td>.favorite{float:right;margin:2px 0 4px 10px}.guide-table caption>.favorite{float:right}.guide-vocab-source>.favorite{align-self:flex-start}.guide-saved{width:100%}.guide-saved-row{display:flex;align-items:flex-start;gap:10px;margin:10px 0}.guide-saved-row>a{min-width:0;overflow-wrap:anywhere}.guide-saved-row a strong,.guide-saved-row a span{display:block}.guide-saved-row>.favorite{flex-shrink:0}

@@ -2,6 +2,10 @@
 let guideData=null,guideLoading=null,guideQuery='',guideRenderRun=0;
 let guideView='rubriques',guideFilter='all';
 let guideTables=[],guideVocabulary=[];
+const guideFavoriteEntries=new Map();
+function guideFavoriteKey(chapter,id){return 'guidefav:'+chapter+':'+id;}
+function guideFavoriteStar(id){return guideFavoriteEntries.has(id)?star(id):'';}
+
 let guideVocabCategory='all',guideVocabSection='all';
 let guideChapters=[],guideSearchIndex=[];const guideNodeIds=new WeakMap();
 function guideSearchKey(text){return normalize(text).normalize('NFD').replace(/([a-z])[\u0300-\u036f]+/gi,'$1').normalize('NFC');}
@@ -28,6 +32,19 @@ async function loadGuide(){
    };visit(chapter.content);
   }}
   buildGuideVocabulary();
+  guideFavoriteEntries.clear();
+  for(const row of guideSearchIndex){
+   if(!['paragraph','table'].includes(row.node.type))continue;
+   const key=guideFavoriteKey(row.chapter.id,row.id);
+   guideFavoriteEntries.set(key,{key,chapter:row.chapter.id,target:row.id,type:row.type,title:[row.chapter.title,...row.path].join(' → '),text:row.text});
+  }
+  for(const table of guideTables)for(const cells of table.node.rows){
+   const nodes=cells.flatMap(c=>Array.isArray(c)?c:[c]);
+   const anchor=nodes.find(n=>n.japanese)||nodes.find(n=>guideNodeIds.has(n));
+   if(!anchor)continue;
+   const target=guideNodeIds.get(anchor),key=guideFavoriteKey(table.chapter.id,target);
+   guideFavoriteEntries.set(key,{key,chapter:table.chapter.id,target,type:'Expression',title:[table.chapter.title,...table.path].join(' → '),text:guidePlainText(cells)});
+  }
  }).catch(error=>{guideLoading=null;throw error;});
  await guideLoading;
 }
@@ -43,17 +60,19 @@ function guideParagraph(node){
  if(node.style==='literal'&&!node.runs)return `<details class="guide-literal"><summary>Mot à mot</summary><p class="fr">${content}</p></details>`;
  return `<p class="${cls}">${content}</p>`;
 }
-function guideNodes(nodes,context='Tableau du guide'){
+function guideNodes(nodes,context='Tableau du guide',inTable=false){
  return (nodes||[]).map(node=>{
   const id=guideNodeIds.get(node)||'';
-  if(node.type==='paragraph')return `<div id="${id}">${guideParagraph(node)}</div>`;
+  const chapter=id.match(/^guide-(tpc-\d+)-/)?.[1];
+  const favorite=guideFavoriteStar(guideFavoriteKey(chapter,id));
+  if(node.type==='paragraph')return `<div id="${id}" class="${inTable?'':'guide-favorite-block'}">${!inTable?favorite:''}${guideParagraph(node)}</div>`;
   if(node.type==='section'){
-   const inside=guideNodes(node.blocks,node.title||context);
+   const inside=guideNodes(node.blocks,node.title||context,inTable);
    if(!node.title)return `<div id="${id}" class="guide-group">${inside}</div>`;
    return `<details id="${id}" class="guide-section"><summary>${esc(node.title)}</summary><div class="guide-section-body">${inside}</div></details>`;
   }
-  if(node.type==='table')return `<div id="${id}" class="guide-table-scroll" tabindex="0" role="region" aria-label="${esc(context)} — tableau défilant"><table class="guide-table"><caption>${esc(context)}</caption><tbody>${node.rows.map(row=>`<tr>${row.map(cell=>`<td>${guideNodes(Array.isArray(cell)?cell:[cell],context)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
-  if(node.type==='list'){const tag=node.ordered?'ol':'ul';return `<${tag} id="${id}" class="guide-list">${node.items.map(item=>`<li>${guideNodes(item,context)}</li>`).join('')}</${tag}>`;}
+  if(node.type==='table')return `<div id="${id}" class="guide-table-scroll" tabindex="0" role="region" aria-label="${esc(context)} — tableau défilant"><table class="guide-table"><caption>${esc(context)} ${favorite}</caption><tbody>${node.rows.map(row=>{const nodes=row.flatMap(c=>Array.isArray(c)?c:[c]);const anchor=nodes.find(n=>n.japanese)||nodes.find(n=>guideNodeIds.has(n));const rowStar=anchor?guideFavoriteStar(guideFavoriteKey(chapter,guideNodeIds.get(anchor))):'';return `<tr>${row.map((cell,i)=>`<td>${i===0?rowStar:''}${guideNodes(Array.isArray(cell)?cell:[cell],context,true)}</td>`).join('')}</tr>`;}).join('')}</tbody></table></div>`;
+  if(node.type==='list'){const tag=node.ordered?'ol':'ul';return `<${tag} id="${id}" class="guide-list">${node.items.map(item=>`<li>${guideNodes(item,context,inTable)}</li>`).join('')}</${tag}>`;}
   return '';
  }).join('');
 }
@@ -110,7 +129,7 @@ function updateGuideVocabulary(){
  $('#guide-vocab-section').value=guideVocabSection;
  const terms=guideSearchKey(guideQuery.trim()).split(/\s+/).filter(Boolean);
  const rows=categoryRows.filter(v=>(guideVocabSection==='all'||v.section===guideVocabSection)&&terms.every(t=>v.search.includes(t)));
- const entry=v=>`<article class="guide-vocab-row"><div><button class="guide-speak guide-japanese" lang="ja" data-speak="${esc(v.spoken)}" aria-label="Écouter : ${esc(v.spoken)}">${guideMarked(v.japanese)} <span aria-hidden="true">♪</span></button><p class="romaji guide-pronunciation">${guideMarked(v.reading)}</p></div><p class="fr">${guideMarked(v.french)}</p><div class="guide-vocab-source"><small>${esc(v.section)}</small><a href="#guide/${v.table.chapter.id}/${v.sourceId}">Voir dans le guide →</a></div></article>`;
+ const entry=v=>`<article class="guide-vocab-row"><div><button class="guide-speak guide-japanese" lang="ja" data-speak="${esc(v.spoken)}" aria-label="Écouter : ${esc(v.spoken)}">${guideMarked(v.japanese)} <span aria-hidden="true">♪</span></button><p class="romaji guide-pronunciation">${guideMarked(v.reading)}</p></div><p class="fr">${guideMarked(v.french)}</p><div class="guide-vocab-source">${guideFavoriteStar(guideFavoriteKey(v.table.chapter.id,v.sourceId))}<small>${esc(v.section)}</small><a href="#guide/${v.table.chapter.id}/${v.sourceId}">Voir dans le guide →</a></div></article>`;
  let content;
  if(guideVocabCategory==='all')content=guideVocabCategories().map(({chapter})=>{
   const matches=rows.filter(v=>v.table.chapter.id===chapter.id);if(!matches.length)return '';

@@ -36,10 +36,10 @@
       "explication": "Le thème annonce ce dont on parle. La particule wa vient après ce thème ; le commentaire suit. Avec un nom, desu termine la phrase polie. Le thème peut être omis quand le contexte suffit.",
       "constructions": [
         {
-          "jp": "N1 は N2 です",
-          "kana": "N1 は N2 です",
-          "romaji": "N1 wa N2 desu",
-          "fr": "N1 est N2 : N1 est le thème, N2 le nom qui le décrit."
+          "jp": "私は学生です。",
+          "kana": "わたしはがくせいです。",
+          "romaji": "watashi wa gakusei desu.",
+          "fr": "Je suis étudiant. « Moi » est le thème ; on précise ensuite que je suis étudiant."
         }
       ],
       "formation": [
@@ -213,16 +213,10 @@
       "explication": "Dans une question polie, on ajoute généralement ka à la fin, sans inverser les mots. Pour demander une information précise, le mot interrogatif occupe la place de l’information manquante.",
       "constructions": [
         {
-          "jp": "…ですか",
-          "kana": "…ですか",
-          "romaji": "…desu ka",
-          "fr": "Est-ce… ?"
-        },
-        {
-          "jp": "…ますか",
-          "kana": "…ますか",
-          "romaji": "…masu ka",
-          "fr": "Est-ce que… ?"
+          "jp": "食べますか",
+          "kana": "たべますか",
+          "romaji": "tabemasu ka",
+          "fr": "Mangez-vous ? / Voulez-vous en manger ?"
         }
       ],
       "formation": [
@@ -433,10 +427,16 @@
       "explication": "No relie deux noms. Le premier précise le second : possesseur, origine, contenu, domaine… Le nom principal vient à la fin. Il ne faut donc pas traduire chaque no mécaniquement par « de ».",
       "constructions": [
         {
-          "jp": "N1 の N2",
-          "kana": "N1 の N2",
-          "romaji": "N1 no N2",
-          "fr": "N2 précisé par N1"
+          "jp": "料理の本",
+          "kana": "りょうりのほん",
+          "romaji": "ryouri no hon",
+          "fr": "livre de cuisine"
+        },
+        {
+          "jp": "私の本",
+          "kana": "わたしのほん",
+          "romaji": "watashi no hon",
+          "fr": "mon livre"
         }
       ],
       "formation": [
@@ -597,16 +597,22 @@
       "explication": "Kore, sore et are désignent directement une chose. Kono, sono et ano doivent être suivis d’un nom. Dans la situation la plus simple, ko- est proche de moi, so- proche de toi, a- éloigné de nous deux.",
       "constructions": [
         {
-          "jp": "これ・それ・あれ",
-          "kana": "これ・それ・あれ",
-          "romaji": "kore / sore / are",
-          "fr": "ceci / cela près de toi / cela là-bas"
+          "jp": "これ",
+          "kana": "これ",
+          "romaji": "kore",
+          "fr": "ceci"
         },
         {
-          "jp": "この N・その N・あの N",
-          "kana": "この N・その N・あの N",
-          "romaji": "kono N / sono N / ano N",
-          "fr": "ce N-ci / ce N près de toi / ce N là-bas"
+          "jp": "この本",
+          "kana": "このほん",
+          "romaji": "kono hon",
+          "fr": "ce livre-ci"
+        },
+        {
+          "jp": "その本",
+          "kana": "そのほん",
+          "romaji": "sono hon",
+          "fr": "ce livre près de toi / le livre dont on parle"
         }
       ],
       "formation": [
@@ -1042,10 +1048,28 @@
       "explication": "Une fois la forme en masu connue, on garde ce qui la précède et on change la terminaison. Le non-passé exprime une habitude, une action future ou d’autres valeurs selon le contexte. Le verbe ne change pas avec je, tu, nous…",
       "constructions": [
         {
-          "jp": "～ます・～ません・～ました・～ませんでした",
-          "kana": "～ます・～ません・～ました・～ませんでした",
-          "romaji": "…masu / …masen / …mashita / …masen deshita",
-          "fr": "affirmatif non-passé / négatif non-passé / affirmatif passé / négatif passé"
+          "jp": "行きます",
+          "kana": "いきます",
+          "romaji": "ikimasu",
+          "fr": "je vais / j’irai"
+        },
+        {
+          "jp": "行きません",
+          "kana": "いきません",
+          "romaji": "ikimasen",
+          "fr": "je ne vais pas / je n’irai pas"
+        },
+        {
+          "jp": "行きました",
+          "kana": "いきました",
+          "romaji": "ikimashita",
+          "fr": "je suis allé"
+        },
+        {
+          "jp": "行きませんでした",
+          "kana": "いきませんでした",
+          "romaji": "ikimasen deshita",
+          "fr": "je ne suis pas allé"
         }
       ],
       "formation": [
@@ -1253,10 +1277,16 @@
       "explication": "La particule o se place après ce sur quoi porte l’action : boire quoi, acheter quoi, regarder quoi. Le verbe vient ensuite. Le sujet peut rester implicite.",
       "constructions": [
         {
-          "jp": "N を V",
-          "kana": "N を V",
-          "romaji": "N o V",
-          "fr": "faire l’action V sur l’objet N"
+          "jp": "パンを食べます",
+          "kana": "パンをたべます",
+          "romaji": "pan o tabemasu",
+          "fr": "Je mange du pain."
+        },
+        {
+          "jp": "本を読みます",
+          "kana": "ほんをよみます",
+          "romaji": "hon o yomimasu",
+          "fr": "Je lis un livre."
         }
       ],
       "formation": [
@@ -1414,24 +1444,30 @@
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Comprendre les rôles de wa et ga sans chercher un équivalent français unique.",
-      "explication": "Wa installe le thème : « à propos de… ». Ga marque le sujet de ce qui est dit. Ga est notamment fréquent pour présenter un événement ou identifier qui ou quoi répond à une question. Le choix dépend aussi du contexte et de ce que l’on veut mettre en avant.",
+      "explication": "は (wa) annonce ce dont on parle : on pose un thème, puis on donne une information à son propos. が (ga) peut identifier qui fait l’action ou ce qui est présent, et sert aussi à présenter un événement. Avec 好き (suki) ou 大好き (daisuki), le groupe suivi de が désigne ce que l’on aime. Lire la construction entière et la question à laquelle elle répond est plus utile que chercher une traduction unique de chaque particule.",
       "constructions": [
         {
-          "jp": "N は…",
-          "kana": "N は…",
-          "romaji": "N wa…",
-          "fr": "à propos de N…"
+          "jp": "私はコーヒーにします。",
+          "kana": "わたしはコーヒーにします。",
+          "romaji": "watashi wa koohii ni shimasu.",
+          "fr": "Pour moi, ce sera un café."
         },
         {
-          "jp": "N が…",
-          "kana": "N が…",
-          "romaji": "N ga…",
-          "fr": "N est le sujet de ce qui suit"
+          "jp": "友達が来ました。",
+          "kana": "ともだちがきました。",
+          "romaji": "tomodachi ga kimashita.",
+          "fr": "Un ami est venu."
+        },
+        {
+          "jp": "私はコーヒーが好きです。",
+          "kana": "わたしはコーヒーがすきです。",
+          "romaji": "watashi wa koohii ga suki desu.",
+          "fr": "Moi, j’aime le café."
         }
       ],
       "formation": [
         {
-          "texte": "Comparer une information nouvelle et un commentaire sur un thème.",
+          "texte": "Deux lectures possibles : annoncer une venue ou commenter le cas de l’ami. Le contexte décide.",
           "formes": [
             {
               "jp": "友達が来ました",
@@ -1446,11 +1482,66 @@
               "fr": "Quant à mon ami, il est venu."
             }
           ]
+        },
+        {
+          "texte": "Dialogue créé pour la fiche — au café : poser la personne comme thème. A demande le choix ; B annonce le sien.",
+          "formes": [
+            {
+              "jp": "何にしますか。",
+              "kana": "なににしますか。",
+              "romaji": "nani ni shimasu ka.",
+              "fr": "A : Que prendrez-vous ?"
+            },
+            {
+              "jp": "私はコーヒーにします。",
+              "kana": "わたしはコーヒーにします。",
+              "romaji": "watashi wa koohii ni shimasu.",
+              "fr": "B : Pour moi, ce sera un café."
+            }
+          ]
+        },
+        {
+          "texte": "Dialogue créé pour la fiche — identifier la personne venue. だれ (dare) signifie « qui » ; la réponse donne cette personne.",
+          "formes": [
+            {
+              "jp": "だれが来ましたか。",
+              "kana": "だれがきましたか。",
+              "romaji": "dare ga kimashita ka.",
+              "fr": "A : Qui est venu ?"
+            },
+            {
+              "jp": "友達が来ました。",
+              "kana": "ともだちがきました。",
+              "romaji": "tomodachi ga kimashita.",
+              "fr": "B : Un ami est venu."
+            }
+          ]
+        },
+        {
+          "texte": "Dialogue créé pour la fiche — dire ce que l’on aime. Dans la réponse, は présente la personne ; が désigne la chose appréciée.",
+          "formes": [
+            {
+              "jp": "何が好きですか。",
+              "kana": "なにがすきですか。",
+              "romaji": "nani ga suki desu ka.",
+              "fr": "A : Qu’aimez-vous ?"
+            },
+            {
+              "jp": "私はコーヒーが好きです。",
+              "kana": "わたしはコーヒーがすきです。",
+              "romaji": "watashi wa koohii ga suki desu.",
+              "fr": "B : Moi, j’aime le café."
+            }
+          ]
         }
       ],
       "pieges": [
         "Wa n’est pas simplement « la particule du sujet ». Un moment ou un lieu peut aussi être le thème.",
-        "Ne pas appliquer une règle absolue « connu = wa, nouveau = ga » : contraste et structure de la phrase comptent également."
+        "Ne pas appliquer une règle absolue « connu = wa, nouveau = ga » : contraste et structure de la phrase comptent également.",
+        "は et が peuvent apparaître dans la même phrase : 私はコーヒーが好きです (watashi wa koohii ga suki desu). 私は présente la personne ; コーヒーが désigne ce qu’elle aime.",
+        "好き (suki) est un adjectif en な, même si le français emploie le verbe « aimer ». La chose appréciée est suivie de が好きです (ga suki desu), comme dans コーヒーが好きです (koohii ga suki desu, j’aime le café). 大好き (daisuki) exprime un goût très marqué.",
+        "コーヒーは好きです (koohii wa suki desu) est également possible : le café devient le thème, éventuellement en contraste avec autre chose. Cela ne rend pas は interchangeable avec が dans tous les contextes.",
+        "Avec だれが来ましたか (dare ga kimashita ka), on cherche à identifier la personne venue. Ne pas transformer ce repère en règle universelle « toute question exige が »."
       ],
       "exemples": [
         {
@@ -1494,6 +1585,34 @@
             "fr": "Qu’y a-t-il ?"
           },
           "commentaire": "La question cherche à identifier ce qui est présent."
+        },
+        {
+          "source": "N9-S03",
+          "jp": "中華 料理 が 大好き です。",
+          "kana": "ちゅうか りょうり が だいすき です。",
+          "romaji": "chuuka ryouri ga daisuki desu.",
+          "fr": "J’adore la cuisine chinoise.",
+          "cible": {
+            "jp": "中華 料理 が 大好き です",
+            "kana": "ちゅうか りょうり が だいすき です",
+            "romaji": "chuuka ryouri ga daisuki desu",
+            "fr": "J’adore la cuisine chinoise."
+          },
+          "commentaire": "が désigne ici ce que la personne apprécie. La personne elle-même reste comprise dans le dialogue."
+        },
+        {
+          "source": "N12-S06",
+          "jp": "私 は コーヒー。",
+          "kana": "わたし は コーヒー。",
+          "romaji": "watashi wa koohii.",
+          "fr": "Pour moi, un café.",
+          "cible": {
+            "jp": "私 は コーヒー",
+            "kana": "わたし は コーヒー",
+            "romaji": "watashi wa koohii",
+            "fr": "Pour moi, un café."
+          },
+          "commentaire": "Après la question de N12-S05, は pose la personne comme thème. La réponse abrégée est comprise comme un choix, pas comme une affirmation « je suis du café »."
         }
       ],
       "exercice": {
@@ -1553,41 +1672,197 @@
           "section": "Starter, leçon 3 : thème ; leçons 7–8 : existence ; leçon 17 : événements",
           "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf",
           "consulte_le": "2026-09-24"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Starter, leçon 5 : N が好きです, N は好きじゃないです",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf",
+          "consulte_le": "2026-09-29"
         }
       ],
       "prerequis": [
         "G01",
         "G05"
       ],
-      "pour_aller_plus_loin": "Wa peut aussi opposer deux éléments. Ces premiers repères ne couvrent pas encore tous les emplois de wa et ga.",
+      "pour_aller_plus_loin": "Premiers repères contextualisés : は peut aussi marquer un contraste, et が possède d’autres emplois. Il n’existe pas de règle unique « connu = は, nouveau = が ». Dans l’atelier, les questions liées à cette fiche portent sur le rôle et le sens des particules, sans imposer un choix artificiel dans une phrase isolée.",
       "lecons": [
         "N8",
         "N11",
-        "N4"
+        "N4",
+        "N9",
+        "N12"
       ],
       "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Dans « kyou wa juuji ni okimashita », quel rôle joue kyou wa ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "今日 は",
+              "kana": "きょう は",
+              "romaji": "kyou wa",
+              "fr": "aujourd’hui comme thème"
+            },
+            {
+              "id": "choix-2",
+              "jp": "今日 が",
+              "kana": "きょう が",
+              "romaji": "kyou ga",
+              "fr": "aujourd’hui comme sujet grammatical"
+            },
+            {
+              "id": "choix-3",
+              "jp": "今日 から",
+              "kana": "きょう から",
+              "romaji": "kyou kara",
+              "fr": "à partir d’aujourd’hui"
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "Kyou wa pose aujourd’hui comme cadre de ce que l’on raconte. La personne qui s’est levée n’est pas exprimée.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Au café, une personne annonce son choix. Quel groupe pose cette personne comme thème ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "コーヒーに",
+              "kana": "コーヒーに",
+              "romaji": "koohii ni",
+              "fr": "le café comme choix"
+            },
+            {
+              "id": "choix-2",
+              "jp": "私は",
+              "kana": "わたしは",
+              "romaji": "watashi wa",
+              "fr": "quant à moi"
+            },
+            {
+              "id": "choix-3",
+              "jp": "します",
+              "kana": "します",
+              "romaji": "shimasu",
+              "fr": "faire, dans la construction du choix"
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "Dans 私はコーヒーにします (watashi wa koohii ni shimasu), 私は pose la personne comme thème ; コーヒーにします annonce son choix.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "On demande « Qui est venu ? ». Quelle réponse identifie un ami comme la personne venue ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "友達が来ました。",
+              "kana": "ともだちがきました。",
+              "romaji": "tomodachi ga kimashita.",
+              "fr": "Un ami est venu."
+            },
+            {
+              "id": "choix-2",
+              "jp": "友達は来ませんでした。",
+              "kana": "ともだちはきませんでした。",
+              "romaji": "tomodachi wa kimasen deshita.",
+              "fr": "Mon ami n’est pas venu."
+            },
+            {
+              "id": "choix-3",
+              "jp": "友達は明日来ます。",
+              "kana": "ともだちはあしたきます。",
+              "romaji": "tomodachi wa ashita kimasu.",
+              "fr": "Mon ami viendra demain."
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "友達が répond à だれが (dare ga, qui). Les autres phrases parlent aussi de l’ami, mais n’affirment pas sa venue passée. Une phrase avec は n’est pas automatiquement fausse : ici, on choisit selon le sens de toute la réponse.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Dans « watashi wa koohii ga suki desu », quel groupe désigne ce que la personne aime ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "私は",
+              "kana": "わたしは",
+              "romaji": "watashi wa",
+              "fr": "quant à moi"
+            },
+            {
+              "id": "choix-2",
+              "jp": "好きです",
+              "kana": "すきです",
+              "romaji": "suki desu",
+              "fr": "aimer, être apprécié"
+            },
+            {
+              "id": "choix-3",
+              "jp": "コーヒーが",
+              "kana": "コーヒーが",
+              "romaji": "koohii ga",
+              "fr": "le café, chose appréciée"
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "私は présente la personne ; コーヒーが indique la chose appréciée dans la construction avec 好きです. は et が jouent donc des rôles différents dans cette même phrase.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
       "synthese": {
         "reperes": [
-          "は (wa) annonce ce dont on parle ; が (ga) marque le sujet.",
-          "Le contexte et le contraste comptent : « connu / nouveau » ne suffit pas."
+          "は (wa) pose le thème ; が (ga) peut identifier qui ou quoi, ou désigner ce que l’on aime avec 好き (suki).",
+          "Regarder la construction et le contexte : は et が peuvent coexister dans la même phrase."
         ],
         "lignes": [
           {
-            "usage": "が · présenter qui vient",
+            "usage": "は · pour moi",
             "exemple": {
-              "jp": "友達が来ました",
-              "kana": "ともだちがきました",
-              "romaji": "tomodachi ga kimashita",
-              "fr": "Un ami est venu."
+              "jp": "私はコーヒーにします。",
+              "kana": "わたしはコーヒーにします。",
+              "romaji": "watashi wa koohii ni shimasu.",
+              "fr": "B : Pour moi, ce sera un café."
             }
           },
           {
-            "usage": "は · commenter le thème",
+            "usage": "が · qui est venu ?",
             "exemple": {
-              "jp": "友達は来ました",
-              "kana": "ともだちはきました",
-              "romaji": "tomodachi wa kimashita",
-              "fr": "Quant à mon ami, il est venu."
+              "jp": "友達が来ました。",
+              "kana": "ともだちがきました。",
+              "romaji": "tomodachi ga kimashita.",
+              "fr": "B : Un ami est venu."
+            }
+          },
+          {
+            "usage": "は et が · mes goûts",
+            "exemple": {
+              "jp": "私はコーヒーが好きです。",
+              "kana": "わたしはコーヒーがすきです。",
+              "romaji": "watashi wa koohii ga suki desu.",
+              "fr": "B : Moi, j’aime le café."
             }
           }
         ]
@@ -1603,16 +1878,16 @@
       "explication": "On emploie généralement arimasu pour les objets, les plantes et les choses inanimées, et imasu pour les personnes et les animaux. Ni indique le lieu. Ga introduit ce qui est présent ; wa permet de partir de quelque chose dont on cherche l’emplacement.",
       "constructions": [
         {
-          "jp": "lieu に N が あります",
-          "kana": "lieu に N が あります",
-          "romaji": "lieu ni N ga arimasu",
-          "fr": "il y a N, inanimé, dans ce lieu"
+          "jp": "公園に木があります。",
+          "kana": "こうえんにきがあります。",
+          "romaji": "kouen ni ki ga arimasu.",
+          "fr": "Il y a un arbre dans le parc. に (ni) indique où se trouve l’arbre."
         },
         {
-          "jp": "lieu に N が います",
-          "kana": "lieu に N が います",
-          "romaji": "lieu ni N ga imasu",
-          "fr": "il y a N, personne ou animal, dans ce lieu"
+          "jp": "公園に友達がいます。",
+          "kana": "こうえんにともだちがいます。",
+          "romaji": "kouen ni tomodachi ga imasu.",
+          "fr": "Un ami se trouve dans le parc. Pour la présence d’une personne, on utilise います (imasu)."
         }
       ],
       "formation": [
@@ -1638,11 +1913,30 @@
               "fr": "Le chat n’est pas là."
             }
           ]
+        },
+        {
+          "texte": "Exemples créés pour comparer présence et événement : le même あります (arimasu), mais deux sens.",
+          "formes": [
+            {
+              "jp": "公園に木があります。",
+              "kana": "こうえんにきがあります。",
+              "romaji": "kouen ni ki ga arimasu.",
+              "fr": "Il y a un arbre dans le parc."
+            },
+            {
+              "jp": "公園でコンサートがあります。",
+              "kana": "こうえんでコンサートがあります。",
+              "romaji": "kouen de konsaato ga arimasu.",
+              "fr": "Un concert a lieu dans le parc."
+            }
+          ]
         }
       ],
       "pieges": [
         "Un arbre est vivant mais se construit normalement avec arimasu : la distinction n’est pas strictement biologique.",
-        "Dans la construction de présence étudiée ici, le lieu prend ni, pas le de d’une action."
+        "Dans la construction de présence étudiée ici, le lieu prend ni, pas le de d’une action.",
+        "あります (arimasu) ne suffit pas à choisir に (ni). Pour situer une chose présente, on emploie に ; pour situer un événement qui a lieu, on emploie で (de). Voir G10.",
+        "東京に住んでいます (toukyou ni sunde imasu) indique le lieu de résidence avec に. La forme en ています ne suffit donc pas non plus à imposer で."
       ],
       "exemples": [
         {
@@ -1672,6 +1966,20 @@
             "fr": "J’ai deux enfants."
           },
           "commentaire": "L’existence se traduit ici naturellement par avoir des enfants."
+        },
+        {
+          "source": "N15-S02",
+          "jp": "東京 に 住んで います。",
+          "kana": "とうきょう に すんで います。",
+          "romaji": "toukyou ni sunde imasu.",
+          "fr": "J’habite à Tokyo.",
+          "cible": {
+            "jp": "東京 に 住んで います",
+            "kana": "とうきょう に すんで います",
+            "romaji": "toukyou ni sunde imasu",
+            "fr": "J’habite à Tokyo."
+          },
+          "commentaire": "に situe ici la résidence avec 住んでいます (sunde imasu). Ce n’est pas une simple phrase de présence en います."
         }
       ],
       "exercice": {
@@ -1731,6 +2039,13 @@
           "section": "Starter, leçons 7–8 : existence et emplacement",
           "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf",
           "consulte_le": "2026-09-24"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Starter, leçon 12 : lieu d’événement et comparaison に / で",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=36",
+          "consulte_le": "2026-09-29"
         }
       ],
       "prerequis": [
@@ -1742,10 +2057,73 @@
         "N15"
       ],
       "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Choisis la phrase adaptée à un chat vivant présent dans la pièce.",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "猫がいます",
+              "kana": "ねこがいます",
+              "romaji": "neko ga imasu",
+              "fr": "Il y a un chat."
+            },
+            {
+              "id": "choix-2",
+              "jp": "猫はいません",
+              "kana": "ねこはいません",
+              "romaji": "neko wa imasen",
+              "fr": "Le chat n’est pas là."
+            },
+            {
+              "id": "choix-3",
+              "jp": "猫が来ました",
+              "kana": "ねこがきました",
+              "romaji": "neko ga kimashita",
+              "fr": "Un chat est venu."
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "Imasu exprime la présence d’un être animé. Kimashita raconte sa venue, ce qui ne dit pas exactement la même chose.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Quelle phrase situe une chose présente dans le parc ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "公園でコンサートがあります。",
+              "kana": "こうえんでコンサートがあります。",
+              "romaji": "kouen de konsaato ga arimasu.",
+              "fr": "Un concert a lieu dans le parc."
+            },
+            {
+              "id": "choix-2",
+              "jp": "公園に木があります。",
+              "kana": "こうえんにきがあります。",
+              "romaji": "kouen ni ki ga arimasu.",
+              "fr": "Il y a un arbre dans le parc."
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "木 (ki), l’arbre, est une chose présente : le lieu prend に. Le concert est un événement : son lieu prend で, même avec あります.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
       "synthese": {
         "reperes": [
           "あります : objets et plantes ; います : personnes et animaux, dans cet usage.",
-          "Le lieu de présence est marqué par に (ni)."
+          "Présence : lieu + に (ni). Événement : lieu + で (de), même avec あります (arimasu)."
         ],
         "lignes": [
           {
@@ -1774,6 +2152,24 @@
               "romaji": "neko wa imasen",
               "fr": "Le chat n’est pas là."
             }
+          },
+          {
+            "usage": "に · présence dans un lieu",
+            "exemple": {
+              "jp": "公園に木があります。",
+              "kana": "こうえんにきがあります。",
+              "romaji": "kouen ni ki ga arimasu.",
+              "fr": "Il y a un arbre dans le parc."
+            }
+          },
+          {
+            "usage": "Comparer : événement",
+            "exemple": {
+              "jp": "公園でコンサートがあります。",
+              "kana": "こうえんでコンサートがあります。",
+              "romaji": "kouen de konsaato ga arimasu.",
+              "fr": "Un concert a lieu dans le parc."
+            }
           }
         ]
       }
@@ -1788,16 +2184,22 @@
       "explication": "Avec aller ou venir, ni indique la destination et e met l’accent sur la direction. Pour beaucoup de déplacements simples, les deux sont possibles. Ni sert également à repérer une heure ou une date.",
       "constructions": [
         {
-          "jp": "lieu に／へ 行きます",
-          "kana": "lieu に／へ いきます",
-          "romaji": "lieu ni / e ikimasu",
-          "fr": "je vais vers ce lieu"
+          "jp": "駅に行きます",
+          "kana": "えきにいきます",
+          "romaji": "eki ni ikimasu",
+          "fr": "Je vais à la gare."
         },
         {
-          "jp": "heure に V",
-          "kana": "heure に V",
-          "romaji": "heure ni V",
-          "fr": "faire V à cette heure"
+          "jp": "駅へ行きます",
+          "kana": "えきへいきます",
+          "romaji": "eki e ikimasu",
+          "fr": "Je vais vers la gare."
+        },
+        {
+          "jp": "十時に起きます",
+          "kana": "じゅうじにおきます",
+          "romaji": "juuji ni okimasu",
+          "fr": "Je me lève à dix heures."
         }
       ],
       "formation": [
@@ -1969,20 +2371,32 @@
       "titre": "で (de) : indiquer où et avec quoi on agit",
       "famille": "Particules",
       "niveau": "débutant",
-      "objectif": "Reconnaître le lieu d’action et le moyen avec de.",
-      "explication": "De peut indiquer le lieu où se déroule une action, le transport utilisé ou l’instrument employé. On comprend son rôle en regardant le nom qui le précède et le verbe qui suit.",
+      "objectif": "Reconnaître le lieu d’une activité ou d’un événement, et distinguer ces emplois du moyen utilisé.",
+      "explication": "De peut indiquer le lieu où se déroule une action, le transport utilisé ou l’instrument employé. On comprend son rôle en regardant le nom qui le précède et le verbe qui suit. Avec un événement, あります (arimasu) signifie qu’il a lieu : le lieu de cet événement prend で (de). Le choix dépend donc du sens de la construction, pas seulement du verbe écrit à la fin.",
       "constructions": [
         {
-          "jp": "lieu で V",
-          "kana": "lieu で V",
-          "romaji": "lieu de V",
-          "fr": "faire V dans ce lieu"
+          "jp": "店で買います",
+          "kana": "みせでかいます",
+          "romaji": "mise de kaimasu",
+          "fr": "J’achète dans le magasin."
         },
         {
-          "jp": "moyen で V",
-          "kana": "moyen で V",
-          "romaji": "moyen de V",
-          "fr": "faire V avec ce moyen"
+          "jp": "バスで行きます",
+          "kana": "バスでいきます",
+          "romaji": "basu de ikimasu",
+          "fr": "Je vais en bus."
+        },
+        {
+          "jp": "フォークで食べます",
+          "kana": "フォークでたべます",
+          "romaji": "fooku de tabemasu",
+          "fr": "Je mange avec une fourchette."
+        },
+        {
+          "jp": "公園でコンサートがあります。",
+          "kana": "こうえんでコンサートがあります。",
+          "romaji": "kouen de konsaato ga arimasu.",
+          "fr": "Un concert a lieu dans le parc."
         }
       ],
       "formation": [
@@ -2008,11 +2422,37 @@
               "fr": "J’achète dans le magasin."
             }
           ]
+        },
+        {
+          "texte": "Exemples créés pour distinguer activité, événement et présence.",
+          "formes": [
+            {
+              "jp": "公園で歌います。",
+              "kana": "こうえんでうたいます。",
+              "romaji": "kouen de utaimasu.",
+              "fr": "Je chante dans le parc."
+            },
+            {
+              "jp": "公園でコンサートがあります。",
+              "kana": "こうえんでコンサートがあります。",
+              "romaji": "kouen de konsaato ga arimasu.",
+              "fr": "Un concert a lieu dans le parc."
+            },
+            {
+              "jp": "公園に木があります。",
+              "kana": "こうえんにきがあります。",
+              "romaji": "kouen ni ki ga arimasu.",
+              "fr": "Il y a un arbre dans le parc."
+            }
+          ]
         }
       ],
       "pieges": [
         "Pour dire où se trouve un objet avec arimasu, on utilise ni ; pour dire où l’on achète, de.",
-        "« Avec quelqu’un » se construit avec to, et non avec ce de instrumental."
+        "« Avec quelqu’un » se construit avec to, et non avec ce de instrumental.",
+        "Un événement n’est pas un objet posé quelque part : avec コンサートがあります (konsaato ga arimasu), で indique où le concert a lieu.",
+        "Dans N19-S09, 土曜日に (doyoubi ni) indique quand, et サンプラザで (sanpuraza de) où : に et で ont des rôles différents dans la même phrase.",
+        "Le corpus écrit コンサー卜 avec le caractère 卜. La graphie usuelle est コンサート ; les kana et le romaji du cours donnent bien konsaato. La citation est conservée sans correction silencieuse."
       ],
       "exemples": [
         {
@@ -2056,6 +2496,20 @@
             "fr": "On y va en bus."
           },
           "commentaire": "De indique le moyen de transport."
+        },
+        {
+          "source": "N19-S09",
+          "jp": "こんど の 土曜日 に サンプラザ で コンサー卜 が あります。",
+          "kana": "こんど の どようび に サンプラザ で コンサート が あります。",
+          "romaji": "kondo no doyoubi ni sanpuraza de konsaato ga arimasu.",
+          "fr": "Il y a un concert au Sunplaza samedi prochain.",
+          "cible": {
+            "jp": "サンプラザ で コンサー卜 が あります",
+            "kana": "サンプラザ で コンサート が あります",
+            "romaji": "sanpuraza de konsaato ga arimasu",
+            "fr": "Un concert a lieu au Sunplaza."
+          },
+          "commentaire": "で situe l’événement. に, plus tôt dans la phrase, marque la date. La graphie コンサー卜 est celle du corpus ; voir la réserve dans les pièges."
         }
       ],
       "exercice": {
@@ -2115,6 +2569,13 @@
           "section": "Starter, leçon 12 : lieu d’action ; leçon 13 : transport",
           "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=35",
           "consulte_le": "2026-09-24"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Starter, leçon 12 : lieu d’événement et comparaison に / で",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=36",
+          "consulte_le": "2026-09-29"
         }
       ],
       "prerequis": [
@@ -2125,12 +2586,83 @@
       "lecons": [
         "N9",
         "N14",
-        "N6"
+        "N6",
+        "N19"
       ],
       "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Comment exprimer « je vais en train » ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "電車を見ます",
+              "kana": "でんしゃをみます",
+              "romaji": "densha o mimasu",
+              "fr": "Je regarde le train."
+            },
+            {
+              "id": "choix-2",
+              "jp": "電車があります",
+              "kana": "でんしゃがあります",
+              "romaji": "densha ga arimasu",
+              "fr": "Il y a un train."
+            },
+            {
+              "id": "choix-3",
+              "jp": "電車で行きます",
+              "kana": "でんしゃでいきます",
+              "romaji": "densha de ikimasu",
+              "fr": "Je vais en train."
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "Le train est le moyen de transport : densha de.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Quelle phrase annonce un événement dans le parc ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "公園に木があります。",
+              "kana": "こうえんにきがあります。",
+              "romaji": "kouen ni ki ga arimasu.",
+              "fr": "Il y a un arbre dans le parc."
+            },
+            {
+              "id": "choix-2",
+              "jp": "公園で歌います。",
+              "kana": "こうえんでうたいます。",
+              "romaji": "kouen de utaimasu.",
+              "fr": "Je chante dans le parc."
+            },
+            {
+              "id": "choix-3",
+              "jp": "公園でコンサートがあります。",
+              "kana": "こうえんでコンサートがあります。",
+              "romaji": "kouen de konsaato ga arimasu.",
+              "fr": "Un concert a lieu dans le parc."
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "Le concert est l’événement annoncé avec があります ; son lieu est marqué par で. 歌います exprime une activité ; 木があります situe une chose présente avec に.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
       "synthese": {
         "reperes": [
-          "で (de) indique ici le lieu de l’action ou le moyen utilisé.",
+          "で (de) peut indiquer le lieu d’une activité, d’un événement ou le moyen utilisé.",
           "Pour une présence avec arimasu / imasu, le lieu prend に (ni)."
         ],
         "lignes": [
@@ -2160,6 +2692,15 @@
               "romaji": "mise de kaimasu",
               "fr": "J’achète dans le magasin."
             }
+          },
+          {
+            "usage": "で · lieu d’un événement",
+            "exemple": {
+              "jp": "公園でコンサートがあります。",
+              "kana": "こうえんでコンサートがあります。",
+              "romaji": "kouen de konsaato ga arimasu.",
+              "fr": "Un concert a lieu dans le parc."
+            }
           }
         ]
       }
@@ -2174,10 +2715,16 @@
       "explication": "Kara marque le départ ; made marque la limite atteinte. Ils peuvent s’utiliser ensemble ou séparément, avec des lieux ou des moments.",
       "constructions": [
         {
-          "jp": "A から B まで",
-          "kana": "A から B まで",
-          "romaji": "A kara B made",
-          "fr": "de A jusqu’à B"
+          "jp": "駅から店まで",
+          "kana": "えきからみせまで",
+          "romaji": "eki kara mise made",
+          "fr": "de la gare au magasin"
+        },
+        {
+          "jp": "三時から五時まで",
+          "kana": "さんじからごじまで",
+          "romaji": "sanji kara goji made",
+          "fr": "de trois heures à cinq heures"
         }
       ],
       "formation": [
@@ -2344,22 +2891,22 @@
       "explication": "To relie les noms d’une liste présentée comme complète. Ya donne quelques exemples d’une liste ouverte. Mo ajoute un élément qui partage la même propriété : « aussi ». Avec une personne, to peut également signifier « avec ».",
       "constructions": [
         {
-          "jp": "A と B",
-          "kana": "A と B",
-          "romaji": "A to B",
-          "fr": "A et B"
+          "jp": "本とカメラ",
+          "kana": "ほんとカメラ",
+          "romaji": "hon to kamera",
+          "fr": "un livre et un appareil photo"
         },
         {
-          "jp": "A や B",
-          "kana": "A や B",
-          "romaji": "A ya B",
-          "fr": "A, B, entre autres"
+          "jp": "本やカメラ",
+          "kana": "ほんやカメラ",
+          "romaji": "hon ya kamera",
+          "fr": "un livre, un appareil photo, entre autres"
         },
         {
-          "jp": "N も",
-          "kana": "N も",
-          "romaji": "N mo",
-          "fr": "N aussi"
+          "jp": "私も",
+          "kana": "わたしも",
+          "romaji": "watashi mo",
+          "fr": "moi aussi"
         }
       ],
       "formation": [
@@ -2557,22 +3104,22 @@
       "explication": "Les adjectifs en i se placent directement devant un nom. Ils changent eux-mêmes de forme pour exprimer négation et passé. Desu peut ensuite rendre la phrase polie.",
       "constructions": [
         {
-          "jp": "Aい N",
-          "kana": "Aい N",
-          "romaji": "A-i N",
-          "fr": "un N qui est A"
+          "jp": "高い本",
+          "kana": "たかいほん",
+          "romaji": "takai hon",
+          "fr": "un livre cher"
         },
         {
-          "jp": "Aくないです",
-          "kana": "Aくないです",
-          "romaji": "A-kunai desu",
-          "fr": "ce n’est pas A"
+          "jp": "高くないです",
+          "kana": "たかくないです",
+          "romaji": "takakunai desu",
+          "fr": "Ce n’est pas cher."
         },
         {
-          "jp": "Aかったです",
-          "kana": "Aかったです",
-          "romaji": "A-katta desu",
-          "fr": "c’était A"
+          "jp": "高かったです",
+          "kana": "たかかったです",
+          "romaji": "takakatta desu",
+          "fr": "C’était cher."
         }
       ],
       "formation": [
@@ -2803,16 +3350,16 @@
       "explication": "Ces adjectifs ont besoin de na juste devant un nom. En fin de phrase polie, on met directement desu après leur base. Leur passé et leur négation ressemblent à ceux d’un nom.",
       "constructions": [
         {
-          "jp": "A な N",
-          "kana": "A な N",
-          "romaji": "A na N",
-          "fr": "un N qui est A"
+          "jp": "便利な店",
+          "kana": "べんりなみせ",
+          "romaji": "benri na mise",
+          "fr": "un magasin pratique"
         },
         {
-          "jp": "A です",
-          "kana": "A です",
-          "romaji": "A desu",
-          "fr": "c’est A"
+          "jp": "便利です",
+          "kana": "べんりです",
+          "romaji": "benri desu",
+          "fr": "C’est pratique."
         }
       ],
       "formation": [
@@ -3009,22 +3556,22 @@
       "explication": "On remplace masu par mashou pour proposer une action commune. Mashou ka soumet une proposition ou offre de l’aide selon le contexte. Masen ka permet souvent d’inviter en laissant à l’autre le choix.",
       "constructions": [
         {
-          "jp": "V～ましょう",
-          "kana": "V～ましょう",
-          "romaji": "V…mashou",
-          "fr": "faisons V"
+          "jp": "行きましょう。",
+          "kana": "いきましょう。",
+          "romaji": "ikimashou.",
+          "fr": "Allons-y. On propose de faire quelque chose ensemble."
         },
         {
-          "jp": "V～ましょうか",
-          "kana": "V～ましょうか",
-          "romaji": "V…mashou ka",
-          "fr": "et si nous faisions V ? / voulez-vous que je fasse V ?"
+          "jp": "行きましょうか。",
+          "kana": "いきましょうか。",
+          "romaji": "ikimashou ka.",
+          "fr": "Et si nous y allions ? On soumet la proposition à l’autre personne."
         },
         {
-          "jp": "V～ませんか",
-          "kana": "V～ませんか",
-          "romaji": "V…masen ka",
-          "fr": "voudriez-vous faire V ?"
+          "jp": "食べませんか。",
+          "kana": "たべませんか。",
+          "romaji": "tabemasen ka.",
+          "fr": "Voulez-vous manger ? La question négative sert ici d’invitation."
         }
       ],
       "formation": [
@@ -3175,10 +3722,10 @@
           {
             "usage": "Proposer / offrir de l’aide",
             "exemple": {
-              "jp": "V～ましょうか",
-              "kana": "V～ましょうか",
-              "romaji": "V…mashou ka",
-              "fr": "et si nous faisions V ? / voulez-vous que je fasse V ?"
+              "jp": "行きましょうか。",
+              "kana": "いきましょうか。",
+              "romaji": "ikimashou ka.",
+              "fr": "Et si nous y allions ? On soumet la proposition à l’autre personne."
             }
           }
         ]
@@ -3194,10 +3741,16 @@
       "explication": "La forme en te est une forme de liaison, parfois terminée par de. Elle sert dans plusieurs constructions. Elle n’est pas un temps à elle seule. Pour la produire, il faut connaître le groupe du verbe, et pas seulement regarder ses dernières lettres.",
       "constructions": [
         {
-          "jp": "Vて／Vで",
-          "kana": "Vて／Vで",
-          "romaji": "V-te / V-de",
-          "fr": "forme de liaison du verbe"
+          "jp": "食べて",
+          "kana": "たべて",
+          "romaji": "tabete",
+          "fr": "Forme en te de 食べる (taberu, manger)."
+        },
+        {
+          "jp": "飲んで",
+          "kana": "のんで",
+          "romaji": "nonde",
+          "fr": "Forme en te de 飲む (nomu, boire) : elle se termine ici par de."
         }
       ],
       "formation": [
@@ -3520,10 +4073,10 @@
       "explication": "Ajouter kudasai à la forme en te demande à l’interlocuteur d’accomplir l’action. Cette forme convient aux demandes et consignes courantes ; des formulations plus indirectes existent pour demander une faveur avec davantage de délicatesse.",
       "constructions": [
         {
-          "jp": "Vて ください",
-          "kana": "Vて ください",
-          "romaji": "V-te kudasai",
-          "fr": "veuillez faire V, s’il vous plaît"
+          "jp": "見せてください。",
+          "kana": "みせてください。",
+          "romaji": "misete kudasai.",
+          "fr": "Montrez-moi, s’il vous plaît. On ajoute ください (kudasai) après la forme en te pour demander une action."
         }
       ],
       "formation": [
@@ -3684,10 +4237,22 @@
       "explication": "La forme en te suivie de imasu peut décrire une action en cours, une activité habituelle ou un état qui dure. Le sens dépend du verbe : écrire un roman en ce moment est une action ; habiter quelque part est une situation ; connaître quelqu’un est un état.",
       "constructions": [
         {
-          "jp": "Vて います",
-          "kana": "Vて います",
-          "romaji": "V-te imasu",
-          "fr": "action en cours, habitude ou état selon le verbe"
+          "jp": "書いています",
+          "kana": "かいています",
+          "romaji": "kaite imasu",
+          "fr": "j’écris en ce moment"
+        },
+        {
+          "jp": "住んでいます",
+          "kana": "すんでいます",
+          "romaji": "sunde imasu",
+          "fr": "j’habite"
+        },
+        {
+          "jp": "知っています",
+          "kana": "しっています",
+          "romaji": "shitte imasu",
+          "fr": "je sais / je connais"
         }
       ],
       "formation": [
@@ -3878,10 +4443,10 @@
       "explication": "Prendre la forme en masu, enlever masu et ajouter tai exprime l’envie de faire l’action. On peut ajouter desu pour parler poliment. C’est surtout une manière de dire sa propre envie ou d’interroger celle de son interlocuteur.",
       "constructions": [
         {
-          "jp": "base de V～ます ＋ たいです",
-          "kana": "base de V～ます ＋ たいです",
-          "romaji": "base de V…masu + tai desu",
-          "fr": "je veux / j’ai envie de faire V"
+          "jp": "食べたいです。",
+          "kana": "たべたいです。",
+          "romaji": "tabetai desu.",
+          "fr": "J’ai envie de manger. On part de 食べます (tabemasu), on retire masu et on ajoute tai desu."
         }
       ],
       "formation": [
@@ -4078,16 +4643,16 @@
       "explication": "La forme de dictionnaire du verbe, suivie de tsumori desu, exprime une intention ou un projet que l’on a en tête. C’est plus engagé qu’une simple envie, mais cela ne garantit pas que l’action aura lieu.",
       "constructions": [
         {
-          "jp": "V dictionnaire ＋ つもりです",
-          "kana": "V dictionnaire ＋ つもりです",
-          "romaji": "V dictionnaire + tsumori desu",
-          "fr": "j’ai l’intention de faire V"
+          "jp": "行くつもりです",
+          "kana": "いくつもりです",
+          "romaji": "iku tsumori desu",
+          "fr": "J’ai l’intention d’y aller."
         },
         {
-          "jp": "V négatif en ない ＋ つもりです",
-          "kana": "V négatif en ない ＋ つもりです",
-          "romaji": "V négatif en nai + tsumori desu",
-          "fr": "j’ai l’intention de ne pas faire V"
+          "jp": "行かないつもりです",
+          "kana": "いかないつもりです",
+          "romaji": "ikanai tsumori desu",
+          "fr": "J’ai l’intention de ne pas y aller."
         }
       ],
       "formation": [
@@ -5080,6 +5645,22 @@
           "kana": "わたしも",
           "romaji": "watashi mo",
           "fr": "moi aussi"
+        }
+      },
+      {
+        "particule": {
+          "jp": "で",
+          "kana": "で",
+          "romaji": "de",
+          "fr": "Situer un événement"
+        },
+        "role": "Situer un événement",
+        "fiche": "G10",
+        "exemple": {
+          "jp": "公園でコンサートがあります。",
+          "kana": "こうえんでコンサートがあります。",
+          "romaji": "kouen de konsaato ga arimasu.",
+          "fr": "Un concert a lieu dans le parc."
         }
       },
       {

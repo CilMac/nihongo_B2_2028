@@ -3,9 +3,11 @@
  // Exercices éditoriaux liés à des phrases exactes, sans réécriture du corpus.
  const reference='https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf';
  const recipientReference='https://www.kyozai.jpf.go.jp/kyozai/material/BTS00035/ja/render.do';
- const referenceFor=page=>typeof page==='string'?page:reference+([1,11,15,23,37,62,90].includes(page)?'#page='+page:'');
+ const referenceFor=page=>typeof page==='string'?page:reference+([1,11,15,23,36,37,62,90].includes(page)?'#page='+page:'');
  const readings={'を':'o','に':'ni','へ':'e','で':'de','の':'no','は':'wa','が':'ga','から':'kara','まで':'made','と':'to','も':'mo'};
  const cases=[
+  ['N15-S02','に','Le lieu de résidence','東京に (toukyou ni) situe le lieu où la personne habite. Avec 住んでいます (sunde imasu), on emploie に pour ce lieu de résidence ; la terminaison ています ne suffit pas à choisir で.', ['に','で','を'],['に'],37],
+  ['N19-S09','で','Le lieu où un événement a lieu','サンプラザで (sanpuraza de) situe le concert au Sunplaza. Avec cet événement, あります (arimasu) signifie « avoir lieu » ; le lieu prend で. Le corpus écrit コンサー卜 ; la graphie usuelle est コンサート (konsaato).', ['で','に','を'],['で'],36],
   ['N3-S03','を','L’objet de l’action','Le pain est ce que l’on mange. を marque ici l’objet de manger.', ['を','に','で'],['を'],11],
   ['N3-S05','を','L’objet de l’action','Le café est ce que l’on boit. を marque ici l’objet de boire.', ['を','に','で'],['を'],11],
   ['N4-S04','に','Le lieu où quelque chose se trouve','に situe ici l’objet dans la valise, avec あります.', ['に','で','を'],['に'],23],
@@ -51,6 +53,11 @@
    ['N12-S05','N11-S02','Dans quelle phrase に fait-il partie d’une expression qui demande un choix ?','N12-S05','Dans A, 何にしますか demande ce que Yamada choisit de prendre. Dans B, 十一時に indique l’heure du lever. に ne se traduit donc pas toujours de la même manière.',15],
    ['N13-S10','N14-S10','Dans quelle phrase に désigne-t-il la personne à qui l’action s’adresse ?','N13-S10','Dans A, 友達に désigne l’ami à qui l’on téléphone. Dans B, 買物に indique le but du déplacement : faire des achats. Repère de lecture : 今晚 est conservé comme dans le corpus ; la graphie usuelle de こんばん (ce soir) est 今晩.',recipientReference]
   ];
+  comparisons.push(['N12-S06','N9-S03','Dans quelle phrase la particule met-elle en avant la personne dont on annonce le choix ?','N12-S06','Dans A, 私は (watashi wa) présente la personne : « pour moi, un café ». Dans B, 中華料理が (chuuka ryouri ga) désigne la chose appréciée. La phrase A est une réponse abrégée au café ; elle n’affirme pas que la personne est du café.',1]);
+  comparisons.push(
+   ['N5-S08','N19-S09','Dans quelle phrase あります (arimasu) annonce-t-il un événement ?','N19-S09','Dans A, les chaussettes sont présentes ici : ここに (koko ni). Dans B, le concert a lieu au Sunplaza : サンプラザで (sanpuraza de). あります ne suffit donc pas à choisir la particule du lieu. Le corpus écrit コンサー卜 ; la graphie usuelle est コンサート (konsaato).',36],
+   ['N15-S02','N14-S03','Dans quelle phrase le lieu est-il celui d’une activité de travail ?','N14-S03','Dans A, 東京に住んでいます (toukyou ni sunde imasu) indique la résidence. Dans B, デパートで働いています (depaato de hataraite imasu) indique le lieu de travail. La forme en ています est présente dans les deux : c’est le sens du verbe qui distingue ces emplois.',37]
+  );
   for(const [a,b,prompt,answer,explanation,page] of comparisons){
    if(!byId.has(a)||!byId.has(b))continue;
    out.push({type:'particles',id:a+'-'+b,activity:'Comparer',title:'Comparer les rôles',source:a,sources:[a,b],row:byId.get(a),prompt,explanation,reference:referenceFor(page),texts:[rowText(byId.get(a)),rowText(byId.get(b))],options:[{value:a,label:'Phrase A'},{value:b,label:'Phrase B'}],accepted:[answer]});
@@ -58,6 +65,12 @@
   // Questions ciblées : plusieurs rôles sur une même phrase et contextes obligatoires.
   // La bonne réponse est la première de chaque liste éditoriale ; l’interface mélange les choix.
   const roles=[
+   ['N19-S09','ni-date','に (ni)',null,['Indiquer la date du concert','Indiquer le lieu du concert','Indiquer un moyen de transport'],'土曜日に (doyoubi ni) situe le concert samedi ; サンプラザで (sanpuraza de) en donne le lieu. Ici に répond à « quand ? », で à « où ? ». Le corpus écrit コンサー卜 ; la graphie usuelle est コンサート (konsaato).',36],
+   ['N11-S06','wa-topic','は (wa)',null,['Présenter aujourd’hui comme thème','Identifier la personne qui se lève','Indiquer une durée de dix heures'],'今日は (kyou wa) pose aujourd’hui comme thème. 十時に (juuji ni) indique l’heure du lever : dix heures. La personne qui s’est levée est comprise, sans être nommée. は ne désigne donc pas forcément une personne.',1],
+   ['N4-S05','ga-question','が (ga)',null,['Marquer ce que la question cherche à identifier','Marquer le lieu de la valise','Relier deux objets dans une liste'],'何が (nani ga) demande ce qui est présent. Le lieu est déjà donné par トランクの中に (toranku no naka ni). La réponse du cours nomme les vêtements et les livres, suivis de が.'],
+   ['N8-S02','ga-event','が (ga)','N8-S01',['Marquer la personne dont on annonce la venue','Dire où se trouve la personne','Annoncer la destination du déplacement'],'Après la question sur la journée d’hier, B raconte la venue d’un ami. 友達が (tomodachi ga) marque la personne venue. A ne demande pas « qui ? » : が peut aussi servir à présenter un événement, sans question explicite sur son sujet.'],
+   ['N9-S03','ga-liking','が (ga)',null,['Désigner ce que la personne adore','Désigner la personne qui aime cuisiner','Indiquer un lieu où l’on mange'],'中華料理が (chuuka ryouri ga) désigne la cuisine chinoise, ce que la personne adore avec 大好きです (daisuki desu). 好き (suki) et 大好き (daisuki) sont des adjectifs en な ; on ne copie pas la construction française du verbe « aimer ». は pourrait donner une autre organisation du propos : il n’est pas déclaré impossible.'],
+   ['N10-S09','ga-preference','が (ga)','N10-S08',['Marquer l’élément dont on demande s’il est préféré','Marquer la personne qui regarde la télévision','Indiquer le moyen utilisé pour regarder'],'Dans A, la personne cite les informations et les séries. Dans B, どちらが好きですか (dochira ga suki desu ka) demande lequel des deux types d’émissions elle préfère. が suit どちら (dochira), l’élément à identifier, et non la personne qui éprouve le goût.'],
    ['N4-S06','to','と (to)',null,['Relier les deux noms de la liste','Indiquer avec qui une personne agit','Indiquer le lieu où se trouvent les objets'],'と (to) relie ici 服 (fuku, vêtements) et 本 (hon, livres). La phrase énumère ce qui est présent. Il ne s’agit pas d’une personne avec qui l’on fait une action.'],
    ['N4-S06','ga','が (ga)',null,['Marquer ce dont on annonce la présence','Indiquer ce que l’on achète','Relier les deux noms de la liste'],'が (ga) marque ici le groupe 服と本 (fuku to hon), les vêtements et les livres dont on annonce la présence avec あります (arimasu). と (to) relie les deux noms à l’intérieur de ce groupe.'],
    ['N9-S04','mo','も (mo)','N9-S03',['Ajouter une personne qui partage le même goût','Présenter un goût opposé','Indiquer une personne qui cuisine avec l’autre'],'La phrase A exprime le goût pour la cuisine chinoise. Dans la réponse B, 私も (watashi mo, moi aussi) ajoute une personne qui partage ce goût. La suite est comprise grâce au contexte.',3],
@@ -82,6 +95,8 @@
   }
   const niSheets={'N12-S05':'G21','N14-S08':'G21','N14-S10':'G22','N13-S10':'G23'};
   for(const q of out)q.grammarCards=[...new Set(q.sources.map(id=>niSheets[id]).filter(Boolean))];
+  for(const q of out)if(['N11-S06-wa-topic-role','N4-S05-ga-question-role','N8-S02-ga-event-role','N9-S03-ga-liking-role','N10-S09-ga-preference-role','N12-S06-N9-S03'].includes(q.id))q.grammarCards=['G07'];
+  for(const q of out)if(['N15-S02-role','N15-S02-gap','N19-S09-role','N19-S09-gap','N19-S09-ni-date-role','N5-S08-N19-S09','N15-S02-N14-S03'].includes(q.id))q.grammarCards=['G08','G10'];
   return out;
  }
  const api={build,masked,cases};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.Particules=api;
