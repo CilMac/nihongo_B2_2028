@@ -267,3 +267,6 @@ body.info-open{overflow:hidden}#project-info{width:min(800px,calc(100vw - 32px))
 .guide-favorite-block{display:flow-root}.guide-favorite-block>.favorite,.guide-table td>.favorite{float:right;margin:2px 0 4px 10px}.guide-table caption>.favorite{float:right}.guide-vocab-source>.favorite{align-self:flex-start}.guide-saved{width:100%}.guide-saved-row{display:flex;align-items:flex-start;gap:10px;margin:10px 0}.guide-saved-row>a{min-width:0;overflow-wrap:anywhere}.guide-saved-row a strong,.guide-saved-row a span{display:block}.guide-saved-row>.favorite{flex-shrink:0}
 
 .guide-theme{margin-bottom:12px}.guide-theme-results{display:grid;gap:10px;margin-top:12px}.guide-theme-entry{display:flex;align-items:flex-start;gap:10px;border-top:1px solid var(--line);padding-top:12px}.guide-theme-entry>.favorite{flex-shrink:0}.guide-theme-entry>a{display:block;min-width:0;overflow-wrap:anywhere;text-decoration:none}.guide-theme-entry strong,.guide-theme-entry small,.guide-theme-entry a>span:last-child{display:block}.guide-theme-entry small{color:var(--muted);margin:5px 0}.guide-theme-entry mark{background:#f5e3a9;color:inherit}
+
+/* Séparer les ensembles de phrases sans couper traduction et prononciation. */
+.guide-reader .guide-group + .guide-group { border-top: 1px solid #c4ccc2; padding-top: 16px; margin-top: 18px; }
