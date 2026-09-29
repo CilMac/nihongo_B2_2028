@@ -83,7 +83,7 @@ function renderAtelierQuestion(){
   if(s.revealed)return;s.revealed=true;s.choice=choice;
   const answer=isVocab?q.word.fr:q.part.form;
   const explanation=isVocab?'Le sens du mot est distinct de la traduction de la réplique. Comparez avec son emploi ci-dessous.':q.part.explanation;
-  $('#atelier-feedback').innerHTML=`<div class="feedback"><h3>${choice?(choice===answer?'Bonne réponse !':'À reprendre'):'La réponse'}</h3><p>${esc(answer)}</p><p>${esc(explanation)}</p><details><summary>Revoir la phrase de la leçon</summary>${block({source:q.source,jp:q.row.Japonais,kana:q.row.Kana,romaji:q.row.Romaji,fr:q.row.Français},{audio:false})}${sourceLink(q.source)}</details></div><div class="atelier-options">${choice?'<button id="atelier-next">Continuer</button>':'<button id="atelier-known">Je savais</button><button id="atelier-review">À revoir</button>'}</div>`;
+  $('#atelier-feedback').innerHTML=`<div class="feedback${choice && choice!==answer ? ' feedback-error' : ''}"><h3>${choice?(choice===answer?'Bonne réponse !':'À reprendre'):'La réponse'}</h3><p>${esc(answer)}</p><p>${esc(explanation)}</p><details><summary>Revoir la phrase de la leçon</summary>${block({source:q.source,jp:q.row.Japonais,kana:q.row.Kana,romaji:q.row.Romaji,fr:q.row.Français},{audio:false})}${sourceLink(q.source)}</details></div><div class="atelier-options">${choice?'<button id="atelier-next">Continuer</button>':'<button id="atelier-known">Je savais</button><button id="atelier-review">À revoir</button>'}</div>`;
   target.querySelectorAll('[data-form],#atelier-reveal').forEach(b=>b.disabled=true);
   const next=good=>{stopAudio();s.results.push({q,good});s.index++;s.revealed=false;s.choice=null;renderAtelierQuestion();};
   if(choice)$('#atelier-next').onclick=()=>next(choice===answer);
@@ -124,10 +124,11 @@ function renderParticleQuestion(target,s){
   s.revealed=true;s.choice=choice;
   const good=q.accepted.includes(choice);
   const labels=q.options.filter(o=>q.accepted.includes(o.value)).map(o=>o.text?o.text.jp+' ('+o.text.romaji+')':o.label).join(' ou ');
-  $('#atelier-feedback').innerHTML=`<div class="feedback"><h3>${good?'Bonne réponse !':'À reprendre'}</h3><p><strong>${esc(labels)}</strong></p><p>${esc(q.explanation)}</p>
+  $('#atelier-feedback').innerHTML=`<div class="feedback${good ? '' : ' feedback-error'}"><h3>${good?'Bonne réponse !':'À reprendre'}</h3><p><strong>${esc(labels)}</strong></p><p>${esc(q.explanation)}</p>
   ${q.accepted.length>1?'<p>Ces deux réponses sont acceptées dans cette phrase.</p>':''}
   <details><summary>Revoir les phrases sources</summary>${q.sources.map(id=>{const row=lessons.find(r=>r.Leçon+'-'+r.Ligne===id);return block({source:id,jp:row.Japonais,kana:row.Kana,romaji:row.Romaji,fr:row.Français},{audio:false})+sourceLink(id);}).join('')}</details>
-  <p><a href="${esc(q.reference)}" target="_blank" rel="noopener">Référence : notes grammaticales Irodori</a></p></div><button id="atelier-next">Continuer</button>`;
+  ${q.grammarCards?.length?`<p>Comprendre la construction : ${q.grammarCards.map(id=>`<a href="#grammaire/${id}">${esc(grammar.find(f=>f.id===id)?.titre||id)}</a>`).join(' · ')}</p>`:''}
+  <p><a href="${esc(q.reference)}" target="_blank" rel="noopener">Référence : Fondation du Japon</a></p></div><button id="atelier-next">Continuer</button>`;
   target.querySelectorAll('[data-particle-choice]').forEach(b=>{b.disabled=true;b.setAttribute('aria-pressed',String(s.particleOptions.items[Number(b.dataset.particleChoice)].value===choice));});
   $('#atelier-next').onclick=()=>{stopAudio();s.results.push({q,good});s.index++;s.revealed=false;s.choice=null;renderAtelierQuestion();};
  };

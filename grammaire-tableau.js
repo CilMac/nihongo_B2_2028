@@ -18,7 +18,7 @@ function renderGrammar(r){
  if(r.id==='particules'){renderParticlesSummary();return;}
  const f=grammar.find(f=>f.id===r.id);
  if(!f){
-  $('#main').innerHTML=intro('OBSERVER · COMPRENDRE · PRATIQUER','La grammaire','20 fiches : une synthèse pour se repérer, des exemples et un exercice pour pratiquer.')+`<a class="grammar-overview-link panel" href="#grammaire/particules"><strong>Les particules en un coup d’œil</strong><span>Comparer leurs rôles et retrouver la bonne fiche →</span></a><div class="grid grammar-index">${grammar.map(f=>`<article class="card grammar-card"><div class="card-head"><span class="pill">${esc(f.id)} · ${esc(f.famille)}</span>${star(f.id)}</div><h2>${esc(f.titre)}</h2><p>${esc(f.objectif)}</p><a href="#grammaire/${f.id}">Voir la synthèse →</a></article>`).join('')}</div>`;
+  $('#main').innerHTML=intro('OBSERVER · COMPRENDRE · PRATIQUER','La grammaire',grammar.length+' fiches : une synthèse pour se repérer, des exemples et un exercice pour pratiquer.')+`<a class="grammar-overview-link panel" href="#grammaire/particules"><strong>Les particules en un coup d’œil</strong><span>Comparer leurs rôles et retrouver la bonne fiche →</span></a><div class="grid grammar-index">${grammar.map(f=>`<article class="card grammar-card"><div class="card-head"><span class="pill">${esc(f.id)} · ${esc(f.famille)}</span>${star(f.id)}</div><h2>${esc(f.titre)}</h2><p>${esc(f.objectif)}</p><a href="#grammaire/${f.id}">Voir la synthèse →</a></article>`).join('')}</div>`;
   return;
  }
  const particleSheet=grammarParticles.lignes.some(r=>r.fiche===f.id);

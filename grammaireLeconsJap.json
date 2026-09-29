@@ -1,7 +1,7 @@
 {
-  "version": "1.2.0",
-  "date": "2026-09-27",
-  "titre": "Grammaire des leçons — 20 premières fiches",
+  "version": "1.3.0",
+  "date": "2026-09-29",
+  "titre": "Grammaire des leçons — 23 fiches",
   "langue_explications": "fr",
   "affichage": {
     "romaji": {
@@ -4274,6 +4274,536 @@
           }
         ]
       }
+    },
+    {
+      "id": "G21",
+      "ordre": 21,
+      "titre": "にします : exprimer un choix",
+      "famille": "Particules",
+      "niveau": "débutant",
+      "objectif": "Dire ce que l’on choisit, notamment au café ou au restaurant.",
+      "explication": "Dans un contexte de choix, nom + にします (ni shimasu) annonce ce que l’on décide de prendre. Pour demander le choix, on remplace le nom par 何 (nani) : 何にしますか. Cette construction se comprend comme un ensemble ; に ne marque ici ni un lieu ni une heure.",
+      "constructions": [
+        {
+          "jp": "コーヒーにします",
+          "kana": "コーヒーにします",
+          "romaji": "koohii ni shimasu",
+          "fr": "Je prendrai un café."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Demander et annoncer le choix.",
+          "formes": [
+            {
+              "jp": "何にしますか",
+              "kana": "なににしますか",
+              "romaji": "nani ni shimasu ka",
+              "fr": "Que prendrez-vous ?"
+            },
+            {
+              "jp": "コーヒーにします",
+              "kana": "コーヒーにします",
+              "romaji": "koohii ni shimasu",
+              "fr": "Je prendrai un café."
+            },
+            {
+              "jp": "コーヒーとお菓子にします",
+              "kana": "コーヒーとおかしにします",
+              "romaji": "koohii to o kashi ni shimasu",
+              "fr": "Je prendrai un café et une pâtisserie."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "何をしますか demande ce que l’on fait ; 何にしますか demande ce que l’on choisit. Les deux questions sont possibles, mais leur sens diffère.",
+        "Dans コーヒーとお菓子にします, と relie les deux éléments du choix ; に porte sur tout le groupe.",
+        "Pour demander directement un produit, on peut employer をください. C’est une autre construction, à retrouver dans G17."
+      ],
+      "exemples": [
+        {
+          "source": "N12-S05",
+          "jp": "山田 さん は 何 に します か。",
+          "kana": "やまだ さん は なに に します か。",
+          "romaji": "yamada san wa nani ni shimasu ka.",
+          "fr": "Et vous, Yamada, que prendrez-vous ?",
+          "cible": {
+            "jp": "何 に します か",
+            "kana": "なに に します か",
+            "romaji": "nani ni shimasu ka",
+            "fr": "Que prendrez-vous ?"
+          },
+          "commentaire": "Au café, on demande à Yamada ce qu’il choisit."
+        },
+        {
+          "source": "N14-S08",
+          "jp": "私 は コーヒー と お 菓子 に します。",
+          "kana": "わたし は コーヒー と お かし に します。",
+          "romaji": "watashi wa koohii to o kashi ni shimasu.",
+          "fr": "Pour moi, ce sera un café et une pâtisserie.",
+          "cible": {
+            "jp": "コーヒー と お 菓子 に します",
+            "kana": "コーヒー と お かし に します",
+            "romaji": "koohii to o kashi ni shimasu",
+            "fr": "Je prendrai un café et une pâtisserie."
+          },
+          "commentaire": "にします annonce le choix du groupe relié par と."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "Au café, quelle phrase demande ce que la personne choisit de prendre ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "何をしますか",
+            "kana": "なにをしますか",
+            "romaji": "nani o shimasu ka",
+            "fr": "Que faites-vous ?"
+          },
+          {
+            "id": "choix-2",
+            "jp": "何にしますか",
+            "kana": "なににしますか",
+            "romaji": "nani ni shimasu ka",
+            "fr": "Que prendrez-vous ?"
+          },
+          {
+            "id": "choix-3",
+            "jp": "どこへ行きますか",
+            "kana": "どこへいきますか",
+            "romaji": "doko e ikimasu ka",
+            "fr": "Où allez-vous ?"
+          }
+        ],
+        "bonne_reponse": "choix-2",
+        "explication": "何にしますか demande un choix. どこへ行きますか demande la destination. 何をしますか demande une activité.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [
+        {
+          "id": "vocab-1807",
+          "mot": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "particule de lieu, de temps ou de destination (« à », « dans », « vers », « en »)"
+        }
+      ],
+      "sources": [
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Starter, leçon 6 : N にします",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=15",
+          "consulte_le": "2026-09-29"
+        }
+      ],
+      "prerequis": [
+        "G02",
+        "G05"
+      ],
+      "pour_aller_plus_loin": "にします possède aussi des emplois liés à un changement. Cette fiche traite seulement du choix dans les situations présentées.",
+      "lecons": [
+        "N12",
+        "N14"
+      ],
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Nom + にします annonce ici un choix.",
+          "何にしますか demande ce que la personne choisit."
+        ],
+        "lignes": [
+          {
+            "usage": "Demander le choix",
+            "exemple": {
+              "jp": "何にしますか",
+              "kana": "なににしますか",
+              "romaji": "nani ni shimasu ka",
+              "fr": "Que prendrez-vous ?"
+            }
+          },
+          {
+            "usage": "Choisir une chose",
+            "exemple": {
+              "jp": "コーヒーにします",
+              "kana": "コーヒーにします",
+              "romaji": "koohii ni shimasu",
+              "fr": "Je prendrai un café."
+            }
+          },
+          {
+            "usage": "Choisir deux choses",
+            "exemple": {
+              "jp": "コーヒーとお菓子にします",
+              "kana": "コーヒーとおかしにします",
+              "romaji": "koohii to o kashi ni shimasu",
+              "fr": "Je prendrai un café et une pâtisserie."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "G22",
+      "ordre": 22,
+      "titre": "に行きます : dire le but du déplacement",
+      "famille": "Particules",
+      "niveau": "débutant",
+      "objectif": "Distinguer où l’on va et ce que l’on va faire.",
+      "explication": "Après un nom d’activité, に indique le but du déplacement : 買物に行きます signifie aller faire des achats. Le nom indique l’activité, et 行きます le déplacement. Avec un nom de lieu, に ou へ peut indiquer la destination : la construction doit être lue avec le nom qui la précède.",
+      "constructions": [
+        {
+          "jp": "買物に行きます",
+          "kana": "かいものにいきます",
+          "romaji": "kaimono ni ikimasu",
+          "fr": "Je vais faire des achats."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Comparer activité et destination.",
+          "formes": [
+            {
+              "jp": "買物に行きます",
+              "kana": "かいものにいきます",
+              "romaji": "kaimono ni ikimasu",
+              "fr": "Je vais faire des achats."
+            },
+            {
+              "jp": "映画に行きます",
+              "kana": "えいがにいきます",
+              "romaji": "eiga ni ikimasu",
+              "fr": "Je vais voir un film."
+            },
+            {
+              "jp": "デパートへ行きます",
+              "kana": "デパートへいきます",
+              "romaji": "depaato e ikimasu",
+              "fr": "Je vais au grand magasin."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "買物 désigne l’activité des achats, pas un magasin. Pour désigner le lieu, on utilise un nom de lieu.",
+        "Dans 一緒に映画に行きました, les deux に ne jouent pas le même rôle : 一緒に signifie « ensemble » ; 映画に indique le but.",
+        "Un nom quelconque ne peut pas automatiquement être placé dans ce modèle : il doit désigner ici une activité ou un événement."
+      ],
+      "exemples": [
+        {
+          "source": "N14-S10",
+          "jp": "今日 の 午後 買物 に 行きましょう。",
+          "kana": "きょう の ごご かいもの に いきましょう。",
+          "romaji": "kyou no gogo kaimono ni ikimashou.",
+          "fr": "Allons faire des achats cet après-midi.",
+          "cible": {
+            "jp": "買物 に 行きましょう",
+            "kana": "かいもの に いきましょう",
+            "romaji": "kaimono ni ikimashou",
+            "fr": "Allons faire des achats."
+          },
+          "commentaire": "Le but est de faire des achats. 行きましょう propose le déplacement."
+        },
+        {
+          "source": "N8-S03",
+          "jp": "一緒 に 映画 に 行きました。",
+          "kana": "いっしょ に えいが に いきました。",
+          "romaji": "issho ni eiga ni ikimashita.",
+          "fr": "Nous sommes allés au cinéma ensemble.",
+          "cible": {
+            "jp": "映画 に 行きました",
+            "kana": "えいが に いきました",
+            "romaji": "eiga ni ikimashita",
+            "fr": "Nous sommes allés voir un film."
+          },
+          "commentaire": "La cible est le deuxième に, après 映画. 一緒に, au début de la phrase, signifie « ensemble »."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "Quelle phrase indique que le but du déplacement est de faire des achats ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "買物に行きます",
+            "kana": "かいものにいきます",
+            "romaji": "kaimono ni ikimasu",
+            "fr": "Je vais faire des achats."
+          },
+          {
+            "id": "choix-2",
+            "jp": "デパートへ行きます",
+            "kana": "デパートへいきます",
+            "romaji": "depaato e ikimasu",
+            "fr": "Je vais au grand magasin."
+          },
+          {
+            "id": "choix-3",
+            "jp": "バスで行きます",
+            "kana": "バスでいきます",
+            "romaji": "basu de ikimasu",
+            "fr": "J’y vais en bus."
+          }
+        ],
+        "bonne_reponse": "choix-1",
+        "explication": "買物に indique ce que l’on va faire. デパートへ donne la destination ; バスで donne le moyen de transport. Aller au grand magasin ne dit pas, à lui seul, ce que l’on va y faire.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [
+        {
+          "id": "vocab-1807",
+          "mot": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "particule de lieu, de temps ou de destination (« à », « dans », « vers », « en »)"
+        },
+        {
+          "id": "vocab-0130",
+          "mot": "行く",
+          "kana": "いく",
+          "romaji": "iku",
+          "fr": "aller"
+        }
+      ],
+      "sources": [
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Starter, leçon 12 : nom d’activité ou d’événement + に行きます",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=37",
+          "consulte_le": "2026-09-29"
+        }
+      ],
+      "prerequis": [
+        "G05",
+        "G09"
+      ],
+      "pour_aller_plus_loin": "La construction avec un verbe, comme « aller manger », sera étudiée séparément. Ici, on s’entraîne avec des noms d’activité.",
+      "lecons": [
+        "N14",
+        "N8"
+      ],
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Nom d’activité + に行きます : aller faire cette activité.",
+          "Distinguer le but (faire quoi ?) de la destination (aller où ?)."
+        ],
+        "lignes": [
+          {
+            "usage": "Faire des achats",
+            "exemple": {
+              "jp": "買物に行きます",
+              "kana": "かいものにいきます",
+              "romaji": "kaimono ni ikimasu",
+              "fr": "Je vais faire des achats."
+            }
+          },
+          {
+            "usage": "Voir un film",
+            "exemple": {
+              "jp": "映画に行きます",
+              "kana": "えいがにいきます",
+              "romaji": "eiga ni ikimasu",
+              "fr": "Je vais voir un film."
+            }
+          },
+          {
+            "usage": "Comparer : le lieu",
+            "exemple": {
+              "jp": "デパートへ行きます",
+              "kana": "デパートへいきます",
+              "romaji": "depaato e ikimasu",
+              "fr": "Je vais au grand magasin."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "G23",
+      "ordre": 23,
+      "titre": "に : la personne à qui l’on téléphone",
+      "famille": "Particules",
+      "niveau": "débutant",
+      "objectif": "Repérer la personne à qui l’appel est adressé.",
+      "explication": "Avec 電話をします (denwa o shimasu), la personne à qui l’on téléphone est suivie de に. Dans 友達に電話をします, 友達に désigne le destinataire de l’appel ; 電話をします exprime l’action de téléphoner. La particule se choisit avec la construction du verbe, et non en traduisant chaque « à » français par に.",
+      "constructions": [
+        {
+          "jp": "友達に電話をします",
+          "kana": "ともだちにでんわをします",
+          "romaji": "tomodachi ni denwa o shimasu",
+          "fr": "Je téléphone à un ami."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Désigner la personne et la questionner.",
+          "formes": [
+            {
+              "jp": "友達に電話をします",
+              "kana": "ともだちにでんわをします",
+              "romaji": "tomodachi ni denwa o shimasu",
+              "fr": "Je téléphone à un ami."
+            },
+            {
+              "jp": "だれに電話をしますか",
+              "kana": "だれにでんわをしますか",
+              "romaji": "dare ni denwa o shimasu ka",
+              "fr": "À qui téléphonez-vous ?"
+            },
+            {
+              "jp": "友達と電話で話します",
+              "kana": "ともだちとでんわではなします",
+              "romaji": "tomodachi to denwa de hanashimasu",
+              "fr": "Je parle au téléphone avec un ami."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "に indique ici la personne à qui l’appel s’adresse ; il ne signifie pas que l’on se déplace chez elle.",
+        "Dans 友達と電話で話します, と indique avec qui l’on parle et で le moyen utilisé. Cette comparaison ne signifie pas que と serait toujours impossible avec 電話する.",
+        "Le texte source N13-S10 écrit 今晚. La graphie usuelle de こんばん (konban, ce soir) est 今晩 ; la citation du cours est conservée."
+      ],
+      "exemples": [
+        {
+          "source": "N13-S10",
+          "jp": "今晚 友達 に 電話 を します。",
+          "kana": "こんばん ともだち に でんわ を します。",
+          "romaji": "konban tomodachi ni denwa o shimasu.",
+          "fr": "Je téléphonerai à mon ami ce soir.",
+          "cible": {
+            "jp": "友達 に 電話 を します",
+            "kana": "ともだち に でんわ を します",
+            "romaji": "tomodachi ni denwa o shimasu",
+            "fr": "Je téléphone à un ami."
+          },
+          "commentaire": "友達に désigne la personne appelée. Le début de la phrase situe l’appel ce soir ; voir la réserve sur sa graphie dans les pièges."
+        },
+        {
+          "source": "N16-S12",
+          "jp": "田中 さん と 山本さん に すぐ 電話 を かけましょう。",
+          "kana": "たなか さん と やまもとさん に すぐ でんわ を かけましょう。",
+          "romaji": "tanaka san to yamamotosan ni sugu denwa o kakemashou.",
+          "fr": "Téléphonons tout de suite à Tanaka et à Yamamoto.",
+          "cible": {
+            "jp": "田中 さん と 山本さん に",
+            "kana": "たなか さん と やまもとさん に",
+            "romaji": "tanaka san to yamamotosan ni",
+            "fr": "à Tanaka et à Yamamoto"
+          },
+          "commentaire": "と relie les deux personnes appelées ; に suit tout ce groupe. 電話をかける est une autre expression pour téléphoner ; かけましょう propose de le faire."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "Quelle phrase demande à qui l’on téléphone ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "いつ電話をしますか",
+            "kana": "いつでんわをしますか",
+            "romaji": "itsu denwa o shimasu ka",
+            "fr": "Quand téléphonez-vous ?"
+          },
+          {
+            "id": "choix-2",
+            "jp": "だれに電話をしますか",
+            "kana": "だれにでんわをしますか",
+            "romaji": "dare ni denwa o shimasu ka",
+            "fr": "À qui téléphonez-vous ?"
+          },
+          {
+            "id": "choix-3",
+            "jp": "だれと電話で話しますか",
+            "kana": "だれとでんわではなしますか",
+            "romaji": "dare to denwa de hanashimasu ka",
+            "fr": "Avec qui parlez-vous au téléphone ?"
+          }
+        ],
+        "bonne_reponse": "choix-2",
+        "explication": "だれ remplace la personne recherchée, et に garde sa place après ce mot. いつ demande le moment ; だれと demande avec qui se déroule la conversation.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [
+        {
+          "id": "vocab-1807",
+          "mot": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "particule de lieu, de temps ou de destination (« à », « dans », « vers », « en »)"
+        }
+      ],
+      "sources": [
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "みんなの教材サイト — に（対象）",
+          "section": "Personne vers qui l’action est dirigée ; 電話をする et 電話をかける",
+          "url": "https://www.kyozai.jpf.go.jp/kyozai/material/BTS00035/ja/render.do",
+          "consulte_le": "2026-09-29"
+        }
+      ],
+      "prerequis": [
+        "G02",
+        "G05",
+        "G06"
+      ],
+      "pour_aller_plus_loin": "D’autres verbes peuvent désigner avec に la personne à qui l’action s’adresse. Ils seront ajoutés à partir des exemples rencontrés dans les leçons.",
+      "lecons": [
+        "N13",
+        "N16"
+      ],
+      "romaji_disponible": true,
+      "synthese": {
+        "reperes": [
+          "Personne + に + 電話をします : téléphoner à cette personne.",
+          "に désigne la personne appelée ; を fait partie de 電話をします."
+        ],
+        "lignes": [
+          {
+            "usage": "La personne appelée",
+            "exemple": {
+              "jp": "友達に電話をします",
+              "kana": "ともだちにでんわをします",
+              "romaji": "tomodachi ni denwa o shimasu",
+              "fr": "Je téléphone à un ami."
+            }
+          },
+          {
+            "usage": "Demander à qui",
+            "exemple": {
+              "jp": "だれに電話をしますか",
+              "kana": "だれにでんわをしますか",
+              "romaji": "dare ni denwa o shimasu ka",
+              "fr": "À qui téléphonez-vous ?"
+            }
+          },
+          {
+            "usage": "Comparer : parler avec",
+            "exemple": {
+              "jp": "友達と電話で話します",
+              "kana": "ともだちとでんわではなします",
+              "romaji": "tomodachi to denwa de hanashimasu",
+              "fr": "Je parle au téléphone avec un ami."
+            }
+          }
+        ]
+      }
     }
   ],
   "tableau_particules": {
@@ -4390,6 +4920,54 @@
           "kana": "へやにねこがいます",
           "romaji": "heya ni neko ga imasu",
           "fr": "Il y a un chat dans la chambre."
+        }
+      },
+      {
+        "particule": {
+          "jp": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "Exprimer un choix avec にします"
+        },
+        "role": "Exprimer un choix avec にします",
+        "fiche": "G21",
+        "exemple": {
+          "jp": "コーヒーにします",
+          "kana": "コーヒーにします",
+          "romaji": "koohii ni shimasu",
+          "fr": "Je prendrai un café."
+        }
+      },
+      {
+        "particule": {
+          "jp": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "Indiquer le but du déplacement"
+        },
+        "role": "Indiquer le but du déplacement",
+        "fiche": "G22",
+        "exemple": {
+          "jp": "買物に行きます",
+          "kana": "かいものにいきます",
+          "romaji": "kaimono ni ikimasu",
+          "fr": "Je vais faire des achats."
+        }
+      },
+      {
+        "particule": {
+          "jp": "に",
+          "kana": "に",
+          "romaji": "ni",
+          "fr": "Désigner la personne appelée"
+        },
+        "role": "Désigner la personne appelée",
+        "fiche": "G23",
+        "exemple": {
+          "jp": "友達に電話をします",
+          "kana": "ともだちにでんわをします",
+          "romaji": "tomodachi ni denwa o shimasu",
+          "fr": "Je téléphone à un ami."
         }
       },
       {

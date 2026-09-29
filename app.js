@@ -65,7 +65,7 @@ $('#settings-toggle').onclick=()=>{const open=$('#settings').hidden;$('#settings
   requestAnimationFrame(()=>{if(location.hash!==saved.origin)return;document.getElementById(saved.cardId)?.querySelector('a[href="'+saved.destination+'"]')?.focus({preventScroll:true});window.scrollTo(0,saved.scrollY);});
  }
 });window.addEventListener('pagehide',()=>stopAudio());speech?.addEventListener('voiceschanged',updateVoices);applySettings();updateVoices();
-Promise.all(['leconsJap.json','dicoLeconsJap.json','grammaireLeconsJap.json?v=20260928-titres','decorticage.json'].map(async url=>{const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw new Error(url);return r.json();})).then(([l,v,g,d])=>{decorticageData=d;decorticage=Decorticage.create(v,d);lessons=l;vocab=v;grammar=g.fiches;grammarParticles=g.tableau_particules;lessonIds=[...new Set(l.map(x=>x.Leçon))].sort((a,b)=>Number(a.slice(1))-Number(b.slice(1)));render();renderFavorites();initLocalAudio();}).catch(()=>{$('#main').innerHTML='<div class="panel"><h1>Le carnet n’a pas pu se charger</h1><p>Ouvrez le site depuis son adresse Web ou avec le serveur local indiqué dans le fichier README, puis réessayez.</p><button onclick="location.reload()">Réessayer</button></div>';});
+Promise.all(['leconsJap.json','dicoLeconsJap.json','grammaireLeconsJap.json?v=20260929-ni','decorticage.json'].map(async url=>{const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw new Error(url);return r.json();})).then(([l,v,g,d])=>{decorticageData=d;decorticage=Decorticage.create(v,d);lessons=l;vocab=v;grammar=g.fiches;grammarParticles=g.tableau_particules;lessonIds=[...new Set(l.map(x=>x.Leçon))].sort((a,b)=>Number(a.slice(1))-Number(b.slice(1)));render();renderFavorites();initLocalAudio();}).catch(()=>{$('#main').innerHTML='<div class="panel"><h1>Le carnet n’a pas pu se charger</h1><p>Ouvrez le site depuis son adresse Web ou avec le serveur local indiqué dans le fichier README, puis réessayez.</p><button onclick="location.reload()">Réessayer</button></div>';});
 
 // Retrouver les favoris de tous les modules sans quitter la lecture en cours.
 function renderFavorites() {
@@ -142,7 +142,7 @@ document.addEventListener('toggle', event => {
 
 function lessonGrammarLinks(related){
  const link=item=>`<div class="lesson-grammar-link"><a href="#grammaire/${item.card.id}">${esc(item.card.titre)} →</a>${item.row?`<a class="grammar-evidence" href="#lecons/${item.row.Leçon}/${item.row.Ligne}">Repérer dans la phrase ${item.row.Ligne.slice(1).replace(/^0/,'')} ↗</a>`:''}</div>`;
- if(!related.length)return '<p class="muted">Aucune correspondance repérée parmi les 20 fiches actuelles.</p><a href="#grammaire">Parcourir les fiches de grammaire →</a>';
+ if(!related.length)return '<p class="muted">Aucune correspondance repérée parmi les fiches actuelles.</p><a href="#grammaire">Parcourir les fiches de grammaire →</a>';
  return related.slice(0,4).map(link).join('')+(related.length>4?`<details><summary>${related.length-4} autres points de grammaire</summary>${related.slice(4).map(link).join('')}</details>`:'');
 }
 
