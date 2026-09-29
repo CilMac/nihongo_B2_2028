@@ -4278,7 +4278,7 @@
     {
       "id": "G21",
       "ordre": 21,
-      "titre": "にします : exprimer un choix",
+      "titre": "にします (ni shimasu) : exprimer un choix",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Dire ce que l’on choisit, notamment au café ou au restaurant.",
@@ -4452,7 +4452,7 @@
     {
       "id": "G22",
       "ordre": 22,
-      "titre": "に行きます : dire le but du déplacement",
+      "titre": "に行きます (ni ikimasu) : dire le but du déplacement",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Distinguer où l’on va et ce que l’on va faire.",
@@ -4633,7 +4633,7 @@
     {
       "id": "G23",
       "ordre": 23,
-      "titre": "に : la personne à qui l’on téléphone",
+      "titre": "に (ni) : la personne à qui l’on téléphone",
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Repérer la personne à qui l’appel est adressé.",
