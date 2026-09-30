@@ -97,6 +97,38 @@
   for(const q of out)q.grammarCards=[...new Set(q.sources.map(id=>niSheets[id]).filter(Boolean))];
   for(const q of out)if(['N11-S06-wa-topic-role','N4-S05-ga-question-role','N8-S02-ga-event-role','N9-S03-ga-liking-role','N10-S09-ga-preference-role','N12-S06-N9-S03'].includes(q.id))q.grammarCards=['G07'];
   for(const q of out)if(['N15-S02-role','N15-S02-gap','N19-S09-role','N19-S09-gap','N19-S09-ni-date-role','N5-S08-N19-S09','N15-S02-N14-S03'].includes(q.id))q.grammarCards=['G08','G10'];
+  // Lot des leçons 20–23 : choix éditoriaux et distracteurs propres à chaque sens.
+  const foundation='https://www.jpf.go.jp/j/urawa/j_rsorcs/textbook/dl/setsumei/setsumei_all.pdf#page=';
+  const additions=[
+   ['N20-S07','を','Le chemin parcouru',['Le chemin parcouru','L’objet que l’on achète','Le moyen de transport'],['を','に','で'],['G06'],113,'この道を (kono michi o) indique le chemin que l’on emprunte en allant tout droit. を ne marque pas ici un objet acheté ou consommé. Une destination répondrait à « où va-t-on ? », avec に ou へ ; la question porte sur le trajet parcouru.'],
+   ['N21-S01','と','La personne qui accompagne',['La personne qui accompagne','Le moyen de transport','Une liste de deux destinations'],['と','で','を'],['G12','G10'],84,'家内と (kanai to) signifie « avec ma femme » : と indique avec qui le voyage a été fait. フランスへ (furansu e) donne la destination. Pour le moyen de transport, on utiliserait un nom de transport suivi de で.'],
+   ['N23-S07','から','Le début de la période : « depuis avril »',['Le début de la période : « depuis avril »','La raison de travailler dans cette entreprise','La fin de la période de travail'],['から','まで','と'],['G11','G24'],68,'四月から (shigatsu kara) indique depuis quand la personne travaille : depuis avril. から suit ici un mois, point de départ dans le temps. Il ne donne pas la raison de ce travail. まで signifierait une limite, « jusqu’à avril », ce qui ne répond pas à la consigne.']
+  ];
+  for(const [source,particle,title,labels,choices,grammarCards,page,explanation] of additions){
+   const row=byId.get(source);if(!row)continue;
+   const base={type:'particles',source,sources:[source],row,title,grammarCards,explanation,reference:foundation+page};
+   out.push({...base,id:source+'-role',activity:'Repérer',prompt:'Quel rôle joue '+particle+' ('+readings[particle]+') dans cette phrase ?',texts:[rowText(row)],options:labels.map(label=>({value:label,label})),accepted:[labels[0]]});
+   out.push({...base,id:source+'-gap',activity:'Compléter',prompt:'Parmi ces choix, quelle particule exprime : '+title.toLowerCase()+' ?',texts:[masked(row,particle)],options:choices.map(value=>({value,text:{jp:value,kana:value,romaji:readings[value]}})),accepted:[particle]});
+  }
+  for(const [a,b,prompt,answer,grammarCards,page,explanation] of [
+   ['N3-S05','N20-S07','Dans quelle phrase を indique-t-il un chemin parcouru ?','N20-S07',['G06'],113,'Dans A, le café est l’objet de boire. Dans B, cette route est le chemin parcouru avec 行きます (ikimasu). La même particule を joue deux rôles différents.'],
+   ['N6-S04','N21-S01','Quelle phrase indique avec qui le déplacement a été fait ?','N21-S01',['G10','G12'],84,'A indique comment on se déplace : バスで (basu de), en bus. B indique avec qui : 家内と (kanai to), avec ma femme. Le transport et l’accompagnement peuvent être exprimés ensemble, mais chacune de ces phrases ne précise qu’une de ces informations.'],
+   ['N4-S06','N21-S01','Dans quelle phrase と indique-t-il une personne qui accompagne, plutôt que de relier les noms d’une liste ?','N21-S01',['G12'],84,'Dans A, 服と本 (fuku to hon) relie vêtements et livres. Dans B, 家内と (kanai to) indique la personne qui accompagne ; フランスへ donne la destination. と ne relie donc pas ici la femme et la France dans une liste.']
+  ]){
+   if(!byId.has(a)||!byId.has(b))continue;
+   out.push({type:'particles',id:a+'-'+b,activity:'Comparer',title:'Comparer les rôles',source:a,sources:[a,b],row:byId.get(a),prompt,explanation,grammarCards,reference:foundation+page,texts:[rowText(byId.get(a)),rowText(byId.get(b))],options:[{value:a,label:'Phrase A'},{value:b,label:'Phrase B'}],accepted:[answer]});
+  }
+  const context='N22-S08',reason='N22-S09',start='N23-S07';
+  if(byId.has(context)&&byId.has(reason)){
+   const labels=['Justifier la demande de patienter','Indiquer depuis quelle heure on attend','Marquer le lieu où l’on vérifie'];
+   const explanation='A demande de patienter. B, 今調べますから (ima shirabemasu kara), donne la raison de cette demande : la personne va vérifier maintenant. から suit ici 調べます, une action présentée comme raison ; il ne marque pas un départ. La traduction du cours est conservée, même si elle ne rend pas explicitement cette liaison.';
+   out.push({type:'particles',id:reason+'-kara-reason-role',activity:'Repérer',title:'から : la raison de patienter',source:reason,sources:[context,reason],row:byId.get(reason),prompt:'Quel rôle joue から (kara) dans la phrase B, après la demande de la phrase A ?',texts:[rowText(byId.get(context)),rowText(byId.get(reason))],options:labels.map(label=>({value:label,label})),accepted:[labels[0]],explanation,grammarCards:['G24'],reference:foundation+126});
+   if(byId.has(start)){
+    // Le second passage rassemble les deux répliques sans réécrire leurs textes.
+    const passage=Object.fromEntries(['jp','kana','romaji','fr'].map(k=>[k,[context,reason].map(id=>rowText(byId.get(id))[k]).join(' ')]));
+    out.push({type:'particles',id:start+'-'+reason,activity:'Comparer',title:'から : début ou raison',source:start,sources:[start,context,reason],row:byId.get(start),prompt:'Dans quel passage から explique-t-il une raison, plutôt qu’un début dans le temps ?',texts:[rowText(byId.get(start)),passage],options:[{value:start,label:'Passage A'},{value:reason,label:'Passage B · demande puis raison'}],accepted:[reason],explanation:'A contient 四月から (shigatsu kara), « depuis avril » : le début de la période de travail. Dans B, la demande de patienter est suivie de 今調べますから : la vérification justifie cette demande. Les deux répliques sont conservées pour comprendre la raison.',grammarCards:['G11','G24'],reference:foundation+126});
+   }
+  }
   return out;
  }
  const api={build,masked,cases};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.Particules=api;

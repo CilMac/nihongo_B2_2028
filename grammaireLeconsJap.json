@@ -1,7 +1,7 @@
 {
-  "version": "1.3.0",
-  "date": "2026-09-29",
-  "titre": "Grammaire des leçons — 23 fiches",
+  "version": "1.4.0",
+  "date": "2026-09-30",
+  "titre": "Grammaire des leçons — 24 fiches",
   "langue_explications": "fr",
   "affichage": {
     "romaji": {
@@ -1270,11 +1270,11 @@
     {
       "id": "G06",
       "ordre": 6,
-      "titre": "を (o) : indiquer ce que l’on mange, boit ou regarde",
+      "titre": "を (o) : l’objet de l’action ou le chemin parcouru",
       "famille": "Particules",
       "niveau": "débutant",
-      "objectif": "Reconnaître le complément direct avec o.",
-      "explication": "La particule o se place après ce sur quoi porte l’action : boire quoi, acheter quoi, regarder quoi. Le verbe vient ensuite. Le sujet peut rester implicite.",
+      "objectif": "Distinguer ce que l’on mange ou lit du chemin que l’on emprunte.",
+      "explication": "La particule o se place après ce sur quoi porte l’action : boire quoi, acheter quoi, regarder quoi. Le verbe vient ensuite. Le sujet peut rester implicite. Avec un verbe de déplacement, を peut aussi suivre le chemin parcouru. Dans この道をまっすぐ行きます (kono michi o massugu ikimasu), la route est le trajet emprunté, pas une chose sur laquelle on agit.",
       "constructions": [
         {
           "jp": "パンを食べます",
@@ -1287,6 +1287,12 @@
           "kana": "ほんをよみます",
           "romaji": "hon o yomimasu",
           "fr": "Je lis un livre."
+        },
+        {
+          "jp": "この道をまっすぐ行きます。",
+          "kana": "このみちをまっすぐいきます。",
+          "romaji": "kono michi o massugu ikimasu.",
+          "fr": "Je continue tout droit sur cette route."
         }
       ],
       "formation": [
@@ -1306,11 +1312,30 @@
               "fr": "Je lis un livre."
             }
           ]
+        },
+        {
+          "texte": "Exemples créés : le chemin parcouru et la destination ne répondent pas à la même question.",
+          "formes": [
+            {
+              "jp": "この道をまっすぐ行きます。",
+              "kana": "このみちをまっすぐいきます。",
+              "romaji": "kono michi o massugu ikimasu.",
+              "fr": "Je continue tout droit sur cette route."
+            },
+            {
+              "jp": "駅へ行きます。",
+              "kana": "えきへいきます。",
+              "romaji": "eki e ikimasu.",
+              "fr": "Je vais à la gare."
+            }
+          ]
         }
       ],
       "pieges": [
         "Cette particule s’écrit wo mais se prononce o.",
-        "Tous les équivalents français d’un complément direct ne prennent pas o en japonais : aimer avec suki se construit notamment avec ga."
+        "Tous les équivalents français d’un complément direct ne prennent pas o en japonais : aimer avec suki se construit notamment avec ga.",
+        "を ne marque donc pas toujours un objet : regarder le nom et le verbe ensemble. La route est ici ce que l’on parcourt ; la gare peut être la destination avec に ou へ.",
+        "Ne pas remplacer automatiquement le で d’un lieu d’activité par を. Ici, を présente un chemin de déplacement ; ce n’est pas une règle pour toute action dans un lieu."
       ],
       "exemples": [
         {
@@ -1340,6 +1365,20 @@
             "fr": "Je vais acheter des chaussettes."
           },
           "commentaire": "O suit la chose achetée."
+        },
+        {
+          "source": "N20-S07",
+          "jp": "まず この 道 を まっすぐ 行きます。",
+          "kana": "まず この みち を まっすぐ いきます。",
+          "romaji": "mazu kono michi o massugu ikimasu.",
+          "fr": "D’abord, allez tout droit sur cette route.",
+          "cible": {
+            "jp": "この 道 を まっすぐ 行きます",
+            "kana": "この みち を まっすぐ いきます",
+            "romaji": "kono michi o massugu ikimasu",
+            "fr": "Continuer tout droit sur cette route."
+          },
+          "commentaire": "を suit le chemin emprunté. La traduction impérative vient du contexte où l’on explique un itinéraire."
         }
       ],
       "exercice": {
@@ -1399,6 +1438,13 @@
           "section": "Starter, leçon 5 : objet du verbe",
           "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=11",
           "consulte_le": "2026-09-24"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "教科書を作ろう — explications grammaticales",
+          "section": "助-20 を（経路） : chemin et point de passage, p. 97",
+          "url": "https://www.jpf.go.jp/j/urawa/j_rsorcs/textbook/dl/setsumei/setsumei_all.pdf#page=113",
+          "consulte_le": "2026-09-30"
         }
       ],
       "prerequis": [
@@ -1407,13 +1453,84 @@
       "pour_aller_plus_loin": "",
       "lecons": [
         "N3",
-        "N5"
+        "N5",
+        "N20"
       ],
       "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Quelle particule complète « hon … yomimasu » pour « je lis un livre » ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o",
+              "fr": "marque ici l’objet lu"
+            },
+            {
+              "id": "choix-2",
+              "jp": "に",
+              "kana": "に",
+              "romaji": "ni",
+              "fr": "marque notamment une destination ou un repère"
+            },
+            {
+              "id": "choix-3",
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de",
+              "fr": "marque notamment un lieu d’action ou un moyen"
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "Le livre est l’objet de lire : hon o yomimasu.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Dans quelle phrase を marque-t-il un chemin parcouru ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "本を読みます。",
+              "kana": "ほんをよみます。",
+              "romaji": "hon o yomimasu.",
+              "fr": "Je lis un livre."
+            },
+            {
+              "id": "choix-2",
+              "jp": "この道をまっすぐ行きます。",
+              "kana": "このみちをまっすぐいきます。",
+              "romaji": "kono michi o massugu ikimasu.",
+              "fr": "Je continue tout droit sur cette route."
+            },
+            {
+              "id": "choix-3",
+              "jp": "コーヒーを飲みます。",
+              "kana": "コーヒーをのみます。",
+              "romaji": "koohii o nomimasu.",
+              "fr": "Je bois du café."
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "道 (michi) est la route parcourue avec 行きます. Le livre et le café sont respectivement l’objet de lire et de boire.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
       "synthese": {
         "reperes": [
-          "La chose sur laquelle porte l’action vient avant を (o).",
-          "を s’écrit wo, mais se prononce o."
+          "を (o) peut marquer l’objet de l’action ou le chemin parcouru : regarder aussi le verbe.",
+          "Le chemin parcouru avec を se distingue de la destination avec に ou へ. を se prononce o."
         ],
         "lignes": [
           {
@@ -1432,6 +1549,24 @@
               "kana": "ほんをよみます",
               "romaji": "hon o yomimasu",
               "fr": "Je lis un livre."
+            }
+          },
+          {
+            "usage": "Par quel chemin ?",
+            "exemple": {
+              "jp": "この道をまっすぐ行きます。",
+              "kana": "このみちをまっすぐいきます。",
+              "romaji": "kono michi o massugu ikimasu.",
+              "fr": "Je continue tout droit sur cette route."
+            }
+          },
+          {
+            "usage": "Comparer : aller où ?",
+            "exemple": {
+              "jp": "駅へ行きます。",
+              "kana": "えきへいきます。",
+              "romaji": "eki e ikimasu.",
+              "fr": "Je vais à la gare."
             }
           }
         ]
@@ -2397,6 +2532,12 @@
           "kana": "こうえんでコンサートがあります。",
           "romaji": "kouen de konsaato ga arimasu.",
           "fr": "Un concert a lieu dans le parc."
+        },
+        {
+          "jp": "友達と電車で行きます。",
+          "kana": "ともだちとでんしゃでいきます。",
+          "romaji": "tomodachi to densha de ikimasu.",
+          "fr": "J’y vais en train avec un ami."
         }
       ],
       "formation": [
@@ -2443,6 +2584,29 @@
               "kana": "こうえんにきがあります。",
               "romaji": "kouen ni ki ga arimasu.",
               "fr": "Il y a un arbre dans le parc."
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés : comment se déplace-t-on, et avec qui ? Les deux informations peuvent coexister.",
+          "formes": [
+            {
+              "jp": "電車で行きます。",
+              "kana": "でんしゃでいきます。",
+              "romaji": "densha de ikimasu.",
+              "fr": "J’y vais en train."
+            },
+            {
+              "jp": "友達と行きます。",
+              "kana": "ともだちといきます。",
+              "romaji": "tomodachi to ikimasu.",
+              "fr": "J’y vais avec un ami."
+            },
+            {
+              "jp": "友達と電車で行きます。",
+              "kana": "ともだちとでんしゃでいきます。",
+              "romaji": "tomodachi to densha de ikimasu.",
+              "fr": "J’y vais en train avec un ami."
             }
           ]
         }
@@ -2576,6 +2740,20 @@
           "section": "Starter, leçon 12 : lieu d’événement et comparaison に / で",
           "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=36",
           "consulte_le": "2026-09-29"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "教科書を作ろう — explications grammaticales",
+          "section": "助-14 と（相手） : partenaire de l’action, p. 68",
+          "url": "https://www.jpf.go.jp/j/urawa/j_rsorcs/textbook/dl/setsumei/setsumei_all.pdf#page=84",
+          "consulte_le": "2026-09-30"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "教科書を作ろう — explications grammaticales",
+          "section": "助-17 で（手段／材料） : moyen utilisé, p. 84",
+          "url": "https://www.jpf.go.jp/j/urawa/j_rsorcs/textbook/dl/setsumei/setsumei_all.pdf#page=100",
+          "consulte_le": "2026-09-30"
         }
       ],
       "prerequis": [
@@ -2658,6 +2836,40 @@
             "romaji": "toujours activable, y compris avant la réponse",
             "fr_options": "à révéler avec le corrigé"
           }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Quelle phrase précise à la fois le moyen de transport et la personne qui accompagne ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "電車で行きます。",
+              "kana": "でんしゃでいきます。",
+              "romaji": "densha de ikimasu.",
+              "fr": "J’y vais en train."
+            },
+            {
+              "id": "choix-2",
+              "jp": "友達と行きます。",
+              "kana": "ともだちといきます。",
+              "romaji": "tomodachi to ikimasu.",
+              "fr": "J’y vais avec un ami."
+            },
+            {
+              "id": "choix-3",
+              "jp": "友達と電車で行きます。",
+              "kana": "ともだちとでんしゃでいきます。",
+              "romaji": "tomodachi to densha de ikimasu.",
+              "fr": "J’y vais en train avec un ami."
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "友達と indique avec qui ; 電車で indique le moyen de déplacement. Ces deux groupes apportent des informations différentes.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
         }
       ],
       "synthese": {
@@ -2700,6 +2912,15 @@
               "kana": "こうえんでコンサートがあります。",
               "romaji": "kouen de konsaato ga arimasu.",
               "fr": "Un concert a lieu dans le parc."
+            }
+          },
+          {
+            "usage": "と et で · avec qui, comment ?",
+            "exemple": {
+              "jp": "友達と電車で行きます。",
+              "kana": "ともだちとでんしゃでいきます。",
+              "romaji": "tomodachi to densha de ikimasu.",
+              "fr": "J’y vais en train avec un ami."
             }
           }
         ]
@@ -2747,7 +2968,7 @@
         }
       ],
       "pieges": [
-        "Dans cette fiche, kara signifie « depuis / à partir de ». Après une proposition, il peut aussi exprimer une cause.",
+        "Dans cette fiche, から signifie « depuis / à partir de ». Après une proposition, il peut exprimer une raison : voir G24, qui compare ces deux emplois.",
         "Made (« jusqu’à ») et made ni (« au plus tard à ») ne sont pas interchangeables."
       ],
       "exemples": [
@@ -2778,6 +2999,20 @@
             "fr": "de l’après-midi jusqu’au milieu de la nuit"
           },
           "commentaire": "Les deux extrémités sont ici temporelles."
+        },
+        {
+          "source": "N23-S07",
+          "jp": "四月 から 自動車 関係 の 会社 に 勤めて います。",
+          "kana": "しがつ から じどうしゃ かんけい の かいしゃ に つとめて います。",
+          "romaji": "shigatsu kara jidousha kankei no kaisha ni tsutomete imasu.",
+          "fr": "Depuis avril, il travaille dans une entreprise du secteur automobile.",
+          "cible": {
+            "jp": "四月 から",
+            "kana": "しがつ から",
+            "romaji": "shigatsu kara",
+            "fr": "depuis avril"
+          },
+          "commentaire": "から suit le mois où commence la période de travail. Il n’explique pas pourquoi la personne travaille."
         }
       ],
       "exercice": {
@@ -2851,7 +3086,8 @@
       "pour_aller_plus_loin": "",
       "lecons": [
         "N6",
-        "N11"
+        "N11",
+        "N23"
       ],
       "romaji_disponible": true,
       "synthese": {
@@ -2884,10 +3120,10 @@
     {
       "id": "G12",
       "ordre": 12,
-      "titre": "と (to), や (ya) et も (mo) : ajouter, énumérer et dire « aussi »",
+      "titre": "と (to), や (ya), も (mo) : listes, accompagnement et « aussi »",
       "famille": "Particules",
       "niveau": "débutant",
-      "objectif": "Distinguer to, ya et mo.",
+      "objectif": "Distinguer une liste, la personne qui accompagne et l’ajout exprimé par « aussi ».",
       "explication": "To relie les noms d’une liste présentée comme complète. Ya donne quelques exemples d’une liste ouverte. Mo ajoute un élément qui partage la même propriété : « aussi ». Avec une personne, to peut également signifier « avec ».",
       "constructions": [
         {
@@ -2907,6 +3143,12 @@
           "kana": "わたしも",
           "romaji": "watashi mo",
           "fr": "moi aussi"
+        },
+        {
+          "jp": "友達と行きます。",
+          "kana": "ともだちといきます。",
+          "romaji": "tomodachi to ikimasu.",
+          "fr": "J’y vais avec un ami."
         }
       ],
       "formation": [
@@ -2932,11 +3174,36 @@
               "fr": "moi aussi"
             }
           ]
+        },
+        {
+          "texte": "Exemples créés : comment se déplace-t-on, et avec qui ? Les deux informations peuvent coexister.",
+          "formes": [
+            {
+              "jp": "電車で行きます。",
+              "kana": "でんしゃでいきます。",
+              "romaji": "densha de ikimasu.",
+              "fr": "J’y vais en train."
+            },
+            {
+              "jp": "友達と行きます。",
+              "kana": "ともだちといきます。",
+              "romaji": "tomodachi to ikimasu.",
+              "fr": "J’y vais avec un ami."
+            },
+            {
+              "jp": "友達と電車で行きます。",
+              "kana": "ともだちとでんしゃでいきます。",
+              "romaji": "tomodachi to densha de ikimasu.",
+              "fr": "J’y vais en train avec un ami."
+            }
+          ]
         }
       ],
       "pieges": [
         "To sert ici à relier des noms, pas à traduire tous les « et » entre deux actions.",
-        "Pour dire « moi aussi », mo remplace le wa attendu sur le thème ; on ne colle pas systématiquement les deux."
+        "Pour dire « moi aussi », mo remplace le wa attendu sur le thème ; on ne colle pas systématiquement les deux.",
+        "Dans 家内とフランスへ行きました, と indique la personne qui accompagne ; へ indique la destination. Ce と ne relie pas « ma femme » et « la France » dans une liste.",
+        "Le français « avec » peut désigner une personne ou un instrument : 友達と (tomodachi to), avec un ami ; フォークで (fooku de), avec une fourchette."
       ],
       "exemples": [
         {
@@ -2980,6 +3247,20 @@
             "fr": "des poissons et des coquillages, entre autres"
           },
           "commentaire": "Ya cite des catégories sans fermer la liste."
+        },
+        {
+          "source": "N21-S01",
+          "jp": "二 年 前 に 家内 と フランス へ 行きました。",
+          "kana": "にねん まえ に かない と フランス へ いきました。",
+          "romaji": "ninen mae ni kanai to furansu e ikimashita.",
+          "fr": "Je suis allé en France avec ma femme il y a deux ans.",
+          "cible": {
+            "jp": "家内 と フランス へ 行きました",
+            "kana": "かない と フランス へ いきました",
+            "romaji": "kanai to furansu e ikimashita",
+            "fr": "Je suis allé en France avec ma femme."
+          },
+          "commentaire": "家内と désigne la personne qui accompagne. フランスへ indique où l’on est allé."
         }
       ],
       "exercice": {
@@ -3046,6 +3327,20 @@
           "section": "Starter, leçon 3 : mo ; leçon 5 : to ; Elementary 1, listes avec ya",
           "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf",
           "consulte_le": "2026-09-24"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "教科書を作ろう — explications grammaticales",
+          "section": "助-14 と（相手） : partenaire de l’action, p. 68",
+          "url": "https://www.jpf.go.jp/j/urawa/j_rsorcs/textbook/dl/setsumei/setsumei_all.pdf#page=84",
+          "consulte_le": "2026-09-30"
+        },
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "教科書を作ろう — explications grammaticales",
+          "section": "助-17 で（手段／材料） : moyen utilisé, p. 84",
+          "url": "https://www.jpf.go.jp/j/urawa/j_rsorcs/textbook/dl/setsumei/setsumei_all.pdf#page=100",
+          "consulte_le": "2026-09-30"
         }
       ],
       "prerequis": [
@@ -3055,9 +3350,80 @@
       "lecons": [
         "N4",
         "N9",
-        "N30"
+        "N30",
+        "N21"
       ],
       "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Comment dire simplement « moi aussi » ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "私と",
+              "kana": "わたしと",
+              "romaji": "watashi to",
+              "fr": "avec moi / moi et…"
+            },
+            {
+              "id": "choix-2",
+              "jp": "私の",
+              "kana": "わたしの",
+              "romaji": "watashi no",
+              "fr": "mon, ma, mes…"
+            },
+            {
+              "id": "choix-3",
+              "jp": "私も",
+              "kana": "わたしも",
+              "romaji": "watashi mo",
+              "fr": "moi aussi"
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "Mo reprend la propriété ou l’action déjà évoquée et l’applique aussi à moi.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Quelle phrase indique avec qui l’on se déplace ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "友達と行きます。",
+              "kana": "ともだちといきます。",
+              "romaji": "tomodachi to ikimasu.",
+              "fr": "J’y vais avec un ami."
+            },
+            {
+              "id": "choix-2",
+              "jp": "電車で行きます。",
+              "kana": "でんしゃでいきます。",
+              "romaji": "densha de ikimasu.",
+              "fr": "J’y vais en train."
+            },
+            {
+              "id": "choix-3",
+              "jp": "駅へ行きます。",
+              "kana": "えきへいきます。",
+              "romaji": "eki e ikimasu.",
+              "fr": "Je vais à la gare."
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "友達と répond à « avec qui ? ». 電車で indique le transport et 駅へ la destination.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
       "synthese": {
         "reperes": [
           "と (to) présente une liste de noms comme complète ; や (ya) donne des exemples.",
@@ -3089,6 +3455,24 @@
               "kana": "わたしも",
               "romaji": "watashi mo",
               "fr": "moi aussi"
+            }
+          },
+          {
+            "usage": "と · accompagnement",
+            "exemple": {
+              "jp": "友達と行きます。",
+              "kana": "ともだちといきます。",
+              "romaji": "tomodachi to ikimasu.",
+              "fr": "J’y vais avec un ami."
+            }
+          },
+          {
+            "usage": "と et で · avec qui, comment ?",
+            "exemple": {
+              "jp": "友達と電車で行きます。",
+              "kana": "ともだちとでんしゃでいきます。",
+              "romaji": "tomodachi to densha de ikimasu.",
+              "fr": "J’y vais en train avec un ami."
             }
           }
         ]
@@ -5369,6 +5753,286 @@
           }
         ]
       }
+    },
+    {
+      "id": "G24",
+      "ordre": 24,
+      "titre": "から (kara) : expliquer une raison",
+      "famille": "Relier les idées",
+      "niveau": "débutant",
+      "objectif": "Comprendre pourquoi quelque chose arrive ou pourquoi l’on fait une demande.",
+      "explication": "Pour expliquer une raison, on place から après la proposition qui donne cette raison. La suite présente ce qu’elle explique : une conséquence, une décision ou une demande. Nous commençons ici avec les formes polies en です et ます, déjà rencontrées dans le cours. Si la suite est comprise dans le contexte, elle peut rester sous-entendue.",
+      "constructions": [
+        {
+          "jp": "雨ですから、出かけません。",
+          "kana": "あめですから、でかけません。",
+          "romaji": "ame desu kara, dekakemasen.",
+          "fr": "Comme il pleut, je ne sors pas."
+        },
+        {
+          "jp": "今調べますから、ちょっと待ってください。",
+          "kana": "いましらべますから、ちょっとまってください。",
+          "romaji": "ima shirabemasu kara, chotto matte kudasai.",
+          "fr": "Je vais vérifier maintenant, alors veuillez patienter un instant."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Exemples créés : la raison vient avant から ; ce qu’elle explique vient ensuite.",
+          "formes": [
+            {
+              "jp": "雨ですから、出かけません。",
+              "kana": "あめですから、でかけません。",
+              "romaji": "ame desu kara, dekakemasen.",
+              "fr": "Comme il pleut, je ne sors pas."
+            },
+            {
+              "jp": "寒いですから、窓を閉めます。",
+              "kana": "さむいですから、まどをしめます。",
+              "romaji": "samui desu kara, mado o shimemasu.",
+              "fr": "Comme il fait froid, je ferme la fenêtre."
+            },
+            {
+              "jp": "今調べますから、ちょっと待ってください。",
+              "kana": "いましらべますから、ちょっとまってください。",
+              "romaji": "ima shirabemasu kara, chotto matte kudasai.",
+              "fr": "Je vais vérifier maintenant, alors veuillez patienter un instant."
+            }
+          ]
+        },
+        {
+          "texte": "Exemple créé pour comparer : から peut aussi suivre un moment de départ, comme dans G11.",
+          "formes": [
+            {
+              "jp": "四月から働いています。",
+              "kana": "しがつからはたらいています。",
+              "romaji": "shigatsu kara hataraite imasu.",
+              "fr": "Je travaille depuis avril."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "四月から (shigatsu kara), « depuis avril », donne un début dans le temps. 雨ですから (ame desu kara), « comme il pleut », explique une raison. Il faut lire ce qui précède から.",
+        "Ne pas retirer automatiquement です ou ます devant から : les formes polies étudiées ici les conservent. Les formes simples, comme 雨だから (ame da kara), seront approfondies séparément.",
+        "Dans N22-S08 puis N22-S09, la demande de patienter vient d’abord, puis sa justification. La traduction française du cours ne rend pas explicitement から ; elle est conservée telle quelle. La phrase isolée ne suffit pas à voir ce que la raison explique.",
+        "から peut justifier une demande : la seconde partie n’est pas forcément un résultat déjà produit."
+      ],
+      "exemples": [
+        {
+          "source": "N22-S08",
+          "jp": "ああ、ギリシャ です か。ちょっと お待ち ください。",
+          "kana": "ああ、ギリシャ です か。ちょっと おまち ください。",
+          "romaji": "aa, girisha desu ka. chotto omachi kudasai.",
+          "fr": "Ah, pour la Grèce ? Veuillez patienter un instant.",
+          "cible": {
+            "jp": "ちょっと お待ち ください",
+            "kana": "ちょっと おまち ください",
+            "romaji": "chotto omachi kudasai",
+            "fr": "Veuillez patienter un instant."
+          },
+          "commentaire": "À lire avec N22-S09, juste après : la demande est suivie de sa raison."
+        },
+        {
+          "source": "N22-S09",
+          "jp": "今 調べます から。",
+          "kana": "いま しらべます から。",
+          "romaji": "ima shirabemasu kara.",
+          "fr": "Je vais vérifier tout de suite.",
+          "cible": {
+            "jp": "今 調べます から",
+            "kana": "いま しらべます から",
+            "romaji": "ima shirabemasu kara",
+            "fr": "Parce que je vais vérifier maintenant."
+          },
+          "commentaire": "Raison de la demande de patienter en N22-S08. La cible française explicite la liaison ; la traduction du cours au-dessus reste inchangée."
+        },
+        {
+          "source": "N24-S11",
+          "jp": "それ が… ちょうど 向かい に 二 十 階 の ビル が 立 って います から、何も 見えません。",
+          "kana": "それ が… ちょうど むかい に にじゅっかい の ビル が たって います から、なにも みえません。",
+          "romaji": "sore ga… choudo mukai ni nijukkai no biru ga tatte imasu kara, nanimo miemasen.",
+          "fr": "Eh bien… Comme il y a un immeuble de vingt niveaux juste en face, on ne voit rien.",
+          "cible": {
+            "jp": "ビル が 立 って います から",
+            "kana": "ビル が たって います から",
+            "romaji": "biru ga tatte imasu kara",
+            "fr": "parce qu’un immeuble se dresse là"
+          },
+          "commentaire": "Cette fois, la raison et ce qu’elle explique sont dans la même phrase : l’immeuble devant empêche de voir. La question porte sur から, pas sur toutes les autres constructions."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "Quelle phrase donne une raison de ne pas sortir ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "雨ですから、出かけません。",
+            "kana": "あめですから、でかけません。",
+            "romaji": "ame desu kara, dekakemasen.",
+            "fr": "Comme il pleut, je ne sors pas."
+          },
+          {
+            "id": "choix-2",
+            "jp": "四月から働いています。",
+            "kana": "しがつからはたらいています。",
+            "romaji": "shigatsu kara hataraite imasu.",
+            "fr": "Je travaille depuis avril."
+          },
+          {
+            "id": "choix-3",
+            "jp": "駅から歩きます。",
+            "kana": "えきからあるきます。",
+            "romaji": "eki kara arukimasu.",
+            "fr": "Je marche à partir de la gare."
+          }
+        ],
+        "bonne_reponse": "choix-1",
+        "explication": "雨ですから donne la raison : il pleut. 四月から indique le début d’une période et 駅から le point de départ du trajet.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [
+        {
+          "id": "vocab-0656",
+          "mot": "から",
+          "kana": "から",
+          "romaji": "kara",
+          "fr": "particule qui marque l'origine, le point de départ ou la cause (« depuis », « à partir de », « parce que »)"
+        }
+      ],
+      "sources": [
+        {
+          "organisme": "The Japan Foundation",
+          "titre": "教科書を作ろう — explications grammaticales",
+          "section": "助-25 から（理由） : raison et suite sous-entendue, pp. 110–111",
+          "url": "https://www.jpf.go.jp/j/urawa/j_rsorcs/textbook/dl/setsumei/setsumei_all.pdf#page=126",
+          "consulte_le": "2026-09-30"
+        }
+      ],
+      "prerequis": [
+        "G01",
+        "G05",
+        "G11",
+        "G17"
+      ],
+      "pour_aller_plus_loin": "から s’emploie aussi après des formes simples. La comparaison avec ので et les nuances de politesse seront étudiées dans une étape ultérieure.",
+      "lecons": [
+        "N22",
+        "N24"
+      ],
+      "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Quelle phrase donne une raison de ne pas sortir ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "雨ですから、出かけません。",
+              "kana": "あめですから、でかけません。",
+              "romaji": "ame desu kara, dekakemasen.",
+              "fr": "Comme il pleut, je ne sors pas."
+            },
+            {
+              "id": "choix-2",
+              "jp": "四月から働いています。",
+              "kana": "しがつからはたらいています。",
+              "romaji": "shigatsu kara hataraite imasu.",
+              "fr": "Je travaille depuis avril."
+            },
+            {
+              "id": "choix-3",
+              "jp": "駅から歩きます。",
+              "kana": "えきからあるきます。",
+              "romaji": "eki kara arukimasu.",
+              "fr": "Je marche à partir de la gare."
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "雨ですから donne la raison : il pleut. 四月から indique le début d’une période et 駅から le point de départ du trajet.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Dans « 今調べますから、ちょっと待ってください », quel groupe donne la raison de patienter ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "ちょっと待ってください",
+              "kana": "ちょっとまってください",
+              "romaji": "chotto matte kudasai",
+              "fr": "Veuillez patienter un instant."
+            },
+            {
+              "id": "choix-2",
+              "jp": "今調べますから",
+              "kana": "いましらべますから",
+              "romaji": "ima shirabemasu kara",
+              "fr": "Parce que je vais vérifier maintenant."
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "La vérification explique la demande de patienter. La raison est avant から ; la demande est après.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
+      "synthese": {
+        "reperes": [
+          "La proposition avant から (kara) donne la raison ; la suite indique ce qu’elle explique.",
+          "La suite peut être sous-entendue si le contexte suffit. Distinguer cette raison d’un point de départ."
+        ],
+        "lignes": [
+          {
+            "usage": "Raison · avec un nom",
+            "exemple": {
+              "jp": "雨ですから、出かけません。",
+              "kana": "あめですから、でかけません。",
+              "romaji": "ame desu kara, dekakemasen.",
+              "fr": "Comme il pleut, je ne sors pas."
+            }
+          },
+          {
+            "usage": "Raison · avec un adjectif",
+            "exemple": {
+              "jp": "寒いですから、窓を閉めます。",
+              "kana": "さむいですから、まどをしめます。",
+              "romaji": "samui desu kara, mado o shimemasu.",
+              "fr": "Comme il fait froid, je ferme la fenêtre."
+            }
+          },
+          {
+            "usage": "Raison d’une demande",
+            "exemple": {
+              "jp": "今調べますから、ちょっと待ってください。",
+              "kana": "いましらべますから、ちょっとまってください。",
+              "romaji": "ima shirabemasu kara, chotto matte kudasai.",
+              "fr": "Je vais vérifier maintenant, alors veuillez patienter un instant."
+            }
+          },
+          {
+            "usage": "Comparer : depuis quand ?",
+            "exemple": {
+              "jp": "四月から働いています。",
+              "kana": "しがつからはたらいています。",
+              "romaji": "shigatsu kara hataraite imasu.",
+              "fr": "Je travaille depuis avril."
+            }
+          }
+        ]
+      }
     }
   ],
   "tableau_particules": {
@@ -5421,6 +6085,22 @@
           "kana": "パンをたべます",
           "romaji": "pan o tabemasu",
           "fr": "Je mange du pain."
+        }
+      },
+      {
+        "particule": {
+          "jp": "を",
+          "kana": "お",
+          "romaji": "o",
+          "fr": "Indiquer le chemin parcouru"
+        },
+        "role": "Indiquer le chemin parcouru",
+        "fiche": "G06",
+        "exemple": {
+          "jp": "この道をまっすぐ行きます。",
+          "kana": "このみちをまっすぐいきます。",
+          "romaji": "kono michi o massugu ikimasu.",
+          "fr": "Je continue tout droit sur cette route."
         }
       },
       {
@@ -5677,6 +6357,22 @@
           "kana": "えきからみせまで",
           "romaji": "eki kara mise made",
           "fr": "de la gare au magasin"
+        }
+      },
+      {
+        "particule": {
+          "jp": "から",
+          "kana": "から",
+          "romaji": "kara",
+          "fr": "Expliquer une raison"
+        },
+        "role": "Expliquer une raison",
+        "fiche": "G24",
+        "exemple": {
+          "jp": "雨ですから、出かけません。",
+          "kana": "あめですから、でかけません。",
+          "romaji": "ame desu kara, dekakemasen.",
+          "fr": "Comme il pleut, je ne sors pas."
         }
       },
       {
