@@ -1,9 +1,10 @@
 (function(root){
  'use strict';
  const particles=typeof module!=='undefined'&&module.exports?require('./particules.js'):root.Particules;
+ const constructions=typeof module!=='undefined'&&module.exports?require('./constructions.js'):root.Constructions;
  const compact=s=>String(s||'').replace(/\s/g,'');
  function build(lessons,vocab,analyzer,level,scope,start=1){
-  if(scope==='range'&&(!Number.isInteger(start)||start<1||start>level))return {vocab:[],grammar:[],particles:[],rowCount:0,invalid:true};
+  if(scope==='range'&&(!Number.isInteger(start)||start<1||start>level))return {vocab:[],grammar:[],particles:[],constructions:[],rowCount:0,invalid:true};
   const selected=lessons.filter(r=>r.Ligne!=='S00'&&(scope==='lesson'?Number(r.Leçon.slice(1))===level:Number(r.Leçon.slice(1))<=level&&(scope!=='range'||Number(r.Leçon.slice(1))>=start)));
   const byId=new Map(selected.map(r=>[r.Leçon+'-'+r.Ligne,r]));
   const words=[];
@@ -21,7 +22,7 @@
    }
   }
   const labels=[...new Set(forms.map(q=>q.part.form))];
-  return {particles:particles.build(selected),vocab:words,grammar:forms.map(q=>({...q,options:labels})),rowCount:selected.length};
+  return {constructions:constructions.build(selected),particles:particles.build(selected),vocab:words,grammar:forms.map(q=>({...q,options:labels})),rowCount:selected.length};
  }
  function shuffle(items,random=Math.random){const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
  function session(pool,type,count){

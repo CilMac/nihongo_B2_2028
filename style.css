@@ -270,3 +270,58 @@ body.info-open{overflow:hidden}#project-info{width:min(800px,calc(100vw - 32px))
 
 /* Séparer les ensembles de phrases sans couper traduction et prononciation. */
 .guide-reader .guide-group + .guide-group { border-top: 1px solid #c4ccc2; padding-top: 16px; margin-top: 18px; }
+
+/* Constructions : écouter reste indépendant du choix ou de l’ordre des groupes. */
+.construction-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.construction-choice{min-width:0;padding:12px;border:1px solid var(--line);border-radius:10px;background:#faf8fc;display:flex;flex-direction:column;gap:10px}
+.construction-choice>.language-block{flex:1;min-width:0;margin:0}
+.construction-choice>button{align-self:flex-start;min-height:44px}
+.construction-choice .kana,.construction-choice .jp,.construction-choice .romaji{overflow-wrap:anywhere}
+.construction-jp-fallback{display:none}
+.hide-kana #atelier-work .language-block:has(.construction-jp-fallback) .kana-idem{display:none}
+.hide-kana .construction-jp-fallback{display:inline}
+.construction-selected{display:flex;flex-wrap:wrap;gap:12px;padding-left:24px;min-height:32px}
+.construction-selected>li{max-width:100%;min-width:0;flex:0 1 290px}
+.construction-given{margin:18px 0}
+@media(max-width:760px){.construction-options{grid-template-columns:1fr}.construction-selected{display:block}.construction-selected>li{margin-bottom:10px}}
+
+.guide-lexicon-alphabet{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 20px}
+.guide-lexicon-alphabet button{min-width:44px;padding:6px 10px}
+.guide-lexicon-alphabet button[aria-pressed=true]{background:#e2ebdf;border-color:#8ca18a}
+.guide-lexicon-list{border:1px solid var(--line);border-radius:10px;background:#fffefb;overflow:hidden}
+.guide-lexicon-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.65fr);align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.guide-lexicon-row:nth-child(even){background:#f1f3ed}.guide-lexicon-row:last-child{border-bottom:0}
+.guide-lexicon-row p{margin:3px 0;overflow-wrap:anywhere}.guide-lexicon-row .guide-japanese{font-size:22px;overflow-wrap:anywhere}
+.guide-lexicon-row .romaji{font-size:16px}.guide-lexicon-row mark{background:#f5e3a9;color:inherit}
+#guide-lexicon-controls label{display:flex;align-items:center;gap:8px;min-width:0;max-width:100%}
+#guide-lexicon-controls select{min-width:0;max-width:100%}
+@media(max-width:760px){.guide-lexicon-row{grid-template-columns:minmax(0,1fr);gap:4px}#guide-lexicon-controls label{flex-wrap:wrap}}
+
+/* Guide : deux familles d’accès, puis les commandes de la seule vue active. */
+.guide-tools.guide-view-navigation{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:14px;margin:20px 0 12px;align-items:stretch}
+.guide-view-family{padding:14px 16px;border:1px solid var(--line);border-radius:12px}
+.guide-view-family[data-family=browse]{background:#edf3f7;border-color:#cbdce5}
+.guide-view-family[data-family=words]{background:#edf3e9;border-color:#d0ddc7}
+.guide-view-family h2{font-size:14px;margin:0 0 10px;font-weight:650}
+.guide-view-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.guide-view-buttons button{font-size:14px;padding:9px 12px;text-align:left;display:flex;align-items:center;gap:8px}
+.guide-view-count{font-size:12px;color:var(--muted)}
+.guide-view-family[data-family=browse] button[aria-pressed=true]{background:#d6e5ef;border:2px solid #6f919f;padding:8px 11px;color:#243e4c}
+.guide-view-family[data-family=words] button[aria-pressed=true]{background:#dfead5;border:2px solid #81966d;padding:8px 11px;color:#314327}
+#guide-active-tools{border:1px solid var(--line);border-left:4px solid #93acb8;border-radius:12px;padding:18px 20px;margin-bottom:20px;background:#f4f8fa}
+#guide-active-tools[data-family=words]{border-left-color:#9caf87;background:#f5f8f0}
+.guide-controls-heading{display:flex;gap:20px;align-items:flex-start;justify-content:space-between}
+.guide-controls-heading>div:first-child{flex:1;min-width:0}
+#guide-active-title{font-size:20px;margin:0 0 6px}
+#guide-active-description{font-size:14px;color:var(--muted);margin:0;max-width:660px}
+.guide-active-filters{display:flex;flex-wrap:wrap;gap:12px;max-width:48%}
+.guide-active-filters label{display:flex;flex-direction:column;gap:5px;font-size:13px;min-width:0;flex:1}
+.guide-active-filters select{font-size:14px;max-width:100%;min-width:0}
+#guide-active-tools [hidden]{display:none!important}
+#guide-active-tools>.toolbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;margin:18px 0 0}
+#guide-active-tools>.toolbar label{font-size:14px}
+#guide-active-tools>.toolbar input{width:100%;min-width:0;margin:0}
+#guide-active-tools #guide-lexicon-controls>.toolbar{margin:14px 0 8px}
+#guide-active-tools .guide-lexicon-alphabet{margin-bottom:0}
+@media(max-width:950px){.guide-tools.guide-view-navigation{grid-template-columns:1fr}.guide-controls-heading{flex-direction:column;gap:12px}.guide-active-filters{max-width:100%;width:100%}}
+@media(max-width:600px){#guide-active-tools{padding:14px 12px}.guide-view-family{padding:12px}#guide-active-tools>.toolbar{grid-template-columns:minmax(0,1fr) auto}#guide-active-tools>.toolbar label{grid-column:1/-1}.guide-active-filters{flex-direction:column}.guide-view-buttons button{font-size:14px}}
