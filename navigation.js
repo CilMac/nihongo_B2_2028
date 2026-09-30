@@ -1,7 +1,7 @@
 /* Commandes accessibles sans dupliquer les champs ni leur état. */
 (()=>{
  const shell=document.querySelector('.shell'),head=document.querySelector('.masthead'),tabs=document.querySelector('.tabs');
- const dock=document.createElement('div');dock.className='navigation-dock';shell.prepend(dock);dock.append(head,tabs);
+ const dock=document.createElement('div');dock.className='navigation-dock';shell.prepend(dock);dock.append(head,document.getElementById('context-return'),tabs);
  const display=document.createElement('button');display.id='display-toggle';display.type='button';display.className='header-icon';display.title='Affichage';display.setAttribute('aria-label','Affichage');display.setAttribute('aria-expanded','false');display.setAttribute('aria-controls','display-panel');
  display.innerHTML='<svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>';
  head.insertBefore(display,document.getElementById('saved-toggle'));

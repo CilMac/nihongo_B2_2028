@@ -246,7 +246,10 @@ function updateContextReturn(){
  contextReturn.replaceChildren();
  if(!previous)return;
  const link=document.createElement('a');link.href=previous.hash||'#lecons';
- link.textContent='← '+previous.label;link.dataset.contextBack='true';
+ link.setAttribute('aria-label',previous.label);link.title=previous.label;
+ const arrow=document.createElement('span');arrow.textContent='←';arrow.setAttribute('aria-hidden','true');
+ const label=document.createElement('span');label.className='context-return-label';label.textContent=previous.label;
+ link.append(arrow,label);link.dataset.contextBack='true';
  contextReturn.append(link);
 }
 function captureContext(link){

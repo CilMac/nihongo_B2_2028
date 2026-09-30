@@ -390,3 +390,11 @@ html{overflow-anchor:none}
 @media(max-width:760px){.navigation-dock .masthead{grid-template-columns:minmax(0,1fr) repeat(4,44px);gap:4px}#display-panel,.navigation-dock.is-scrolled #display-panel{top:56px}}
 @media(max-width:360px){.navigation-dock .brand .seal{display:none}.navigation-dock .brand strong,.navigation-dock.is-scrolled .brand strong{font-size:20px}}
 @media(orientation:landscape) and (max-width:1100px){.navigation-dock .brand small{display:none}.navigation-dock .masthead{padding:6px 0}.navigation-dock .brand strong{font-size:24px}.navigation-dock .seal{font-size:24px}.navigation-dock .tabs a{padding-top:8px;padding-bottom:8px}}
+
+/* Retour contextuel intégré à la même barre fixe que les modules. */
+.navigation-dock{grid-template-columns:auto minmax(0,1fr) auto}
+.navigation-dock .tabs{grid-column:2;grid-row:2}
+.navigation-dock #commands-toggle{grid-column:3}
+.navigation-dock #context-return{position:static;grid-column:1;grid-row:2;padding:0;margin:0 0 4px;border:0;background:transparent}
+.navigation-dock #context-return a{gap:7px;font-size:13px;white-space:nowrap}
+@media(max-width:1100px){.navigation-dock #context-return .context-return-label{display:none}.navigation-dock #context-return a{width:44px;height:44px;justify-content:center;padding:0;font-size:24px}}
