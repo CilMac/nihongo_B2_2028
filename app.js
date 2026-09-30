@@ -8,6 +8,7 @@ try{settings={...defaults,...JSON.parse(localStorage.getItem('nihongo-settings')
 let audioRun=0,audioTimer,voices=[],currentUtterance;const speech=window.speechSynthesis;
 let search='',onlyFavorites=false,page=0,dictionaryCategory='';const pageSize=24;const answers=new Map();
 let decorticage, decorticageData;
+let lessonCompact=false;
 let dictionaryReturn=null, analysisReturn=null;
 function save(){try{localStorage.setItem('nihongo-settings',JSON.stringify(settings));localStorage.setItem('nihongo-favorites',JSON.stringify([...favorites]));}catch{$('#audio-status').textContent='Le stockage local est indisponible : vos réglages restent actifs pour cette visite.';}}
 function applySettings(){for(const k of ['kana','romaji','fr']){document.body.classList.toggle('hide-'+k,!settings[k]);$('#show-'+k).checked=!!settings[k];}document.body.classList.toggle('rounded',settings.font==='rounded');document.documentElement.style.setProperty('--jp-size',settings.size+'px');for(const k of ['font','size','rate','gap'])$('#'+k).value=settings[k];$('#size-value').textContent=settings.size+' px';$('#rate-value').textContent=Number(settings.rate).toFixed(2)+' ×';}
@@ -24,7 +25,7 @@ function block(t,{audio=true,fr=true}={}) {
 function intro(k,title,description){return `<div class="intro"><div class="eyebrow">${k}</div><h1>${esc(title)}</h1><p>${esc(description)}</p></div>`;}
 function route(){const [tab='lecons',id,line]=location.hash.slice(1).split('/');return {tab:['lecons','dictionnaire','grammaire','atelier','guide'].includes(tab)?tab:'lecons',id:decodeURIComponent(id||''),line};}
 function render(){stopAudio();const r=route();document.querySelectorAll('[data-tab]').forEach(x=>{if(x.dataset.tab===r.tab)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current');});if(r.tab==='lecons')renderLessons(r);else if(r.tab==='dictionnaire')renderDictionary(r);else if(r.tab==='atelier')renderAtelier(r);else if(r.tab==='guide')renderGuide(r);else renderGrammar(r);renderAtelierReturn(r);renderDictionaryReturn(r);renderAnalysisReturn(r);}
-function renderLessons(r){const id=lessonIds.includes(r.id)?r.id:lessonIds.includes(settings.lesson)?settings.lesson:lessonIds[0];settings.lesson=id;save();const rows=lessons.filter(x=>x.Leçon===id);const index=lessonIds.indexOf(id);const related=LessonLinks.find(rows,grammar);$('#main').innerHTML=intro('ÉCOUTER · LIRE · RÉPÉTER','Les leçons','Retrouvez les dialogues, une phrase après l’autre.')+`<div class="toolbar"><button data-lesson="${lessonIds[index-1]||''}" ${index===0?'disabled':''} aria-label="Leçon précédente">←</button><label for="lesson-select">Leçon</label><select id="lesson-select">${lessonIds.map(n=>`<option value="${n}" ${n===id?'selected':''}>${esc(lessonLabel(n))}</option>`).join('')}</select><button data-lesson="${lessonIds[index+1]||''}" ${index===lessonIds.length-1?'disabled':''} aria-label="Leçon suivante">→</button><button class="audio" id="play-lesson">▶ Écouter la leçon</button><span class="muted">${rows.length} phrases</span></div><div class="lesson-layout"><div class="stack">${rows.map(l=>`<article class="card" id="${l.Ligne}"><div class="card-head"><span class="number">${id} · ${l.Ligne}</span><div class="card-actions">${star(id+'-'+l.Ligne)}${audioButton(l.Kana,id+'-'+l.Ligne)}</div></div>${block({source:id+'-'+l.Ligne,jp:l.Japonais,kana:l.Kana,romaji:l.Romaji,fr:l.Français},{audio:false})}${decorticageEntry(l)}</article>`).join('')}</div><aside class="panel aside"><div class="eyebrow">AUTOUR DE LA LEÇON</div><h3>Pratiquer</h3><a href="#dictionnaire/${id}">Voir le vocabulaire de cette leçon →</a><a href="#atelier/${id}/lesson">M’entraîner sur cette leçon →</a><a href="#atelier/${id}/through">Réviser jusqu’à cette leçon →</a><h3>Grammaire à retrouver</h3>${lessonGrammarLinks(related)}<p class="muted">Écoutez, puis répétez à voix haute. La pause entre les phrases se règle dans les réglages.</p></aside></div><div id="extra-audio"></div>`;renderExtraAudio();$('#lesson-select').onchange=e=>location.hash='lecons/'+e.target.value;$('#play-lesson').onclick=()=>speak(rows.map(l=>({text:l.Kana,ref:l.Leçon+'-'+l.Ligne})));if(r.line){const el=document.getElementById(r.line);el?.classList.add('highlight');el?.scrollIntoView({block:'center'});}}
+function renderLessons(r){const id=lessonIds.includes(r.id)?r.id:lessonIds.includes(settings.lesson)?settings.lesson:lessonIds[0];settings.lesson=id;save();const rows=lessons.filter(x=>x.Leçon===id);const index=lessonIds.indexOf(id);const related=LessonLinks.find(rows,grammar);$('#main').innerHTML=intro('ÉCOUTER · LIRE · RÉPÉTER','Les leçons','Retrouvez les dialogues, une phrase après l’autre.')+`<div class="toolbar"><button data-lesson="${lessonIds[index-1]||''}" ${index===0?'disabled':''} aria-label="Leçon précédente">←</button><label for="lesson-select">Leçon</label><select id="lesson-select">${lessonIds.map(n=>`<option value="${n}" ${n===id?'selected':''}>${esc(lessonLabel(n))}</option>`).join('')}</select><button data-lesson="${lessonIds[index+1]||''}" ${index===lessonIds.length-1?'disabled':''} aria-label="Leçon suivante">→</button><button class="audio" id="play-lesson">▶ Écouter la leçon</button><span class="muted">${rows.length} phrases</span><label for="lesson-display">Affichage <select id="lesson-display"><option value="normal" ${!lessonCompact?'selected':''}>Normal</option><option value="compact" ${lessonCompact?'selected':''}>Compact · sans décorticage</option></select></label></div><div class="lesson-layout${lessonCompact?' lesson-compact':''}"><div class="stack">${rows.map(l=>`<article class="card" id="${l.Ligne}"><div class="card-head"><span class="number">${id} · ${l.Ligne}</span><div class="card-actions">${star(id+'-'+l.Ligne)}${audioButton(l.Kana,id+'-'+l.Ligne)}</div></div>${block({source:id+'-'+l.Ligne,jp:l.Japonais,kana:l.Kana,romaji:l.Romaji,fr:l.Français},{audio:false})}${decorticageEntry(l)}</article>`).join('')}</div><aside class="panel aside"><div class="eyebrow">AUTOUR DE LA LEÇON</div><h3>Pratiquer</h3><a href="#dictionnaire/${id}">Voir le vocabulaire de cette leçon →</a><a href="#atelier/${id}/lesson">M’entraîner sur cette leçon →</a><a href="#atelier/${id}/through">Réviser jusqu’à cette leçon →</a><h3>Grammaire à retrouver</h3>${lessonGrammarLinks(related)}<p class="muted">Écoutez, puis répétez à voix haute. La pause entre les phrases se règle dans les réglages.</p></aside></div><div id="extra-audio"></div>`;renderExtraAudio();$('#lesson-display').onchange=e=>{lessonCompact=e.target.value==='compact';$('.lesson-layout').classList.toggle('lesson-compact',lessonCompact);};$('#lesson-select').onchange=e=>location.hash='lecons/'+e.target.value;$('#play-lesson').onclick=()=>speak(rows.map(l=>({text:l.Kana,ref:l.Leçon+'-'+l.Ligne})));if(r.line){const el=document.getElementById(r.line);el?.classList.add('highlight');el?.scrollIntoView({block:'center'});}}
 function sourceLink(source){const m=source?.match(/(N\d+)-(S\d+)/);return m?`<a href="#lecons/${m[1]}/${m[2]}">${esc(m[1].replace('N','Leçon '))} · ${m[2]}</a>`:esc(source);}
 function baseForm(v){
  const base = vocab.find(entry => entry.mot === v.forme_base);
@@ -104,6 +105,24 @@ function decorticageEntry(row) {
  if (!decorticage || row.Ligne === 'S00') return '';
  return `<details class="sentence-analysis" data-analysis="${id}"><summary>Décortiquer cette phrase</summary><div class="analysis-content"></div></details>`;
 }
+// Ajouter les repères uniquement quand les lectures correspondent au texte source.
+function analysisBracketedRomaji(row,result) {
+ const source=Romaji.display(row.Romaji), words=[...source.matchAll(/[\p{L}\p{M}’'ʼ-]+/gu)];
+ let cursor=0;const spans=[];
+ for(const part of result.segments){
+  const reading=Romaji.display(part.romaji || '').match(/[\p{L}\p{M}’'ʼ-]+/gu) || [];
+  if(!reading.length || !reading.every((word,i)=>words[cursor+i] && normalize(word)===normalize(words[cursor+i][0])))return source;
+  if(/^\[[\s\S]+\]$/.test((part.gloss || part.fr || '').trim())){
+   const first=words[cursor],last=words[cursor+reading.length-1];
+   spans.push([first.index,last.index+last[0].length]);
+  }
+  cursor+=reading.length;
+ }
+ if(cursor!==words.length)return source;
+ let output=source;
+ for(const [start,end] of spans.reverse())output=output.slice(0,start)+'['+output.slice(start,end)+']'+output.slice(end);
+ return output;
+}
 function renderSimpleDecorticage(segments) {
  return `<table class="analysis-simple"><caption class="visually-hidden">Décorticage de la phrase</caption>
  <thead><tr><th scope="col">Élément</th><th scope="col" class="analysis-reading">Lecture</th><th scope="col" class="fr">Sens et rôle</th></tr></thead>
@@ -129,7 +148,7 @@ function renderDecorticage(row) {
  const labels = {rule:'Règle réutilisable',dictionary:'Dictionnaire',annotation:'Précision de contexte',unknown:'À compléter'};
  return `<div class="analysis-heading"><span class="analysis-state">${result.partial ? 'Décorticage partiel' : (result.literalOrigin === 'automatic' ? 'Construction reconnue' : 'Décorticage de l’échantillon')}</span></div>
  ${result.structure ? `<p>${esc(result.structure)}</p>` : ''}
- ${result.literal ? `<div class="analysis-literal"><h3>Dans l’ordre japonais</h3><p class="romaji analysis-romaji">${esc(Romaji.display(row.Romaji))}</p><p class="literal-gloss fr"><em>(${esc(result.literal)})</em></p><p class="muted">Lecture indicative dans l’ordre japonais ; les crochets précisent le rôle ou la forme.</p></div>` : ''}
+ ${result.literal ? `<div class="analysis-literal"><h3>Dans l’ordre japonais</h3><p class="romaji analysis-romaji">${esc(analysisBracketedRomaji(row,result))}</p><p class="literal-gloss fr"><em>(${esc(result.literal)})</em></p><p class="muted">Lecture indicative dans l’ordre japonais ; les crochets précisent le rôle ou la forme.</p></div>` : ''}
  ${renderSimpleDecorticage(result.segments)}
  ${result.note ? `<details class="analysis-context"><summary>Précision de contexte</summary><p class="fr">${esc(result.note)}</p></details>` : ''}
  <details class="analysis-method"><summary>Sources et méthode</summary>
