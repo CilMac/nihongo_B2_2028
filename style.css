@@ -56,6 +56,9 @@
 .lesson-grammar-link{margin:14px 0}.aside .lesson-grammar-link a{margin:4px 0}.aside .grammar-evidence{font-size:12px;color:var(--muted)}
 
 .language-block .kana-idem {color:#af2424;font-size:calc(var(--jp-size) * .82);}
+.language-block .jp-fallback{display:none;}
+.hide-kana .language-block .kana-idem{display:none;}
+.hide-kana .language-block .jp-fallback{display:inline;}
 
 .atelier-catalogs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:12px 0 22px}.atelier-catalogs details{margin:0;border:1px solid var(--line);padding:12px;border-radius:10px;background:#f6f7f1;min-width:0}.atelier-catalogs summary{min-height:44px}.atelier-catalog{max-height:480px;overflow:auto;overflow-wrap:anywhere}.atelier-catalog ul{list-style:none;padding:0;margin:0}.atelier-catalog li{border-top:1px solid var(--line);padding:14px 4px}@media(max-width:760px){.atelier-catalogs{grid-template-columns:1fr}}
 
@@ -277,9 +280,6 @@ body.info-open{overflow:hidden}#project-info{width:min(800px,calc(100vw - 32px))
 .construction-choice>.language-block{flex:1;min-width:0;margin:0}
 .construction-choice>button{align-self:flex-start;min-height:44px}
 .construction-choice .kana,.construction-choice .jp,.construction-choice .romaji{overflow-wrap:anywhere}
-.construction-jp-fallback{display:none}
-.hide-kana #atelier-work .language-block:has(.construction-jp-fallback) .kana-idem{display:none}
-.hide-kana .construction-jp-fallback{display:inline}
 .construction-selected{display:flex;flex-wrap:wrap;gap:12px;padding-left:24px;min-height:32px}
 .construction-selected>li{max-width:100%;min-width:0;flex:0 1 290px}
 .construction-given{margin:18px 0}

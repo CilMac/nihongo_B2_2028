@@ -14,9 +14,18 @@
  const button=document.createElement('button');button.id='commands-toggle';button.type='button';button.textContent='Commandes';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','commands-panel');dock.append(button);
  const dialog=document.createElement('dialog');dialog.id='commands-panel';dialog.setAttribute('aria-labelledby','commands-title');dialog.innerHTML='<div class="commands-heading"><h2 id="commands-title">Commandes</h2><button type="button" autofocus>Fermer ×</button></div><div class="commands-content"></div>';document.body.append(dialog);
  let moved=[],anchor=null,anchorTop=0;
- function restore(){for(const [node,placeholder] of moved){placeholder.replaceWith(node);}moved=[];const target=anchor,top=anchorTop;if(target?.isConnected)requestAnimationFrame(()=>window.scrollBy(0,target.getBoundingClientRect().top-top));anchor=null;button.setAttribute('aria-expanded','false');}
- window.closeNavigationCommands=()=>{if(dialog.open)dialog.close();restore();};
- dialog.addEventListener('close',restore);dialog.querySelector('button').onclick=()=>dialog.close();
+ function restore(preserveScroll=true){
+  for(const [node,placeholder] of moved)placeholder.replaceWith(node);
+  moved=[];
+  const target=anchor,top=anchorTop;
+  if(preserveScroll&&target?.isConnected)requestAnimationFrame(()=>{
+   if(target.isConnected)window.scrollBy(0,target.getBoundingClientRect().top-top);
+  });
+  anchor=null;button.setAttribute('aria-expanded','false');
+ }
+ // Une navigation va restaurer sa propre position de lecture.
+ window.closeNavigationCommands=()=>{if(dialog.open)dialog.close();restore(false);};
+ dialog.addEventListener('close',()=>restore());dialog.querySelector('button').onclick=()=>dialog.close();
  button.onclick=()=>{
   const bottom=dock.getBoundingClientRect().bottom;anchor=[...document.querySelectorAll('#main article,#main .panel,#main details')].find(e=>e.getBoundingClientRect().bottom>bottom && e.getBoundingClientRect().top<innerHeight);anchorTop=anchor?.getBoundingClientRect().top || 0;
   const module=document.querySelector('[data-tab][aria-current="page"]')?.textContent.replace(/[\d\s]+$/,'').trim();
@@ -27,7 +36,11 @@
  };
  window.updateNavigationTab=()=>{button.hidden=!document.querySelector('#main>.toolbar,#main .guide-view-navigation,#guide-active-tools,#main>.atelier-setup');const active=tabs.querySelector('[aria-current=page]');if(!active)return;const a=active.getBoundingClientRect(),t=tabs.getBoundingClientRect();if(a.right>t.right)tabs.scrollLeft+=a.right-t.right;if(a.left<t.left)tabs.scrollLeft+=a.left-t.left;};
  window.updateNavigationTab();
- const compact=()=>dock.classList.toggle('is-scrolled',window.scrollY>100);window.addEventListener('scroll',compact,{passive:true});compact();
+ window.setNavigationCompact=value=>dock.classList.toggle('is-scrolled',!!value);
+ // Deux seuils évitent que la réduction de l'en-tête, qui déplace le contenu,
+ // ne déclenche immédiatement son agrandissement par ancrage du défilement.
+ const compact=()=>dock.classList.toggle('is-scrolled',window.scrollY>(dock.classList.contains('is-scrolled')?50:100));
+ window.addEventListener('scroll',compact,{passive:true});compact();
  for(const id of ['saved-toggle','settings-toggle'])document.getElementById(id).addEventListener('click',()=>{
   const other=id==='saved-toggle'?'settings':'saved';document.getElementById(other).hidden=true;document.getElementById(other+'-toggle').setAttribute('aria-expanded','false');
  });

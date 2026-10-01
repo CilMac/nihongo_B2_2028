@@ -2,6 +2,19 @@
 let atelierSettings={level:null,start:1,scope:'through',type:'mixed',count:10};
 let atelierSession=null;
 let atelierListReturn=null;
+let atelierPoolCache=null;
+function getAtelierPool(){
+ if(!atelierPoolCache||atelierPoolCache.lessons!==lessons||atelierPoolCache.vocab!==vocab){
+  atelierPoolCache={lessons,vocab,analyzer:DecorticageAuto.create(vocab),key:null,pool:null};
+ }
+ const {level,scope,start}=atelierSettings;
+ const key=[level,scope,scope==='range'?start:1].join(':');
+ if(atelierPoolCache.key!==key){
+  atelierPoolCache.pool=AtelierEngine.build(lessons,vocab,atelierPoolCache.analyzer,level,scope,start);
+  atelierPoolCache.key=key;
+ }
+ return atelierPoolCache.pool;
+}
 function renderAtelier(r={}){
  if(lessonIds.includes(r.id)&&['lesson','through'].includes(r.line)){
   const nextLevel=Number(r.id.slice(1));
@@ -26,7 +39,7 @@ function renderAtelier(r={}){
  };
  for(const kind of ['vocab','grammar','particles','constructions'])$('#atelier-'+kind+'-list').ontoggle=()=>{if(!$('#atelier-'+kind+'-list .atelier-catalog').children.length)fillList(kind);};
  const refresh=()=>{
-  const pool=AtelierEngine.build(lessons,vocab,DecorticageAuto.create(vocab),atelierSettings.level,atelierSettings.scope,atelierSettings.start);
+  const pool=getAtelierPool(),changed=pool!==currentPool;
   currentPool=pool;
   $('#atelier-start-label').hidden=atelierSettings.scope!=='range';
   $('#atelier-level-label').textContent=atelierSettings.scope==='lesson'?'Leçon':'à';
@@ -34,8 +47,10 @@ function renderAtelier(r={}){
   $('#atelier-description').textContent={vocab:'Retrouvez le sens du mot, puis révélez la réponse.',grammar:'Reconnaissez les formes des verbes.',constructions:'Choisissez, transformez, ordonnez ou reliez des phrases. Chaque exercice exige ses passages d’appui dans les leçons choisies.',particles:'Complétez ou comparez les phrases pour choisir la bonne particule.',mixed:'Alternez vocabulaire et formes verbales.'}[atelierSettings.type];
   for(const [kind,label] of [['vocab','mots ou expressions'],['grammar','formes verbales'],['particles','exercices sur les particules'],['constructions','exercices de constructions grammaticales']]){
    $('#atelier-'+kind+'-list summary').textContent=`${pool[kind].length} ${label}`;
-   if(!$('#atelier-'+kind+'-list').open)$('#atelier-'+kind+'-list .atelier-catalog').innerHTML='';
-   fillList(kind);
+   if(changed){
+    if(!$('#atelier-'+kind+'-list').open)$('#atelier-'+kind+'-list .atelier-catalog').innerHTML='';
+    fillList(kind);
+   }
   }
   const available=atelierSettings.type==='mixed'?pool.vocab.length+pool.grammar.length:pool[atelierSettings.type].length;
   const count=Math.min(available,atelierSettings.count);
@@ -159,7 +174,7 @@ function renderConstructionQuestion(target,s){
  const q=s.questions[s.index],ordering=q.activity==='Ordonner';
  if(!s.constructionState||s.constructionState.id!==q.id)s.constructionState={id:q.id,items:AtelierEngine.shuffle(ordering?q.groups:q.options),selected:[]};
  const state=s.constructionState;
- const textBlock=(item,showFrench)=>block(item,{audio:false,fr:showFrench}).replace(/<span class="kana-idem"[\s\S]*?<\/span>/,match=>match+`<span class="construction-jp-fallback">${jp(item.jp)}</span>`);
+ const textBlock=(item,showFrench)=>block(item,{audio:false,fr:showFrench});
  const card=(item,action)=>`<div class="construction-choice">${textBlock(item,s.revealed)}${action}</div>`;
  target.innerHTML=`<p class="eyebrow">Constructions grammaticales · ${esc(q.activity)} · ${s.index+1} / ${s.questions.length}</p><h2>${esc(q.prompt)}</h2><p class="muted">${esc(q.origin)}</p>
  ${q.given?`<div class="construction-given"><h3>${ordering?'Phrase':'Transformer'===q.activity?'Phrase de départ':'Début de la phrase'}</h3>${block(q.given,{audio:false})}</div>`:''}
