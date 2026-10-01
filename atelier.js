@@ -16,6 +16,7 @@ function getAtelierPool(){
  return atelierPoolCache.pool;
 }
 function renderAtelier(r={}){
+ if(r.id==='recherche'){renderCorpusRecord(r.line,true);return;}
  if(lessonIds.includes(r.id)&&['lesson','through'].includes(r.line)){
   const nextLevel=Number(r.id.slice(1));
   if(atelierSettings.level!==nextLevel||atelierSettings.scope!==r.line)atelierSession=null;

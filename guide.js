@@ -174,6 +174,7 @@ function updateGuideSearch(){
  }));
 }
 async function renderGuide(r){
+ if(r.id==='recherche'){renderCorpusRecord(r.line);return;}
  const run=++guideRenderRun;
  $('#main').innerHTML='<p class="panel">Chargement du guide…</p>';
  try{await loadGuide();}catch{

@@ -398,3 +398,38 @@ html{overflow-anchor:none}
 .navigation-dock #context-return{position:static;grid-column:1;grid-row:2;padding:0;margin:0 0 4px;border:0;background:transparent}
 .navigation-dock #context-return a{gap:7px;font-size:13px;white-space:nowrap}
 @media(max-width:1100px){.navigation-dock #context-return .context-return-label{display:none}.navigation-dock #context-return a{width:44px;height:44px;justify-content:center;padding:0;font-size:24px}}
+
+/* Recherche accessible dans la barre, y compris sur petit écran. */
+#search-toggle{display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:760px){.navigation-dock .masthead{grid-template-columns:minmax(0,1fr) repeat(5,44px)}}
+@media(max-width:440px){.navigation-dock .brand .seal{display:none}.navigation-dock .brand strong,.navigation-dock.is-scrolled .brand strong{font-size:16px;letter-spacing:0}}
+@media(max-width:360px){.navigation-dock .brand .seal{display:block}.navigation-dock .brand>span:last-child{display:none}}
+
+/* Recherche globale : panneau de travail local, indépendant des modules. */
+#corpus-search{width:min(1080px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:16px;background:var(--paper);color:var(--ink)}
+#corpus-search::backdrop{background:#26332c66}
+.corpus-top{position:sticky;top:0;z-index:3;background:var(--paper);border-bottom:1px solid var(--line);padding:16px 22px}
+.corpus-heading,.corpus-result-heading,.corpus-modes,.corpus-basic,.corpus-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.corpus-heading h2{margin:0;font-size:22px}.corpus-heading button{margin-left:auto}
+#corpus-query{display:block;width:100%;padding:12px;margin:12px 0;border:1px solid #98ac96;border-radius:10px;background:white;font-size:19px}
+.corpus-body{padding:16px 22px}.corpus-modes label,.corpus-basic label{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#corpus-sources,#corpus-active,#corpus-suggestions{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+#corpus-sources button[aria-pressed=true]{background:var(--sage);border-color:#6e886b;font-weight:650}
+#corpus-suggestions button,#corpus-active button{font-size:13px;padding:4px 9px;background:var(--blue)}
+.corpus-basic{justify-content:flex-start;margin:12px 0}.corpus-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}.corpus-filters label{display:flex;flex-direction:column;gap:4px}.corpus-filters input,.corpus-filters select{min-width:0;width:100%}.corpus-filters input{padding:8px;border:1px solid var(--line);border-radius:8px}
+#corpus-results{display:grid;gap:12px}.corpus-card{background:#fffefb;border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0;overflow-wrap:anywhere}.corpus-card:nth-child(even){background:#eef3e9}.corpus-card h3{font-size:19px;margin:10px 0}.corpus-card p{margin:6px 0}.corpus-card .jp{font-size:23px}.corpus-location{font-size:13px;color:var(--muted)}.corpus-related{font-size:14px;color:#6c4e19}.corpus-actions{justify-content:flex-start;margin:12px 0}.corpus-actions .audio{display:inline-flex!important}.corpus-context-content{padding-top:10px}.corpus-context-content p{white-space:pre-wrap}#corpus-search mark{background:#f6dda0;color:#343c38}.corpus-correction{background:#faf0dd;padding:12px;border-radius:8px}.corpus-correction summary{font-weight:600}
+#corpus-return{grid-row:3;grid-column:1 / -1;justify-self:start;font-size:13px;background:var(--blue);margin:4px 0}
+@media(max-width:760px){#corpus-search{width:calc(100% - 12px);max-height:calc(100dvh - 12px)}.corpus-top,.corpus-body{padding:12px}.corpus-heading h2{font-size:18px}.corpus-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.corpus-card{padding:12px}.corpus-modes select{max-width:100%;font-size:14px}.corpus-top #corpus-suggestions{display:none}.corpus-modes{gap:6px}#corpus-sources button{font-size:13px;padding:6px 8px}}
+@media(max-width:400px){.corpus-filters{grid-template-columns:1fr}.corpus-heading h2{max-width:175px}.corpus-modes label{min-width:0}.corpus-modes select{width:100%}}
+
+.corpus-reading{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:12px 0;font-size:14px}.corpus-reading label{display:flex;align-items:center;gap:6px;min-height:44px}
+
+/* Clin d’œil personnel, hors corpus : lectures toujours visibles. */
+#secret-link{white-space:nowrap}
+.travel-secrets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:4px 0 18px}
+.travel-secret{min-width:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--sage);overflow-wrap:anywhere}
+.travel-secret:nth-child(2){background:var(--blue)}
+.travel-secret h3{margin:0 0 12px;font-size:20px}
+.travel-japanese{font-family:var(--jp-font);font-size:23px;line-height:1.8}
+.travel-listen{background:#fffefb}
+@media(max-width:600px){.travel-secrets{grid-template-columns:1fr}}

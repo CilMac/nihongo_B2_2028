@@ -48,7 +48,7 @@ function dictionaryMain(v){
  if(same)html=html.replace('<p class="jp"','<p class="jp dictionary-identical"');
  return html;
 }
-function vocabCard(v){return `<article class="card dictionary-card" id="${v.id}"><div class="card-head"><span class="number">${esc(v.type||'VOCABULAIRE')}</span><div class="card-actions">${star(v.id)}${audioButton(v.kana)}</div></div>${dictionaryMain(v)}${v.forme_base?baseForm(v):''}${v.note?`<p class="note">${esc(v.note)}</p>`:''}<details><summary>Exemple dans la leçon</summary>${block({...v.exemple,source:v.source})}<p class="muted">${sourceLink(v.source)}</p></details></article>`;}
+function vocabCard(v){return `<article class="card dictionary-card" id="${v.id}"><div class="card-head"><span class="number">${esc(v.type||'VOCABULAIRE')}</span><div class="card-actions">${star(v.id)}${audioButton(v.kana)}</div></div>${dictionaryMain(v)}${v.forme_base?baseForm(v):''}${v.note?`<p class="note">${esc(v.note)}</p>`:''}<details><summary>Exemple dans la leçon</summary><div data-vocab-example="0">${block({...v.exemple,source:v.source})}<p class="muted">${sourceLink(v.source)}</p></div>${(v.exemples_supplementaires||[]).map((e,i)=>`<div data-vocab-example="${i+1}" class="example-block">${block(e)}<p class="muted">${sourceLink(e.source)}</p></div>`).join('')}</details></article>`;}
 function renderDictionary(r){const selected=r.id.startsWith('vocab-')?vocab.find(v=>v.id===r.id):null;const filter=lessonIds.includes(r.id)?r.id:'';
  const range=r.id==='plage';
  const bounds=(r.line||'').split('-').filter(n=>lessonIds.includes(n));
@@ -84,6 +84,7 @@ Promise.all(['leconsJap.json','dicoLeconsJap.json','grammaireLeconsJap.json?v=20
 let guideFavoritesPending=false;
 function renderFavorites() {
  const entries = [...favorites].map(id => {
+  if(id.startsWith('corpus:')){let title=id.slice(7);try{title=JSON.parse(localStorage.getItem('nihongo-search-favorite-labels')||'{}')[title]||title;}catch{}return `<button type="button" data-corpus-favorite="${esc(id.slice(7))}">Recherche · ${esc(title)}</button>`;}
   const word = vocab.find(v => v.id === id);
   if (word) return `<a href="#dictionnaire/${word.id}">Mot : <span class="romaji">${esc(Romaji.display(word.romaji))} · </span><span class="fr">${esc(word.fr)}</span></a>`;
   const card = grammar.find(f => f.id === id);
@@ -225,16 +226,24 @@ function restoreAnalysisReturn(){
   panel.querySelectorAll('details').forEach((d,i)=>d.open=!!item.open[i]);
  }
  requestAnimationFrame(()=>{if(location.hash!==saved.origin)return;
-  document.querySelector('[data-analysis="'+saved.panelId+'"] a[href="'+saved.destination+'"]')?.focus({preventScroll:true});window.scrollTo(0,saved.scrollY);
+  document.querySelector('[data-analysis="'+saved.panelId+'"] a[href="'+saved.destination+'"]')?.focus({preventScroll:true});window.scrollTo(0,saved.scrollY);if(saved.corpusSearch)window.CorpusSearch.open();
  });
 }
 
 
 // Informations du projet : dialogue natif, navigation clavier et retour au bouton.
 const projectInfo=document.getElementById('project-info');
-$('#info-toggle').onclick=()=>{projectInfo.showModal();document.body.classList.add('info-open');};
+let infoOpener=$('#info-toggle'),travelListening=false;
+function openProjectInfo(opener){infoOpener=opener;projectInfo.showModal();document.body.classList.add('info-open');}
+$('#info-toggle').onclick=()=>openProjectInfo($('#info-toggle'));
+for(const opener of [$('#secret-link'),$('.brand')])opener.onclick=event=>{
+ event.preventDefault();openProjectInfo(event.currentTarget);
+ const section=$('#secret-travel');section.open=true;
+ requestAnimationFrame(()=>{section.querySelector('summary').focus({preventScroll:true});section.scrollIntoView({block:'start'});});
+};
+$('#secret-travel').addEventListener('click',event=>{if(event.target.closest('.travel-listen'))travelListening=true;});
 $('#info-close').onclick=()=>projectInfo.close();
-projectInfo.addEventListener('close',()=>{document.body.classList.remove('info-open');$('#info-toggle').focus({preventScroll:true});});
+projectInfo.addEventListener('close',()=>{document.body.classList.remove('info-open');if(travelListening){stopAudio();travelListening=false;}infoOpener.focus({preventScroll:true});});
 projectInfo.addEventListener('click',event=>{if(event.target!==projectInfo)return;const r=projectInfo.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)projectInfo.close();});
 projectInfo.addEventListener('keydown',event=>{
  if(event.key!=='Tab')return;
@@ -266,9 +275,10 @@ function updateContextReturn(){
 }
 function captureContext(link){
  const tab=route().tab;
- const label=link.closest('.analysis-word-link')?'Retour au décorticage':link.closest('.atelier-catalog')?'Retour à la liste':
+ const label=link.closest('#corpus-search')?'Retour à la recherche':link.closest('.analysis-word-link')?'Retour au décorticage':link.closest('.atelier-catalog')?'Retour à la liste':
   {lecons:'Retour à la leçon',dictionnaire:'Retour au dictionnaire',grammaire:'Retour à la grammaire',atelier:'Retour à l’atelier',guide:guideQuery&&!route().id?'Retour à la recherche':'Retour au guide'}[tab];
  return {hash:location.hash,nodes:[...$('#main').childNodes],scrollY:window.scrollY,focus:link,label,
+  corpusSearch:!!link.closest('#corpus-search'),
   navigationCompact:document.querySelector('.navigation-dock')?.classList.contains('is-scrolled'),
   scrolls:[...$('#main').querySelectorAll('*')].filter(el=>el.scrollTop||el.scrollLeft).map(el=>[el,el.scrollTop,el.scrollLeft]),
   search,onlyFavorites,page,dictionaryCategory,guideQuery,guideView,guideFilter,guideLexiconState:{...guideLexiconState},guideVocabCategory,guideVocabSection,lesson:settings.lesson,
@@ -282,7 +292,7 @@ document.addEventListener('click',event=>{
  const ancestor=navigationTrail.findLastIndex(item=>(item.hash||'#lecons')===destination);
  if(link.dataset.contextBack||(link.hasAttribute('data-context-return')&&ancestor>=0)){
   navigationPending={destination,restore:link.dataset.contextBack?navigationTrail.length-1:ancestor};
- }else if(link.closest('#main')||link.closest('#saved-list')){
+ }else if(link.closest('#main')||link.closest('#saved-list')||link.closest('#corpus-search')){
   navigationPending={destination,source:captureContext(link)};
  }else{
   navigationTrail.length=0;navigationPending=null;updateContextReturn();
@@ -329,7 +339,17 @@ function restoreContext(index){
  requestAnimationFrame(()=>{if((location.hash||'#lecons')!==(saved.hash||'#lecons'))return;
   window.setNavigationCompact?.(saved.navigationCompact);
   for(const [el,top,left] of saved.scrolls){el.scrollTop=top;el.scrollLeft=left;}
-  if(saved.focus.isConnected)saved.focus.focus({preventScroll:true});window.scrollTo(0,saved.scrollY);
+  if(saved.focus.isConnected)saved.focus.focus({preventScroll:true});window.scrollTo(0,saved.scrollY);if(saved.corpusSearch)window.CorpusSearch.open();
  });
  return true;
+}
+
+document.addEventListener('click',e=>{const b=e.target.closest('[data-corpus-favorite]');if(b){document.getElementById('saved').hidden=true;document.getElementById('saved-toggle').setAttribute('aria-expanded','false');window.CorpusSearch.openRecord(b.dataset.corpusFavorite);}});
+
+// Une URL de résultat peut être ouverte avant le chargement du panneau différé.
+function renderCorpusRecord(id,exercise=false){
+ const hash=location.hash;
+ const show=()=>{if(location.hash===hash)window.CorpusSearch[exercise?'renderExercise':'renderRecord'](id);};
+ if(window.CorpusSearch)show();
+ else{$('#main').innerHTML='<p class="panel">Chargement du passage…</p>';window.addEventListener('corpus-search-ready',show,{once:true});}
 }

@@ -5,6 +5,9 @@
  const display=document.createElement('button');display.id='display-toggle';display.type='button';display.className='header-icon';display.title='Affichage';display.setAttribute('aria-label','Affichage');display.setAttribute('aria-expanded','false');display.setAttribute('aria-controls','display-panel');
  display.innerHTML='<svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>';
  head.insertBefore(display,document.getElementById('saved-toggle'));
+ const search=document.createElement('button');search.id='search-toggle';search.type='button';search.className='header-icon';search.title='Rechercher';search.setAttribute('aria-label','Rechercher');
+ search.innerHTML='<svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>';
+ head.insertBefore(search,display);
  const reading=document.querySelector('.reading-bar');reading.id='display-panel';reading.hidden=true;reading.setAttribute('role','group');reading.setAttribute('aria-label','Aides de lecture');dock.append(reading);
  function closeDisplay(focus=false){reading.hidden=true;display.setAttribute('aria-expanded','false');if(focus)display.focus({preventScroll:true});}
  display.onclick=()=>{const open=reading.hidden;reading.hidden=!open;display.setAttribute('aria-expanded',String(open));if(open)for(const id of ['saved','settings']){document.getElementById(id).hidden=true;document.getElementById(id+'-toggle').setAttribute('aria-expanded','false');}};
@@ -36,6 +39,8 @@
  };
  window.updateNavigationTab=()=>{button.hidden=!document.querySelector('#main>.toolbar,#main .guide-view-navigation,#guide-active-tools,#main>.atelier-setup');const active=tabs.querySelector('[aria-current=page]');if(!active)return;const a=active.getBoundingClientRect(),t=tabs.getBoundingClientRect();if(a.right>t.right)tabs.scrollLeft+=a.right-t.right;if(a.left<t.left)tabs.scrollLeft+=a.left-t.left;};
  window.updateNavigationTab();
+ search.setAttribute('aria-haspopup','dialog');search.setAttribute('aria-controls','corpus-search');search.setAttribute('aria-expanded','false');
+ search.onclick=()=>{closeDisplay();for(const id of ['saved','settings']){document.getElementById(id).hidden=true;document.getElementById(id+'-toggle').setAttribute('aria-expanded','false');}window.CorpusSearch.open();};
  window.setNavigationCompact=value=>dock.classList.toggle('is-scrolled',!!value);
  // Deux seuils évitent que la réduction de l'en-tête, qui déplace le contenu,
  // ne déclenche immédiatement son agrandissement par ancrage du défilement.

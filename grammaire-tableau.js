@@ -15,6 +15,7 @@ function grammarSummary(f){
  return `<div class="grammar-summary-scroll" tabindex="0" role="region" aria-label="Synthèse : ${esc(f.titre)}"><table class="grammar-summary-table"><caption class="visually-hidden">${esc(f.titre)}</caption><thead><tr><th scope="col">Pour…</th><th scope="col">Forme et lecture</th><th scope="col" class="fr">Sens</th></tr></thead><tbody>${f.synthese.lignes.map(r=>`<tr><th scope="row">${esc(r.usage)}</th><td>${grammarReading(r.exemple)}</td><td class="fr">${esc(r.exemple.fr)}</td></tr>`).join('')}</tbody></table></div>`;
 }
 function renderGrammar(r){
+ if(r.id==='recherche'){renderCorpusRecord(r.line);return;}
  if(r.id==='particules'){renderParticlesSummary();return;}
  const f=grammar.find(f=>f.id===r.id);
  if(!f){
