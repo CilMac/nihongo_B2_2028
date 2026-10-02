@@ -20,7 +20,7 @@ function renderGrammar(r){
  if(r.id==='particules'){renderParticlesSummary();return;}
  const f=grammar.find(f=>f.id===r.id);
  if(!f){
-  $('#main').innerHTML=intro('OBSERVER · COMPRENDRE · PRATIQUER','La grammaire',grammar.length+' fiches : une synthèse pour se repérer, des exemples et un exercice pour pratiquer.')+`<a class="grammar-overview-link panel" href="#grammaire/fondements"><strong>Les fondements du japonais</strong><span>Particularités de la langue, phrases, noms et particules →</span></a><a class="grammar-overview-link panel" href="#grammaire/particules"><strong>Les particules en un coup d’œil</strong><span>Comparer leurs rôles et retrouver la bonne fiche →</span></a><div class="grid grammar-index">${grammar.map(f=>`<article class="card grammar-card"><div class="card-head"><span class="pill">${esc(f.id)} · ${esc(f.famille)}</span>${star(f.id)}</div><h2>${esc(f.titre)}</h2><p>${esc(f.objectif)}</p><a href="#grammaire/${f.id}">Voir la synthèse →</a></article>`).join('')}</div>`;
+  $('#main').innerHTML=intro('OBSERVER · COMPRENDRE · PRATIQUER','La grammaire',grammar.length+' fiches : une synthèse pour se repérer, des exemples et un exercice pour pratiquer.')+`<a class="grammar-overview-link panel" href="#grammaire/fondements"><strong>Les fondements du japonais</strong><span>Particularités de la langue, phrases, noms, particules et verbes →</span></a><a class="grammar-overview-link panel" href="#grammaire/particules"><strong>Les particules en un coup d’œil</strong><span>Comparer leurs rôles et retrouver la bonne fiche →</span></a><div class="grid grammar-index">${grammar.map(f=>`<article class="card grammar-card"><div class="card-head"><span class="pill">${esc(f.id)} · ${esc(f.famille)}</span>${star(f.id)}</div><h2>${esc(f.titre)}</h2><p>${esc(f.objectif)}</p><a href="#grammaire/${f.id}">Voir la synthèse →</a></article>`).join('')}</div>`;
   return;
  }
  const particleSheet=grammarParticles.lignes.some(r=>r.fiche===f.id);
@@ -58,12 +58,17 @@ function renderParticlesSummary(){
  $('#main').innerHTML=`<div class="grammar-table-detail grammar-sheet"><p><a data-context-return href="#grammaire">← Les fiches de grammaire</a></p>${intro('REPÈRE PRATIQUE',t.titre,t.description)}<section class="panel grammar-synthesis"><div class="grammar-summary-scroll" tabindex="0" role="region" aria-label="Tableau des particules"><table class="grammar-summary-table particles-summary"><caption class="visually-hidden">Usages de base des particules</caption><thead><tr><th scope="col">Particule</th><th scope="col">Rôle</th><th scope="col">Exemple</th></tr></thead><tbody>${t.lignes.map(r=>`<tr><th scope="row"><div class="demo-cell"><button class="demo-jp kana-audio" lang="ja" data-speak="${esc(r.particule.kana)}" aria-label="Écouter : ${esc(r.particule.kana)}">${jp(r.particule.jp)} ♪</button><span class="romaji">${esc(r.particule.romaji)}</span></div></th><td>${esc(r.role)}<a class="particle-sheet-link" href="#grammaire/${r.fiche}">Fiche ${r.fiche} →</a></td><td>${grammarReading(r.exemple)}<p class="fr">${esc(r.exemple.fr)}</p></td></tr>`).join('')}</tbody></table></div><div class="demo-rules">${t.reperes.map(r=>`<p>${esc(r)}</p>`).join('')}</div></section><details class="panel"><summary>Références</summary>${grammarReferences(t.sources)}</details></div>`;
 }
 
+const foundationsOpenPanels=new Map();
 function renderFoundations(r){
- $('#main').innerHTML=`<article class="foundations"><nav class="grammar-breadcrumb"><a data-context-return href="#grammaire">← La grammaire</a><a href="#grammaire/fondements/sommaire">Parcours du manuel</a></nav>${intro('LES FONDEMENTS DU JAPONAIS','Comprendre la langue japonaise','Un manuel de référence à lire progressivement. Chapitres 1 à 3 disponibles ; la suite viendra enrichir ce parcours.')}<div class="foundations-text">${Fondements.html}</div></article>`;
+ $('#main').innerHTML=`<article class="foundations"><nav class="grammar-breadcrumb"><a data-context-return href="#grammaire">← La grammaire</a><a href="#grammaire/fondements/sommaire">Parcours du manuel</a></nav>${intro('LES FONDEMENTS DU JAPONAIS','Comprendre la langue japonaise','Un manuel de référence à lire progressivement. Dix chapitres, des premières phrases aux constructions plus avancées.')}<div class="foundations-text">${Fondements.html}</div></article>`;
  document.querySelectorAll('[data-foundation-example]').forEach(el=>{
   const ref=el.dataset.foundationExample;
   const row=lessons.find(l=>l.Leçon+'-'+l.Ligne===ref);
   if(row)el.innerHTML=block({jp:row.Japonais,kana:row.Kana,romaji:row.Romaji,fr:row.Français,source:ref},{audio:false})+sourceLink(ref);
  });
- if(r.line){const target=document.getElementById(r.line);if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView({block:'start'});}}
+ document.querySelectorAll('.foundations details').forEach((panel,index)=>{
+  if(foundationsOpenPanels.has(index))panel.open=foundationsOpenPanels.get(index);
+  panel.addEventListener('toggle',()=>foundationsOpenPanels.set(index,panel.open));
+ });
+ if(r.line){const target=document.getElementById(r.line);if(target){if(target.tagName==='DETAILS')target.open=true;requestAnimationFrame(()=>{if(target.isConnected)target.scrollIntoView({block:'start'});});}}
 }

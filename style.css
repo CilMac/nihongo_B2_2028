@@ -444,3 +444,12 @@ html{overflow-anchor:none}
 .foundations-table-scroll th,.foundations-table-scroll td{padding:12px;text-align:left;border-bottom:1px solid var(--line)}
 .foundations .example-block{padding:15px 18px;background:#fffefb;border-radius:0 12px 12px 0}.foundations .example-block>a{font-size:14px}
 @media(max-width:760px){.foundations-text{font-size:16px}.foundations-text h2{font-size:23px}.foundations-contents li{padding:12px}.foundations .example-block{padding:12px}}
+
+/* Chapitres du manuel : ouverture indépendante, contenu directement sous le titre. */
+.foundations-text .foundation-chapter{margin:14px 0;padding:0;background:#fffefb;border:1px solid var(--line);border-radius:12px}
+.foundation-chapter>summary{padding:18px 20px;color:#49405c;background:#f0ebf5;border-radius:11px}
+.foundation-chapter[open]>summary{border-radius:11px 11px 0 0}
+.foundations-text .foundation-chapter>summary h2{display:inline;margin:0;line-height:1.4}
+.foundation-description{display:block;margin-top:5px;font-size:15px;font-weight:400;color:var(--muted)}
+.foundation-chapter-body{padding:0 20px 20px;border-top:1px solid var(--line)}
+@media(max-width:760px){.foundation-chapter>summary{padding:14px 12px}.foundation-chapter-body{padding:0 12px 16px}}
