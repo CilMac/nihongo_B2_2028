@@ -50,7 +50,52 @@
       .normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
   }
 
-  const api = Object.freeze({ display, searchKey });
+  // Align from both ends: a missing reading in the middle must not hide safe
+  // grammatical markers elsewhere. Join/split spaces without rewriting the source.
+  function bracketAnalysis(text, segments) {
+    const source=display(text), words=[...source.matchAll(/[\p{L}\p{M}’'ʼ-]+/gu)];
+    const compact=s=>searchKey(s).replace(/\s/g,'');
+    const readings=segments.map(part=>(display(part.romaji || '').match(/[\p{L}\p{M}’'ʼ-]+/gu)||[]).join(''));
+    const spans=new Map();
+    function match(partIndex,wordIndex,direction) {
+      const target=compact(readings[partIndex]);
+      if(!target)return null;
+      let value='',start=wordIndex,end=wordIndex;
+      while(wordIndex>=0&&wordIndex<words.length) {
+        const word=words[wordIndex];
+        value=direction===1?value+compact(word[0]):compact(word[0])+value;
+        start=Math.min(start,wordIndex);end=Math.max(end,wordIndex);
+        // Joining words is safe only across spaces, never across a clause boundary.
+        const left=direction===1?end-1:start,right=left+1;
+        if(end>start&&/[^\s]/u.test(source.slice(words[left].index+words[left][0].length,words[right].index)))return null;
+        if(value===target)return {start,end};
+        if(direction===1?!target.startsWith(value):!target.endsWith(value))return null;
+        wordIndex+=direction;
+      }
+      return null;
+    }
+    function remember(part,index,range) {
+      if(part.particle||part.category==='particule'||/^\[[\s\S]+\]$/.test((part.gloss || part.fr || '').trim()))spans.set(index,range);
+    }
+    let firstPart=0,firstWord=0;
+    while(firstPart<segments.length&&firstWord<words.length) {
+      const range=match(firstPart,firstWord,1);if(!range)break;
+      remember(segments[firstPart],firstPart,range);firstPart++;firstWord=range.end+1;
+    }
+    let lastPart=segments.length-1,lastWord=words.length-1;
+    while(lastPart>=firstPart&&lastWord>=firstWord) {
+      const range=match(lastPart,lastWord,-1);if(!range||range.start<firstWord)break;
+      remember(segments[lastPart],lastPart,range);lastPart--;lastWord=range.start-1;
+    }
+    let output=source;
+    for(const {start,end} of [...spans.values()].sort((a,b)=>b.start-a.start)) {
+      const from=words[start].index,to=words[end].index+words[end][0].length;
+      output=output.slice(0,from)+'['+output.slice(from,to)+']'+output.slice(to);
+    }
+    return output;
+  }
+
+  const api = Object.freeze({ display, searchKey, bracketAnalysis });
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.Romaji = api;
 })(globalThis);

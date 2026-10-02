@@ -120,22 +120,9 @@ function decorticageEntry(row) {
 }
 // Ajouter les repères uniquement quand les lectures correspondent au texte source.
 function analysisBracketedRomaji(row,result) {
- const source=Romaji.display(row.Romaji), words=[...source.matchAll(/[\p{L}\p{M}’'ʼ-]+/gu)];
- let cursor=0;const spans=[];
- for(const part of result.segments){
-  const reading=Romaji.display(part.romaji || '').match(/[\p{L}\p{M}’'ʼ-]+/gu) || [];
-  if(!reading.length || !reading.every((word,i)=>words[cursor+i] && normalize(word)===normalize(words[cursor+i][0])))return source;
-  if(/^\[[\s\S]+\]$/.test((part.gloss || part.fr || '').trim())){
-   const first=words[cursor],last=words[cursor+reading.length-1];
-   spans.push([first.index,last.index+last[0].length]);
-  }
-  cursor+=reading.length;
- }
- if(cursor!==words.length)return source;
- let output=source;
- for(const [start,end] of spans.reverse())output=output.slice(0,start)+'['+output.slice(start,end)+']'+output.slice(end);
- return output;
+ return Romaji.bracketAnalysis(row.Romaji,result.segments);
 }
+
 function renderSimpleDecorticage(segments) {
  return `<table class="analysis-simple"><caption class="visually-hidden">Décorticage de la phrase</caption>
  <thead><tr><th scope="col">Élément</th><th scope="col" class="analysis-reading">Lecture</th><th scope="col" class="fr">Sens et rôle</th></tr></thead>
