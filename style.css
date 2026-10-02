@@ -433,3 +433,14 @@ html{overflow-anchor:none}
 .travel-japanese{font-family:var(--jp-font);font-size:23px;line-height:1.8}
 .travel-listen{background:#fffefb}
 @media(max-width:600px){.travel-secrets{grid-template-columns:1fr}}
+
+/* Manuel de référence : même lecture et mêmes commandes que les exemples du corpus. */
+.foundations{max-width:850px;margin:auto}.foundations-text{font-size:17px;line-height:1.8;overflow-wrap:anywhere}
+.foundations-text h2{margin:36px 0 20px;font-size:25px;scroll-margin-top:150px}.foundations-text h3{margin-top:32px;font-size:21px}
+.foundations-text details{scroll-margin-top:150px}.foundations-text summary{min-height:44px;line-height:1.6}
+.foundations-contents{list-style:none;padding:0;display:grid;gap:12px}.foundations-contents li{padding:16px 20px;background:#fffefb;border:1px solid var(--line);border-radius:12px}
+.foundations-contents .pill{margin-left:10px}.foundations-contents p{margin:5px 0 0;font-size:15px;color:var(--muted)}
+.foundations-table-scroll{overflow-x:auto}.foundations-table-scroll table{border-collapse:collapse;min-width:520px;width:100%;background:#fffefb}
+.foundations-table-scroll th,.foundations-table-scroll td{padding:12px;text-align:left;border-bottom:1px solid var(--line)}
+.foundations .example-block{padding:15px 18px;background:#fffefb;border-radius:0 12px 12px 0}.foundations .example-block>a{font-size:14px}
+@media(max-width:760px){.foundations-text{font-size:16px}.foundations-text h2{font-size:23px}.foundations-contents li{padding:12px}.foundations .example-block{padding:12px}}
