@@ -3,8 +3,9 @@
  'use strict';
  const key = s => String(s || '').normalize('NFC').replace(/\s/g,'');
  const readingKey = s => key(s).replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-0x60));
- const split = s => String(s || '').match(/[^\s。、！？!?]+|[。、！？!?]/gu) || [];
- const punct = s => /^[。、！？!?]$/u.test(s);
+ const split = s => String(s || '').match(/[^\s。、！？!?（）()，,]+|[。、！？!?（）()，,]/gu) || [];
+ const punct = s => /^[。、！？!?（）()，,]$/u.test(s);
+ const renderPunct = s => ({'、':',','，':',','。':'.','？':'?','！':'!','（':'(','）':')'})[s] || s;
  const short = s => String(s || '').replace(/\s*\([^)]*\)/g,'').split(/[;；]/)[0].trim();
  const particles = {
   'へ':['e','direction','Indique une direction après un lieu.'],
@@ -34,9 +35,11 @@
   '食べる':'manger','飲む':'boire','買う':'acheter','読む':'lire','見る':'regarder','書く':'écrire',
   '行く':'aller','来る':'venir','帰る':'rentrer','歩く':'marcher','起きる':'se lever','寝る':'se coucher',
   '待つ':'attendre','働く':'travailler','住む':'habiter','持つ':'avoir / tenir','知る':'connaître',
-  '作る':'fabriquer','する':'faire','ある':'il y a / se trouver','いる':'être présent / se trouver'
+  '作る':'fabriquer','する':'faire','ある':'il y a / se trouver','いる':'être présent / se trouver',
+  '聞く':'écouter / demander','取る':'prendre','とる':'prendre','見せる':'montrer'
  };
  const teMeanings = {
+  'する':['faire','La forme en て suivie de いる présente ici une activité ou une situation en cours ; le groupe nominal précise laquelle.'],
   '住む':['habiter','Avec 住む, cette construction exprime la résidence. Le temps et la négation sont portés par l’auxiliaire.'],
   '知る':['connaître','Ici, ている exprime un état de connaissance.'],
   '持つ':['avoir / tenir','Avec 持つ, ている peut exprimer la possession ou le fait de tenir quelque chose ; le dialogue précise le sens.'],
@@ -50,15 +53,20 @@
   '見る':['regarder','La forme en て suivie de いる présente une activité en cours ou répétée, selon le contexte.']
  };
  const set = text => new Set(text.split(' '));
- const places=set('ここ そこ あそこ どこ 中 前 後ろ 上 下 隣 外 左 右 東京 学校 家 デパート 喫茶店 バー 公園 図書館 会社 空港 駅 海 工場 部屋');
- const times=set('今 今日 昨日 明日 今朝 今晩 今晚 朝 夜 午前 午後 夜中 毎朝 来週 先週');
+ const places=set('ここ そこ あそこ どこ 中 前 後ろ 上 下 隣 外 左 右 東京 学校 家 デパート 喫茶店 バー 公園 図書館 会社 空港 駅 海 工場 部屋 店 フランス スカイツリー 東京スカイツリー');
+ const times=set('今 今日 昨日 明日 あした 今朝 今晩 今晚 朝 夜 午前 午後 夜中 毎朝 来週 先週');
  const vehicles=set('バス 電車 地下鉄 新幹線 飛行機 タクシー 船 自転車 車');
  const instruments=set('箸 お箸 フォーク スプーン ナイフ');
- const activities=set('買物 買い物 散歩 食事 観光 仕事');
+ const activities=set('買物 買い物 散歩 食事 観光 仕事 映画');
  const choices=set('何 どれ コーヒー 紅茶 お茶 ビール 水 カレー うどん お菓子 菓子');
- const adverbs=set('まず それから それでは じゃあ でも 今 今日 昨日 明日 今朝 今晩 今晚 朝 夜 午前 午後 夜中 毎朝 来週 先週 また 一緒 たくさん どう');
- const objectVerbs=set('食べる 飲む 買う 読む 見る 書く 待つ 持つ 知る 作る');
+ const adverbs=set('まず それから それでは じゃあ でも 今 今日 昨日 明日 あした 今朝 今晩 今晚 朝 夜 午前 午後 夜中 毎朝 来週 先週 また たくさん どう 随分 とても');
+ const objectVerbs=set('食べる 飲む 買う 読む 見る 書く 待つ 持つ 知る 作る する 聞く 取る とる 見せる');
  const movement=set('行く 来る 帰る 歩く');
+ const people=set('友達 家内 妻 夫 父 母 先生 子供');
+ const person=s=>nominal(s)&&(people.has(key(s.jp))||/さん$/.test(key(s.jp)));
+ // Language + 本 can describe the language of a book, not its subject.
+ const bookSubjects=set('料理 歴史 音楽');
+ const relation=(left,right)=>key(right?.jp)==='本'&&bookSubjects.has(key(left?.jp))?'sujet du livre':'relation entre noms';
  const nominal = s => !!s && s.known && !s.form && !s.particle && /^(nom|nom propre|pronom)$/.test(s.category);
  const isPlace = s => !!s && (places.has(key(s.jp)) || s.place);
  const isTime = s => !!s && (s.quantity==='clock' || times.has(key(s.jp)));
@@ -77,7 +85,10 @@
   }
   const uniqueWord = k => (index.get(key(k)) || []).length===1 ? index.get(key(k))[0] : null;
   function lexical(w) {
-   return {kana:key(w.kana),romaji:w.romaji || '',fr:w.fr,gloss:short(w.fr),category:w.categorie_grammaticale,
+   // Short structural glosses; the full dictionary definition remains in fr.
+   const glosses={'トランク':'valise','何':'quoi','本当':'vrai','そう':'ainsi','服':'vêtements','本':'livre','とても':'très',
+    '道':'chemin','店':'magasin','映画':'film / cinéma','仕事':'travail','おいしい':'bon / délicieux','随分':'beaucoup'};
+   return {kana:key(w.kana),romaji:w.romaji || '',fr:w.fr,gloss:glosses[key(w.mot)] || short(w.fr),category:w.categorie_grammaticale,
     base:w.forme_base || '',baseWord:uniqueWord(w.forme_base),wordId:w.id,origin:'dictionary',known:true,form:'',explanation:''};
   }
   // Limited number family: clock hours and hour durations, including source spacing variants.
@@ -97,7 +108,39 @@
   }
   function candidates(surface) {
    const k=key(surface);if(cache.has(k))return cache.get(k);
+   // One attested mixed-script spelling, never a global katakana rewrite.
+   if(/^食ベ(?:ます|ました|ません|ませんでした|ましょう)$/.test(k)) {
+    const corrected=k.replace('食ベ','食べ');
+    const variants=candidates(corrected).map(c=>({...c,sourceNote:`Graphie source ${k} : ベ est en katakana. Lecture rapprochée de ${corrected}, sans modifier le texte.`,
+     explanation:`${c.explanation || ''} Graphie source conservée : ベ en katakana, correspondant ici à べ.`}));
+    cache.set(k,variants);return variants;
+   }
    let result=[];
+   const compound={
+    'スカイツリー':['スカイツリー','sukai tsurii','Skytree'],
+    '東京スカイツリー':['とうきょうスカイツリー','toukyou sukai tsurii','Tokyo Skytree']
+   }[k];
+   if(compound){const [kana,romaji,fr]=compound;result.push({kana,romaji,fr,gloss:fr,category:'nom propre',place:true,origin:'rule',known:true,form:'',explanation:'Nom du lieu conservé comme un ensemble, avec lecture contrôlée par les kana.'});}
+   const years=k.match(/^([一二三四五六七八九十])年前$/);
+   if(years){const n='一二三四五六七八九十'.indexOf(years[1])+1;const kana=['いち','に','さん','よ','ご','ろく','なな','はち','きゅう','じゅう'][n-1]+'ねんまえ';const romaji=['ichi','ni','san','yo','go','roku','nana','hachi','kyuu','juu'][n-1]+'nen mae';const fr=n+' an'+(n>1?'s':'')+' avant';result.push({kana,romaji,fr,gloss:fr,category:'nom',relativeTime:true,origin:'rule',known:true,form:'',explanation:'Un nombre d’années suivi de 前 situe un moment antérieur, et non un emplacement.'});}
+   const negative={
+    'ではありません':['ではありません','de wa arimasen','ce n’est pas [poli]'],
+    'ではありませんでした':['ではありませんでした','de wa arimasen deshita','ce n’était pas [poli]'],
+    'じゃありません':['じゃありません','ja arimasen','ce n’est pas [poli]']
+   }[k];
+   if(negative){const [kana,romaji,fr]=negative;result.push({kana,romaji,fr,gloss:fr,category:'auxiliaire',negativeCopula:true,origin:'rule',known:true,form:'',explanation:'Négation de la construction nominale en です. で et は font ici partie de cette construction.'});}
+   const formulas={
+    'おはようございます':['おはようございます','ohayou gozaimasu','bonjour [poli]'],
+    'ありがとうございます':['ありがとうございます','arigatou gozaimasu','merci [poli]'],
+    'お願いします':['おねがいします','onegai shimasu','s’il vous plaît'],
+    'おねがいします':['おねがいします','onegai shimasu','s’il vous plaît']
+   };
+   if(formulas[k]) {
+    const [kana,romaji,fr]=formulas[k];
+    result.push({kana,romaji,fr,gloss:fr,category:'expression',formula:true,origin:'rule',known:true,form:'',
+     explanation:'Formule usuelle comprise comme un ensemble ; la traduction séparée de ses composants serait trompeuse ici.'});
+   }
+   if(k==='何')result.push({kana:'なん',romaji:'nan',fr:'quel / quoi',gloss:'quel / quoi',category:'pronom',origin:'rule',known:true,form:'',explanation:'Lecture なん, retenue seulement lorsqu’elle correspond aux kana de la phrase.'});
    const p=particles[k];
    if(p)result.push({kana:k,romaji:p[0],fr:`[${p[1]}]`,gloss:`[${p[1]}]`,explanation:p[2],particle:k,origin:'rule',known:true,form:'',audioKana:({'へ':'え','は':'わ','を':'お'})[k] || ''});
    const number=hours(k);if(number)result.push({...number,gloss:number.fr});
@@ -115,16 +158,37 @@
     break;
    }
    // Only join a te-form that is itself attested, with a verified lexical interpretation.
-   for(const [ending,roman,label] of endings.filter(e=>e[0]!=='ましょう')) {
-    const auxiliary='い'+ending;if(!k.endsWith(auxiliary))continue;
+   const iruEndings=[...endings.filter(e=>e[0]!=='ましょう').map(([e,r,l])=>['い'+e,'i'+r,l]),
+    ['いる','iru','non-passé neutre'],['いた','ita','passé neutre'],['いない','inai','négatif non-passé neutre'],['いなかった','inakatta','négatif passé neutre']];
+   for(const [auxiliary,roman,label] of iruEndings) {
+    if(!k.endsWith(auxiliary))continue;
     const te=k.slice(0,-auxiliary.length);
     for(const w of index.get(te) || []) {
      if(!/[てで]$/.test(te)||w.categorie_grammaticale!=='verbe'||!teMeanings[w.forme_base])continue;
+     // The lexicon sometimes uses a semantic base for honorific forms. Do not
+     // turn なさって into a neutral exercise derived from する.
+     if(w.forme_base==='する'&&key(w.kana)!=='して')continue;
      const [fr,explanation]=teMeanings[w.forme_base];
      const aspect=['住む','知る'].includes(w.forme_base)?'état':w.forme_base==='持つ'?'possession ou action':'activité';
-     result.push({...lexical(w),kana:key(w.kana)+auxiliary,romaji:w.romaji+' i'+roman,fr,gloss:`${fr} [${aspect} ; ${label}]`,
+     result.push({...lexical(w),kana:key(w.kana)+auxiliary,romaji:w.romaji+' '+roman,fr,gloss:`${fr} [${aspect} ; ${label}]`,
       form:`forme en て + いる · ${label}`,te:true,origin:'rule',explanation});
     }
+   }
+   // The auxiliary みる means trying, not looking. Only attested te-forms qualify.
+   for(const [tail,roman,label] of [...endings.map(([e,r,l])=>['み'+e,'mi'+r,l]),['みる','miru','non-passé neutre'],['みよう','miyou','proposition neutre']]) {
+    if(!k.endsWith(tail))continue;
+    for(const w of index.get(k.slice(0,-tail.length)) || []) {
+     if(!/[てで]$/.test(key(w.mot))||w.categorie_grammaticale!=='verbe'||!verbs[w.forme_base])continue;
+     if(w.forme_base==='する'&&key(w.kana)!=='して')continue;
+     const fr='essayer de '+verbs[w.forme_base];
+     result.push({...lexical(w),kana:key(w.kana)+tail,romaji:w.romaji+' '+roman,fr,gloss:`${fr} [${label}]`,
+      form:`forme en て + みる · ${label}`,inflection:label,trial:true,origin:'rule',explanation:'La construction en て + みる exprime un essai. Le second verbe ne signifie pas « regarder » dans ce groupe.'});
+    }
+   }
+   for(const tail of ['ください','下さい'])if(k.endsWith(tail))for(const w of index.get(k.slice(0,-tail.length))||[]) {
+    if(!/[てで]$/.test(key(w.mot))||w.categorie_grammaticale!=='verbe'||!verbs[w.forme_base]||['いる','ある'].includes(w.forme_base))continue;
+    if(w.forme_base==='する'&&key(w.kana)!=='して')continue;
+    const fr=verbs[w.forme_base];result.push({...lexical(w),kana:key(w.kana)+'ください',romaji:w.romaji+' kudasai',fr,gloss:fr+' [demande polie]',form:'forme en て + ください',origin:'rule',explanation:'Le verbe en て suivi de ください exprime une demande polie.'});
    }
    // A proper name + station/name honorific is a reusable nominal group.
    for(const suffix of ['駅','さん'])if(k.endsWith(suffix)) {
@@ -161,9 +225,12 @@
      // Never turn an unsupported large hour into an unrelated smaller valid hour.
      if(quantityEnds[i]&&i+n!==quantityEnds[i])continue;
      for(const c of candidates(surface))if(c.kana) {
+      // Do not read the end of a number or range as a standalone year count.
+      if(c.relativeTime&&/^[一二三四五六七八九十百千万億\d]+$/.test(jp[i-1]||''))continue;
       // A conjunction must not absorb a separately written particle inside a
       // nominal phrase (e.g. adjectif + な + ところ + が).
       if(n>1&&c.category==='conjonction'&&chunk.some(t=>particles[t])&&i>0&&!punct(jp[i-1]))continue;
+      if(n>1&&c.category==='expression'&&!c.formula&&chunk.some(t=>particles[t]))continue;
       out.push({...c,jp:surface,start:i,end:i+n});
      }
     }
@@ -186,7 +253,7 @@
       consider({length:c.kana.length,value:{...c,kana:sourceKana.slice(pos,pos+c.kana.length)}},c.end,1);
      }
      for(const end of boundaries.filter(b=>b>pos)) {
-      if(/[。、！？!?]/u.test(kana.slice(pos,end)))break;
+      if(/[。、！？!?（）()，,]/u.test(kana.slice(pos,end)))break;
       for(let next=i+1;next<=Math.min(jp.length,i+7);next++) {
        if(punct(jp[next-1]))break;
        if(quantityEnds[i]&&next!==quantityEnds[i])continue;
@@ -214,21 +281,91 @@
    }
    return {jp,segments:fallback,sourceAligned:false};
   }
-  function explain(segments,jp) {
+  // These bounded clauses need no finite lexical verb (formulas, copulas, names).
+  function explainSimple(segments) {
+   if(!segments.length||segments.some(s=>!s.known))return null;
+   if(segments.length===1&&segments[0].formula)return 'Formule usuelle : '+segments[0].fr+'.';
+   const parts=[...segments],finals=[];
+   while(['か','ね','よ'].includes(parts.at(-1)?.jp))finals.unshift(parts.pop());
+   if(!['','か','ね','よ','よね','かね'].includes(finals.map(s=>s.jp).join('')))return null;
+   const predicate=parts.pop();
+   if(!predicate)return null;
+   const markFinals=()=>finals.forEach(s=>{if(s.jp==='か')role(s,'question','Termine ici une question.');});
+   if(!finals.length&&predicate.jp==='から'&&parts.length===1&&isTime(parts[0])) {
+    role(predicate,'depuis','Marque ici le point de départ dans le temps.');return 'Repère temporel → [depuis].';
+   }
+   if(!finals.length&&predicate.jp==='から'&&parts.length===1&&parts[0].jp==='いつ') {
+    role(predicate,'depuis','Avec いつ, demande depuis quel moment.');return 'Quel moment → [depuis] : depuis quand ?';
+   }
+   if(key(predicate.jp)==='申します'&&parts.at(-1)?.jp==='と'&&parts.length>1&&parts.slice(0,-1).every(s=>s.category==='nom propre')) {
+    role(parts.at(-1),'citation','Introduit le nom sous lequel la personne se présente.');
+    predicate.fr='s’appeler';predicate.gloss='s’appeler [humble et poli]';predicate.base='申す';predicate.baseWord=uniqueWord('申す');
+    predicate.explanation='Dans cette présentation, と申します donne son nom avec une forme humble et polie.';
+    markFinals();return 'Nom cité → [citation] → se présenter par son nom.';
+   }
+   const request=['下さい','ください'].includes(key(predicate.jp));
+   if(!request&&!predicate.negativeCopula&&!['です','でした'].includes(key(predicate.jp)))return null;
+   const rest=[...parts];
+   while(rest.length&&(['はい','いいえ','ええ','ああ'].includes(rest[0].jp)||adverbs.has(key(rest[0].jp))))rest.shift();
+   // A noun/adjective predicate, optionally preceded by one simple topic.
+   const pending=[];
+   if(rest[0]?.jp==='本当'&&rest[1]?.jp==='に') {
+    const adverb=rest.shift(),particle=rest.shift();
+    pending.push(()=>{adverb.gloss='vraiment';role(particle,'manière','Avec 本当, に forme un adverbe : vraiment.');});
+   }
+   const topic=rest.findIndex(s=>s.jp==='は');
+   const nounGroup=items=>items.length>0&&items.every((s,i)=>{
+    if(s.jp==='の'||s.jp==='と') {
+     if(!nominal(items[i-1])||!nominal(items[i+1]))return false;
+     pending.push(()=>role(s,s.jp==='の'?relation(items[i-1],items[i+1]):'énumération','Relie les noms de ce groupe.'));return true;
+    }
+    return nominal(s)&&(i===0||['の','と'].includes(items[i-1].jp)||['déterminant','adjectif en i'].includes(items[i-1].category))||s.category==='déterminant'&&(i===0||['の','と'].includes(items[i-1].jp))&&(nominal(items[i+1])||items[i+1]?.category==='adjectif en i'&&nominal(items[i+2]))||s.category==='adjectif en i'&&(i===0||['の','と'].includes(items[i-1].jp)||items[i-1].category==='déterminant')&&nominal(items[i+1]);
+   });
+   if(request) {
+    if(rest.at(-1)?.jp!=='を'||!nounGroup(rest.slice(0,-1)))return null;
+    pending.forEach(f=>f());role(rest.at(-1),'objet','Indique ce que l’on demande à recevoir.');
+    predicate.gloss='donnez [s’il vous plaît]';markFinals();return 'Chose demandée → [objet] → demande polie.';
+   }
+   if(topic!==-1) {
+    if(!nounGroup(rest.slice(0,topic)))return null;
+    pending.push(()=>role(rest[topic],'thème','Présente ce dont on parle.'));
+   }
+   const tail=rest.slice(topic+1);
+   const special=tail.length===1&&['そう','まだ','けっこう','本当','いくつ'].includes(key(tail[0].jp));
+   const adjective=tail.length===1&&/^adjectif en (i|na)$/.test(tail[0].category);
+   if(predicate.negativeCopula ? !nounGroup(tail) : !special&&!adjective&&!nounGroup(tail))return null;
+   pending.forEach(f=>f());markFinals();
+   if(!predicate.negativeCopula)predicate.gloss=key(predicate.jp)==='でした'?'c’était [poli]':adjective?'[poli]':'c’est [poli]';
+   if(special&&key(tail[0].jp)==='まだ') {
+    tail[0].gloss='pas encore';if(!predicate.negativeCopula)predicate.gloss=key(predicate.jp)==='でした'?'[passé poli]':'[poli]';
+   }
+   // A negative reply selects the refusal, never a context-free kekkou => no rule.
+   if(special&&key(tail[0].jp)==='けっこう'&&parts[0]?.jp==='いいえ')tail[0].gloss='cela suffit / non merci';
+   return 'Présentation ou appréciation avec '+predicate.jp+(finals.some(s=>s.jp==='か')?' ; question.':'.');
+  }
+  function explain(segments,jp,allowPartial=false) {
    let end=segments.length-1;
    const finals=[];while(end>=0&&['か','ね','よ'].includes(segments[end].jp)){finals.unshift(segments[end--]);}
    if(!['','か','ね','よ','よね','かね'].includes(finals.map(s=>s.jp).join('')))return null;
    const verb=segments[end],prefix=segments.slice(0,end);
-   const introduction=['はい','いいえ'].includes(prefix[0]?.jp)&&jp[prefix[0].end]==='、'?prefix.shift():null;
+   const introduction=['はい','いいえ','ええ','じゃあ'].includes(prefix[0]?.jp)&&/[、，,]/.test(jp[prefix[0].end]||'')?prefix.shift():null;
    // A single supported finite predicate. Complex clauses receive lexical groups only.
-   if(!verb?.form||!verbs[verb.base]||prefix.some(s=>s.form||s.base||!s.known)||jp.some((t,i)=>punct(t)&&i!==jp.length-1&&!(introduction&&t==='、'&&i===introduction.end)))return null;
+   if(!verb?.form||!verbs[verb.base]||prefix.some(s=>s.form||s.base||!s.known)||jp.some((t,i)=>punct(t)&&i!==jp.length-1&&!(introduction&&/[、，,]/.test(t)&&i===introduction.end)))return null;
+   // 実は is an adverbial expression; its は is not a nominal topic here.
+   if(key(prefix[0]?.jp)==='実'&&prefix[1]?.jp==='は')return null;
+   // Partial recovery needs a simple nominal frame too: never skip a hidden
+   // predicate, quotation, conjunction or unknown group to reach the final verb.
+   if(allowPartial&&prefix.some(s=>!nominal(s)&&!s.particle&&!['déterminant','adjectif en i'].includes(s.category)&&!adverbs.has(key(s.jp))&&s.quantity!=='duration'))return null;
    const groups=[];let buffer=[];
    const delimiters=set('は も が を に へ で から まで');
    for(const s of prefix) {
-    if(delimiters.has(s.jp)){if(!buffer.length)return null;groups.push({parts:buffer,particle:s});buffer=[];}
+    if(delimiters.has(s.jp)||(s.jp==='と'&&movement.has(verb.base)&&buffer.length===1&&person(buffer[0]))){if(!buffer.length)return null;groups.push({parts:buffer,particle:s});buffer=[];}
     else buffer.push(s);
    }
    if(buffer.length)groups.push({parts:buffer,particle:null});
+   // A bare noun before する can change its valency (会社を退職する:
+   // leaving a company, not acting on an object). Do not infer through it.
+   if(allowPartial&&buffer.some(s=>!adverbs.has(key(s.jp))&&s.quantity!=='duration'))return null;
    const actions=introduction?[`« ${introduction.jp} » : réponse`]:[];let valid=true;
    const pending=[]; // Commit roles only once every group has passed the bounded grammar.
    const mark=(s,label,why)=>pending.push(()=>role(s,label,why));
@@ -238,14 +375,21 @@
      const s=parts[i];
      if(s.jp==='の'||s.jp==='と') {
       if(!nominal(parts[i-1])||!nominal(parts[i+1]))return false;
-      mark(s,s.jp==='の'?'relation entre noms':'énumération',s.jp==='の'?`« ${parts[i-1].jp} » précise « ${parts[i+1].jp} ». La relation dépend de ces noms.`:'Relie les éléments de cette liste.');
-     } else if(!nominal(s)||i>0&&nominal(parts[i-1]))return false;
+      mark(s,s.jp==='の'?relation(parts[i-1],parts[i+1]):'énumération',s.jp==='の'?`« ${parts[i-1].jp} » précise « ${parts[i+1].jp} ». La relation dépend de ces noms.`:'Relie les éléments de cette liste.');
+     } else if(s.category==='déterminant'&&(i===0||['の','と'].includes(parts[i-1].jp))&&(nominal(parts[i+1])||parts[i+1]?.category==='adjectif en i'&&nominal(parts[i+2])))continue;
+     else if(s.category==='adjectif en i'&&(i===0||['の','と'].includes(parts[i-1].jp)||parts[i-1].category==='déterminant')&&nominal(parts[i+1]))continue;
+     else if(!nominal(s)||i>0&&nominal(parts[i-1]))return false;
     }
     return true;
    };
    const existential=['ある','いる'].includes(verb.base)&&!verb.te;
    for(const group of groups) {
+    const checkpoint=pending.length;
     const parts=[...group.parts],p=group.particle;
+    if(p?.jp==='に'&&parts.length===1&&key(parts[0].jp)==='一緒') {
+     mark(p,'manière','Avec 一緒, に forme « ensemble » et précise comment se fait l’action.');
+     actions.push('« 一緒 に » : ensemble');continue;
+    }
     // A temporal noun chain can precede a separately marked activity: 今日の午後 買物に.
     if(parts.length>=4&&isTime(parts[0])&&parts[1].jp==='の'&&isTime(parts[2])&&nominal(parts[3])) {
      mark(parts[1],'relation entre noms',`« ${parts[0].jp} » précise le moment « ${parts[2].jp} ».`);
@@ -256,17 +400,26 @@
      const s=parts.shift();actions.push(s.quantity==='duration'?`« ${s.jp} » : durée`:`« ${s.jp} » : repère ou précision`);
      if(s.quantity==='duration')pending.push(()=>{s.gloss=s.fr+' [durée]';});
     }
-    if(!p){if(parts.length)valid=false;continue;}
-    if(!nounPhrase(parts)){valid=false;continue;}
+    if(!p){
+     if(existential&&parts.length===1&&/^(一人|二人|\d+人)$/.test(key(parts[0].jp))) {
+      actions.push(`« ${parts[0].jp} » : nombre de personnes`);continue;
+     }
+     if(parts.length&&!(verb.base==='する'&&parts.length===1&&['結婚','再婚'].includes(key(parts[0].jp))))valid=false;continue;
+    }
+    if(!nounPhrase(parts)){pending.length=checkpoint;valid=false;continue;}
     const last=parts.at(-1),k=key(last.jp),place=isPlace(last),time=isTime(last),label=parts.map(s=>s.jp).join(' ');
     let r='',why='';
+    if(p.jp==='と'&&parts.length===1&&person(last)&&movement.has(verb.base)){r='accompagnement';why='Indique la personne avec qui se fait le déplacement.';}
     if(p.jp==='は'){r='thème';why=`Présente « ${label} » comme thème de la phrase.`;}
     if(p.jp==='も'){r='aussi';why=`Ajoute « ${label} » à ce qui est déjà évoqué ; le dialogue donne l’autre élément.`;}
     if(p.jp==='が'&&existential){r='élément présent';why=`Indique ce dont on dit qu’il est présent, avec ${verb.jp}.`;}
+    if(p.jp==='が'&&movement.has(verb.base)){r='sujet';why=`Indique qui se déplace avec ${verb.jp}.`;}
     if(p.jp==='を'&&objectVerbs.has(verb.base)){r='objet';why=`Indique ce sur quoi porte l’action exprimée par ${verb.jp}.`;}
     if(p.jp==='へ'&&movement.has(verb.base)&&place){r='direction';why=`Indique la direction du déplacement vers « ${label} ».`;}
     if(p.jp==='に') {
-     if(last.quantity==='clock'&&['起きる','寝る','行く','来る','帰る','働く'].includes(verb.base)){r='heure';why=`Situe ${verb.jp} à l’heure indiquée ; ce groupe ne donne pas une durée.`;}
+     if(parts.length===1&&person(last)&&verb.base==='する'&&groups.some(g=>g.particle?.jp==='を'&&g.parts.length===1&&key(g.parts[0].jp)==='電話')){r='destinataire';why='Avec 電話をする, indique la personne à qui l’on téléphone.';}
+     else if(last.relativeTime&&['する','行く','来る','帰る','買う'].includes(verb.base)){r='moment';why='Situe l’action au moment indiqué, un certain nombre d’années auparavant.';}
+     else if(last.quantity==='clock'&&['起きる','寝る','行く','来る','帰る','働く'].includes(verb.base)){r='heure';why=`Situe ${verb.jp} à l’heure indiquée ; ce groupe ne donne pas une durée.`;}
      else if(place&&existential){r='lieu de présence';why=`Indique où se trouve l’être ou la chose avec ${verb.jp}.`;}
      else if(place&&verb.base==='住む'){r='lieu de résidence';why=`Indique où l’on habite avec ${verb.jp}.`;}
      else if(activities.has(k)&&['行く','来る'].includes(verb.base)){r='but du déplacement';why=`« ${label} » est l’activité pour laquelle on se déplace.`;}
@@ -274,9 +427,10 @@
      else if(verb.base==='する'&&!prefix.some(s=>s.jp==='を')&&parts.filter(nominal).every(s=>choices.has(key(s.jp)))){r='choix';why=`Avec ${verb.jp}, indique ce que l’on choisit.`;pending.push(()=>{verb.fr='choisir';verb.gloss=`choisir [${verb.form}]`;verb.explanation='Avec le groupe en に, する exprime ici un choix.';});}
     }
     if(p.jp==='で') {
-     if(vehicles.has(k)&&movement.has(verb.base)){r='moyen de transport';why=`« ${label} » est le transport utilisé pour ce déplacement.`;}
+     if(/^[一二三四五六七八九十百千万億\d]+円$/.test(k)&&verb.base==='買う'){r='prix';why='Avec 買う, ce montant en yens indique le prix payé.';}
+     else if(vehicles.has(k)&&movement.has(verb.base)){r='moyen de transport';why=`« ${label} » est le transport utilisé pour ce déplacement.`;}
      else if(instruments.has(k)&&verb.base==='食べる'){r='instrument';why=`« ${label} » est l’instrument utilisé pour manger.`;}
-     else if(place&&['働く','待つ','食べる','飲む','読む','書く','買う','作る'].includes(verb.base)){r='lieu de l’action';why=`Indique où se déroule l’action exprimée par ${verb.jp}.`;}
+     else if(place&&['働く','待つ','食べる','飲む','読む','書く','買う','作る','聞く','する'].includes(verb.base)){r='lieu de l’action';why=`Indique où se déroule l’action exprimée par ${verb.jp}.`;}
     }
     if(['から','まで'].includes(p.jp)&&((time&&['働く','待つ','寝る'].includes(verb.base))||(place&&movement.has(verb.base)))) {
      r=p.jp==='から'?(time?'début':'départ'):(time?'fin':'limite du trajet');why=`Marque ${p.jp==='から'?'le point de départ':'la limite'} ${time?'dans le temps':'du déplacement'}.`;
@@ -288,21 +442,82 @@
     }
     mark(p,r,why);actions.push(`« ${label} ${p.jp} » : ${r}`);
    }
-   if(!valid)return null;
+   if(!valid){
+    if(allowPartial)pending.forEach(f=>f());
+    return null;
+   }
    pending.forEach(f=>f());
+   if(verb.base==='聞く'&&groups.some(g=>g.particle?.jp==='を'&&key(g.parts.at(-1)?.jp)==='道')) {
+    verb.fr=verb.trial?'essayer de demander':'demander';
+    verb.gloss=`${verb.fr} [${verb.inflection||verb.form}]`;verb.explanation+=' Ici, 道を聞く signifie demander le chemin.';
+   }
    for(const s of finals)if(s.jp==='か')role(s,'question','Termine ici la proposition interrogative.');
    return [...actions,`« ${verb.jp} » : ${verb.fr}`,...finals.map(s=>s.jp==='か'?'question':s.jp==='ね'?'accord sollicité':'information soulignée')].join(' → ')+'. La personne et les éléments sous-entendus se comprennent avec le dialogue.';
   }
+  // Independent, bounded evidence can enrich a partial clause without
+  // pretending that its complete structure has been established.
+  function explainLocal(segments,jp) {
+   if(jp.some(t=>/[「」『』“”"]/.test(t)))return;
+   explain(segments,jp,true);
+   const dependentNouns=set('こと 事 もの 物 の よう 様 ため 為 はず 筈 つもり 積もり ところ 所 とき 時 まま ほう 方 一番');
+   for(let i=1;i<segments.length-1;i++) {
+    const left=segments[i-1],s=segments[i],right=segments[i+1];
+    if(s.role||!s.known||s.particle!=='の'||!nominal(left)||!nominal(right)||left.end!==s.start||s.end!==right.start)continue;
+    if(dependentNouns.has(key(left.jp))||dependentNouns.has(key(right.jp)))continue;
+    const label=relation(left,right);
+    role(s,label,label==='sujet du livre'?`« ${left.jp} » indique ici le sujet du livre.`:`Dans ce groupe, « ${left.jp} » précise « ${right.jp} ». La nature exacte de cette relation reste dépendante du contexte.`);
+   }
+   for(const s of segments)if(s.role)s.roleScope='local';
+  }
   function analyze(row) {
    const {jp,segments,sourceAligned}=segment(row);
-   const structure=sourceAligned?explain(segments,jp):null;
+   // Analyze independent sentences separately; never split a relative at a comma.
+   // Parentheses delimit an aside, not a reason to make its words unknown.
+   const clauses=[];let start=0;
+   for(let end=0;end<=jp.length;end++)if(end===jp.length||/^[。！？!?]$/.test(jp[end])) {
+    const members=segments.filter(s=>s.start>=start&&s.end<=end);
+    const tokens=jp.slice(start,end).filter(t=>!/[（）()]/.test(t));
+    if(members.length) {
+     const local=members.map(s=>({...s}));
+     // Keep token offsets exact when parentheses have been removed.
+     for(let i=0;i<local.length;i++) {
+      local[i].start=jp.slice(start,members[i].start).filter(t=>!/[（）()]/.test(t)).length;
+      local[i].end=jp.slice(start,members[i].end).filter(t=>!/[（）()]/.test(t)).length;
+     }
+     // A comma is accepted only after a short reply/interjection. No inferred
+     // clause boundary at arbitrary commas, nor across parentheses in mid-sentence.
+     const commas=tokens.map((t,i)=>/^[、，,]$/.test(t)?i:-1).filter(i=>i>=0);
+     const simplePunctuation=!commas.length||commas.length===1&&commas[0]===local[0]?.end&&['はい','いいえ','ええ','ああ','じゃあ'].includes(local[0]?.jp);
+     const internalParenthesis=jp.slice(members[0].start,members.at(-1).end).some(t=>/^[（）()]$/.test(t));
+     let explained=sourceAligned&&!internalParenthesis?(explain(local,tokens)||(simplePunctuation?explainSimple(local):null)):null;
+     if(!explained&&sourceAligned&&!internalParenthesis&&local.at(-1)?.jp==='から') {
+      const action=local.at(-2);
+      if(action?.category==='verbe'&&/[てで]$/.test(key(action.jp))&&verbs[action.base]) {
+       const before=local.slice(0,-1).map(s=>({...s}));
+       Object.assign(before.at(-1),{form:'forme en て',fr:verbs[action.base],gloss:verbs[action.base]});
+       if(explain(before,tokens.slice(0,action.end))) {
+        before.forEach((s,i)=>Object.assign(local[i],s));
+        role(local.at(-1),'après','Après un verbe en て, から indique que l’action précédente est accomplie avant la suite.');
+        explained='Action → [après] : repère temporel pour la suite.';
+       }
+      }
+     }
+     if(!explained&&sourceAligned&&!internalParenthesis)explainLocal(local,tokens);
+     if(explained||local.some(s=>s.roleScope==='local'))local.forEach((s,i)=>{const {start,end,...fields}=s;Object.assign(members[i],fields);});
+     clauses.push(explained);
+    }
+    start=end+1;
+   }
+   const structure=clauses.length&&clauses.every(Boolean)?clauses.join(' / '):null;
+   const resolvedClauses=clauses.filter(Boolean).length;
+   const localRoles=segments.filter(s=>s.roleScope==='local').length;
    // Keep punctuation in source order after grouping, without losing an unknown token.
    const output=[];let i=0;
-   for(const s of segments){while(i<s.start){if(punct(jp[i]))output.push(jp[i]==='、'?',':/[？?]/.test(jp[i])?'?':/[！!]/.test(jp[i])?'!':'.');i++;}output.push(s.gloss||short(s.fr));i=s.end;}
-   while(i<jp.length){if(punct(jp[i]))output.push(jp[i]==='、'?',':/[？?]/.test(jp[i])?'?':/[！!]/.test(jp[i])?'!':'.');i++;}
+   for(const s of segments){while(i<s.start){if(punct(jp[i]))output.push(renderPunct(jp[i]));i++;}output.push(s.gloss||short(s.fr));i=s.end;}
+   while(i<jp.length){if(punct(jp[i]))output.push(renderPunct(jp[i]));i++;}
    const counts={rule:0,dictionary:0,annotation:0,unknown:0};segments.forEach(s=>counts[s.origin]++);
-   return {segments,structure,structureOrigin:structure?'rule':null,literal:output.join(' ').replace(/\s+([,.!?])/g,'$1'),literalOrigin:'automatic',
-    note:structure?'Lecture dans l’ordre japonais. La traduction de la leçon précise le sens dans le dialogue.':!sourceAligned?'Le texte japonais et sa lecture ne permettent pas un alignement sûr. Seules les lectures lexicales attestées sont proposées ; la construction reste à vérifier.':'Les groupes reconnus aident à lire la phrase, mais ses relations ne sont pas toutes établies. Les sens lexicaux et les rôles incertains restent à vérifier dans le contexte.',
+   return {segments,structure,resolvedClauses,localRoles,structureOrigin:structure?'rule':null,literal:output.join(' ').replace(/\s+([,.!?)])/g,'$1').replace(/\(\s+/g,'('),literalOrigin:'automatic',
+    note:(structure?'Lecture dans l’ordre japonais. La traduction de la leçon précise le sens dans le dialogue.':!sourceAligned?'Le texte japonais et sa lecture ne permettent pas un alignement sûr. Seules les lectures lexicales attestées sont proposées ; la construction reste à vérifier.':`Les groupes reconnus aident à lire la phrase, mais ses relations ne sont pas toutes établies.${resolvedClauses?' Certaines phrases de cette réplique sont analysées séparément.':''}${localRoles?' Des relations sont précisées localement, sans valider l’ensemble de la proposition.':''} Les sens lexicaux et les rôles incertains restent à vérifier dans le contexte.`)+segments.filter(s=>s.sourceNote).map(s=>' '+s.sourceNote).join(''),
     partial:!structure||segments.some(s=>!s.known||!s.kana||!s.romaji),counts};
   }
   return {analyze};
