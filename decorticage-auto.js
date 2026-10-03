@@ -205,8 +205,49 @@
    result=result.filter(c=>c.origin==='rule'||!result.some(r=>r.origin==='rule'&&r.kana===c.kana));
    cache.set(k,result);return result;
   }
+  function readingBoundaries(row) {
+   const original=split(row.Japonais),readings=split(row.Kana);
+   if(readings.length<=original.length||!original.some(t=>t.length>=8))return original;
+   const source=key(row.Japonais),memo=new Map();
+   // Recover missing word spaces from the supplied kana and attested readings.
+   // No kanji reading is guessed; an unknown kana word can match only itself.
+   function walk(pos,r) {
+    const id=pos+':'+r;if(memo.has(id))return memo.get(id);
+    if(r===readings.length)return pos===source.length?{cost:0,parts:[]}:null;
+    let best=null;
+    const accept=(surface,next,cost)=>{
+     const tail=walk(pos+surface.length,next);if(!tail)return;
+     const total=cost+tail.cost;
+     if(!best||total<best.cost)best={cost:total,parts:[surface,...tail.parts]};
+    };
+    if(punct(readings[r])) {
+     if(punct(source[pos])&&renderPunct(source[pos])===renderPunct(readings[r]))accept(source[pos],r+1,0);
+    } else {
+     if(source.startsWith(readings[r],pos))accept(readings[r],r+1,10);
+     for(let len=1;len<=Math.min(40,source.length-pos);len++) {
+      const surface=source.slice(pos,pos+len);if([...surface].some(punct))break;
+      const options=candidates(surface);
+      for(let n=1;n<=Math.min(7,readings.length-r);n++) {
+       const chunk=readings.slice(r,r+n);if(chunk.some(punct))break;
+       if(options.some(c=>readingKey(c.kana)===readingKey(chunk.join(''))))accept(surface,r+n,1);
+      }
+     }
+     // An unattested span must not discard the known anchors around it.
+     // These spans only provide boundaries, never a reading or a meaning.
+     for(let len=1;len<=Math.min(20,source.length-pos);len++) {
+      const surface=source.slice(pos,pos+len);if([...surface].some(punct))break;
+      for(let n=1;n<=Math.min(3,readings.length-r);n++) {
+       if(readings.slice(r,r+n).some(punct))break;
+       accept(surface,r+n,1000*len+50);
+      }
+     }
+    }
+    memo.set(id,best);return best;
+   }
+   return walk(0,0)?.parts||original;
+  }
   function segment(row) {
-   const jp=split(row.Japonais),kanaTokens=split(row.Kana),sourceKana=key(row.Kana),kana=readingKey(row.Kana);
+   const jp=readingBoundaries(row),kanaTokens=split(row.Kana),sourceKana=key(row.Kana),kana=readingKey(row.Kana);
    const boundaries=[];let offset=0;for(const t of kanaTokens){offset+=t.length;boundaries.push(offset);}
    const quantityEnds=jp.map((_,i)=>{
     let end=0;
