@@ -46,6 +46,11 @@
  // ne déclenche immédiatement son agrandissement par ancrage du défilement.
  const compact=()=>dock.classList.toggle('is-scrolled',window.scrollY>(dock.classList.contains('is-scrolled')?50:100));
  window.addEventListener('scroll',compact,{passive:true});compact();
+ // Keep the lesson sidebar below the actual header, including compact mode
+ // and contextual return controls. Only the sidebar consumes this measurement.
+ const measureDock=()=>document.documentElement.style.setProperty('--navigation-height',Math.ceil(dock.getBoundingClientRect().height)+'px');
+ if(typeof ResizeObserver!=='undefined')new ResizeObserver(measureDock).observe(dock);
+ window.addEventListener('resize',measureDock,{passive:true});measureDock();
  for(const id of ['saved-toggle','settings-toggle'])document.getElementById(id).addEventListener('click',()=>{
   const other=id==='saved-toggle'?'settings':'saved';document.getElementById(other).hidden=true;document.getElementById(other+'-toggle').setAttribute('aria-expanded','false');
  });
