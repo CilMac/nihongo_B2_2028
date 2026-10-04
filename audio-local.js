@@ -58,6 +58,9 @@ function updatePauseButton(){
  button.setAttribute('aria-pressed',String(paused));
  button.setAttribute('aria-label',paused?'Reprendre l’écoute':'Mettre l’écoute en pause');
  button.title=paused?'Reprendre l’écoute':'Mettre l’écoute en pause';
+ const listeningPause=document.getElementById('listening-pause');
+ if(listeningPause){listeningPause.disabled=!audioPlayback;listeningPause.textContent=paused?'▶ Reprendre':'Ⅱ Pause';listeningPause.setAttribute('aria-pressed',String(paused));}
+ const listeningStop=document.getElementById('listening-stop');if(listeningStop)listeningStop.disabled=!audioPlayback;
  const extraButton=document.getElementById('extra-pause');if(extraButton){extraButton.disabled=!audioPlayback?.extra;extraButton.textContent=paused?'▶ Reprendre':'Ⅱ Pause';}
  const seek=document.getElementById('extra-seek');if(seek)seek.disabled=!audioPlayback?.extra||!recordedPlayer;
  button.querySelector('.audio-slash').style.display=paused?'':'none';

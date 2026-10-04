@@ -26,13 +26,17 @@ function renderAtelier(r={}){
  atelierSettings.level=level;
  const lessonOptions=lessonIds.map(id=>`<option value="${id.slice(1)}" ${Number(id.slice(1))===level?'selected':''}>${esc(lessonLabel(id).replace(' — Sans titre',''))}</option>`).join('');
  $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez quoi réviser, puis commencez votre séance.')+`<section class="panel atelier-setup"><div class="atelier-settings">
- <div class="atelier-setting-row"><label for="atelier-type">Quoi réviser ?</label><select id="atelier-type"><option value="mixed">Vocabulaire et formes verbales</option><option value="vocab">Vocabulaire</option><option value="particles">Particules</option><option value="constructions">Constructions grammaticales</option><option value="grammar">Formes verbales</option></select></div>
+ <div class="atelier-setting-row"><label for="atelier-type">Quoi réviser ?</label><select id="atelier-type"><option value="mixed">Vocabulaire et formes verbales</option><option value="listening">Écouter et comprendre</option><option value="vocab">Vocabulaire</option><option value="particles">Particules</option><option value="constructions">Constructions grammaticales</option><option value="grammar">Formes verbales</option></select></div>
  <div class="atelier-setting-row"><label for="atelier-scope">Quelles leçons ?</label><div class="atelier-lesson-controls"><select id="atelier-scope"><option value="through">Depuis la première</option><option value="lesson">Une seule leçon</option><option value="range">Une plage</option></select><div class="atelier-bounds"><label id="atelier-start-label" hidden>De<select id="atelier-from" aria-label="Première leçon">${lessonOptions}</select></label><label><span id="atelier-level-label">à</span><select id="atelier-level" aria-label="Leçon de fin">${lessonOptions}</select></label></div></div></div>
  <div class="atelier-setting-row"><label for="atelier-count">Combien de questions ?</label><select id="atelier-count"><option value="5">5 questions</option><option value="10">10 questions</option><option value="20">20 questions</option></select></div></div>
  <p class="muted" id="atelier-description"></p><div class="atelier-launch"><button id="atelier-start" class="audio">Commencer</button><p id="atelier-pool" role="status"></p></div>
  <details id="atelier-content"><summary>Voir le contenu à réviser</summary><div class="atelier-catalogs"><details id="atelier-vocab-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-grammar-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-particles-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-constructions-list"><summary></summary><div class="atelier-catalog"></div></details></div></details></section><section id="atelier-work" class="panel atelier-work" aria-label="Séance d’entraînement" hidden></section>`;
  for(const field of ['scope','type','count'])$('#atelier-'+field).value=atelierSettings[field];
  $('#atelier-from').value=atelierSettings.start;
+ const targetCountLabel=listening=>{
+  $('label[for="atelier-count"]').textContent=listening?'Combien de répliques ?':'Combien de questions ?';
+  for(const option of $('#atelier-count').options)option.textContent=option.value+(listening?' répliques':' questions');
+ };
  let currentPool;
  const fillList=(kind)=>{
   const detail=$('#atelier-'+kind+'-list');
@@ -45,7 +49,7 @@ function renderAtelier(r={}){
   $('#atelier-start-label').hidden=atelierSettings.scope!=='range';
   $('#atelier-level-label').textContent=atelierSettings.scope==='lesson'?'Leçon':'à';
   $('#atelier-level').setAttribute('aria-label',atelierSettings.scope==='lesson'?'Leçon à réviser':'Dernière leçon');
-  $('#atelier-description').textContent={vocab:'Retrouvez le sens du mot, puis révélez la réponse.',grammar:'Reconnaissez les formes des verbes.',constructions:'Choisissez, transformez, ordonnez ou reliez des phrases. Chaque exercice exige ses passages d’appui dans les leçons choisies.',particles:'Complétez ou comparez les phrases pour choisir la bonne particule.',mixed:'Alternez vocabulaire et formes verbales.'}[atelierSettings.type];
+  $('#atelier-description').textContent={listening:'Écoutez une réplique du cours, puis révélez le japonais et la traduction à votre rythme. Kana et romaji accessibles dès le début ; pas de score.',vocab:'Retrouvez le sens du mot, puis révélez la réponse.',grammar:'Reconnaissez les formes des verbes.',constructions:'Complétez des mini-dialogues, transformez, ordonnez ou reliez des phrases. Chaque exercice exige ses passages d’appui dans les leçons choisies.',particles:'Complétez ou comparez les phrases pour choisir la bonne particule.',mixed:'Alternez vocabulaire et formes verbales.'}[atelierSettings.type];
   for(const [kind,label] of [['vocab','mots ou expressions'],['grammar','formes verbales'],['particles','exercices sur les particules'],['constructions','exercices de constructions grammaticales']]){
    $('#atelier-'+kind+'-list summary').textContent=`${pool[kind].length} ${label}`;
    if(changed){
@@ -53,9 +57,12 @@ function renderAtelier(r={}){
     fillList(kind);
    }
   }
+  const listening=atelierSettings.type==='listening';
+  $('#atelier-content').hidden=listening;
+  targetCountLabel(listening);
   const available=atelierSettings.type==='mixed'?pool.vocab.length+pool.grammar.length:pool[atelierSettings.type].length;
   const count=Math.min(available,atelierSettings.count);
-  $('#atelier-pool').textContent=`${available} exercice${available>1?'s':''} disponible${available>1?'s':''}${available<atelierSettings.count&&available?` · séance de ${count} question${count>1?'s':''}`:''}`;
+  $('#atelier-pool').textContent=`${available} ${listening?'réplique':'exercice'}${available>1?'s':''} disponible${available>1?'s':''}${available<atelierSettings.count&&available?` · séance de ${count} ${listening?'réplique':'question'}${count>1?'s':''}`:''}`;
   $('#atelier-start').disabled=!available;
   if(pool.invalid)$('#atelier-pool').textContent='La première leçon doit précéder ou être égale à la dernière.';
   else if(!available)$('#atelier-pool').textContent='Aucun exercice disponible avec ces choix. Changez les leçons ou l’activité.';
@@ -86,11 +93,16 @@ function renderAtelierQuestion(){
  const target=$('#atelier-work'),s=atelierSession;
  target.hidden=!s;
  if(!s){target.innerHTML='';return;}
+ if(s.index>=s.questions.length&&s.questions[0]?.type==='listening'){
+  target.innerHTML=`<h2 tabindex="-1">Séance terminée</h2><p>${s.index} réplique${s.index>1?'s':''} parcourue${s.index>1?'s':''}.</p><p>Cette séance d’écoute n’attribue aucun score. Vous pouvez reprendre les passages dans leur dialogue.</p><p>${s.questions.map(q=>sourceLink(q.source)).join(' · ')}</p><button id="atelier-again">Nouvelle séance</button>`;
+  $('#atelier-again').onclick=()=>$('#atelier-start').click();return;
+ }
  if(s.index>=s.questions.length){
   const good=s.results.filter(r=>r.good).length,hasVocab=s.questions.some(q=>q.type==='vocab');
   target.innerHTML=`<h2>Séance terminée</h2><p>${good} réponse${good>1?'s':''} réussie${good>1?'s':''}${hasVocab?` ou déclarée${good>1?'s':''} connue${good>1?'s':''}`:''} sur ${s.questions.length}.</p><p class="muted">${hasVocab?'Le vocabulaire est autoévalué ; ce résultat est un repère d’entraînement.':'Ce résultat est un repère d’entraînement.'}</p><h3>À reprendre</h3>${s.results.some(r=>!r.good)?s.results.filter(r=>!r.good).map(r=>`<p>${sourceLink(r.q.source)} · ${esc(r.q.type==='vocab'?r.q.word.fr:['particles','constructions'].includes(r.q.type)?r.q.title:r.q.part.form)}</p>`).join(''):'<p>Aucun élément marqué à revoir dans cette séance.</p>'}<button id="atelier-again">Nouvelle séance</button>`;
   $('#atelier-again').onclick=()=>$('#atelier-start').click();return;
  }
+ if(s.questions[s.index].type==='listening'){renderListeningQuestion(target,s);return;}
  if(s.questions[s.index].type==='constructions'){renderConstructionQuestion(target,s);return;}
  if(s.questions[s.index].type==='particles'){renderParticleQuestion(target,s);return;}
  const q=s.questions[s.index],isVocab=q.type==='vocab',word=isVocab?{jp:q.word.mot,kana:q.word.kana,romaji:q.word.romaji}:q.part;
@@ -178,7 +190,7 @@ function renderConstructionQuestion(target,s){
  const textBlock=(item,showFrench)=>block(item,{audio:false,fr:showFrench});
  const card=(item,action)=>`<div class="construction-choice">${textBlock(item,s.revealed)}${action}</div>`;
  target.innerHTML=`<p class="eyebrow">Constructions grammaticales · ${esc(q.activity)} · ${s.index+1} / ${s.questions.length}</p><h2>${esc(q.prompt)}</h2><p class="muted">${esc(q.origin)}</p>
- ${q.given?`<div class="construction-given"><h3>${ordering?'Phrase':'Transformer'===q.activity?'Phrase de départ':'Début de la phrase'}</h3>${block(q.given,{audio:false})}</div>`:''}
+ ${q.given?`<div class="construction-given"><h3>${ordering?'Phrase':q.activity==='Dialoguer'?'Votre interlocuteur':q.activity==='Transformer'?'Phrase de départ':'Début de la phrase'}</h3>${block(q.given,{audio:false})}</div>`:''}
  ${ordering?`<p class="muted">Ajoute les groupes dans l’ordre, avec le verbe à la fin. Tu peux retirer un groupe ou recommencer avant de vérifier.</p><h3>Ta phrase</h3><ol id="construction-selected" class="construction-selected" aria-label="Groupes dans l’ordre choisi">${state.selected.map((id,i)=>`<li>${card(q.groups.find(g=>g.id===id),`<button data-construction-remove="${i}" ${s.revealed?'disabled':''} aria-label="Retirer le groupe ${i+1}">Retirer</button>`)}</li>`).join('')}</ol>${state.selected.length?'':'<p class="muted">Choisis le premier groupe ci-dessous.</p>'}<h3>Groupes disponibles</h3><div class="construction-options">${state.items.map(item=>card(item,`<button data-construction-add="${item.id}" ${s.revealed||state.selected.includes(item.id)?'disabled':''}>${state.selected.includes(item.id)?'Ajouté':'Ajouter'}</button>`)).join('')}</div><div class="atelier-options"><button id="construction-check" ${s.revealed||state.selected.length!==q.groups.length?'disabled':''}>Vérifier ma phrase</button><button id="construction-reset" ${s.revealed||!state.selected.length?'disabled':''}>Recommencer</button></div>`:
  `<div class="construction-options">${state.items.map((item,i)=>card(item,`<button data-construction-choice="${item.id}" aria-label="Choisir la réponse ${i+1}" aria-pressed="${s.choice===item.id}" ${s.revealed?'disabled':''}>Choisir</button>`)).join('')}</div>`}
  <div id="atelier-feedback" role="status"></div>`;
@@ -204,4 +216,34 @@ function renderConstructionQuestion(target,s){
   <details><summary>Retrouver les constructions dans le cours</summary><p class="muted">Ces passages servent d’appui. Les phrases de l’exercice ont été créées pour l’entraînement.</p>${q.sources.map(id=>{const r=lessons.find(r=>r.Leçon+'-'+r.Ligne===id);return sourceLink(id)+block({source:id,jp:r.Japonais,kana:r.Kana,romaji:r.Romaji,fr:r.Français},{audio:false});}).join('')}</details></div><button id="atelier-next">Continuer</button>`;
   $('#atelier-next').onclick=()=>{stopAudio();s.results.push({q,good});s.index++;s.revealed=false;s.choice=null;s.constructionState=null;renderAtelierQuestion();$('#atelier-work h2')?.setAttribute('tabindex','-1');$('#atelier-work h2')?.focus({preventScroll:true});};
  }
+}
+
+
+function renderListeningQuestion(target,s){
+ const q=s.questions[s.index],r=q.row;
+ if(s.listeningState?.id!==q.id)s.listeningState={id:q.id,jp:false,kana:false,romaji:false,fr:false};
+ const state=s.listeningState;
+ const labels={jp:'le japonais',kana:'les kana',romaji:'le romaji',fr:'la traduction'};
+ const same=String(r.Japonais).replace(/\s/g,'')===String(r.Kana).replace(/\s/g,'');
+ target.innerHTML=`<p class="eyebrow">Écouter et comprendre · ${s.index+1} / ${s.questions.length}</p><h2 tabindex="-1">Écoutez et cherchez le sens.</h2>
+ <p>Réécoutez autant que nécessaire, puis répétez à voix haute. Les aides ci-dessous se révèlent séparément, indépendamment du menu œil.</p>
+ <div class="atelier-options"><button id="listening-play">▶ Écouter / réécouter</button><button id="listening-pause" disabled>Ⅱ Pause</button><button id="listening-stop" disabled>■ Arrêter</button></div>
+ <div class="atelier-options">${Object.entries(labels).map(([key,label])=>`<button data-listening-reveal="${key}" aria-expanded="${state[key]}" aria-controls="listening-text">${state[key]?'Masquer':'Afficher'} ${label}</button>`).join('')}</div>
+ <div id="listening-text" aria-live="polite">
+ ${state.kana?`<p class="listening-kana" lang="ja">${esc(r.Kana)}</p>`:''}
+ ${state.jp?`<p class="listening-japanese" lang="ja">${same&&state.kana?'<span class="kana-idem" lang="fr" title="Identique au texte kana">---</span>':jp(r.Japonais)}</p>`:''}
+ ${state.romaji?`<p class="listening-romaji">${esc(Romaji.display(r.Romaji))}</p>`:''}
+ ${state.fr?`<p>${esc(r.Français)}</p>`:''}
+ ${!state.jp&&!state.kana&&!state.romaji&&!state.fr?'<p class="muted">Le texte est masqué. Vous pouvez afficher une aide à tout moment.</p>':''}</div>
+ <p class="muted">Une réplique peut dépendre du dialogue. Retrouver son contexte : ${sourceLink(q.source)}</p>
+ <button id="atelier-next">Réplique suivante →</button>`;
+ $('#listening-play').onclick=()=>speak([{text:r.Kana,ref:q.source}]);
+ $('#listening-stop').onclick=()=>stopAudio('Lecture arrêtée.');
+ $('#listening-pause').onclick=toggleAudioPause;
+ target.querySelectorAll('[data-listening-reveal]').forEach(b=>b.onclick=()=>{
+  const key=b.dataset.listeningReveal;state[key]=!state[key];renderListeningQuestion(target,s);
+  target.querySelector(`[data-listening-reveal="${key}"]`).focus({preventScroll:true});
+ });
+ $('#atelier-next').onclick=()=>{stopAudio();s.index++;s.listeningState=null;renderAtelierQuestion();target.querySelector('h2')?.focus({preventScroll:true});};
+ updatePauseButton();
 }

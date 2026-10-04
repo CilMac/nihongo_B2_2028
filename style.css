@@ -479,3 +479,10 @@ html{overflow-anchor:none}
 #quick-guide section p[lang=ja]{font-size:18px}
 #quick-guide .quick-guide-ending{margin-top:26px;color:#526d62}
 @media(max-width:480px){#quick-guide .info-heading{align-items:flex-start;flex-wrap:wrap}#quick-guide .info-heading h2{font-size:20px}#quick-guide .info-heading button{margin-left:auto;padding:6px 10px}}
+
+/* Aides locales de l'écoute : révélées explicitement, même si le menu œil les masque. */
+.listening-kana,.listening-japanese{font-family:var(--jp-font);font-size:var(--jp-size);line-height:1.9;overflow-wrap:anywhere}
+.listening-kana{color:#326345}
+.listening-romaji{font-family:Georgia,serif;font-size:1.2em;font-style:italic;color:#173d75;overflow-wrap:anywhere}
+#listening-text{margin:18px 0}
+.listening-japanese .kana-idem{color:#af2424;font-size:calc(var(--jp-size) * .82)}

@@ -1,7 +1,7 @@
 {
-  "version": "1.4.0",
-  "date": "2026-09-30",
-  "titre": "Grammaire des leçons — 24 fiches",
+  "version": "1.5.0",
+  "date": "2026-10-04",
+  "titre": "Grammaire des leçons — 27 fiches",
   "langue_explications": "fr",
   "affichage": {
     "romaji": {
@@ -6029,6 +6029,806 @@
               "kana": "しがつからはたらいています。",
               "romaji": "shigatsu kara hataraite imasu.",
               "fr": "Je travaille depuis avril."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "G25",
+      "ordre": 25,
+      "titre": "Les formes ordinaires dans une phrase polie",
+      "famille": "Verbes",
+      "niveau": "débutant",
+      "objectif": "Reconnaître les formes utiles devant tsumori et to omoimasu.",
+      "explication": "Une forme ordinaire peut se trouver à l’intérieur d’une phrase qui reste polie. Dans 出版するつもりです (shuppan suru tsumori desu), する prépare l’intention et です termine poliment la phrase. Dans なると思います (naru to omoimasu), なる fait partie du contenu pensé ; 思います donne la politesse finale. On apprend les paires utiles : retirer ます ne donne pas automatiquement la forme du dictionnaire.",
+      "constructions": [
+        {
+          "jp": "出版するつもりです。",
+          "kana": "しゅっぱんするつもりです。",
+          "romaji": "shuppan suru tsumori desu.",
+          "fr": "J’ai l’intention de publier."
+        },
+        {
+          "jp": "長いと思います。",
+          "kana": "ながいとおもいます。",
+          "romaji": "nagai to omoimasu.",
+          "fr": "Je pense que c’est long."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Exemples créés : comparer les formes polies et ordinaires utiles au non-passé affirmatif.",
+          "formes": [
+            {
+              "jp": "出版します → 出版する",
+              "kana": "しゅっぱんします → しゅっぱんする",
+              "romaji": "shuppan shimasu → shuppan suru",
+              "fr": "publier : forme polie → forme ordinaire"
+            },
+            {
+              "jp": "なります → なる",
+              "kana": "なります → なる",
+              "romaji": "narimasu → naru",
+              "fr": "devenir / faire un total : forme polie → forme ordinaire"
+            },
+            {
+              "jp": "長いです → 長い",
+              "kana": "ながいです → ながい",
+              "romaji": "nagai desu → nagai",
+              "fr": "c’est long : forme polie → forme ordinaire"
+            },
+            {
+              "jp": "推理小説です → 推理小説だ",
+              "kana": "すいりしょうせつです → すいりしょうせつだ",
+              "romaji": "suiri shousetsu desu → suiri shousetsu da",
+              "fr": "c’est un roman policier : forme polie → forme ordinaire"
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés : employer ces formes à l’intérieur d’une phrase polie.",
+          "formes": [
+            {
+              "jp": "出版するつもりです。",
+              "kana": "しゅっぱんするつもりです。",
+              "romaji": "shuppan suru tsumori desu.",
+              "fr": "J’ai l’intention de publier."
+            },
+            {
+              "jp": "長いと思います。",
+              "kana": "ながいとおもいます。",
+              "romaji": "nagai to omoimasu.",
+              "fr": "Je pense que c’est long."
+            },
+            {
+              "jp": "推理小説だと思います。",
+              "kana": "すいりしょうせつだとおもいます。",
+              "romaji": "suiri shousetsu da to omoimasu.",
+              "fr": "Je pense que c’est un roman policier."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "La forme ordinaire n’est pas seulement une façon de parler entre proches : elle entre aussi dans ces constructions polies.",
+        "Avec します, on retrouve する ; avec なります, なる. Ne pas fabriquer les formes ordinaires en enlevant simplement ます.",
+        "Les formes ordinaires comprennent aussi négation et passé. Cette fiche commence par les formes affirmatives au non-passé utiles à la leçon 25 ; elle n’est pas un tableau complet de conjugaison.",
+        "Dans N25-S08, 知らないで (shiranaide) signifie « sans le savoir ». 知らない est négatif ; la construction complète avec で sera travaillée séparément."
+      ],
+      "exemples": [
+        {
+          "source": "N25-S04",
+          "jp": "出版 する つもり です か。",
+          "kana": "しゅっぱん する つもり です か。",
+          "romaji": "shuppan suru tsumori desu ka.",
+          "fr": "Avez-vous l’intention de le publier ?",
+          "cible": {
+            "jp": "出版 する つもり です か",
+            "kana": "しゅっぱん する つもり です か",
+            "romaji": "shuppan suru tsumori desu ka",
+            "fr": "Avez-vous l’intention de publier ?"
+          },
+          "commentaire": "する se trouve avant つもり ; ですか termine la question polie."
+        },
+        {
+          "source": "N25-S11",
+          "jp": "五 百 ページ ぐらい に なる と 思います。",
+          "kana": "ごひゃく ページ ぐらい に なる と おもいます。",
+          "romaji": "gohyaku peeji gurai ni naru to omoimasu.",
+          "fr": "Je pense qu’il fera environ cinq cents pages.",
+          "cible": {
+            "jp": "なる と 思います",
+            "kana": "なる と おもいます",
+            "romaji": "naru to omoimasu",
+            "fr": "je pense que cela fera"
+          },
+          "commentaire": "なる est ordinaire, tandis que 思います est poli. Le contenu de la pensée et la terminaison de la phrase ont des fonctions différentes."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "Dans 出版するつもりです (shuppan suru tsumori desu), quel groupe est la forme ordinaire de « publier » ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "出版する",
+            "kana": "しゅっぱんする",
+            "romaji": "shuppan suru",
+            "fr": "publier, forme ordinaire"
+          },
+          {
+            "id": "choix-2",
+            "jp": "つもり",
+            "kana": "つもり",
+            "romaji": "tsumori",
+            "fr": "intention"
+          },
+          {
+            "id": "choix-3",
+            "jp": "です",
+            "kana": "です",
+            "romaji": "desu",
+            "fr": "terminaison polie"
+          }
+        ],
+        "bonne_reponse": "choix-1",
+        "explication": "出版する est la forme ordinaire. つもり exprime l’intention ; です donne une terminaison polie à l’ensemble.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [],
+      "sources": [
+        {
+          "organisme": "Université des langues étrangères de Tokyo",
+          "titre": "TUFS — Exprimer une opinion",
+          "section": "Repères utilisés dans la leçon 25",
+          "url": "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/explanation/077.html",
+          "consulte_le": "2026-10-04"
+        },
+        {
+          "organisme": "Université des langues étrangères de Tokyo",
+          "titre": "TUFS — Forme ordinaire des prédicats nominaux",
+          "section": "Repères utilisés dans la leçon 25",
+          "url": "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/explanation/041.html",
+          "consulte_le": "2026-10-04"
+        }
+      ],
+      "prerequis": [
+        "G01",
+        "G05",
+        "G13",
+        "G20"
+      ],
+      "pour_aller_plus_loin": "Les conjugaisons ordinaires négatives et passées seront détaillées progressivement, avec les constructions qui en ont besoin.",
+      "lecons": [
+        "N25"
+      ],
+      "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Dans 出版するつもりです (shuppan suru tsumori desu), quel groupe est la forme ordinaire de « publier » ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "出版する",
+              "kana": "しゅっぱんする",
+              "romaji": "shuppan suru",
+              "fr": "publier, forme ordinaire"
+            },
+            {
+              "id": "choix-2",
+              "jp": "つもり",
+              "kana": "つもり",
+              "romaji": "tsumori",
+              "fr": "intention"
+            },
+            {
+              "id": "choix-3",
+              "jp": "です",
+              "kana": "です",
+              "romaji": "desu",
+              "fr": "terminaison polie"
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "出版する est la forme ordinaire. つもり exprime l’intention ; です donne une terminaison polie à l’ensemble.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Avant と 思います (to omoimasu), quel groupe exprime « c’est un roman policier » à la forme ordinaire affirmative ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "推理小説",
+              "kana": "すいりしょうせつ",
+              "romaji": "suiri shousetsu",
+              "fr": "roman policier, nom seul"
+            },
+            {
+              "id": "choix-2",
+              "jp": "推理小説だ",
+              "kana": "すいりしょうせつだ",
+              "romaji": "suiri shousetsu da",
+              "fr": "c’est un roman policier, forme ordinaire"
+            },
+            {
+              "id": "choix-3",
+              "jp": "推理小説です",
+              "kana": "すいりしょうせつです",
+              "romaji": "suiri shousetsu desu",
+              "fr": "c’est un roman policier, forme polie"
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "Devant と dans cette construction, on garde だ après le nom : 推理小説だと思います. Le nom seul ne suffit pas ici ; です donnerait la forme polie plutôt que la forme ordinaire demandée.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
+      "synthese": {
+        "reperes": [
+          "Repérer la construction qui suit : つもり ou と 思います.",
+          "La terminaison finale peut rester polie : です ou ます."
+        ],
+        "lignes": [
+          {
+            "usage": "Publier",
+            "exemple": {
+              "jp": "出版します → 出版する",
+              "kana": "しゅっぱんします → しゅっぱんする",
+              "romaji": "shuppan shimasu → shuppan suru",
+              "fr": "publier : forme polie → forme ordinaire"
+            }
+          },
+          {
+            "usage": "Devenir / total",
+            "exemple": {
+              "jp": "なります → なる",
+              "kana": "なります → なる",
+              "romaji": "narimasu → naru",
+              "fr": "devenir / faire un total : forme polie → forme ordinaire"
+            }
+          },
+          {
+            "usage": "Adjectif en i",
+            "exemple": {
+              "jp": "長いです → 長い",
+              "kana": "ながいです → ながい",
+              "romaji": "nagai desu → nagai",
+              "fr": "c’est long : forme polie → forme ordinaire"
+            }
+          },
+          {
+            "usage": "Nom",
+            "exemple": {
+              "jp": "推理小説です → 推理小説だ",
+              "kana": "すいりしょうせつです → すいりしょうせつだ",
+              "romaji": "suiri shousetsu desu → suiri shousetsu da",
+              "fr": "c’est un roman policier : forme polie → forme ordinaire"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "G26",
+      "ordre": 26,
+      "titre": "と思います (to omoimasu) : je pense que…",
+      "famille": "Relier les idées",
+      "niveau": "débutant",
+      "objectif": "Présenter une opinion ou une estimation personnelle.",
+      "explication": "Le contenu que l’on pense se place avant と (to), puis vient 思います (omoimasu). Ce と introduit une pensée : ce n’est ni une liste ni un accompagnement. Dans la leçon 25, l’auteur estime la longueur future du roman. Il ne donne pas un total déjà constaté.",
+      "constructions": [
+        {
+          "jp": "五百ページぐらいになると思います。",
+          "kana": "ごひゃくページぐらいになるとおもいます。",
+          "romaji": "gohyaku peeji gurai ni naru to omoimasu.",
+          "fr": "Je pense que cela fera environ cinq cents pages."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Exemples créés : trois contenus avant と 思います.",
+          "formes": [
+            {
+              "jp": "五百ページぐらいになると思います。",
+              "kana": "ごひゃくページぐらいになるとおもいます。",
+              "romaji": "gohyaku peeji gurai ni naru to omoimasu.",
+              "fr": "Je pense que cela fera environ cinq cents pages."
+            },
+            {
+              "jp": "長いと思います。",
+              "kana": "ながいとおもいます。",
+              "romaji": "nagai to omoimasu.",
+              "fr": "Je pense que c’est long."
+            },
+            {
+              "jp": "推理小説だと思います。",
+              "kana": "すいりしょうせつだとおもいます。",
+              "romaji": "suiri shousetsu da to omoimasu.",
+              "fr": "Je pense que c’est un roman policier."
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés : retrouver la question et le groupe de quantité de la leçon.",
+          "formes": [
+            {
+              "jp": "何ページぐらいになりますか。",
+              "kana": "なんページぐらいになりますか。",
+              "romaji": "nan peeji gurai ni narimasu ka.",
+              "fr": "Cela fera environ combien de pages ?"
+            },
+            {
+              "jp": "五百ページぐらい",
+              "kana": "ごひゃくページぐらい",
+              "romaji": "gohyaku peeji gurai",
+              "fr": "environ cinq cents pages"
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "Devant と, le verbe est à la forme ordinaire : なる, pas なります, dans le modèle travaillé ici.",
+        "Un adjectif en i reste sans だ : 長いと思います. Avec un nom, on emploie だ : 推理小説だと思います.",
+        "ぐらい indique l’approximation. Ici, に appartient à la construction avec なる qui décrit le total atteint ; il ne donne pas une destination.",
+        "Dire « je pense » ne suffit pas à exprimer une intention de faire quelque chose. Pour le projet de publier, comparer avec G20."
+      ],
+      "exemples": [
+        {
+          "source": "N25-S10",
+          "jp": "何 ページ ぐらい に なります か。",
+          "kana": "なん ページ ぐらい に なります か。",
+          "romaji": "nan peeji gurai ni narimasu ka.",
+          "fr": "Combien de pages fera-t-il à peu près ?",
+          "cible": {
+            "jp": "何 ページ ぐらい に なります か",
+            "kana": "なん ページ ぐらい に なります か",
+            "romaji": "nan peeji gurai ni narimasu ka",
+            "fr": "Cela fera environ combien de pages ?"
+          },
+          "commentaire": "Question sur la longueur prévue ; lire la réponse N25-S11 juste après."
+        },
+        {
+          "source": "N25-S11",
+          "jp": "五 百 ページ ぐらい に なる と 思います。",
+          "kana": "ごひゃく ページ ぐらい に なる と おもいます。",
+          "romaji": "gohyaku peeji gurai ni naru to omoimasu.",
+          "fr": "Je pense qu’il fera environ cinq cents pages.",
+          "cible": {
+            "jp": "五 百 ページ ぐらい に なる と 思います",
+            "kana": "ごひゃく ページ ぐらい に なる と おもいます",
+            "romaji": "gohyaku peeji gurai ni naru to omoimasu",
+            "fr": "Je pense que cela fera environ cinq cents pages."
+          },
+          "commentaire": "Estimation de l’auteur : la proposition sur le nombre de pages vient avant と 思います."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "Tu donnes explicitement ton avis : « Je pense que c’est long. » Quelle phrase choisir ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "長いです。",
+            "kana": "ながいです。",
+            "romaji": "nagai desu.",
+            "fr": "C’est long."
+          },
+          {
+            "id": "choix-2",
+            "jp": "長いと思います。",
+            "kana": "ながいとおもいます。",
+            "romaji": "nagai to omoimasu.",
+            "fr": "Je pense que c’est long."
+          },
+          {
+            "id": "choix-3",
+            "jp": "長いですか。",
+            "kana": "ながいですか。",
+            "romaji": "nagai desu ka.",
+            "fr": "Est-ce long ?"
+          }
+        ],
+        "bonne_reponse": "choix-2",
+        "explication": "長いと思います présente explicitement le jugement comme une pensée. 長いです l’affirme directement ; 長いですか pose une question. Ces phrases sont grammaticales, mais la consigne demande « je pense ».",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [],
+      "sources": [
+        {
+          "organisme": "Université des langues étrangères de Tokyo",
+          "titre": "TUFS — Exprimer une opinion",
+          "section": "Repères utilisés dans la leçon 25",
+          "url": "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/explanation/077.html",
+          "consulte_le": "2026-10-04"
+        }
+      ],
+      "prerequis": [
+        "G25"
+      ],
+      "pour_aller_plus_loin": "La négation de la proposition et celle de 思います ne se confondent pas. Elles seront comparées dans un autre lot.",
+      "lecons": [
+        "N25"
+      ],
+      "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Tu donnes explicitement ton avis : « Je pense que c’est long. » Quelle phrase choisir ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "長いです。",
+              "kana": "ながいです。",
+              "romaji": "nagai desu.",
+              "fr": "C’est long."
+            },
+            {
+              "id": "choix-2",
+              "jp": "長いと思います。",
+              "kana": "ながいとおもいます。",
+              "romaji": "nagai to omoimasu.",
+              "fr": "Je pense que c’est long."
+            },
+            {
+              "id": "choix-3",
+              "jp": "長いですか。",
+              "kana": "ながいですか。",
+              "romaji": "nagai desu ka.",
+              "fr": "Est-ce long ?"
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "長いと思います présente explicitement le jugement comme une pensée. 長いです l’affirme directement ; 長いですか pose une question. Ces phrases sont grammaticales, mais la consigne demande « je pense ».",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Tu estimes le total final du roman à environ cinq cents pages. Quelle réponse l’exprime ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "まだ五ページです。",
+              "kana": "まだごページです。",
+              "romaji": "mada go peeji desu.",
+              "fr": "Seulement cinq pages pour le moment."
+            },
+            {
+              "id": "choix-2",
+              "jp": "五百ページぐらいになると思います。",
+              "kana": "ごひゃくページぐらいになるとおもいます。",
+              "romaji": "gohyaku peeji gurai ni naru to omoimasu.",
+              "fr": "Je pense que cela fera environ cinq cents pages."
+            },
+            {
+              "id": "choix-3",
+              "jp": "出版するつもりです。",
+              "kana": "しゅっぱんするつもりです。",
+              "romaji": "shuppan suru tsumori desu.",
+              "fr": "J’ai l’intention de publier."
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "La deuxième réponse combine estimation du total et opinion. まだ五ページです donne l’avancement actuel ; 出版するつもりです annonce le projet de publier, sans préciser la longueur.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
+      "synthese": {
+        "reperes": [
+          "Le contenu pensé précède と 思います (to omoimasu).",
+          "ぐらい (gurai) signifie environ ; l’estimation ne devient pas une certitude."
+        ],
+        "lignes": [
+          {
+            "usage": "Avec un verbe",
+            "exemple": {
+              "jp": "五百ページぐらいになると思います。",
+              "kana": "ごひゃくページぐらいになるとおもいます。",
+              "romaji": "gohyaku peeji gurai ni naru to omoimasu.",
+              "fr": "Je pense que cela fera environ cinq cents pages."
+            }
+          },
+          {
+            "usage": "Avec un adjectif en i",
+            "exemple": {
+              "jp": "長いと思います。",
+              "kana": "ながいとおもいます。",
+              "romaji": "nagai to omoimasu.",
+              "fr": "Je pense que c’est long."
+            }
+          },
+          {
+            "usage": "Avec un nom",
+            "exemple": {
+              "jp": "推理小説だと思います。",
+              "kana": "すいりしょうせつだとおもいます。",
+              "romaji": "suiri shousetsu da to omoimasu.",
+              "fr": "Je pense que c’est un roman policier."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "G27",
+      "ordre": 27,
+      "titre": "そうです (sō desu) : cela a l’air…",
+      "famille": "Adjectifs",
+      "niveau": "débutant",
+      "objectif": "Exprimer une impression à partir des indices disponibles.",
+      "explication": "Dans N25-S09, l’interlocuteur vient d’entendre le résumé du roman : il réagit par おもしろそうです (omoshirosō desu), « cela a l’air intéressant ». Il n’a pas besoin d’avoir lu le roman pour exprimer cette impression. On ne se limite donc pas à ce que l’on voit : les informations que l’on vient de recevoir peuvent aussi donner cette impression.",
+      "constructions": [
+        {
+          "jp": "おもしろそうです。",
+          "kana": "おもしろそうです。",
+          "romaji": "omoshirosou desu.",
+          "fr": "Cela a l’air intéressant."
+        },
+        {
+          "jp": "長そうです。",
+          "kana": "ながそうです。",
+          "romaji": "nagasou desu.",
+          "fr": "Cela a l’air long."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Exemples créés : pour ces adjectifs en i, remplacer le い final par そうです.",
+          "formes": [
+            {
+              "jp": "おもしろい → おもしろそうです",
+              "kana": "おもしろい → おもしろそうです",
+              "romaji": "omoshiroi → omoshirosou desu",
+              "fr": "intéressant → cela a l’air intéressant"
+            },
+            {
+              "jp": "長い → 長そうです",
+              "kana": "ながい → ながそうです",
+              "romaji": "nagai → nagasou desu",
+              "fr": "long → cela a l’air long"
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés : distinguer trois façons de présenter un jugement.",
+          "formes": [
+            {
+              "jp": "おもしろいです。",
+              "kana": "おもしろいです。",
+              "romaji": "omoshiroi desu.",
+              "fr": "C’est intéressant."
+            },
+            {
+              "jp": "おもしろいと思います。",
+              "kana": "おもしろいとおもいます。",
+              "romaji": "omoshiroi to omoimasu.",
+              "fr": "Je pense que c’est intéressant."
+            },
+            {
+              "jp": "おもしろそうです。",
+              "kana": "おもしろそうです。",
+              "romaji": "omoshirosou desu.",
+              "fr": "Cela a l’air intéressant."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "Une impression peut être fondée sur un résumé, une situation ou un aspect visible ; elle n’est pas la preuve que l’on a déjà expérimenté la chose.",
+        "おもしろそうです (omoshirosō desu) ne se confond pas avec おもしろいそうです (omoshiroi sō desu), qui rapporte une information entendue. Ce second emploi sera étudié plus tard.",
+        "La transformation montrée ici concerne おもしろい et 長い. Ne pas l’appliquer mécaniquement à tous les mots : いい donne よさそう, et les adjectifs en na suivent un autre raccordement.",
+        "Une opinion avec と思います peut aussi exprimer un jugement prudent. Les exercices précisent la tournure recherchée plutôt que de prétendre qu’une seule phrase est possible dans toute conversation."
+      ],
+      "exemples": [
+        {
+          "source": "N25-S09",
+          "jp": "おもしろそう です ね。",
+          "kana": "おもしろそう です ね。",
+          "romaji": "omoshirosou desu ne.",
+          "fr": "Cela a l’air intéressant.",
+          "cible": {
+            "jp": "おもしろそう です ね",
+            "kana": "おもしろそう です ね",
+            "romaji": "omoshirosou desu ne",
+            "fr": "Cela a l’air intéressant, n’est-ce pas ?"
+          },
+          "commentaire": "Réaction au résumé donné en N25-S07/S08 ; le locuteur formule une impression."
+        },
+        {
+          "source": "N25-S12",
+          "jp": "へえ。長い です ね。",
+          "kana": "へえ。ながい です ね。",
+          "romaji": "hee. nagai desu ne.",
+          "fr": "Oh ! C’est long.",
+          "cible": {
+            "jp": "長い です ね",
+            "kana": "ながい です ね",
+            "romaji": "nagai desu ne",
+            "fr": "C’est long, n’est-ce pas ?"
+          },
+          "commentaire": "Le cours emploie ici un jugement direct après l’estimation du nombre de pages. 長そうです est une variante créée pour travailler la formation, pas une citation de cette réplique."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "Après un résumé, exprime précisément : « Cela a l’air intéressant. »",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "おもしろいです。",
+            "kana": "おもしろいです。",
+            "romaji": "omoshiroi desu.",
+            "fr": "C’est intéressant."
+          },
+          {
+            "id": "choix-2",
+            "jp": "おもしろいと思います。",
+            "kana": "おもしろいとおもいます。",
+            "romaji": "omoshiroi to omoimasu.",
+            "fr": "Je pense que c’est intéressant."
+          },
+          {
+            "id": "choix-3",
+            "jp": "おもしろそうです。",
+            "kana": "おもしろそうです。",
+            "romaji": "omoshirosou desu.",
+            "fr": "Cela a l’air intéressant."
+          }
+        ],
+        "bonne_reponse": "choix-3",
+        "explication": "おもしろそうです marque l’impression demandée. Les deux autres formulations sont grammaticales, mais présentent le jugement autrement.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [],
+      "sources": [
+        {
+          "organisme": "Fondation du Japon",
+          "titre": "Irodori — Impression avec les adjectifs, PDF p. 98",
+          "section": "Repères utilisés dans la leçon 25",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=98",
+          "consulte_le": "2026-10-04"
+        }
+      ],
+      "prerequis": [
+        "G13",
+        "G26"
+      ],
+      "pour_aller_plus_loin": "Les adjectifs en na, les exceptions et le そう de l’information rapportée seront approfondis séparément.",
+      "lecons": [
+        "N25"
+      ],
+      "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Après un résumé, exprime précisément : « Cela a l’air intéressant. »",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "おもしろいです。",
+              "kana": "おもしろいです。",
+              "romaji": "omoshiroi desu.",
+              "fr": "C’est intéressant."
+            },
+            {
+              "id": "choix-2",
+              "jp": "おもしろいと思います。",
+              "kana": "おもしろいとおもいます。",
+              "romaji": "omoshiroi to omoimasu.",
+              "fr": "Je pense que c’est intéressant."
+            },
+            {
+              "id": "choix-3",
+              "jp": "おもしろそうです。",
+              "kana": "おもしろそうです。",
+              "romaji": "omoshirosou desu.",
+              "fr": "Cela a l’air intéressant."
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "おもしろそうです marque l’impression demandée. Les deux autres formulations sont grammaticales, mais présentent le jugement autrement.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Transforme 長いです (nagai desu) pour exprimer une impression : « Cela a l’air long. »",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "長そうです。",
+              "kana": "ながそうです。",
+              "romaji": "nagasou desu.",
+              "fr": "Cela a l’air long."
+            },
+            {
+              "id": "choix-2",
+              "jp": "長いと思います。",
+              "kana": "ながいとおもいます。",
+              "romaji": "nagai to omoimasu.",
+              "fr": "Je pense que c’est long."
+            },
+            {
+              "id": "choix-3",
+              "jp": "長いですか。",
+              "kana": "ながいですか。",
+              "romaji": "nagai desu ka.",
+              "fr": "Est-ce long ?"
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "長い perd son い final avant そうです : 長そうです. La deuxième réponse exprime une opinion ; la troisième est une question.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
+      "synthese": {
+        "reperes": [
+          "Pour les deux adjectifs étudiés : retirer い, puis ajouter そうです.",
+          "Une impression à partir d’indices ; ne pas confondre avec l’information rapportée."
+        ],
+        "lignes": [
+          {
+            "usage": "Jugement direct",
+            "exemple": {
+              "jp": "おもしろいです。",
+              "kana": "おもしろいです。",
+              "romaji": "omoshiroi desu.",
+              "fr": "C’est intéressant."
+            }
+          },
+          {
+            "usage": "Opinion explicite",
+            "exemple": {
+              "jp": "おもしろいと思います。",
+              "kana": "おもしろいとおもいます。",
+              "romaji": "omoshiroi to omoimasu.",
+              "fr": "Je pense que c’est intéressant."
+            }
+          },
+          {
+            "usage": "Impression",
+            "exemple": {
+              "jp": "おもしろそうです。",
+              "kana": "おもしろそうです。",
+              "romaji": "omoshirosou desu.",
+              "fr": "Cela a l’air intéressant."
             }
           }
         ]
