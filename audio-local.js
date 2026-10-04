@@ -179,7 +179,7 @@ Type : ${file.type||'(non fourni)'}`);
  document.getElementById('audio-diagnostic-report').textContent=[
   `Fichiers reçus : ${files.length}`,`MP3 reçus : ${mp3.length}`,`Fichiers avec chemin relatif : ${paths.length}`,`Fichiers de taille nulle : ${files.filter(file=>file.size===0).length}`,
   `Phrases reconnues : ${Object.keys(found).length}`,`Compléments reconnus : ${Object.keys(extras).length}`,`Références en double : ${duplicates.size}`,'',result,'',...sample,
-  '', 'Exemple de chemin attendu : fichiers_audio_complet/L001-Japanese ASSIMIL/S01.mp3',
+  '', 'Exemple : un fichier S01.mp3 dans un dossier de leçon commençant par L001',
   'Ce diagnostic examine les noms et chemins ; il ne confirme pas encore que le contenu audio peut être lu.'
  ].join('\n');
  if(!valid)document.getElementById('audio-diagnostic').open=true;

@@ -10,7 +10,7 @@
   const escaped=needle.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/ +/g,'[ \t]+');
   const key=needle+'|'+exact;if(!patterns.has(key)){if(patterns.size>512)patterns.clear();patterns.set(key,new RegExp('(^|[^\\p{L}\\p{N}])'+escaped+(exact?'(?=$|[^\\p{L}\\p{N}])':''),'u'));}return patterns.get(key).test(hay);
  }
- const sources={lecons:'Leçons',dictionnaire:'Dictionnaire',grammaire:'Grammaire',guide:'Guide',complements:'Compléments',atelier:'Atelier',decorticage:'Décorticage'};
+ const sources={lecons:'Méthode de langue',dictionnaire:'Dictionnaire',grammaire:'Grammaire',guide:'Guide de conversation',complements:'Compléments',atelier:'Atelier',decorticage:'Décorticage'};
  const kinds={mot:'Mots',phrase:'Phrases',explication:'Explications',tableau:'Tableaux',exercice:'Exercices'};
  const concepts=[
  ['destination','aller','direction','déplacement'],['durée','temps','heure','depuis','jusqu’à'],['invitation','inviter','proposer','rencontre'],['restaurant','repas','manger','menu','addition'],['paiement','payer','addition','prix','argent'],['politesse','poli','honorifique','humble'],['transport','train','gare','bus','avion'],['logement','hôtel','chambre','réservation'],['salutation','saluer','bonjour','bonsoir'],['santé','médecin','malade','douleur'],['négation','négatif','nier'],['passé','hier','autrefois']
