@@ -223,11 +223,6 @@ const projectInfo=document.getElementById('project-info');
 let infoOpener=$('#info-toggle'),travelListening=false;
 function openProjectInfo(opener){infoOpener=opener;projectInfo.showModal();document.body.classList.add('info-open');}
 $('#info-toggle').onclick=()=>openProjectInfo($('#info-toggle'));
-for(const opener of [$('#secret-link'),$('.brand')])opener.onclick=event=>{
- event.preventDefault();openProjectInfo(event.currentTarget);
- const section=$('#secret-travel');section.open=true;
- requestAnimationFrame(()=>{section.querySelector('summary').focus({preventScroll:true});section.scrollIntoView({block:'start'});});
-};
 $('#secret-travel').addEventListener('click',event=>{if(event.target.closest('.travel-listen'))travelListening=true;});
 $('#info-close').onclick=()=>projectInfo.close();
 projectInfo.addEventListener('close',()=>{document.body.classList.remove('info-open');if(travelListening){stopAudio();travelListening=false;}infoOpener.focus({preventScroll:true});});
@@ -239,6 +234,13 @@ projectInfo.addEventListener('keydown',event=>{
  if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
  else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
 });
+
+// Guide bilingue indépendant des aides de lecture et des informations détaillées.
+const quickGuide=document.getElementById('quick-guide');
+$('.brand').onclick=event=>{event.preventDefault();quickGuide.showModal();quickGuide.querySelector('.info-body').scrollTop=0;document.body.classList.add('info-open');};
+$('#quick-guide-close').onclick=()=>quickGuide.close();
+quickGuide.addEventListener('close',()=>{document.body.classList.remove('info-open');$('.brand').focus({preventScroll:true});});
+quickGuide.addEventListener('click',event=>{if(event.target!==quickGuide)return;const r=quickGuide.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)quickGuide.close();});
 
 // Retours contextuels : conserver les vues et leurs gestionnaires pendant une excursion.
 // Le stockage est limité à la visite et à 20 étapes pour borner la mémoire.

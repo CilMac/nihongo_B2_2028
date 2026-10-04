@@ -465,3 +465,17 @@ html{overflow-anchor:none}
   -webkit-overflow-scrolling:touch;
  }
 }
+
+/* Guide d’accueil bilingue : les deux langues restent toujours visibles. */
+#quick-guide{width:min(780px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:18px;background:#fffefb;color:var(--ink);box-shadow:0 16px 70px #1d302c35;overflow:hidden}
+#quick-guide[open]{display:flex;flex-direction:column}
+#quick-guide::backdrop{background:#23332c80}
+#quick-guide [lang=ja]{font-family:var(--jp-font);line-height:1.9}
+#quick-guide .mayuko-dedication{margin:0;color:#526d62;font-size:19px}
+#quick-guide .info-heading h2{font-size:23px}
+#quick-guide .info-heading button{white-space:nowrap}
+#quick-guide section{border-top:1px solid var(--line);margin-top:22px}
+#quick-guide section p{margin:10px 0}
+#quick-guide section p[lang=ja]{font-size:18px}
+#quick-guide .quick-guide-ending{margin-top:26px;color:#526d62}
+@media(max-width:480px){#quick-guide .info-heading{align-items:flex-start;flex-wrap:wrap}#quick-guide .info-heading h2{font-size:20px}#quick-guide .info-heading button{margin-left:auto;padding:6px 10px}}
