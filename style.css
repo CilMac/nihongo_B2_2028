@@ -486,3 +486,23 @@ html{overflow-anchor:none}
 .listening-romaji{font-family:Georgia,serif;font-size:1.2em;font-style:italic;color:#173d75;overflow-wrap:anywhere}
 #listening-text{margin:18px 0}
 .listening-japanese .kana-idem{color:#af2424;font-size:calc(var(--jp-size) * .82)}
+
+/* Première prise en main : rubriques explicites et activités près de la leçon. */
+#sections-toggle{grid-column:2;grid-row:2;justify-self:start;min-height:44px;background:var(--sage);font-size:14px;margin-bottom:4px}
+#sections-panel{width:min(460px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:16px;background:var(--paper);color:var(--ink)}
+#sections-panel::backdrop{background:#26332c55}
+#sections-panel .tabs{display:flex;flex-direction:column;gap:6px;padding:12px;border:0}
+#sections-panel .tabs a{padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-height:48px;color:var(--ink);background:#fffefb;justify-content:space-between}
+#sections-panel .tabs a[aria-current=page]{background:var(--sage);border-color:#8ca18a;font-weight:600}
+#sections-panel .tabs a[data-tab=grammaire][aria-current=page]{background:var(--lavender);border-color:#a28eae}
+#sections-panel .tabs a[data-tab=guide][aria-current=page]{background:#f4e9d2;border-color:#baa574}
+#sections-panel .tabs span{display:none}
+.intro-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px 20px;flex-wrap:wrap}
+.quick-guide-link{padding:4px 0;min-height:44px;border:0;border-radius:4px;background:transparent;color:#415f66;font-size:14px;text-decoration:underline;text-underline-offset:4px;text-align:left}
+.lesson-shortcuts{display:flex;gap:8px 20px;flex-wrap:wrap;flex:1 1 auto}
+.lesson-shortcuts a{display:flex;align-items:center;min-height:44px;font-size:14px}
+.lesson-selector{display:flex;align-items:center;gap:8px;min-width:0;max-width:100%}
+.lesson-selector select{flex:1;min-width:0}
+.lesson-selector button{flex-shrink:0}
+@media(max-width:760px){.intro-heading{gap:0}.intro-heading h1{width:100%;margin-bottom:0}.quick-guide-link{margin-bottom:4px}.lesson-shortcuts{gap:0 16px;width:100%}}
+@media(max-width:600px){.lesson-selector{width:100%}.lesson-selector label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.lesson-selector select{width:0}.lesson-selector button{padding:9px 12px}}
