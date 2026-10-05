@@ -260,6 +260,79 @@ choice('C77','Dialoguer','Répondre sur ce qui est déjà écrit','Tu n’as éc
  '出版するつもりです。|しゅっぱんするつもりです。|shuppan suru tsumori desu.|J’ai l’intention de publier.'
 ],1,'もうどのぐらい書きましたか demande ce qui a déjà été écrit. まだ五ページです répond sur l’avancement. L’estimation de cinq cents pages concerne le total futur, et l’intention de publier ne donne aucune quantité.','もうどのぐらい書きましたか。|もうどのぐらいかきましたか。|mou donogurai kakimashita ka.|Combien en avez-vous déjà écrit ?');
  // END LECON 25
+ // BEGIN LECON 26
+// Exercices créés ; tous les appuis, y compris ceux des distracteurs, sont dans N26.
+choice('C78','Choisir','Demander le but du voyage','Tu connais la destination : la Chine. Demande ce que la personne va y faire.',['N26-S01','N26-S02','N26-S06'],['G22','G28'],[
+ '中国語はできますか。|ちゅうごくごはできますか。|chuugokugo wa dekimasu ka.|Parlez-vous chinois ?',
+ '中国へ何をしに行きますか。|ちゅうごくへなにをしにいきますか。|chuugoku e nani o shi ni ikimasu ka.|Qu’allez-vous faire en Chine ?',
+ '中国へ行くつもりですか。|ちゅうごくへいくつもりですか。|chuugoku e iku tsumori desu ka.|Avez-vous l’intention d’aller en Chine ?'
+],1,'何をしに demande le but du déplacement. 中国へ donne la destination. Les autres questions portent sur la capacité linguistique ou l’intention de partir.');
+choice('C79','Choisir','Annoncer une capacité limitée','Tu parles un peu chinois. Choisis la phrase qui exprime cette capacité limitée.',['N26-S02','N26-S03','N26-S04','N26-S08'],['G28'],[
+ '中国語が少しできます。|ちゅうごくごがすこしできます。|chuugokugo ga sukoshi dekimasu.|Je parle un peu chinois.',
+ '中国語ができません。|ちゅうごくごができません。|chuugokugo ga dekimasen.|Je ne parle pas chinois.',
+ '中国語がよくできます。|ちゅうごくごがよくできます。|chuugokugo ga yoku dekimasu.|Je parle bien chinois.'
+],0,'少し signifie « un peu ». できません nie la capacité ; よく indique ici une bonne maîtrise. On évalue le sens de la phrase, pas un choix obligatoire entre が et は.');
+choice('C80','Choisir','Repérer ce qui a changé','Ton fils n’est plus disponible : sa situation a changé. Quelle phrase l’exprime explicitement ?',['N26-S05','N26-S09'],['G29'],[
+ '息子は暇です。|むすこはひまです。|musuko wa hima desu.|Mon fils est libre.',
+ '息子は都合が悪いです。|むすこはつごうがわるいです。|musuko wa tsugou ga warui desu.|Mon fils n’est pas disponible.',
+ '息子は都合が悪くなりました。|むすこはつごうがわるくなりました。|musuko wa tsugou ga waruku narimashita.|Mon fils n’est plus disponible.'
+],2,'悪くなりました exprime le changement. 悪いです décrit l’état sans dire qu’il a changé ; 暇です dit que le fils est libre. 都合が悪い concerne sa disponibilité.');
+choice('C81','Choisir','Proposer son aide','Tu proposes d’accompagner la personne en Chine. Choisis l’offre d’aide.',['N26-S08','N26-S10','N26-S11'],['G15'],[
+ 'ぜひお願いします。|ぜひおねがいします。|zehi onegai shimasu.|Oui, avec grand plaisir.',
+ 'お供しましょうか。|おともしましょうか。|o tomo shimashou ka.|Voulez-vous que je vous accompagne ?',
+ '一緒に食事をしましょう。|いっしょにしょくじをしましょう。|issho ni shokuji o shimashou.|Prenons un repas ensemble.'
+],1,'お供しましょうか propose ici une action que je ferai pour l’autre. ましょうか n’est donc pas toujours une invitation à faire ensemble la même action. お願いします accepte l’aide dans ce dialogue.');
+choice('C82','Transformer','Ajouter le déplacement à l’action','Reformule pour dire que tu te déplaces afin de prendre un repas.',['N26-S06','N26-S11'],['G22'],[
+ '食事をしに行きます。|しょくじをしにいきます。|shokuji o shi ni ikimasu.|Je vais prendre un repas.',
+ '食事をしました。|しょくじをしました。|shokuji o shimashita.|J’ai pris un repas.',
+ '食事をしましょう。|しょくじをしましょう。|shokuji o shimashou.|Prenons un repas.'
+],0,'On part de します, on enlève ます, puis on ajoute に行きます : しに行きます. Le groupe 食事を garde を. しました raconte une action passée ; しましょう propose une action.','食事をします。|しょくじをします。|shokuji o shimasu.|Je prends un repas.');
+choice('C83','Transformer','Passer de la capacité à sa négation','Reformule pour dire que tu ne parles pas chinois.',['N26-S02','N26-S03','N26-S08'],['G28'],[
+ '中国語ができますか。|ちゅうごくごができますか。|chuugokugo ga dekimasu ka.|Parlez-vous chinois ?',
+ '中国語が少しできます。|ちゅうごくごがすこしできます。|chuugokugo ga sukoshi dekimasu.|Je parle un peu chinois.',
+ '中国語ができません。|ちゅうごくごができません。|chuugokugo ga dekimasen.|Je ne parle pas chinois.'
+],2,'できます devient できません. 少しできます reste affirmatif : une petite capacité existe. できますか pose une question.','中国語ができます。|ちゅうごくごができます。|chuugokugo ga dekimasu.|Je parle chinois.');
+choice('C84','Transformer','Passer de l’état au changement','Reformule « Je suis libre » en « Je suis devenu disponible ».',['N26-S05','N26-S09'],['G29'],[
+ '暇でした。|ひまでした。|hima deshita.|J’étais libre.',
+ '暇になりました。|ひまになりました。|hima ni narimashita.|Je suis devenu disponible.',
+ '暇ですか。|ひまですか。|hima desu ka.|Êtes-vous libre ?'
+],1,'Avec 暇, on emploie に devant なりました. 暇でした décrit un état passé ; 暇になりました exprime le changement. Cette transformation est créée pour l’exercice, elle n’est pas une citation du dialogue.','暇です。|ひまです。|hima desu.|Je suis libre.');
+choice('C85','Transformer','Raconter une intention passée','Reformule en « J’avais l’intention d’aller en Chine », sans affirmer que le voyage a eu lieu.',['N26-S01'],['G20'],[
+ '中国へ行くつもりでした。|ちゅうごくへいくつもりでした。|chuugoku e iku tsumori deshita.|J’avais l’intention d’aller en Chine.',
+ '中国へ行きました。|ちゅうごくへいきました。|chuugoku e ikimashita.|Je suis allé en Chine.',
+ '中国へ行くつもりですか。|ちゅうごくへいくつもりですか。|chuugoku e iku tsumori desu ka.|Avez-vous l’intention d’aller en Chine ?'
+],0,'Le passé porte sur つもりです, qui devient つもりでした ; 行く reste à la forme du dictionnaire. Cette phrase seule ne prouve ni la réalisation ni l’abandon du voyage.','中国へ行くつもりです。|ちゅうごくへいくつもりです。|chuugoku e iku tsumori desu.|J’ai l’intention d’aller en Chine.');
+order('C86','Construire le but du déplacement','Construis : « Je vais en Chine pour travailler. »',['N26-S06','N26-S07'],['G22'],[
+ '中国へ|ちゅうごくへ|chuugoku e|en Chine, destination',
+ '仕事をしに|しごとをしに|shigoto o shi ni|pour travailler, but',
+ '行きます|いきます|ikimasu|je vais'
+],[[0,1,2],[1,0,2]],'Je vais en Chine pour travailler.','Les groupes 中国へ et 仕事をしに peuvent échanger leur place avant 行きます. On garde la destination avec へ et le but avec に ; を reste attaché à 仕事.');
+order('C87','Construire une capacité limitée','Construis : « Je parle un peu chinois. »',['N26-S08'],['G28'],[
+ '中国語が|ちゅうごくごが|chuugokugo ga|le chinois, langue concernée',
+ '少し|すこし|sukoshi|un peu',
+ 'できます|できます|dekimasu|je sais le parler'
+],[[0,1,2],[1,0,2]],'Je parle un peu chinois.','少し et 中国語が peuvent se placer dans les deux ordres proposés avant できます. Le groupe 中国語が reste entier. 中国語は serait aussi possible avec un autre choix de thème ; cet exercice fournit が.');
+order('C88','Construire un changement de disponibilité','Construis : « Mon fils n’est plus disponible. »',['N26-S05'],['G29'],[
+ '息子は|むすこは|musuko wa|quant à mon fils',
+ '都合が|つごうが|tsugou ga|sa disponibilité',
+ '悪くなりました|わるくなりました|waruku narimashita|la situation a changé défavorablement'
+],[[0,1,2]],'Mon fils n’est plus disponible.','息子は pose le thème ; 都合が悪くなりました décrit le changement de disponibilité. 悪い devient 悪く devant なりました. On construit ici l’ordre neutre du dialogue.');
+order('C89','Construire une intention passée','Construis : « J’avais l’intention d’aller en Chine au printemps prochain. »',['N26-S01'],['G20'],[
+ '来年の春に|らいねんのはるに|rainen no haru ni|au printemps prochain',
+ '中国へ|ちゅうごくへ|chuugoku e|en Chine',
+ '行くつもりでした|いくつもりでした|iku tsumori deshita|j’avais l’intention d’aller'
+],[[0,1,2],[1,0,2]],'J’avais l’intention d’aller en Chine au printemps prochain.','Le moment et la destination peuvent échanger leur place. でした situe l’intention dans le passé ; le voyage envisagé peut rester à venir. Cette phrase seule ne dit pas si le projet se réalisera.');
+choice('C90','Dialoguer','Répondre sans répéter la langue','Tu ne parles pas chinois. Réponds simplement à la question.',['N26-S02','N26-S03','N26-S04','N26-S08'],['G28'],[
+ '少しできます。|すこしできます。|sukoshi dekimasu.|Je le parle un peu.',
+ '私はできません。|わたしはできません。|watashi wa dekimasen.|Moi, je ne le parle pas.',
+ 'よくできます。|よくできます。|yoku dekimasu.|Je le parle bien.'
+],1,'Le nom de la langue reste sous-entendu grâce à la question. できません répond négativement ; 少し et よく décrivent deux degrés de capacité.','中国語はできますか。|ちゅうごくごはできますか。|chuugokugo wa dekimasu ka.|Parlez-vous chinois ?');
+choice('C91','Dialoguer','Accepter l’aide proposée','La proposition d’accompagnement t’aide : accepte-la avec plaisir.',['N26-S08','N26-S10','N26-S11'],['G15'],[
+ '一緒に食事をしましょう。|いっしょにしょくじをしましょう。|issho ni shokuji o shimashou.|Prenons un repas ensemble.',
+ 'お供しましょうか。|おともしましょうか。|o tomo shimashou ka.|Voulez-vous que je vous accompagne ?',
+ 'それはたすかります。ぜひお願いします。|それはたすかります。ぜひおねがいします。|sore wa tasukarimasu. zehi onegai shimasu.|Cela m’aiderait beaucoup. Oui, avec grand plaisir.'
+],2,'たすかります exprime ici que l’aide est bienvenue ; ぜひお願いします accepte l’offre. Répéter お供しましょうか ferait une nouvelle proposition, et 食事をしましょう proposerait un repas.','お供しましょうか。|おともしましょうか。|o tomo shimashou ka.|Voulez-vous que je vous accompagne ?');
+ // END LECON 26
  function build(rows){
   const byId=new Map(rows.map(r=>[r.Leçon+'-'+r.Ligne,r]));
   return definitions.filter(q=>q.sources.every(id=>byId.has(id))).map(q=>({...q,source:q.sources[0],row:byId.get(q.sources[0]),origin:'Exercice créé à partir des constructions du cours.'}));

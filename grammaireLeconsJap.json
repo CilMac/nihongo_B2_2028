@@ -1,7 +1,7 @@
 {
-  "version": "1.5.0",
-  "date": "2026-10-04",
-  "titre": "Grammaire des leçons — 27 fiches",
+  "version": "1.6.0",
+  "date": "2026-10-05",
+  "titre": "Grammaire des leçons — 29 fiches",
   "langue_explications": "fr",
   "affichage": {
     "romaji": {
@@ -5405,7 +5405,7 @@
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Distinguer où l’on va et ce que l’on va faire.",
-      "explication": "Après un nom d’activité, に indique le but du déplacement : 買物に行きます signifie aller faire des achats. Le nom indique l’activité, et 行きます le déplacement. Avec un nom de lieu, に ou へ peut indiquer la destination : la construction doit être lue avec le nom qui la précède.",
+      "explication": "Après un nom d’activité, に indique le but du déplacement : 買物に行きます signifie aller faire des achats. Le nom indique l’activité, et 行きます le déplacement. Avec un nom de lieu, に ou へ peut indiquer la destination : la construction doit être lue avec le nom qui la précède. Le but peut aussi être une action exprimée par un verbe : on enlève ます à la forme polie puis on ajoute に行きます. します donne ainsi しに行きます. Dans 中国へ何をしに行きますか (chuugoku e nani o shi ni ikimasu ka), 中国へ indique où l’on va et 何をしに demande ce qu’on va y faire.",
       "constructions": [
         {
           "jp": "買物に行きます",
@@ -5437,12 +5437,37 @@
               "fr": "Je vais au grand magasin."
             }
           ]
+        },
+        {
+          "texte": "Leçon 26 — Exemples créés : partir de la forme en ます, puis exprimer le but.",
+          "formes": [
+            {
+              "jp": "します → しに行きます",
+              "kana": "します → しにいきます",
+              "romaji": "shimasu → shi ni ikimasu",
+              "fr": "faire → aller faire"
+            },
+            {
+              "jp": "食事をしに行きます。",
+              "kana": "しょくじをしにいきます。",
+              "romaji": "shokuji o shi ni ikimasu.",
+              "fr": "Je vais prendre un repas."
+            },
+            {
+              "jp": "中国へ何をしに行きますか。",
+              "kana": "ちゅうごくへなにをしにいきますか。",
+              "romaji": "chuugoku e nani o shi ni ikimasu ka.",
+              "fr": "Qu’allez-vous faire en Chine ?"
+            }
+          ]
         }
       ],
       "pieges": [
         "買物 désigne l’activité des achats, pas un magasin. Pour désigner le lieu, on utilise un nom de lieu.",
         "Dans 一緒に映画に行きました, les deux に ne jouent pas le même rôle : 一緒に signifie « ensemble » ; 映画に indique le but.",
-        "Un nom quelconque ne peut pas automatiquement être placé dans ce modèle : il doit désigner ici une activité ou un événement."
+        "Un nom quelconque ne peut pas automatiquement être placé dans ce modèle : il doit désigner ici une activité ou un événement.",
+        "Ici, on utilise la base de la forme en ます : し, et non la forme du dictionnaire する. Enlever ます sert à cette construction précise ; cela ne donne pas la forme ordinaire du verbe.",
+        "Dans 何をしに行きますか, を appartient à 何をする (faire quoi ?) et に marque le but. へ indique la destination dans 中国へ."
       ],
       "exemples": [
         {
@@ -5472,6 +5497,20 @@
             "fr": "Nous sommes allés voir un film."
           },
           "commentaire": "La cible est le deuxième に, après 映画. 一緒に, au début de la phrase, signifie « ensemble »."
+        },
+        {
+          "source": "N26-S06",
+          "jp": "中国 へ 何 を し に 行きます か。",
+          "kana": "ちゅうごく へ なに を し に いきます か。",
+          "romaji": "chuugoku e nani o shi ni ikimasu ka.",
+          "fr": "Qu’allez-vous faire en Chine ?",
+          "cible": {
+            "jp": "何 を し に 行きます か",
+            "kana": "なに を し に いきます か",
+            "romaji": "nani o shi ni ikimasu ka",
+            "fr": "qu’allez-vous faire ?"
+          },
+          "commentaire": "Le but est demandé avec 何をしに ; la destination 中国へ figure dans la même phrase."
         }
       ],
       "exercice": {
@@ -5531,21 +5570,99 @@
           "section": "Starter, leçon 12 : nom d’activité ou d’événement + に行きます",
           "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=37",
           "consulte_le": "2026-09-29"
+        },
+        {
+          "organisme": "Fondation du Japon",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Starter, leçon 12 : but du déplacement avec un verbe",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=39",
+          "consulte_le": "2026-10-05"
         }
       ],
       "prerequis": [
         "G05",
         "G09"
       ],
-      "pour_aller_plus_loin": "La construction avec un verbe, comme « aller manger », sera étudiée séparément. Ici, on s’entraîne avec des noms d’activité.",
+      "pour_aller_plus_loin": "La leçon 26 complète le nom d’activité par le verbe : 食事をします → 食事をしに行きます. Les mêmes bases peuvent accompagner d’autres verbes de déplacement, à étudier dans leur contexte.",
       "lecons": [
         "N14",
-        "N8"
+        "N8",
+        "N26"
       ],
       "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Quelle phrase indique que le but du déplacement est de faire des achats ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "買物に行きます",
+              "kana": "かいものにいきます",
+              "romaji": "kaimono ni ikimasu",
+              "fr": "Je vais faire des achats."
+            },
+            {
+              "id": "choix-2",
+              "jp": "デパートへ行きます",
+              "kana": "デパートへいきます",
+              "romaji": "depaato e ikimasu",
+              "fr": "Je vais au grand magasin."
+            },
+            {
+              "id": "choix-3",
+              "jp": "バスで行きます",
+              "kana": "バスでいきます",
+              "romaji": "basu de ikimasu",
+              "fr": "J’y vais en bus."
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "買物に indique ce que l’on va faire. デパートへ donne la destination ; バスで donne le moyen de transport. Aller au grand magasin ne dit pas, à lui seul, ce que l’on va y faire.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Tu te déplaces pour prendre un repas. Quelle phrase exprime explicitement ce but ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "食事をします。",
+              "kana": "しょくじをします。",
+              "romaji": "shokuji o shimasu.",
+              "fr": "Je prends un repas."
+            },
+            {
+              "id": "choix-2",
+              "jp": "食事をしに行きます。",
+              "kana": "しょくじをしにいきます。",
+              "romaji": "shokuji o shi ni ikimasu.",
+              "fr": "Je vais prendre un repas."
+            },
+            {
+              "id": "choix-3",
+              "jp": "中国へ行きます。",
+              "kana": "ちゅうごくへいきます。",
+              "romaji": "chuugoku e ikimasu.",
+              "fr": "Je vais en Chine."
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "食事をしに行きます indique à la fois le déplacement et son but. 食事をします décrit l’action sans déplacement explicite ; 中国へ行きます donne seulement la destination.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
       "synthese": {
         "reperes": [
-          "Nom d’activité + に行きます : aller faire cette activité.",
+          "Nom d’activité ou base en ます + に行きます : aller faire cette activité.",
           "Distinguer le but (faire quoi ?) de la destination (aller où ?)."
         ],
         "lignes": [
@@ -5574,6 +5691,24 @@
               "kana": "デパートへいきます",
               "romaji": "depaato e ikimasu",
               "fr": "Je vais au grand magasin."
+            }
+          },
+          {
+            "usage": "But avec un verbe",
+            "exemple": {
+              "jp": "食事をしに行きます。",
+              "kana": "しょくじをしにいきます。",
+              "romaji": "shokuji o shi ni ikimasu.",
+              "fr": "Je vais prendre un repas."
+            }
+          },
+          {
+            "usage": "Demander le but",
+            "exemple": {
+              "jp": "中国へ何をしに行きますか。",
+              "kana": "ちゅうごくへなにをしにいきますか。",
+              "romaji": "chuugoku e nani o shi ni ikimasu ka.",
+              "fr": "Qu’allez-vous faire en Chine ?"
             }
           }
         ]
@@ -6829,6 +6964,525 @@
               "kana": "おもしろそうです。",
               "romaji": "omoshirosou desu.",
               "fr": "Cela a l’air intéressant."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "G28",
+      "ordre": 28,
+      "titre": "できます (dekimasu) : dire ce que l’on sait faire",
+      "famille": "Verbes",
+      "niveau": "débutant",
+      "objectif": "Dire si l’on parle une langue et avec quelle aisance.",
+      "explication": "Avec une langue, できます (dekimasu) exprime ici une capacité : 中国語ができます signifie « je parle chinois ». La leçon emploie aussi 中国語はできますか : le chinois devient le thème de la question. Une fois cette langue connue dans le dialogue, 私はできません suffit pour répondre « moi, non ». 少し précise « un peu » et よく « bien ». Ce sont des degrés de capacité, pas une permission.",
+      "constructions": [
+        {
+          "jp": "中国語が少しできます。",
+          "kana": "ちゅうごくごがすこしできます。",
+          "romaji": "chuugokugo ga sukoshi dekimasu.",
+          "fr": "Je parle un peu chinois."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Exemples créés : capacité, négation et question.",
+          "formes": [
+            {
+              "jp": "中国語ができます。",
+              "kana": "ちゅうごくごができます。",
+              "romaji": "chuugokugo ga dekimasu.",
+              "fr": "Je parle chinois."
+            },
+            {
+              "jp": "中国語ができません。",
+              "kana": "ちゅうごくごができません。",
+              "romaji": "chuugokugo ga dekimasen.",
+              "fr": "Je ne parle pas chinois."
+            },
+            {
+              "jp": "中国語はできますか。",
+              "kana": "ちゅうごくごはできますか。",
+              "romaji": "chuugokugo wa dekimasu ka.",
+              "fr": "Et le chinois, le parlez-vous ?"
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés : préciser le degré et garder le contexte.",
+          "formes": [
+            {
+              "jp": "中国語が少しできます。",
+              "kana": "ちゅうごくごがすこしできます。",
+              "romaji": "chuugokugo ga sukoshi dekimasu.",
+              "fr": "Je parle un peu chinois."
+            },
+            {
+              "jp": "息子はよくできます。",
+              "kana": "むすこはよくできます。",
+              "romaji": "musuko wa yoku dekimasu.",
+              "fr": "Mon fils le parle bien, dans ce contexte."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "が et は ne sont pas interchangeables dans tous les contextes. Ici, 中国語ができます présente la capacité ; 中国語はできますか pose la langue comme thème. Les deux tournures sont attestées dans cette leçon.",
+        "できません est négatif ; 少しできます affirme une capacité limitée. Ne pas confondre « un peu » et « pas du tout ».",
+        "Le sens de できます dépend du contexte. Cette fiche traite la capacité linguistique, pas tous ses emplois ni la conjugaison potentielle de tous les verbes."
+      ],
+      "exemples": [
+        {
+          "source": "N26-S02",
+          "jp": "中国語 は できます か。",
+          "kana": "ちゅうごくご は できます か。",
+          "romaji": "chuugokugo wa dekimasu ka.",
+          "fr": "Parlez-vous chinois ?",
+          "cible": {
+            "jp": "中国語 は できます か",
+            "kana": "ちゅうごくご は できます か",
+            "romaji": "chuugokugo wa dekimasu ka",
+            "fr": "Parlez-vous chinois ?"
+          },
+          "commentaire": "La langue est posée comme thème avec は."
+        },
+        {
+          "source": "N26-S03",
+          "jp": "私 は できません。",
+          "kana": "わたし は できません。",
+          "romaji": "watashi wa dekimasen.",
+          "fr": "Moi, non.",
+          "cible": {
+            "jp": "私 は できません",
+            "kana": "わたし は できません",
+            "romaji": "watashi wa dekimasen",
+            "fr": "Moi, non."
+          },
+          "commentaire": "La langue n’est pas répétée : la réponse reprend la question précédente."
+        },
+        {
+          "source": "N26-S08",
+          "jp": "私 は 中国語 が 少し できます から、お 供 しましょう か。",
+          "kana": "わたし は ちゅうごくご が すこし できます から、お とも しましょう か。",
+          "romaji": "watashi wa chuugokugo ga sukoshi dekimasu kara, o tomo shimashou ka.",
+          "fr": "Comme je parle un peu chinois, voulez-vous que je vous accompagne ?",
+          "cible": {
+            "jp": "中国語 が 少し できます",
+            "kana": "ちゅうごくご が すこし できます",
+            "romaji": "chuugokugo ga sukoshi dekimasu",
+            "fr": "je parle un peu chinois"
+          },
+          "commentaire": "が accompagne la langue ; 少し limite le degré de capacité."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "Quelle réponse affirme que tu parles un peu chinois ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "中国語ができません。",
+            "kana": "ちゅうごくごができません。",
+            "romaji": "chuugokugo ga dekimasen.",
+            "fr": "Je ne parle pas chinois."
+          },
+          {
+            "id": "choix-2",
+            "jp": "中国語が少しできます。",
+            "kana": "ちゅうごくごがすこしできます。",
+            "romaji": "chuugokugo ga sukoshi dekimasu.",
+            "fr": "Je parle un peu chinois."
+          },
+          {
+            "id": "choix-3",
+            "jp": "中国へ行きます。",
+            "kana": "ちゅうごくへいきます。",
+            "romaji": "chuugoku e ikimasu.",
+            "fr": "Je vais en Chine."
+          }
+        ],
+        "bonne_reponse": "choix-2",
+        "explication": "少しできます affirme une capacité limitée. できません la nie ; 行きます décrit un déplacement.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [],
+      "sources": [
+        {
+          "organisme": "Fondation du Japon",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Elementary 1, leçon 2 : N ができます",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=72",
+          "consulte_le": "2026-10-05"
+        }
+      ],
+      "prerequis": [
+        "G01",
+        "G02",
+        "G07"
+      ],
+      "pour_aller_plus_loin": "",
+      "lecons": [
+        "N26"
+      ],
+      "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "Quelle réponse affirme que tu parles un peu chinois ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "中国語ができません。",
+              "kana": "ちゅうごくごができません。",
+              "romaji": "chuugokugo ga dekimasen.",
+              "fr": "Je ne parle pas chinois."
+            },
+            {
+              "id": "choix-2",
+              "jp": "中国語が少しできます。",
+              "kana": "ちゅうごくごがすこしできます。",
+              "romaji": "chuugokugo ga sukoshi dekimasu.",
+              "fr": "Je parle un peu chinois."
+            },
+            {
+              "id": "choix-3",
+              "jp": "中国へ行きます。",
+              "kana": "ちゅうごくへいきます。",
+              "romaji": "chuugoku e ikimasu.",
+              "fr": "Je vais en Chine."
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "少しできます affirme une capacité limitée. できません la nie ; 行きます décrit un déplacement.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "On te demande 中国語はできますか (chuugokugo wa dekimasu ka). Tu ne parles pas chinois. Réponds sans répéter le nom de la langue.",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "私はできません。",
+              "kana": "わたしはできません。",
+              "romaji": "watashi wa dekimasen.",
+              "fr": "Moi, je ne le parle pas."
+            },
+            {
+              "id": "choix-2",
+              "jp": "少しできます。",
+              "kana": "すこしできます。",
+              "romaji": "sukoshi dekimasu.",
+              "fr": "Je le parle un peu."
+            },
+            {
+              "id": "choix-3",
+              "jp": "よくできます。",
+              "kana": "よくできます。",
+              "romaji": "yoku dekimasu.",
+              "fr": "Je le parle bien."
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "できません est la réponse négative. Le nom de la langue peut rester sous-entendu puisque la question le fournit.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
+      "synthese": {
+        "reperes": [
+          "Avec une langue, できます exprime ici une capacité.",
+          "少し : un peu ; よく : bien ; できません : négation."
+        ],
+        "lignes": [
+          {
+            "usage": "Un peu",
+            "exemple": {
+              "jp": "中国語が少しできます。",
+              "kana": "ちゅうごくごがすこしできます。",
+              "romaji": "chuugokugo ga sukoshi dekimasu.",
+              "fr": "Je parle un peu chinois."
+            }
+          },
+          {
+            "usage": "Négation",
+            "exemple": {
+              "jp": "中国語ができません。",
+              "kana": "ちゅうごくごができません。",
+              "romaji": "chuugokugo ga dekimasen.",
+              "fr": "Je ne parle pas chinois."
+            }
+          },
+          {
+            "usage": "Question avec le thème",
+            "exemple": {
+              "jp": "中国語はできますか。",
+              "kana": "ちゅうごくごはできますか。",
+              "romaji": "chuugokugo wa dekimasu ka.",
+              "fr": "Et le chinois, le parlez-vous ?"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "G29",
+      "ordre": 29,
+      "titre": "なる (naru) : exprimer un changement",
+      "famille": "Adjectifs",
+      "niveau": "débutant",
+      "objectif": "Distinguer un état du changement qui y conduit.",
+      "explication": "なる signifie ici « devenir ». Avec un adjectif en i, le い final devient く : 悪い → 悪くなります. Avec un adjectif en na comme 暇, on emploie に : 暇になります. なりました est la forme polie passée. Dans 息子は都合が悪くなりました, la disponibilité du fils a changé : il n’est plus disponible. On ne dit pas que le fils lui-même est devenu mauvais.",
+      "constructions": [
+        {
+          "jp": "都合が悪くなりました。",
+          "kana": "つごうがわるくなりました。",
+          "romaji": "tsugou ga waruku narimashita.",
+          "fr": "Je ne suis plus disponible."
+        },
+        {
+          "jp": "暇になりました。",
+          "kana": "ひまになりました。",
+          "romaji": "hima ni narimashita.",
+          "fr": "Je suis devenu disponible."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Exemples créés : comparer l’état et le changement avec 悪い.",
+          "formes": [
+            {
+              "jp": "都合が悪いです。",
+              "kana": "つごうがわるいです。",
+              "romaji": "tsugou ga warui desu.",
+              "fr": "Cela ne m’arrange pas ; je ne suis pas disponible."
+            },
+            {
+              "jp": "都合が悪くなりました。",
+              "kana": "つごうがわるくなりました。",
+              "romaji": "tsugou ga waruku narimashita.",
+              "fr": "Je ne suis plus disponible."
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés : comparer l’état et le changement avec 暇.",
+          "formes": [
+            {
+              "jp": "暇です。",
+              "kana": "ひまです。",
+              "romaji": "hima desu.",
+              "fr": "Je suis libre."
+            },
+            {
+              "jp": "暇になりました。",
+              "kana": "ひまになりました。",
+              "romaji": "hima ni narimashita.",
+              "fr": "Je suis devenu disponible."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "悪いです décrit un état ; 悪くなりました dit que la situation a changé. Le passé de なる se trouve dans なりました.",
+        "Avec 暇, on ajoute に. Avec 悪い, on remplace le い final par く : on ne mélange pas les deux modèles.",
+        "都合が悪い concerne ici la disponibilité, pas une maladie ni un jugement moral sur le fils.",
+        "N26-S09 contient seulement 暇です : le changement 暇になりました est un exemple créé à partir de ce vocabulaire, pas une citation du dialogue."
+      ],
+      "exemples": [
+        {
+          "source": "N26-S05",
+          "jp": "しかし 息子 は 都合 が 悪く なりました。",
+          "kana": "しかし むすこ は つごう が わるく なりました。",
+          "romaji": "shikashi musuko wa tsugou ga waruku narimashita.",
+          "fr": "Cependant, mon fils n’est plus disponible.",
+          "cible": {
+            "jp": "都合 が 悪く なりました",
+            "kana": "つごう が わるく なりました",
+            "romaji": "tsugou ga waruku narimashita",
+            "fr": "il n’est plus disponible"
+          },
+          "commentaire": "Le changement est exprimé par 悪くなりました ; 息子は donne le thème."
+        },
+        {
+          "source": "N26-S09",
+          "jp": "それに 来年 の 春 は 暇 です。",
+          "kana": "それに らいねん の はる は ひま です。",
+          "romaji": "soreni rainen no haru wa hima desu.",
+          "fr": "De plus, je suis libre au printemps prochain.",
+          "cible": {
+            "jp": "暇 です",
+            "kana": "ひま です",
+            "romaji": "hima desu",
+            "fr": "je suis libre"
+          },
+          "commentaire": "Cette phrase décrit un état. La fiche la compare à l’exemple créé 暇になりました."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "La situation a changé et tu n’es plus disponible. Quelle phrase exprime ce changement ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "都合が悪いです。",
+            "kana": "つごうがわるいです。",
+            "romaji": "tsugou ga warui desu.",
+            "fr": "Je ne suis pas disponible."
+          },
+          {
+            "id": "choix-2",
+            "jp": "暇です。",
+            "kana": "ひまです。",
+            "romaji": "hima desu.",
+            "fr": "Je suis libre."
+          },
+          {
+            "id": "choix-3",
+            "jp": "都合が悪くなりました。",
+            "kana": "つごうがわるくなりました。",
+            "romaji": "tsugou ga waruku narimashita.",
+            "fr": "Je ne suis plus disponible."
+          }
+        ],
+        "bonne_reponse": "choix-3",
+        "explication": "悪くなりました décrit le changement. 悪いです décrit simplement l’état ; 暇です indique au contraire que l’on est libre.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [],
+      "sources": [
+        {
+          "organisme": "Fondation du Japon",
+          "titre": "Irodori — Grammar Notes",
+          "section": "Elementary 1, leçon 3 : noms et adjectifs avec なります",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/Grammar_all.pdf#page=73",
+          "consulte_le": "2026-10-05"
+        }
+      ],
+      "prerequis": [
+        "G13"
+      ],
+      "pour_aller_plus_loin": "",
+      "lecons": [
+        "N26"
+      ],
+      "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "La situation a changé et tu n’es plus disponible. Quelle phrase exprime ce changement ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "都合が悪いです。",
+              "kana": "つごうがわるいです。",
+              "romaji": "tsugou ga warui desu.",
+              "fr": "Je ne suis pas disponible."
+            },
+            {
+              "id": "choix-2",
+              "jp": "暇です。",
+              "kana": "ひまです。",
+              "romaji": "hima desu.",
+              "fr": "Je suis libre."
+            },
+            {
+              "id": "choix-3",
+              "jp": "都合が悪くなりました。",
+              "kana": "つごうがわるくなりました。",
+              "romaji": "tsugou ga waruku narimashita.",
+              "fr": "Je ne suis plus disponible."
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "悪くなりました décrit le changement. 悪いです décrit simplement l’état ; 暇です indique au contraire que l’on est libre.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Tu veux dire « Je suis devenu disponible », avec 暇 (hima). Quelle phrase choisir ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "暇になりました。",
+              "kana": "ひまになりました。",
+              "romaji": "hima ni narimashita.",
+              "fr": "Je suis devenu disponible."
+            },
+            {
+              "id": "choix-2",
+              "jp": "暇でした。",
+              "kana": "ひまでした。",
+              "romaji": "hima deshita.",
+              "fr": "J’étais libre."
+            },
+            {
+              "id": "choix-3",
+              "jp": "暇です。",
+              "kana": "ひまです。",
+              "romaji": "hima desu.",
+              "fr": "Je suis libre."
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "暇 est un adjectif en na : 暇になりました marque le changement. 暇でした décrit un état passé sans exprimer ce passage à un nouvel état.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
+      "synthese": {
+        "reperes": [
+          "Adjectif en i : い devient く devant なります.",
+          "Adjectif en na : に devant なります ; なりました au passé."
+        ],
+        "lignes": [
+          {
+            "usage": "État",
+            "exemple": {
+              "jp": "都合が悪いです。",
+              "kana": "つごうがわるいです。",
+              "romaji": "tsugou ga warui desu.",
+              "fr": "Cela ne m’arrange pas ; je ne suis pas disponible."
+            }
+          },
+          {
+            "usage": "Changement avec 悪い",
+            "exemple": {
+              "jp": "都合が悪くなりました。",
+              "kana": "つごうがわるくなりました。",
+              "romaji": "tsugou ga waruku narimashita.",
+              "fr": "Je ne suis plus disponible."
+            }
+          },
+          {
+            "usage": "Changement avec 暇",
+            "exemple": {
+              "jp": "暇になりました。",
+              "kana": "ひまになりました。",
+              "romaji": "hima ni narimashita.",
+              "fr": "Je suis devenu disponible."
             }
           }
         ]
