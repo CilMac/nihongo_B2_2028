@@ -3,6 +3,44 @@ let atelierSettings={level:null,start:1,scope:'through',type:'mixed',count:10};
 let atelierSession=null;
 let atelierListReturn=null;
 let atelierPoolCache=null;
+const atelierActivityNames={mixed:'Vocabulaire et formes verbales',listening:'Écouter et comprendre',vocab:'Vocabulaire',particles:'Particules',constructions:'Constructions grammaticales',grammar:'Formes verbales'};
+function atelierInProgress(){return !!atelierSession && atelierSession.index<atelierSession.questions.length;}
+function focusAtelierWork(){
+ window.closeNavigationCommands?.();
+ const target=$('#atelier-work');target.scrollIntoView({block:'start'});
+ const heading=target.querySelector('h2');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
+}
+function updateAtelierSessionControls(){
+ const active=atelierInProgress(),s=atelierSession;
+ const resume=$('#atelier-resume');if(!resume)return;
+ resume.hidden=!active;
+ $('#atelier-setup-title').hidden=!s;
+ $('#atelier-start').textContent=s?'Commencer une nouvelle séance':'Commencer';
+ if(active){
+  const config=s.settings,scope=config.scope==='lesson'?'Leçon '+config.level:config.scope==='range'?'Leçons '+config.start+' à '+config.level:'Leçons 1 à '+config.level;
+  $('#atelier-current').textContent=atelierActivityNames[config.type]+' · '+scope+' · '+(s.index+1)+' / '+s.questions.length;
+ }
+}
+function confirmAtelierReplacement(launch){
+ window.closeNavigationCommands?.();
+ let dialog=$('#atelier-replace');
+ if(!dialog){
+  dialog=document.createElement('dialog');dialog.id='atelier-replace';dialog.setAttribute('aria-labelledby','atelier-replace-title');dialog.setAttribute('aria-describedby','atelier-replace-description');
+  dialog.innerHTML='<h2 id="atelier-replace-title">Remplacer la séance en cours ?</h2><p id="atelier-replace-description">Votre progression dans cette séance sera perdue. Les nouveaux choix serviront à commencer une autre séance.</p><form method="dialog" class="atelier-options"><button value="cancel" autofocus>Garder ma séance</button><button value="replace">Remplacer et commencer</button></form>';
+  document.body.append(dialog);
+  window.addEventListener('hashchange',()=>{if(dialog.open)dialog.close('cancel');});
+ }
+ dialog.returnValue='';
+ dialog.addEventListener('close',()=>{
+  if(route().tab!=='atelier')return;
+  if(dialog.returnValue==='replace')launch();else $('#atelier-start')?.focus({preventScroll:true});
+ },{once:true});
+ dialog.showModal();
+}
+// Écouter, révéler une aide, choisir ou consulter le contexte engage la séance.
+document.addEventListener('click',event=>{
+ if(atelierInProgress()&&event.target.closest('#atelier-work')&&event.target.closest('button,a,summary'))atelierSession.started=true;
+},true);
 function getAtelierPool(){
  if(!atelierPoolCache||atelierPoolCache.lessons!==lessons||atelierPoolCache.vocab!==vocab){
   atelierPoolCache={lessons,vocab,analyzer:DecorticageAuto.create(vocab),key:null,pool:null};
@@ -19,13 +57,12 @@ function renderAtelier(r={}){
  if(r.id==='recherche'){renderCorpusRecord(r.line,true);return;}
  if(lessonIds.includes(r.id)&&['lesson','through'].includes(r.line)){
   const nextLevel=Number(r.id.slice(1));
-  if(atelierSettings.level!==nextLevel||atelierSettings.scope!==r.line)atelierSession=null;
   atelierSettings.level=nextLevel;atelierSettings.scope=r.line;
  }
  const level=atelierSettings.level||Number(settings.lesson.slice(1))||1;
  atelierSettings.level=level;
  const lessonOptions=lessonIds.map(id=>`<option value="${id.slice(1)}" ${Number(id.slice(1))===level?'selected':''}>${esc(lessonLabel(id).replace(' — Sans titre',''))}</option>`).join('');
- $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez quoi réviser, puis commencez votre séance.')+`<section class="panel atelier-setup"><div class="atelier-settings">
+ $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez quoi réviser, puis commencez votre séance.')+`<section class="panel atelier-setup"><div id="atelier-resume" hidden><strong>Séance en cours</strong><p id="atelier-current"></p><button type="button" id="atelier-continue">Continuer ma séance</button></div><h2 id="atelier-setup-title" hidden>Préparer la prochaine séance</h2><div class="atelier-settings">
  <div class="atelier-setting-row"><label for="atelier-type">Quoi réviser ?</label><select id="atelier-type"><option value="mixed">Vocabulaire et formes verbales</option><option value="listening">Écouter et comprendre</option><option value="vocab">Vocabulaire</option><option value="particles">Particules</option><option value="constructions">Constructions grammaticales</option><option value="grammar">Formes verbales</option></select></div>
  <div class="atelier-setting-row"><label for="atelier-scope">Quelles leçons ?</label><div class="atelier-lesson-controls"><select id="atelier-scope"><option value="through">Depuis la première</option><option value="lesson">Une seule leçon</option><option value="range">Une plage</option></select><div class="atelier-bounds"><label id="atelier-start-label" hidden>De<select id="atelier-from" aria-label="Première leçon">${lessonOptions}</select></label><label><span id="atelier-level-label">à</span><select id="atelier-level" aria-label="Leçon de fin">${lessonOptions}</select></label></div></div></div>
  <div class="atelier-setting-row"><label for="atelier-count">Combien de questions ?</label><select id="atelier-count"><option value="5">5 questions</option><option value="10">10 questions</option><option value="20">20 questions</option></select></div></div>
@@ -69,11 +106,21 @@ function renderAtelier(r={}){
   return pool;
  };
  for(const field of ['level','scope','type','count'])$('#atelier-'+field).onchange=e=>{
-  stopAudio();atelierSettings[field]=['level','count'].includes(field)?Number(e.target.value):e.target.value;
-  atelierSession=null;refresh();renderAtelierQuestion();
+  atelierSettings[field]=['level','count'].includes(field)?Number(e.target.value):e.target.value;
+  refresh();
  };
- $('#atelier-from').onchange=e=>{stopAudio();atelierSettings.start=Number(e.target.value);atelierSession=null;refresh();renderAtelierQuestion();};
- $('#atelier-start').onclick=()=>{stopAudio();atelierSession={questions:AtelierEngine.session(refresh(),atelierSettings.type,atelierSettings.count),index:0,results:[],revealed:false,choice:null};renderAtelierQuestion();$('#atelier-work').scrollIntoView({block:'start'});};
+ $('#atelier-from').onchange=e=>{atelierSettings.start=Number(e.target.value);refresh();};
+ $('#atelier-continue').onclick=focusAtelierWork;
+ $('#atelier-start').onclick=()=>{
+  const pool=refresh(),config={...atelierSettings};
+  if($('#atelier-start').disabled)return;
+  const launch=()=>{
+   window.closeNavigationCommands?.();stopAudio();
+   atelierSession={settings:config,questions:AtelierEngine.session(pool,config.type,config.count),index:0,results:[],revealed:false,choice:null,started:false};
+   renderAtelierQuestion();focusAtelierWork();
+  };
+  if(atelierInProgress()&&(atelierSession.started||atelierSession.index>0||atelierSession.revealed))confirmAtelierReplacement(launch);else launch();
+ };
  refresh();renderAtelierQuestion();
  if(atelierListReturn && JSON.stringify(atelierSettings)===atelierListReturn.settings){
   $('#atelier-content').open=true;
@@ -90,6 +137,7 @@ function renderAtelier(r={}){
  }
 }
 function renderAtelierQuestion(){
+ updateAtelierSessionControls();
  const target=$('#atelier-work'),s=atelierSession;
  target.hidden=!s;
  if(!s){target.innerHTML='';return;}

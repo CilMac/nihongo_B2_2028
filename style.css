@@ -506,3 +506,42 @@ html{overflow-anchor:none}
 .lesson-selector button{flex-shrink:0}
 @media(max-width:760px){.intro-heading{gap:0}.intro-heading h1{width:100%;margin-bottom:0}.quick-guide-link{margin-bottom:4px}.lesson-shortcuts{gap:0 16px;width:100%}}
 @media(max-width:600px){.lesson-selector{width:100%}.lesson-selector label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.lesson-selector select{width:0}.lesson-selector button{padding:9px 12px}}
+
+/* Séance active distincte des choix de la suivante. */
+#atelier-resume{padding:0 0 20px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+#atelier-current{font-size:14px;color:var(--muted);margin:6px 0 12px}
+#atelier-continue{background:var(--sage)}
+#atelier-setup-title{font-size:18px}
+#atelier-replace{width:min(500px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--paper);color:var(--ink)}
+#atelier-replace::backdrop{background:#26332c66}
+#atelier-replace .atelier-options{margin-bottom:0}
+
+/* Guide : deux entrées principales, les autres parcours à la demande. */
+.guide-tools.guide-view-navigation{display:block}
+.guide-primary-views{gap:10px}
+.guide-primary-views button{font-size:16px;padding:12px 16px}
+.guide-view-navigation button[data-family=browse][aria-pressed=true]{background:#d6e5ef;border-color:#6f919f;color:#243e4c}
+.guide-view-navigation button[data-family=words][aria-pressed=true]{background:#dfead5;border-color:#81966d;color:#314327}
+#guide-more-views{margin:12px 0 0;padding:0;border:0;background:transparent}
+#guide-more-views>summary{font-size:14px;color:var(--muted);padding:8px 0}
+#guide-more-views>.guide-view-buttons{margin:8px 0 12px}
+
+.guide-active-filters label{max-width:100%}
+.guide-active-filters select{width:100%}
+
+/* Recherche : options repliées, critères actifs toujours accessibles. */
+.corpus-advanced>summary{font-weight:600;padding:8px 0}
+.corpus-advanced .corpus-modes{margin:12px 0}
+.corpus-advanced .corpus-modes label,.corpus-advanced .corpus-basic label{min-width:0;max-width:100%}
+.corpus-advanced select{max-width:100%}
+#corpus-active:empty{display:none}
+#corpus-active button{min-height:36px;text-align:left;overflow-wrap:anywhere}
+
+.info-numbers #info-audio-access{padding:12px;background:#eef2e8;border:1px solid #8da084;border-radius:10px;font-size:13px;text-align:center;color:var(--ink);white-space:normal}
+#info-audio-access small{display:block;margin-top:6px;text-decoration:underline;color:#436252}
+#info-audio-help[hidden]{display:none}
+#info-audio-help h3{margin-top:0}
+#info-audio-help li{margin-bottom:10px}
+#info-audio-help{font-size:15px}
+
+#project-info .audio-notice{padding:12px 14px;margin:12px 0 16px;border:1px solid #dfd4b7;border-radius:10px;background:#f6efdc;color:#494435;font-size:14px;line-height:1.6}
