@@ -78,9 +78,9 @@ function guideNodes(nodes,context='Tableau du guide',inTable=false){
  }).join('');
 }
 function guideHome(){
- const order=['Conversation','Les indispensables','Initiation','Introduction'];
+ const order=['Introduction','Initiation','Conversation','Les indispensables'];
  const descriptions={'Conversation':'15 thèmes pour les situations du quotidien et du voyage.','Les indispensables':'Nombres, prononciation, repères et expressions utiles.','Initiation':'21 mini-leçons, dans un parcours indépendant des 98 leçons.','Introduction':'Le guide, le pays, la langue et son écriture.'};
- return `<div id="guide-home-sections">${order.map(title=>{const part=guideData.parts.find(p=>p.title===title);if(!part)return '';return `<section class="panel guide-part"><h2>${esc(title)}</h2><p class="muted">${descriptions[title]}</p><div class="guide-chapters">${part.chapters.map(c=>`<a href="#guide/${encodeURIComponent(c.id)}">${esc(c.title)} <span aria-hidden="true">→</span></a>`).join('')}</div></section>`;}).join('')}</div>`;
+ return `<div id="guide-home-sections">${order.map(title=>{const part=guideData.parts.find(p=>p.title===title);if(!part)return '';return `<details class="panel guide-part"><summary>${esc(title)}</summary><p class="muted">${descriptions[title]}</p><div class="guide-chapters">${part.chapters.map(c=>`<a href="#guide/${encodeURIComponent(c.id)}">${esc(c.title)} <span aria-hidden="true">→</span></a>`).join('')}</div></details>`;}).join('')}</div>`;
 }
 function guidePlainText(node){
  if(Array.isArray(node))return node.map(guidePlainText).filter(Boolean).join(' · ');
@@ -214,7 +214,7 @@ function updateGuideLexicon(){
 
 // Les accès choisissent une vue ; ses commandes restent dans un panneau identifié.
 const guideViewLabels={
- rubriques:{label:'Chapitres',count:'',title:'Les chapitres du Guide',description:'Parcourir le Guide dans l’ordre de ses rubriques : conversation, indispensables et initiation.',search:'Chercher dans tout le Guide',family:'browse'},
+ rubriques:{label:'Chapitres',count:'',title:'Les chapitres du Guide',description:'Parcourir le Guide dans l’ordre de ses rubriques : introduction, initiation, conversation et indispensables.',search:'Chercher dans tout le Guide',family:'browse'},
  themes:{label:'Situations et thèmes',count:'13',title:'Le Guide par situation et par thème',description:'Repas, transports, logement, rencontres… Choisissez une situation pour retrouver les passages utiles.',search:'Chercher dans les situations et thèmes',family:'browse'},
  tableaux:{label:'Tableaux',count:'113',title:'Les tableaux du Guide',description:'Consulter les tableaux de conversation, de vocabulaire et de grammaire. Filtrez-les par catégorie.',search:'Chercher dans les tableaux',family:'browse'},
  vocabulaire:{label:'Vocabulaire',count:'695',title:'Le vocabulaire par catégorie',description:'Parcourir les mots et expressions regroupés par sujet. Pour un classement alphabétique, choisissez Lexique A–Z.',search:'Chercher dans le vocabulaire',family:'words'},
@@ -233,17 +233,17 @@ function organizeGuideControls(){
  const primary=document.createElement('div');primary.className='guide-primary-views guide-view-buttons';
  const more=document.createElement('details');more.id='guide-more-views';
  more.innerHTML='<summary>Autres façons de consulter</summary><div class="guide-view-buttons"></div>';
- for(const view of ['themes','vocabulaire','rubriques','tableaux','lexique']){
+ for(const view of ['rubriques','themes','vocabulaire','tableaux','lexique']){
   const b=buttons.get(view),meta=guideViewLabels[view];
   b.dataset.family=meta.family;b.innerHTML=esc(meta.label);
-  (['themes','vocabulaire'].includes(view)?primary:more.lastElementChild).append(b);
+  (['rubriques','themes','vocabulaire'].includes(view)?primary:more.lastElementChild).append(b);
  }
  navigation.append(primary,more);
  navigation.after(panel);panel.append(search,$('#guide-lexicon-controls'));
 }
 function updateGuideControlsHeading(){
  const meta=guideViewLabels[guideView];
- $('#guide-more-views').open=!['themes','vocabulaire'].includes(guideView);
+ $('#guide-more-views').open=!['rubriques','themes','vocabulaire'].includes(guideView);
  $('#guide-active-tools').dataset.family=meta.family;
  $('#guide-active-title').textContent=meta.title;
  $('#guide-active-description').textContent=meta.description;

@@ -545,3 +545,23 @@ html{overflow-anchor:none}
 #info-audio-help{font-size:15px}
 
 #project-info .audio-notice{padding:12px 14px;margin:12px 0 16px;border:1px solid #dfd4b7;border-radius:10px;background:#f6efdc;color:#494435;font-size:14px;line-height:1.6}
+
+.guide-part>summary{font-size:20px;font-weight:600;padding:4px 0}
+.guide-part[open]>summary{margin-bottom:12px}
+
+/* Grammaire : repères généraux, puis fiches par rubrique. */
+.grammar-foundations-entry{flex-direction:column;align-items:flex-start;gap:4px}
+.grammar-family{margin:16px 0}
+.grammar-family>summary{padding:4px 0}
+.grammar-family>summary h2{display:inline;font-size:20px;margin:0}
+.grammar-family-count{font-size:14px;color:var(--muted);margin-left:8px;white-space:nowrap}
+.grammar-family .grammar-index{margin-top:18px}
+.grammar-index .grammar-card h3{font-size:18px;line-height:1.4;margin:4px 0}
+.grammar-particles-access{display:flex;flex-direction:column;gap:3px;margin-top:18px;padding:14px 16px;background:var(--lavender);border-radius:10px;text-decoration:none}
+.grammar-particles-access span{font-size:14px}
+@media(max-width:600px){.grammar-family{padding:16px 12px}.grammar-family .grammar-card{padding:16px}}
+
+.grammar-family-description{display:block;margin-top:6px;font-size:14px;font-weight:400;color:var(--muted);line-height:1.6}
+
+.grammar-particles-access p{margin:0 0 10px;font-size:15px;line-height:1.65;color:var(--ink)}
+.grammar-particles-access>a{align-self:flex-start}
