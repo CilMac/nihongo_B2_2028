@@ -49,7 +49,7 @@
   })().catch(error=>{loading=null;$c('#corpus-status').textContent=error.message+' La recherche complète est indisponible tant que cette source manque.';$c('#corpus-retry').hidden=false;throw error;});
   return loading;
  }
- function state(){return {q:$c('#corpus-query').value,mode:$c('#corpus-mode').value,source,kind:$c('#corpus-kind').value,lang:$c('#corpus-lang').value,scope:$c('#corpus-scope').value,from:$c('#corpus-from').value,to:$c('#corpus-to').value,category:$c('#corpus-category').value,chapter:$c('#corpus-chapter').value,theme:$c('#corpus-theme').value,onlyFavorites:$c('#corpus-favorites').checked,favorites:[...favorites],offset};}
+ function state(){return {q:$c('#corpus-query').value,mode:$c('#corpus-mode').value,source,kind:$c('#corpus-kind').value,lang:$c('#corpus-lang').value,scope:$c('#corpus-scope').value,from:$c('#corpus-from').value,to:$c('#corpus-to').value,category:$c('#corpus-category').value,chapter:$c('#corpus-chapter').value,theme:$c('#corpus-theme').value,onlyFavorites:$c('#corpus-favorites').checked,favorites:[...new Set([...favorites,...[...favorites].map(guideCanonicalFavorite)])],offset};}
  function marked(text){
   const tokens=(last?.tokens||[]).flatMap(t=>t.split(/\s+/));
   return String(text).split(/(\s+|[·,;:!?()])/u).map(word=>tokens.some(t=>E.matches(word,t))?'<mark>'+esc(word)+'</mark>':esc(word)).join('');

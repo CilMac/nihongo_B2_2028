@@ -576,3 +576,26 @@ html{overflow-anchor:none}
 .guide-list>.guide-phrase+.guide-phrase{border-top:1px solid #c4ccc2;padding-top:18px;margin-top:18px}
 
 @media(max-width:760px){.foundations-text .foundation-chapter>summary h2{font-size:20px}}
+
+/* Une expression du Guide : un favori, ses trois lectures et un lien source. */
+.guide-expression-content{min-width:0;flex:1;overflow-wrap:anywhere}
+.guide-expression-content>small{display:block;color:var(--muted);margin:8px 0}
+.guide-expression-content>p{margin:8px 0}
+.guide-expression-content>a{display:inline-block;min-height:44px;padding-top:8px}
+.guide-search-list>.guide-expression-card{padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--paper,#fff)}
+.guide-expression>.favorite{position:relative;z-index:1}
+
+/* Plages de leçons et lecture continue, sur le modèle du dictionnaire compressé. */
+.lesson-range{display:flex;flex-wrap:wrap;gap:8px;max-width:100%}
+.lesson-range label{display:flex;align-items:center;gap:6px;min-width:0;flex:1}
+.lesson-range select{min-width:0;max-width:300px;width:100%}
+.lesson-selection,.lesson-list{grid-template-columns:minmax(0,1fr)}
+.lesson-list>.aside{display:none}
+.lesson-list>.stack{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.lesson-list .dictionary-card{display:flex;grid-template-columns:none}
+.lesson-list .card-head{display:flex}
+.lesson-list .card-head .number{display:block;font-size:10px}
+.lesson-list .lesson-list-heading{font-size:16px;margin:0;padding:14px 12px;background:var(--paper)}
+.lesson-list .language-block{overflow-wrap:anywhere}
+.lesson-list .dictionary-main{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;align-items:start;row-gap:3px}
+@media(max-width:600px){.lesson-range{width:100%}.lesson-range select{max-width:100%}#lesson-display{max-width:100%}}

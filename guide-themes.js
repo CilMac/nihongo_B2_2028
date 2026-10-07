@@ -16,21 +16,22 @@ const guideThemeDefinitions=[
  {id:'services',title:'Téléphoner, utiliser les services et travailler',sources:[['tpc-42',['À la poste','Au téléphone','Internet','L’ administration','Chez le coiffeur','Une originalité japonaise']],['tpc-48',['Fixer un rendez-vous (au téléphone)','Visiter l’entreprise','Vocabulaire de l’entreprise']]]},
  {id:'japonais',title:'Comprendre et prononcer le japonais',sources:['tpc-7','tpc-8','tpc-31','tpc-33'],grammar:true}
 ];
-function guideThemeRows(theme){
- return guideSearchIndex.filter(row=>['paragraph','table'].includes(row.node.type)&&(
+function guideThemeRows(theme,index=guideSearchIndex){
+ return index.filter(row=>['paragraph','table'].includes(row.node.type)&&(
   theme.sources.some(source=>typeof source==='string'?row.chapter.id===source:row.chapter.id===source[0]&&row.path.some(part=>source[1].includes(part)))||theme.grammar&&row.category==='grammar'));
 }
 function updateGuideThemes(){
  const terms=guideSearchKey(guideQuery.trim()).split(/\s+/).filter(Boolean);
  let total=0,groups=0;
  const content=guideThemeDefinitions.map(theme=>{
-  const rows=guideThemeRows(theme).filter(row=>terms.every(term=>guideSearchKey(theme.title).includes(term)||row.search.includes(term)||row.context.includes(term)));
+  const rows=guideThemeRows(theme,guideDisplayIndex).filter(row=>terms.every(term=>guideSearchKey(theme.title).includes(term)||row.search.includes(term)||row.context.includes(term)));
   if(!rows.length)return '';total+=rows.length;groups++;
   return `<details class="guide-theme guide-table-group" data-guide-theme="${theme.id}" ${terms.length?'open':''}><summary><strong>${guideMarked(theme.title)}</strong> <span class="pill">${rows.length}</span></summary><div class="guide-theme-results">${rows.map(row=>{
+   if(row.nodes)return guideExpressionCard(row);
    const origin=[row.part.title,row.chapter.title,...row.path].join(' → ');
    const label=row.node.type==='table'?row.title:row.text.slice(0,90)+(row.text.length>90?'…':'');
    return `<article class="guide-theme-entry">${guideFavoriteStar(guideFavoriteKey(row.chapter.id,row.id))}<a href="#guide/${row.chapter.id}/${row.id}"><span class="pill">${row.type}</span><strong>${guideMarked(label)}</strong><small>${esc(origin)}</small>${row.node.type==='table'?`<span>${guideMarked(guidePreview(row))}</span>`:''}</a></article>`;
   }).join('')}</div></details>`;
  }).join('');
- $('#guide-results').innerHTML=`<p class="muted" role="status">${groups} thèmes · ${total} liens${total?' (un élément peut figurer dans plusieurs thèmes)':''}</p>${content||'<p class="panel">Aucun résultat. Essayez un autre mot ou effacez la recherche.</p>'}`;
+ $('#guide-results').innerHTML=`<p class="muted" role="status">${groups} ${groups===1?'thème':'thèmes'} · ${total} ${total===1?'résultat':'résultats'}${total?' (un élément peut figurer dans plusieurs thèmes)':''}</p>${content||'<p class="panel">Aucun résultat. Essayez un autre mot ou effacez la recherche.</p>'}`;
 }

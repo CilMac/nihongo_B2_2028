@@ -3,6 +3,53 @@ let guideData=null,guideLoading=null,guideQuery='',guideRenderRun=0;
 let guideView='themes',guideFilter='all';
 let guideTables=[],guideVocabulary=[];
 const guideFavoriteEntries=new Map();
+const guideExpressionByNode=new WeakMap(),guideFavoriteAliases=new Map();
+let guideDisplayIndex=[];
+function guideCanonicalFavorite(id){return guideFavoriteAliases.get(id)||id;}
+function guideHasFavorite(id){
+ const key=guideCanonicalFavorite(id);
+ return favorites.has(key)||[...guideFavoriteAliases].some(([alias,target])=>target===key&&favorites.has(alias));
+}
+function toggleGuideFavorite(id){
+ const key=guideCanonicalFavorite(id),selected=guideHasFavorite(key);
+ favorites.delete(key);
+ for(const [alias,target] of guideFavoriteAliases)if(target===key)favorites.delete(alias);
+ if(!selected)favorites.add(key);
+}
+// Associer uniquement des groupes explicitement structurés, jamais des voisins devinés.
+function buildGuideExpressions(){
+ guideFavoriteAliases.clear();
+ const rowByNode=new Map(guideSearchIndex.map(row=>[row.node,row]));
+ const visit=nodes=>{
+  if(!Array.isArray(nodes))return;
+  const paragraphs=nodes.every(n=>n.type==='paragraph'&&!n.runs);
+  const french=nodes.filter(n=>n.style==='mentioned');
+  const japanese=nodes.filter(n=>n.japanese&&/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u.test(n.text||'')&&!/[a-zA-ZÀ-ÖØ-öø-ÿ]/.test(n.text||''));
+  const reading=nodes.filter(n=>n.style==='foreign');
+  const literal=nodes.filter(n=>n.style==='literal');
+  if(paragraphs&&french.length===1&&japanese.length===1&&reading.length===1&&literal.length<=1&&nodes.length===3+literal.length&&nodes.every(n=>rowByNode.has(n))){
+   const first=rowByNode.get(nodes[0]),text=guidePlainText(nodes);
+   const expression={...first,type:'Expression',text,search:guideSearchKey(text),nodes,french:french[0],japanese:japanese[0],reading:reading[0]};
+   const key=guideFavoriteKey(first.chapter.id,first.id);
+   for(const node of nodes){guideExpressionByNode.set(node,expression);guideFavoriteAliases.set(guideFavoriteKey(first.chapter.id,guideNodeIds.get(node)),key);}
+  }
+  for(const node of nodes){
+   // Les lignes des tableaux ont déjà leur favori commun et leur rendu spécifique.
+   if(node.type==='table')continue;
+   if(node.blocks)visit(node.blocks);
+   if(node.items)node.items.forEach(visit);
+  }
+ };
+ for(const {chapter} of guideChapters)visit(chapter.content);
+ guideDisplayIndex=guideSearchIndex.flatMap(row=>{
+  const expression=guideExpressionByNode.get(row.node);
+  return expression?(expression.id===row.id?[expression]:[]):[row];
+ });
+}
+function guideExpressionCard(row){
+ const key=guideFavoriteKey(row.chapter.id,row.id);
+ return `<article class="guide-theme-entry guide-expression-card">${guideFavoriteStar(key)}<div class="guide-expression-content"><span class="pill">Expression</span>${guideParagraph(row.french,true)}${guideParagraph(row.japanese)}${guideParagraph(row.reading,true)}${row.nodes.filter(n=>n.style==='literal').map(n=>guideParagraph(n,true)).join('')}<small>${esc([row.part.title,row.chapter.title,...row.path].join(' → '))}</small><a href="#guide/${row.chapter.id}/${row.id}">Voir dans le guide →</a></div></article>`;
+}
 function guideFavoriteKey(chapter,id){return 'guidefav:'+chapter+':'+id;}
 function guideFavoriteStar(id){return guideFavoriteEntries.has(id)?star(id):'';}
 
@@ -32,12 +79,17 @@ async function loadGuide(){
     if(node.blocks)visit(node.blocks,nextPath,inTable);if(node.rows)visit(node.rows,nextPath,true);if(node.items)visit(node.items,nextPath,inTable);
    };visit(chapter.content);
   }}
+  buildGuideExpressions();
   buildGuideVocabulary();
   guideFavoriteEntries.clear();
   for(const row of guideSearchIndex){
    if(!['paragraph','table'].includes(row.node.type))continue;
    const key=guideFavoriteKey(row.chapter.id,row.id);
    guideFavoriteEntries.set(key,{key,chapter:row.chapter.id,target:row.id,type:row.type,title:[row.chapter.title,...row.path].join(' → '),text:row.text});
+  }
+  for(const row of guideDisplayIndex.filter(row=>row.nodes)){
+   const key=guideFavoriteKey(row.chapter.id,row.id);
+   guideFavoriteEntries.set(key,{key,chapter:row.chapter.id,target:row.id,type:'Expression',title:[row.chapter.title,...row.path].join(' → '),text:row.text});
   }
   for(const table of guideTables)for(const cells of table.node.rows){
    const nodes=cells.flatMap(c=>Array.isArray(c)?c:[c]);
@@ -49,19 +101,23 @@ async function loadGuide(){
  }).catch(error=>{guideLoading=null;throw error;});
  await guideLoading;
 }
-function guideParagraph(node){
+function guideParagraph(node,marked=false){
  const text=String(node.text||'');
  const japanese=/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u.test(text)&&!/[a-zA-ZÀ-ÖØ-öø-ÿ]/.test(text);
  const pronunciation=node.style==='foreign'&&!node.runs;
  const translation=node.style==='mentioned'&&!node.runs;
  const cls=japanese?'guide-japanese':pronunciation?'romaji guide-pronunciation':translation?'fr guide-translation':'';
  // Le texte original reste la référence : les champs extraits peuvent fusionner des phrases.
- const content=japanese?jp(text):esc(text);
+ const content=japanese?jp(text):marked?guideMarked(text):esc(text);
  if(japanese)return `<p class="${cls}" lang="ja"><button class="guide-speak" data-speak="${esc(text.replace(/\s*\/\s*/g,'、'))}" aria-label="Écouter : ${esc(text)}">${content}<span aria-hidden="true"> ♪</span></button></p>`;
  if(node.style==='literal'&&!node.runs)return `<details class="guide-literal"><summary>Mot à mot</summary><p class="fr">${content}</p></details>`;
  return `<p class="${cls}">${content}</p>`;
 }
 function guideNodes(nodes,context='Tableau du guide',inTable=false,separateSections=false){
+ const expression=!inTable&&nodes?.length?guideExpressionByNode.get(nodes[0]):null;
+ if(expression&&expression.nodes.length===nodes.length&&nodes.every((node,i)=>node===expression.nodes[i])){
+  return `<div class="guide-expression guide-favorite-block">${guideFavoriteStar(guideFavoriteKey(expression.chapter.id,expression.id))}${nodes.map(node=>`<div id="${guideNodeIds.get(node)}">${guideParagraph(node)}</div>`).join('')}</div>`;
+ }
  return (nodes||[]).map(node=>{
   const id=guideNodeIds.get(node)||'';
   const chapter=id.match(/^guide-(tpc-\d+)-/)?.[1];
@@ -118,6 +174,19 @@ function buildGuideVocabulary(){
     search:guideSearchKey([fr.text,ja.text,reading.text,table.chapter.title,section].join(' '))});
   });
  }
+ // Une répétition exacte dans le même chapitre n'ajoute pas une seconde entrée.
+ // Les contextes de chapitres différents restent accessibles par leurs catégories.
+ const entryKey=v=>JSON.stringify([v.table.chapter.id,...[v.french,v.japanese,v.reading].map(t=>String(t).normalize('NFC').trim().replace(/\s+/g,' '))]);
+ const existing=new Set(guideVocabulary.map(entryKey));
+ for(const row of guideDisplayIndex.filter(row=>row.nodes)){
+  const entry={id:row.id+'-expression',sourceId:row.id,table:row,section:row.path.at(-1)||row.chapter.title,
+   japanese:row.japanese.text,spoken:row.japanese.text.replace(/\s*\/\s*/g,'、'),reading:row.reading.text,french:row.french.text};
+  entry.search=guideSearchKey([entry.french,entry.japanese,entry.reading,row.chapter.title,entry.section].join(' '));
+  const key=entryKey(entry);if(existing.has(key))continue;
+  existing.add(key);guideVocabulary.push(entry);
+ }
+ guideViewLabels.vocabulaire.count=guideViewLabels.lexique.count=String(guideVocabulary.length);
+
 }
 function guideVocabCategories(){
  return guideChapters.filter(c=>guideVocabulary.some(v=>v.table.chapter.id===c.chapter.id));
@@ -138,7 +207,7 @@ function updateGuideVocabulary(){
   const matches=rows.filter(v=>v.table.chapter.id===chapter.id);if(!matches.length)return '';
   return `<details class="guide-vocab-group guide-table-group" ${terms.length?'open':''}><summary><strong>${esc(chapter.title)}</strong> <span class="pill">${matches.length}</span></summary><div class="guide-vocab-list">${matches.map(entry).join('')}</div></details>`;
  }).join('');else content=`<div class="guide-vocab-list">${rows.map(entry).join('')}</div>`;
- target.innerHTML=`<p class="muted" role="status">${rows.length} ${rows.length===1?'entrée':'entrées'} · mots et expressions</p><p class="muted guide-vocab-note">Sélection issue des listes structurées du guide. Prononciation et traductions conservées telles qu’elles figurent dans la source ; certains textes extraits comportent des espacements irréguliers. Le lien permet de consulter le contexte et les notes.</p>${rows.length?content:'<p class="panel">Aucun mot trouvé. Changez la recherche ou la catégorie.</p>'}`;
+ target.innerHTML=`<p class="muted" role="status">${rows.length} ${rows.length===1?'entrée':'entrées'} · mots et expressions</p><p class="muted guide-vocab-note">Mots des tableaux et expressions complètes du Guide. Prononciation et traductions conservées telles qu’elles figurent dans la source ; certains textes extraits comportent des espacements irréguliers. Le lien permet de consulter le contexte et les notes.</p>${rows.length?content:'<p class="panel">Aucun mot trouvé. Changez la recherche ou la catégorie.</p>'}`;
 }
 function updateGuideSearch(){
  const target=document.getElementById('guide-results');if(!target)return;
@@ -156,10 +225,11 @@ function updateGuideSearch(){
  if(themes){updateGuideThemes();return;}
  if(vocabulary){updateGuideVocabulary();return;}
  if(!terms.length&&!tables){target.innerHTML='';return;}
- const found=(tables?guideTables:guideSearchIndex).filter(row=>(!tables||guideFilter==='all'||row.category===guideFilter)&&terms.every(term=>row.search.includes(term)||row.context.includes(term)));
+ const found=(tables?guideTables:guideDisplayIndex).filter(row=>(!tables||guideFilter==='all'||row.category===guideFilter)&&terms.every(term=>row.search.includes(term)||row.context.includes(term)));
  found.sort((a,b)=>terms.reduce((sum,t)=>sum+(b.context.includes(t)?3:0)-(a.context.includes(t)?3:0),0));
  const shown=found.slice(0,tables?113:60);
  const renderResult=row=>{
+  if(row.nodes)return guideExpressionCard(row);
   const origin=[row.part.title,row.chapter.title,...row.path].join(' → ');
   const link=`#guide/${encodeURIComponent(row.chapter.id)}/${row.id}`;
   if(row.type==='Tableau')return `<details class="guide-table-result"><summary><span class="pill">Tableau</span> <strong>${guideMarked(row.title)}</strong><small>${esc(origin)}</small><span class="guide-preview">${guideMarked(guidePreview(row))}</span></summary><div class="guide-table-content" data-guide-table="${row.id}"></div><p><a href="${link}">Voir dans le chapitre →</a></p></details>`;
@@ -219,8 +289,8 @@ const guideViewLabels={
  rubriques:{label:'Chapitres',count:'',title:'Les chapitres du Guide',description:'Parcourir le Guide dans l’ordre de ses rubriques : introduction, initiation, conversation et indispensables.',search:'Chercher dans tout le Guide',family:'browse'},
  themes:{label:'Situations et thèmes',count:'13',title:'Le Guide par situation et par thème',description:'Repas, transports, logement, rencontres… Choisissez une situation pour retrouver les passages utiles.',search:'Chercher dans les situations et thèmes',family:'browse'},
  tableaux:{label:'Tableaux',count:'113',title:'Les tableaux du Guide',description:'Consulter les tableaux de conversation, de vocabulaire et de grammaire. Filtrez-les par catégorie.',search:'Chercher dans les tableaux',family:'browse'},
- vocabulaire:{label:'Vocabulaire',count:'695',title:'Le vocabulaire par catégorie',description:'Parcourir les mots et expressions regroupés par sujet. Pour un classement alphabétique, choisissez Lexique A–Z.',search:'Chercher dans le vocabulaire',family:'words'},
- lexique:{label:'Lexique A–Z',count:'695',title:'Le lexique français ↔ japonais',description:'Retrouver un mot ou une expression par ordre alphabétique, en français ou dans la prononciation du Guide.',search:'Chercher dans le lexique',family:'words'}
+ vocabulaire:{label:'Vocabulaire',count:'',title:'Le vocabulaire par catégorie',description:'Parcourir les mots et expressions regroupés par sujet. Pour un classement alphabétique, choisissez Lexique A–Z.',search:'Chercher dans le vocabulaire',family:'words'},
+ lexique:{label:'Lexique A–Z',count:'',title:'Le lexique français ↔ japonais',description:'Retrouver un mot ou une expression par ordre alphabétique, en français ou dans la prononciation du Guide.',search:'Chercher dans le lexique',family:'words'}
 };
 function organizeGuideControls(){
  const navigation=$('.guide-tools'),search=$('#guide-search').closest('.toolbar');
