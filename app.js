@@ -28,7 +28,7 @@ function block(t,{audio=true,fr=true,repeatJapanese=false}={}) {
  const japanese = sameText&&!repeatJapanese ? `<span class="kana-idem" lang="fr" title="Identique au texte kana">---</span><span class="jp-fallback">${jp(t.jp)}</span>` : jp(t.jp);
  return `<div class="language-block"><button type="button" class="kana kana-audio" lang="ja" data-speak="${esc(t.audioKana || t.kana)}" data-audio-ref="${esc(audioRef)}" aria-label="Écouter : ${esc(t.kana)}">${esc(t.kana)}<span class="sound-note" aria-hidden="true"> ♪</span></button><p class="jp" lang="ja">${japanese}</p><p class="romaji">${esc(Romaji.display(t.romaji))}</p>${fr?`<p class="fr">${esc(t.fr)}</p>`:''}${audio?audioButton(t.kana,audioRef):''}</div>`;
 }
-function intro(k,title,description){return `<div class="intro"><div class="eyebrow">${k}</div><div class="intro-heading"><h1>${esc(title)}</h1><button type="button" class="quick-guide-link" data-open-quick-guide aria-haspopup="dialog" aria-controls="quick-guide">Comment utiliser le site</button></div><p>${esc(description)}</p></div>`;}
+function intro(k,title,description){return `<div class="intro"><div class="eyebrow">${k}</div><div class="intro-heading"><h1>${esc(title)}</h1></div><p>${esc(description)}</p></div>`;}
 function route(){
  const [tab='lecons',id,line]=location.hash.slice(1).split('/');
  let decoded='';
@@ -245,7 +245,6 @@ const quickGuide=document.getElementById('quick-guide');
 let quickGuideOpener=$('.brand');
 function openQuickGuide(opener){quickGuideOpener=opener;quickGuide.showModal();quickGuide.querySelector('.info-body').scrollTop=0;document.body.classList.add('info-open');}
 $('.brand').onclick=event=>{event.preventDefault();openQuickGuide(event.currentTarget);};
-document.addEventListener('click',event=>{const opener=event.target.closest('[data-open-quick-guide]');if(opener)openQuickGuide(opener);});
 $('#quick-guide-close').onclick=()=>quickGuide.close();
 quickGuide.addEventListener('close',()=>{document.body.classList.remove('info-open');(quickGuideOpener.isConnected?quickGuideOpener:$('.brand')).focus({preventScroll:true});});
 quickGuide.addEventListener('click',event=>{if(event.target!==quickGuide)return;const r=quickGuide.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)quickGuide.close();});

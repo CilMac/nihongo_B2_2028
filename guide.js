@@ -61,26 +61,28 @@ function guideParagraph(node){
  if(node.style==='literal'&&!node.runs)return `<details class="guide-literal"><summary>Mot à mot</summary><p class="fr">${content}</p></details>`;
  return `<p class="${cls}">${content}</p>`;
 }
-function guideNodes(nodes,context='Tableau du guide',inTable=false){
+function guideNodes(nodes,context='Tableau du guide',inTable=false,separateSections=false){
  return (nodes||[]).map(node=>{
   const id=guideNodeIds.get(node)||'';
   const chapter=id.match(/^guide-(tpc-\d+)-/)?.[1];
   const favorite=guideFavoriteStar(guideFavoriteKey(chapter,id));
   if(node.type==='paragraph')return `<div id="${id}" class="${inTable?'':'guide-favorite-block'}">${!inTable?favorite:''}${guideParagraph(node)}</div>`;
   if(node.type==='section'){
-   const inside=guideNodes(node.blocks,node.title||context,inTable);
+   // Dans les journées, les notes et exercices sont des rubriques sœurs du dialogue.
+   const siblings=separateSections?(node.blocks||[]).filter(n=>n.type==='section'&&n.title):[];
+   const inside=guideNodes((node.blocks||[]).filter(n=>!siblings.includes(n)),node.title||context,inTable);
    if(!node.title)return `<div id="${id}" class="guide-group">${inside}</div>`;
-   return `<details id="${id}" class="guide-section"><summary>${esc(node.title)}</summary><div class="guide-section-body">${inside}</div></details>`;
+   return `<details id="${id}" class="guide-section"><summary>${esc(node.title)}</summary><div class="guide-section-body">${inside}</div></details>${guideNodes(siblings,context,inTable)}`;
   }
   if(node.type==='table')return `<div id="${id}" class="guide-table-scroll" tabindex="0" role="region" aria-label="${esc(context)} — tableau défilant"><table class="guide-table"><caption>${esc(context)} ${favorite}</caption><tbody>${node.rows.map(row=>{const nodes=row.flatMap(c=>Array.isArray(c)?c:[c]);const anchor=nodes.find(n=>n.japanese)||nodes.find(n=>guideNodeIds.has(n));const rowStar=anchor?guideFavoriteStar(guideFavoriteKey(chapter,guideNodeIds.get(anchor))):'';return `<tr>${row.map((cell,i)=>`<td>${i===0?rowStar:''}${guideNodes(Array.isArray(cell)?cell:[cell],context,true)}</td>`).join('')}</tr>`;}).join('')}</tbody></table></div>`;
-  if(node.type==='list'){const tag=node.ordered?'ol':'ul';return `<${tag} id="${id}" class="guide-list">${node.items.map(item=>`<li>${guideNodes(item,context,inTable)}</li>`).join('')}</${tag}>`;}
+  if(node.type==='list'){const tag=node.ordered?'ol':'ul';return `<${tag} id="${id}" class="guide-list">${node.items.map(item=>`<li${item.some(n=>n.type==='paragraph'&&n.japanese)&&item.some(n=>n.style==='mentioned'&&!n.runs)?' class="guide-phrase"':''}>${guideNodes(item,context,inTable)}</li>`).join('')}</${tag}>`;}
   return '';
  }).join('');
 }
 function guideHome(){
  const order=['Introduction','Initiation','Conversation','Les indispensables'];
  const descriptions={'Conversation':'15 thèmes pour les situations du quotidien et du voyage.','Les indispensables':'Nombres, prononciation, repères et expressions utiles.','Initiation':'21 mini-leçons, dans un parcours indépendant des 98 leçons.','Introduction':'Le guide, le pays, la langue et son écriture.'};
- return `<div id="guide-home-sections">${order.map(title=>{const part=guideData.parts.find(p=>p.title===title);if(!part)return '';return `<details class="panel guide-part"><summary>${esc(title)}</summary><p class="muted">${descriptions[title]}</p><div class="guide-chapters">${part.chapters.map(c=>`<a href="#guide/${encodeURIComponent(c.id)}">${esc(c.title)} <span aria-hidden="true">→</span></a>`).join('')}</div></details>`;}).join('')}</div>`;
+ return `<div id="guide-home-sections">${order.map(title=>{const part=guideData.parts.find(p=>p.title===title);if(!part)return '';return `<details class="panel guide-part" open><summary>${esc(title)}</summary><p class="muted">${descriptions[title]}</p><div class="guide-chapters">${part.chapters.map(c=>`<a href="#guide/${encodeURIComponent(c.id)}">${esc(c.title)} <span aria-hidden="true">→</span></a>`).join('')}</div></details>`;}).join('')}</div>`;
 }
 function guidePlainText(node){
  if(Array.isArray(node))return node.map(guidePlainText).filter(Boolean).join(' · ');
@@ -186,7 +188,7 @@ async function renderGuide(r){
  let content='';
  if(selected){const {chapter,part}=selected;const siblings=part.chapters,i=siblings.indexOf(chapter);
   const notes=guideData.footnotes.filter(note=>(chapter.footnote_refs||[]).some(ref=>String(ref)===String(note.number))||JSON.stringify(chapter.content).includes(`[note ${note.number}]`));
-  content=`<div class="guide-breadcrumb"><a data-context-return href="#guide">← ${guideView==='lexique'?'Retour au lexique':guideView==='themes'?'Retour aux thèmes':guideView==='vocabulaire'?'Retour au vocabulaire':guideView==='tableaux'?'Retour aux tableaux':guideQuery?'Retour à la recherche':'Sommaire du guide'}</a><span>${esc(part.title)}</span></div>${intro('GUIDE · '+part.title,chapter.title,'')}<div class="guide-reader">${guideNodes(chapter.content,chapter.title)}${notes.length?`<details class="guide-section"><summary>Notes du chapitre</summary>${notes.map(n=>`<p><strong>Note ${esc(n.number)}.</strong> ${esc(n.text)}</p>`).join('')}</details>`:''}</div><nav class="guide-next" aria-label="Chapitres du guide">${i>0?`<a href="#guide/${siblings[i-1].id}">← ${esc(siblings[i-1].title)}</a>`:''}${i<siblings.length-1?`<a href="#guide/${siblings[i+1].id}">${esc(siblings[i+1].title)} →</a>`:''}</nav>`;
+  content=`<div class="guide-breadcrumb"><a data-context-return href="#guide">← ${guideView==='lexique'?'Retour au lexique':guideView==='themes'?'Retour aux thèmes':guideView==='vocabulaire'?'Retour au vocabulaire':guideView==='tableaux'?'Retour aux tableaux':guideQuery?'Retour à la recherche':'Sommaire du guide'}</a><span>${esc(part.title)}</span></div>${intro('GUIDE · '+part.title,chapter.title,'')}<div class="guide-reader">${guideNodes(chapter.content,chapter.title,false,part.title==='Initiation')}${notes.length?`<details class="guide-section"><summary>Notes du chapitre</summary>${notes.map(n=>`<p><strong>Note ${esc(n.number)}.</strong> ${esc(n.text)}</p>`).join('')}</details>`:''}</div><nav class="guide-next" aria-label="Chapitres du guide">${i>0?`<a href="#guide/${siblings[i-1].id}">← ${esc(siblings[i-1].title)}</a>`:''}${i<siblings.length-1?`<a href="#guide/${siblings[i+1].id}">${esc(siblings[i+1].title)} →</a>`:''}</nav>`;
  }else{
   content=intro('CONSULTER · ÉCOUTER · PARLER','Guide de conversation','Un accès par situation, indépendant des leçons et de l’atelier.')+`<div class="toolbar"><label for="guide-search">Chercher dans le guide</label><input id="guide-search" type="search" value="${esc(guideQuery)}" placeholder="Addition, gare, réservation…"><button id="guide-clear">Effacer</button></div><div class="guide-tools" role="group" aria-label="Explorer le guide"><button type="button" data-guide-view="rubriques" aria-pressed="true">Rubriques</button><button type="button" data-guide-view="tableaux" aria-pressed="false">Tableaux · 113</button><button type="button" data-guide-view="vocabulaire" aria-pressed="false">Vocabulaire · ${guideVocabulary.length}</button><button type="button" data-guide-view="lexique" aria-pressed="false">Lexique · ${guideVocabulary.length}</button><button type="button" data-guide-view="themes" aria-pressed="false">Thèmes · 13</button><label id="guide-table-filter" hidden>Catégorie <select id="guide-category"><option value="all">Tous les tableaux</option><option value="grammar">Notes de grammaire</option><option value="numbers">Nombres et temps</option><option value="conversation">Conversation et vocabulaire</option><option value="other">Autres repères</option></select></label><label id="guide-vocab-category-filter" hidden>Catégorie <select id="guide-vocab-category"><option value="all">Toutes les catégories</option>${guideVocabCategories().map(({chapter})=>`<option value="${chapter.id}">${esc(chapter.title)} · ${guideVocabulary.filter(v=>v.table.chapter.id===chapter.id).length}</option>`).join('')}</select></label><label id="guide-vocab-section-filter" hidden>Sous-catégorie <select id="guide-vocab-section"></select></label></div><div id="guide-lexicon-controls" hidden><div class="toolbar"><label>Sens <select id="guide-lexicon-direction"><option value="fr-ja">Français → Japonais</option><option value="ja-fr">Japonais → Français</option></select></label><label>Catégorie <select id="guide-lexicon-category"><option value="all">Toutes les catégories</option>${guideVocabCategories().map(({chapter})=>`<option value="${chapter.id}">${esc(chapter.title)}</option>`).join('')}</select></label></div><p id="guide-lexicon-order" class="muted"></p><div id="guide-lexicon-alphabet" class="guide-lexicon-alphabet" role="group" aria-label="Filtrer par initiale"></div></div><div id="guide-results"></div>${guideHome()}`;
  }
@@ -231,19 +233,16 @@ function organizeGuideControls(){
  filters.querySelector('#guide-vocab-category-filter').firstChild.textContent='Catégorie de vocabulaire ';
  navigation.replaceChildren();navigation.classList.add('guide-view-navigation');
  const primary=document.createElement('div');primary.className='guide-primary-views guide-view-buttons';
- const more=document.createElement('details');more.id='guide-more-views';
- more.innerHTML='<summary>Autres façons de consulter</summary><div class="guide-view-buttons"></div>';
  for(const view of ['rubriques','themes','vocabulaire','tableaux','lexique']){
   const b=buttons.get(view),meta=guideViewLabels[view];
   b.dataset.family=meta.family;b.innerHTML=esc(meta.label);
-  (['rubriques','themes','vocabulaire'].includes(view)?primary:more.lastElementChild).append(b);
+  primary.append(b);
  }
- navigation.append(primary,more);
+ navigation.append(primary);
  navigation.after(panel);panel.append(search,$('#guide-lexicon-controls'));
 }
 function updateGuideControlsHeading(){
  const meta=guideViewLabels[guideView];
- $('#guide-more-views').open=!['rubriques','themes','vocabulaire'].includes(guideView);
  $('#guide-active-tools').dataset.family=meta.family;
  $('#guide-active-title').textContent=meta.title;
  $('#guide-active-description').textContent=meta.description;
