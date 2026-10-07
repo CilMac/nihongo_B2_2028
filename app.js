@@ -22,20 +22,20 @@ function updateVoices(){voices=speech?speech.getVoices().filter(v=>/^ja(?:-|_)/i
 function audioButton(text,ref=''){return `<button class="audio" data-speak="${esc(text)}" data-audio-ref="${esc(ref)}" aria-label="Écouter en japonais">▶ Écouter</button>`;}
 function star(id){const selected=id.startsWith('guidefav:')?guideHasFavorite(id):favorites.has(id);return `<button class="favorite" data-favorite="${esc(id)}" aria-pressed="${selected}" title="${selected?'Retirer des':'Ajouter aux'} favoris" aria-label="${selected?'Retirer des':'Ajouter aux'} favoris">${selected?'★':'☆'}</button>`;}
 function jp(text){return esc(text).replace(/\p{Script=Han}+/gu,'<span class="kanji">$&</span>');}
-function block(t,{audio=true,fr=true,repeatJapanese=false}={}) {
+function block(t,{audio=true,fr=true,repeatJapanese=false,rawRomaji=false,audioText=null}={}) {
  const audioRef=sentenceAudioRef(t);
  const sameText = String(t.jp).normalize('NFC').replace(/\s/g, '') === String(t.kana).normalize('NFC').replace(/\s/g, '');
  const japanese = sameText&&!repeatJapanese ? `<span class="kana-idem" lang="fr" title="Identique au texte kana">---</span><span class="jp-fallback">${jp(t.jp)}</span>` : jp(t.jp);
- return `<div class="language-block"><button type="button" class="kana kana-audio" lang="ja" data-speak="${esc(t.audioKana || t.kana)}" data-audio-ref="${esc(audioRef)}" aria-label="Écouter : ${esc(t.kana)}">${esc(t.kana)}<span class="sound-note" aria-hidden="true"> ♪</span></button><p class="jp" lang="ja">${japanese}</p><p class="romaji">${esc(Romaji.display(t.romaji))}</p>${fr?`<p class="fr">${esc(t.fr)}</p>`:''}${audio?audioButton(t.kana,audioRef):''}</div>`;
+ return `<div class="language-block"><button type="button" class="kana kana-audio" lang="ja" data-speak="${esc(audioText || t.audioKana || t.kana)}" data-audio-ref="${esc(audioRef)}" aria-label="Écouter : ${esc(t.kana)}">${esc(t.kana)}<span class="sound-note" aria-hidden="true"> ♪</span></button><p class="jp" lang="ja">${japanese}</p><p class="romaji">${esc(rawRomaji?t.romaji:Romaji.display(t.romaji))}</p>${fr?`<p class="fr">${esc(t.fr)}</p>`:''}${audio?audioButton(audioText || t.kana,audioRef):''}</div>`;
 }
 function intro(k,title,description){return `<div class="intro"><div class="eyebrow">${k}</div><div class="intro-heading"><h1>${esc(title)}</h1></div><p>${esc(description)}</p></div>`;}
 function route(){
  const [tab='lecons',id,line]=location.hash.slice(1).split('/');
  let decoded='';
  try{decoded=decodeURIComponent(id||'');}catch{/* Une adresse tronquée revient à la vue par défaut du module. */}
- return {tab:['lecons','dictionnaire','grammaire','atelier','guide'].includes(tab)?tab:'lecons',id:decoded,line};
+ return {tab:['lecons','dictionnaire','grammaire','atelier','guide','expressions'].includes(tab)?tab:'lecons',id:decoded,line};
 }
-function render(){window.closeNavigationCommands?.();stopAudio();const r=route();document.querySelectorAll('[data-tab]').forEach(x=>{if(x.dataset.tab===r.tab)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current');});if(r.tab==='lecons')renderLessons(r);else if(r.tab==='dictionnaire')renderDictionary(r);else if(r.tab==='atelier')renderAtelier(r);else if(r.tab==='guide')renderGuide(r);else renderGrammar(r);renderAtelierReturn(r);renderDictionaryReturn(r);renderAnalysisReturn(r);window.updateNavigationTab?.();}
+function render(){Expressions.invalidate();window.closeNavigationCommands?.();stopAudio();const r=route();document.querySelectorAll('[data-tab]').forEach(x=>{if(x.dataset.tab===r.tab)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current');});if(r.tab==='lecons')renderLessons(r);else if(r.tab==='dictionnaire')renderDictionary(r);else if(r.tab==='atelier')renderAtelier(r);else if(r.tab==='guide')renderGuide(r);else if(r.tab==='expressions')Expressions.render(r);else renderGrammar(r);renderAtelierReturn(r);renderDictionaryReturn(r);renderAnalysisReturn(r);window.updateNavigationTab?.();}
 function renderLessons(r){
  const range=r.id==='plage';
  const bounds=(r.line||'').split('-').filter(n=>lessonIds.includes(n));
@@ -100,7 +100,7 @@ function renderDictionary(r){const selected=r.id.startsWith('vocab-')?vocab.find
  };
  $('#vocab-results').refreshResults=results;
  $('#dictionary-compact').onclick=()=>{settings.dictionaryCompact=!settings.dictionaryCompact;save();$('#vocab-results').classList.toggle('dictionary-compact',settings.dictionaryCompact);$('#dictionary-compact').setAttribute('aria-checked',settings.dictionaryCompact);$('#dictionary-compact span').textContent=settings.dictionaryCompact?'ON':'OFF';};results();}
-$('#settings-toggle').onclick=()=>{const open=$('#settings').hidden;$('#settings').hidden=!open;$('#settings-toggle').setAttribute('aria-expanded',open);};for(const k of ['kana','romaji','fr'])$('#show-'+k).onchange=e=>{settings[k]=e.target.checked;applySettings();save();};for(const k of ['font','size','rate','gap'])$('#'+k).oninput=e=>{settings[k]=['size','rate','gap'].includes(k)?Number(e.target.value):e.target.value;applySettings();save();};$('#voice').onchange=e=>{stopAudio();settings.voice=e.target.value;save();};$('#audio-mode').onchange=e=>{stopAudio();settings.audioMode=e.target.value;save();updateAudioMode();};$('#stop-audio').onclick=()=>stopAudio('Lecture arrêtée.');document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.speak)speak([{text:b.dataset.speak,ref:b.dataset.audioRef}]);if(b.dataset.lesson)location.hash='lecons/'+b.dataset.lesson;if(b.dataset.favorite){const id=b.dataset.favorite;id.startsWith('guidefav:')?toggleGuideFavorite(id):(favorites.has(id)?favorites.delete(id):favorites.add(id));favoritesRevision++;save();document.querySelectorAll('[data-favorite]').forEach(el=>{if(guideCanonicalFavorite(el.dataset.favorite)===guideCanonicalFavorite(id)){const pressed=guideHasFavorite(id),label=(pressed?'Retirer des':'Ajouter aux')+' favoris';el.textContent=pressed?'★':'☆';el.setAttribute('aria-pressed',String(pressed));el.setAttribute('aria-label',label);el.title=label;}});renderFavorites();if(onlyFavorites&&route().tab==='dictionnaire')$('#vocab-results')?.refreshResults?.();}});window.addEventListener('hashchange',event=>{
+$('#settings-toggle').onclick=()=>{const open=$('#settings').hidden;$('#settings').hidden=!open;$('#settings-toggle').setAttribute('aria-expanded',open);};for(const k of ['kana','romaji','fr'])$('#show-'+k).onchange=e=>{settings[k]=e.target.checked;applySettings();save();};for(const k of ['font','size','rate','gap'])$('#'+k).oninput=e=>{settings[k]=['size','rate','gap'].includes(k)?Number(e.target.value):e.target.value;applySettings();save();};$('#voice').onchange=e=>{stopAudio();settings.voice=e.target.value;save();};$('#audio-mode').onchange=e=>{stopAudio();settings.audioMode=e.target.value;save();updateAudioMode();};$('#stop-audio').onclick=()=>stopAudio('Lecture arrêtée.');document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.speak)speak([{text:b.dataset.speak,ref:b.dataset.audioRef}]);if(b.dataset.lesson)location.hash='lecons/'+b.dataset.lesson;if(b.dataset.favorite){const id=b.dataset.favorite;id.startsWith('guidefav:')?toggleGuideFavorite(id):(favorites.has(id)?favorites.delete(id):favorites.add(id));favoritesRevision++;save();document.querySelectorAll('[data-favorite]').forEach(el=>{if(guideCanonicalFavorite(el.dataset.favorite)===guideCanonicalFavorite(id)){const pressed=guideHasFavorite(id),label=(pressed?'Retirer des':'Ajouter aux')+' favoris';el.textContent=pressed?'★':'☆';el.setAttribute('aria-pressed',String(pressed));el.setAttribute('aria-label',label);el.title=label;}});renderFavorites();Expressions.refreshFavorites();if(onlyFavorites&&route().tab==='dictionnaire')$('#vocab-results')?.refreshResults?.();}});window.addEventListener('hashchange',event=>{
  if(handleContextNavigation(event))return;
  const restore=dictionaryReturn && location.hash===dictionaryReturn.origin && new URL(event.oldURL).hash===dictionaryReturn.destination;
  page=restore?dictionaryReturn.page:0;
@@ -133,7 +133,7 @@ function renderFavorites() {
   const item=guideFavoriteEntries.get(id);
   return item?`<div class="guide-saved-row">${star(id)}<a href="#guide/${item.chapter}/${item.target}"><strong>${esc(item.type+' · '+item.title)}</strong><span>${esc(item.text.slice(0,200))}${item.text.length>200?'…':''}</span></a></div>`:`<div class="guide-saved-row">${star(id)}<p class="muted">${guideData?'Cet élément du Guide n’est plus disponible.':'Chargement du favori du Guide…'}</p></div>`;
  }).join('')+'</section>':'';
- $('#saved-list').innerHTML = entries.join('')+guideSection||'<p class="muted">Touchez une étoile pour retrouver ici un mot, une phrase, une fiche ou un élément du Guide.</p>';
+ $('#saved-list').innerHTML = entries.join('')+guideSection+Expressions.favoritesHTML()||'<p class="muted">Touchez une étoile pour retrouver ici un mot, une phrase, une fiche ou un élément du Guide.</p>';
  if(guideIds.length&&!guideData&&!guideFavoritesPending){guideFavoritesPending=true;loadGuide().then(()=>{guideFavoritesPending=false;renderFavorites();}).catch(()=>{guideFavoritesPending=false;if(!$('#saved-list .guide-saved'))return;$('#saved-list .guide-saved').innerHTML='<h3>Guide</h3><p>Le Guide n’a pas pu être chargé. Vos favoris sont conservés.</p><button id="guide-favorites-retry">Réessayer</button>';$('#guide-favorites-retry').onclick=renderFavorites;});}
 }
 $('#saved-toggle').onclick = () => {
@@ -306,7 +306,7 @@ function updateContextReturn(){
 function captureContext(link){
  const tab=route().tab;
  const label=link.closest('#corpus-search')?'Retour à la recherche':link.closest('.analysis-word-link')?'Retour au décorticage':link.closest('.atelier-catalog')?'Retour à la liste':
-  {lecons:'Retour à la leçon',dictionnaire:'Retour au dictionnaire',grammaire:'Retour à la grammaire',atelier:'Retour à l’atelier',guide:guideQuery&&!route().id?'Retour à la recherche':'Retour au guide'}[tab];
+  {lecons:'Retour à la leçon',dictionnaire:'Retour au dictionnaire',grammaire:'Retour à la grammaire',atelier:'Retour à l’atelier',expressions:'Retour aux expressions',guide:guideQuery&&!route().id?'Retour à la recherche':'Retour au guide'}[tab];
  return {hash:location.hash,nodes:[...$('#main').childNodes],scrollY:window.scrollY,focus:link,label,
   corpusSearch:!!link.closest('#corpus-search'),
   navigationCompact:document.querySelector('.navigation-dock')?.classList.contains('is-scrolled'),
@@ -318,7 +318,7 @@ document.addEventListener('click',event=>{
  const link=event.target.closest('a[href^="#"]');
  if(!link||event.button!==0||event.metaKey||event.ctrlKey||event.altKey||event.shiftKey||link.target==='_blank'||event.defaultPrevented)return;
  const destination=link.hash;
- if(!/^#(lecons|dictionnaire|grammaire|atelier|guide)(\/|$)/.test(destination)||destination===location.hash)return;
+ if(!/^#(lecons|dictionnaire|grammaire|atelier|guide|expressions)(\/|$)/.test(destination)||destination===location.hash)return;
  if(link.closest('#commands-panel'))window.closeNavigationCommands?.();
  const ancestor=navigationTrail.findLastIndex(item=>(item.hash||'#lecons')===destination);
  if(link.dataset.contextBack||(link.hasAttribute('data-context-return')&&ancestor>=0)){
@@ -346,7 +346,7 @@ function restoreContext(index){
  if(index<0)return false;
  const saved=navigationTrail[index];navigationTrail.splice(index);
  window.closeNavigationCommands?.();
- stopAudio();guideRenderRun++; // Invalider un éventuel chargement du guide encore en cours.
+ stopAudio();Expressions.invalidate();guideRenderRun++; // Invalider un éventuel chargement du guide encore en cours.
  dictionaryReturn=null;analysisReturn=null;atelierListReturn=null;
  search=saved.search;onlyFavorites=saved.onlyFavorites;page=saved.page;dictionaryCategory=saved.dictionaryCategory;guideQuery=saved.guideQuery;guideView=saved.guideView;guideFilter=saved.guideFilter;guideLexiconState={...saved.guideLexiconState};guideVocabCategory=saved.guideVocabCategory;guideVocabSection=saved.guideVocabSection;
  const rebuildAtelier=route().tab==='atelier'&&saved.atelierSession!==atelierSession;
@@ -354,6 +354,7 @@ function restoreContext(index){
  currentComplement=saved.currentComplement;complementRevealed=saved.complementRevealed;
  settings.lesson=saved.lesson;save();
  if(rebuildAtelier)renderAtelier({});else $('#main').replaceChildren(...saved.nodes);
+ if(route().tab==='expressions'&&$('#main .expression-loading'))Expressions.render(route());
  // Les favoris changent parfois pendant l'excursion : recalculer la liste,
  // tout en gardant les exemples ouverts pour les mots encore présents.
  if(route().tab==='dictionnaire'&&onlyFavorites&&saved.favoritesRevision!==favoritesRevision){
@@ -364,6 +365,7 @@ function restoreContext(index){
  document.querySelectorAll('[data-tab]').forEach(el=>{if(el.dataset.tab===route().tab)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
  // Les favoris et préférences peuvent avoir changé dans la vue consultée.
  $('#main').querySelectorAll('[data-favorite]').forEach(el=>el.outerHTML=star(el.dataset.favorite));
+ if(saved.favoritesRevision!==favoritesRevision)Expressions.refreshFavorites();
  $('#vocab-results')?.classList.toggle('dictionary-compact',settings.dictionaryCompact);
  const compact=$('#dictionary-compact');if(compact){compact.setAttribute('aria-checked',settings.dictionaryCompact);compact.querySelector('span').textContent=settings.dictionaryCompact?'ON':'OFF';}
  updateContextReturn();

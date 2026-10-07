@@ -1,4 +1,4 @@
-importScripts('romaji.js','corpus-search-engine.js?v=20261006-lecons','decorticage-auto.js','decorticage.js','particules.js','constructions.js','atelier-engine.js');
+importScripts('romaji.js','corpus-search-engine.js?v=20261007-expressions','decorticage-auto.js','decorticage.js','particules.js','constructions.js','atelier-engine.js');
 let docs=[];
 onmessage=event=>{const {id,type,data,state}=event.data;try{
  if(type==='init'){const analyzer=Decorticage.create(data.vocab,data.annotations);data.analyses=data.lessons.map(row=>({row,result:analyzer.analyze(row)}));const analyses=new Map(data.analyses.map(a=>[a.row.Leçon+'-'+a.row.Ligne,a.result]));

@@ -599,3 +599,16 @@ html{overflow-anchor:none}
 .lesson-list .language-block{overflow-wrap:anywhere}
 .lesson-list .dictionary-main{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;align-items:start;row-gap:3px}
 @media(max-width:600px){.lesson-range{width:100%}.lesson-range select{max-width:100%}#lesson-display{max-width:100%}}
+
+/* Expressions : mêmes cartes et réglages de lecture que le carnet. */
+.expression-collections{display:flex;flex-wrap:wrap;gap:8px;width:100%}
+.expression-collections button[aria-pressed=true]{background:var(--sage);border-color:#8ca18a;font-weight:600}
+.expressions-tools input[type=search]{min-width:0;flex:1 1 280px}
+.expressions-tools select{max-width:100%;min-width:0}
+.expression-card{min-width:0;overflow-wrap:anywhere}
+.expression-register{margin:10px 0}
+.expression-caution{background:#fff4df;border-left:3px solid #a97930;padding:10px 12px;font-size:14px}
+.expression-card details{margin-top:12px}
+.expression-listen{color:#365f3c;min-width:40px;min-height:40px}
+.expression-help{font-size:14px}
+@media(max-width:760px){.expressions-tools>label{width:100%}.expression-collections button{flex:1}}
