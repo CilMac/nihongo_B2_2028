@@ -543,6 +543,15 @@ html{overflow-anchor:none}
 .atelier-setting-row[hidden],#generator-settings[hidden],#generated-text [hidden]{display:none!important}
 #generator-settings{margin:16px 0}
 #generator-settings select{max-width:100%}
+.generator-modes{border:0;padding:0;margin:18px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.generator-modes legend{font-weight:600;margin-bottom:12px}
+.generator-modes label{display:flex;align-items:flex-start;gap:10px;border:2px solid var(--line);border-radius:12px;padding:16px;cursor:pointer}
+.generator-modes label:has(input:checked){border-color:#386780;background:#eaf2f7}
+.generator-modes label:has(input:focus-visible){outline:3px solid #386780;outline-offset:3px}
+.generator-modes input{margin-top:5px;flex-shrink:0;accent-color:#285775}
+.generator-modes strong,.generator-modes span span{display:block}
+.generator-modes span span{font-size:14px;line-height:1.5;margin-top:8px}
+@media(max-width:760px){.generator-modes{grid-template-columns:1fr}}
 .generated-kana-audio{font:inherit;color:inherit;text-align:left;white-space:normal;overflow-wrap:anywhere;max-width:100%;background:none;border:0;padding:0;cursor:pointer}
 #generated-explanation li{margin:12px 0;overflow-wrap:anywhere}
 #info-audio-help h3{margin-top:0}
@@ -631,3 +640,32 @@ html{overflow-anchor:none}
 .expression-listen{color:#365f3c;min-width:40px;min-height:40px}
 .expression-help{font-size:14px}
 @media(max-width:760px){.expressions-tools>label{width:100%}.expression-collections button{flex:1}}
+
+/* Phrases surprises : distinguer l’état des aides et le rôle des actions. */
+body.generated-help-open{overflow:hidden}
+#generated-help{width:min(720px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:16px;background:#fffefb;color:var(--ink);overflow:hidden}
+#generated-help[open]{display:flex;flex-direction:column}
+#generated-help::backdrop{background:#23332c80}
+#generated-help .info-body{padding-top:12px;line-height:1.65}
+#generated-help li{margin-bottom:14px}
+.generated-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.generated-heading>div{min-width:0}
+#generated-help-open{color:#285775;background:#edf3f7;border-color:#9bb3c1;display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:0;font-size:24px;border-radius:50%}
+.generated-reading-controls button[aria-expanded="true"]{background:#e1eddf;border:2px solid #60815c;color:#244925}
+.generated-reading-controls button[aria-expanded="false"]{background:#fff;border:2px dashed #718497;color:#284e70}
+.generated-reading-controls button[aria-expanded="true"]:hover{background:#d0e2cd}
+.generated-reading-controls button[aria-expanded="false"]:hover{background:#edf3f8}
+.generated-actions{align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:20px;margin-top:24px}
+.generated-actions #generated-surprise{background:#285775;color:#fff;border:2px solid #285775;font-weight:600}
+.generated-actions #generated-surprise:hover{background:#1d435c;border-color:#1d435c}
+.generated-actions #generated-same{background:#e5efeb;color:#285344;border:2px solid #789889}
+.generated-actions #generated-same:hover{background:#d5e6dd}
+.generated-actions #generated-end{background:#fff;color:#8b3931;border:1px solid #b8847e;margin-left:auto}
+.generated-actions #generated-end:hover{background:#faeeeb}
+.generated-actions button,.generated-reading-controls button{min-height:44px;white-space:normal;text-align:left}
+.generated-actions button:focus-visible,.generated-reading-controls button:focus-visible{outline:3px solid #183c60;outline-offset:3px}
+@media(max-width:760px){.generated-actions{align-items:stretch;flex-direction:column}.generated-actions #generated-end{align-self:flex-end;margin-top:8px;margin-left:0}.generated-actions button{max-width:100%}}
+
+#info-panel-history h4{font-size:18px;color:#355d4d;margin:28px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+#info-panel-history p{line-height:1.7;overflow-wrap:anywhere}
+#info-panel-history code{font-size:.9em;overflow-wrap:anywhere}

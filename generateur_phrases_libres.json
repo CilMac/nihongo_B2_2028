@@ -1,184 +1,695 @@
 {
   "schema_version": "2.0",
-  "title": "Nihongo — Phrases surprises et variations",
-  "purpose": "Composer localement des phrases par tirage aléatoire de modèles et de mots compatibles, avec aides de lecture et explication préparée de la construction.",
-  "design_principles": [
-    "Le hasard choisit un modèle puis des entrées compatibles dans ses listes.",
-    "Les scénarios composés sont indivisibles : ne pas croiser leurs champs.",
-    "Les formes verbales sont préparées, sans conjugaison de verbes arbitraires.",
-    "Une phrase composée est signalée comme telle, jamais comme une citation du corpus.",
-    "La traduction correspond au contexte fourni ; elle ne constitue pas une réponse unique pour une évaluation.",
-    "Les identifiants lexicaux sont uniques dans leur liste ; les reprises entre listes sont intentionnelles.",
-    "Les rôles décrivent cette construction, pas tous les emplois possibles de chaque particule."
-  ],
-  "source_strategy": {
-    "corpus_random_source": "leconsJap.json",
-    "generated_source": "slot_pools",
-    "future_enrichment": "Sélection et relecture explicites depuis les ressources du carnet ; aucun import automatique de catégories entières.",
-    "merge_into_corpora": false
+  "title": "Explorer librement — répertoire indépendant",
+  "provenance": {
+    "date": "2026-10-08",
+    "origin": "Socle éditorial initial de 29 modèles et 15 modèles enrichis indépendants ; aucune extraction automatique des leçons.",
+    "review": "Formes et associations préparées ; tests exhaustifs de structure, pas de certification native."
   },
-  "modes": {
-    "corpus_random": {
-      "label": "Phrase des leçons",
-      "source": "leconsJap.json",
-      "reuse_activity": "Écouter et comprendre",
-      "preserve_source_text": true,
-      "exclude_titles": true,
-      "preserve_source_reference": true,
-      "avoid_recent_sentences": 15
-    },
-    "controlled_generation": {
-      "label": "Phrase composée",
-      "default_action": "surprise",
-      "actions": {
-        "surprise": {
-          "label": "Nouvelle surprise",
-          "template_selection": "weighted_random",
-          "slot_selection": "uniform_within_pool"
-        },
-        "same_construction": {
-          "label": "Autre phrase, même construction",
-          "template_selection": "keep_current",
-          "slot_selection": "uniform_within_pool"
-        }
-      },
-      "avoid_recent_templates": 4,
-      "avoid_recent_sentences": 8,
-      "seed_supported": true
-    }
-  },
-  "levels": {
-    "1": {
-      "label": "Constructions courtes",
-      "allowed_templates": [
-        "PG01",
-        "PG02",
-        "PG03",
-        "PG05",
-        "PG06",
-        "PG07",
-        "PG08",
-        "PG09",
-        "PG10",
-        "PG11",
-        "PG12",
-        "PG13",
-        "PG14",
-        "PG15",
-        "PG16"
-      ],
-      "description": "Groupe de constructions ; ne garantit pas une correspondance avec une leçon ou un niveau JLPT."
-    },
-    "2": {
-      "label": "Constructions enrichies",
-      "allowed_templates": [
-        "PG01",
-        "PG02",
-        "PG03",
-        "PG04",
-        "PG05",
-        "PG06",
-        "PG07",
-        "PG08",
-        "PG09",
-        "PG10",
-        "PG11",
-        "PG12",
-        "PG13",
-        "PG14",
-        "PG15",
-        "PG16",
-        "PG17",
-        "PG18",
-        "PG19",
-        "PG20",
-        "PG21",
-        "PG22",
-        "PG23",
-        "PG24",
-        "PG25",
-        "PG26",
-        "PG28"
-      ],
-      "description": "Groupe de constructions ; ne garantit pas une correspondance avec une leçon ou un niveau JLPT."
-    },
-    "3": {
-      "label": "Toutes les constructions",
-      "allowed_templates": [
-        "PG01",
-        "PG02",
-        "PG03",
-        "PG04",
-        "PG05",
-        "PG06",
-        "PG07",
-        "PG08",
-        "PG09",
-        "PG10",
-        "PG11",
-        "PG12",
-        "PG13",
-        "PG14",
-        "PG15",
-        "PG16",
-        "PG17",
-        "PG18",
-        "PG19",
-        "PG20",
-        "PG21",
-        "PG22",
-        "PG23",
-        "PG24",
-        "PG25",
-        "PG26",
-        "PG28",
-        "PG29",
-        "PG30"
-      ],
-      "description": "Groupe de constructions ; ne garantit pas une correspondance avec une leçon ou un niveau JLPT."
-    }
-  },
-  "ui_defaults": {
-    "level": 1,
-    "scope": "through_lesson",
-    "mode": "controlled_generation",
-    "show_japanese": true,
-    "show_kana": true,
-    "show_romaji": false,
-    "romaji_always_available": true,
-    "show_french": false,
-    "show_context": false,
-    "show_decomposition": false,
-    "tts": true,
-    "buttons": [
-      "Nouvelle surprise",
-      "Autre phrase, même construction",
-      "Kana",
-      "Romaji",
-      "Traduction",
-      "Comprendre la construction",
-      "Écouter",
-      "Afficher un indice"
-    ],
-    "show_hint": false
-  },
+  "scope": "free_only",
   "slot_pools": {
-    "time_day": [
+    "time": [
+      {
+        "id": "time-1",
+        "japanese": "今日",
+        "kana": "きょう",
+        "romaji": "kyou",
+        "prefix": "Aujourd’hui, ",
+        "from_prefix": "À partir d’aujourd’hui, "
+      },
+      {
+        "id": "time-2",
+        "japanese": "明日",
+        "kana": "あした",
+        "romaji": "ashita",
+        "prefix": "Demain, ",
+        "from_prefix": "À partir de demain, "
+      },
+      {
+        "id": "time-3",
+        "japanese": "今晩",
+        "kana": "こんばん",
+        "romaji": "konban",
+        "prefix": "Ce soir, ",
+        "from_prefix": "À partir de ce soir, "
+      },
+      {
+        "id": "time-4",
+        "japanese": "週末",
+        "kana": "しゅうまつ",
+        "romaji": "shuumatsu",
+        "prefix": "Ce week-end, ",
+        "from_prefix": "À partir de ce week-end, "
+      },
+      {
+        "id": "time-5",
+        "japanese": "来週",
+        "kana": "らいしゅう",
+        "romaji": "raishuu",
+        "prefix": "La semaine prochaine, ",
+        "from_prefix": "À partir de la semaine prochaine, "
+      }
+    ],
+    "past_time": [
+      {
+        "id": "past_time-1",
+        "japanese": "昨日",
+        "kana": "きのう",
+        "romaji": "kinou",
+        "prefix": "Hier, "
+      },
+      {
+        "id": "past_time-2",
+        "japanese": "先週",
+        "kana": "せんしゅう",
+        "romaji": "senshuu",
+        "prefix": "La semaine dernière, "
+      },
+      {
+        "id": "past_time-3",
+        "japanese": "先月",
+        "kana": "せんげつ",
+        "romaji": "sengetsu",
+        "prefix": "Le mois dernier, "
+      }
+    ],
+    "person": [
+      {
+        "id": "person-1",
+        "japanese": "友達",
+        "kana": "ともだち",
+        "romaji": "tomodachi",
+        "with": "avec un ami"
+      },
+      {
+        "id": "person-2",
+        "japanese": "家族",
+        "kana": "かぞく",
+        "romaji": "kazoku",
+        "with": "avec ma famille"
+      },
+      {
+        "id": "person-3",
+        "japanese": "妹",
+        "kana": "いもうと",
+        "romaji": "imouto",
+        "with": "avec ma petite sœur"
+      }
+    ],
+    "recipient": [
+      {
+        "id": "recipient-1",
+        "japanese": "友達",
+        "kana": "ともだち",
+        "romaji": "tomodachi",
+        "to": "à un ami",
+        "for": "pour un ami"
+      },
+      {
+        "id": "recipient-2",
+        "japanese": "母",
+        "kana": "はは",
+        "romaji": "haha",
+        "to": "à ma mère",
+        "for": "pour ma mère"
+      },
+      {
+        "id": "recipient-3",
+        "japanese": "妹",
+        "kana": "いもうと",
+        "romaji": "imouto",
+        "to": "à ma petite sœur",
+        "for": "pour ma petite sœur"
+      }
+    ],
+    "destination": [
+      {
+        "id": "destination-1",
+        "japanese": "博物館",
+        "kana": "はくぶつかん",
+        "romaji": "hakubutsukan",
+        "to": "au musée"
+      },
+      {
+        "id": "destination-2",
+        "japanese": "美術館",
+        "kana": "びじゅつかん",
+        "romaji": "bijutsukan",
+        "to": "au musée d’art"
+      },
+      {
+        "id": "destination-3",
+        "japanese": "動物園",
+        "kana": "どうぶつえん",
+        "romaji": "doubutsuen",
+        "to": "au zoo"
+      },
+      {
+        "id": "destination-4",
+        "japanese": "海",
+        "kana": "うみ",
+        "romaji": "umi",
+        "to": "à la mer"
+      },
+      {
+        "id": "destination-5",
+        "japanese": "京都",
+        "kana": "きょうと",
+        "romaji": "kyouto",
+        "to": "à Kyoto"
+      },
+      {
+        "id": "destination-6",
+        "japanese": "横浜",
+        "kana": "よこはま",
+        "romaji": "yokohama",
+        "to": "à Yokohama"
+      }
+    ],
+    "transport": [
+      {
+        "id": "transport-1",
+        "japanese": "電車",
+        "kana": "でんしゃ",
+        "romaji": "densha",
+        "by": "en train"
+      },
+      {
+        "id": "transport-2",
+        "japanese": "バス",
+        "kana": "バス",
+        "romaji": "basu",
+        "by": "en bus"
+      },
+      {
+        "id": "transport-3",
+        "japanese": "車",
+        "kana": "くるま",
+        "romaji": "kuruma",
+        "by": "en voiture"
+      }
+    ],
+    "reading_place": [
+      {
+        "id": "reading_place-1",
+        "japanese": "家",
+        "kana": "いえ",
+        "romaji": "ie",
+        "at": "à la maison"
+      },
+      {
+        "id": "reading_place-2",
+        "japanese": "図書館",
+        "kana": "としょかん",
+        "romaji": "toshokan",
+        "at": "à la bibliothèque"
+      },
+      {
+        "id": "reading_place-3",
+        "japanese": "喫茶店",
+        "kana": "きっさてん",
+        "romaji": "kissaten",
+        "at": "au café"
+      }
+    ],
+    "text": [
+      {
+        "id": "text-1",
+        "japanese": "本",
+        "kana": "ほん",
+        "romaji": "hon",
+        "object": "un livre"
+      },
+      {
+        "id": "text-2",
+        "japanese": "小説",
+        "kana": "しょうせつ",
+        "romaji": "shousetsu",
+        "object": "un roman"
+      },
+      {
+        "id": "text-3",
+        "japanese": "新聞",
+        "kana": "しんぶん",
+        "romaji": "shinbun",
+        "object": "le journal"
+      },
+      {
+        "id": "text-4",
+        "japanese": "漫画",
+        "kana": "まんが",
+        "romaji": "manga",
+        "object": "un manga"
+      }
+    ],
+    "screen_place": [
+      {
+        "id": "screen_place-1",
+        "japanese": "家",
+        "kana": "いえ",
+        "romaji": "ie",
+        "at": "à la maison"
+      },
+      {
+        "id": "screen_place-2",
+        "japanese": "ホテル",
+        "kana": "ホテル",
+        "romaji": "hoteru",
+        "at": "à l’hôtel"
+      }
+    ],
+    "screen": [
+      {
+        "id": "screen-1",
+        "japanese": "映画",
+        "kana": "えいが",
+        "romaji": "eiga",
+        "object": "un film"
+      },
+      {
+        "id": "screen-2",
+        "japanese": "ドラマ",
+        "kana": "ドラマ",
+        "romaji": "dorama",
+        "object": "une série télévisée"
+      }
+    ],
+    "music_place": [
+      {
+        "id": "music_place-1",
+        "japanese": "家",
+        "kana": "いえ",
+        "romaji": "ie",
+        "at": "à la maison"
+      },
+      {
+        "id": "music_place-2",
+        "japanese": "部屋",
+        "kana": "へや",
+        "romaji": "heya",
+        "at": "dans ma chambre"
+      },
+      {
+        "id": "music_place-3",
+        "japanese": "車",
+        "kana": "くるま",
+        "romaji": "kuruma",
+        "at": "dans la voiture"
+      }
+    ],
+    "music": [
+      {
+        "id": "music-1",
+        "japanese": "音楽",
+        "kana": "おんがく",
+        "romaji": "ongaku",
+        "object": "de la musique"
+      },
+      {
+        "id": "music-2",
+        "japanese": "ジャズ",
+        "kana": "ジャズ",
+        "romaji": "jazu",
+        "object": "du jazz"
+      },
+      {
+        "id": "music-3",
+        "japanese": "クラシック音楽",
+        "kana": "クラシックおんがく",
+        "romaji": "kurashikku ongaku",
+        "object": "de la musique classique"
+      }
+    ],
+    "language": [
+      {
+        "id": "language-1",
+        "japanese": "日本語",
+        "kana": "にほんご",
+        "romaji": "nihongo",
+        "in": "en japonais",
+        "object": "le japonais"
+      },
+      {
+        "id": "language-2",
+        "japanese": "フランス語",
+        "kana": "フランスご",
+        "romaji": "furansugo",
+        "in": "en français",
+        "object": "le français"
+      },
+      {
+        "id": "language-3",
+        "japanese": "英語",
+        "kana": "えいご",
+        "romaji": "eigo",
+        "in": "en anglais",
+        "object": "l’anglais"
+      }
+    ],
+    "study_place": [
+      {
+        "id": "study_place-1",
+        "japanese": "家",
+        "kana": "いえ",
+        "romaji": "ie",
+        "at": "à la maison"
+      },
+      {
+        "id": "study_place-2",
+        "japanese": "図書館",
+        "kana": "としょかん",
+        "romaji": "toshokan",
+        "at": "à la bibliothèque"
+      },
+      {
+        "id": "study_place-3",
+        "japanese": "学校",
+        "kana": "がっこう",
+        "romaji": "gakkou",
+        "at": "à l’école"
+      }
+    ],
+    "food": [
+      {
+        "id": "food-1",
+        "japanese": "寿司",
+        "kana": "すし",
+        "romaji": "sushi",
+        "object": "des sushis"
+      },
+      {
+        "id": "food-2",
+        "japanese": "ラーメン",
+        "kana": "ラーメン",
+        "romaji": "raamen",
+        "object": "un ramen"
+      },
+      {
+        "id": "food-3",
+        "japanese": "うどん",
+        "kana": "うどん",
+        "romaji": "udon",
+        "object": "des udon"
+      },
+      {
+        "id": "food-4",
+        "japanese": "カレー",
+        "kana": "カレー",
+        "romaji": "karee",
+        "object": "du curry"
+      },
+      {
+        "id": "food-5",
+        "japanese": "魚",
+        "kana": "さかな",
+        "romaji": "sakana",
+        "object": "du poisson"
+      },
+      {
+        "id": "food-6",
+        "japanese": "野菜",
+        "kana": "やさい",
+        "romaji": "yasai",
+        "object": "des légumes"
+      },
+      {
+        "id": "food-7",
+        "japanese": "サラダ",
+        "kana": "サラダ",
+        "romaji": "sarada",
+        "object": "une salade"
+      },
+      {
+        "id": "food-8",
+        "japanese": "ケーキ",
+        "kana": "ケーキ",
+        "romaji": "keeki",
+        "object": "du gâteau"
+      }
+    ],
+    "meal_place": [
+      {
+        "id": "meal_place-1",
+        "japanese": "家",
+        "kana": "いえ",
+        "romaji": "ie",
+        "at": "à la maison"
+      },
+      {
+        "id": "meal_place-2",
+        "japanese": "レストラン",
+        "kana": "レストラン",
+        "romaji": "resutoran",
+        "at": "au restaurant"
+      },
+      {
+        "id": "meal_place-3",
+        "japanese": "ホテル",
+        "kana": "ホテル",
+        "romaji": "hoteru",
+        "at": "à l’hôtel"
+      }
+    ],
+    "drink": [
+      {
+        "id": "drink-1",
+        "japanese": "水",
+        "kana": "みず",
+        "romaji": "mizu",
+        "object": "de l’eau"
+      },
+      {
+        "id": "drink-2",
+        "japanese": "お茶",
+        "kana": "おちゃ",
+        "romaji": "ocha",
+        "object": "du thé"
+      },
+      {
+        "id": "drink-3",
+        "japanese": "コーヒー",
+        "kana": "コーヒー",
+        "romaji": "koohii",
+        "object": "du café"
+      },
+      {
+        "id": "drink-4",
+        "japanese": "ジュース",
+        "kana": "ジュース",
+        "romaji": "juusu",
+        "object": "du jus de fruits"
+      },
+      {
+        "id": "drink-5",
+        "japanese": "ビール",
+        "kana": "ビール",
+        "romaji": "biiru",
+        "object": "de la bière"
+      }
+    ],
+    "gift": [
+      {
+        "id": "gift-1",
+        "japanese": "本",
+        "kana": "ほん",
+        "romaji": "hon",
+        "object": "un livre"
+      },
+      {
+        "id": "gift-2",
+        "japanese": "花",
+        "kana": "はな",
+        "romaji": "hana",
+        "object": "des fleurs"
+      },
+      {
+        "id": "gift-3",
+        "japanese": "お菓子",
+        "kana": "おかし",
+        "romaji": "okashi",
+        "object": "des friandises"
+      },
+      {
+        "id": "gift-4",
+        "japanese": "お土産",
+        "kana": "おみやげ",
+        "romaji": "omiyage",
+        "object": "un souvenir"
+      },
+      {
+        "id": "gift-5",
+        "japanese": "チョコレート",
+        "kana": "チョコレート",
+        "romaji": "chokoreeto",
+        "object": "du chocolat"
+      }
+    ],
+    "lodging": [
+      {
+        "id": "lodging-1",
+        "japanese": "ホテル",
+        "kana": "ホテル",
+        "romaji": "hoteru",
+        "at": "à l’hôtel"
+      },
+      {
+        "id": "lodging-2",
+        "japanese": "旅館",
+        "kana": "りょかん",
+        "romaji": "ryokan",
+        "at": "dans un ryokan"
+      },
+      {
+        "id": "lodging-3",
+        "japanese": "民宿",
+        "kana": "みんしゅく",
+        "romaji": "minshuku",
+        "at": "dans une pension de famille"
+      }
+    ],
+    "duration": [
+      {
+        "id": "duration-1",
+        "japanese": "一泊",
+        "kana": "いっぱく",
+        "romaji": "ippaku",
+        "for": "une nuit"
+      },
+      {
+        "id": "duration-2",
+        "japanese": "二泊",
+        "kana": "にはく",
+        "romaji": "nihaku",
+        "for": "deux nuits"
+      },
+      {
+        "id": "duration-3",
+        "japanese": "三泊",
+        "kana": "さんぱく",
+        "romaji": "sanpaku",
+        "for": "trois nuits"
+      }
+    ],
+    "walk_place": [
+      {
+        "id": "walk_place-1",
+        "japanese": "公園",
+        "kana": "こうえん",
+        "romaji": "kouen",
+        "at": "dans le parc"
+      },
+      {
+        "id": "walk_place-2",
+        "japanese": "海岸",
+        "kana": "かいがん",
+        "romaji": "kaigan",
+        "at": "sur la plage"
+      },
+      {
+        "id": "walk_place-3",
+        "japanese": "庭",
+        "kana": "にわ",
+        "romaji": "niwa",
+        "at": "dans le jardin"
+      },
+      {
+        "id": "walk_place-4",
+        "japanese": "町",
+        "kana": "まち",
+        "romaji": "machi",
+        "at": "en ville"
+      }
+    ],
+    "purchase": [
+      {
+        "id": "purchase-1",
+        "jp_place": "パン屋",
+        "kana_place": "パンや",
+        "romaji_place": "panya",
+        "jp_item": "パン",
+        "kana_item": "パン",
+        "romaji_item": "pan",
+        "object_place": "du pain à la boulangerie"
+      },
+      {
+        "id": "purchase-2",
+        "jp_place": "本屋",
+        "kana_place": "ほんや",
+        "romaji_place": "honya",
+        "jp_item": "本",
+        "kana_item": "ほん",
+        "romaji_item": "hon",
+        "object_place": "un livre à la librairie"
+      },
+      {
+        "id": "purchase-3",
+        "jp_place": "花屋",
+        "kana_place": "はなや",
+        "romaji_place": "hanaya",
+        "jp_item": "花",
+        "kana_item": "はな",
+        "romaji_item": "hana",
+        "object_place": "des fleurs chez le fleuriste"
+      },
+      {
+        "id": "purchase-4",
+        "jp_place": "スーパー",
+        "kana_place": "スーパー",
+        "romaji_place": "suupaa",
+        "jp_item": "野菜",
+        "kana_item": "やさい",
+        "romaji_item": "yasai",
+        "object_place": "des légumes au supermarché"
+      },
+      {
+        "id": "purchase-5",
+        "jp_place": "コンビニ",
+        "kana_place": "コンビニ",
+        "romaji_place": "konbini",
+        "jp_item": "弁当",
+        "kana_item": "べんとう",
+        "romaji_item": "bentou",
+        "object_place": "un bento à la supérette"
+      },
+      {
+        "id": "purchase-6",
+        "jp_place": "駅",
+        "kana_place": "えき",
+        "romaji_place": "eki",
+        "jp_item": "切符",
+        "kana_item": "きっぷ",
+        "romaji_item": "kippu",
+        "object_place": "un billet à la gare"
+      },
+      {
+        "id": "purchase-7",
+        "jp_place": "薬局",
+        "kana_place": "やっきょく",
+        "romaji_place": "yakkyoku",
+        "jp_item": "薬",
+        "kana_item": "くすり",
+        "romaji_item": "kusuri",
+        "object_place": "des médicaments à la pharmacie"
+      },
+      {
+        "id": "purchase-8",
+        "jp_place": "喫茶店",
+        "kana_place": "きっさてん",
+        "romaji_place": "kissaten",
+        "jp_item": "コーヒー",
+        "kana_item": "コーヒー",
+        "romaji_item": "koohii",
+        "object_place": "un café dans un salon de thé"
+      }
+    ],
+    "base_time_day": [
       {
         "id": "T01",
         "japanese": "今日",
         "kana": "きょう",
         "romaji": "kyou",
         "fr": "aujourd’hui",
-        "fr_prefix": "Aujourd’hui, ",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 11,
-          "source_refs": [
-            "N11-S06"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_prefix": "Aujourd’hui, "
       },
       {
         "id": "T02",
@@ -186,15 +697,7 @@
         "kana": "あした",
         "romaji": "ashita",
         "fr": "demain",
-        "fr_prefix": "Demain, ",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 2,
-          "source_refs": [
-            "N2-S07"
-          ],
-          "note": "Graphie あした dans le passage ; même mot et même lecture."
-        }
+        "fr_prefix": "Demain, "
       },
       {
         "id": "T03",
@@ -202,18 +705,10 @@
         "kana": "こんばん",
         "romaji": "konban",
         "fr": "ce soir",
-        "fr_prefix": "Ce soir, ",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 37,
-          "source_refs": [
-            "N37-S10"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_prefix": "Ce soir, "
       }
     ],
-    "place_destination": [
+    "base_place_destination": [
       {
         "id": "P01",
         "japanese": "駅",
@@ -224,15 +719,7 @@
         "fr_to": "à la gare",
         "fr_at": "à la gare",
         "fr_subject_lower": "la gare",
-        "fr_from": "de la gare",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 6,
-          "source_refs": [
-            "N6-S04"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "de la gare"
       },
       {
         "id": "P02",
@@ -244,15 +731,7 @@
         "fr_to": "à l’hôtel",
         "fr_at": "à l’hôtel",
         "fr_subject_lower": "l’hôtel",
-        "fr_from": "de l’hôtel",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 44,
-          "source_refs": [
-            "N44-S01"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "de l’hôtel"
       },
       {
         "id": "P03",
@@ -264,15 +743,7 @@
         "fr_to": "au restaurant",
         "fr_at": "au restaurant",
         "fr_subject_lower": "le restaurant",
-        "fr_from": "du restaurant",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 46,
-          "source_refs": [
-            "N46-S24"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "du restaurant"
       },
       {
         "id": "P04",
@@ -284,15 +755,7 @@
         "fr_to": "au parc",
         "fr_at": "au parc",
         "fr_subject_lower": "le parc",
-        "fr_from": "du parc",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 68,
-          "source_refs": [
-            "N68-S18"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "du parc"
       },
       {
         "id": "P05",
@@ -304,15 +767,7 @@
         "fr_to": "à la banque",
         "fr_at": "à la banque",
         "fr_subject_lower": "la banque",
-        "fr_from": "de la banque",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 31,
-          "source_refs": [
-            "N31-S14"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "de la banque"
       },
       {
         "id": "P06",
@@ -324,15 +779,7 @@
         "fr_to": "au bureau de poste",
         "fr_at": "au bureau de poste",
         "fr_subject_lower": "le bureau de poste",
-        "fr_from": "du bureau de poste",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 22,
-          "source_refs": [
-            "N22-S01"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "du bureau de poste"
       },
       {
         "id": "P07",
@@ -344,13 +791,7 @@
         "fr_to": "à la pharmacie",
         "fr_at": "à la pharmacie",
         "fr_subject_lower": "la pharmacie",
-        "fr_from": "de la pharmacie",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "薬局 : Pas d’appui lexical vérifié."
-        }
+        "fr_from": "de la pharmacie"
       },
       {
         "id": "P08",
@@ -362,15 +803,7 @@
         "fr_to": "à l’hôpital",
         "fr_at": "à l’hôpital",
         "fr_subject_lower": "l’hôpital",
-        "fr_from": "de l’hôpital",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 49,
-          "source_refs": [
-            "N49-S07"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "de l’hôpital"
       },
       {
         "id": "P09",
@@ -382,15 +815,7 @@
         "fr_to": "à l’aéroport",
         "fr_at": "à l’aéroport",
         "fr_subject_lower": "l’aéroport",
-        "fr_from": "de l’aéroport",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 27,
-          "source_refs": [
-            "N27-S03"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "de l’aéroport"
       },
       {
         "id": "P10",
@@ -402,33 +827,17 @@
         "fr_to": "au café",
         "fr_at": "au café",
         "fr_subject_lower": "le café",
-        "fr_from": "du café",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 12,
-          "source_refs": [
-            "N12-S03"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "du café"
       }
     ],
-    "place_eat": [
+    "base_place_eat": [
       {
         "id": "PE01",
         "japanese": "レストラン",
         "kana": "レストラン",
         "romaji": "resutoran",
         "fr": "restaurant",
-        "fr_at": "au restaurant",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 46,
-          "source_refs": [
-            "N46-S24"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_at": "au restaurant"
       },
       {
         "id": "PE02",
@@ -436,15 +845,7 @@
         "kana": "きっさてん",
         "romaji": "kissaten",
         "fr": "café / salon de thé",
-        "fr_at": "au café",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 12,
-          "source_refs": [
-            "N12-S03"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_at": "au café"
       },
       {
         "id": "PE03",
@@ -452,18 +853,10 @@
         "kana": "ホテル",
         "romaji": "hoteru",
         "fr": "hôtel",
-        "fr_at": "à l’hôtel",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 44,
-          "source_refs": [
-            "N44-S01"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_at": "à l’hôtel"
       }
     ],
-    "food": [
+    "base_food": [
       {
         "id": "F01",
         "japanese": "ご飯",
@@ -473,12 +866,6 @@
         "fr_obj": "du riz",
         "fr_subject": "Le riz",
         "fr_subject_lower": "le riz",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "ご飯 : Pas d’appui vérifié pour le sens riz dans les leçons."
-        },
         "fr_obj_negative": "de riz",
         "sense_note": "Riz dans ces modèles ; peut désigner un repas dans d’autres contextes."
       },
@@ -491,14 +878,6 @@
         "fr_obj": "du poisson",
         "fr_subject": "Le poisson",
         "fr_subject_lower": "le poisson",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 9,
-          "source_refs": [
-            "N9-S05"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "fr_obj_negative": "de poisson"
       },
       {
@@ -510,14 +889,6 @@
         "fr_obj": "de la viande",
         "fr_subject": "La viande",
         "fr_subject_lower": "la viande",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 9,
-          "source_refs": [
-            "N9-S05"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "fr_obj_negative": "de viande"
       },
       {
@@ -529,14 +900,6 @@
         "fr_obj": "des légumes",
         "fr_subject": "Les légumes",
         "fr_subject_lower": "les légumes",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 80,
-          "source_refs": [
-            "N80-S07"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "fr_obj_negative": "de légumes"
       },
       {
@@ -548,14 +911,6 @@
         "fr_obj": "un bento",
         "fr_subject": "Le bento",
         "fr_subject_lower": "le bento",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 93,
-          "source_refs": [
-            "N93-S02"
-          ],
-          "note": "Apparaît avec le préfixe de politesse お dans お弁当."
-        },
         "fr_obj_negative": "de bento"
       },
       {
@@ -567,16 +922,10 @@
         "fr_obj": "un menu fixe",
         "fr_subject": "Le menu fixe",
         "fr_subject_lower": "le menu fixe",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "定食 : Pas d’appui lexical vérifié."
-        },
         "fr_obj_negative": "de menu fixe"
       }
     ],
-    "drink": [
+    "base_drink": [
       {
         "id": "D01",
         "japanese": "水",
@@ -586,14 +935,6 @@
         "fr_obj": "de l’eau",
         "fr_subject": "L’eau",
         "fr_subject_lower": "l’eau",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 54,
-          "source_refs": [
-            "N54-S09"
-          ],
-          "note": "Eau attestée en N54-S09 ; 水族館 et 水平線 ne sont pas des appuis pour ce sens."
-        },
         "fr_obj_negative": "d’eau"
       },
       {
@@ -605,14 +946,6 @@
         "fr_obj": "du thé",
         "fr_subject": "Le thé",
         "fr_subject_lower": "le thé",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 73,
-          "source_refs": [
-            "N73-S08"
-          ],
-          "note": "N34-S07 désigne la cérémonie du thé ; N73-S08 atteste la boisson retenue ici."
-        },
         "fr_obj_negative": "de thé",
         "sense_note": "Thé, sans imposer une variété particulière."
       },
@@ -625,14 +958,6 @@
         "fr_obj": "du café",
         "fr_subject": "Le café",
         "fr_subject_lower": "le café",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 3,
-          "source_refs": [
-            "N3-S05"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "fr_obj_negative": "de café"
       },
       {
@@ -644,14 +969,6 @@
         "fr_obj": "de la bière",
         "fr_subject": "La bière",
         "fr_subject_lower": "la bière",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 3,
-          "source_refs": [
-            "N3-S07"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "fr_obj_negative": "de bière"
       },
       {
@@ -663,19 +980,11 @@
         "fr_obj": "de l’alcool",
         "fr_subject": "L’alcool",
         "fr_subject_lower": "l’alcool",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 4,
-          "source_refs": [
-            "N4-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "fr_obj_negative": "d’alcool",
         "sense_note": "Sens général retenu ici ; お酒 peut aussi désigner le saké selon le contexte."
       }
     ],
-    "buyable": [
+    "base_buyable": [
       {
         "id": "B01",
         "japanese": "弁当",
@@ -684,15 +993,7 @@
         "fr": "bento",
         "fr_obj": "un bento",
         "fr_subject": "Le bento",
-        "fr_subject_lower": "le bento",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 93,
-          "source_refs": [
-            "N93-S02"
-          ],
-          "note": "Apparaît avec le préfixe de politesse お dans お弁当."
-        }
+        "fr_subject_lower": "le bento"
       },
       {
         "id": "B02",
@@ -703,14 +1004,6 @@
         "fr_obj": "du thé",
         "fr_subject": "Le thé",
         "fr_subject_lower": "le thé",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 73,
-          "source_refs": [
-            "N73-S08"
-          ],
-          "note": "N34-S07 désigne la cérémonie du thé ; N73-S08 atteste la boisson retenue ici."
-        },
         "sense_note": "Thé, sans imposer une variété particulière."
       },
       {
@@ -721,15 +1014,7 @@
         "fr": "café",
         "fr_obj": "du café",
         "fr_subject": "Le café",
-        "fr_subject_lower": "le café",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 3,
-          "source_refs": [
-            "N3-S05"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_lower": "le café"
       },
       {
         "id": "B04",
@@ -739,15 +1024,7 @@
         "fr": "bière",
         "fr_obj": "de la bière",
         "fr_subject": "La bière",
-        "fr_subject_lower": "la bière",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 3,
-          "source_refs": [
-            "N3-S07"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_lower": "la bière"
       },
       {
         "id": "B05",
@@ -757,15 +1034,7 @@
         "fr": "billet",
         "fr_obj": "un billet",
         "fr_subject": "Le billet",
-        "fr_subject_lower": "le billet",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 29,
-          "source_refs": [
-            "N29-S13"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_lower": "le billet"
       },
       {
         "id": "B06",
@@ -775,15 +1044,7 @@
         "fr": "parapluie",
         "fr_obj": "un parapluie",
         "fr_subject": "Le parapluie",
-        "fr_subject_lower": "le parapluie",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 31,
-          "source_refs": [
-            "N31-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_lower": "le parapluie"
       },
       {
         "id": "B07",
@@ -793,15 +1054,7 @@
         "fr": "livre",
         "fr_obj": "un livre",
         "fr_subject": "Le livre",
-        "fr_subject_lower": "le livre",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 4,
-          "source_refs": [
-            "N4-S06"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_lower": "le livre"
       },
       {
         "id": "B08",
@@ -811,33 +1064,17 @@
         "fr": "journal",
         "fr_obj": "un journal",
         "fr_subject": "Le journal",
-        "fr_subject_lower": "le journal",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 69,
-          "source_refs": [
-            "N69-S01"
-          ],
-          "note": "Le nom apparaît dans 日本経済新聞, le journal auquel se rapporte la phrase."
-        }
+        "fr_subject_lower": "le journal"
       }
     ],
-    "person_companion": [
+    "base_person_companion": [
       {
         "id": "C01",
         "japanese": "友達",
         "kana": "ともだち",
         "romaji": "tomodachi",
         "fr": "ami",
-        "fr_with": "avec un ami",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 8,
-          "source_refs": [
-            "N8-S02"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_with": "avec un ami"
       },
       {
         "id": "C02",
@@ -845,15 +1082,7 @@
         "kana": "かぞく",
         "romaji": "kazoku",
         "fr": "famille",
-        "fr_with": "avec ma famille",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 67,
-          "source_refs": [
-            "N67-S10"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_with": "avec ma famille"
       },
       {
         "id": "C03",
@@ -861,33 +1090,17 @@
         "kana": "こども",
         "romaji": "kodomo",
         "fr": "enfant",
-        "fr_with": "avec un enfant",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 15,
-          "source_refs": [
-            "N15-S04"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_with": "avec un enfant"
       }
     ],
-    "adj_taste_i": [
+    "base_adj_taste_i": [
       {
         "id": "AI01",
         "japanese": "おいしい",
         "kana": "おいしい",
         "romaji": "oishii",
         "fr": "délicieux",
-        "fr_pred": "délicieux",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 9,
-          "source_refs": [
-            "N9-S13"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "délicieux"
       },
       {
         "id": "AI02",
@@ -896,12 +1109,6 @@
         "romaji": "mazui",
         "fr": "mauvais",
         "fr_pred": "mauvais",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "まずい : Pas d’appui lexical vérifié."
-        },
         "usage_note": "Jugement direct et négatif sur le goût ; à employer avec précaution face à la personne qui a préparé le repas."
       },
       {
@@ -910,15 +1117,7 @@
         "kana": "たかい",
         "romaji": "takai",
         "fr": "cher",
-        "fr_pred": "cher",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 5,
-          "source_refs": [
-            "N5-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "cher"
       },
       {
         "id": "AI04",
@@ -926,33 +1125,17 @@
         "kana": "やすい",
         "romaji": "yasui",
         "fr": "bon marché",
-        "fr_pred": "bon marché",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 31,
-          "source_refs": [
-            "N31-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "bon marché"
       }
     ],
-    "adj_place_i": [
+    "base_adj_place_i": [
       {
         "id": "AP01",
         "japanese": "近い",
         "kana": "ちかい",
         "romaji": "chikai",
         "fr": "proche",
-        "fr_pred": "proche",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 6,
-          "source_refs": [
-            "N6-S05"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "proche"
       },
       {
         "id": "AP02",
@@ -960,15 +1143,7 @@
         "kana": "とおい",
         "romaji": "tooi",
         "fr": "loin",
-        "fr_pred": "loin",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 20,
-          "source_refs": [
-            "N20-S03"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "loin"
       },
       {
         "id": "AP03",
@@ -976,15 +1151,7 @@
         "kana": "おおきい",
         "romaji": "ookii",
         "fr": "grand",
-        "fr_pred": "grand",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 20,
-          "source_refs": [
-            "N20-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "grand"
       },
       {
         "id": "AP04",
@@ -992,18 +1159,10 @@
         "kana": "ちいさい",
         "romaji": "chiisai",
         "fr": "petit",
-        "fr_pred": "petit",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 27,
-          "source_refs": [
-            "N27-S10"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "petit"
       }
     ],
-    "adj_place_na": [
+    "base_adj_place_na": [
       {
         "id": "AN01",
         "japanese": "きれい",
@@ -1011,12 +1170,6 @@
         "romaji": "kirei",
         "fr": "propre",
         "fr_pred": "propre",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "きれい : Les occurrences examinées expriment la beauté ; le générateur retient ici la propreté."
-        },
         "sense_note": "Propreté du lieu dans cette activité ; peut aussi signifier beau ou joli."
       },
       {
@@ -1025,18 +1178,10 @@
         "kana": "しずか",
         "romaji": "shizuka",
         "fr": "calme",
-        "fr_pred": "calme",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 57,
-          "source_refs": [
-            "N57-S06"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "calme"
       }
     ],
-    "activity_scenario": [
+    "base_activity_scenario": [
       {
         "id": "AS01",
         "jp_place": "公園",
@@ -1045,16 +1190,7 @@
         "jp_activity": "散歩",
         "kana_activity": "さんぽ",
         "romaji_activity": "sanpo",
-        "fr": "Je me promène au parc.",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 68,
-          "source_refs": [
-            "N68-S18",
-            "N31-S03"
-          ],
-          "note": "Le passage comporte une graphie suspecte 行きましよう ; seul le nom 散歩 sert ici d’appui."
-        }
+        "fr": "Je me promène au parc."
       },
       {
         "id": "AS02",
@@ -1064,13 +1200,7 @@
         "jp_activity": "休憩",
         "kana_activity": "きゅうけい",
         "romaji_activity": "kyuukei",
-        "fr": "Je fais une pause au café.",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "休憩 : Pas d’appui lexical vérifié."
-        }
+        "fr": "Je fais une pause au café."
       },
       {
         "id": "AS03",
@@ -1080,13 +1210,7 @@
         "jp_activity": "休憩",
         "kana_activity": "きゅうけい",
         "romaji_activity": "kyuukei",
-        "fr": "Je me repose à l’hôtel.",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "休憩 : Pas d’appui lexical vérifié."
-        }
+        "fr": "Je me repose à l’hôtel."
       },
       {
         "id": "AS04",
@@ -1096,19 +1220,10 @@
         "jp_activity": "買い物",
         "kana_activity": "かいもの",
         "romaji_activity": "kaimono",
-        "fr": "Je fais des achats au magasin.",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 28,
-          "source_refs": [
-            "N6-S10",
-            "N28-S03"
-          ],
-          "note": "Graphie 買物 dans le passage ; même mot."
-        }
+        "fr": "Je fais des achats au magasin."
       }
     ],
-    "food_masc_sg": [
+    "base_food_masc_sg": [
       {
         "id": "F01",
         "japanese": "ご飯",
@@ -1118,12 +1233,6 @@
         "fr_obj": "du riz",
         "fr_subject": "Le riz",
         "fr_subject_lower": "le riz",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "ご飯 : Pas d’appui vérifié pour le sens riz dans les leçons."
-        },
         "fr_obj_negative": "de riz",
         "sense_note": "Riz dans ces modèles ; peut désigner un repas dans d’autres contextes."
       },
@@ -1136,14 +1245,6 @@
         "fr_obj": "du poisson",
         "fr_subject": "Le poisson",
         "fr_subject_lower": "le poisson",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 9,
-          "source_refs": [
-            "N9-S05"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "fr_obj_negative": "de poisson"
       },
       {
@@ -1155,14 +1256,6 @@
         "fr_obj": "un bento",
         "fr_subject": "Le bento",
         "fr_subject_lower": "le bento",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 93,
-          "source_refs": [
-            "N93-S02"
-          ],
-          "note": "Apparaît avec le préfixe de politesse お dans お弁当."
-        },
         "fr_obj_negative": "de bento"
       },
       {
@@ -1174,16 +1267,10 @@
         "fr_obj": "un menu fixe",
         "fr_subject": "Le menu fixe",
         "fr_subject_lower": "le menu fixe",
-        "lesson_mapping": {
-          "status": "unmapped",
-          "minimum_lesson": null,
-          "source_refs": [],
-          "note": "定食 : Pas d’appui lexical vérifié."
-        },
         "fr_obj_negative": "de menu fixe"
       }
     ],
-    "place_masc_sg": [
+    "base_place_masc_sg": [
       {
         "id": "P02",
         "japanese": "ホテル",
@@ -1194,15 +1281,7 @@
         "fr_to": "à l’hôtel",
         "fr_at": "à l’hôtel",
         "fr_subject_lower": "l’hôtel",
-        "fr_from": "de l’hôtel",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 44,
-          "source_refs": [
-            "N44-S01"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "de l’hôtel"
       },
       {
         "id": "P03",
@@ -1214,15 +1293,7 @@
         "fr_to": "au restaurant",
         "fr_at": "au restaurant",
         "fr_subject_lower": "le restaurant",
-        "fr_from": "du restaurant",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 46,
-          "source_refs": [
-            "N46-S24"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "du restaurant"
       },
       {
         "id": "P04",
@@ -1234,15 +1305,7 @@
         "fr_to": "au parc",
         "fr_at": "au parc",
         "fr_subject_lower": "le parc",
-        "fr_from": "du parc",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 68,
-          "source_refs": [
-            "N68-S18"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "du parc"
       },
       {
         "id": "P06",
@@ -1254,15 +1317,7 @@
         "fr_to": "au bureau de poste",
         "fr_at": "au bureau de poste",
         "fr_subject_lower": "le bureau de poste",
-        "fr_from": "du bureau de poste",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 22,
-          "source_refs": [
-            "N22-S01"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "du bureau de poste"
       },
       {
         "id": "P08",
@@ -1274,15 +1329,7 @@
         "fr_to": "à l’hôpital",
         "fr_at": "à l’hôpital",
         "fr_subject_lower": "l’hôpital",
-        "fr_from": "de l’hôpital",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 49,
-          "source_refs": [
-            "N49-S07"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "de l’hôpital"
       },
       {
         "id": "P09",
@@ -1294,15 +1341,7 @@
         "fr_to": "à l’aéroport",
         "fr_at": "à l’aéroport",
         "fr_subject_lower": "l’aéroport",
-        "fr_from": "de l’aéroport",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 27,
-          "source_refs": [
-            "N27-S03"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "de l’aéroport"
       },
       {
         "id": "P10",
@@ -1314,18 +1353,10 @@
         "fr_to": "au café",
         "fr_at": "au café",
         "fr_subject_lower": "le café",
-        "fr_from": "du café",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 12,
-          "source_refs": [
-            "N12-S03"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_from": "du café"
       }
     ],
-    "buyable_masc_sg": [
+    "base_buyable_masc_sg": [
       {
         "id": "B01",
         "japanese": "弁当",
@@ -1335,15 +1366,7 @@
         "fr_obj": "un bento",
         "fr_subject": "Le bento",
         "fr_subject_lower": "le bento",
-        "fr_subject_dem": "Ce bento",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 93,
-          "source_refs": [
-            "N93-S02"
-          ],
-          "note": "Apparaît avec le préfixe de politesse お dans お弁当."
-        }
+        "fr_subject_dem": "Ce bento"
       },
       {
         "id": "B02",
@@ -1355,14 +1378,6 @@
         "fr_subject": "Le thé",
         "fr_subject_lower": "le thé",
         "fr_subject_dem": "Ce thé",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 73,
-          "source_refs": [
-            "N73-S08"
-          ],
-          "note": "N34-S07 désigne la cérémonie du thé ; N73-S08 atteste la boisson retenue ici."
-        },
         "sense_note": "Thé, sans imposer une variété particulière."
       },
       {
@@ -1374,15 +1389,7 @@
         "fr_obj": "du café",
         "fr_subject": "Le café",
         "fr_subject_lower": "le café",
-        "fr_subject_dem": "Ce café",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 3,
-          "source_refs": [
-            "N3-S05"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_dem": "Ce café"
       },
       {
         "id": "B05",
@@ -1393,15 +1400,7 @@
         "fr_obj": "un billet",
         "fr_subject": "Le billet",
         "fr_subject_lower": "le billet",
-        "fr_subject_dem": "Ce billet",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 29,
-          "source_refs": [
-            "N29-S13"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_dem": "Ce billet"
       },
       {
         "id": "B06",
@@ -1412,15 +1411,7 @@
         "fr_obj": "un parapluie",
         "fr_subject": "Le parapluie",
         "fr_subject_lower": "le parapluie",
-        "fr_subject_dem": "Ce parapluie",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 31,
-          "source_refs": [
-            "N31-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_dem": "Ce parapluie"
       },
       {
         "id": "B07",
@@ -1431,15 +1422,7 @@
         "fr_obj": "un livre",
         "fr_subject": "Le livre",
         "fr_subject_lower": "le livre",
-        "fr_subject_dem": "Ce livre",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 4,
-          "source_refs": [
-            "N4-S06"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_subject_dem": "Ce livre"
       },
       {
         "id": "B08",
@@ -1450,33 +1433,17 @@
         "fr_obj": "un journal",
         "fr_subject": "Le journal",
         "fr_subject_lower": "le journal",
-        "fr_subject_dem": "Ce journal",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 69,
-          "source_refs": [
-            "N69-S01"
-          ],
-          "note": "Le nom apparaît dans 日本経済新聞, le journal auquel se rapporte la phrase."
-        }
+        "fr_subject_dem": "Ce journal"
       }
     ],
-    "adj_price_i": [
+    "base_adj_price_i": [
       {
         "id": "AI03",
         "japanese": "高い",
         "kana": "たかい",
         "romaji": "takai",
         "fr": "cher",
-        "fr_pred": "cher",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 5,
-          "source_refs": [
-            "N5-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "cher"
       },
       {
         "id": "AI04",
@@ -1484,18 +1451,10 @@
         "kana": "やすい",
         "romaji": "yasui",
         "fr": "bon marché",
-        "fr_pred": "bon marché",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 31,
-          "source_refs": [
-            "N31-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        }
+        "fr_pred": "bon marché"
       }
     ],
-    "purchase_scenario": [
+    "base_purchase_scenario": [
       {
         "id": "PS01",
         "jp_place": "駅",
@@ -1503,15 +1462,6 @@
         "jp_item": "切符",
         "romaji_item": "kippu",
         "fr": "Je vais à la gare et j’achète un billet.",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 29,
-          "source_refs": [
-            "N6-S04",
-            "N29-S13"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "kana_place": "えき",
         "kana_item": "きっぷ"
       },
@@ -1522,15 +1472,6 @@
         "jp_item": "コーヒー",
         "romaji_item": "koohii",
         "fr": "Je vais au café et j’achète un café.",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 12,
-          "source_refs": [
-            "N12-S03",
-            "N3-S05"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "kana_place": "きっさてん",
         "kana_item": "コーヒー"
       },
@@ -1541,15 +1482,6 @@
         "jp_item": "傘",
         "romaji_item": "kasa",
         "fr": "Je vais au magasin et j’achète un parapluie.",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 31,
-          "source_refs": [
-            "N6-S10",
-            "N31-S09"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "kana_place": "みせ",
         "kana_item": "かさ"
       },
@@ -1560,15 +1492,6 @@
         "jp_item": "本",
         "romaji_item": "hon",
         "fr": "Je vais au magasin et j’achète un livre.",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 6,
-          "source_refs": [
-            "N6-S10",
-            "N4-S06"
-          ],
-          "note": "Sens et emploi lexical examinés dans le passage cité."
-        },
         "kana_place": "みせ",
         "kana_item": "ほん"
       },
@@ -1579,15 +1502,6 @@
         "jp_item": "新聞",
         "romaji_item": "shinbun",
         "fr": "Je vais au magasin et j’achète un journal.",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 69,
-          "source_refs": [
-            "N6-S10",
-            "N69-S01"
-          ],
-          "note": "Le nom apparaît dans 日本経済新聞, le journal auquel se rapporte la phrase."
-        },
         "kana_place": "みせ",
         "kana_item": "しんぶん"
       },
@@ -1598,15 +1512,6 @@
         "jp_item": "お茶",
         "romaji_item": "ocha",
         "fr": "Je vais au magasin et j’achète du thé.",
-        "lesson_mapping": {
-          "status": "reviewed",
-          "minimum_lesson": 73,
-          "source_refs": [
-            "N6-S10",
-            "N73-S08"
-          ],
-          "note": "N34-S07 désigne la cérémonie du thé ; N73-S08 atteste la boisson retenue ici."
-        },
         "kana_place": "みせ",
         "kana_item": "おちゃ"
       }
@@ -1614,7 +1519,780 @@
   },
   "templates": [
     {
-      "id": "PG01",
+      "id": "FL01",
+      "label": "Lire dans un lieu",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "place": "reading_place",
+        "item": "text"
+      },
+      "japanese_pattern": "{time.japanese}、{place.japanese}で{item.japanese}を読みます。",
+      "kana_pattern": "{time.kana}、{place.kana}で{item.kana}をよみます。",
+      "romaji_pattern": "{time.romaji}, {place.romaji} de {item.romaji} o yomimasu.",
+      "french_pattern": "{time.prefix}je lis {item.object} {place.at}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{place.japanese}で",
+          "kana_pattern": "{place.kana}で",
+          "romaji_pattern": "{place.romaji} de",
+          "role_fr": "Lieu de lecture : で"
+        },
+        {
+          "japanese_pattern": "{item.japanese}を",
+          "kana_pattern": "{item.kana}を",
+          "romaji_pattern": "{item.romaji} o",
+          "role_fr": "Ce qui est lu : を"
+        },
+        {
+          "japanese_pattern": "読みます。",
+          "kana_pattern": "よみます。",
+          "romaji_pattern": "yomimasu.",
+          "role_fr": "Lire, forme polie"
+        }
+      ],
+      "context_fr": "Tu annonces un projet de lecture.",
+      "grammar_cards": [
+        "G06",
+        "G10"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL02",
+      "label": "Regarder un film ou une série",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "place": "screen_place",
+        "item": "screen"
+      },
+      "japanese_pattern": "{time.japanese}、{place.japanese}で{item.japanese}を見ます。",
+      "kana_pattern": "{time.kana}、{place.kana}で{item.kana}をみます。",
+      "romaji_pattern": "{time.romaji}, {place.romaji} de {item.romaji} o mimasu.",
+      "french_pattern": "{time.prefix}je regarde {item.object} {place.at}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{place.japanese}で",
+          "kana_pattern": "{place.kana}で",
+          "romaji_pattern": "{place.romaji} de",
+          "role_fr": "Lieu de visionnage : で"
+        },
+        {
+          "japanese_pattern": "{item.japanese}を",
+          "kana_pattern": "{item.kana}を",
+          "romaji_pattern": "{item.romaji} o",
+          "role_fr": "Ce qui est regardé : を"
+        },
+        {
+          "japanese_pattern": "見ます。",
+          "kana_pattern": "みます。",
+          "romaji_pattern": "mimasu.",
+          "role_fr": "Regarder, forme polie"
+        }
+      ],
+      "context_fr": "Tu annonces ce que tu comptes regarder.",
+      "grammar_cards": [
+        "G06",
+        "G10"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL03",
+      "label": "Écouter de la musique",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "place": "music_place",
+        "item": "music"
+      },
+      "japanese_pattern": "{time.japanese}、{place.japanese}で{item.japanese}を聞きます。",
+      "kana_pattern": "{time.kana}、{place.kana}で{item.kana}をききます。",
+      "romaji_pattern": "{time.romaji}, {place.romaji} de {item.romaji} o kikimasu.",
+      "french_pattern": "{time.prefix}j’écoute {item.object} {place.at}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{place.japanese}で",
+          "kana_pattern": "{place.kana}で",
+          "romaji_pattern": "{place.romaji} de",
+          "role_fr": "Lieu de l’écoute : で"
+        },
+        {
+          "japanese_pattern": "{item.japanese}を",
+          "kana_pattern": "{item.kana}を",
+          "romaji_pattern": "{item.romaji} o",
+          "role_fr": "Ce qui est écouté : を"
+        },
+        {
+          "japanese_pattern": "聞きます。",
+          "kana_pattern": "ききます。",
+          "romaji_pattern": "kikimasu.",
+          "role_fr": "Écouter, forme polie"
+        }
+      ],
+      "context_fr": "Tu annonces un moment consacré à la musique.",
+      "grammar_cards": [
+        "G06",
+        "G10"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL04",
+      "label": "Écrire un message",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "person": "recipient",
+        "language": "language"
+      },
+      "japanese_pattern": "{time.japanese}、{person.japanese}に{language.japanese}でメールを書きます。",
+      "kana_pattern": "{time.kana}、{person.kana}に{language.kana}でメールをかきます。",
+      "romaji_pattern": "{time.romaji}, {person.romaji} ni {language.romaji} de meeru o kakimasu.",
+      "french_pattern": "{time.prefix}j’écris un e-mail {language.in} {person.to}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{person.japanese}に",
+          "kana_pattern": "{person.kana}に",
+          "romaji_pattern": "{person.romaji} ni",
+          "role_fr": "Destinataire : に"
+        },
+        {
+          "japanese_pattern": "{language.japanese}で",
+          "kana_pattern": "{language.kana}で",
+          "romaji_pattern": "{language.romaji} de",
+          "role_fr": "Langue utilisée : で"
+        },
+        {
+          "japanese_pattern": "メールを",
+          "kana_pattern": "メールを",
+          "romaji_pattern": "meeru o",
+          "role_fr": "Le message écrit : を"
+        },
+        {
+          "japanese_pattern": "書きます。",
+          "kana_pattern": "かきます。",
+          "romaji_pattern": "kakimasu.",
+          "role_fr": "Écrire, forme polie"
+        }
+      ],
+      "context_fr": "Tu prévois d’écrire à un proche.",
+      "grammar_cards": [
+        "G06",
+        "G10"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL05",
+      "label": "Se déplacer avec quelqu’un",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "person": "person",
+        "transport": "transport",
+        "place": "destination"
+      },
+      "japanese_pattern": "{time.japanese}、{person.japanese}と{transport.japanese}で{place.japanese}に行きます。",
+      "kana_pattern": "{time.kana}、{person.kana}と{transport.kana}で{place.kana}にいきます。",
+      "romaji_pattern": "{time.romaji}, {person.romaji} to {transport.romaji} de {place.romaji} ni ikimasu.",
+      "french_pattern": "{time.prefix}je vais {place.to} {transport.by} {person.with}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{person.japanese}と",
+          "kana_pattern": "{person.kana}と",
+          "romaji_pattern": "{person.romaji} to",
+          "role_fr": "Accompagnement : と"
+        },
+        {
+          "japanese_pattern": "{transport.japanese}で",
+          "kana_pattern": "{transport.kana}で",
+          "romaji_pattern": "{transport.romaji} de",
+          "role_fr": "Moyen de transport : で"
+        },
+        {
+          "japanese_pattern": "{place.japanese}に",
+          "kana_pattern": "{place.kana}に",
+          "romaji_pattern": "{place.romaji} ni",
+          "role_fr": "Destination : に"
+        },
+        {
+          "japanese_pattern": "行きます。",
+          "kana_pattern": "いきます。",
+          "romaji_pattern": "ikimasu.",
+          "role_fr": "Aller, forme polie"
+        }
+      ],
+      "context_fr": "Tu annonces une sortie et son moyen de transport.",
+      "grammar_cards": [
+        "G09",
+        "G10",
+        "G12"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL06",
+      "label": "Partager un repas",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "person": "person",
+        "place": "meal_place",
+        "food": "food"
+      },
+      "japanese_pattern": "{time.japanese}、{person.japanese}と{place.japanese}で{food.japanese}を食べます。",
+      "kana_pattern": "{time.kana}、{person.kana}と{place.kana}で{food.kana}をたべます。",
+      "romaji_pattern": "{time.romaji}, {person.romaji} to {place.romaji} de {food.romaji} o tabemasu.",
+      "french_pattern": "{time.prefix}je mange {food.object} {place.at} {person.with}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{person.japanese}と",
+          "kana_pattern": "{person.kana}と",
+          "romaji_pattern": "{person.romaji} to",
+          "role_fr": "Accompagnement : と"
+        },
+        {
+          "japanese_pattern": "{place.japanese}で",
+          "kana_pattern": "{place.kana}で",
+          "romaji_pattern": "{place.romaji} de",
+          "role_fr": "Lieu du repas : で"
+        },
+        {
+          "japanese_pattern": "{food.japanese}を",
+          "kana_pattern": "{food.kana}を",
+          "romaji_pattern": "{food.romaji} o",
+          "role_fr": "Ce qui est mangé : を"
+        },
+        {
+          "japanese_pattern": "食べます。",
+          "kana_pattern": "たべます。",
+          "romaji_pattern": "tabemasu.",
+          "role_fr": "Manger, forme polie"
+        }
+      ],
+      "context_fr": "Tu annonces un repas avec un proche.",
+      "grammar_cards": [
+        "G06",
+        "G10",
+        "G12"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL07",
+      "label": "Faire un achat dans un commerce",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "scenario": "purchase"
+      },
+      "japanese_pattern": "{time.japanese}、{scenario.jp_place}で{scenario.jp_item}を買います。",
+      "kana_pattern": "{time.kana}、{scenario.kana_place}で{scenario.kana_item}をかいます。",
+      "romaji_pattern": "{time.romaji}, {scenario.romaji_place} de {scenario.romaji_item} o kaimasu.",
+      "french_pattern": "{time.prefix}j’achète {scenario.object_place}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{scenario.jp_place}で",
+          "kana_pattern": "{scenario.kana_place}で",
+          "romaji_pattern": "{scenario.romaji_place} de",
+          "role_fr": "Lieu de l’achat : で"
+        },
+        {
+          "japanese_pattern": "{scenario.jp_item}を",
+          "kana_pattern": "{scenario.kana_item}を",
+          "romaji_pattern": "{scenario.romaji_item} o",
+          "role_fr": "Objet acheté : を"
+        },
+        {
+          "japanese_pattern": "買います。",
+          "kana_pattern": "かいます。",
+          "romaji_pattern": "kaimasu.",
+          "role_fr": "Acheter, forme polie"
+        }
+      ],
+      "context_fr": "Le produit et le commerce sont choisis ensemble pour préserver une situation plausible.",
+      "grammar_cards": [
+        "G06",
+        "G10"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL08",
+      "label": "Étudier une langue",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "place": "study_place",
+        "language": "language"
+      },
+      "japanese_pattern": "{time.japanese}、{place.japanese}で{language.japanese}を勉強します。",
+      "kana_pattern": "{time.kana}、{place.kana}で{language.kana}をべんきょうします。",
+      "romaji_pattern": "{time.romaji}, {place.romaji} de {language.romaji} o benkyou shimasu.",
+      "french_pattern": "{time.prefix}j’étudie {language.object} {place.at}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{place.japanese}で",
+          "kana_pattern": "{place.kana}で",
+          "romaji_pattern": "{place.romaji} de",
+          "role_fr": "Lieu d’étude : で"
+        },
+        {
+          "japanese_pattern": "{language.japanese}を",
+          "kana_pattern": "{language.kana}を",
+          "romaji_pattern": "{language.romaji} o",
+          "role_fr": "Ce qui est étudié : を"
+        },
+        {
+          "japanese_pattern": "勉強します。",
+          "kana_pattern": "べんきょうします。",
+          "romaji_pattern": "benkyou shimasu.",
+          "role_fr": "Étudier, forme polie"
+        }
+      ],
+      "context_fr": "Tu annonces un moment consacré à une langue.",
+      "grammar_cards": [
+        "G06",
+        "G10"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL09",
+      "label": "Exprimer une envie de boisson",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "drink": "drink"
+      },
+      "japanese_pattern": "{time.japanese}、{drink.japanese}を飲みたいです。",
+      "kana_pattern": "{time.kana}、{drink.kana}をのみたいです。",
+      "romaji_pattern": "{time.romaji}, {drink.romaji} o nomitai desu.",
+      "french_pattern": "{time.prefix}j’ai envie de boire {drink.object}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{drink.japanese}を",
+          "kana_pattern": "{drink.kana}を",
+          "romaji_pattern": "{drink.romaji} o",
+          "role_fr": "Objet du souhait : を"
+        },
+        {
+          "japanese_pattern": "飲みたいです。",
+          "kana_pattern": "のみたいです。",
+          "romaji_pattern": "nomitai desu.",
+          "role_fr": "Vouloir boire : たいです"
+        }
+      ],
+      "context_fr": "Tu exprimes ton propre souhait.",
+      "grammar_cards": [
+        "G19"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL10",
+      "label": "Exprimer une envie de repas",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "food": "food"
+      },
+      "japanese_pattern": "{time.japanese}、{food.japanese}を食べたいです。",
+      "kana_pattern": "{time.kana}、{food.kana}をたべたいです。",
+      "romaji_pattern": "{time.romaji}, {food.romaji} o tabetai desu.",
+      "french_pattern": "{time.prefix}j’ai envie de manger {food.object}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{food.japanese}を",
+          "kana_pattern": "{food.kana}を",
+          "romaji_pattern": "{food.romaji} o",
+          "role_fr": "Objet du souhait : を"
+        },
+        {
+          "japanese_pattern": "食べたいです。",
+          "kana_pattern": "たべたいです。",
+          "romaji_pattern": "tabetai desu.",
+          "role_fr": "Vouloir manger : たいです"
+        }
+      ],
+      "context_fr": "Tu exprimes ton propre souhait.",
+      "grammar_cards": [
+        "G19"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL11",
+      "label": "Proposer une sortie",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "place": "destination"
+      },
+      "japanese_pattern": "{time.japanese}、一緒に{place.japanese}に行きましょう。",
+      "kana_pattern": "{time.kana}、いっしょに{place.kana}にいきましょう。",
+      "romaji_pattern": "{time.romaji}, issho ni {place.romaji} ni ikimashou.",
+      "french_pattern": "{time.prefix}allons ensemble {place.to}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "一緒に",
+          "kana_pattern": "いっしょに",
+          "romaji_pattern": "issho ni",
+          "role_fr": "Ensemble"
+        },
+        {
+          "japanese_pattern": "{place.japanese}に",
+          "kana_pattern": "{place.kana}に",
+          "romaji_pattern": "{place.romaji} ni",
+          "role_fr": "Destination : に"
+        },
+        {
+          "japanese_pattern": "行きましょう。",
+          "kana_pattern": "いきましょう。",
+          "romaji_pattern": "ikimashou.",
+          "role_fr": "Proposition de faire ensemble"
+        }
+      ],
+      "context_fr": "Tu proposes une sortie à ton interlocuteur.",
+      "grammar_cards": [
+        "G09",
+        "G15"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL12",
+      "label": "Raconter une sortie",
+      "weight": 1.0,
+      "slots": {
+        "time": "past_time",
+        "place": "destination"
+      },
+      "japanese_pattern": "{time.japanese}、{place.japanese}に行きました。",
+      "kana_pattern": "{time.kana}、{place.kana}にいきました。",
+      "romaji_pattern": "{time.romaji}, {place.romaji} ni ikimashita.",
+      "french_pattern": "{time.prefix}je suis allé(e) {place.to}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment passé"
+        },
+        {
+          "japanese_pattern": "{place.japanese}に",
+          "kana_pattern": "{place.kana}に",
+          "romaji_pattern": "{place.romaji} ni",
+          "role_fr": "Destination : に"
+        },
+        {
+          "japanese_pattern": "行きました。",
+          "kana_pattern": "いきました。",
+          "romaji_pattern": "ikimashita.",
+          "role_fr": "Aller au passé, forme polie"
+        }
+      ],
+      "context_fr": "Tu racontes un déplacement passé ; allé ou allée selon la personne.",
+      "grammar_cards": [
+        "G05",
+        "G09"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL13",
+      "label": "Acheter pour quelqu’un",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "person": "recipient",
+        "item": "gift"
+      },
+      "japanese_pattern": "{time.japanese}、{person.japanese}のために{item.japanese}を買います。",
+      "kana_pattern": "{time.kana}、{person.kana}のために{item.kana}をかいます。",
+      "romaji_pattern": "{time.romaji}, {person.romaji} no tame ni {item.romaji} o kaimasu.",
+      "french_pattern": "{time.prefix}j’achète {item.object} {person.for}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{person.japanese}のために",
+          "kana_pattern": "{person.kana}のために",
+          "romaji_pattern": "{person.romaji} no tame ni",
+          "role_fr": "Bénéficiaire : pour cette personne"
+        },
+        {
+          "japanese_pattern": "{item.japanese}を",
+          "kana_pattern": "{item.kana}を",
+          "romaji_pattern": "{item.romaji} o",
+          "role_fr": "Objet acheté : を"
+        },
+        {
+          "japanese_pattern": "買います。",
+          "kana_pattern": "かいます。",
+          "romaji_pattern": "kaimasu.",
+          "role_fr": "Acheter, forme polie"
+        }
+      ],
+      "context_fr": "Tu prévois un achat destiné à un proche.",
+      "grammar_cards": [
+        "G06"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL14",
+      "label": "Prévoir un séjour",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "place": "lodging",
+        "duration": "duration"
+      },
+      "japanese_pattern": "{time.japanese}から、{place.japanese}に{duration.japanese}泊まります。",
+      "kana_pattern": "{time.kana}から、{place.kana}に{duration.kana}とまります。",
+      "romaji_pattern": "{time.romaji} kara, {place.romaji} ni {duration.romaji} tomarimasu.",
+      "french_pattern": "{time.from_prefix}je passe {duration.for} {place.at}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}から、",
+          "kana_pattern": "{time.kana}から、",
+          "romaji_pattern": "{time.romaji} kara,",
+          "role_fr": "Début du séjour : から"
+        },
+        {
+          "japanese_pattern": "{place.japanese}に",
+          "kana_pattern": "{place.kana}に",
+          "romaji_pattern": "{place.romaji} ni",
+          "role_fr": "Lieu où l’on séjourne : に"
+        },
+        {
+          "japanese_pattern": "{duration.japanese}",
+          "kana_pattern": "{duration.kana}",
+          "romaji_pattern": "{duration.romaji}",
+          "role_fr": "Durée comptée en nuits"
+        },
+        {
+          "japanese_pattern": "泊まります。",
+          "kana_pattern": "とまります。",
+          "romaji_pattern": "tomarimasu.",
+          "role_fr": "Passer la nuit, forme polie"
+        }
+      ],
+      "context_fr": "Tu annonces où tu comptes dormir, à partir de quand et pour combien de nuits.",
+      "grammar_cards": [],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL15",
+      "label": "Se promener ensemble",
+      "weight": 1.0,
+      "slots": {
+        "time": "time",
+        "person": "person",
+        "place": "walk_place"
+      },
+      "japanese_pattern": "{time.japanese}、{person.japanese}と{place.japanese}で散歩します。",
+      "kana_pattern": "{time.kana}、{person.kana}と{place.kana}でさんぽします。",
+      "romaji_pattern": "{time.romaji}, {person.romaji} to {place.romaji} de sanpo shimasu.",
+      "french_pattern": "{time.prefix}je me promène {place.at} {person.with}.",
+      "segments": [
+        {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "romaji_pattern": "{time.romaji},",
+          "role_fr": "Moment prévu"
+        },
+        {
+          "japanese_pattern": "{person.japanese}と",
+          "kana_pattern": "{person.kana}と",
+          "romaji_pattern": "{person.romaji} to",
+          "role_fr": "Accompagnement : と"
+        },
+        {
+          "japanese_pattern": "{place.japanese}で",
+          "kana_pattern": "{place.kana}で",
+          "romaji_pattern": "{place.romaji} de",
+          "role_fr": "Lieu de la promenade : で"
+        },
+        {
+          "japanese_pattern": "散歩します。",
+          "kana_pattern": "さんぽします。",
+          "romaji_pattern": "sanpo shimasu.",
+          "role_fr": "Se promener, forme polie"
+        }
+      ],
+      "context_fr": "Tu annonces une promenade avec un proche.",
+      "grammar_cards": [
+        "G10",
+        "G12"
+      ],
+      "constraints": [],
+      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FLB01",
       "label": "Aller à un lieu",
       "level": 1,
       "weight": 1.0,
@@ -1622,7 +2300,7 @@
       "romaji_pattern": "{place.romaji} ni ikimasu.",
       "french_pattern": "Je vais {place.fr_to}.",
       "slots": {
-        "place": "place_destination"
+        "place": "base_place_destination"
       },
       "tags": [
         "déplacement",
@@ -1634,13 +2312,9 @@
       "kana_pattern": "{place.kana}にいきます。",
       "context_fr": "Tu annonces ta destination.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 8,
-        "source_refs": [
-          "N2-S07",
-          "N8-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -1665,7 +2339,7 @@
       ]
     },
     {
-      "id": "PG02",
+      "id": "FLB02",
       "label": "Ne pas aller à un lieu",
       "level": 1,
       "weight": 1.0,
@@ -1673,7 +2347,7 @@
       "romaji_pattern": "{place.romaji} ni ikimasen.",
       "french_pattern": "Je ne vais pas {place.fr_to}.",
       "slots": {
-        "place": "place_destination"
+        "place": "base_place_destination"
       },
       "tags": [
         "déplacement",
@@ -1685,14 +2359,9 @@
       "kana_pattern": "{place.kana}にいきません。",
       "context_fr": "Tu précises où tu ne vas pas.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 8,
-        "source_refs": [
-          "N2-S07",
-          "N3-S08",
-          "N8-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -1717,7 +2386,7 @@
       ]
     },
     {
-      "id": "PG03",
+      "id": "FLB03",
       "label": "Aller à un lieu avec repère temporel",
       "level": 1,
       "weight": 1.0,
@@ -1725,8 +2394,8 @@
       "romaji_pattern": "{time.romaji}, {place.romaji} ni ikimasu.",
       "french_pattern": "{time.fr_prefix}je vais {place.fr_to}.",
       "slots": {
-        "time": "time_day",
-        "place": "place_destination"
+        "time": "base_time_day",
+        "place": "base_place_destination"
       },
       "tags": [
         "déplacement",
@@ -1738,13 +2407,9 @@
       "kana_pattern": "{time.kana}、{place.kana}にいきます。",
       "context_fr": "Tu annonces un déplacement prévu aujourd’hui, demain ou ce soir.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 8,
-        "source_refs": [
-          "N2-S07",
-          "N8-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -1775,7 +2440,7 @@
       ]
     },
     {
-      "id": "PG04",
+      "id": "FLB04",
       "label": "Aller d’un lieu à un autre",
       "level": 2,
       "weight": 1.0,
@@ -1783,8 +2448,8 @@
       "romaji_pattern": "{from.romaji} kara {to.romaji} made ikimasu.",
       "french_pattern": "Je vais {from.fr_from} jusqu’{to.fr_to}.",
       "slots": {
-        "from": "place_destination",
-        "to": "place_destination"
+        "from": "base_place_destination",
+        "to": "base_place_destination"
       },
       "tags": [
         "déplacement",
@@ -1802,13 +2467,9 @@
       "kana_pattern": "{from.kana}から{to.kana}までいきます。",
       "context_fr": "Tu décris un trajet entre deux lieux différents.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 6,
-        "source_refs": [
-          "N6-S06",
-          "N6-S07"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -1839,7 +2500,7 @@
       ]
     },
     {
-      "id": "PG05",
+      "id": "FLB05",
       "label": "Manger",
       "level": 1,
       "weight": 1.0,
@@ -1847,7 +2508,7 @@
       "romaji_pattern": "{food.romaji} o tabemasu.",
       "french_pattern": "Je mange {food.fr_obj}.",
       "slots": {
-        "food": "food"
+        "food": "base_food"
       },
       "tags": [
         "repas",
@@ -1859,12 +2520,9 @@
       "kana_pattern": "{food.kana}をたべます。",
       "context_fr": "Tu indiques ce que tu manges.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 3,
-        "source_refs": [
-          "N3-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -1889,7 +2547,7 @@
       ]
     },
     {
-      "id": "PG06",
+      "id": "FLB06",
       "label": "Boire",
       "level": 1,
       "weight": 1.0,
@@ -1897,7 +2555,7 @@
       "romaji_pattern": "{drink.romaji} o nomimasu.",
       "french_pattern": "Je bois {drink.fr_obj}.",
       "slots": {
-        "drink": "drink"
+        "drink": "base_drink"
       },
       "tags": [
         "boisson",
@@ -1909,12 +2567,9 @@
       "kana_pattern": "{drink.kana}をのみます。",
       "context_fr": "Tu indiques ce que tu bois.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 3,
-        "source_refs": [
-          "N3-S05"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -1939,7 +2594,7 @@
       ]
     },
     {
-      "id": "PG07",
+      "id": "FLB07",
       "label": "Ne pas manger",
       "level": 1,
       "weight": 1.0,
@@ -1947,7 +2602,7 @@
       "romaji_pattern": "{food.romaji} o tabemasen.",
       "french_pattern": "Je ne mange pas {food.fr_obj_negative}.",
       "slots": {
-        "food": "food"
+        "food": "base_food"
       },
       "tags": [
         "repas",
@@ -1959,13 +2614,9 @@
       "kana_pattern": "{food.kana}をたべません。",
       "context_fr": "Tu précises ce que tu ne manges pas.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 14,
-        "source_refs": [
-          "N3-S03",
-          "N14-S09"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -1990,7 +2641,7 @@
       ]
     },
     {
-      "id": "PG08",
+      "id": "FLB08",
       "label": "Ne pas boire",
       "level": 1,
       "weight": 1.0,
@@ -1998,7 +2649,7 @@
       "romaji_pattern": "{drink.romaji} o nomimasen.",
       "french_pattern": "Je ne bois pas {drink.fr_obj_negative}.",
       "slots": {
-        "drink": "drink"
+        "drink": "base_drink"
       },
       "tags": [
         "boisson",
@@ -2010,13 +2661,9 @@
       "kana_pattern": "{drink.kana}をのみません。",
       "context_fr": "Tu précises ce que tu ne bois pas.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 3,
-        "source_refs": [
-          "N3-S05",
-          "N3-S08"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2041,7 +2688,7 @@
       ]
     },
     {
-      "id": "PG09",
+      "id": "FLB09",
       "label": "Acheter",
       "level": 1,
       "weight": 1.0,
@@ -2049,7 +2696,7 @@
       "romaji_pattern": "{item.romaji} o kaimasu.",
       "french_pattern": "J’achète {item.fr_obj}.",
       "slots": {
-        "item": "buyable"
+        "item": "base_buyable"
       },
       "tags": [
         "achat",
@@ -2061,12 +2708,9 @@
       "kana_pattern": "{item.kana}をかいます。",
       "context_fr": "Tu indiques ce que tu achètes.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 5,
-        "source_refs": [
-          "N5-S05"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2091,7 +2735,7 @@
       ]
     },
     {
-      "id": "PG10",
+      "id": "FLB10",
       "label": "Demander si on mange",
       "level": 1,
       "weight": 1.0,
@@ -2099,7 +2743,7 @@
       "romaji_pattern": "{food.romaji} o tabemasu ka.",
       "french_pattern": "Est-ce que tu manges {food.fr_obj} ?",
       "slots": {
-        "food": "food"
+        "food": "base_food"
       },
       "tags": [
         "repas",
@@ -2111,12 +2755,9 @@
       "kana_pattern": "{food.kana}をたべますか。",
       "context_fr": "Tu demandes à une personne ce qu’elle mange ; le français la tutoie.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 3,
-        "source_refs": [
-          "N3-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2142,7 +2783,7 @@
       ]
     },
     {
-      "id": "PG11",
+      "id": "FLB11",
       "label": "Demander si on boit",
       "level": 1,
       "weight": 1.0,
@@ -2150,7 +2791,7 @@
       "romaji_pattern": "{drink.romaji} o nomimasu ka.",
       "french_pattern": "Est-ce que tu bois {drink.fr_obj} ?",
       "slots": {
-        "drink": "drink"
+        "drink": "base_drink"
       },
       "tags": [
         "boisson",
@@ -2162,12 +2803,9 @@
       "kana_pattern": "{drink.kana}をのみますか。",
       "context_fr": "Tu demandes à une personne ce qu’elle boit ; le français la tutoie.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 3,
-        "source_refs": [
-          "N3-S05"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2193,7 +2831,7 @@
       ]
     },
     {
-      "id": "PG12",
+      "id": "FLB12",
       "label": "Que mange-t-on ?",
       "level": 1,
       "weight": 1.0,
@@ -2211,13 +2849,9 @@
       "kana_pattern": "なにをたべますか。",
       "context_fr": "Tu demandes à une personne ce qu’elle mange ; le français la tutoie.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 3,
-        "source_refs": [
-          "N2-S02",
-          "N3-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2243,7 +2877,7 @@
       ]
     },
     {
-      "id": "PG13",
+      "id": "FLB13",
       "label": "Où va-t-on ?",
       "level": 1,
       "weight": 1.0,
@@ -2261,13 +2895,9 @@
       "kana_pattern": "どこにいきますか。",
       "context_fr": "Tu demandes sa destination à une personne ; le français la tutoie.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 8,
-        "source_refs": [
-          "N5-S01",
-          "N8-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2292,7 +2922,7 @@
       ]
     },
     {
-      "id": "PG14",
+      "id": "FLB14",
       "label": "Où est un lieu ?",
       "level": 1,
       "weight": 1.0,
@@ -2300,7 +2930,7 @@
       "romaji_pattern": "{place.romaji} wa doko desu ka.",
       "french_pattern": "Où est {place.fr_subject_lower} ?",
       "slots": {
-        "place": "place_destination"
+        "place": "base_place_destination"
       },
       "tags": [
         "lieu",
@@ -2312,13 +2942,9 @@
       "kana_pattern": "{place.kana}はどこですか。",
       "context_fr": "Tu demandes où se trouve un lieu.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 20,
-        "source_refs": [
-          "N16-S01",
-          "N20-S05"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2343,7 +2969,7 @@
       ]
     },
     {
-      "id": "PG15",
+      "id": "FLB15",
       "label": "Combien coûte un objet ?",
       "level": 1,
       "weight": 1.0,
@@ -2351,7 +2977,7 @@
       "romaji_pattern": "{item.romaji} wa ikura desu ka.",
       "french_pattern": "Combien coûte {item.fr_subject_lower} ?",
       "slots": {
-        "item": "buyable"
+        "item": "base_buyable"
       },
       "tags": [
         "achat",
@@ -2363,12 +2989,9 @@
       "kana_pattern": "{item.kana}はいくらですか。",
       "context_fr": "Dans un commerce, tu demandes le prix du produit dont vous parlez.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 17,
-        "source_refs": [
-          "N17-S01"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2393,7 +3016,7 @@
       ]
     },
     {
-      "id": "PG16",
+      "id": "FLB16",
       "label": "Demander la disponibilité d’un produit",
       "level": 1,
       "weight": 1.0,
@@ -2401,7 +3024,7 @@
       "romaji_pattern": "{item.romaji} wa arimasu ka.",
       "french_pattern": "Avez-vous {item.fr_obj} ?",
       "slots": {
-        "item": "buyable"
+        "item": "base_buyable"
       },
       "tags": [
         "achat",
@@ -2413,10 +3036,9 @@
       "kana_pattern": "{item.kana}はありますか。",
       "context_fr": "Dans un commerce, tu demandes si le produit est disponible.",
       "lesson_mapping": {
-        "status": "unmapped",
+        "status": "independent",
         "minimum_lesson": null,
-        "source_refs": [],
-        "note": "Question commerciale avec はありますか : correspondance pragmatique à établir."
+        "source_refs": []
       },
       "segments": [
         {
@@ -2438,7 +3060,7 @@
       "grammar_cards": []
     },
     {
-      "id": "PG17",
+      "id": "FLB17",
       "label": "Manger dans un lieu",
       "level": 2,
       "weight": 1.0,
@@ -2446,8 +3068,8 @@
       "romaji_pattern": "{place.romaji} de {food.romaji} o tabemasu.",
       "french_pattern": "Je mange {food.fr_obj} {place.fr_at}.",
       "slots": {
-        "place": "place_eat",
-        "food": "food"
+        "place": "base_place_eat",
+        "food": "base_food"
       },
       "tags": [
         "repas",
@@ -2460,13 +3082,9 @@
       "kana_pattern": "{place.kana}で{food.kana}をたべます。",
       "context_fr": "Tu précises ce que tu manges et dans quel lieu.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 14,
-        "source_refs": [
-          "N3-S03",
-          "N14-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2498,7 +3116,7 @@
       ]
     },
     {
-      "id": "PG18",
+      "id": "FLB18",
       "label": "Boire dans un lieu",
       "level": 2,
       "weight": 1.0,
@@ -2506,8 +3124,8 @@
       "romaji_pattern": "{place.romaji} de {drink.romaji} o nomimasu.",
       "french_pattern": "Je bois {drink.fr_obj} {place.fr_at}.",
       "slots": {
-        "place": "place_eat",
-        "drink": "drink"
+        "place": "base_place_eat",
+        "drink": "base_drink"
       },
       "tags": [
         "boisson",
@@ -2520,13 +3138,9 @@
       "kana_pattern": "{place.kana}で{drink.kana}をのみます。",
       "context_fr": "Tu précises ce que tu bois et dans quel lieu.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 14,
-        "source_refs": [
-          "N3-S05",
-          "N14-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2558,7 +3172,7 @@
       ]
     },
     {
-      "id": "PG19",
+      "id": "FLB19",
       "label": "Aller avec quelqu’un",
       "level": 2,
       "weight": 1.0,
@@ -2566,8 +3180,8 @@
       "romaji_pattern": "{person.romaji} to {place.romaji} ni ikimasu.",
       "french_pattern": "Je vais {place.fr_to} {person.fr_with}.",
       "slots": {
-        "person": "person_companion",
-        "place": "place_destination"
+        "person": "base_person_companion",
+        "place": "base_place_destination"
       },
       "tags": [
         "compagnie",
@@ -2580,14 +3194,9 @@
       "kana_pattern": "{person.kana}と{place.kana}にいきます。",
       "context_fr": "Tu annonces ta destination et qui t’accompagne ; 家族 désigne ici ta famille.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 21,
-        "source_refs": [
-          "N2-S07",
-          "N8-S03",
-          "N21-S01"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2619,7 +3228,7 @@
       ]
     },
     {
-      "id": "PG20",
+      "id": "FLB20",
       "label": "Activité dans un lieu",
       "level": 2,
       "weight": 1.0,
@@ -2627,7 +3236,7 @@
       "romaji_pattern": "{scenario.romaji_place} de {scenario.romaji_activity} o shimasu.",
       "french_pattern": "{scenario.fr}",
       "slots": {
-        "scenario": "activity_scenario"
+        "scenario": "base_activity_scenario"
       },
       "tags": [
         "activité",
@@ -2639,12 +3248,9 @@
       "kana_pattern": "{scenario.kana_place}で{scenario.kana_activity}をします。",
       "context_fr": "Tu annonces une activité dans un lieu adapté.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 28,
-        "source_refs": [
-          "N28-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2676,7 +3282,7 @@
       ]
     },
     {
-      "id": "PG21",
+      "id": "FLB21",
       "label": "Qualifier un aliment",
       "level": 2,
       "weight": 1.0,
@@ -2684,8 +3290,8 @@
       "romaji_pattern": "{food.romaji} wa {adj.romaji} desu.",
       "french_pattern": "{food.fr_subject} est {adj.fr_pred}.",
       "slots": {
-        "food": "food_masc_sg",
-        "adj": "adj_taste_i"
+        "food": "base_food_masc_sg",
+        "adj": "base_adj_taste_i"
       },
       "tags": [
         "adjectif-i",
@@ -2697,13 +3303,9 @@
       "kana_pattern": "{food.kana}は{adj.kana}です。",
       "context_fr": "Tu commentes un aliment ou un plat précis, son goût ou son prix.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 16,
-        "source_refs": [
-          "N9-S13",
-          "N16-S01"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2728,7 +3330,7 @@
       ]
     },
     {
-      "id": "PG22",
+      "id": "FLB22",
       "label": "Qualifier un lieu avec adjectif en i",
       "level": 2,
       "weight": 1.0,
@@ -2736,8 +3338,8 @@
       "romaji_pattern": "{place.romaji} wa {adj.romaji} desu.",
       "french_pattern": "{place.fr_subject} est {adj.fr_pred}.",
       "slots": {
-        "place": "place_masc_sg",
-        "adj": "adj_place_i"
+        "place": "base_place_masc_sg",
+        "adj": "base_adj_place_i"
       },
       "tags": [
         "adjectif-i",
@@ -2749,12 +3351,9 @@
       "kana_pattern": "{place.kana}は{adj.kana}です。",
       "context_fr": "Tu décris la taille d’un lieu, ou sa distance par rapport à votre position.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 21,
-        "source_refs": [
-          "N21-S04"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2779,7 +3378,7 @@
       ]
     },
     {
-      "id": "PG23",
+      "id": "FLB23",
       "label": "Qualifier un lieu avec adjectif en na",
       "level": 2,
       "weight": 1.0,
@@ -2787,8 +3386,8 @@
       "romaji_pattern": "{place.romaji} wa {adj.romaji} desu.",
       "french_pattern": "{place.fr_subject} est {adj.fr_pred}.",
       "slots": {
-        "place": "place_masc_sg",
-        "adj": "adj_place_na"
+        "place": "base_place_masc_sg",
+        "adj": "base_adj_place_na"
       },
       "tags": [
         "adjectif-na",
@@ -2800,12 +3399,9 @@
       "kana_pattern": "{place.kana}は{adj.kana}です。",
       "context_fr": "Tu décris la propreté ou le calme d’un lieu.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 63,
-        "source_refs": [
-          "N63-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2830,7 +3426,7 @@
       ]
     },
     {
-      "id": "PG24",
+      "id": "FLB24",
       "label": "Ce produit est...",
       "level": 2,
       "weight": 1.0,
@@ -2838,8 +3434,8 @@
       "romaji_pattern": "kono {item.romaji} wa {adj.romaji} desu.",
       "french_pattern": "{item.fr_subject_dem} est {adj.fr_pred}.",
       "slots": {
-        "item": "buyable_masc_sg",
-        "adj": "adj_price_i"
+        "item": "base_buyable_masc_sg",
+        "adj": "base_adj_price_i"
       },
       "tags": [
         "démonstratif",
@@ -2851,13 +3447,9 @@
       "kana_pattern": "この{item.kana}は{adj.kana}です。",
       "context_fr": "Tu commentes le prix d’un produit près de toi.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 31,
-        "source_refs": [
-          "N21-S06",
-          "N31-S09"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2882,7 +3474,7 @@
       ]
     },
     {
-      "id": "PG25",
+      "id": "FLB25",
       "label": "Passé : manger",
       "level": 2,
       "weight": 1.0,
@@ -2890,7 +3482,7 @@
       "romaji_pattern": "kinou, {food.romaji} o tabemashita.",
       "french_pattern": "Hier, j’ai mangé {food.fr_obj}.",
       "slots": {
-        "food": "food"
+        "food": "base_food"
       },
       "tags": [
         "passé",
@@ -2902,14 +3494,9 @@
       "kana_pattern": "きのう、{food.kana}をたべました。",
       "context_fr": "Tu racontes ce que tu as mangé hier.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 8,
-        "source_refs": [
-          "N3-S03",
-          "N2-S01",
-          "N8-S01"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2940,7 +3527,7 @@
       ]
     },
     {
-      "id": "PG26",
+      "id": "FLB26",
       "label": "Passé : aller",
       "level": 2,
       "weight": 1.0,
@@ -2948,7 +3535,7 @@
       "romaji_pattern": "kinou, {place.romaji} ni ikimashita.",
       "french_pattern": "Hier, je suis allé(e) {place.fr_to}.",
       "slots": {
-        "place": "place_destination"
+        "place": "base_place_destination"
       },
       "tags": [
         "passé",
@@ -2961,14 +3548,9 @@
       "kana_pattern": "きのう、{place.kana}にいきました。",
       "context_fr": "Tu racontes où tu es allé ou allée hier.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 8,
-        "source_refs": [
-          "N7-S02",
-          "N8-S01",
-          "N8-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -2999,7 +3581,7 @@
       ]
     },
     {
-      "id": "PG28",
+      "id": "FLB28",
       "label": "Invitation simple",
       "level": 2,
       "weight": 1.0,
@@ -3007,7 +3589,7 @@
       "romaji_pattern": "issho ni {place.romaji} ni ikimashou.",
       "french_pattern": "Allons ensemble {place.fr_to}.",
       "slots": {
-        "place": "place_destination"
+        "place": "base_place_destination"
       },
       "tags": [
         "invitation",
@@ -3019,14 +3601,9 @@
       "kana_pattern": "いっしょに{place.kana}にいきましょう。",
       "context_fr": "Tu proposes à quelqu’un d’aller ensemble dans un lieu.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 8,
-        "source_refs": [
-          "N1-S02",
-          "N5-S03",
-          "N8-S03"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -3057,7 +3634,7 @@
       ]
     },
     {
-      "id": "PG29",
+      "id": "FLB29",
       "label": "Suggestion repas",
       "level": 3,
       "weight": 1.0,
@@ -3065,7 +3642,7 @@
       "romaji_pattern": "konban, {food.romaji} o tabemashou ka.",
       "french_pattern": "On mange {food.fr_obj} ce soir ?",
       "slots": {
-        "food": "food"
+        "food": "base_food"
       },
       "tags": [
         "suggestion",
@@ -3078,13 +3655,9 @@
       "kana_pattern": "こんばん、{food.kana}をたべましょうか。",
       "context_fr": "Tu proposes de manger ensemble ce soir.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 37,
-        "source_refs": [
-          "N9-S01",
-          "N37-S10"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours. N9-S01 écrit 今晚 ; seul 食べましょうか sert d’appui. 今晩 est attesté séparément en N37-S10."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -3115,7 +3688,7 @@
       ]
     },
     {
-      "id": "PG30",
+      "id": "FLB30",
       "label": "Deux actions enchaînées",
       "level": 3,
       "weight": 1.0,
@@ -3123,7 +3696,7 @@
       "romaji_pattern": "{scenario.romaji_place} ni itte, {scenario.romaji_item} o kaimasu.",
       "french_pattern": "{scenario.fr}",
       "slots": {
-        "scenario": "purchase_scenario"
+        "scenario": "base_purchase_scenario"
       },
       "tags": [
         "forme-te",
@@ -3136,13 +3709,9 @@
       "kana_pattern": "{scenario.kana_place}にいって、{scenario.kana_item}をかいます。",
       "context_fr": "Tu annonces un déplacement suivi d’un achat.",
       "lesson_mapping": {
-        "status": "reviewed",
-        "minimum_lesson": 56,
-        "source_refs": [
-          "N56-S09",
-          "N5-S05"
-        ],
-        "note": "Recombinaison pédagogique des éléments présents dans ces passages ; ce modèle ne cite pas le cours."
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
       },
       "segments": [
         {
@@ -3180,78 +3749,55 @@
       ]
     }
   ],
-  "runtime_guards": {
-    "supported_constraints": [
-      "not_equal"
-    ],
-    "unknown_constraint": "reject_template",
-    "unresolved_placeholder": "reject_sentence",
-    "max_attempts": 20,
-    "fallback_to_corpus": false,
-    "history_key": "rendered_japanese_nfc",
-    "history_scope": "visit",
-    "recent_template_window": "min(configured_window, eligible_template_count - 1)",
-    "same_construction_ignores_template_history": true,
-    "on_exhaustion": {
-      "action": "keep_current_sentence",
-      "message": "Toutes les variantes disponibles ont été proposées. Tu peux recommencer ou changer de construction.",
-      "allow_explicit_history_reset": true
-    },
-    "empty_scope_message": "Aucune construction disponible dans ce périmètre.",
-    "automatic_scope_expansion": false
-  },
-  "provenance": {
-    "original_file": "/Users/mbp16cil/Desktop/generateur phrases bof/generateur_phrases_config.json",
-    "original_sha256": "72f5fafdb1dd2f2b91687dbb625800c4a1e0a9b6f12a02ff6498081fe0d3aaa2",
-    "adapted_on": "2026-10-08",
-    "status": "integrated_exploration",
-    "linguistic_review": "Corrections éditoriales ciblées ; aucune certification native.",
-    "lesson_mapping": "reviewed_partial"
-  },
-  "scope_policy": {
-    "default": "through_lesson",
-    "options": {
-      "explore": {
-        "label": "Explorer librement",
-        "available": true,
-        "config_file": "generateur_phrases_libres.json"
-      },
-      "through_lesson": {
-        "label": "Réviser mes leçons",
-        "available": true
-      }
-    },
-    "lesson_eligibility": {
-      "require_reviewed_template_mapping": true,
-      "require_reviewed_mapping_for_every_selected_lexical_entry": true,
-      "unknown_mapping": "exclude",
-      "minimum_lesson_field": "lesson_mapping.minimum_lesson"
+  "levels": {
+    "3": {
+      "label": "Répertoire libre complet",
+      "allowed_templates": [
+        "FL01",
+        "FL02",
+        "FL03",
+        "FL04",
+        "FL05",
+        "FL06",
+        "FL07",
+        "FL08",
+        "FL09",
+        "FL10",
+        "FL11",
+        "FL12",
+        "FL13",
+        "FL14",
+        "FL15",
+        "FLB01",
+        "FLB02",
+        "FLB03",
+        "FLB04",
+        "FLB05",
+        "FLB06",
+        "FLB07",
+        "FLB08",
+        "FLB09",
+        "FLB10",
+        "FLB11",
+        "FLB12",
+        "FLB13",
+        "FLB14",
+        "FLB15",
+        "FLB16",
+        "FLB17",
+        "FLB18",
+        "FLB19",
+        "FLB20",
+        "FLB21",
+        "FLB22",
+        "FLB23",
+        "FLB24",
+        "FLB25",
+        "FLB26",
+        "FLB28",
+        "FLB29",
+        "FLB30"
+      ]
     }
-  },
-  "reading_policy": {
-    "kana": "Orthographe en kana : conserver は et を ; leur prononciation figure en romaji.",
-    "romaji_storage": "Voyelles développées relues mot par mot ; affichage par Romaji.display() du carnet.",
-    "tts_text": "japanese",
-    "generated_audio": "speech_synthesis_only"
-  },
-  "migration": {
-    "removed_templates": {
-      "G27": "Doublon de G03 avec time=T02 ; utiliser PG03."
-    },
-    "removed_pool_entries": {
-      "time_day.T04": "今朝 retiré du modèle de projet sans contexte horaire explicite."
-    },
-    "removed_pools": [
-      "demonstrative_prefix"
-    ],
-    "template_namespace": "PG évite la confusion avec les fiches de grammaire G01…G29."
-  },
-  "validation": {
-    "method": "Énumération exhaustive des combinaisons autorisées par chaque modèle.",
-    "native_review": false,
-    "limitations": [
-      "Les contrôles structurels ne prouvent pas à eux seuls le naturel de chaque phrase.",
-      "Les éléments sans appui vérifié restent réservés à Tout explorer. Les seuils sont conservateurs, pas un inventaire de toutes les premières occurrences."
-    ]
   }
 }

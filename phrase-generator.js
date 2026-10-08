@@ -41,8 +41,9 @@
  }
  function seeded(seed){let n=2166136261;for(const c of String(seed))n=Math.imul(n^c.charCodeAt(0),16777619);return ()=>{n+=0x6D2B79F5;let t=n;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;};}
  function eligible(catalog,level='1',scope={mode:'explore'}){
-  const group=catalog.config.levels[level];if(!group)throw Error('Groupe inconnu');
   if(!['explore','through_lesson'].includes(scope.mode))throw Error('Périmètre inconnu');
+  if(scope.mode==='explore'&&catalog.free)return catalog.free.templates;
+  const group=catalog.config.levels[level];if(!group)throw Error('Groupe inconnu');
   if(scope.mode==='through_lesson'&&(!Number.isInteger(scope.lesson)||scope.lesson<1||scope.lesson>98))throw Error('Leçon invalide');
   return catalog.templates.filter(t=>group.allowed_templates.includes(t.id)).map(t=>({...t,
    variants:t.variants.filter(q=>scope.mode==='explore'||(q.minimumLesson!==null&&q.minimumLesson<=scope.lesson))
@@ -68,8 +69,11 @@
   if(cached)return Promise.resolve(cached);
   if(pending)return pending;
   pending=(async()=>{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);try{
-   const response=await fetch('generateur_phrases_config.json?v=20261008-lecons',{cache:'no-cache',signal:controller.signal});
-   if(!response.ok)throw Error('Configuration indisponible');cached=compile(await response.json());return cached;
+   const configs=await Promise.all(['generateur_phrases_config.json','generateur_phrases_libres.json'].map(async file=>{
+    const response=await fetch(file+'?v=20261008-libre',{cache:'no-cache',signal:controller.signal});
+    if(!response.ok)throw Error('Configuration indisponible');return compile(await response.json());
+   }));
+   cached={...configs[0],free:configs[1]};return cached;
   }finally{clearTimeout(timer);pending=null;}})();return pending;
  }
  const api={compile,create,eligible,load};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.PhraseGenerator=api;

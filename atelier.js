@@ -4,7 +4,7 @@ let atelierSession=null;
 let atelierListReturn=null;
 let atelierPoolCache=null;
 let generatorCatalog=null;
-const atelierActivityNames={generated:'Phrases surprises',mixed:'Vocabulaire et formes verbales',listening:'Écouter et comprendre',vocab:'Vocabulaire',particles:'Particules',constructions:'Constructions grammaticales',grammar:'Formes verbales'};
+const atelierActivityNames={generated:'Phrases au hasard',mixed:'Vocabulaire et formes verbales',listening:'Écouter et comprendre',vocab:'Vocabulaire',particles:'Particules',constructions:'Constructions grammaticales',grammar:'Formes verbales'};
 function atelierInProgress(){return !!atelierSession && !atelierSession.ended && atelierSession.index<atelierSession.questions.length;}
 function focusAtelierWork(){
  window.closeNavigationCommands?.();
@@ -18,7 +18,7 @@ function updateAtelierSessionControls(){
  $('#atelier-setup-title').hidden=!s;
  $('#atelier-start').textContent=s?'Commencer une nouvelle séance':'Commencer';
  if(active){
-  const config=s.settings,scope=config.type==='generated'?(config.generatorScope==='explore'?'Tout explorer':'Jusqu’à la leçon '+config.level):config.scope==='lesson'?'Leçon '+config.level:config.scope==='range'?'Leçons '+config.start+' à '+config.level:'Leçons 1 à '+config.level;
+  const config=s.settings,scope=config.type==='generated'?(config.generatorScope==='explore'?'Exploration libre':'Révision · jusqu’à la leçon '+config.level):config.scope==='lesson'?'Leçon '+config.level:config.scope==='range'?'Leçons '+config.start+' à '+config.level:'Leçons 1 à '+config.level;
   $('#atelier-current').textContent=atelierActivityNames[config.type]+' · '+scope+(config.type==='generated'?' · '+s.generatedCount+' phrase(s) parcourue(s)':' · '+(s.index+1)+' / '+s.questions.length);
  }
 }
@@ -64,10 +64,16 @@ function renderAtelier(r={}){
  atelierSettings.level=level;
  const lessonOptions=lessonIds.map(id=>`<option value="${id.slice(1)}" ${Number(id.slice(1))===level?'selected':''}>${esc(lessonLabel(id).replace(' — Sans titre',''))}</option>`).join('');
  $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez quoi réviser, puis commencez votre séance.')+`<section class="panel atelier-setup"><div id="atelier-resume" hidden><strong>Séance en cours</strong><p id="atelier-current"></p><button type="button" id="atelier-continue">Continuer ma séance</button></div><h2 id="atelier-setup-title" hidden>Préparer la prochaine séance</h2><div class="atelier-settings">
- <div class="atelier-setting-row"><label for="atelier-type">Quoi réviser ?</label><select id="atelier-type"><option value="mixed">Vocabulaire et formes verbales</option><option value="generated">Phrases surprises</option><option value="listening">Écouter et comprendre</option><option value="vocab">Vocabulaire</option><option value="particles">Particules</option><option value="constructions">Constructions grammaticales</option><option value="grammar">Formes verbales</option></select></div>
+ <div class="atelier-setting-row"><label for="atelier-type">Quoi réviser ?</label><select id="atelier-type"><option value="mixed">Vocabulaire et formes verbales</option><option value="generated">Phrases au hasard</option><option value="listening">Écouter et comprendre</option><option value="vocab">Vocabulaire</option><option value="particles">Particules</option><option value="constructions">Constructions grammaticales</option><option value="grammar">Formes verbales</option></select></div>
  <div class="atelier-setting-row"><label for="atelier-scope">Quelles leçons ?</label><div class="atelier-lesson-controls"><select id="atelier-scope"><option value="through">Depuis la première</option><option value="lesson">Une seule leçon</option><option value="range">Une plage</option></select><div class="atelier-bounds"><label id="atelier-start-label" hidden>De<select id="atelier-from" aria-label="Première leçon">${lessonOptions}</select></label><label><span id="atelier-level-label">à</span><select id="atelier-level" aria-label="Leçon de fin">${lessonOptions}</select></label></div></div></div>
  <div class="atelier-setting-row"><label for="atelier-count">Combien de questions ?</label><select id="atelier-count"><option value="5">5 questions</option><option value="10">10 questions</option><option value="20">20 questions</option></select></div></div>
- <div id="generator-settings" hidden><label for="generator-level">Constructions à explorer</label> <select id="generator-level"><option value="1">Constructions courtes</option><option value="2">Constructions enrichies</option><option value="3">Toutes les constructions</option></select><p><label for="generator-scope">Vocabulaire et constructions</label> <select id="generator-scope"><option value="through_lesson">Jusqu’à ma leçon</option><option value="explore">Tout explorer</option></select></p><p id="generator-lesson-row"><label for="generator-lesson">Ma leçon</label> <select id="generator-lesson">${lessonOptions}</select></p><p id="generator-scope-help"></p></div><p class="muted" id="atelier-description"></p><div class="atelier-launch"><button id="atelier-start" class="audio">Commencer</button><p id="atelier-pool" role="status"></p></div>
+ <div id="generator-settings" hidden>
+ <fieldset class="generator-modes"><legend>Deux façons de pratiquer</legend>
+ <label><input type="radio" id="generator-review" name="generator-mode" value="through_lesson"><span><strong>Réviser mes leçons</strong><span>Des phrases composées avec les constructions et les mots déjà rencontrés dans le cours.</span></span></label>
+ <label><input type="radio" id="generator-free" name="generator-mode" value="explore"><span><strong>Explorer librement</strong><span>Un répertoire enrichi de situations et de mots, sans limite de leçon. Du vocabulaire nouveau peut apparaître.</span></span></label>
+ </fieldset>
+ <p id="generator-level-row"><label for="generator-level">Constructions à réviser</label> <select id="generator-level"><option value="1">Constructions courtes</option><option value="2">Constructions enrichies</option><option value="3">Toutes les constructions</option></select></p>
+ <p id="generator-lesson-row"><label for="generator-lesson">Ma leçon</label> <select id="generator-lesson">${lessonOptions}</select></p><p id="generator-scope-help"></p></div><p class="muted" id="atelier-description"></p><div class="atelier-launch"><button id="atelier-start" class="audio">Commencer</button><p id="atelier-pool" role="status"></p></div>
  <details id="atelier-content"><summary>Voir le contenu à réviser</summary><div class="atelier-catalogs"><details id="atelier-vocab-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-grammar-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-particles-list"><summary></summary><div class="atelier-catalog"></div></details><details id="atelier-constructions-list"><summary></summary><div class="atelier-catalog"></div></details></div></details></section><section id="atelier-work" class="panel atelier-work" aria-label="Séance d’entraînement" hidden></section>`;
  for(const field of ['scope','type','count'])$('#atelier-'+field).value=atelierSettings[field];
  $('#atelier-from').value=atelierSettings.start;
@@ -84,7 +90,7 @@ function renderAtelier(r={}){
  const setup=$('#atelier-type');
  let generatorLoading=false,generatorError=false;
  $('#generator-level').value=atelierSettings.generatorLevel;
- $('#generator-scope').value=atelierSettings.generatorScope;
+ document.querySelectorAll('[name=generator-mode]').forEach(input=>input.checked=input.value===atelierSettings.generatorScope);
  const refresh=()=>{
   const generated=atelierSettings.type==='generated';
   $('#generator-settings').hidden=!generated;
@@ -95,10 +101,11 @@ function renderAtelier(r={}){
    $('#atelier-description').textContent='Découvrez une phrase composée au hasard, ou gardez sa construction pour essayer une autre variante. Kana, romaji, traduction et explication à la demande ; sans score.';
    const scope={mode:atelierSettings.generatorScope,lesson:atelierSettings.level};
    $('#generator-lesson-row').hidden=scope.mode==='explore';
-   $('#generator-scope-help').textContent=scope.mode==='explore'?'Toutes les variantes du groupe, y compris les mots non reliés aux leçons.':'Seules les phrases dont la construction et les mots ont des appuis vérifiés jusqu’à cette leçon sont proposés.';
+   $('#generator-level-row').hidden=scope.mode==='explore';
+   $('#generator-scope-help').textContent=scope.mode==='explore'?'Exploration libre : le hasard choisit parmi 44 modèles et leurs mots compatibles. Aucune limite de leçon, aucune phrase extraite au hasard des dialogues du cours.':'Révision : chaque phrase exige des appuis vérifiés pour sa construction et tous ses mots, jusqu’à la leçon choisie.';
    const available=generatorCatalog?PhraseGenerator.eligible(generatorCatalog,atelierSettings.generatorLevel,scope).reduce((n,t)=>n+t.variants.length,0):0;
    $('#atelier-start').disabled=!available;
-   $('#atelier-pool').textContent=generatorCatalog ? (available?available+' phrases possibles dans ce périmètre':'Aucune phrase disponible à ce stade dans ce groupe. Choisissez une leçon plus avancée ou Tout explorer.') : generatorError?'Chargement impossible. Changez d’activité puis réessayez.':'Chargement des phrases…';
+   $('#atelier-pool').textContent=generatorCatalog ? (available?available+' phrases possibles dans ce périmètre':'Aucune phrase disponible à ce stade dans ce groupe. Choisissez une leçon plus avancée ou Explorer librement.') : generatorError?'Chargement impossible. Changez d’activité puis réessayez.':'Chargement des phrases…';
    if(!generatorCatalog&&!generatorLoading&&!generatorError){
     generatorLoading=true;
     PhraseGenerator.load().then(c=>{generatorCatalog=c;}).catch(()=>{generatorError=true;}).finally(()=>{generatorLoading=false;if($('#atelier-type')===setup)refresh();});
@@ -134,7 +141,7 @@ function renderAtelier(r={}){
   atelierSettings[field]=['level','count'].includes(field)?Number(e.target.value):e.target.value;
   $('#generator-lesson').value=atelierSettings.level;refresh();
  };
- $('#generator-scope').onchange=e=>{atelierSettings.generatorScope=e.target.value;refresh();};
+ document.querySelectorAll('[name=generator-mode]').forEach(input=>input.onchange=()=>{atelierSettings.generatorScope=input.value;refresh();});
  $('#generator-lesson').onchange=e=>{atelierSettings.level=Number(e.target.value);$('#atelier-level').value=e.target.value;refresh();};
  $('#generator-level').onchange=e=>{atelierSettings.generatorLevel=e.target.value;refresh();};
  $('#atelier-from').onchange=e=>{atelierSettings.start=Number(e.target.value);refresh();};
@@ -219,17 +226,39 @@ function atelierCatalog(items){
  }).join('')+'</ul>';
 }
 
+function openGeneratedHelp(){
+ let dialog=document.getElementById('generated-help');
+ if(!dialog){
+  dialog=document.createElement('dialog');dialog.id='generated-help';
+  dialog.setAttribute('aria-labelledby','generated-help-title');
+  dialog.innerHTML=`<div class="info-heading"><h2 id="generated-help-title">Comprendre l’exercice</h2><button type="button" autofocus aria-label="Fermer l’aide">Fermer ×</button></div>
+  <div class="info-body"><p>Deux exercices différents : consolider ce que tu as rencontré dans le cours, ou découvrir des phrases composées dans un répertoire plus large.</p>
+  <h3>Réviser mes leçons</h3><p>Le générateur compose des variantes à partir de constructions et de mots rattachés aux leçons déjà parcourues. Il ne récite pas simplement leurs dialogues : les mots peuvent être recombinés. « Autre construction du cours » change le modèle dans ce périmètre.</p><p>Cette activité s’appuie sur 29 modèles préparés. Jusqu’à la dernière leçon, 314 variantes disposent de tous leurs appuis ; plus tôt dans le cours, le choix est plus restreint.</p>
+  <h3>Explorer librement</h3><p>La leçon choisie ne compte plus. Le tirage se fait dans un répertoire éditorial indépendant de la progression du cours : lecture, musique, messages, sorties, repas, achats, envies, séjours… Il contient le socle initial et 15 modèles supplémentaires, soit <strong>44 modèles et 1 564 phrases possibles</strong>.</p><p>« Nouvelle phrase libre » tire un modèle, puis les mots compatibles. Tu peux rencontrer des verbes et du vocabulaire absents des leçons que tu as étudiées. Ces phrases ne sont pas extraites des dialogues du cours.</p>
+  <h3>Autre phrase, même construction</h3><p>Dans les deux modes, cette action conserve le squelette grammatical et change les éléments variables. Comparer ces phrases aide à distinguer le rôle des particules, du verbe et des groupes de mots. Si les variantes disponibles ont toutes été proposées récemment, l’exercice le signale.</p>
+  <h3>Ce que « libre » signifie ici</h3><p>Le tirage reste encadré : un commerce et un achat doivent aller ensemble, les formes verbales et les traductions sont préparées. Il ne mélange pas arbitrairement tout le dictionnaire. Il n’appelle aucune IA pendant l’exercice et ne produit pas une infinité de phrases.</p><p>Les données sont propres à cette activité, avec des aides de lecture et des explications. Elles ont fait l’objet de corrections et de contrôles, sans validation native intégrale. La traduction proposée sert à comparer le sens compris ; d’autres formulations françaises peuvent convenir.</p></div>`;
+  document.body.append(dialog);
+  dialog.querySelector('button').onclick=()=>dialog.close();
+  dialog.addEventListener('close',()=>{document.body.classList.remove('generated-help-open');document.getElementById('generated-help-open')?.focus({preventScroll:true});});
+  dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();});
+  window.addEventListener('hashchange',()=>{if(dialog.open)dialog.close();});
+ }
+ stopAudio();dialog.showModal();document.body.classList.add('generated-help-open');dialog.querySelector('.info-body').scrollTop=0;
+}
+
 function renderGeneratedQuestion(target,s){
  if(s.ended){
   target.innerHTML=`<h2 tabindex="-1">Exploration terminée</h2><p>${s.generatedCount} phrases parcourues, sans score.</p><button id="atelier-again">Nouvelle exploration</button>`;
   $('#atelier-again').onclick=()=>$('#atelier-start').click();return;
  }
  const q=s.questions[0];
- if(!s.generatedReading)s.generatedReading={kana:true,romaji:false,fr:false,explanation:false};
+ if(!s.generatedReading)s.generatedReading={kana:true,romaji:false,fr:false,explanation:false,hint:false};
  const reading=s.generatedReading;
  const same=q.jp.replace(/\s/g,'')===q.kana.replace(/\s/g,'');
- target.innerHTML=`<p class="eyebrow">Phrase composée · ${s.settings.generatorScope==='explore'?'Tout explorer':'Jusqu’à la leçon '+s.settings.level} · ${s.generatedCount}</p><h2 tabindex="-1">${esc(q.title)}</h2><p>${esc(q.context)}</p>
- <div class="atelier-options">${[['kana','les kana'],['romaji','le romaji'],['fr','la traduction']].map(([key,label])=>`<button data-generated-reading="${key}" aria-expanded="${reading[key]}" aria-controls="generated-${key}">${reading[key]?'Masquer':'Afficher'} ${label}</button>`).join('')}</div>
+ target.innerHTML=`<div class="generated-heading"><div><p class="eyebrow">Phrase composée · ${s.settings.generatorScope==='explore'?'Exploration libre':'Révision · jusqu’à la leçon '+s.settings.level} · ${s.generatedCount}</p><h2 tabindex="-1">Quel est le sens de cette phrase ?</h2></div>
+ <button id="generated-help-open" aria-haspopup="dialog" aria-controls="generated-help" aria-label="Comprendre l’exercice" title="Comprendre l’exercice">ⓘ</button></div>
+ <div class="atelier-options generated-reading-controls" aria-label="Aides de lecture">${[['kana','les kana'],['romaji','le romaji'],['fr','la traduction'],['hint','un indice']].map(([key,label])=>`<button data-generated-reading="${key}" aria-expanded="${reading[key]}" aria-controls="generated-${key}"><span aria-hidden="true">${reading[key]?'✓':'＋'}</span> ${reading[key]?'Masquer':'Afficher'} ${label}</button>`).join('')}</div>
+ <div id="generated-hint" class="note" ${reading.hint?'':'hidden'}><strong>${esc(q.title)}</strong><p>${esc(q.context)}</p></div>
  <div id="generated-text">
  <p id="generated-kana" class="listening-kana" lang="ja" ${reading.kana?'':'hidden'}><button class="generated-kana-audio" data-speak="${esc(q.jp)}" aria-label="Écouter la phrase">${esc(q.kana)} ♪</button></p>
  <p class="listening-japanese" lang="ja">${same&&reading.kana?'<span class="kana-idem" lang="fr">---</span>':jp(q.jp)}</p>
@@ -237,21 +266,22 @@ function renderGeneratedQuestion(target,s){
  <p id="generated-fr" ${reading.fr?'':'hidden'}>${esc(q.fr)}</p></div>
  <button data-speak="${esc(q.jp)}">▶ Écouter</button><p class="muted">Écoute par synthèse vocale. Les aides sont indépendantes du menu œil.</p>
  <details id="generated-explanation" ${reading.explanation?'open':''}><summary>Comprendre la construction</summary><ul>${q.segments.map(part=>`<li><span lang="ja">${esc(part.jp)}</span> — ${esc(part.role)}</li>`).join('')}</ul>${[...new Set(q.notes)].map(note=>`<p>${esc(note)}</p>`).join('')}<p class="muted">La traduction est une proposition adaptée à cette situation.</p>${q.sourceRefs.length?`<p>Appuis dans le cours (la phrase ci-dessus est composée) : ${q.sourceRefs.map(sourceLink).join(' · ')}</p>`:''}${q.grammarCards.length?`<p>Fiches utiles : ${q.grammarCards.map(id=>`<a href="#grammaire/${id}">${esc(grammar.find(f=>f.id===id)?.titre||id)}</a>`).join(' · ')}</p>`:''}</details>
- <div class="atelier-options"><button id="generated-surprise">Surprise !</button><button id="generated-same">Encore avec cette construction</button><button id="generated-end">Terminer</button></div>
+ <div class="atelier-options generated-actions"><button id="generated-surprise"><span aria-hidden="true">↻</span> ${s.settings.generatorScope==='explore'?'Nouvelle phrase libre':'Autre construction du cours'}</button><button id="generated-same"><span aria-hidden="true">↪</span> Autre phrase, même construction</button><button id="generated-end">Terminer la séance</button></div>
  <p id="generated-status" role="status"></p><button id="generated-reset" hidden>Recommencer les variantes</button>`;
  target.querySelectorAll('[data-generated-reading]').forEach(b=>b.onclick=()=>{
   const key=b.dataset.generatedReading;reading[key]=!reading[key];renderGeneratedQuestion(target,s);
   target.querySelector(`[data-generated-reading="${key}"]`).focus({preventScroll:true});
  });
+ $('#generated-help-open').onclick=openGeneratedHelp;
  $('#generated-explanation').ontoggle=e=>{reading.explanation=e.target.open;};
  const draw=sameConstruction=>{
   const next=s.generator.draw(sameConstruction);stopAudio();
   if(!next){
-   $('#generated-status').textContent=sameConstruction?'Les variantes de cette construction ont déjà été proposées récemment. Choisissez une surprise ou recommencez les variantes.':'Toutes les variantes disponibles ont été proposées récemment.';
+   $('#generated-status').textContent=sameConstruction?'Les variantes de cette construction ont déjà été proposées récemment. Changez de construction ou recommencez les variantes.':'Toutes les variantes disponibles ont été proposées récemment.';
    $('#generated-reset').hidden=false;
    $('#generated-reset').onclick=()=>{s.generator.resetHistory();draw(sameConstruction);};return;
   }
-  s.questions=[next];s.generatedCount++;s.generatedReading={...reading,fr:false,explanation:false};
+  s.questions=[next];s.generatedCount++;s.generatedReading={...reading,fr:false,explanation:false,hint:false};
   renderAtelierQuestion();target.querySelector('h2').focus({preventScroll:true});
  };
  $('#generated-surprise').onclick=()=>draw(false);
