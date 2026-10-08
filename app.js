@@ -255,7 +255,7 @@ function restoreAnalysisReturn(){
 // Informations du projet : dialogue natif, navigation clavier et retour au bouton.
 const projectInfo=document.getElementById('project-info');
 let infoOpener=$('#info-toggle'),travelListening=false;
-function openProjectInfo(opener){infoOpener=opener;projectInfo.showModal();document.body.classList.add('info-open');}
+function openProjectInfo(opener){infoOpener=opener;window.ProjectInfo?.select('current');$('#info-figures').open=false;$('#info-audio-help').hidden=true;$('#info-audio-access').setAttribute('aria-expanded','false');projectInfo.showModal();document.body.classList.add('info-open');}
 $('#info-toggle').onclick=()=>openProjectInfo($('#info-toggle'));
 $('#secret-travel').addEventListener('click',event=>{if(event.target.closest('.travel-listen'))travelListening=true;});
 $('#info-close').onclick=()=>projectInfo.close();

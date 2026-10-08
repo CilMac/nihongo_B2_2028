@@ -36,7 +36,7 @@
  document.addEventListener('click',e=>{if(!reading.contains(e.target)&&!display.contains(e.target))closeDisplay();});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!reading.hidden){closeDisplay(true);}});
  document.addEventListener('focusin',e=>{if(!reading.contains(e.target)&&!display.contains(e.target))closeDisplay();});
- const button=document.createElement('button');button.id='commands-toggle';button.type='button';button.textContent='Commandes';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','commands-panel');dock.append(button);
+ const button=document.createElement('button');button.id='commands-toggle';button.hidden=true;button.type='button';button.textContent='Commandes';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','commands-panel');dock.append(button);
  const dialog=document.createElement('dialog');dialog.id='commands-panel';dialog.setAttribute('aria-labelledby','commands-title');dialog.innerHTML='<div class="commands-heading"><h2 id="commands-title">Commandes</h2><button type="button" autofocus>Fermer ×</button></div><div class="commands-content"></div>';document.body.append(dialog);
  let moved=[],anchor=null,anchorTop=0;
  function restore(preserveScroll=true){
@@ -59,7 +59,22 @@
   for(const node of nodes){if(!node)continue;const placeholder=document.createElement('div');const style=getComputedStyle(node);placeholder.style.height=node.getBoundingClientRect().height+'px';placeholder.style.marginTop=style.marginTop;placeholder.style.marginBottom=style.marginBottom;placeholder.setAttribute('aria-hidden','true');node.before(placeholder);moved.push([node,placeholder]);dialog.querySelector('.commands-content').append(node);}
   button.setAttribute('aria-expanded','true');dialog.showModal();
  };
- window.updateNavigationTab=()=>{button.hidden=!document.querySelector('#main>.toolbar,#main .guide-view-navigation,#guide-active-tools,#main>.atelier-setup');const active=tabs.querySelector('[aria-current=page]');if(!active)return;sections.title='Rubrique actuelle : '+active.textContent.trim();if(narrow.matches)return;const a=active.getBoundingClientRect(),t=tabs.getBoundingClientRect();if(a.right>t.right)tabs.scrollLeft+=a.right-t.right;if(a.left<t.left)tabs.scrollLeft+=a.left-t.left;};
+ const commandSelector='#main>.toolbar,#main .guide-view-navigation,#guide-active-tools,#main>.atelier-setup';
+ function updateCommands(){
+  if(dialog.open){button.hidden=false;return;}
+  const controls=[...document.querySelectorAll(commandSelector)].flatMap(node=>[...node.querySelectorAll('button,input,select,a[href],summary')]).filter(node=>node.getClientRects().length&&!node.closest('[hidden]'));
+  // Le raccourci devient utile lorsque les commandes commencent à sortir
+  // au-dessus de la zone de lecture. Marge pour éviter un va-et-vient du bandeau.
+  const edge=dock.getBoundingClientRect().bottom-(button.hidden?48:0);
+  button.hidden=!controls.some(node=>node.getBoundingClientRect().bottom<edge);
+ }
+ let commandsFrame=0;
+ function scheduleCommands(){if(!commandsFrame)commandsFrame=requestAnimationFrame(()=>{commandsFrame=0;updateCommands();});}
+ window.addEventListener('scroll',scheduleCommands,{passive:true});
+ window.addEventListener('resize',scheduleCommands,{passive:true});
+ new MutationObserver(scheduleCommands).observe(document.getElementById('main'),{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','open']});
+ dialog.addEventListener('close',scheduleCommands);
+ window.updateNavigationTab=()=>{updateCommands();const active=tabs.querySelector('[aria-current=page]');if(!active)return;sections.title='Rubrique actuelle : '+active.textContent.trim();if(narrow.matches)return;const a=active.getBoundingClientRect(),t=tabs.getBoundingClientRect();if(a.right>t.right)tabs.scrollLeft+=a.right-t.right;if(a.left<t.left)tabs.scrollLeft+=a.left-t.left;};
  window.updateNavigationTab();
  search.setAttribute('aria-haspopup','dialog');search.setAttribute('aria-controls','corpus-search');search.setAttribute('aria-expanded','false');
  search.onclick=()=>{closeDisplay();for(const id of ['saved','settings']){document.getElementById(id).hidden=true;document.getElementById(id+'-toggle').setAttribute('aria-expanded','false');}window.CorpusSearch.open();};
