@@ -58,7 +58,7 @@
   const tokens=(last?.tokens||[]).flatMap(t=>t.split(/\s+/));
   return String(text).split(/(\s+|[·,;:!?()])/u).map(word=>tokens.some(t=>E.matches(word,t))?'<mark>'+esc(word)+'</mark>':esc(word)).join('');
  }
- function partsHTML(parts){return parts.map(p=>`<p class="${p.reading?'kana':p.lang==='ja'?'jp':p.lang==='romaji'?'romaji':'fr'}">${marked(p.text)}</p>`).join('');}
+ function partsHTML(parts){return parts.map(p=>`<p class="${p.reading?'kana':p.lang==='ja'?'jp':p.lang==='romaji'?'romaji':'fr'}">${marked(p.lang==='romaji'?Romaji.display(p.text):p.text)}</p>`).join('');}
  function contextHTML(d){
   if(d.guideNode){const host=document.createElement('div');host.innerHTML=guideNodes([d.guideNode],d.title);host.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));return host.innerHTML;}
   const ordinary=d.parts.filter(p=>!p.secret),secret=d.parts.filter(p=>p.secret);

@@ -1734,7 +1734,22 @@
         "déplacement",
         "temps"
       ],
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "exclude_matches",
+          "when": {
+            "time.id": "T03",
+            "place.id": "P05"
+          }
+        },
+        {
+          "type": "exclude_matches",
+          "when": {
+            "time.id": "T03",
+            "place.id": "P06"
+          }
+        }
+      ],
       "notes": "",
       "legacy_id": "G03",
       "kana_pattern": "{time.kana}、{place.kana}にいきます。",
@@ -2511,6 +2526,14 @@
         "G05",
         "G06",
         "G10"
+      ],
+      "context_notes": [
+        {
+          "when": {
+            "place.id": "PE02"
+          },
+          "text": "Dans cette situation, le café propose cet aliment sur sa carte ; le repas est acheté sur place."
+        }
       ]
     },
     {
@@ -2571,6 +2594,14 @@
         "G05",
         "G06",
         "G10"
+      ],
+      "context_notes": [
+        {
+          "when": {
+            "place.id": "PE02"
+          },
+          "text": "Dans cette situation, cette boisson figure sur la carte du café."
+        }
       ]
     },
     {
@@ -3198,7 +3229,8 @@
   ],
   "runtime_guards": {
     "supported_constraints": [
-      "not_equal"
+      "not_equal",
+      "exclude_matches"
     ],
     "unknown_constraint": "reject_template",
     "unresolved_placeholder": "reject_sentence",

@@ -367,6 +367,51 @@ order('C101','Choisir où aller ensemble','Vous avez décidé de sortir ensemble
 ],[[0,1,2],[1,0,2]],'Où pourrions-nous aller ensemble ?','どこへ interroge la destination ; 一緒に maintient l’idée d’une sortie commune. La terminaison ましょうか invite ici à décider ensemble.');
  definitions.slice(-10).forEach(q=>q.theme='repas-sortie');
  // END REPAS SORTIE
+ // BEGIN COMMANDER COMPTER
+// Créations pédagogiques : chaque quantité et chaque distracteur ont un appui explicite.
+{
+ const units={1:['一つ','ひとつ','hitotsu','N56-S08'],2:['二つ','ふたつ','futatsu','N27-S10'],3:['三つ','みっつ','mittsu','N59-S10']};
+ const drinks=[['コーヒー','koohii','café','cafés'],['ビール','biiru','bière','bières']];
+ const amount=(drink,n)=>`${n===1?(drink[2]==='bière'?'une':'un'):n===2?'deux':'trois'} ${drink[n===1?2:3]}`;
+ const sentence=(drink,n)=>`${drink[0]}を${units[n][0]}ください。|${drink[0]}を${units[n][1]}ください。|${drink[1]} o ${units[n][2]} kudasai.|${amount(drink,n)}, s’il vous plaît.`;
+ let id=102;
+ for(const n of [1,2])for(const drink of drinks){
+  const u=units[n],fr=amount(drink,n);
+  order('C'+id++,'Commander '+fr,`Au café, commande exactement ${fr}, avec la série en つ.`,['N12-S07',u[3]],['G17','G30'],[
+   `${drink[0]}を|${drink[0]}を|${drink[1]} o|la boisson demandée`,
+   `${u[0]}|${u[1]}|${u[2]}|${n} consommation(s)`,
+   'ください|ください|kudasai|s’il vous plaît'
+  ],[[0,1,2],[1,0,2]],fr[0].toUpperCase()+fr.slice(1)+', s’il vous plaît.',
+  'La quantité se place normalement après le groupe en を, avant ください. La placer avant le groupe en を est également accepté ici pour mettre la quantité en avant. On garde を avec la boisson ; ください termine la demande.');
+ }
+ for(const drink of drinks){
+  choice('C'+id++,'Transformer','Passer à trois '+drink[3],`Tu avais demandé ${amount(drink,1)}. Modifie la quantité pour en demander trois.`,['N12-S07','N56-S08','N27-S10','N59-S10'],['G17','G30'],[1,2,3].map(n=>sentence(drink,n)),2,
+   'La boisson et la demande restent les mêmes ; 一つ devient 三つ, lu みっつ (mittsu). 二つ voudrait dire deux, pas trois.',sentence(drink,1));
+ }
+ for(const [a,b] of [[2,1],[1,2]]){
+  const left=drinks[0],right=drinks[1],u=units[a],v=units[b],fr=amount(left,a)+' et '+amount(right,b);
+  order('C'+id++,'Commander deux boissons avec leurs quantités',`Au café, commande ${fr}.`,['N12-S07','N27-S10','N56-S08'],['G12','G17','G30'],[
+   `${left[0]}${u[0]}|${left[0]}${u[1]}|${left[1]} ${u[2]}|${amount(left,a)}`,
+   'と|と|to|et',
+   `${right[0]}${v[0]}|${right[0]}${v[1]}|${right[1]} ${v[2]}|${amount(right,b)}`,
+   'ください|ください|kudasai|s’il vous plaît'
+  ],[[0,1,2,3],[2,1,0,3]],fr[0].toUpperCase()+fr.slice(1)+', s’il vous plaît.',
+  'と relie les deux commandes. Chaque quantité reste avec sa boisson ; les deux groupes peuvent permuter autour de と. Dans cette liste orale, を est omis. ください porte sur l’ensemble.');
+ }
+ for(const n of [1,2]){
+  const u=units[n],fr=(n===1?'Une portion':'Deux portions')+' de ceci, s’il vous plaît.';
+  order('C'+id++,'Commander en montrant la carte',`Tu montres un plat sur la carte. Demande ${n===1?'une portion':'deux portions'} de ce plat.`,['N17-S11',u[3]],['G04','G17','G30'],[
+   'これを|これを|kore o|ceci, ce qui est montré',`${u[0]}|${u[1]}|${u[2]}|${n} portion(s)`,'ください|ください|kudasai|s’il vous plaît'
+  ],[[0,1,2],[1,0,2]],fr,'これ désigne l’article montré. La quantité peut précéder ou suivre これを avant ください ; la version neutre est これを suivi de la quantité.');
+ }
+ const answers=['一人です。|ひとりです。|hitori desu.|Je suis seul(e).','二人です。|ふたりです。|futari desu.|Nous sommes deux.','お一人さまですか。|おひとりさまですか。|o hitori sama desu ka.|Pour une personne ?'];
+ for(const n of [1,2])choice('C'+id++,'Dialoguer','Annoncer '+(n===1?'une personne':'deux personnes'),
+  `À l’accueil, on te demande si tu es seul(e). ${n===1?'Tu es seul(e) : confirme le nombre de personnes.':'Tu es accompagné(e) : indique que vous êtes deux.'}`,
+  ['N44-S03','N15-S04'],['G01','G30'],answers,n-1,
+  '一人 se lit hitori et 二人 se lit futari. Répondre avec です annonce le nombre de personnes ; répéter la question du personnel ne répond pas. On n’ajoute pas さま à son propre groupe.',answers[2]);
+}
+ definitions.slice(-12).forEach(q=>q.theme='commander-compter');
+ // END COMMANDER COMPTER
  function build(rows){
   const byId=new Map(rows.map(r=>[r.Leçon+'-'+r.Ligne,r]));
   return definitions.filter(q=>q.sources.every(id=>byId.has(id))).map(q=>({...q,source:q.sources[0],row:byId.get(q.sources[0]),origin:'Exercice créé à partir des constructions du cours.'}));

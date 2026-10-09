@@ -1,7 +1,7 @@
 {
-  "version": "1.6.1",
+  "version": "1.7.0",
   "date": "2026-10-09",
-  "titre": "Grammaire des leçons — 29 fiches",
+  "titre": "Grammaire des leçons — 30 fiches",
   "langue_explications": "fr",
   "affichage": {
     "romaji": {
@@ -4454,7 +4454,7 @@
       "famille": "Demandes",
       "niveau": "débutant",
       "objectif": "Former une demande avec te kudasai.",
-      "explication": "Ajouter kudasai à la forme en te demande à l’interlocuteur d’accomplir l’action. Cette forme convient aux demandes et consignes courantes ; des formulations plus indirectes existent pour demander une faveur avec davantage de délicatesse. Avec un nom, Nをください permet de demander un objet ou une boisson : コーヒーをください (koohii o kudasai), « un café, s’il vous plaît ». Cette demande nominale se distingue de Vてください, qui demande à quelqu’un de faire une action.",
+      "explication": "Ajouter kudasai à la forme en te demande à l’interlocuteur d’accomplir l’action. Cette forme convient aux demandes et consignes courantes ; des formulations plus indirectes existent pour demander une faveur avec davantage de délicatesse. Avec un nom, Nをください permet de demander un objet ou une boisson : コーヒーをください (koohii o kudasai), « un café, s’il vous plaît ». Cette demande nominale se distingue de Vてください, qui demande à quelqu’un de faire une action. Pour ajouter une quantité à une commande, voir G30, « Commander et compter » : nom + を + quantité + ください. La fiche distingue les consommations, les personnes et les boissons servies en tasse ou en verre.",
       "constructions": [
         {
           "jp": "見せてください。",
@@ -7483,6 +7483,433 @@
               "kana": "ひまになりました。",
               "romaji": "hima ni narimashita.",
               "fr": "Je suis devenu disponible."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "G30",
+      "ordre": 30,
+      "titre": "Commander et compter : personnes et consommations",
+      "famille": "Quantités",
+      "niveau": "débutant",
+      "objectif": "Commander une à trois consommations et annoncer une ou deux personnes.",
+      "explication": "En japonais, on apprend la quantité avec sa lecture complète. Pour une commande, la série 一つ・二つ・三つ (ひとつ・ふたつ・みっつ, hitotsu / futatsu / mittsu) permet de compter ici les consommations ou portions choisies. Dans コーヒーを二つください, コーヒーを nomme ce qui est demandé, 二つ précise la quantité et ください formule la demande. Pour compter des personnes, employer 一人・二人 (ひとり・ふたり, hitori / futari). Pour des tasses ou verres de boisson, employer 一杯・二杯・三杯 (いっぱい・にはい・さんばい, ippai / nihai / sanbai). Ces lectures se mémorisent ensemble ; ni les personnes ni toutes les catégories d’objets ne se comptent avec つ.",
+      "constructions": [
+        {
+          "jp": "コーヒーを二つください。",
+          "kana": "コーヒーをふたつください。",
+          "romaji": "koohii o futatsu kudasai.",
+          "fr": "Deux cafés, s’il vous plaît."
+        },
+        {
+          "jp": "二人です。",
+          "kana": "ふたりです。",
+          "romaji": "futari desu.",
+          "fr": "Nous sommes deux."
+        },
+        {
+          "jp": "ビールを二杯ください。",
+          "kana": "ビールをにはいください。",
+          "romaji": "biiru o nihai kudasai.",
+          "fr": "Deux verres de bière, s’il vous plaît."
+        }
+      ],
+      "formation": [
+        {
+          "texte": "Exemples créés — une, deux ou trois consommations. を reste avec le nom ; la quantité précède ください.",
+          "formes": [
+            {
+              "jp": "コーヒーを一つください。",
+              "kana": "コーヒーをひとつください。",
+              "romaji": "koohii o hitotsu kudasai.",
+              "fr": "Un café, s’il vous plaît."
+            },
+            {
+              "jp": "コーヒーを二つください。",
+              "kana": "コーヒーをふたつください。",
+              "romaji": "koohii o futatsu kudasai.",
+              "fr": "Deux cafés, s’il vous plaît."
+            },
+            {
+              "jp": "コーヒーを三つください。",
+              "kana": "コーヒーをみっつください。",
+              "romaji": "koohii o mittsu kudasai.",
+              "fr": "Trois cafés, s’il vous plaît."
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés — à l’accueil. Reconnaître la formule du personnel, puis répondre pour son groupe.",
+          "formes": [
+            {
+              "jp": "何名様ですか。",
+              "kana": "なんめいさまですか。",
+              "romaji": "nanmei sama desu ka.",
+              "fr": "Vous êtes combien de personnes ?"
+            },
+            {
+              "jp": "一人です。",
+              "kana": "ひとりです。",
+              "romaji": "hitori desu.",
+              "fr": "Je suis seul(e)."
+            },
+            {
+              "jp": "二人です。",
+              "kana": "ふたりです。",
+              "romaji": "futari desu.",
+              "fr": "Nous sommes deux."
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés — 杯 compte ici la boisson servie, pas des récipients vides ni des bouteilles.",
+          "formes": [
+            {
+              "jp": "コーヒーを一杯ください。",
+              "kana": "コーヒーをいっぱいください。",
+              "romaji": "koohii o ippai kudasai.",
+              "fr": "Une tasse de café, s’il vous plaît."
+            },
+            {
+              "jp": "ビールを二杯ください。",
+              "kana": "ビールをにはいください。",
+              "romaji": "biiru o nihai kudasai.",
+              "fr": "Deux verres de bière, s’il vous plaît."
+            },
+            {
+              "jp": "ジュースを三杯ください。",
+              "kana": "ジュースをさんばいください。",
+              "romaji": "juusu o sanbai kudasai.",
+              "fr": "Trois verres de jus de fruits, s’il vous plaît."
+            }
+          ]
+        },
+        {
+          "texte": "Exemples créés — montrer un article de la carte ou commander deux produits. À l’oral, を peut être omis dans la liste de commande.",
+          "formes": [
+            {
+              "jp": "これを二つください。",
+              "kana": "これをふたつください。",
+              "romaji": "kore o futatsu kudasai.",
+              "fr": "Deux portions de ceci, s’il vous plaît."
+            },
+            {
+              "jp": "コーヒー二つとビール一つください。",
+              "kana": "コーヒーふたつとビールひとつください。",
+              "romaji": "koohii futatsu to biiru hitotsu kudasai.",
+              "fr": "Deux cafés et une bière, s’il vous plaît."
+            },
+            {
+              "jp": "ビール一つとコーヒー二つください。",
+              "kana": "ビールひとつとコーヒーふたつください。",
+              "romaji": "biiru hitotsu to koohii futatsu kudasai.",
+              "fr": "Une bière et deux cafés, s’il vous plaît."
+            }
+          ]
+        }
+      ],
+      "pieges": [
+        "二つ se lit futatsu ; 二人 se lit futari ; 二杯 se lit nihai. Le nombre seul ne suffit pas à choisir la lecture.",
+        "Dans une commande de café, 二つ et 二杯 peuvent tous deux convenir selon le contexte : deux consommations ou deux tasses. Ne pas considérer automatiquement l’une des deux formulations comme fausse.",
+        "Le personnel emploie 様 dans 何名様ですか. Pour annoncer son propre groupe, répondre simplement 一人です ou 二人です, sans 様.",
+        "Dans une commande mixte, chaque quantité reste liée à son produit : deux cafés et une bière ne deviennent pas un café et deux bières quand on inverse l’ordre.",
+        "Les mots et lectures de la fiche peuvent être nouveaux. Les constructions de révision restent limitées aux appuis effectivement présents dans les leçons ; les modèles libres ne suivent pas cette progression."
+      ],
+      "exemples": [
+        {
+          "source": "N15-S04",
+          "jp": "子供 が 二人 います。",
+          "kana": "こども が ふたり います。",
+          "romaji": "kodomo ga futari imasu.",
+          "fr": "J’ai deux enfants.",
+          "cible": {
+            "jp": "二人",
+            "kana": "ふたり",
+            "romaji": "futari",
+            "fr": "deux personnes"
+          },
+          "commentaire": "Le corpus compte ici deux enfants. Au restaurant, 二人です est un exemple créé avec le même compteur."
+        },
+        {
+          "source": "N27-S10",
+          "jp": "小さい バッグ 二つ だけ です。",
+          "kana": "ちいさい バッグ ふたつ だけ です。",
+          "romaji": "chiisai baggu futatsu dake desu.",
+          "fr": "Seulement deux petits sacs.",
+          "cible": {
+            "jp": "二つ",
+            "kana": "ふたつ",
+            "romaji": "futatsu",
+            "fr": "deux unités"
+          },
+          "commentaire": "Le corpus compte des sacs ; les commandes de boissons sont des exemples créés."
+        },
+        {
+          "source": "N37-S10",
+          "jp": "今晩 渋谷 の 辺り で、一杯 いかが です か。",
+          "kana": "こんばん しぶや の あたり で、いっぱい いかが です か。",
+          "romaji": "konban shibuya no atari de, ippai ikaga desu ka.",
+          "fr": "Que diriez-vous de prendre un verre ce soir du côté de Shibuya ?",
+          "cible": {
+            "jp": "一杯",
+            "kana": "いっぱい",
+            "romaji": "ippai",
+            "fr": "un verre"
+          },
+          "commentaire": "Le corpus propose de prendre un verre. 二杯 et 三杯 sont expliqués dans cette fiche, sans prétendre qu’ils apparaissent déjà dans cette leçon."
+        }
+      ],
+      "exercice": {
+        "type": "qcm",
+        "consigne": "À l’accueil du restaurant, tu annonces que vous êtes deux personnes. Quelle réponse convient ?",
+        "options": [
+          {
+            "id": "choix-1",
+            "jp": "二つです。",
+            "kana": "ふたつです。",
+            "romaji": "futatsu desu.",
+            "fr": "Deux unités."
+          },
+          {
+            "id": "choix-2",
+            "jp": "二人です。",
+            "kana": "ふたりです。",
+            "romaji": "futari desu.",
+            "fr": "Nous sommes deux."
+          },
+          {
+            "id": "choix-3",
+            "jp": "二杯です。",
+            "kana": "にはいです。",
+            "romaji": "nihai desu.",
+            "fr": "Deux tasses ou verres de boisson."
+          }
+        ],
+        "bonne_reponse": "choix-2",
+        "explication": "人 compte les personnes : 二人 se lit ふたり (futari). つ compte ici des unités ; 杯 des boissons servies.",
+        "origine": "exercice créé pour cette fiche",
+        "affichage": {
+          "romaji": "toujours activable, y compris avant la réponse",
+          "fr_options": "à révéler avec le corrigé"
+        }
+      },
+      "vocabulaire": [],
+      "sources": [
+        {
+          "organisme": "Tokyo University of Foreign Studies",
+          "titre": "Modules de japonais — Compteurs",
+          "section": "Séries en つ, 人 et 杯 ; lectures et place des quantités",
+          "url": "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/explanation/017.html",
+          "consulte_le": "2026-10-09"
+        },
+        {
+          "organisme": "Fondation du Japon",
+          "titre": "Irodori — Starter, leçon 6",
+          "section": "Commander avec une quantité ; liste de consommations",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/starter/pdf/X_L06.pdf",
+          "consulte_le": "2026-10-09"
+        },
+        {
+          "organisme": "Ministère japonais de l’Éducation",
+          "titre": "Tsunagaru Hirogaru — Guide du site",
+          "section": "Entrer au restaurant et annoncer le nombre de personnes",
+          "url": "https://tsunagarujp.mext.go.jp/assets/download/manual_202407.pdf",
+          "consulte_le": "2026-10-09"
+        }
+      ],
+      "prerequis": [
+        "G01",
+        "G06",
+        "G12",
+        "G17"
+      ],
+      "pour_aller_plus_loin": "",
+      "lecons": [
+        "N15",
+        "N27",
+        "N37"
+      ],
+      "romaji_disponible": true,
+      "exercices": [
+        {
+          "type": "qcm",
+          "consigne": "À l’accueil du restaurant, tu annonces que vous êtes deux personnes. Quelle réponse convient ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "二つです。",
+              "kana": "ふたつです。",
+              "romaji": "futatsu desu.",
+              "fr": "Deux unités."
+            },
+            {
+              "id": "choix-2",
+              "jp": "二人です。",
+              "kana": "ふたりです。",
+              "romaji": "futari desu.",
+              "fr": "Nous sommes deux."
+            },
+            {
+              "id": "choix-3",
+              "jp": "二杯です。",
+              "kana": "にはいです。",
+              "romaji": "nihai desu.",
+              "fr": "Deux tasses ou verres de boisson."
+            }
+          ],
+          "bonne_reponse": "choix-2",
+          "explication": "人 compte les personnes : 二人 se lit ふたり (futari). つ compte ici des unités ; 杯 des boissons servies.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Quelle quantité se lit さんばい (sanbai) et désigne trois tasses ou verres de boisson ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "一杯",
+              "kana": "いっぱい",
+              "romaji": "ippai",
+              "fr": "une tasse ou un verre de boisson"
+            },
+            {
+              "id": "choix-2",
+              "jp": "二杯",
+              "kana": "にはい",
+              "romaji": "nihai",
+              "fr": "deux tasses ou verres de boisson"
+            },
+            {
+              "id": "choix-3",
+              "jp": "三杯",
+              "kana": "さんばい",
+              "romaji": "sanbai",
+              "fr": "trois tasses ou verres de boisson"
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "三杯 se lit sanbai. Les autres lectures sont ippai pour 一杯 et nihai pour 二杯.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Commande exactement deux cafés avec la série en つ.",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "コーヒーを二つください。",
+              "kana": "コーヒーをふたつください。",
+              "romaji": "koohii o futatsu kudasai.",
+              "fr": "Deux cafés, s’il vous plaît."
+            },
+            {
+              "id": "choix-2",
+              "jp": "コーヒーを一つください。",
+              "kana": "コーヒーをひとつください。",
+              "romaji": "koohii o hitotsu kudasai.",
+              "fr": "Un café, s’il vous plaît."
+            },
+            {
+              "id": "choix-3",
+              "jp": "コーヒーを三つください。",
+              "kana": "コーヒーをみっつください。",
+              "romaji": "koohii o mittsu kudasai.",
+              "fr": "Trois cafés, s’il vous plaît."
+            }
+          ],
+          "bonne_reponse": "choix-1",
+          "explication": "二つ donne la quantité demandée. La série en 杯 pourrait servir à préciser des tasses dans un autre exercice ; elle n’est pas opposée ici comme une mauvaise réponse.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        },
+        {
+          "type": "qcm",
+          "consigne": "Le personnel demande 何名様ですか (nanmei sama desu ka). Tu es seul(e) : quelle réponse donne cette information ?",
+          "options": [
+            {
+              "id": "choix-1",
+              "jp": "何名様ですか。",
+              "kana": "なんめいさまですか。",
+              "romaji": "nanmei sama desu ka.",
+              "fr": "Vous êtes combien de personnes ?"
+            },
+            {
+              "id": "choix-2",
+              "jp": "二人です。",
+              "kana": "ふたりです。",
+              "romaji": "futari desu.",
+              "fr": "Nous sommes deux."
+            },
+            {
+              "id": "choix-3",
+              "jp": "一人です。",
+              "kana": "ひとりです。",
+              "romaji": "hitori desu.",
+              "fr": "Je suis seul(e)."
+            }
+          ],
+          "bonne_reponse": "choix-3",
+          "explication": "一人です annonce une personne. La formule avec 様 appartient ici au personnel ; on ne la répète pas pour désigner son propre groupe.",
+          "origine": "exercice créé pour cette fiche",
+          "affichage": {
+            "romaji": "toujours activable, y compris avant la réponse",
+            "fr_options": "à révéler avec le corrigé"
+          }
+        }
+      ],
+      "synthese": {
+        "reperes": [
+          "Consommations : hitotsu, futatsu, mittsu.",
+          "Personnes : hitori, futari. Boissons en tasse/verre : ippai, nihai, sanbai."
+        ],
+        "lignes": [
+          {
+            "usage": "Commander deux consommations",
+            "exemple": {
+              "jp": "コーヒーを二つください。",
+              "kana": "コーヒーをふたつください。",
+              "romaji": "koohii o futatsu kudasai.",
+              "fr": "Deux cafés, s’il vous plaît."
+            }
+          },
+          {
+            "usage": "Annoncer deux personnes",
+            "exemple": {
+              "jp": "二人です。",
+              "kana": "ふたりです。",
+              "romaji": "futari desu.",
+              "fr": "Nous sommes deux."
+            }
+          },
+          {
+            "usage": "Commander deux verres",
+            "exemple": {
+              "jp": "ビールを二杯ください。",
+              "kana": "ビールをにはいください。",
+              "romaji": "biiru o nihai kudasai.",
+              "fr": "Deux verres de bière, s’il vous plaît."
+            }
+          },
+          {
+            "usage": "Deux produits, deux quantités",
+            "exemple": {
+              "jp": "コーヒー二つとビール一つください。",
+              "kana": "コーヒーふたつとビールひとつください。",
+              "romaji": "koohii futatsu to biiru hitotsu kudasai.",
+              "fr": "Deux cafés et une bière, s’il vous plaît."
             }
           }
         ]

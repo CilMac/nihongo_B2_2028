@@ -1,6 +1,6 @@
 // Affichage uniquement : liste revue sur le corpus actuel, pas de règle globale ou → ō.
 // Exceptions laissées intactes : omou, kayou, sasou, sonoue, ouwasa, sandouitchi.
-// Les mots nouveaux doivent être vérifiés avant ajout. Les autres voyelles sont inchangées.
+// Les mots nouveaux et les frontières de syllabes restent protégés par cette liste.
 // Référence : https://www.loc.gov/catdir/cpso/romanization/japanese.pdf § 2.5.
 (function (root) {
   'use strict';
@@ -35,18 +35,41 @@
     toukyou toukyouto toushoudaiji tsugou tsukemashou tsukesasemashou tsukeyou tsuukou undou
     ureshisou wasuresou wasureyou yameyou yarou you youchien youji youka youkoso yuujou yuukou
     yuuryou zenjidou zou
+    apaato baa baagen bideogeemu biiru chikyuu chokoreeto chuugakusei chuugoku chuugokugo
+    chuugokujin chuuka chuurippu daunroodo depaato dezaato esukareetaa fooku fukushuu
+    futsuu fuukei gareeji gyuunyuu hachijuu haiyuu happii hiiroo hoomu intaanetto
+    isshuu isshuukan jaa joryuu joyuu juu juubun juuden juugo juugofun juugojikan
+    juugonichi juugosai juuichigatsu juuichiji juuji juumai juuni juunigatsu juuninen
+    juuninichi juuninin juurokkai juusho juusu kaabu kaado kakushuu karee keeki kenkyuu
+    kiiroi konkuriito konkuriitodate konpyuuta konsaato konshuu koohii kooto kukkii
+    kuriimu kuuki kyuu kyuuchuu kyuukei kyuunen kyuunin kyuushuu maa maajan maishuu
+    manee meekaa meeru meetoru messeeji nanajuu nee neesan nihonjuu nijuu nijuuhachi
+    nijuuhassai nijuuyon nijuuyonsai nitchuu nyuugaku nyuuin nyuukyo nyuusu obaa
+    ojiisan okaasan oniisan oodoori oogesa ooi ooki ookii ookiku oosaka ooshima
+    oosutoraria oosutoria ooyorokobi oozei paatii peeji piinattsu raamen raishuu
+    rakkii renshuu riyuu ryuugakusei saa saabisu sakkaa sakunenjuu sanjuugofun
+    sanjuuichinichi sanjuukyuu sanjuumai sansuu saraishuu sarariiman sekaijuu senshuu
+    shawaa sheekusupia shiidii shiizun shinshuu shoppingusentaa shuumatsu shuushoku
+    suichuumegane sukii supiido supootsu suunen suupaa suupu taaminaru takushii
+    teeburu tochuu tooi tooka tookereba tooku tooremasen toori toorimasu tooru
+    tootta tootte torakutaa tsurii tsuuro tsuuyaku uchuu uiikuendo uiin wiikuendo
+    wiin yakyuu yonjuu yooroppa yoyuu yuube yuubin yuubinkyoku yuugata yuujin
+    yuumei yuushoku yuuyake
   `.trim().split(/\s+/));
 
   function display(text) {
     return String(text ?? '').normalize('NFC').replace(/[A-Za-zÀ-ÖØ-öø-ÿĀ-ž]+(?:['’][A-Za-zÀ-ÖØ-öø-ÿĀ-ž]+)*/g, word => {
       if (!reviewedWords.has(word.toLowerCase().replace(/’/g, "'"))) return word;
-      return word.replace(/ou/gi, pair => pair[0] === 'O' ? 'Ō' : 'ō');
+      return word.replace(/ou/gi, pair=>pair[0]==='O'?'Ō':'ō').replace(/aa|ii|uu|ee|oo/gi, pair => {
+        const macron={a:'ā',i:'ī',u:'ū',e:'ē',o:'ō'}[pair[0].toLowerCase()];
+        return pair[0]===pair[0].toUpperCase()?macron.toUpperCase():macron;
+      });
     });
   }
 
   // Restaurer « ou » avant d'enlever les accents, y compris pour un macron décomposé.
   function searchKey(text) {
-    return String(text ?? '').normalize('NFC').replace(/ō/g, 'ou').replace(/Ō/g, 'Ou')
+    return display(text).replace(/[āīūēō]/gi, vowel => ({'ā':'aa','ī':'ii','ū':'uu','ē':'ee','ō':'ou'}[vowel.toLowerCase()]))
       .normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
   }
 

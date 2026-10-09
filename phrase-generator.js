@@ -15,7 +15,15 @@
      return;
     }
     const value=path=>{const [slot,field]=path.split('.');const v=env[slot]?.[field];if(v===undefined)throw Error('Champ manquant : '+path);return v;};
-    for(const c of t.constraints){if(c.type!=='not_equal')throw Error('Contrainte inconnue');if(value(c.left)===value(c.right))return;}
+    const matches=when=>{
+     if(!when||typeof when!=='object'||Array.isArray(when)||!Object.keys(when).length)throw Error('Condition invalide');
+     return Object.entries(when).map(([path,expected])=>value(path)===expected).every(Boolean);
+    };
+    for(const c of t.constraints){
+     if(c.type==='not_equal'){if(value(c.left)===value(c.right))return;}
+     else if(c.type==='exclude_matches'){if(matches(c.when))return;}
+     else throw Error('Contrainte inconnue');
+    }
     const fill=pattern=>{
      if(typeof pattern!=='string')throw Error('Texte manquant');
      const s=pattern.replace(/\{([^}]+)\}/g,(_,path)=>String(value(path)));
@@ -23,7 +31,8 @@
     };
     const mappings=[t.lesson_mapping,...Object.values(env).map(e=>e.lesson_mapping)];
     const mapped=mappings.every(m=>m?.status==='reviewed'&&Number.isInteger(m.minimum_lesson)&&m.minimum_lesson>0&&m.source_refs?.length);
-    const q={type:'generated',dialogue:!!t.dialogue,templateId:t.id,title:t.label,context:t.context_fr,
+    const contextNotes=(t.context_notes||[]).filter(n=>matches(n.when)).map(n=>fill(n.text));
+    const q={type:'generated',dialogue:!!t.dialogue,templateId:t.id,title:t.label,context:[t.context_fr,...contextNotes].join(' '),
      minimumLesson:mapped?Math.max(...mappings.map(m=>m.minimum_lesson)):null,
      sourceRefs:mapped?[...new Set(mappings.flatMap(m=>m.source_refs))]:[],
      grammarCards:t.grammar_cards||[],
@@ -70,7 +79,7 @@
   if(pending)return pending;
   pending=(async()=>{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);try{
    const configs=await Promise.all(['generateur_phrases_config.json','generateur_phrases_libres.json'].map(async file=>{
-    const response=await fetch(file+'?v=20261009-repas',{cache:'no-cache',signal:controller.signal});
+    const response=await fetch(file+'?v=20261009-compter',{cache:'no-cache',signal:controller.signal});
     if(!response.ok)throw Error('Configuration indisponible');return compile(await response.json());
    }));
    cached={...configs[0],free:configs[1]};return cached;

@@ -3,7 +3,7 @@
   "title": "Explorer librement — répertoire indépendant",
   "provenance": {
     "date": "2026-10-09",
-    "origin": "Socle éditorial initial de 29 modèles et 20 modèles enrichis indépendants ; aucune extraction automatique des leçons.",
+    "origin": "Socle éditorial initial de 29 modèles et 25 modèles enrichis indépendants ; aucune extraction automatique des leçons.",
     "review": "Formes et associations préparées ; tests exhaustifs de structure, pas de certification native."
   },
   "scope": "free_only",
@@ -703,6 +703,295 @@
         "romaji": "sumimasen, chotto...",
         "fr": "Désolé, ça va être difficile…",
         "usage_note": "Refus atténué dans ce contexte ; ちょっと laisse la difficulté sous-entendue."
+      }
+    ],
+    "order_quantity": [
+      {
+        "id": "order-q-1",
+        "japanese": "一つ",
+        "kana": "ひとつ",
+        "romaji": "hitotsu",
+        "portions": "Une portion"
+      },
+      {
+        "id": "order-q-2",
+        "japanese": "二つ",
+        "kana": "ふたつ",
+        "romaji": "futatsu",
+        "portions": "Deux portions"
+      },
+      {
+        "id": "order-q-3",
+        "japanese": "三つ",
+        "kana": "みっつ",
+        "romaji": "mittsu",
+        "portions": "Trois portions"
+      }
+    ],
+    "order_drink_quantity": [
+      {
+        "id": "order-d-1-1",
+        "item": "コーヒー",
+        "item_kana": "コーヒー",
+        "item_romaji": "koohii",
+        "unit": "一つ",
+        "unit_kana": "ひとつ",
+        "unit_romaji": "hitotsu",
+        "cup": "一杯",
+        "cup_kana": "いっぱい",
+        "cup_romaji": "ippai",
+        "serving_fr": "Un café",
+        "cup_fr": "Une tasse de café"
+      },
+      {
+        "id": "order-d-1-2",
+        "item": "コーヒー",
+        "item_kana": "コーヒー",
+        "item_romaji": "koohii",
+        "unit": "二つ",
+        "unit_kana": "ふたつ",
+        "unit_romaji": "futatsu",
+        "cup": "二杯",
+        "cup_kana": "にはい",
+        "cup_romaji": "nihai",
+        "serving_fr": "Deux cafés",
+        "cup_fr": "Deux tasses de café"
+      },
+      {
+        "id": "order-d-1-3",
+        "item": "コーヒー",
+        "item_kana": "コーヒー",
+        "item_romaji": "koohii",
+        "unit": "三つ",
+        "unit_kana": "みっつ",
+        "unit_romaji": "mittsu",
+        "cup": "三杯",
+        "cup_kana": "さんばい",
+        "cup_romaji": "sanbai",
+        "serving_fr": "Trois cafés",
+        "cup_fr": "Trois tasses de café"
+      },
+      {
+        "id": "order-d-2-1",
+        "item": "ビール",
+        "item_kana": "ビール",
+        "item_romaji": "biiru",
+        "unit": "一つ",
+        "unit_kana": "ひとつ",
+        "unit_romaji": "hitotsu",
+        "cup": "一杯",
+        "cup_kana": "いっぱい",
+        "cup_romaji": "ippai",
+        "serving_fr": "Une bière",
+        "cup_fr": "Un verre de bière"
+      },
+      {
+        "id": "order-d-2-2",
+        "item": "ビール",
+        "item_kana": "ビール",
+        "item_romaji": "biiru",
+        "unit": "二つ",
+        "unit_kana": "ふたつ",
+        "unit_romaji": "futatsu",
+        "cup": "二杯",
+        "cup_kana": "にはい",
+        "cup_romaji": "nihai",
+        "serving_fr": "Deux bières",
+        "cup_fr": "Deux verres de bière"
+      },
+      {
+        "id": "order-d-2-3",
+        "item": "ビール",
+        "item_kana": "ビール",
+        "item_romaji": "biiru",
+        "unit": "三つ",
+        "unit_kana": "みっつ",
+        "unit_romaji": "mittsu",
+        "cup": "三杯",
+        "cup_kana": "さんばい",
+        "cup_romaji": "sanbai",
+        "serving_fr": "Trois bières",
+        "cup_fr": "Trois verres de bière"
+      },
+      {
+        "id": "order-d-3-1",
+        "item": "ジュース",
+        "item_kana": "ジュース",
+        "item_romaji": "juusu",
+        "unit": "一つ",
+        "unit_kana": "ひとつ",
+        "unit_romaji": "hitotsu",
+        "cup": "一杯",
+        "cup_kana": "いっぱい",
+        "cup_romaji": "ippai",
+        "serving_fr": "Un jus de fruits",
+        "cup_fr": "Un verre de jus de fruits"
+      },
+      {
+        "id": "order-d-3-2",
+        "item": "ジュース",
+        "item_kana": "ジュース",
+        "item_romaji": "juusu",
+        "unit": "二つ",
+        "unit_kana": "ふたつ",
+        "unit_romaji": "futatsu",
+        "cup": "二杯",
+        "cup_kana": "にはい",
+        "cup_romaji": "nihai",
+        "serving_fr": "Deux jus de fruits",
+        "cup_fr": "Deux verres de jus de fruits"
+      },
+      {
+        "id": "order-d-3-3",
+        "item": "ジュース",
+        "item_kana": "ジュース",
+        "item_romaji": "juusu",
+        "unit": "三つ",
+        "unit_kana": "みっつ",
+        "unit_romaji": "mittsu",
+        "cup": "三杯",
+        "cup_kana": "さんばい",
+        "cup_romaji": "sanbai",
+        "serving_fr": "Trois jus de fruits",
+        "cup_fr": "Trois verres de jus de fruits"
+      }
+    ],
+    "order_pair": [
+      {
+        "id": "order-p-0-1-0-0",
+        "left": "コーヒー一つ",
+        "left_kana": "コーヒーひとつ",
+        "left_romaji": "koohii hitotsu",
+        "right": "ビール一つ",
+        "right_kana": "ビールひとつ",
+        "right_romaji": "biiru hitotsu",
+        "fr": "Un café et une bière"
+      },
+      {
+        "id": "order-p-0-1-0-1",
+        "left": "コーヒー一つ",
+        "left_kana": "コーヒーひとつ",
+        "left_romaji": "koohii hitotsu",
+        "right": "ビール二つ",
+        "right_kana": "ビールふたつ",
+        "right_romaji": "biiru futatsu",
+        "fr": "Un café et deux bières"
+      },
+      {
+        "id": "order-p-0-1-1-0",
+        "left": "コーヒー二つ",
+        "left_kana": "コーヒーふたつ",
+        "left_romaji": "koohii futatsu",
+        "right": "ビール一つ",
+        "right_kana": "ビールひとつ",
+        "right_romaji": "biiru hitotsu",
+        "fr": "Deux cafés et une bière"
+      },
+      {
+        "id": "order-p-0-1-1-1",
+        "left": "コーヒー二つ",
+        "left_kana": "コーヒーふたつ",
+        "left_romaji": "koohii futatsu",
+        "right": "ビール二つ",
+        "right_kana": "ビールふたつ",
+        "right_romaji": "biiru futatsu",
+        "fr": "Deux cafés et deux bières"
+      },
+      {
+        "id": "order-p-0-2-0-0",
+        "left": "コーヒー一つ",
+        "left_kana": "コーヒーひとつ",
+        "left_romaji": "koohii hitotsu",
+        "right": "ジュース一つ",
+        "right_kana": "ジュースひとつ",
+        "right_romaji": "juusu hitotsu",
+        "fr": "Un café et un jus de fruits"
+      },
+      {
+        "id": "order-p-0-2-0-1",
+        "left": "コーヒー一つ",
+        "left_kana": "コーヒーひとつ",
+        "left_romaji": "koohii hitotsu",
+        "right": "ジュース二つ",
+        "right_kana": "ジュースふたつ",
+        "right_romaji": "juusu futatsu",
+        "fr": "Un café et deux jus de fruits"
+      },
+      {
+        "id": "order-p-0-2-1-0",
+        "left": "コーヒー二つ",
+        "left_kana": "コーヒーふたつ",
+        "left_romaji": "koohii futatsu",
+        "right": "ジュース一つ",
+        "right_kana": "ジュースひとつ",
+        "right_romaji": "juusu hitotsu",
+        "fr": "Deux cafés et un jus de fruits"
+      },
+      {
+        "id": "order-p-0-2-1-1",
+        "left": "コーヒー二つ",
+        "left_kana": "コーヒーふたつ",
+        "left_romaji": "koohii futatsu",
+        "right": "ジュース二つ",
+        "right_kana": "ジュースふたつ",
+        "right_romaji": "juusu futatsu",
+        "fr": "Deux cafés et deux jus de fruits"
+      },
+      {
+        "id": "order-p-1-2-0-0",
+        "left": "ビール一つ",
+        "left_kana": "ビールひとつ",
+        "left_romaji": "biiru hitotsu",
+        "right": "ジュース一つ",
+        "right_kana": "ジュースひとつ",
+        "right_romaji": "juusu hitotsu",
+        "fr": "Une bière et un jus de fruits"
+      },
+      {
+        "id": "order-p-1-2-0-1",
+        "left": "ビール一つ",
+        "left_kana": "ビールひとつ",
+        "left_romaji": "biiru hitotsu",
+        "right": "ジュース二つ",
+        "right_kana": "ジュースふたつ",
+        "right_romaji": "juusu futatsu",
+        "fr": "Une bière et deux jus de fruits"
+      },
+      {
+        "id": "order-p-1-2-1-0",
+        "left": "ビール二つ",
+        "left_kana": "ビールふたつ",
+        "left_romaji": "biiru futatsu",
+        "right": "ジュース一つ",
+        "right_kana": "ジュースひとつ",
+        "right_romaji": "juusu hitotsu",
+        "fr": "Deux bières et un jus de fruits"
+      },
+      {
+        "id": "order-p-1-2-1-1",
+        "left": "ビール二つ",
+        "left_kana": "ビールふたつ",
+        "left_romaji": "biiru futatsu",
+        "right": "ジュース二つ",
+        "right_kana": "ジュースふたつ",
+        "right_romaji": "juusu futatsu",
+        "fr": "Deux bières et deux jus de fruits"
+      }
+    ],
+    "order_people": [
+      {
+        "id": "order-person-1",
+        "japanese": "一人です。",
+        "kana": "ひとりです。",
+        "romaji": "hitori desu.",
+        "fr": "Je suis seul(e)."
+      },
+      {
+        "id": "order-person-2",
+        "japanese": "二人です。",
+        "kana": "ふたりです。",
+        "romaji": "futari desu.",
+        "fr": "Nous sommes deux."
       }
     ],
     "base_time_day": [
@@ -1593,7 +1882,16 @@
         "status": "independent",
         "minimum_lesson": null,
         "source_refs": []
-      }
+      },
+      "context_notes": [
+        {
+          "when": {
+            "time.id": "time-3",
+            "place.id": "reading_place-2"
+          },
+          "text": "La bibliothèque choisie est ouverte en soirée."
+        }
+      ]
     },
     {
       "id": "FL02",
@@ -1809,13 +2107,37 @@
         "G10",
         "G12"
       ],
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "exclude_matches",
+          "when": {
+            "time.id": "time-3",
+            "place.id": "destination-3"
+          }
+        }
+      ],
       "notes": "と indique avec qui l’on se déplace, で le moyen de transport et に la destination. Ces trois groupes apportent des informations différentes sur le même déplacement.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
         "source_refs": []
-      }
+      },
+      "context_notes": [
+        {
+          "when": {
+            "time.id": "time-3",
+            "place.id": "destination-1"
+          },
+          "text": "Le musée est ouvert en soirée ce jour-là."
+        },
+        {
+          "when": {
+            "time.id": "time-3",
+            "place.id": "destination-2"
+          },
+          "text": "Le musée est ouvert en soirée ce jour-là."
+        }
+      ]
     },
     {
       "id": "FL06",
@@ -1978,7 +2300,23 @@
         "status": "independent",
         "minimum_lesson": null,
         "source_refs": []
-      }
+      },
+      "context_notes": [
+        {
+          "when": {
+            "time.id": "time-3",
+            "place.id": "study_place-2"
+          },
+          "text": "La bibliothèque choisie est ouverte en soirée."
+        },
+        {
+          "when": {
+            "time.id": "time-3",
+            "place.id": "study_place-3"
+          },
+          "text": "Tu suis un cours du soir dans cette école."
+        }
+      ]
     },
     {
       "id": "FL09",
@@ -2111,13 +2449,37 @@
         "G09",
         "G15"
       ],
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "exclude_matches",
+          "when": {
+            "time.id": "time-3",
+            "place.id": "destination-3"
+          }
+        }
+      ],
       "notes": "一緒に précise que la sortie se ferait ensemble. 行きましょう propose de partir ou d’aller dans le lieu indiqué ; ce n’est pas le récit d’une sortie déjà effectuée.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
         "source_refs": []
-      }
+      },
+      "context_notes": [
+        {
+          "when": {
+            "time.id": "time-3",
+            "place.id": "destination-1"
+          },
+          "text": "Le musée est ouvert en soirée ce jour-là."
+        },
+        {
+          "when": {
+            "time.id": "time-3",
+            "place.id": "destination-2"
+          },
+          "text": "Le musée est ouvert en soirée ce jour-là."
+        }
+      ]
     },
     {
       "id": "FL12",
@@ -2351,7 +2713,21 @@
         "status": "independent",
         "minimum_lesson": null,
         "source_refs": []
-      }
+      },
+      "context_notes": [
+        {
+          "when": {
+            "food.id": "food-5"
+          },
+          "text": "Tu choisis entre des options déjà présentées sur la carte ; la préparation du plat est connue."
+        },
+        {
+          "when": {
+            "food.id": "food-6"
+          },
+          "text": "Tu choisis entre des options déjà présentées sur la carte ; la préparation du plat est connue."
+        }
+      ]
     },
     {
       "id": "FL17",
@@ -2472,7 +2848,7 @@
           "role_fr": "Réponse de l’autre personne à cette invitation"
         }
       ],
-      "context_fr": "Deux personnes envisagent un repas ; la seconde accepte ou décline la proposition.",
+      "context_fr": "Deux personnes envisagent de manger ensemble ; la seconde accepte ou décline la proposition.",
       "grammar_cards": [
         "G15"
       ],
@@ -2483,7 +2859,27 @@
         "minimum_lesson": null,
         "source_refs": []
       },
-      "dialogue": true
+      "dialogue": true,
+      "context_notes": [
+        {
+          "when": {
+            "food.id": "food-8"
+          },
+          "text": "Il s’agit de partager un dessert, pas de décrire un dîner complet."
+        },
+        {
+          "when": {
+            "food.id": "food-6"
+          },
+          "text": "Vous avez déjà parlé de ce plat et envisagez un repas léger ensemble."
+        },
+        {
+          "when": {
+            "food.id": "food-7"
+          },
+          "text": "Vous avez déjà parlé de ce plat et envisagez un repas léger ensemble."
+        }
+      ]
     },
     {
       "id": "FL20",
@@ -2530,6 +2926,229 @@
       ],
       "constraints": [],
       "notes": "Chaque ligne correspond à une personne. La première invite avec ませんか ; la seconde réagit à cette proposition. Une forme négative peut donc servir à inviter, sans annoncer un refus. Comprendre l’échange demande aussi de reconnaître si la réponse accepte ou décline.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      },
+      "dialogue": true
+    },
+    {
+      "id": "FL21",
+      "label": "Commander des consommations",
+      "weight": 1.0,
+      "slots": {
+        "order": "order_drink_quantity"
+      },
+      "japanese_pattern": "{order.item}を{order.unit}ください。",
+      "kana_pattern": "{order.item_kana}を{order.unit_kana}ください。",
+      "romaji_pattern": "{order.item_romaji} o {order.unit_romaji} kudasai.",
+      "french_pattern": "{order.serving_fr}, s’il vous plaît.",
+      "segments": [
+        {
+          "japanese_pattern": "{order.item}を",
+          "kana_pattern": "{order.item_kana}を",
+          "romaji_pattern": "{order.item_romaji} o",
+          "role_fr": "Boisson demandée : を"
+        },
+        {
+          "japanese_pattern": "{order.unit}",
+          "kana_pattern": "{order.unit_kana}",
+          "romaji_pattern": "{order.unit_romaji}",
+          "role_fr": "Quantité de consommations"
+        },
+        {
+          "japanese_pattern": "ください。",
+          "kana_pattern": "ください。",
+          "romaji_pattern": "kudasai.",
+          "role_fr": "Demande polie de la commande"
+        }
+      ],
+      "context_fr": "Au café, ces boissons sont proposées en consommations individuelles. Tu passes ta commande.",
+      "grammar_cards": [
+        "G17",
+        "G30"
+      ],
+      "constraints": [],
+      "notes": "La quantité précède ください. 一つ, 二つ, 三つ se lisent hitotsu, futatsu, mittsu. Ici, on compte les consommations commandées ; つ ne remplace pas tous les compteurs.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL22",
+      "label": "Commander des tasses ou des verres",
+      "weight": 1.0,
+      "slots": {
+        "order": "order_drink_quantity"
+      },
+      "japanese_pattern": "{order.item}を{order.cup}ください。",
+      "kana_pattern": "{order.item_kana}を{order.cup_kana}ください。",
+      "romaji_pattern": "{order.item_romaji} o {order.cup_romaji} kudasai.",
+      "french_pattern": "{order.cup_fr}, s’il vous plaît.",
+      "segments": [
+        {
+          "japanese_pattern": "{order.item}を",
+          "kana_pattern": "{order.item_kana}を",
+          "romaji_pattern": "{order.item_romaji} o",
+          "role_fr": "Boisson demandée : を"
+        },
+        {
+          "japanese_pattern": "{order.cup}",
+          "kana_pattern": "{order.cup_kana}",
+          "romaji_pattern": "{order.cup_romaji}",
+          "role_fr": "Quantité de tasses ou verres de boisson"
+        },
+        {
+          "japanese_pattern": "ください。",
+          "kana_pattern": "ください。",
+          "romaji_pattern": "kudasai.",
+          "role_fr": "Demande polie de la commande"
+        }
+      ],
+      "context_fr": "Au café, le café est servi en tasse, la bière et le jus en verre. Tu demandes des boissons, pas des récipients vides ni des bouteilles.",
+      "grammar_cards": [
+        "G17",
+        "G30"
+      ],
+      "constraints": [],
+      "notes": "杯 compte ici des boissons servies en tasse ou en verre. Les lectures sont 一杯 (ippai), 二杯 (nihai), 三杯 (sanbai). La série en つ peut aussi compter les consommations : elle n’est pas incorrecte par principe.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL23",
+      "label": "Commander en montrant la carte",
+      "weight": 1.0,
+      "slots": {
+        "quantity": "order_quantity"
+      },
+      "japanese_pattern": "これを{quantity.japanese}ください。",
+      "kana_pattern": "これを{quantity.kana}ください。",
+      "romaji_pattern": "kore o {quantity.romaji}  kudasai.",
+      "french_pattern": "{quantity.portions} de ceci, s’il vous plaît.",
+      "segments": [
+        {
+          "japanese_pattern": "これを",
+          "kana_pattern": "これを",
+          "romaji_pattern": "kore o",
+          "role_fr": "Article montré : これ ; objet demandé : を"
+        },
+        {
+          "japanese_pattern": "{quantity.japanese}",
+          "kana_pattern": "{quantity.kana}",
+          "romaji_pattern": "{quantity.romaji} ",
+          "role_fr": "Quantité de portions"
+        },
+        {
+          "japanese_pattern": "ください。",
+          "kana_pattern": "ください。",
+          "romaji_pattern": "kudasai.",
+          "role_fr": "Demande polie de la commande"
+        }
+      ],
+      "context_fr": "Tu montres un plat sur la carte et commandes une ou plusieurs portions du même plat.",
+      "grammar_cards": [
+        "G04",
+        "G17",
+        "G30"
+      ],
+      "constraints": [],
+      "notes": "これ désigne ici le plat montré sur la carte. 一つ, 二つ ou 三つ précise combien de portions sont commandées ; ください formule la demande.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL24",
+      "label": "Commander deux boissons avec leurs quantités",
+      "weight": 1.0,
+      "slots": {
+        "order": "order_pair"
+      },
+      "japanese_pattern": "{order.left}と{order.right}ください。",
+      "kana_pattern": "{order.left_kana}と{order.right_kana}ください。",
+      "romaji_pattern": "{order.left_romaji} to {order.right_romaji} kudasai.",
+      "french_pattern": "{order.fr}, s’il vous plaît.",
+      "segments": [
+        {
+          "japanese_pattern": "{order.left}",
+          "kana_pattern": "{order.left_kana}",
+          "romaji_pattern": "{order.left_romaji}",
+          "role_fr": "Première boisson et sa quantité"
+        },
+        {
+          "japanese_pattern": "と",
+          "kana_pattern": "と",
+          "romaji_pattern": "to",
+          "role_fr": "と relie les deux éléments de la commande"
+        },
+        {
+          "japanese_pattern": "{order.right}",
+          "kana_pattern": "{order.right_kana}",
+          "romaji_pattern": "{order.right_romaji}",
+          "role_fr": "Deuxième boisson et sa quantité"
+        },
+        {
+          "japanese_pattern": "ください。",
+          "kana_pattern": "ください。",
+          "romaji_pattern": "kudasai.",
+          "role_fr": "Demande polie de la commande"
+        }
+      ],
+      "context_fr": "Au café, tu commandes deux types de boissons proposés sur la carte, avec une quantité pour chacun.",
+      "grammar_cards": [
+        "G12",
+        "G17",
+        "G30"
+      ],
+      "constraints": [],
+      "notes": "Chaque quantité se rapporte à la boisson qui la précède. と relie les deux groupes ; ください porte sur l’ensemble. Dans cette liste orale de commande, を est omis.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL25",
+      "label": "Annoncer le nombre de personnes",
+      "weight": 1.0,
+      "slots": {
+        "reply": "order_people"
+      },
+      "japanese_pattern": "何名様ですか。\n{reply.japanese}",
+      "kana_pattern": "なんめいさまですか。\n{reply.kana}",
+      "romaji_pattern": "nanmei sama desu ka.\n {reply.romaji} ",
+      "french_pattern": "— Vous êtes combien de personnes ?\n— {reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "何名様ですか。\n",
+          "kana_pattern": "なんめいさまですか。\n",
+          "romaji_pattern": "nanmei sama desu ka.\n",
+          "role_fr": "Le personnel demande le nombre de personnes"
+        },
+        {
+          "japanese_pattern": "{reply.japanese}",
+          "kana_pattern": "{reply.kana}",
+          "romaji_pattern": "{reply.romaji} ",
+          "role_fr": "Le client annonce le nombre de personnes"
+        }
+      ],
+      "context_fr": "À l’accueil du restaurant, le personnel pose la question et le client répond pour son groupe.",
+      "grammar_cards": [
+        "G01",
+        "G30"
+      ],
+      "constraints": [],
+      "notes": "何名様ですか (nanmei sama desu ka) est une formule polie du personnel. Le client répond 一人です (hitori desu), une personne, ou 二人です (futari desu), deux personnes. Il ne reprend pas 様 pour son propre groupe. Cette formule est découverte en exploration libre, sans être déclarée acquise dans les leçons.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2647,7 +3266,22 @@
         "déplacement",
         "temps"
       ],
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "exclude_matches",
+          "when": {
+            "time.id": "T03",
+            "place.id": "P05"
+          }
+        },
+        {
+          "type": "exclude_matches",
+          "when": {
+            "time.id": "T03",
+            "place.id": "P06"
+          }
+        }
+      ],
       "notes": "",
       "legacy_id": "G03",
       "kana_pattern": "{time.kana}、{place.kana}にいきます。",
@@ -3373,6 +4007,14 @@
         "G05",
         "G06",
         "G10"
+      ],
+      "context_notes": [
+        {
+          "when": {
+            "place.id": "PE02"
+          },
+          "text": "Dans cette situation, le café propose cet aliment sur sa carte ; le repas est acheté sur place."
+        }
       ]
     },
     {
@@ -3429,6 +4071,14 @@
         "G05",
         "G06",
         "G10"
+      ],
+      "context_notes": [
+        {
+          "when": {
+            "place.id": "PE02"
+          },
+          "text": "Dans cette situation, cette boisson figure sur la carte du café."
+        }
       ]
     },
     {
@@ -4033,6 +4683,11 @@
         "FL18",
         "FL19",
         "FL20",
+        "FL21",
+        "FL22",
+        "FL23",
+        "FL24",
+        "FL25",
         "FLB01",
         "FLB02",
         "FLB03",

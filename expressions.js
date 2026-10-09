@@ -49,7 +49,7 @@
   return `<article class="card expression-card${searchId?' corpus-card':''}" ${identity}>
    ${searchId?`<p class="corpus-location">Expression · ${esc(collections[collection].title)}</p>`:''}
    <div class="card-head"><span class="number">${esc(e.category)}</span><div class="card-actions">${star(favorite(collection,e.id))}<button type="button" class="expression-listen" data-speak="${esc(e.japanese)}" aria-label="Écouter en synthèse : ${esc(e.japanese)}">▶</button></div></div>
-   ${block({jp:e.japanese,kana:e.kana,romaji:e.romaji,fr:e.fr},{audio:false,rawRomaji:true,audioText:e.japanese})}
+   ${block({jp:e.japanese,kana:e.kana,romaji:e.romaji,fr:e.fr},{audio:false,audioText:e.japanese})}
    <p class="expression-register"><span class="pill">${esc(e.register)}</span></p>
    ${e.caution?`<p class="expression-caution"><strong>À savoir :</strong> ${esc(e.caution)}</p>`:''}
    <details><summary>Contexte et nuance</summary><p>${esc(e.usage)}</p><p>${esc(e.note)}</p></details>

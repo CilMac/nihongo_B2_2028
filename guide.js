@@ -1,6 +1,6 @@
 'use strict';
 let guideData=null,guideLoading=null,guideQuery='',guideRenderRun=0;
-let guideView='themes',guideFilter='all';
+let guideView='rubriques',guideFilter='all';
 let guideTables=[],guideVocabulary=[];
 const guideFavoriteEntries=new Map();
 const guideExpressionByNode=new WeakMap(),guideFavoriteAliases=new Map();
