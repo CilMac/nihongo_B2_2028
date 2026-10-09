@@ -1,6 +1,6 @@
 {
-  "version": "1.6.0",
-  "date": "2026-10-05",
+  "version": "1.6.1",
+  "date": "2026-10-09",
   "titre": "Grammaire des leçons — 29 fiches",
   "langue_explications": "fr",
   "affichage": {
@@ -210,7 +210,7 @@
       "famille": "Premières phrases",
       "niveau": "débutant",
       "objectif": "Transformer une phrase polie en question.",
-      "explication": "Dans une question polie, on ajoute généralement ka à la fin, sans inverser les mots. Pour demander une information précise, le mot interrogatif occupe la place de l’information manquante.",
+      "explication": "Dans une question polie, on ajoute généralement ka à la fin, sans inverser les mots. Pour demander une information précise, le mot interrogatif occupe la place de l’information manquante. Dans une question ouverte, 何 (なに, nani) demande quoi, どこ (doko) où et 何時 (なんじ, nanji) à quelle heure. Ajouter aujourd’hui, demain ou ce soir change la situation sans changer la question recherchée.",
       "constructions": [
         {
           "jp": "食べますか",
@@ -2316,7 +2316,7 @@
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Utiliser ni et e dans leurs emplois de base.",
-      "explication": "Avec aller ou venir, ni indique la destination et e met l’accent sur la direction. Pour beaucoup de déplacements simples, les deux sont possibles. Ni sert également à repérer une heure ou une date.",
+      "explication": "Avec aller ou venir, ni indique la destination et e met l’accent sur la direction. Pour beaucoup de déplacements simples, les deux sont possibles. Ni sert également à repérer une heure ou une date. Dans 何時に行きますか (なんじにいきますか, nanji ni ikimasu ka), に accompagne la question sur l’heure : « À quelle heure y vas-tu ? ». Une même phrase peut aussi contenir un groupe de destination avec に ; les deux groupes n’ont pas le même rôle. En remise en ordre, on garde la particule avec son groupe. Le moment, l’accompagnement et la destination peuvent souvent changer de place avant le verbe ; les variantes acceptées sont précisées dans la correction.",
       "constructions": [
         {
           "jp": "駅に行きます",
@@ -3937,7 +3937,7 @@
       "famille": "Verbes",
       "niveau": "débutant",
       "objectif": "Dire « allons-y », inviter et proposer son aide.",
-      "explication": "On remplace masu par mashou pour proposer une action commune. Mashou ka soumet une proposition ou offre de l’aide selon le contexte. Masen ka permet souvent d’inviter en laissant à l’autre le choix.",
+      "explication": "On remplace masu par mashou pour proposer une action commune. Mashou ka soumet une proposition ou offre de l’aide selon le contexte. Masen ka permet souvent d’inviter en laissant à l’autre le choix. Pour comprendre un échange, relier la réponse à l’invitation : いいですね (ii desu ne, « bonne idée ») marque ici l’accord. すみません、ちょっと… (sumimasen, chotto…, « désolé, ça va être difficile… ») sert ici à décliner avec réserve. Ne pas traduire ce ちょっと par « un peu » isolément. Dans l’exploration libre, ces réponses sont présentées avec la proposition qui les précède. Pour construire une réponse, distinguer accepter une invitation, demander une invitation future et décliner faute de disponibilité. Dans le dialogue de N19, ぜひお願いします répond à la proposition d’être invité une prochaine fois ; ce n’est pas une acceptation du concert déjà refusé.",
       "constructions": [
         {
           "jp": "行きましょう。",
@@ -4454,7 +4454,7 @@
       "famille": "Demandes",
       "niveau": "débutant",
       "objectif": "Former une demande avec te kudasai.",
-      "explication": "Ajouter kudasai à la forme en te demande à l’interlocuteur d’accomplir l’action. Cette forme convient aux demandes et consignes courantes ; des formulations plus indirectes existent pour demander une faveur avec davantage de délicatesse.",
+      "explication": "Ajouter kudasai à la forme en te demande à l’interlocuteur d’accomplir l’action. Cette forme convient aux demandes et consignes courantes ; des formulations plus indirectes existent pour demander une faveur avec davantage de délicatesse. Avec un nom, Nをください permet de demander un objet ou une boisson : コーヒーをください (koohii o kudasai), « un café, s’il vous plaît ». Cette demande nominale se distingue de Vてください, qui demande à quelqu’un de faire une action.",
       "constructions": [
         {
           "jp": "見せてください。",
@@ -5231,7 +5231,7 @@
       "famille": "Particules",
       "niveau": "débutant",
       "objectif": "Dire ce que l’on choisit, notamment au café ou au restaurant.",
-      "explication": "Dans un contexte de choix, nom + にします (ni shimasu) annonce ce que l’on décide de prendre. Pour demander le choix, on remplace le nom par 何 (nani) : 何にしますか. Cette construction se comprend comme un ensemble ; に ne marque ici ni un lieu ni une heure.",
+      "explication": "Dans un contexte de choix, nom + にします (ni shimasu) annonce ce que l’on décide de prendre. Pour demander le choix, on remplace le nom par 何 (nani) : 何にしますか. Cette construction se comprend comme un ensemble ; に ne marque ici ni un lieu ni une heure. Au restaurant, Nにします annonce le choix retenu : « Je vais prendre N ». Ce n’est ni une préférence générale, ni le souhait en たい, ni une simple traduction de « faire ». Le choix d’un plat ou d’une boisson donne deux applications de la même construction.",
       "constructions": [
         {
           "jp": "コーヒーにします",

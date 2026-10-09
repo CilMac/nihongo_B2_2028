@@ -563,17 +563,18 @@
         "japanese": "定食",
         "kana": "ていしょく",
         "romaji": "teishoku",
-        "fr": "menu fixe",
-        "fr_obj": "un menu fixe",
-        "fr_subject": "Le menu fixe",
-        "fr_subject_lower": "le menu fixe",
+        "fr": "repas en formule",
+        "fr_obj": "un repas en formule",
+        "fr_subject": "Le repas en formule",
+        "fr_subject_lower": "le repas en formule",
         "lesson_mapping": {
           "status": "unmapped",
           "minimum_lesson": null,
           "source_refs": [],
           "note": "定食 : Pas d’appui lexical vérifié."
         },
-        "fr_obj_negative": "de menu fixe"
+        "fr_obj_negative": "de repas en formule",
+        "sense_note": "定食 désigne un repas proposé en ensemble, avec un plat et ses accompagnements ; ce n’est pas nécessairement un menu du jour."
       }
     ],
     "drink": [
@@ -1080,7 +1081,7 @@
         "jp_activity": "休憩",
         "kana_activity": "きゅうけい",
         "romaji_activity": "kyuukei",
-        "fr": "Je me repose à l’hôtel.",
+        "fr": "Je fais une pause à l’hôtel.",
         "lesson_mapping": {
           "status": "unmapped",
           "minimum_lesson": null,
@@ -1170,17 +1171,18 @@
         "japanese": "定食",
         "kana": "ていしょく",
         "romaji": "teishoku",
-        "fr": "menu fixe",
-        "fr_obj": "un menu fixe",
-        "fr_subject": "Le menu fixe",
-        "fr_subject_lower": "le menu fixe",
+        "fr": "repas en formule",
+        "fr_obj": "un repas en formule",
+        "fr_subject": "Le repas en formule",
+        "fr_subject_lower": "le repas en formule",
         "lesson_mapping": {
           "status": "unmapped",
           "minimum_lesson": null,
           "source_refs": [],
           "note": "定食 : Pas d’appui lexical vérifié."
         },
-        "fr_obj_negative": "de menu fixe"
+        "fr_obj_negative": "de repas en formule",
+        "sense_note": "定食 désigne un repas proposé en ensemble, avec un plat et ses accompagnements ; ce n’est pas nécessairement un menu du jour."
       }
     ],
     "place_masc_sg": [
@@ -2106,10 +2108,10 @@
         "question"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "L’aliment ou la boisson est déjà nommé : la question appelle ici oui ou non. La forme en ます peut exprimer une habitude ; elle ne signifie pas à elle seule « être en train de ». Dans un autre contexte, cette question pourrait concerner un repas à venir.",
       "legacy_id": "G10",
       "kana_pattern": "{food.kana}をたべますか。",
-      "context_fr": "Tu demandes à une personne ce qu’elle mange ; le français la tutoie.",
+      "context_fr": "Tu demandes si la personne mange cet aliment habituellement ; le français la tutoie.",
       "lesson_mapping": {
         "status": "reviewed",
         "minimum_lesson": 3,
@@ -2157,10 +2159,10 @@
         "question"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "L’aliment ou la boisson est déjà nommé : la question appelle ici oui ou non. La forme en ます peut exprimer une habitude ; elle ne signifie pas à elle seule « être en train de ». Dans un autre contexte, cette question pourrait concerner un repas à venir.",
       "legacy_id": "G11",
       "kana_pattern": "{drink.kana}をのみますか。",
-      "context_fr": "Tu demandes à une personne ce qu’elle boit ; le français la tutoie.",
+      "context_fr": "Tu demandes si la personne boit cette boisson habituellement ; le français la tutoie.",
       "lesson_mapping": {
         "status": "reviewed",
         "minimum_lesson": 3,
@@ -2197,19 +2199,21 @@
       "label": "Que mange-t-on ?",
       "level": 1,
       "weight": 1.0,
-      "japanese_pattern": "何を食べますか。",
-      "romaji_pattern": "nani o tabemasu ka.",
-      "french_pattern": "Qu’est-ce que tu manges ?",
-      "slots": {},
+      "japanese_pattern": "{time.japanese}、何を食べますか。",
+      "romaji_pattern": "{time.romaji}, nani o tabemasu ka.",
+      "french_pattern": "{time.fr_prefix}qu’est-ce que tu manges ?",
+      "slots": {
+        "time": "time_day"
+      },
       "tags": [
         "repas",
         "question"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "La réponse attendue est le nom d’un aliment ou d’un plat, plutôt qu’un simple oui ou non. Ici, « Qu’est-ce que tu manges ? » concerne le repas à venir. Le repère temporel situe le repas ou le déplacement envisagé.",
       "legacy_id": "G12",
-      "kana_pattern": "なにをたべますか。",
-      "context_fr": "Tu demandes à une personne ce qu’elle mange ; le français la tutoie.",
+      "kana_pattern": "{time.kana}、なにをたべますか。",
+      "context_fr": "Avant le repas, tu demandes à une personne ce qu’elle compte manger ; le français la tutoie.",
       "lesson_mapping": {
         "status": "reviewed",
         "minimum_lesson": 3,
@@ -2221,9 +2225,14 @@
       },
       "segments": [
         {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "role_fr": "Moment auquel la question se rapporte."
+        },
+        {
           "japanese_pattern": "何を",
           "kana_pattern": "なにを",
-          "role_fr": "Objet de l’action : を"
+          "role_fr": "何 (なに) demande « quoi ? » ; を indique ce qui sera mangé."
         },
         {
           "japanese_pattern": "食べますか。",
@@ -2247,18 +2256,20 @@
       "label": "Où va-t-on ?",
       "level": 1,
       "weight": 1.0,
-      "japanese_pattern": "どこに行きますか。",
-      "romaji_pattern": "doko ni ikimasu ka.",
-      "french_pattern": "Où vas-tu ?",
-      "slots": {},
+      "japanese_pattern": "{time.japanese}、どこに行きますか。",
+      "romaji_pattern": "{time.romaji}, doko ni ikimasu ka.",
+      "french_pattern": "{time.fr_prefix}où vas-tu ?",
+      "slots": {
+        "time": "time_day"
+      },
       "tags": [
         "déplacement",
         "question"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "Le lieu n’est pas encore connu : la réponse attendue nomme une destination. Le français « tu » vient de la situation ; il n’est pas exprimé dans la phrase japonaise. Le repère temporel situe le repas ou le déplacement envisagé.",
       "legacy_id": "G13",
-      "kana_pattern": "どこにいきますか。",
+      "kana_pattern": "{time.kana}、どこにいきますか。",
       "context_fr": "Tu demandes sa destination à une personne ; le français la tutoie.",
       "lesson_mapping": {
         "status": "reviewed",
@@ -2271,9 +2282,14 @@
       },
       "segments": [
         {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "role_fr": "Moment auquel la question se rapporte."
+        },
+        {
           "japanese_pattern": "どこに",
           "kana_pattern": "どこに",
-          "role_fr": "Destination du déplacement : に"
+          "role_fr": "どこ demande « où ? » ; に indique ici la destination."
         },
         {
           "japanese_pattern": "行きますか。",
@@ -2634,7 +2650,7 @@
         "lieu"
       ],
       "constraints": [],
-      "notes": "Sélectionner un scénario entier ; ses champs forment un ensemble éditorial.",
+      "notes": "で indique le lieu de l’activité. Le nom de cette activité est suivi de をします : faire une promenade, une pause ou des achats.",
       "legacy_id": "G20",
       "kana_pattern": "{scenario.kana_place}で{scenario.kana_activity}をします。",
       "context_fr": "Tu annonces une activité dans un lieu adapté.",
@@ -2863,7 +2879,7 @@
         {
           "japanese_pattern": "この{item.japanese}は",
           "kana_pattern": "この{item.kana}は",
-          "role_fr": "Thème dont on parle : は"
+          "role_fr": "この désigne le produit proche de la personne qui parle ; は en fait le thème du commentaire."
         },
         {
           "japanese_pattern": "{adj.japanese}です。",
@@ -3073,7 +3089,7 @@
         "mashou-ka"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "Dans cette situation, ましょうか propose de manger ensemble en sollicitant l’accord de l’autre. Cette forme peut aussi servir à proposer son aide dans d’autres contextes ; elle ne signifie donc pas toujours « faisons ensemble ».",
       "legacy_id": "G29",
       "kana_pattern": "こんばん、{food.kana}をたべましょうか。",
       "context_fr": "Tu proposes de manger ensemble ce soir.",
@@ -3131,7 +3147,7 @@
         "déplacement"
       ],
       "constraints": [],
-      "notes": "Sélectionner un scénario entier ; ses champs forment un ensemble éditorial.",
+      "notes": "La forme en て relie ici le déplacement à l’achat qui suit. La phrase enchaîne deux actions ; elle n’emploie pas la construction spécifique du but « aller pour acheter ».",
       "legacy_id": "G30",
       "kana_pattern": "{scenario.kana_place}にいって、{scenario.kana_item}をかいます。",
       "context_fr": "Tu annonces un déplacement suivi d’un achat.",
@@ -3251,6 +3267,7 @@
     "native_review": false,
     "limitations": [
       "Les contrôles structurels ne prouvent pas à eux seuls le naturel de chaque phrase.",
+      "Les éléments sans appui vérifié restent réservés à Tout explorer. Les seuils sont conservateurs, pas un inventaire de toutes les premières occurrences.",
       "Les éléments sans appui vérifié restent réservés à Tout explorer. Les seuils sont conservateurs, pas un inventaire de toutes les premières occurrences."
     ]
   }

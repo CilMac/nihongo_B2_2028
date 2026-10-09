@@ -669,3 +669,44 @@ body.generated-help-open{overflow:hidden}
 #info-panel-history h4{font-size:18px;color:#355d4d;margin:28px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
 #info-panel-history p{line-height:1.7;overflow-wrap:anywhere}
 #info-panel-history code{font-size:.9em;overflow-wrap:anywhere}
+
+/* Trois sources : repère continu pour les quatre rubriques de la méthode. */
+.navigation-dock .tabs{gap:18px;padding-bottom:5px}
+.source-group{--source-line:#a5b49f;--source-ink:#66745f;display:flex;flex-direction:column;flex-shrink:0;min-width:0}
+.source-guide{--source-line:#c7b589;--source-ink:#877348}
+.source-expressions{--source-line:#b9a8c6;--source-ink:#80708e}
+.source-links{display:flex;gap:4px}
+.source-caption{display:block;margin-top:5px;padding:3px 8px 0;border-top:2px solid var(--source-line);border-radius:2px;text-align:center;font-size:10px;line-height:1.5;letter-spacing:.055em;color:var(--source-ink)}
+#sections-panel .source-group{flex-shrink:1;border-left:2px solid var(--source-line);padding-left:10px;margin-bottom:10px}
+#sections-panel .source-links{flex-direction:column;gap:6px}
+#sections-panel .source-caption{order:-1;margin:0 0 5px;padding:0 2px;border:0;text-align:left;font-size:11px}
+
+/* Une ligne par réplique, y compris dans les aides révélées. */
+.generated-dialogue p,.generated-dialogue .generated-kana-audio{white-space:pre-line}
+
+/* Choix d’activité : six cartes et une révision variée complémentaire. */
+.activity-picker{border:0;margin:0 0 24px;padding:0;min-width:0}
+.activity-picker legend{font-size:18px;font-weight:600;margin-bottom:14px;padding:0}
+.activity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.activity-card{--activity-bg:#f0f4ec;--activity-selected:#e2ebdc;--activity-border:#708868;--activity-check:#486649;position:relative;display:flex;align-items:center;gap:12px;min-width:0;min-height:100px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--activity-bg);cursor:pointer}
+.activity-card:has(input[value="generated"]),.activity-card:has(input[value="listening"]){--activity-bg:#eef4f8;--activity-selected:#ddebf4;--activity-border:#648599;--activity-check:#3f647b}
+.activity-card:has(input[value="vocab"]),.activity-card:has(input[value="mixed"]){--activity-bg:#faf3e7;--activity-selected:#f2e6ce;--activity-border:#9b8255;--activity-check:#7b643c}
+.activity-card input{position:absolute;width:1px;height:1px;opacity:0}
+.activity-card-copy{display:grid;gap:4px;min-width:0;flex:1}
+.activity-card-copy strong{font-size:17px;font-weight:600;line-height:1.4}
+.activity-card-copy>span{font-size:14px;line-height:1.5;color:#5e675f}
+.activity-card-check{visibility:hidden;color:var(--activity-check);font-size:20px;flex-shrink:0}
+.activity-card:has(input:checked){background:var(--activity-selected);border-color:var(--activity-border);box-shadow:inset 0 0 0 1px var(--activity-border)}
+.activity-card:has(input:checked) .activity-card-check{visibility:visible}
+.activity-card:has(input:focus-visible){outline:3px solid #698794;outline-offset:3px}
+.activity-card:hover{border-color:var(--activity-border)}
+.activity-mixed{margin:0}
+.activity-family+.activity-family{margin-top:20px}
+.activity-family h3{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--muted);margin:0 0 8px}
+.activity-grid .activity-card:has(input[value="constructions"]){grid-column:1/-1}
+#atelier-change{margin:8px 0}
+#atelier-preparation[hidden]{display:none!important}
+@media(max-width:760px){.activity-grid{grid-template-columns:1fr}.activity-card{padding:14px;min-height:90px}.activity-mixed{min-height:90px}.activity-card-copy strong{font-size:16px}.activity-picker legend{font-size:17px}}
+
+/* Séparer le choix de l’activité des réglages de séance. */
+.activity-settings-divider{border:0;border-top:3px solid #9baa95;margin:28px 0;width:100%}

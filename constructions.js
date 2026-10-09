@@ -333,6 +333,40 @@ choice('C91','Dialoguer','Accepter l’aide proposée','La proposition d’accom
  'それはたすかります。ぜひお願いします。|それはたすかります。ぜひおねがいします。|sore wa tasukarimasu. zehi onegai shimasu.|Cela m’aiderait beaucoup. Oui, avec grand plaisir.'
 ],2,'たすかります exprime ici que l’aide est bienvenue ; ぜひお願いします accepte l’offre. Répéter お供しましょうか ferait une nouvelle proposition, et 食事をしましょう proposerait un repas.','お供しましょうか。|おともしましょうか。|o tomo shimashou ka.|Voulez-vous que je vous accompagne ?');
  // END LECON 26
+ // BEGIN REPAS SORTIE
+// Exercices créés, appuis requis pour chaque mot et construction.
+order('C92','Choisir une boisson','Au café, annonce ton choix : « Je prendrai un café. »',['N3-S05','N12-S05'],['G21'],[
+ 'コーヒーに|コーヒーに|koohii ni|un café comme choix','します|します|shimasu|je décide de prendre'
+],[[0,1]],'Je prendrai un café.','Le groupe コーヒーに précède します. Ici に marque le choix, pas une destination.');
+order('C93','Choisir une boisson et une pâtisserie','Annonce : « Pour moi, ce sera un café et une pâtisserie. »',['N14-S08'],['G21','G12'],[
+ '私は|わたしは|watashi wa|pour moi','コーヒーとお菓子に|コーヒーとおかしに|koohii to okashi ni|un café et une pâtisserie comme choix','します|します|shimasu|je décide de prendre'
+],[[0,1,2],[1,0,2]],'Pour moi, ce sera un café et une pâtisserie.','と réunit les deux éléments ; に porte sur l’ensemble choisi. 私は pose le thème. Le choix peut aussi être placé avant 私は, avec davantage de contraste ; します reste à la fin.');
+order('C94','Préparer l’heure de la sortie','Tu sais que la personne va au café. Demande : « À quelle heure vas-tu au café ? »',['N11-S01','N12-S03','N2-S07'],['G02','G09'],[
+ '何時に|なんじに|nanji ni|à quelle heure','喫茶店へ|きっさてんへ|kissaten e|au café','行きますか|いきますか|ikimasu ka|vas-tu ?'
+],[[0,1,2],[1,0,2]],'À quelle heure vas-tu au café ?','何時に demande l’heure ; 喫茶店へ indique la destination. Ces groupes peuvent changer de place avant 行きますか.');
+order('C95','Proposer le cinéma demain','Propose : « Allons au cinéma ensemble demain. »',['N2-S07','N8-S03','N1-S02'],['G09','G12','G15'],[
+ '明日|あした|ashita|demain','一緒に|いっしょに|issho ni|ensemble','映画に|えいがに|eiga ni|au cinéma','行きましょう|いきましょう|ikimashou|allons'
+],[[0,1,2,3],[0,2,1,3],[1,0,2,3],[1,2,0,3],[2,0,1,3],[2,1,0,3]],'Allons au cinéma ensemble demain.','Le moment, l’accompagnement et la destination peuvent être organisés de plusieurs façons avant 行きましょう. Les particules restent avec leur groupe ; ましょう exprime la proposition.');
+order('C96','Proposer un repas chinois','Propose : « Et si nous mangions chinois ce soir ? »',['N9-S01'],['G06','G15'],[
+ '今晩|こんばん|konban|ce soir','中華料理を|ちゅうかりょうりを|chuuka ryouri o|de la cuisine chinoise','食べましょうか|たべましょうか|tabemashou ka|et si nous mangions ?'
+],[[0,1,2],[1,0,2]],'Et si nous mangions chinois ce soir ?','を désigne ce qu’on propose de manger ; ましょうか sollicite ici l’accord pour manger ensemble. Le moment peut précéder ou suivre le groupe de l’aliment. Le cours écrit 今晚 ; cet exercice créé emploie 今晩, de même lecture.');
+order('C97','Proposer un pique-nique ensemble','Propose : « Et si nous allions pique-niquer ensemble ? »',['N16-S03','N5-S03'],['G09','G12','G15'],[
+ '一緒に|いっしょに|issho ni|ensemble','ピクニックに|ピクニックに|pikunikku ni|pique-niquer','行きましょうか|いきましょうか|ikimashou ka|et si nous allions ?'
+],[[0,1,2],[1,0,2]],'Et si nous allions pique-niquer ensemble ?','一緒に précise l’accompagnement ; ピクニックに exprime ici l’activité pour laquelle on se déplace. Les deux groupes peuvent permuter avant le verbe.');
+order('C98','Accepter une prochaine invitation','Tu ne peux pas venir au concert. La personne propose de te réinviter une prochaine fois. Réponds : « Oui, avec grand plaisir. »',['N19-S09','N19-S10','N19-S11','N19-S17','N19-S18'],['G15'],[
+ 'ぜひ|ぜひ|zehi|avec grand plaisir','お願いします|おねがいします|onegai shimasu|je vous en prie'
+],[[0,1]],'Oui, avec grand plaisir.','ぜひ renforce le souhait exprimé par お願いします. Ici, tu acceptes la proposition d’une invitation future ; tu ne reviens pas sur ton indisponibilité pour ce concert.');
+order('C99','Décliner une sortie','On t’invite au concert, mais tu n’es pas disponible. Construis : « Je suis vraiment désolé, mais je ne suis pas disponible. »',['N19-S09','N19-S10','N19-S11'],['G15'],[
+ 'とてもざんねんですが|とてもざんねんですが|totemo zannen desu ga|je suis vraiment désolé, mais','都合が|つごうが|tsugou ga|ma disponibilité','わるいです|わるいです|warui desu|ne convient pas'
+],[[0,1,2]],'Je suis vraiment désolé, mais je ne suis pas disponible.','Le premier groupe atténue le refus ; le が après です relie les deux idées avec « mais ». Dans 都合が, が indique ce dont on décrit l’état : ici la disponibilité, et non la valeur morale de la personne.');
+order('C100','Commander les deux boissons','Le choix est fait. Commande : « Alors, un café et une bière, s’il vous plaît. »',['N12-S07'],['G12','G17'],[
+ 'じゃあ|じゃあ|jaa|alors','コーヒーとビールを|コーヒーとビールを|koohii to biiru o|un café et une bière','ください|ください|kudasai|s’il vous plaît'
+],[[0,1,2]],'Alors, un café et une bière, s’il vous plaît.','と réunit les boissons et を marque ce qui est demandé. ください suit ici des noms ; ce n’est pas une demande d’action en forme てください. じゃあ introduit la décision.');
+order('C101','Choisir où aller ensemble','Vous avez décidé de sortir ensemble. Demande : « Où pourrions-nous aller ensemble ? »',['N16-S07','N5-S03'],['G02','G09','G15'],[
+ 'どこへ|どこへ|doko e|où','一緒に|いっしょに|issho ni|ensemble','行きましょうか|いきましょうか|ikimashou ka|pourrions-nous aller ?'
+],[[0,1,2],[1,0,2]],'Où pourrions-nous aller ensemble ?','どこへ interroge la destination ; 一緒に maintient l’idée d’une sortie commune. La terminaison ましょうか invite ici à décider ensemble.');
+ definitions.slice(-10).forEach(q=>q.theme='repas-sortie');
+ // END REPAS SORTIE
  function build(rows){
   const byId=new Map(rows.map(r=>[r.Leçon+'-'+r.Ligne,r]));
   return definitions.filter(q=>q.sources.every(id=>byId.has(id))).map(q=>({...q,source:q.sources[0],row:byId.get(q.sources[0]),origin:'Exercice créé à partir des constructions du cours.'}));

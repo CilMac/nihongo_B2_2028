@@ -2,8 +2,8 @@
   "schema_version": "2.0",
   "title": "Explorer librement — répertoire indépendant",
   "provenance": {
-    "date": "2026-10-08",
-    "origin": "Socle éditorial initial de 29 modèles et 15 modèles enrichis indépendants ; aucune extraction automatique des leçons.",
+    "date": "2026-10-09",
+    "origin": "Socle éditorial initial de 29 modèles et 20 modèles enrichis indépendants ; aucune extraction automatique des leçons.",
     "review": "Formes et associations préparées ; tests exhaustifs de structure, pas de certification native."
   },
   "scope": "free_only",
@@ -15,6 +15,7 @@
         "kana": "きょう",
         "romaji": "kyou",
         "prefix": "Aujourd’hui, ",
+        "suffix": "aujourd’hui",
         "from_prefix": "À partir d’aujourd’hui, "
       },
       {
@@ -23,6 +24,7 @@
         "kana": "あした",
         "romaji": "ashita",
         "prefix": "Demain, ",
+        "suffix": "demain",
         "from_prefix": "À partir de demain, "
       },
       {
@@ -31,6 +33,7 @@
         "kana": "こんばん",
         "romaji": "konban",
         "prefix": "Ce soir, ",
+        "suffix": "ce soir",
         "from_prefix": "À partir de ce soir, "
       },
       {
@@ -39,6 +42,7 @@
         "kana": "しゅうまつ",
         "romaji": "shuumatsu",
         "prefix": "Ce week-end, ",
+        "suffix": "ce week-end",
         "from_prefix": "À partir de ce week-end, "
       },
       {
@@ -47,6 +51,7 @@
         "kana": "らいしゅう",
         "romaji": "raishuu",
         "prefix": "La semaine prochaine, ",
+        "suffix": "la semaine prochaine",
         "from_prefix": "À partir de la semaine prochaine, "
       }
     ],
@@ -583,7 +588,7 @@
         "japanese": "海岸",
         "kana": "かいがん",
         "romaji": "kaigan",
-        "at": "sur la plage"
+        "at": "au bord de la mer"
       },
       {
         "id": "walk_place-3",
@@ -680,6 +685,24 @@
         "kana_item": "コーヒー",
         "romaji_item": "koohii",
         "object_place": "un café dans un salon de thé"
+      }
+    ],
+    "invitation_reply": [
+      {
+        "id": "invitation_reply-1",
+        "japanese": "いいですね。",
+        "kana": "いいですね。",
+        "romaji": "ii desu ne.",
+        "fr": "Bonne idée !",
+        "usage_note": "Accord avec l’invitation."
+      },
+      {
+        "id": "invitation_reply-2",
+        "japanese": "すみません、ちょっと…。",
+        "kana": "すみません、ちょっと…。",
+        "romaji": "sumimasen, chotto...",
+        "fr": "Désolé, ça va être difficile…",
+        "usage_note": "Refus atténué dans ce contexte ; ちょっと laisse la difficulté sous-entendue."
       }
     ],
     "base_time_day": [
@@ -918,11 +941,12 @@
         "japanese": "定食",
         "kana": "ていしょく",
         "romaji": "teishoku",
-        "fr": "menu fixe",
-        "fr_obj": "un menu fixe",
-        "fr_subject": "Le menu fixe",
-        "fr_subject_lower": "le menu fixe",
-        "fr_obj_negative": "de menu fixe"
+        "fr": "repas en formule",
+        "fr_obj": "un repas en formule",
+        "fr_subject": "Le repas en formule",
+        "fr_subject_lower": "le repas en formule",
+        "fr_obj_negative": "de repas en formule",
+        "sense_note": "定食 désigne un repas proposé en ensemble, avec un plat et ses accompagnements ; ce n’est pas nécessairement un menu du jour."
       }
     ],
     "base_drink": [
@@ -1210,7 +1234,7 @@
         "jp_activity": "休憩",
         "kana_activity": "きゅうけい",
         "romaji_activity": "kyuukei",
-        "fr": "Je me repose à l’hôtel."
+        "fr": "Je fais une pause à l’hôtel."
       },
       {
         "id": "AS04",
@@ -1263,11 +1287,12 @@
         "japanese": "定食",
         "kana": "ていしょく",
         "romaji": "teishoku",
-        "fr": "menu fixe",
-        "fr_obj": "un menu fixe",
-        "fr_subject": "Le menu fixe",
-        "fr_subject_lower": "le menu fixe",
-        "fr_obj_negative": "de menu fixe"
+        "fr": "repas en formule",
+        "fr_obj": "un repas en formule",
+        "fr_subject": "Le repas en formule",
+        "fr_subject_lower": "le repas en formule",
+        "fr_obj_negative": "de repas en formule",
+        "sense_note": "定食 désigne un repas proposé en ensemble, avec un plat et ses accompagnements ; ce n’est pas nécessairement un menu du jour."
       }
     ],
     "base_place_masc_sg": [
@@ -1563,7 +1588,7 @@
         "G10"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "で situe l’action de lire ; を désigne ce qui est lu. Le repère temporel indique ici quand cette lecture est prévue.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -1615,7 +1640,7 @@
         "G10"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "で indique le lieu où l’on regarde ; を désigne le film ou la série. La forme polie 見ます exprime ici un projet, pas nécessairement une action en cours.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -1667,7 +1692,7 @@
         "G10"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "で situe l’écoute et を désigne ce qui est écouté. 聞きます prend ici le sens d’écouter, avec la musique comme objet.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -1725,7 +1750,7 @@
         "G10"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "に indique à qui le message est adressé. で précise ici la langue utilisée, et non un lieu. を désigne ce qui est écrit : le message.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -1785,7 +1810,7 @@
         "G12"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "と indique avec qui l’on se déplace, で le moyen de transport et に la destination. Ces trois groupes apportent des informations différentes sur le même déplacement.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -1845,7 +1870,7 @@
         "G12"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "と précise avec qui l’on mange ; で situe le repas ; を désigne l’aliment. Le français réorganise ces groupes sans changer leurs rôles.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -1890,13 +1915,13 @@
           "role_fr": "Acheter, forme polie"
         }
       ],
-      "context_fr": "Le produit et le commerce sont choisis ensemble pour préserver une situation plausible.",
+      "context_fr": "Tu annonces un achat et le commerce où tu comptes le faire.",
       "grammar_cards": [
         "G06",
         "G10"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "で indique où l’achat a lieu ; を désigne ce qui est acheté. La phrase annonce un achat, elle ne constitue pas une commande adressée au commerçant.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -1948,7 +1973,7 @@
         "G10"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "を désigne ici la langue étudiée. À la différence de 日本語で (« en japonais »), 日本語を勉強します signifie « étudier le japonais ». で situe le lieu d’étude.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -1966,13 +1991,13 @@
       "japanese_pattern": "{time.japanese}、{drink.japanese}を飲みたいです。",
       "kana_pattern": "{time.kana}、{drink.kana}をのみたいです。",
       "romaji_pattern": "{time.romaji}, {drink.romaji} o nomitai desu.",
-      "french_pattern": "{time.prefix}j’ai envie de boire {drink.object}.",
+      "french_pattern": "J’aimerais boire {drink.object} {time.suffix}.",
       "segments": [
         {
           "japanese_pattern": "{time.japanese}、",
           "kana_pattern": "{time.kana}、",
           "romaji_pattern": "{time.romaji},",
-          "role_fr": "Moment prévu"
+          "role_fr": "Moment envisagé pour l’action"
         },
         {
           "japanese_pattern": "{drink.japanese}を",
@@ -1992,7 +2017,7 @@
         "G19"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "飲みたい se construit à partir de 飲みます en remplaçant ます par たい ; です rend l’expression polie. La personne exprime son souhait, sans annoncer un programme certain. を est possible ici ; が se rencontre aussi avec たい.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2010,13 +2035,13 @@
       "japanese_pattern": "{time.japanese}、{food.japanese}を食べたいです。",
       "kana_pattern": "{time.kana}、{food.kana}をたべたいです。",
       "romaji_pattern": "{time.romaji}, {food.romaji} o tabetai desu.",
-      "french_pattern": "{time.prefix}j’ai envie de manger {food.object}.",
+      "french_pattern": "J’aimerais manger {food.object} {time.suffix}.",
       "segments": [
         {
           "japanese_pattern": "{time.japanese}、",
           "kana_pattern": "{time.kana}、",
           "romaji_pattern": "{time.romaji},",
-          "role_fr": "Moment prévu"
+          "role_fr": "Moment envisagé pour l’action"
         },
         {
           "japanese_pattern": "{food.japanese}を",
@@ -2036,7 +2061,7 @@
         "G19"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "食べたい se construit à partir de 食べます en remplaçant ます par たい ; です rend l’expression polie. Le moment concerne l’action souhaitée. を est possible ici ; が se rencontre aussi avec たい.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2087,7 +2112,7 @@
         "G15"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "一緒に précise que la sortie se ferait ensemble. 行きましょう propose de partir ou d’aller dans le lieu indiqué ; ce n’est pas le récit d’une sortie déjà effectuée.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2132,7 +2157,7 @@
         "G09"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "ました marque le passé poli. Le repère temporel précise quand le déplacement a eu lieu ; に en indique la destination. Le japonais ne distingue pas « allé » et « allée ».",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2183,7 +2208,7 @@
         "G06"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "のために indique ici au bénéfice de qui l’achat est prévu. La phrase ne dit pas que l’objet a déjà été offert ; le verbe reste « acheter ».",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2232,7 +2257,7 @@
       "context_fr": "Tu annonces où tu comptes dormir, à partir de quand et pour combien de nuits.",
       "grammar_cards": [],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "から indique le début du séjour, に le lieu où l’on loge. 一泊, 二泊 et 三泊 comptent les nuits : いっぱく, にはく et さんぱく. La durée n’est pas une date ni une heure d’arrivée.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2284,12 +2309,233 @@
         "G12"
       ],
       "constraints": [],
-      "notes": "Phrase composée pour l’exploration libre. Les traductions choisissent un contexte et ne sont pas uniques.",
+      "notes": "と précise la personne qui accompagne la promenade ; で situe l’activité. 散歩します signifie « se promener ».",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
         "source_refs": []
       }
+    },
+    {
+      "id": "FL16",
+      "label": "Choisir un plat",
+      "weight": 1.0,
+      "slots": {
+        "food": "food"
+      },
+      "japanese_pattern": "{food.japanese}にします。",
+      "kana_pattern": "{food.kana}にします。",
+      "romaji_pattern": "{food.romaji} ni shimasu.",
+      "french_pattern": "Je vais prendre {food.object}.",
+      "segments": [
+        {
+          "japanese_pattern": "{food.japanese}に",
+          "kana_pattern": "{food.kana}に",
+          "romaji_pattern": "{food.romaji} ni",
+          "role_fr": "Choix retenu : に"
+        },
+        {
+          "japanese_pattern": "します。",
+          "kana_pattern": "します。",
+          "romaji_pattern": "shimasu.",
+          "role_fr": "にします : décider de prendre ce plat"
+        }
+      ],
+      "context_fr": "Au restaurant, tu annonces le plat que tu as choisi.",
+      "grammar_cards": [
+        "G21"
+      ],
+      "constraints": [],
+      "notes": "にします exprime le choix que la personne vient d’arrêter. Ce n’est pas une préférence générale ni seulement une envie ; le contexte permet de comprendre le sujet « je ».",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL17",
+      "label": "Choisir une boisson",
+      "weight": 1.0,
+      "slots": {
+        "drink": "drink"
+      },
+      "japanese_pattern": "{drink.japanese}にします。",
+      "kana_pattern": "{drink.kana}にします。",
+      "romaji_pattern": "{drink.romaji} ni shimasu.",
+      "french_pattern": "Je vais prendre {drink.object}.",
+      "segments": [
+        {
+          "japanese_pattern": "{drink.japanese}に",
+          "kana_pattern": "{drink.kana}に",
+          "romaji_pattern": "{drink.romaji} ni",
+          "role_fr": "Choix retenu : に"
+        },
+        {
+          "japanese_pattern": "します。",
+          "kana_pattern": "します。",
+          "romaji_pattern": "shimasu.",
+          "role_fr": "にします : décider de prendre cette boisson"
+        }
+      ],
+      "context_fr": "Au café ou au restaurant, tu annonces la boisson choisie.",
+      "grammar_cards": [
+        "G21"
+      ],
+      "constraints": [],
+      "notes": "にします exprime le choix que la personne vient d’arrêter. Ce n’est pas une préférence générale ni seulement une envie ; le contexte permet de comprendre le sujet « je ».",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL18",
+      "label": "Demander l’heure d’une sortie",
+      "weight": 1.0,
+      "slots": {
+        "place": "destination"
+      },
+      "japanese_pattern": "何時に{place.japanese}に行きますか。",
+      "kana_pattern": "なんじに{place.kana}にいきますか。",
+      "romaji_pattern": "nanji ni {place.romaji} ni ikimasu ka.",
+      "french_pattern": "À quelle heure vas-tu {place.to} ?",
+      "segments": [
+        {
+          "japanese_pattern": "何時に",
+          "kana_pattern": "なんじに",
+          "romaji_pattern": "nanji ni",
+          "role_fr": "何時 (なんじ) demande à quelle heure ; に marque le repère horaire"
+        },
+        {
+          "japanese_pattern": "{place.japanese}に",
+          "kana_pattern": "{place.kana}に",
+          "romaji_pattern": "{place.romaji} ni",
+          "role_fr": "Destination du déplacement : に"
+        },
+        {
+          "japanese_pattern": "行きますか。",
+          "kana_pattern": "いきますか。",
+          "romaji_pattern": "ikimasu ka.",
+          "role_fr": "Question sur le déplacement prévu"
+        }
+      ],
+      "context_fr": "La destination est connue ; tu demandes l’heure prévue pour y aller.",
+      "grammar_cards": [
+        "G02",
+        "G09"
+      ],
+      "constraints": [],
+      "notes": "Les deux に ont des fonctions différentes : 何時に demande l’heure, tandis que le groupe suivant indique la destination. La réponse attendue est une heure.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "FL19",
+      "label": "Proposer un repas et répondre",
+      "weight": 1.0,
+      "slots": {
+        "food": "food",
+        "reply": "invitation_reply"
+      },
+      "japanese_pattern": "今晩、一緒に{food.japanese}を食べませんか。\n{reply.japanese}",
+      "kana_pattern": "こんばん、いっしょに{food.kana}をたべませんか。\n{reply.kana}",
+      "romaji_pattern": "konban, issho ni {food.romaji} o tabemasen ka.\n {reply.romaji} ",
+      "french_pattern": "— Ça te dirait de manger {food.object} ensemble ce soir ?\n— {reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "今晩、一緒に",
+          "kana_pattern": "こんばん、いっしょに",
+          "romaji_pattern": "konban, issho ni",
+          "role_fr": "Ce soir, ensemble"
+        },
+        {
+          "japanese_pattern": "{food.japanese}を",
+          "kana_pattern": "{food.kana}を",
+          "romaji_pattern": "{food.romaji} o",
+          "role_fr": "Aliment proposé : を"
+        },
+        {
+          "japanese_pattern": "食べませんか。\n",
+          "kana_pattern": "たべませんか。\n",
+          "romaji_pattern": "tabemasen ka.\n",
+          "role_fr": "ませんか formule ici une invitation"
+        },
+        {
+          "japanese_pattern": "{reply.japanese}",
+          "kana_pattern": "{reply.kana}",
+          "romaji_pattern": "{reply.romaji} ",
+          "role_fr": "Réponse de l’autre personne à cette invitation"
+        }
+      ],
+      "context_fr": "Deux personnes envisagent un repas ; la seconde accepte ou décline la proposition.",
+      "grammar_cards": [
+        "G15"
+      ],
+      "constraints": [],
+      "notes": "Chaque ligne correspond à une personne. La première invite avec ませんか ; la seconde réagit à cette proposition. Une forme négative peut donc servir à inviter, sans annoncer un refus. Comprendre l’échange demande aussi de reconnaître si la réponse accepte ou décline.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      },
+      "dialogue": true
+    },
+    {
+      "id": "FL20",
+      "label": "Proposer une sortie et répondre",
+      "weight": 1.0,
+      "slots": {
+        "place": "destination",
+        "reply": "invitation_reply"
+      },
+      "japanese_pattern": "明日、一緒に{place.japanese}に行きませんか。\n{reply.japanese}",
+      "kana_pattern": "あした、いっしょに{place.kana}にいきませんか。\n{reply.kana}",
+      "romaji_pattern": "ashita, issho ni {place.romaji} ni ikimasen ka.\n {reply.romaji} ",
+      "french_pattern": "— Ça te dirait d’aller {place.to} ensemble demain ?\n— {reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "明日、一緒に",
+          "kana_pattern": "あした、いっしょに",
+          "romaji_pattern": "ashita, issho ni",
+          "role_fr": "Demain, ensemble"
+        },
+        {
+          "japanese_pattern": "{place.japanese}に",
+          "kana_pattern": "{place.kana}に",
+          "romaji_pattern": "{place.romaji} ni",
+          "role_fr": "Destination proposée : に"
+        },
+        {
+          "japanese_pattern": "行きませんか。\n",
+          "kana_pattern": "いきませんか。\n",
+          "romaji_pattern": "ikimasen ka.\n",
+          "role_fr": "ませんか formule ici une invitation"
+        },
+        {
+          "japanese_pattern": "{reply.japanese}",
+          "kana_pattern": "{reply.kana}",
+          "romaji_pattern": "{reply.romaji} ",
+          "role_fr": "Réponse de l’autre personne à cette invitation"
+        }
+      ],
+      "context_fr": "Deux personnes envisagent une sortie ; la seconde accepte ou décline la proposition.",
+      "grammar_cards": [
+        "G15",
+        "G09"
+      ],
+      "constraints": [],
+      "notes": "Chaque ligne correspond à une personne. La première invite avec ませんか ; la seconde réagit à cette proposition. Une forme négative peut donc servir à inviter, sans annoncer un refus. Comprendre l’échange demande aussi de reconnaître si la réponse accepte ou décline.",
+      "lesson_mapping": {
+        "status": "independent",
+        "minimum_lesson": null,
+        "source_refs": []
+      },
+      "dialogue": true
     },
     {
       "id": "FLB01",
@@ -2750,10 +2996,10 @@
         "question"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "L’aliment ou la boisson est déjà nommé : la question appelle ici oui ou non. La forme en ます peut exprimer une habitude ; elle ne signifie pas à elle seule « être en train de ». Dans un autre contexte, cette question pourrait concerner un repas à venir.",
       "legacy_id": "G10",
       "kana_pattern": "{food.kana}をたべますか。",
-      "context_fr": "Tu demandes à une personne ce qu’elle mange ; le français la tutoie.",
+      "context_fr": "Tu demandes si la personne mange cet aliment habituellement ; le français la tutoie.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2798,10 +3044,10 @@
         "question"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "L’aliment ou la boisson est déjà nommé : la question appelle ici oui ou non. La forme en ます peut exprimer une habitude ; elle ne signifie pas à elle seule « être en train de ». Dans un autre contexte, cette question pourrait concerner un repas à venir.",
       "legacy_id": "G11",
       "kana_pattern": "{drink.kana}をのみますか。",
-      "context_fr": "Tu demandes à une personne ce qu’elle boit ; le français la tutoie.",
+      "context_fr": "Tu demandes si la personne boit cette boisson habituellement ; le français la tutoie.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2835,19 +3081,21 @@
       "label": "Que mange-t-on ?",
       "level": 1,
       "weight": 1.0,
-      "japanese_pattern": "何を食べますか。",
-      "romaji_pattern": "nani o tabemasu ka.",
-      "french_pattern": "Qu’est-ce que tu manges ?",
-      "slots": {},
+      "japanese_pattern": "{time.japanese}、何を食べますか。",
+      "romaji_pattern": "{time.romaji}, nani o tabemasu ka.",
+      "french_pattern": "{time.fr_prefix}qu’est-ce que tu manges ?",
+      "slots": {
+        "time": "base_time_day"
+      },
       "tags": [
         "repas",
         "question"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "La réponse attendue est le nom d’un aliment ou d’un plat, plutôt qu’un simple oui ou non. Ici, « Qu’est-ce que tu manges ? » concerne le repas à venir. Le repère temporel situe le repas ou le déplacement envisagé.",
       "legacy_id": "G12",
-      "kana_pattern": "なにをたべますか。",
-      "context_fr": "Tu demandes à une personne ce qu’elle mange ; le français la tutoie.",
+      "kana_pattern": "{time.kana}、なにをたべますか。",
+      "context_fr": "Avant le repas, tu demandes à une personne ce qu’elle compte manger ; le français la tutoie.",
       "lesson_mapping": {
         "status": "independent",
         "minimum_lesson": null,
@@ -2855,9 +3103,14 @@
       },
       "segments": [
         {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "role_fr": "Moment auquel la question se rapporte."
+        },
+        {
           "japanese_pattern": "何を",
           "kana_pattern": "なにを",
-          "role_fr": "Objet de l’action : を"
+          "role_fr": "何 (なに) demande « quoi ? » ; を indique ce qui sera mangé."
         },
         {
           "japanese_pattern": "食べますか。",
@@ -2881,18 +3134,20 @@
       "label": "Où va-t-on ?",
       "level": 1,
       "weight": 1.0,
-      "japanese_pattern": "どこに行きますか。",
-      "romaji_pattern": "doko ni ikimasu ka.",
-      "french_pattern": "Où vas-tu ?",
-      "slots": {},
+      "japanese_pattern": "{time.japanese}、どこに行きますか。",
+      "romaji_pattern": "{time.romaji}, doko ni ikimasu ka.",
+      "french_pattern": "{time.fr_prefix}où vas-tu ?",
+      "slots": {
+        "time": "base_time_day"
+      },
       "tags": [
         "déplacement",
         "question"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "Le lieu n’est pas encore connu : la réponse attendue nomme une destination. Le français « tu » vient de la situation ; il n’est pas exprimé dans la phrase japonaise. Le repère temporel situe le repas ou le déplacement envisagé.",
       "legacy_id": "G13",
-      "kana_pattern": "どこにいきますか。",
+      "kana_pattern": "{time.kana}、どこにいきますか。",
       "context_fr": "Tu demandes sa destination à une personne ; le français la tutoie.",
       "lesson_mapping": {
         "status": "independent",
@@ -2901,9 +3156,14 @@
       },
       "segments": [
         {
+          "japanese_pattern": "{time.japanese}、",
+          "kana_pattern": "{time.kana}、",
+          "role_fr": "Moment auquel la question se rapporte."
+        },
+        {
           "japanese_pattern": "どこに",
           "kana_pattern": "どこに",
-          "role_fr": "Destination du déplacement : に"
+          "role_fr": "どこ demande « où ? » ; に indique ici la destination."
         },
         {
           "japanese_pattern": "行きますか。",
@@ -3243,7 +3503,7 @@
         "lieu"
       ],
       "constraints": [],
-      "notes": "Sélectionner un scénario entier ; ses champs forment un ensemble éditorial.",
+      "notes": "で indique le lieu de l’activité. Le nom de cette activité est suivi de をします : faire une promenade, une pause ou des achats.",
       "legacy_id": "G20",
       "kana_pattern": "{scenario.kana_place}で{scenario.kana_activity}をします。",
       "context_fr": "Tu annonces une activité dans un lieu adapté.",
@@ -3455,7 +3715,7 @@
         {
           "japanese_pattern": "この{item.japanese}は",
           "kana_pattern": "この{item.kana}は",
-          "role_fr": "Thème dont on parle : は"
+          "role_fr": "この désigne le produit proche de la personne qui parle ; は en fait le thème du commentaire."
         },
         {
           "japanese_pattern": "{adj.japanese}です。",
@@ -3650,7 +3910,7 @@
         "mashou-ka"
       ],
       "constraints": [],
-      "notes": "",
+      "notes": "Dans cette situation, ましょうか propose de manger ensemble en sollicitant l’accord de l’autre. Cette forme peut aussi servir à proposer son aide dans d’autres contextes ; elle ne signifie donc pas toujours « faisons ensemble ».",
       "legacy_id": "G29",
       "kana_pattern": "こんばん、{food.kana}をたべましょうか。",
       "context_fr": "Tu proposes de manger ensemble ce soir.",
@@ -3704,7 +3964,7 @@
         "déplacement"
       ],
       "constraints": [],
-      "notes": "Sélectionner un scénario entier ; ses champs forment un ensemble éditorial.",
+      "notes": "La forme en て relie ici le déplacement à l’achat qui suit. La phrase enchaîne deux actions ; elle n’emploie pas la construction spécifique du but « aller pour acheter ».",
       "legacy_id": "G30",
       "kana_pattern": "{scenario.kana_place}にいって、{scenario.kana_item}をかいます。",
       "context_fr": "Tu annonces un déplacement suivi d’un achat.",
@@ -3768,6 +4028,11 @@
         "FL13",
         "FL14",
         "FL15",
+        "FL16",
+        "FL17",
+        "FL18",
+        "FL19",
+        "FL20",
         "FLB01",
         "FLB02",
         "FLB03",

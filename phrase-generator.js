@@ -23,7 +23,7 @@
     };
     const mappings=[t.lesson_mapping,...Object.values(env).map(e=>e.lesson_mapping)];
     const mapped=mappings.every(m=>m?.status==='reviewed'&&Number.isInteger(m.minimum_lesson)&&m.minimum_lesson>0&&m.source_refs?.length);
-    const q={type:'generated',templateId:t.id,title:t.label,context:t.context_fr,
+    const q={type:'generated',dialogue:!!t.dialogue,templateId:t.id,title:t.label,context:t.context_fr,
      minimumLesson:mapped?Math.max(...mappings.map(m=>m.minimum_lesson)):null,
      sourceRefs:mapped?[...new Set(mappings.flatMap(m=>m.source_refs))]:[],
      grammarCards:t.grammar_cards||[],
@@ -70,7 +70,7 @@
   if(pending)return pending;
   pending=(async()=>{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);try{
    const configs=await Promise.all(['generateur_phrases_config.json','generateur_phrases_libres.json'].map(async file=>{
-    const response=await fetch(file+'?v=20261008-libre',{cache:'no-cache',signal:controller.signal});
+    const response=await fetch(file+'?v=20261009-repas',{cache:'no-cache',signal:controller.signal});
     if(!response.ok)throw Error('Configuration indisponible');return compile(await response.json());
    }));
    cached={...configs[0],free:configs[1]};return cached;
