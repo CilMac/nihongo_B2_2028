@@ -35,6 +35,7 @@
     const q={type:'generated',dialogue:!!t.dialogue,templateId:t.id,title:t.label,context:[t.context_fr,...contextNotes].join(' '),
      minimumLesson:mapped?Math.max(...mappings.map(m=>m.minimum_lesson)):null,
      sourceRefs:mapped?[...new Set(mappings.flatMap(m=>m.source_refs))]:[],
+     expressionRefs:t.expression_refs||[],
      grammarCards:t.grammar_cards||[],
      jp:fill(t.japanese_pattern),kana:fill(t.kana_pattern),romaji:fill(t.romaji_pattern),fr:fill(t.french_pattern),
      notes:[t.notes,t.translation_note,...Object.values(env).flatMap(e=>[e.sense_note,e.usage_note])].filter(Boolean),
@@ -51,6 +52,7 @@
  function seeded(seed){let n=2166136261;for(const c of String(seed))n=Math.imul(n^c.charCodeAt(0),16777619);return ()=>{n+=0x6D2B79F5;let t=n;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;};}
  function eligible(catalog,level='1',scope={mode:'explore'}){
   if(!['explore','through_lesson'].includes(scope.mode))throw Error('Périmètre inconnu');
+  if(scope.mode==='explore'&&scope.repertoire==='expressions')return catalog.expressions?.templates||[];
   if(scope.mode==='explore'&&catalog.free)return catalog.free.templates;
   const group=catalog.config.levels[level];if(!group)throw Error('Groupe inconnu');
   if(scope.mode==='through_lesson'&&(!Number.isInteger(scope.lesson)||scope.lesson<1||scope.lesson>98))throw Error('Leçon invalide');
@@ -78,11 +80,11 @@
   if(cached)return Promise.resolve(cached);
   if(pending)return pending;
   pending=(async()=>{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);try{
-   const configs=await Promise.all(['generateur_phrases_config.json','generateur_phrases_libres.json'].map(async file=>{
-    const response=await fetch(file+'?v=20261009-compter',{cache:'no-cache',signal:controller.signal});
+   const configs=await Promise.all(['generateur_phrases_config.json','generateur_phrases_libres.json','generateur_expressions.json'].map(async file=>{
+    const response=await fetch(file+'?v=20261010-expressions',{cache:'no-cache',signal:controller.signal});
     if(!response.ok)throw Error('Configuration indisponible');return compile(await response.json());
    }));
-   cached={...configs[0],free:configs[1]};return cached;
+   cached={...configs[0],free:configs[1],expressions:configs[2]};return cached;
   }finally{clearTimeout(timer);pending=null;}})();return pending;
  }
  const api={compile,create,eligible,load};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.PhraseGenerator=api;

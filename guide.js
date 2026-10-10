@@ -56,6 +56,106 @@ function guideFavoriteStar(id){return guideFavoriteEntries.has(id)?star(id):'';}
 let guideVocabCategory='all',guideVocabSection='all';
 let guideLexiconState={direction:'fr-ja',category:'all',initial:'all'};
 let guideChapters=[],guideSearchIndex=[];const guideNodeIds=new WeakMap();
+// Libellés dont les morceaux ont été accolés lors de l’extraction du Guide.
+const guideSeparatedLabels={
+ 'version nom':['version nom','Emploi comme pronom'],
+ 'version adjectif':['version adjectif','Emploi devant un nom'],
+ 'version adverbe':['version adverbe','Indication de lieu'],
+ 'prêters/sh':['prêter','Repère : s / sh'],
+ 'marcherk':['marcher','Repère : k'],
+ 'nagerg':['nager','Repère : g'],
+ 'lirem':['lire','Repère : m'],
+ 'attendret/ts/ch':['attendre','Repère : t / ts / ch'],
+ 'acheterpas de consonne[note 1]':['acheter','Pas de consonne [note 1]'],
+ 'rentrerr':['rentrer','Repère : r'],
+ 'manger(Type 1)':['manger','Type 1'],
+ 'allervenir':['aller / venir','']
+};
+const guideLabelHelp={
+ 'version nom':'Remplace le nom de la chose : kore, sore, are (« ceci, cela »). Exemple : これは本です。 Kore wa hon desu. — Ceci est un livre.',
+ 'version adjectif':'Se place devant un nom, qu’il faut ajouter : kono, sono, ano. Exemple : この本 — kono hon — ce livre-ci. On ne dit pas kono tout seul.',
+ 'version adverbe':'Désigne un lieu : koko, soko, asoko (« ici, là, là-bas »). Exemple : ここにいます。 Koko ni imasu. — Je suis ici.',
+ 'prêters/sh':'s / sh : la consonne change selon la forme. kasu → kashimasu.',
+ 'marcherk':'k : la consonne se retrouve dans aruku → arukimasu. La forme en て est aruite.',
+ 'nagerg':'g : la consonne se retrouve dans oyogu → oyogimasu. La forme en て est oyoide.',
+ 'lirem':'m : la consonne se retrouve dans yomu → yomimasu. La forme en て est yonde.',
+ 'attendret/ts/ch':'t / ts / ch : les consonnes varient selon la forme. matsu → machimasu → matte.',
+ 'acheterpas de consonne[note 1]':'Pas de consonne entre les voyelles dans kau → kaimasu. La forme en て est katte. Voir aussi la note 1 du chapitre.',
+ 'rentrerr':'r : la consonne se retrouve dans kaeru → kaerimasu. La forme en て est kaette.',
+ 'manger(Type 1)':'Type 1, selon le classement du Guide : on garde la base tabe et on change la terminaison. taberu → tabemasu → tabete → tabeta.'
+};
+// Le français et la prononciation sont distincts dans les fragments source.
+function guideDemonstrativeParts(node){
+ if(!['これ','それ','あれ','この','その','あの','ここ','そこ','あそこ'].includes(node?.japanese)||!node.runs)return null;
+ const reading=node.runs.filter(r=>r.style==='foreign').map(r=>r.text).join(' ');
+ const french=node.runs.filter(r=>r.style==='mentioned').map(r=>r.text).join(' ');
+ return reading&&french?{reading,french}:null;
+}
+// Métadonnées de présentation : ne modifient ni la source ni ses identifiants.
+function guideTableHeading(node,chapter){
+ const verb=['Sens / verbe','Forme polie en ます','Forme du dictionnaire','Forme en て','Forme en た'];
+ const special={
+  'tpc-5':['Repère','Information'],
+  'tpc-13':['Temps / affirmation ou négation','Terminaison verbale polie','Forme de です'],
+  'tpc-22':verb,'tpc-23':verb,
+  'tpc-28':['Forme','Japonais et prononciation'],
+  'tpc-31':['Notation du guide','Comment prononcer']
+ };
+ // La source omet la case supérieure gauche de ces trois tableaux.
+ const existing={'tpc-24':'Emploi','tpc-29':'Sens','tpc-30':'Nombre'};
+ if(existing[chapter])return {labels:[existing[chapter]],sourceHeader:node.rows[0],rows:node.rows.slice(1)};
+ const labels=special[chapter]||(node.rows.every(row=>row.length===3)?['Français','Japonais','Prononciation']:[]);
+ return {labels,rows:node.rows};
+}
+// Gloses françaises des formes grammaticales sans traduction dans leur cellule.
+// Les tableaux de vocabulaire ont déjà leur colonne française ; les nombres et
+// démonstratifs possèdent déjà leur sens dans la source.
+function guideTableFrench(chapter,row,rowIndex,column){
+ if(column===0)return '';
+ if(chapter==='tpc-28')return [
+  'C’est intéressant / amusant. (Forme polie.)',
+  'C’est intéressant / amusant. (Forme simple.)',
+  'Ce n’est pas intéressant / amusant. (Forme polie.)',
+  'Intéressant / amusant et… ; comme c’est intéressant / amusant… (Selon la suite.)'
+ ][rowIndex]||'';
+ if(chapter==='tpc-13')return (column===1?[
+  'Terminaison polie : action présente, habituelle ou future.',
+  'Terminaison polie : ne… pas (présent ou futur).',
+  'Terminaison polie : action passée.',
+  'Terminaison polie : ne… pas (passé).'
+ ]:[
+  'C’est… / ce sera… (Selon le contexte.)',
+  'Ce n’est pas… / ce ne sera pas…',
+  'C’était…',
+  'Ce n’était pas…'
+ ])[rowIndex]||'';
+ if(chapter==='tpc-29')return (rowIndex===0?[
+  '', 'Aller / venir. (Formes polies ordinaires.)',
+  'Aller / venir / être là. (Forme honorifique : personne dont on parle avec respect.)',
+  'Aller / venir. (Forme humble : soi-même ou son groupe.)'
+ ]:[
+  '', 'C’est… (Forme polie ordinaire.)',
+  'C’est… (Forme honorifique : personne dont on parle avec respect.)',
+  'C’est… (Forme très polie.)'
+ ])[column]||'';
+ if(['tpc-22','tpc-23'].includes(chapter)){
+  const forms={
+   manger:['mange','mangerai','mangé'],faire:['fais','ferai','fait'],
+   venir:['viens','viendrai','venu(e)'],prêter:['prête','prêterai','prêté'],
+   marcher:['marche','marcherai','marché'],nager:['nage','nagerai','nagé'],
+   lire:['lis','lirai','lu'],attendre:['attends','attendrai','attendu'],
+   acheter:['achète','achèterai','acheté'],rentrer:['rentre','rentrerai','rentré(e)'],
+   aller:['vais','irai','allé(e)']
+  };
+  const verb=Object.keys(forms).find(v=>guidePlainText(row[0]).startsWith(v));
+  if(!verb)return '';
+  const [present,future,past]=forms[verb],aux=['venir','rentrer','aller'].includes(verb)?'Je suis ':'J’ai ';
+  if(column===1||column===2)return `Je ${present} / je ${future}. (${column===1?'Poli':'Simple'} ; sujet selon le contexte.)`;
+  if(column===3)return `${verb[0].toUpperCase()+verb.slice(1)} — forme de liaison ; le sens dépend de la suite.`;
+  if(column===4)return aux+past+'. (Forme simple du passé ; sujet selon le contexte.)';
+ }
+ return '';
+}
 function guideSearchKey(text){return normalize(text).normalize('NFD').replace(/([a-z])[\u0300-\u036f]+/gi,'$1').normalize('NFC');}
 async function loadGuide(){
  if(guideData)return;
@@ -122,6 +222,12 @@ function guideNodes(nodes,context='Tableau du guide',inTable=false,separateSecti
   const id=guideNodeIds.get(node)||'';
   const chapter=id.match(/^guide-(tpc-\d+)-/)?.[1];
   const favorite=guideFavoriteStar(guideFavoriteKey(chapter,id));
+  const demonstrative=inTable&&chapter==='tpc-24'?guideDemonstrativeParts(node):null;
+  if(demonstrative)return `<div id="${id}"><p><span lang="ja">${guideMarked(node.japanese)}</span> <span class="guide-pronunciation">${guideMarked(demonstrative.reading)}</span></p><p class="guide-table-french" lang="fr">${guideMarked(demonstrative.french)}</p></div>`;
+  if(inTable&&node.type==='paragraph'&&guideSeparatedLabels[node.text]){
+   const [label,note]=guideSeparatedLabels[node.text];
+   return `<div id="${id}">${note?`<details class="guide-label-help"><summary aria-label="${esc(label)} : explication">${guideMarked(label)} <span class="guide-label-info" aria-hidden="true">ⓘ</span></summary><p>${esc(guideLabelHelp[node.text]||note)}</p></details>`:`<p>${guideMarked(label)}</p>`}</div>`;
+  }
   if(node.type==='paragraph')return `<div id="${id}" class="${inTable?'':'guide-favorite-block'}">${!inTable?favorite:''}${guideParagraph(node)}</div>`;
   if(node.type==='section'){
    // Dans les journées, les notes et exercices sont des rubriques sœurs du dialogue.
@@ -130,7 +236,11 @@ function guideNodes(nodes,context='Tableau du guide',inTable=false,separateSecti
    if(!node.title)return `<div id="${id}" class="guide-group">${inside}</div>`;
    return `<details id="${id}" class="guide-section"><summary>${esc(node.title)}</summary><div class="guide-section-body">${inside}</div></details>${guideNodes(siblings,context,inTable)}`;
   }
-  if(node.type==='table')return `<div id="${id}" class="guide-table-scroll" tabindex="0" role="region" aria-label="${esc(context)} — tableau défilant"><table class="guide-table"><caption>${esc(context)} ${favorite}</caption><tbody>${node.rows.map(row=>{const nodes=row.flatMap(c=>Array.isArray(c)?c:[c]);const anchor=nodes.find(n=>n.japanese)||nodes.find(n=>guideNodeIds.has(n));const rowStar=anchor?guideFavoriteStar(guideFavoriteKey(chapter,guideNodeIds.get(anchor))):'';return `<tr>${row.map((cell,i)=>`<td>${i===0?rowStar:''}${guideNodes(Array.isArray(cell)?cell:[cell],context,true)}</td>`).join('')}</tr>`;}).join('')}</tbody></table></div>`;
+  if(node.type==='table'){
+   const heading=guideTableHeading(node,chapter);
+   const headers=heading.labels.map(label=>`<th scope="col">${esc(label)}</th>`).join('')+(heading.sourceHeader?heading.sourceHeader.map((cell,index)=>`<th scope="col">${guideNodes(Array.isArray(cell)?cell:[cell],context,true)}${chapter==='tpc-24'?`<p class="guide-demonstrative-distance">${['Près de moi','Près de mon interlocuteur','Là-bas, loin de nous deux'][index]}</p>`:''}</th>`).join(''):'');
+   return `<div id="${id}" class="guide-table-scroll" tabindex="0" role="region" aria-label="${esc(context)} — tableau défilant"><table class="guide-table"><caption>${esc(context)} ${favorite}</caption><thead><tr>${headers}</tr></thead><tbody>${heading.rows.map((row,rowIndex)=>{const nodes=row.flatMap(c=>Array.isArray(c)?c:[c]);const anchor=nodes.find(n=>n.japanese)||nodes.find(n=>guideNodeIds.has(n));const rowStar=anchor?guideFavoriteStar(guideFavoriteKey(chapter,guideNodeIds.get(anchor))):'';return `<tr>${row.map((cell,i)=>`<td>${i===0&&nodes.some(n=>guideSeparatedLabels[n.text])?`<div class="guide-label-cell"><div>${guideNodes(Array.isArray(cell)?cell:[cell],context,true)}</div>${rowStar}</div>`:`${i===0?rowStar:''}${guideNodes(Array.isArray(cell)?cell:[cell],context,true)}`}${guideTableFrench(chapter,row,rowIndex,i)?`<p class="guide-table-french" lang="fr">${esc(guideTableFrench(chapter,row,rowIndex,i))}</p>`:''}</td>`).join('')}</tr>`;}).join('')}</tbody></table></div>`;
+  }
   if(node.type==='list'){const tag=node.ordered?'ol':'ul';return `<${tag} id="${id}" class="guide-list">${node.items.map(item=>`<li${item.some(n=>n.type==='paragraph'&&n.japanese)&&item.some(n=>n.style==='mentioned'&&!n.runs)?' class="guide-phrase"':''}>${guideNodes(item,context,inTable)}</li>`).join('')}</${tag}>`;}
   return '';
  }).join('');
@@ -143,7 +253,9 @@ function guideHome(){
 function guidePlainText(node){
  if(Array.isArray(node))return node.map(guidePlainText).filter(Boolean).join(' · ');
  if(!node||typeof node!=='object')return '';
- return node.text||[node.title,guidePlainText(node.blocks),guidePlainText(node.rows),guidePlainText(node.items)].filter(Boolean).join(' · ');
+ const demonstrative=guideDemonstrativeParts(node);
+ if(demonstrative)return [node.japanese,demonstrative.reading,demonstrative.french].join(' · ');
+ return (guideSeparatedLabels[node.text]?.filter(Boolean).join(' — ')||node.text)||[node.title,guidePlainText(node.blocks),guidePlainText(node.rows),guidePlainText(node.items)].filter(Boolean).join(' · ');
 }
 function guideMarked(text){
  const terms=guideQuery.trim().split(/\s+/).filter(Boolean).map(guideSearchKey);

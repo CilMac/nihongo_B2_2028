@@ -710,3 +710,26 @@ body.generated-help-open{overflow:hidden}
 
 /* Séparer le choix de l’activité des réglages de séance. */
 .activity-settings-divider{border:0;border-top:3px solid #9baa95;margin:28px 0;width:100%}
+
+/* En-têtes explicites des tableaux du Guide, dans toutes les vues. */
+.guide-table th{padding:10px 12px;text-align:left;vertical-align:top;background:#edf1e8;border-right:1px solid var(--line);border-bottom:2px solid #9aaa94;font-weight:600;min-width:100px}
+
+.guide-table p.guide-table-french{margin-top:8px;font-family:var(--font-body,system-ui,sans-serif);font-size:.9em;color:var(--muted);line-height:1.45}
+
+.guide-label-note{display:block;margin-top:6px;color:var(--muted);font-size:.85em}
+
+.guide-label-help>summary{display:flex;align-items:center;gap:6px;list-style:none;cursor:pointer;font-size:inherit;font-weight:400;padding:0;min-height:36px}
+.guide-label-help>summary::-webkit-details-marker{display:none}
+.guide-label-info{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;border:1px solid var(--line);border-radius:50%;color:#436879;background:#edf4f7}
+.guide-label-help>summary:focus-visible{outline:2px solid #436879;outline-offset:3px;border-radius:4px}
+.guide-table .guide-label-help>p{margin-top:8px;font-size:.85em;line-height:1.5;color:var(--muted)}
+
+/* Isoler les petits volets des styles globaux des accordéons et des favoris flottants. */
+.guide-table .guide-label-cell{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;min-width:160px}
+.guide-table .guide-label-cell>.favorite{float:none;margin:0;padding:4px;min-width:32px;min-height:32px;width:32px;height:32px;align-self:start}
+.guide-table .guide-label-help{margin:0;padding:0;border:0;background:none}
+.guide-table .guide-label-help>summary{display:flex;justify-content:flex-start;align-items:center;gap:6px;margin:0;padding:0;min-height:32px;border:0;color:var(--ink);line-height:1.4}
+.guide-table .guide-label-help .guide-label-info{display:inline-flex;flex:0 0 28px;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;min-height:28px;margin:0;padding:0;box-sizing:border-box;font:20px/1 system-ui;color:#436879;border:0;background:transparent;border-radius:50%}
+.guide-table .guide-label-help>summary:hover .guide-label-info,.guide-table .guide-label-help[open] .guide-label-info{background:#e5eef2}
+
+.guide-table p.guide-demonstrative-distance{margin-top:6px;font-weight:400;font-size:.9em;line-height:1.4}
