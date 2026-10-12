@@ -71,6 +71,7 @@ function getAtelierPool(){
  return atelierPoolCache.pool;
 }
 function renderAtelier(r={}){
+ if(r.id==='pratique'){ParcoursCommander.render(r.line);return;}
  if(r.id==='recherche'){renderCorpusRecord(r.line,true);return;}
  if(lessonIds.includes(r.id)&&['lesson','through'].includes(r.line)){
   const nextLevel=Number(r.id.slice(1));
@@ -79,7 +80,7 @@ function renderAtelier(r={}){
  const level=atelierSettings.level||Number(settings.lesson.slice(1))||1;
  atelierSettings.level=level;
  const lessonOptions=lessonIds.map(id=>`<option value="${id.slice(1)}" ${Number(id.slice(1))===level?'selected':''}>${esc(lessonLabel(id).replace(' — Sans titre',''))}</option>`).join('');
- $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez une activité, puis préparez votre séance.')+`<section class="panel atelier-setup"><div id="atelier-resume" hidden><strong>Séance en cours</strong><p id="atelier-current"></p><button type="button" id="atelier-continue">Continuer ma séance</button></div><button id="atelier-change" type="button" aria-expanded="true" aria-controls="atelier-preparation" hidden>Changer d’activité</button><div id="atelier-preparation"><h2 id="atelier-setup-title" hidden>Préparer la prochaine séance</h2>
+ $('#main').innerHTML=intro('PRATIQUER · COMPRENDRE','L’atelier','Choisissez une activité, puis préparez votre séance.')+`<aside class="panel practice-entry"><h2>Parcours pratique : commander et compter</h2><p>Six situations expliquées, 40 phrases repères, 6 dialogues et 72 exercices. Accessible indépendamment de votre leçon.</p><a href="#atelier/pratique">Découvrir le parcours →</a></aside><section class="panel atelier-setup"><div id="atelier-resume" hidden><strong>Séance en cours</strong><p id="atelier-current"></p><button type="button" id="atelier-continue">Continuer ma séance</button></div><button id="atelier-change" type="button" aria-expanded="true" aria-controls="atelier-preparation" hidden>Changer d’activité</button><div id="atelier-preparation"><h2 id="atelier-setup-title" hidden>Préparer la prochaine séance</h2>
  <fieldset id="atelier-type" class="activity-picker"><legend>Que voulez-vous pratiquer ?</legend>${[
   ['comprehension','Comprendre',['generated','listening']],
   ['construction','Construire et analyser',['constructions','particles','grammar']],

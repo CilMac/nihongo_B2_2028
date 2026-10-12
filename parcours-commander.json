@@ -1,0 +1,2925 @@
+{
+  "version": 1,
+  "title": "Commander et compter",
+  "origin": "Parcours éditorial indépendant de la progression des leçons",
+  "phrases": {
+    "P01": {
+      "jp": "何名様ですか。",
+      "kana": "なんめいさまですか。",
+      "romaji": "nanmei sama desu ka.",
+      "fr": "Vous êtes combien ?",
+      "chunks": [
+        {
+          "jp": "何名様",
+          "kana": "なんめいさま",
+          "romaji": "nanmei sama"
+        },
+        {
+          "jp": "ですか。",
+          "kana": "ですか。",
+          "romaji": "desu ka."
+        }
+      ]
+    },
+    "P02": {
+      "jp": "二人です。",
+      "kana": "ふたりです。",
+      "romaji": "futari desu.",
+      "fr": "Nous sommes deux.",
+      "chunks": [
+        {
+          "jp": "二人",
+          "kana": "ふたり",
+          "romaji": "futari"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "P03": {
+      "jp": "三人です。",
+      "kana": "さんにんです。",
+      "romaji": "sannin desu.",
+      "fr": "Nous sommes trois.",
+      "chunks": [
+        {
+          "jp": "三人",
+          "kana": "さんにん",
+          "romaji": "sannin"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "P04": {
+      "jp": "四人です。",
+      "kana": "よにんです。",
+      "romaji": "yonin desu.",
+      "fr": "Nous sommes quatre.",
+      "chunks": [
+        {
+          "jp": "四人",
+          "kana": "よにん",
+          "romaji": "yonin"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "P05": {
+      "jp": "予約しています。",
+      "kana": "よやくしています。",
+      "romaji": "yoyaku shite imasu.",
+      "fr": "J’ai une réservation.",
+      "chunks": [
+        {
+          "jp": "予約",
+          "kana": "よやく",
+          "romaji": "yoyaku"
+        },
+        {
+          "jp": "しています。",
+          "kana": "しています。",
+          "romaji": "shite imasu."
+        }
+      ]
+    },
+    "P06": {
+      "jp": "予約していません。",
+      "kana": "よやくしていません。",
+      "romaji": "yoyaku shite imasen.",
+      "fr": "Je n’ai pas de réservation.",
+      "chunks": [
+        {
+          "jp": "予約",
+          "kana": "よやく",
+          "romaji": "yoyaku"
+        },
+        {
+          "jp": "していません。",
+          "kana": "していません。",
+          "romaji": "shite imasen."
+        }
+      ]
+    },
+    "P07": {
+      "jp": "お水をお願いします。",
+      "kana": "おみずをおねがいします。",
+      "romaji": "omizu o onegai shimasu.",
+      "fr": "De l’eau, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "お水を",
+          "kana": "おみずを",
+          "romaji": "omizu o"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "P08": {
+      "jp": "コーヒーを二つください。",
+      "kana": "コーヒーをふたつください。",
+      "romaji": "koohii o futatsu kudasai.",
+      "fr": "Deux cafés, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "コーヒーを",
+          "kana": "コーヒーを",
+          "romaji": "koohii o"
+        },
+        {
+          "jp": "二つ",
+          "kana": "ふたつ",
+          "romaji": "futatsu"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P09": {
+      "jp": "ビールを二杯ください。",
+      "kana": "ビールをにはいください。",
+      "romaji": "biiru o nihai kudasai.",
+      "fr": "Deux verres de bière, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "ビールを",
+          "kana": "ビールを",
+          "romaji": "biiru o"
+        },
+        {
+          "jp": "二杯",
+          "kana": "にはい",
+          "romaji": "nihai"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P10": {
+      "jp": "日本酒を一杯ください。",
+      "kana": "にほんしゅをいっぱいください。",
+      "romaji": "nihonshu o ippai kudasai.",
+      "fr": "Un verre de saké, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "日本酒を",
+          "kana": "にほんしゅを",
+          "romaji": "nihonshu o"
+        },
+        {
+          "jp": "一杯",
+          "kana": "いっぱい",
+          "romaji": "ippai"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P11": {
+      "jp": "ホットコーヒーにします。",
+      "kana": "ホットコーヒーにします。",
+      "romaji": "hotto koohii ni shimasu.",
+      "fr": "Je prends un café chaud.",
+      "chunks": [
+        {
+          "jp": "ホットコーヒーに",
+          "kana": "ホットコーヒーに",
+          "romaji": "hotto koohii ni"
+        },
+        {
+          "jp": "します。",
+          "kana": "します。",
+          "romaji": "shimasu."
+        }
+      ]
+    },
+    "P12": {
+      "jp": "アイスコーヒーにします。",
+      "kana": "アイスコーヒーにします。",
+      "romaji": "aisu koohii ni shimasu.",
+      "fr": "Je prends un café glacé.",
+      "chunks": [
+        {
+          "jp": "アイスコーヒーに",
+          "kana": "アイスコーヒーに",
+          "romaji": "aisu koohii ni"
+        },
+        {
+          "jp": "します。",
+          "kana": "します。",
+          "romaji": "shimasu."
+        }
+      ]
+    },
+    "P13": {
+      "jp": "コーヒー二つとビール一つください。",
+      "kana": "コーヒーふたつとビールひとつください。",
+      "romaji": "koohii futatsu to biiru hitotsu kudasai.",
+      "fr": "Deux cafés et une bière, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "コーヒー二つ",
+          "kana": "コーヒーふたつ",
+          "romaji": "koohii futatsu"
+        },
+        {
+          "jp": "と",
+          "kana": "と",
+          "romaji": "to"
+        },
+        {
+          "jp": "ビール一つ",
+          "kana": "ビールひとつ",
+          "romaji": "biiru hitotsu"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P14": {
+      "jp": "メニューをお願いします。",
+      "kana": "メニューをおねがいします。",
+      "romaji": "menyuu o onegai shimasu.",
+      "fr": "La carte, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "メニューを",
+          "kana": "メニューを",
+          "romaji": "menyuu o"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "P15": {
+      "jp": "これをください。",
+      "kana": "これをください。",
+      "romaji": "kore o kudasai.",
+      "fr": "Ceci, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "これを",
+          "kana": "これを",
+          "romaji": "kore o"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P16": {
+      "jp": "この定食にします。",
+      "kana": "このていしょくにします。",
+      "romaji": "kono teishoku ni shimasu.",
+      "fr": "Je prends ce menu complet.",
+      "chunks": [
+        {
+          "jp": "この定食に",
+          "kana": "このていしょくに",
+          "romaji": "kono teishoku ni"
+        },
+        {
+          "jp": "します。",
+          "kana": "します。",
+          "romaji": "shimasu."
+        }
+      ]
+    },
+    "P17": {
+      "jp": "カレーにします。",
+      "kana": "カレーにします。",
+      "romaji": "karee ni shimasu.",
+      "fr": "Je prends le curry.",
+      "chunks": [
+        {
+          "jp": "カレーに",
+          "kana": "カレーに",
+          "romaji": "karee ni"
+        },
+        {
+          "jp": "します。",
+          "kana": "します。",
+          "romaji": "shimasu."
+        }
+      ]
+    },
+    "P18": {
+      "jp": "おすすめは何ですか。",
+      "kana": "おすすめはなんですか。",
+      "romaji": "osusume wa nan desu ka.",
+      "fr": "Que recommandez-vous ?",
+      "chunks": [
+        {
+          "jp": "おすすめは",
+          "kana": "おすすめは",
+          "romaji": "osusume wa"
+        },
+        {
+          "jp": "何ですか。",
+          "kana": "なんですか。",
+          "romaji": "nan desu ka."
+        }
+      ]
+    },
+    "P19": {
+      "jp": "うどんはありますか。",
+      "kana": "うどんはありますか。",
+      "romaji": "udon wa arimasu ka.",
+      "fr": "Avez-vous des udon ?",
+      "chunks": [
+        {
+          "jp": "うどんは",
+          "kana": "うどんは",
+          "romaji": "udon wa"
+        },
+        {
+          "jp": "ありますか。",
+          "kana": "ありますか。",
+          "romaji": "arimasu ka."
+        }
+      ]
+    },
+    "P20": {
+      "jp": "ご飯とみそ汁がつきます。",
+      "kana": "ごはんとみそしるがつきます。",
+      "romaji": "gohan to misoshiru ga tsukimasu.",
+      "fr": "Le riz et la soupe miso sont compris.",
+      "chunks": [
+        {
+          "jp": "ご飯と",
+          "kana": "ごはんと",
+          "romaji": "gohan to"
+        },
+        {
+          "jp": "みそ汁が",
+          "kana": "みそしるが",
+          "romaji": "misoshiru ga"
+        },
+        {
+          "jp": "つきます。",
+          "kana": "つきます。",
+          "romaji": "tsukimasu."
+        }
+      ]
+    },
+    "P21": {
+      "jp": "これを四つください。",
+      "kana": "これをよっつください。",
+      "romaji": "kore o yottsu kudasai.",
+      "fr": "Quatre de ceci, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "これを",
+          "kana": "これを",
+          "romaji": "kore o"
+        },
+        {
+          "jp": "四つ",
+          "kana": "よっつ",
+          "romaji": "yottsu"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P22": {
+      "jp": "これを五つください。",
+      "kana": "これをいつつください。",
+      "romaji": "kore o itsutsu kudasai.",
+      "fr": "Cinq de ceci, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "これを",
+          "kana": "これを",
+          "romaji": "kore o"
+        },
+        {
+          "jp": "五つ",
+          "kana": "いつつ",
+          "romaji": "itsutsu"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P23": {
+      "jp": "水を一本ください。",
+      "kana": "みずをいっぽんください。",
+      "romaji": "mizu o ippon kudasai.",
+      "fr": "Une bouteille d’eau, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "水を",
+          "kana": "みずを",
+          "romaji": "mizu o"
+        },
+        {
+          "jp": "一本",
+          "kana": "いっぽん",
+          "romaji": "ippon"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P24": {
+      "jp": "水を二本ください。",
+      "kana": "みずをにほんください。",
+      "romaji": "mizu o nihon kudasai.",
+      "fr": "Deux bouteilles d’eau, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "水を",
+          "kana": "みずを",
+          "romaji": "mizu o"
+        },
+        {
+          "jp": "二本",
+          "kana": "にほん",
+          "romaji": "nihon"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P25": {
+      "jp": "水を三本ください。",
+      "kana": "みずをさんぼんください。",
+      "romaji": "mizu o sanbon kudasai.",
+      "fr": "Trois bouteilles d’eau, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "水を",
+          "kana": "みずを",
+          "romaji": "mizu o"
+        },
+        {
+          "jp": "三本",
+          "kana": "さんぼん",
+          "romaji": "sanbon"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P26": {
+      "jp": "もう一つお願いします。",
+      "kana": "もうひとつおねがいします。",
+      "romaji": "mou hitotsu onegai shimasu.",
+      "fr": "Encore un, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "もう一つ",
+          "kana": "もうひとつ",
+          "romaji": "mou hitotsu"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "P27": {
+      "jp": "二つではなく、三つです。",
+      "kana": "ふたつではなく、みっつです。",
+      "romaji": "futatsu de wa naku, mittsu desu.",
+      "fr": "Trois, et non deux.",
+      "chunks": [
+        {
+          "jp": "二つではなく、",
+          "kana": "ふたつではなく、",
+          "romaji": "futatsu de wa naku,"
+        },
+        {
+          "jp": "三つ",
+          "kana": "みっつ",
+          "romaji": "mittsu"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "P28": {
+      "jp": "店内でお召し上がりですか。",
+      "kana": "てんないでおめしあがりですか。",
+      "romaji": "tennai de omeshiagari desu ka.",
+      "fr": "C’est pour consommer sur place ?",
+      "chunks": [
+        {
+          "jp": "店内で",
+          "kana": "てんないで",
+          "romaji": "tennai de"
+        },
+        {
+          "jp": "お召し上がりですか。",
+          "kana": "おめしあがりですか。",
+          "romaji": "omeshiagari desu ka."
+        }
+      ]
+    },
+    "P29": {
+      "jp": "持ち帰りでお願いします。",
+      "kana": "もちかえりでおねがいします。",
+      "romaji": "mochikaeri de onegai shimasu.",
+      "fr": "À emporter, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "持ち帰りで",
+          "kana": "もちかえりで",
+          "romaji": "mochikaeri de"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "P30": {
+      "jp": "ここで食べます。",
+      "kana": "ここでたべます。",
+      "romaji": "koko de tabemasu.",
+      "fr": "Je mange ici.",
+      "chunks": [
+        {
+          "jp": "ここで",
+          "kana": "ここで",
+          "romaji": "koko de"
+        },
+        {
+          "jp": "食べます。",
+          "kana": "たべます。",
+          "romaji": "tabemasu."
+        }
+      ]
+    },
+    "P31": {
+      "jp": "サンドイッチを二つください。",
+      "kana": "サンドイッチをふたつください。",
+      "romaji": "sandoicchi o futatsu kudasai.",
+      "fr": "Deux sandwiches, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "サンドイッチを",
+          "kana": "サンドイッチを",
+          "romaji": "sandoicchi o"
+        },
+        {
+          "jp": "二つ",
+          "kana": "ふたつ",
+          "romaji": "futatsu"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "P32": {
+      "jp": "袋をお願いします。",
+      "kana": "ふくろをおねがいします。",
+      "romaji": "fukuro o onegai shimasu.",
+      "fr": "Un sac, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "袋を",
+          "kana": "ふくろを",
+          "romaji": "fukuro o"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "P33": {
+      "jp": "スプーンをお願いします。",
+      "kana": "スプーンをおねがいします。",
+      "romaji": "supuun o onegai shimasu.",
+      "fr": "Une cuillère, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "スプーンを",
+          "kana": "スプーンを",
+          "romaji": "supuun o"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "P34": {
+      "jp": "お会計をお願いします。",
+      "kana": "おかいけいをおねがいします。",
+      "romaji": "okaikei o onegai shimasu.",
+      "fr": "L’addition, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "お会計を",
+          "kana": "おかいけいを",
+          "romaji": "okaikei o"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "P35": {
+      "jp": "全部でいくらですか。",
+      "kana": "ぜんぶでいくらですか。",
+      "romaji": "zenbu de ikura desu ka.",
+      "fr": "Combien cela fait-il en tout ?",
+      "chunks": [
+        {
+          "jp": "全部で",
+          "kana": "ぜんぶで",
+          "romaji": "zenbu de"
+        },
+        {
+          "jp": "いくらですか。",
+          "kana": "いくらですか。",
+          "romaji": "ikura desu ka."
+        }
+      ]
+    },
+    "P36": {
+      "jp": "千五百円です。",
+      "kana": "せんごひゃくえんです。",
+      "romaji": "sen gohyaku en desu.",
+      "fr": "Cela fait 1 500 yens.",
+      "chunks": [
+        {
+          "jp": "千五百円",
+          "kana": "せんごひゃくえん",
+          "romaji": "sen gohyaku en"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "P37": {
+      "jp": "カードで払えますか。",
+      "kana": "カードではらえますか。",
+      "romaji": "kaado de haraemasu ka.",
+      "fr": "Puis-je payer par carte ?",
+      "chunks": [
+        {
+          "jp": "カードで",
+          "kana": "カードで",
+          "romaji": "kaado de"
+        },
+        {
+          "jp": "払えますか。",
+          "kana": "はらえますか。",
+          "romaji": "haraemasu ka."
+        }
+      ]
+    },
+    "P38": {
+      "jp": "現金で払います。",
+      "kana": "げんきんではらいます。",
+      "romaji": "genkin de haraimasu.",
+      "fr": "Je paie en espèces.",
+      "chunks": [
+        {
+          "jp": "現金で",
+          "kana": "げんきんで",
+          "romaji": "genkin de"
+        },
+        {
+          "jp": "払います。",
+          "kana": "はらいます。",
+          "romaji": "haraimasu."
+        }
+      ]
+    },
+    "P39": {
+      "jp": "別々でお願いします。",
+      "kana": "べつべつでおねがいします。",
+      "romaji": "betsubetsu de onegai shimasu.",
+      "fr": "Séparément, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "別々で",
+          "kana": "べつべつで",
+          "romaji": "betsubetsu de"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "P40": {
+      "jp": "ごちそうさまでした。",
+      "kana": "ごちそうさまでした。",
+      "romaji": "gochisousama deshita.",
+      "fr": "Merci pour le repas.",
+      "chunks": [
+        {
+          "jp": "ごちそうさまでした。",
+          "kana": "ごちそうさまでした。",
+          "romaji": "gochisousama deshita."
+        }
+      ]
+    },
+    "Qreservation": {
+      "jp": "予約はありますか。",
+      "kana": "よやくはありますか。",
+      "romaji": "yoyaku wa arimasu ka.",
+      "fr": "Avez-vous une réservation ?",
+      "chunks": [
+        {
+          "jp": "予約は",
+          "kana": "よやくは",
+          "romaji": "yoyaku wa"
+        },
+        {
+          "jp": "ありますか。",
+          "kana": "ありますか。",
+          "romaji": "arimasu ka."
+        }
+      ]
+    },
+    "Rreservation": {
+      "jp": "予約があります。",
+      "kana": "よやくがあります。",
+      "romaji": "yoyaku ga arimasu.",
+      "fr": "J’ai une réservation.",
+      "chunks": [
+        {
+          "jp": "予約が",
+          "kana": "よやくが",
+          "romaji": "yoyaku ga"
+        },
+        {
+          "jp": "あります。",
+          "kana": "あります。",
+          "romaji": "arimasu."
+        }
+      ]
+    },
+    "Qseul": {
+      "jp": "お一人様ですか。",
+      "kana": "おひとりさまですか。",
+      "romaji": "ohitori sama desu ka.",
+      "fr": "Pour une personne ?",
+      "chunks": [
+        {
+          "jp": "お一人様",
+          "kana": "おひとりさま",
+          "romaji": "ohitori sama"
+        },
+        {
+          "jp": "ですか。",
+          "kana": "ですか。",
+          "romaji": "desu ka."
+        }
+      ]
+    },
+    "Qdrink": {
+      "jp": "お飲み物は何にしますか。",
+      "kana": "おのみものはなににしますか。",
+      "romaji": "onomimono wa nani ni shimasu ka.",
+      "fr": "Que prenez-vous comme boisson ?",
+      "chunks": [
+        {
+          "jp": "お飲み物は",
+          "kana": "おのみものは",
+          "romaji": "onomimono wa"
+        },
+        {
+          "jp": "何にしますか。",
+          "kana": "なににしますか。",
+          "romaji": "nani ni shimasu ka."
+        }
+      ]
+    },
+    "Qhot": {
+      "jp": "ホットコーヒーですね。",
+      "kana": "ホットコーヒーですね。",
+      "romaji": "hotto koohii desu ne.",
+      "fr": "C’est bien un café chaud.",
+      "chunks": [
+        {
+          "jp": "ホットコーヒー",
+          "kana": "ホットコーヒー",
+          "romaji": "hotto koohii"
+        },
+        {
+          "jp": "ですね。",
+          "kana": "ですね。",
+          "romaji": "desu ne."
+        }
+      ]
+    },
+    "Qcold": {
+      "jp": "アイスコーヒーですね。",
+      "kana": "アイスコーヒーですね。",
+      "romaji": "aisu koohii desu ne.",
+      "fr": "C’est bien un café glacé.",
+      "chunks": [
+        {
+          "jp": "アイスコーヒー",
+          "kana": "アイスコーヒー",
+          "romaji": "aisu koohii"
+        },
+        {
+          "jp": "ですね。",
+          "kana": "ですね。",
+          "romaji": "desu ne."
+        }
+      ]
+    },
+    "mix": {
+      "jp": "コーヒー二つと日本酒一杯ください。",
+      "kana": "コーヒーふたつとにほんしゅいっぱいください。",
+      "romaji": "koohii futatsu to nihonshu ippai kudasai.",
+      "fr": "Deux cafés et un verre de saké, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "コーヒー二つ",
+          "kana": "コーヒーふたつ",
+          "romaji": "koohii futatsu"
+        },
+        {
+          "jp": "と",
+          "kana": "と",
+          "romaji": "to"
+        },
+        {
+          "jp": "日本酒一杯",
+          "kana": "にほんしゅいっぱい",
+          "romaji": "nihonshu ippai"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "extraglass": {
+      "jp": "もう一杯お願いします。",
+      "kana": "もういっぱいおねがいします。",
+      "romaji": "mou ippai onegai shimasu.",
+      "fr": "Encore un verre, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "もう一杯",
+          "kana": "もういっぱい",
+          "romaji": "mou ippai"
+        },
+        {
+          "jp": "お願いします。",
+          "kana": "おねがいします。",
+          "romaji": "onegai shimasu."
+        }
+      ]
+    },
+    "Qglasses": {
+      "jp": "ビールは何杯ですか。",
+      "kana": "ビールはなんばいですか。",
+      "romaji": "biiru wa nanbai desu ka.",
+      "fr": "Combien de verres de bière ?",
+      "chunks": [
+        {
+          "jp": "ビールは",
+          "kana": "ビールは",
+          "romaji": "biiru wa"
+        },
+        {
+          "jp": "何杯",
+          "kana": "なんばい",
+          "romaji": "nanbai"
+        },
+        {
+          "jp": "ですか。",
+          "kana": "ですか。",
+          "romaji": "desu ka."
+        }
+      ]
+    },
+    "threeglass": {
+      "jp": "三杯です。",
+      "kana": "さんばいです。",
+      "romaji": "sanbai desu.",
+      "fr": "Trois verres.",
+      "chunks": [
+        {
+          "jp": "三杯",
+          "kana": "さんばい",
+          "romaji": "sanbai"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "oneglass": {
+      "jp": "一杯です。",
+      "kana": "いっぱいです。",
+      "romaji": "ippai desu.",
+      "fr": "Un verre.",
+      "chunks": [
+        {
+          "jp": "一杯",
+          "kana": "いっぱい",
+          "romaji": "ippai"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "yes": {
+      "jp": "はい。",
+      "kana": "はい。",
+      "romaji": "hai.",
+      "fr": "Oui.",
+      "chunks": [
+        {
+          "jp": "はい。",
+          "kana": "はい。",
+          "romaji": "hai."
+        }
+      ]
+    },
+    "no": {
+      "jp": "いいえ。",
+      "kana": "いいえ。",
+      "romaji": "iie.",
+      "fr": "Non.",
+      "chunks": [
+        {
+          "jp": "いいえ。",
+          "kana": "いいえ。",
+          "romaji": "iie."
+        }
+      ]
+    },
+    "udonOK": {
+      "jp": "うどんはあります。",
+      "kana": "うどんはあります。",
+      "romaji": "udon wa arimasu.",
+      "fr": "Nous avons des udon.",
+      "chunks": [
+        {
+          "jp": "うどんは",
+          "kana": "うどんは",
+          "romaji": "udon wa"
+        },
+        {
+          "jp": "あります。",
+          "kana": "あります。",
+          "romaji": "arimasu."
+        }
+      ]
+    },
+    "udonChoice": {
+      "jp": "うどんにします。",
+      "kana": "うどんにします。",
+      "romaji": "udon ni shimasu.",
+      "fr": "Je prends les udon.",
+      "chunks": [
+        {
+          "jp": "うどんに",
+          "kana": "うどんに",
+          "romaji": "udon ni"
+        },
+        {
+          "jp": "します。",
+          "kana": "します。",
+          "romaji": "shimasu."
+        }
+      ]
+    },
+    "Qchoice": {
+      "jp": "何にしますか。",
+      "kana": "なににしますか。",
+      "romaji": "nani ni shimasu ka.",
+      "fr": "Que prenez-vous ?",
+      "chunks": [
+        {
+          "jp": "何に",
+          "kana": "なにに",
+          "romaji": "nani ni"
+        },
+        {
+          "jp": "しますか。",
+          "kana": "しますか。",
+          "romaji": "shimasu ka."
+        }
+      ]
+    },
+    "Qtwo": {
+      "jp": "二つですね。",
+      "kana": "ふたつですね。",
+      "romaji": "futatsu desu ne.",
+      "fr": "C’est bien deux unités.",
+      "chunks": [
+        {
+          "jp": "二つ",
+          "kana": "ふたつ",
+          "romaji": "futatsu"
+        },
+        {
+          "jp": "ですね。",
+          "kana": "ですね。",
+          "romaji": "desu ne."
+        }
+      ]
+    },
+    "Qbottles": {
+      "jp": "水は二本ですね。",
+      "kana": "みずはにほんですね。",
+      "romaji": "mizu wa nihon desu ne.",
+      "fr": "C’est bien deux bouteilles d’eau.",
+      "chunks": [
+        {
+          "jp": "水は",
+          "kana": "みずは",
+          "romaji": "mizu wa"
+        },
+        {
+          "jp": "二本",
+          "kana": "にほん",
+          "romaji": "nihon"
+        },
+        {
+          "jp": "ですね。",
+          "kana": "ですね。",
+          "romaji": "desu ne."
+        }
+      ]
+    },
+    "correctBottles": {
+      "jp": "二本ではなく、三本です。",
+      "kana": "にほんではなく、さんぼんです。",
+      "romaji": "nihon de wa naku, sanbon desu.",
+      "fr": "Trois bouteilles, et non deux.",
+      "chunks": [
+        {
+          "jp": "二本ではなく、",
+          "kana": "にほんではなく、",
+          "romaji": "nihon de wa naku,"
+        },
+        {
+          "jp": "三本",
+          "kana": "さんぼん",
+          "romaji": "sanbon"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "confirmBottles": {
+      "jp": "三本ですね。",
+      "kana": "さんぼんですね。",
+      "romaji": "sanbon desu ne.",
+      "fr": "C’est bien trois bouteilles.",
+      "chunks": [
+        {
+          "jp": "三本",
+          "kana": "さんぼん",
+          "romaji": "sanbon"
+        },
+        {
+          "jp": "ですね。",
+          "kana": "ですね。",
+          "romaji": "desu ne."
+        }
+      ]
+    },
+    "Qtake": {
+      "jp": "お持ち帰りですね。",
+      "kana": "おもちかえりですね。",
+      "romaji": "omochikaeri desu ne.",
+      "fr": "C’est bien à emporter.",
+      "chunks": [
+        {
+          "jp": "お持ち帰り",
+          "kana": "おもちかえり",
+          "romaji": "omochikaeri"
+        },
+        {
+          "jp": "ですね。",
+          "kana": "ですね。",
+          "romaji": "desu ne."
+        }
+      ]
+    },
+    "cardOK": {
+      "jp": "はい、カードで払えます。",
+      "kana": "はい、カードではらえます。",
+      "romaji": "hai, kaado de haraemasu.",
+      "fr": "Oui, vous pouvez payer par carte.",
+      "chunks": [
+        {
+          "jp": "はい、カードで",
+          "kana": "はい、カードで",
+          "romaji": "hai, kaado de"
+        },
+        {
+          "jp": "払えます。",
+          "kana": "はらえます。",
+          "romaji": "haraemasu."
+        }
+      ]
+    },
+    "cardNo": {
+      "jp": "カードは使えません。",
+      "kana": "カードはつかえません。",
+      "romaji": "kaado wa tsukaemasen.",
+      "fr": "La carte n’est pas acceptée.",
+      "chunks": [
+        {
+          "jp": "カードは",
+          "kana": "カードは",
+          "romaji": "kaado wa"
+        },
+        {
+          "jp": "使えません。",
+          "kana": "つかえません。",
+          "romaji": "tsukaemasen."
+        }
+      ]
+    },
+    "payCard": {
+      "jp": "カードで払います。",
+      "kana": "カードではらいます。",
+      "romaji": "kaado de haraimasu.",
+      "fr": "Je paie par carte.",
+      "chunks": [
+        {
+          "jp": "カードで",
+          "kana": "カードで",
+          "romaji": "kaado de"
+        },
+        {
+          "jp": "払います。",
+          "kana": "はらいます。",
+          "romaji": "haraimasu."
+        }
+      ]
+    },
+    "500": {
+      "jp": "五百円です。",
+      "kana": "ごひゃくえんです。",
+      "romaji": "gohyaku en desu.",
+      "fr": "Cela fait 500 yens.",
+      "chunks": [
+        {
+          "jp": "五百円",
+          "kana": "ごひゃくえん",
+          "romaji": "gohyaku en"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "3000": {
+      "jp": "三千円です。",
+      "kana": "さんぜんえんです。",
+      "romaji": "sanzen en desu.",
+      "fr": "Cela fait 3 000 yens.",
+      "chunks": [
+        {
+          "jp": "三千円",
+          "kana": "さんぜんえん",
+          "romaji": "sanzen en"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "wrongPeople": {
+      "jp": "三つです。",
+      "kana": "みっつです。",
+      "romaji": "mittsu desu.",
+      "fr": "Trois unités.",
+      "chunks": [
+        {
+          "jp": "三つ",
+          "kana": "みっつ",
+          "romaji": "mittsu"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "wrongHonor": {
+      "jp": "三名様です。",
+      "kana": "さんめいさまです。",
+      "romaji": "sanmei sama desu.",
+      "fr": "Trois personnes, avec un honorifique déplacé pour son propre groupe.",
+      "chunks": [
+        {
+          "jp": "三名様",
+          "kana": "さんめいさま",
+          "romaji": "sanmei sama"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "wrongBottles": {
+      "jp": "水を三杯ください。",
+      "kana": "みずをさんばいください。",
+      "romaji": "mizu o sanbai kudasai.",
+      "fr": "Trois verres d’eau, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "水を",
+          "kana": "みずを",
+          "romaji": "mizu o"
+        },
+        {
+          "jp": "三杯",
+          "kana": "さんばい",
+          "romaji": "sanbai"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    },
+    "wrongYen": {
+      "jp": "千五百の円です。",
+      "kana": "せんごひゃくのえんです。",
+      "romaji": "sen gohyaku no en desu.",
+      "fr": "Forme à corriger : particule ajoutée dans le montant.",
+      "chunks": [
+        {
+          "jp": "千五百の円",
+          "kana": "せんごひゃくのえん",
+          "romaji": "sen gohyaku no en"
+        },
+        {
+          "jp": "です。",
+          "kana": "です。",
+          "romaji": "desu."
+        }
+      ]
+    },
+    "multi": {
+      "jp": "水二本とサンドイッチ三つください。",
+      "kana": "みずにほんとサンドイッチみっつください。",
+      "romaji": "mizu nihon to sandoicchi mittsu kudasai.",
+      "fr": "Deux bouteilles d’eau et trois sandwiches, s’il vous plaît.",
+      "chunks": [
+        {
+          "jp": "水二本",
+          "kana": "みずにほん",
+          "romaji": "mizu nihon"
+        },
+        {
+          "jp": "と",
+          "kana": "と",
+          "romaji": "to"
+        },
+        {
+          "jp": "サンドイッチ三つ",
+          "kana": "サンドイッチみっつ",
+          "romaji": "sandoicchi mittsu"
+        },
+        {
+          "jp": "ください。",
+          "kana": "ください。",
+          "romaji": "kudasai."
+        }
+      ]
+    }
+  },
+  "steps": [
+    {
+      "id": "accueil",
+      "title": "Arriver au restaurant",
+      "context": "Vous arrivez avec votre groupe. Le personnel vérifie le nombre de personnes et la réservation.",
+      "notes": [
+        "Une personne : 一人（ひとり, hitori）; deux : 二人（ふたり, futari）; trois : 三人（さんにん, sannin）; quatre : 四人（よにん, yonin）. 人 compte ici les personnes, pas つ.",
+        "Le personnel dit 何名様ですか（なんめいさまですか, nanmei sama desu ka）. 様 honore les clients ; on ne le reprend pas pour parler de son propre groupe. 二人です suffit.",
+        "予約（よやく, yoyaku）signifie réservation. 予約しています indique une réservation faite qui reste valable ; 予約していません indique que vous n’en avez pas. Apprenez ces deux réponses ensemble.",
+        "予約はありますか pose la réservation comme sujet de la question : « et pour la réservation ? ». 予約があります annonce simplement son existence. は et が ne sont pas interchangeables sans nuance, mais tous deux peuvent être possibles selon ce qui précède. Les exercices précisent la construction recherchée.",
+        "お一人様ですか demande si vous êtes seul. Le personnel peut se tromper : répondez avec le nombre réel, sans reprendre son honorifique."
+      ],
+      "phrases": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06"
+      ],
+      "dialogue": [
+        [
+          "Personnel",
+          "P01"
+        ],
+        [
+          "Client",
+          "P03"
+        ],
+        [
+          "Personnel",
+          "Qreservation"
+        ],
+        [
+          "Client",
+          "P05"
+        ]
+      ],
+      "exercises": [
+        {
+          "id": "accueil-01",
+          "kind": "C",
+          "prompt": "Vous êtes trois : assemblez votre réponse.",
+          "target": "P03",
+          "explanation": "三人 compte trois personnes ; です termine la réponse polie.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "accueil-02",
+          "kind": "C",
+          "prompt": "Vous étiez trois, une amie vous rejoint. Annoncez le nouvel effectif.",
+          "target": "P04",
+          "explanation": "四人 se lit yonin : vous êtes désormais quatre, sans 様 pour votre groupe.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "accueil-03",
+          "kind": "C",
+          "prompt": "Vous avez réservé : reconstruisez la réponse avec しています.",
+          "target": "P05",
+          "explanation": "予約しています indique la réservation faite qui reste valable.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "accueil-04",
+          "kind": "C",
+          "prompt": "Cette fois vous n’avez pas réservé. Utilisez していません.",
+          "target": "P06",
+          "explanation": "していません est la réponse négative apprise ; しています affirmerait une réservation.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "accueil-05",
+          "kind": "P",
+          "prompt": "Le personnel pose la réservation comme thème. Complétez avec la particule de thème.",
+          "target": "Qreservation",
+          "explanation": "は pose ici 予約 comme thème ; une question avec が serait aussi possible dans un autre cadrage.",
+          "mode": "particle",
+          "fragment": "は",
+          "answer": "は",
+          "options": [
+            "は",
+            "を",
+            "に"
+          ],
+          "masked": {
+            "jp": "予約［…］ありますか。",
+            "kana": "よやく［…］ありますか。",
+            "romaji": "yoyaku […]  arimasu ka."
+          }
+        },
+        {
+          "id": "accueil-06",
+          "kind": "P",
+          "prompt": "Annoncez l’existence d’une réservation avec la structure Nが あります enseignée.",
+          "target": "Rreservation",
+          "explanation": "が marque ce dont on annonce l’existence. は pourrait changer la mise en contexte ; il n’est pas proposé comme faute universelle.",
+          "mode": "particle",
+          "fragment": "が",
+          "answer": "が",
+          "options": [
+            "が",
+            "を",
+            "に"
+          ],
+          "masked": {
+            "jp": "予約［…］あります。",
+            "kana": "よやく［…］あります。",
+            "romaji": "yoyaku […]  arimasu."
+          }
+        },
+        {
+          "id": "accueil-07",
+          "kind": "D",
+          "prompt": "Vous êtes trois. Répondez au personnel.",
+          "target": "P03",
+          "explanation": "三人です répond à la question de nombre ; répéter 何名様ですか ne donne pas votre effectif.",
+          "mode": "choice",
+          "options": [
+            "P03",
+            "P04",
+            "P01"
+          ],
+          "context": "P01",
+          "wrong": null
+        },
+        {
+          "id": "accueil-08",
+          "kind": "D",
+          "prompt": "Vous venez d’annoncer quatre personnes. Vous n’avez pas réservé : répondez maintenant à cette question.",
+          "target": "P06",
+          "explanation": "Le nombre a déjà été donné. La nouvelle question porte sur la réservation.",
+          "mode": "choice",
+          "options": [
+            "P04",
+            "P05",
+            "P06"
+          ],
+          "context": "Qreservation",
+          "wrong": null
+        },
+        {
+          "id": "accueil-09",
+          "kind": "D",
+          "prompt": "Le personnel vous croit seul, mais vous êtes trois. Rectifiez.",
+          "target": "P03",
+          "explanation": "お一人様ですか demande si vous êtes seul. Donnez le vrai nombre.",
+          "mode": "choice",
+          "options": [
+            "yes",
+            "P03",
+            "P02"
+          ],
+          "context": "Qseul",
+          "wrong": null
+        },
+        {
+          "id": "accueil-10",
+          "kind": "D",
+          "prompt": "Vous avez une réservation. Quelle réponse correspond à la question ?",
+          "target": "P05",
+          "explanation": "Répondez sur la réservation et non sur le nombre de personnes.",
+          "mode": "choice",
+          "options": [
+            "P05",
+            "P03",
+            "P06"
+          ],
+          "context": "Qreservation",
+          "wrong": null
+        },
+        {
+          "id": "accueil-11",
+          "kind": "R",
+          "prompt": "Vous voulez annoncer trois personnes. Remplacez la réponse inadaptée.",
+          "target": "P03",
+          "explanation": "つ compte ici des unités ; pour des personnes, 三人 se lit sannin.",
+          "mode": "choice",
+          "options": [
+            "P03",
+            "P04",
+            "wrongPeople"
+          ],
+          "context": null,
+          "wrong": "wrongPeople"
+        },
+        {
+          "id": "accueil-12",
+          "kind": "R",
+          "prompt": "Annoncez votre propre groupe de trois sans honorifique envers vous-même.",
+          "target": "P03",
+          "explanation": "Le personnel honore les clients avec 様. Dans votre réponse pour vous-même, 三人です suffit.",
+          "mode": "choice",
+          "options": [
+            "wrongHonor",
+            "P03",
+            "P02"
+          ],
+          "context": null,
+          "wrong": "wrongHonor"
+        }
+      ],
+      "support": [
+        "Qreservation",
+        "Rreservation",
+        "Qseul",
+        "yes"
+      ]
+    },
+    {
+      "id": "boissons",
+      "title": "Commander à boire",
+      "context": "La carte propose eau, cafés chauds ou glacés, bière au verre et saké au verre.",
+      "notes": [
+        "Demander : boisson + を + quantité + ください. を marque ce que vous demandez. Avec お願いします, une demande telle que お水をお願いします est également polie.",
+        "一つ・二つ・三つ se lisent hitotsu, futatsu, mittsu. Ici つ compte les consommations commandées. 一杯・二杯・三杯 se lisent ippai, nihai, sanbai : 杯 compte les tasses ou verres de boisson. Deux cafés peuvent se commander avec 二つ ou 二杯 ; l’un n’est pas automatiquement une erreur.",
+        "Choisir : ホットコーヒーにします, « je prends le café chaud ». にします annonce une décision ; ce に n’indique pas un déplacement. ホット = chaud, アイス = glacé ; 日本酒（にほんしゅ, nihonshu）= saké japonais.",
+        "Dans une liste orale, コーヒー二つと日本酒一杯ください relie les commandes avec と et omet を. Chaque quantité reste liée à sa boisson. Les deux groupes peuvent changer d’ordre.",
+        "もう一杯お願いします ajoute encore un verre de la boisson déjà identifiée. 何杯（なんばい, nanbai）demande combien de verres. ですね sert ici à confirmer une information."
+      ],
+      "phrases": [
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P13"
+      ],
+      "dialogue": [
+        [
+          "Personnel",
+          "Qdrink"
+        ],
+        [
+          "Client",
+          "P12"
+        ],
+        [
+          "Personnel",
+          "Qcold"
+        ],
+        [
+          "Client",
+          "yes"
+        ],
+        [
+          "Client",
+          "extraglass"
+        ]
+      ],
+      "exercises": [
+        {
+          "id": "boissons-01",
+          "kind": "C",
+          "prompt": "Demandez de l’eau avec お願いします.",
+          "target": "P07",
+          "explanation": "お水を nomme ce qui est demandé ; お願いします formule la demande polie.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "boissons-02",
+          "kind": "C",
+          "prompt": "Vous choisissez le café chaud. Utilisez にします.",
+          "target": "P11",
+          "explanation": "にします annonce le choix ; をください demanderait de servir le produit.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "boissons-03",
+          "kind": "C",
+          "prompt": "Vous changez d’avis : choisissez le café glacé, avec にします.",
+          "target": "P12",
+          "explanation": "アイスコーヒー est le café glacé ; la structure de choix reste にします.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "boissons-04",
+          "kind": "C",
+          "prompt": "Commandez un verre de saké. La carte le sert au verre.",
+          "target": "P10",
+          "explanation": "一杯 se lit ippai et compte ici le verre de saké servi.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "boissons-05",
+          "kind": "C",
+          "prompt": "Commandez deux cafés et un verre de saké, sous forme de liste orale.",
+          "target": "mix",
+          "explanation": "と relie les deux groupes. Leurs ordres peuvent permuter, leurs quantités restent attachées.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              2,
+              1,
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "id": "boissons-06",
+          "kind": "C",
+          "prompt": "Votre verre est vide. Demandez encore un verre de la même boisson.",
+          "target": "extraglass",
+          "explanation": "もう ajoute « encore » ; 一杯 est un verre. Le contexte identifie la boisson.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "boissons-07",
+          "kind": "P",
+          "prompt": "Demandez deux cafés dans la construction explicite Nを数量ください.",
+          "target": "P08",
+          "explanation": "を suit le produit demandé. Son omission orale peut être naturelle, mais cette consigne exerce la construction explicite.",
+          "mode": "particle",
+          "fragment": "を",
+          "answer": "を",
+          "options": [
+            "を",
+            "に",
+            "で"
+          ],
+          "masked": {
+            "jp": "コーヒー［…］二つください。",
+            "kana": "コーヒー［…］ふたつください。",
+            "romaji": "koohii […]  futatsu kudasai."
+          }
+        },
+        {
+          "id": "boissons-08",
+          "kind": "P",
+          "prompt": "Annoncez votre choix de café chaud avec Nにします.",
+          "target": "P11",
+          "explanation": "に rattache le choix à します, sans exprimer une destination.",
+          "mode": "particle",
+          "fragment": "に",
+          "answer": "に",
+          "options": [
+            "に",
+            "を",
+            "で"
+          ],
+          "masked": {
+            "jp": "ホットコーヒー［…］します。",
+            "kana": "ホットコーヒー［…］します。",
+            "romaji": "hotto koohii […]  shimasu."
+          }
+        },
+        {
+          "id": "boissons-09",
+          "kind": "P",
+          "prompt": "Reliez deux commandes avec « et ».",
+          "target": "P13",
+          "explanation": "と relie les groupes avec leur quantité : deux cafés et une bière.",
+          "mode": "particle",
+          "fragment": "と",
+          "answer": "と",
+          "options": [
+            "と",
+            "に",
+            "が"
+          ],
+          "masked": {
+            "jp": "コーヒー二つ［…］ビール一つください。",
+            "kana": "コーヒーふたつ［…］ビールひとつください。",
+            "romaji": "koohii futatsu […]  biiru hitotsu kudasai."
+          }
+        },
+        {
+          "id": "boissons-10",
+          "kind": "P",
+          "prompt": "Pour choisir le café glacé, complétez cette phrase en します. Une demande en ください utiliserait を.",
+          "target": "P12",
+          "explanation": "Le verbe final décide de la construction : にします pour le choix, をください pour la demande.",
+          "mode": "particle",
+          "fragment": "に",
+          "answer": "に",
+          "options": [
+            "に",
+            "を",
+            "が"
+          ],
+          "masked": {
+            "jp": "アイスコーヒー［…］します。",
+            "kana": "アイスコーヒー［…］します。",
+            "romaji": "aisu koohii […]  shimasu."
+          }
+        },
+        {
+          "id": "boissons-11",
+          "kind": "D",
+          "prompt": "Vous vouliez bien un café chaud. Confirmez sans changer la commande.",
+          "target": "yes",
+          "explanation": "はい confirme le café chaud annoncé ; choisir le café glacé modifierait la commande.",
+          "mode": "choice",
+          "options": [
+            "yes",
+            "P12",
+            "P40"
+          ],
+          "context": "Qhot",
+          "wrong": null
+        },
+        {
+          "id": "boissons-12",
+          "kind": "D",
+          "prompt": "Vous commandez trois verres de bière. Répondez à la question de quantité.",
+          "target": "threeglass",
+          "explanation": "何杯 demande un nombre de verres. 三杯 se lit sanbai ; 三人 compterait des personnes.",
+          "mode": "choice",
+          "options": [
+            "threeglass",
+            "oneglass",
+            "P03"
+          ],
+          "context": "Qglasses",
+          "wrong": null
+        }
+      ],
+      "support": [
+        "Qdrink",
+        "Qcold",
+        "yes",
+        "extraglass",
+        "mix",
+        "Qhot",
+        "threeglass",
+        "Qglasses",
+        "P40",
+        "oneglass",
+        "P03"
+      ]
+    },
+    {
+      "id": "plats",
+      "title": "Choisir les plats",
+      "context": "Carte fictive : curry, udon et menu complet (定食). Le menu comprend riz et soupe miso. Les disponibilités sont précisées dans chaque exercice.",
+      "notes": [
+        "メニュー = carte ; 定食（ていしょく, teishoku）= menu complet ; カレー = curry ; うどん = nouilles udon. おすすめ（osusume）désigne ce qui est recommandé.",
+        "これ est autonome : これをください, « ceci, s’il vous plaît ». この doit précéder un nom : この定食にします, « je prends ce menu ». Ne dites pas このをください.",
+        "Nにします exprime votre choix ; Nをお願いします exprime votre demande. 何にしますか demande ce que vous choisissez ; おすすめは何ですか demande la recommandation.",
+        "うどんはありますか demande la disponibilité du plat nommé. ご飯とみそ汁がつきます annonce ce qui accompagne le menu : と relie le riz (ごはん, gohan) et la soupe miso (みそしる, misoshiru), が marque ce qui est compris.",
+        "あります signale ici la disponibilité ; つきます signifie ici « est compris / accompagne ». Apprenez ces réponses dans cette situation avant de reconstruire la phrase."
+      ],
+      "phrases": [
+        "P14",
+        "P15",
+        "P16",
+        "P17",
+        "P18",
+        "P19",
+        "P20"
+      ],
+      "dialogue": [
+        [
+          "Client",
+          "P14"
+        ],
+        [
+          "Client",
+          "P19"
+        ],
+        [
+          "Personnel",
+          "udonOK"
+        ],
+        [
+          "Client",
+          "P16"
+        ],
+        [
+          "Personnel",
+          "P20"
+        ]
+      ],
+      "exercises": [
+        {
+          "id": "plats-01",
+          "kind": "C",
+          "prompt": "Demandez la carte avec お願いします.",
+          "target": "P14",
+          "explanation": "メニューを indique ce qui est demandé.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "plats-02",
+          "kind": "C",
+          "prompt": "Vous montrez un menu complet. Annoncez votre choix avec この定食.",
+          "target": "P16",
+          "explanation": "この doit accompagner un nom : この定食. にします exprime le choix.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "plats-03",
+          "kind": "C",
+          "prompt": "Vous choisissez finalement le curry. Utilisez にします.",
+          "target": "P17",
+          "explanation": "カレー remplace le menu choisi ; にします conserve la fonction de choix.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "plats-04",
+          "kind": "C",
+          "prompt": "Demandez ce que le restaurant recommande.",
+          "target": "P18",
+          "explanation": "おすすめ est le thème de la question ; 何ですか demande ce que c’est.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "plats-05",
+          "kind": "C",
+          "prompt": "Le menu inclut riz et soupe miso. Reconstruisez la réponse du personnel.",
+          "target": "P20",
+          "explanation": "と relie les aliments ; が marque l’ensemble qui accompagne le menu ; つきます signifie ici « est compris ».",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "plats-06",
+          "kind": "P",
+          "prompt": "Demandez la carte avec la structure explicite en を.",
+          "target": "P14",
+          "explanation": "を suit メニュー, objet de la demande.",
+          "mode": "particle",
+          "fragment": "を",
+          "answer": "を",
+          "options": [
+            "を",
+            "に",
+            "が"
+          ],
+          "masked": {
+            "jp": "メニュー［…］お願いします。",
+            "kana": "メニュー［…］おねがいします。",
+            "romaji": "menyuu […]  onegai shimasu."
+          }
+        },
+        {
+          "id": "plats-07",
+          "kind": "P",
+          "prompt": "Choisissez ce menu complet avec にします.",
+          "target": "P16",
+          "explanation": "に rattache le menu choisi à します.",
+          "mode": "particle",
+          "fragment": "に",
+          "answer": "に",
+          "options": [
+            "に",
+            "を",
+            "で"
+          ],
+          "masked": {
+            "jp": "この定食［…］します。",
+            "kana": "このていしょく［…］します。",
+            "romaji": "kono teishoku […]  shimasu."
+          }
+        },
+        {
+          "id": "plats-08",
+          "kind": "P",
+          "prompt": "Dans la réponse du personnel, reliez riz et soupe avec « et ».",
+          "target": "P20",
+          "explanation": "と coordonne ご飯 et みそ汁 ; la suite がつきます concerne les deux.",
+          "mode": "particle",
+          "fragment": "と",
+          "answer": "と",
+          "options": [
+            "と",
+            "に",
+            "を"
+          ],
+          "masked": {
+            "jp": "ご飯［…］みそ汁がつきます。",
+            "kana": "ごはん［…］みそしるがつきます。",
+            "romaji": "gohan […]  misoshiru ga tsukimasu."
+          }
+        },
+        {
+          "id": "plats-09",
+          "kind": "P",
+          "prompt": "Vous avez déjà évoqué les udon. Posez-les comme thème de la question.",
+          "target": "P19",
+          "explanation": "は reprend ici les udon comme thème ; が permettrait une autre mise en contexte.",
+          "mode": "particle",
+          "fragment": "は",
+          "answer": "は",
+          "options": [
+            "は",
+            "を",
+            "に"
+          ],
+          "masked": {
+            "jp": "うどん［…］ありますか。",
+            "kana": "うどん［…］ありますか。",
+            "romaji": "udon […]  arimasu ka."
+          }
+        },
+        {
+          "id": "plats-10",
+          "kind": "P",
+          "prompt": "Annoncez ce qui est compris, avec la structure Nがつきます apprise.",
+          "target": "P20",
+          "explanation": "が marque ce qui accompagne le menu. を ne s’emploie pas avec ce sens de つきます.",
+          "mode": "particle",
+          "fragment": "が",
+          "answer": "が",
+          "options": [
+            "が",
+            "を",
+            "に"
+          ],
+          "masked": {
+            "jp": "ご飯とみそ汁［…］つきます。",
+            "kana": "ごはんとみそしる［…］つきます。",
+            "romaji": "gohan to misoshiru […]  tsukimasu."
+          }
+        },
+        {
+          "id": "plats-11",
+          "kind": "D",
+          "prompt": "Le personnel annonce les udon disponibles. Choisissez précisément ce plat.",
+          "target": "udonChoice",
+          "explanation": "うどんにします annonce votre choix des udon.",
+          "mode": "choice",
+          "options": [
+            "udonChoice",
+            "P17",
+            "P34"
+          ],
+          "context": "udonOK",
+          "wrong": null
+        },
+        {
+          "id": "plats-12",
+          "kind": "D",
+          "prompt": "Vous voulez le menu complet montré sur la carte. Répondez à la question.",
+          "target": "P16",
+          "explanation": "この定食にします répond au choix demandé ; l’addition et la recommandation sont d’autres actes.",
+          "mode": "choice",
+          "options": [
+            "P16",
+            "P34",
+            "P18"
+          ],
+          "context": "Qchoice",
+          "wrong": null
+        }
+      ],
+      "support": [
+        "udonOK",
+        "udonChoice",
+        "Qchoice",
+        "P34"
+      ]
+    },
+    {
+      "id": "quantites",
+      "title": "Préciser les quantités",
+      "context": "Au comptoir, vous montrez des portions et achetez des bouteilles d’eau fermées. Vous rectifiez une confirmation erronée.",
+      "notes": [
+        "La série utile : 一つ hitotsu, 二つ futatsu, 三つ mittsu, 四つ yottsu, 五つ itsutsu. Ce n’est pas une façon universelle de compter tous les objets.",
+        "Pour les bouteilles : 一本（いっぽん, ippon）, 二本（にほん, nihon）, 三本（さんぼん, sanbon）. Le son de 本 change ; apprenez la quantité entière. Ici 水（みず, mizu）est explicitement vendu en bouteilles ; au restaurant, de l’eau servie au verre utiliserait un autre contexte.",
+        "Dans 水を二本ください, を reste avec 水. Aucune particule n’est nécessaire après 二本. L’ordre 二本、水をください peut aussi mettre la quantité en avant ; les deux ordres préparés sont acceptés.",
+        "Pour deux produits : 水二本とサンドイッチ三つください. Lier les deux groupes avec と ; ne pas attribuer trois bouteilles à l’eau en inversant les groupes.",
+        "もう一つ ajoute encore une unité de l’article connu. Aではなく、Bです rectifie A en B : 二つではなく、三つです. Ce n’est pas une commande supplémentaire : le nouveau total est trois."
+      ],
+      "phrases": [
+        "P21",
+        "P22",
+        "P23",
+        "P24",
+        "P25",
+        "P26",
+        "P27"
+      ],
+      "dialogue": [
+        [
+          "Client",
+          "P25"
+        ],
+        [
+          "Personnel",
+          "Qbottles"
+        ],
+        [
+          "Client",
+          "correctBottles"
+        ],
+        [
+          "Personnel",
+          "confirmBottles"
+        ],
+        [
+          "Client",
+          "yes"
+        ]
+      ],
+      "exercises": [
+        {
+          "id": "quantites-01",
+          "kind": "C",
+          "prompt": "Vous montrez un article et en voulez quatre.",
+          "target": "P21",
+          "explanation": "四つ se lit yottsu. を accompagne これ ; la quantité ne reçoit pas de particule.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "quantites-02",
+          "kind": "C",
+          "prompt": "Passez de quatre à cinq portions de l’article montré.",
+          "target": "P22",
+          "explanation": "五つ se lit itsutsu : seule la quantité change.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "quantites-03",
+          "kind": "C",
+          "prompt": "Au comptoir, l’eau est vendue en bouteilles fermées. Demandez-en une.",
+          "target": "P23",
+          "explanation": "一本 se lit ippon ; 本 compte ici les bouteilles.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "quantites-04",
+          "kind": "C",
+          "prompt": "Dans la même boutique, demandez deux bouteilles d’eau.",
+          "target": "P24",
+          "explanation": "二本 se lit nihon, et non nippon. Le nombre fait varier la lecture.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "quantites-05",
+          "kind": "C",
+          "prompt": "Demandez maintenant trois bouteilles d’eau.",
+          "target": "P25",
+          "explanation": "三本 se lit sanbon ; le son de 本 change à nouveau.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "quantites-06",
+          "kind": "C",
+          "prompt": "Le personnel confirme deux portions, mais vous en voulez trois en tout. Rectifiez.",
+          "target": "P27",
+          "explanation": "Aではなく、Bです remplace A par B. Le total devient trois, on n’ajoute pas trois à deux.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "quantites-07",
+          "kind": "P",
+          "prompt": "Demandez deux bouteilles avec la structure explicite Nを数量ください.",
+          "target": "P24",
+          "explanation": "を reste avec 水, avant la quantité.",
+          "mode": "particle",
+          "fragment": "を",
+          "answer": "を",
+          "options": [
+            "を",
+            "に",
+            "で"
+          ],
+          "masked": {
+            "jp": "水［…］二本ください。",
+            "kana": "みず［…］にほんください。",
+            "romaji": "mizu […]  nihon kudasai."
+          }
+        },
+        {
+          "id": "quantites-08",
+          "kind": "P",
+          "prompt": "Reliez les deux groupes de cette commande.",
+          "target": "multi",
+          "explanation": "と relie deux bouteilles d’eau et trois sandwiches ; ne détachez pas leurs quantités.",
+          "mode": "particle",
+          "fragment": "と",
+          "answer": "と",
+          "options": [
+            "と",
+            "が",
+            "に"
+          ],
+          "masked": {
+            "jp": "水二本［…］サンドイッチ三つください。",
+            "kana": "みずにほん［…］サンドイッチみっつください。",
+            "romaji": "mizu nihon […]  sandoicchi mittsu kudasai."
+          }
+        },
+        {
+          "id": "quantites-09",
+          "kind": "P",
+          "prompt": "Faut-il ajouter une particule après 二本 dans cette demande ? Choisissez ∅ pour ne rien ajouter.",
+          "target": "P24",
+          "explanation": "La quantité 二本 se place directement avant ください, sans particule ajoutée.",
+          "mode": "after",
+          "fragment": "二本",
+          "answer": "∅",
+          "options": [
+            "∅",
+            "を",
+            "の"
+          ],
+          "masked": {
+            "jp": "水を二本［…］ください。",
+            "kana": "みずをにほん［…］ください。",
+            "romaji": "mizu o nihon […] kudasai."
+          }
+        },
+        {
+          "id": "quantites-10",
+          "kind": "P",
+          "prompt": "Complétez les deux emplacements : liaison des produits, puis fin de quantité. ∅ signifie aucune particule.",
+          "target": "multi",
+          "explanation": "と relie les commandes ; aucune particule n’est nécessaire après 三つ dans cette liste orale.",
+          "mode": "gaps",
+          "parts": [
+            "水二本",
+            "サンドイッチ三つ",
+            "ください。"
+          ],
+          "answers": [
+            "と",
+            "∅"
+          ],
+          "options": [
+            "と",
+            "を",
+            "に",
+            "∅"
+          ],
+          "masked": {
+            "jp": "水二本［1］サンドイッチ三つ［2］ください。",
+            "kana": "みずにほん［1］サンドイッチみっつ［2］ください。",
+            "romaji": "mizu nihon [1] sandoicchi mittsu [2] kudasai."
+          }
+        },
+        {
+          "id": "quantites-11",
+          "kind": "D",
+          "prompt": "Vous aviez demandé trois portions au total. Répondez à cette confirmation erronée.",
+          "target": "P27",
+          "explanation": "Rectifiez le total avec ではなく ; もう一つ ajouterait une unité sans expliciter le malentendu.",
+          "mode": "choice",
+          "options": [
+            "P27",
+            "yes",
+            "P26"
+          ],
+          "context": "Qtwo",
+          "wrong": null
+        },
+        {
+          "id": "quantites-12",
+          "kind": "R",
+          "prompt": "Vous achetez trois bouteilles fermées. Corrigez la phrase qui demande des verres.",
+          "target": "P25",
+          "explanation": "三杯 compte les verres de boisson ; dans cette vente en bouteilles, 三本 convient.",
+          "mode": "choice",
+          "options": [
+            "P25",
+            "wrongBottles",
+            "P24"
+          ],
+          "context": null,
+          "wrong": "wrongBottles"
+        }
+      ],
+      "support": [
+        "Qbottles",
+        "correctBottles",
+        "confirmBottles",
+        "yes",
+        "multi",
+        "Qtwo"
+      ]
+    },
+    {
+      "id": "emporter",
+      "title": "Acheter à emporter",
+      "context": "Dans cette boutique, les sandwiches sont disponibles sur place ou à emporter ; sacs et cuillères peuvent être demandés.",
+      "notes": [
+        "店内（てんない, tennai）= intérieur du magasin ; 持ち帰り（もちかえり, mochikaeri）= à emporter. 店内でお召し上がりですか est une question polie du personnel : il suffit d’abord de la reconnaître, sans produire vous-même ce registre honorifique.",
+        "持ち帰りでお願いします est une formule de demande « à emporter ». Le で précise ici la modalité choisie. Apprenez cette formule comme un ensemble.",
+        "ここで食べます = je mange ici. Ce で marque le lieu où l’action de manger a lieu. Ce n’est pas la même explication que le で de 持ち帰りで.",
+        "サンドイッチ = sandwich ; 袋（ふくろ, fukuro）= sac ; スプーン = cuillère. Nをお願いします demande l’objet. Pour les sandwiches, ajoutez 二つ avant ください.",
+        "Une confirmation en お持ち帰りですね signifie « c’est bien à emporter ». Si vous avez choisi de manger ici, répondez avec votre choix réel."
+      ],
+      "phrases": [
+        "P28",
+        "P29",
+        "P30",
+        "P31",
+        "P32",
+        "P33"
+      ],
+      "dialogue": [
+        [
+          "Personnel",
+          "P28"
+        ],
+        [
+          "Client",
+          "P29"
+        ],
+        [
+          "Client",
+          "P31"
+        ],
+        [
+          "Personnel",
+          "Qtake"
+        ],
+        [
+          "Client",
+          "yes"
+        ],
+        [
+          "Client",
+          "P32"
+        ]
+      ],
+      "exercises": [
+        {
+          "id": "emporter-01",
+          "kind": "C",
+          "prompt": "Demandez votre commande à emporter.",
+          "target": "P29",
+          "explanation": "持ち帰りでお願いします forme une demande de modalité « à emporter ».",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "emporter-02",
+          "kind": "C",
+          "prompt": "Répondez que vous mangez sur place, ici.",
+          "target": "P30",
+          "explanation": "ここで précise le lieu de l’action 食べます.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "emporter-03",
+          "kind": "C",
+          "prompt": "Dans cette boutique, demandez deux sandwiches.",
+          "target": "P31",
+          "explanation": "サンドイッチを désigne le produit ; 二つ donne la quantité.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "id": "emporter-04",
+          "kind": "C",
+          "prompt": "Vous avez besoin d’un sac. Demandez-le avec お願いします.",
+          "target": "P32",
+          "explanation": "袋 se lit fukuro ; を le rattache à la demande.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "emporter-05",
+          "kind": "C",
+          "prompt": "Demandez une cuillère avec お願いします.",
+          "target": "P33",
+          "explanation": "スプーン est la cuillère demandée ; ce n’est pas un compteur.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "emporter-06",
+          "kind": "P",
+          "prompt": "Complétez la formule de commande à emporter.",
+          "target": "P29",
+          "explanation": "で précise ici la modalité de la commande ; retenez la formule entière.",
+          "mode": "particle",
+          "fragment": "で",
+          "answer": "で",
+          "options": [
+            "で",
+            "に",
+            "を"
+          ],
+          "masked": {
+            "jp": "持ち帰り［…］お願いします。",
+            "kana": "もちかえり［…］おねがいします。",
+            "romaji": "mochikaeri […]  onegai shimasu."
+          }
+        },
+        {
+          "id": "emporter-07",
+          "kind": "P",
+          "prompt": "Vous mangez ici. Complétez le lieu de cette action.",
+          "target": "P30",
+          "explanation": "Avec 食べます, で marque le lieu où l’on mange.",
+          "mode": "particle",
+          "fragment": "で",
+          "answer": "で",
+          "options": [
+            "で",
+            "に",
+            "を"
+          ],
+          "masked": {
+            "jp": "ここ［…］食べます。",
+            "kana": "ここ［…］たべます。",
+            "romaji": "koko […]  tabemasu."
+          }
+        },
+        {
+          "id": "emporter-08",
+          "kind": "P",
+          "prompt": "Utilisez la structure explicite Nを数量ください pour les sandwiches.",
+          "target": "P31",
+          "explanation": "を désigne ce que vous demandez, avant la quantité.",
+          "mode": "particle",
+          "fragment": "を",
+          "answer": "を",
+          "options": [
+            "を",
+            "に",
+            "で"
+          ],
+          "masked": {
+            "jp": "サンドイッチ［…］二つください。",
+            "kana": "サンドイッチ［…］ふたつください。",
+            "romaji": "sandoicchi […]  futatsu kudasai."
+          }
+        },
+        {
+          "id": "emporter-09",
+          "kind": "P",
+          "prompt": "Demandez une cuillère avec la structure explicite Nをお願いします.",
+          "target": "P33",
+          "explanation": "を marque ici l’objet demandé.",
+          "mode": "particle",
+          "fragment": "を",
+          "answer": "を",
+          "options": [
+            "を",
+            "に",
+            "が"
+          ],
+          "masked": {
+            "jp": "スプーン［…］お願いします。",
+            "kana": "スプーン［…］おねがいします。",
+            "romaji": "supuun […]  onegai shimasu."
+          }
+        },
+        {
+          "id": "emporter-10",
+          "kind": "D",
+          "prompt": "Vous voulez emporter votre commande. Répondez au personnel.",
+          "target": "P29",
+          "explanation": "La question porte sur une consommation sur place ; indiquez clairement 持ち帰り.",
+          "mode": "choice",
+          "options": [
+            "P29",
+            "P30",
+            "P34"
+          ],
+          "context": "P28",
+          "wrong": null
+        },
+        {
+          "id": "emporter-11",
+          "kind": "D",
+          "prompt": "Vous aviez choisi de manger ici. Le personnel croit que c’est à emporter. Répondez en maintenant votre choix.",
+          "target": "P30",
+          "explanation": "ここで食べます rétablit le choix de manger ici.",
+          "mode": "choice",
+          "options": [
+            "P30",
+            "yes",
+            "P29"
+          ],
+          "context": "Qtake",
+          "wrong": null
+        },
+        {
+          "id": "emporter-12",
+          "kind": "R",
+          "prompt": "Vous devez partir avec votre commande. Remplacez la réponse « je mange ici ».",
+          "target": "P29",
+          "explanation": "持ち帰りでお願いします correspond à emporter ; demander un sac seul ne précise pas cette modalité.",
+          "mode": "choice",
+          "options": [
+            "P29",
+            "P30",
+            "P32"
+          ],
+          "context": null,
+          "wrong": "P30"
+        }
+      ],
+      "support": [
+        "Qtake",
+        "yes",
+        "P34"
+      ]
+    },
+    {
+      "id": "paiement",
+      "title": "Demander l’addition et payer",
+      "context": "Le repas est terminé. Les montants sont fictifs ; la réponse du personnel précise si la carte est acceptée.",
+      "notes": [
+        "お会計（おかいけい, okaikei）= addition / règlement. お会計をお願いします demande l’addition ; 全部でいくらですか demande combien cela fait en tout. 全部で (ぜんぶで, zenbu de) est à apprendre comme l’expression « en tout ».",
+        "Montants : 五百円（ごひゃくえん, gohyaku en）= 500 yens ; 千五百円（せんごひゃくえん, sen gohyaku en）= 1 500 ; 三千円（さんぜんえん, sanzen en）= 3 000. Le nombre et 円 sont juxtaposés : pas de の entre les deux.",
+        "払います（はらいます, haraimasu）= je paie ; 払えますか（はらえますか, haraemasu ka）= puis-je payer ? La forme en えます exprime ici la possibilité. カードで : par carte ; 現金で（げんきんで, genkin de）: en espèces. で indique le moyen de paiement.",
+        "カードは使えません（つかえません, tsukaemasen）signifie que la carte ne peut pas être utilisée. Dans cet exercice, les espèces sont acceptées ; adaptez votre réponse à cette information.",
+        "別々でお願いします（べつべつで, betsubetsu de）demande des paiements séparés. C’est une demande, pas une garantie que le commerce accepte. ごちそうさまでした remercie après le repas."
+      ],
+      "phrases": [
+        "P34",
+        "P35",
+        "P36",
+        "P37",
+        "P38",
+        "P39",
+        "P40"
+      ],
+      "dialogue": [
+        [
+          "Client",
+          "P34"
+        ],
+        [
+          "Personnel",
+          "P36"
+        ],
+        [
+          "Client",
+          "P37"
+        ],
+        [
+          "Personnel",
+          "cardOK"
+        ],
+        [
+          "Client",
+          "payCard"
+        ],
+        [
+          "Client",
+          "P40"
+        ]
+      ],
+      "exercises": [
+        {
+          "id": "paiement-01",
+          "kind": "C",
+          "prompt": "Le repas est terminé. Demandez l’addition.",
+          "target": "P34",
+          "explanation": "お会計をお願いします demande le règlement ; ce n’est pas une commande de plat.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "paiement-02",
+          "kind": "C",
+          "prompt": "Demandez combien cela fait en tout.",
+          "target": "P35",
+          "explanation": "全部で signifie « en tout » ; いくらですか demande le montant.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "paiement-03",
+          "kind": "C",
+          "prompt": "Annoncez que vous paierez en espèces.",
+          "target": "P38",
+          "explanation": "現金で précise le moyen ; 払います annonce le paiement.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "paiement-04",
+          "kind": "C",
+          "prompt": "Vous souhaitez régler séparément. Formulez la demande.",
+          "target": "P39",
+          "explanation": "別々でお願いします est une demande ; le personnel doit encore confirmer que c’est possible.",
+          "mode": "order",
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "paiement-05",
+          "kind": "P",
+          "prompt": "Demandez l’addition avec la structure explicite Nをお願いします.",
+          "target": "P34",
+          "explanation": "を marque ce qui est demandé : l’addition.",
+          "mode": "particle",
+          "fragment": "を",
+          "answer": "を",
+          "options": [
+            "を",
+            "に",
+            "が"
+          ],
+          "masked": {
+            "jp": "お会計［…］お願いします。",
+            "kana": "おかいけい［…］おねがいします。",
+            "romaji": "okaikei […]  onegai shimasu."
+          }
+        },
+        {
+          "id": "paiement-06",
+          "kind": "P",
+          "prompt": "Demandez si le paiement par carte est possible.",
+          "target": "P37",
+          "explanation": "で désigne le moyen de paiement ; 払えますか demande si c’est possible.",
+          "mode": "particle",
+          "fragment": "で",
+          "answer": "で",
+          "options": [
+            "で",
+            "を",
+            "に"
+          ],
+          "masked": {
+            "jp": "カード［…］払えますか。",
+            "kana": "カード［…］はらえますか。",
+            "romaji": "kaado […]  haraemasu ka."
+          }
+        },
+        {
+          "id": "paiement-07",
+          "kind": "P",
+          "prompt": "Complétez « en tout ». Ce で ne désigne pas un moyen de paiement.",
+          "target": "P35",
+          "explanation": "全部で est l’expression « en tout » ; il faut expliquer son emploi séparément de カードで.",
+          "mode": "particle",
+          "fragment": "で",
+          "answer": "で",
+          "options": [
+            "で",
+            "を",
+            "が"
+          ],
+          "masked": {
+            "jp": "全部［…］いくらですか。",
+            "kana": "ぜんぶ［…］いくらですか。",
+            "romaji": "zenbu […]  ikura desu ka."
+          }
+        },
+        {
+          "id": "paiement-08",
+          "kind": "D",
+          "prompt": "Écoutez le montant annoncé et choisissez le total correspondant.",
+          "target": "P36",
+          "explanation": "千五百 = mille cinq cents ; 三千 se lit sanzen et vaut trois mille.",
+          "mode": "amount",
+          "options": [
+            "500 ¥",
+            "1 500 ¥",
+            "3 000 ¥"
+          ],
+          "context": "P36",
+          "wrong": null,
+          "answer": "1 500 ¥"
+        },
+        {
+          "id": "paiement-09",
+          "kind": "D",
+          "prompt": "La boutique accepte les espèces. Après cette réponse sur la carte, annoncez un moyen accepté.",
+          "target": "P38",
+          "explanation": "カードは使えません indique que la carte n’est pas utilisable. Ici, répondez que vous payez en espèces.",
+          "mode": "choice",
+          "options": [
+            "payCard",
+            "P38",
+            "P37"
+          ],
+          "context": "cardNo",
+          "wrong": null
+        },
+        {
+          "id": "paiement-10",
+          "kind": "D",
+          "prompt": "Le paiement est terminé et vous partez. Remerciez pour le repas.",
+          "target": "P40",
+          "explanation": "ごちそうさまでした est le remerciement après le repas ; l’addition a déjà été réglée.",
+          "mode": "choice",
+          "options": [
+            "P40",
+            "P34",
+            "P35"
+          ],
+          "context": null,
+          "wrong": null
+        },
+        {
+          "id": "paiement-11",
+          "kind": "R",
+          "prompt": "Vous connaissez déjà le prix. Vous vouliez demander l’addition, pas demander le total. Corrigez.",
+          "target": "P34",
+          "explanation": "お会計をお願いします demande l’addition ; 全部でいくらですか demande le montant.",
+          "mode": "choice",
+          "options": [
+            "P34",
+            "P35",
+            "P37"
+          ],
+          "context": null,
+          "wrong": "P35"
+        },
+        {
+          "id": "paiement-12",
+          "kind": "R",
+          "prompt": "Le total est 1 500 yens. Corrigez la particule inutile dans le montant.",
+          "target": "P36",
+          "explanation": "千五百円 associe directement le nombre et 円, sans の.",
+          "mode": "choice",
+          "options": [
+            "P36",
+            "wrongYen",
+            "3000"
+          ],
+          "context": null,
+          "wrong": "wrongYen"
+        }
+      ],
+      "support": [
+        "cardOK",
+        "payCard",
+        "cardNo",
+        "500",
+        "3000"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "TUFS — compteurs",
+      "url": "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/explanation/017.html"
+    },
+    {
+      "title": "Irodori — au restaurant",
+      "url": "https://www.irodori.jpf.go.jp/assets/data/elementary02/pdf/Z_L03.pdf"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "version": "1.7.0",
-  "date": "2026-10-09",
+  "version": "1.8.0",
+  "date": "2026-10-12",
   "titre": "Grammaire des leçons — 30 fiches",
   "langue_explications": "fr",
   "affichage": {
@@ -7608,6 +7608,58 @@
               "fr": "Une bière et deux cafés, s’il vous plaît."
             }
           ]
+        },
+        {
+          "texte": "Extension du parcours pratique — quatre et cinq unités ; trois et quatre personnes. Ces lectures sont enseignées dans le parcours, sans être ajoutées automatiquement à la révision des leçons.",
+          "formes": [
+            {
+              "jp": "四つ",
+              "kana": "よっつ",
+              "romaji": "yottsu",
+              "fr": "quatre unités"
+            },
+            {
+              "jp": "五つ",
+              "kana": "いつつ",
+              "romaji": "itsutsu",
+              "fr": "cinq unités"
+            },
+            {
+              "jp": "三人です。",
+              "kana": "さんにんです。",
+              "romaji": "sannin desu.",
+              "fr": "Nous sommes trois."
+            },
+            {
+              "jp": "四人です。",
+              "kana": "よにんです。",
+              "romaji": "yonin desu.",
+              "fr": "Nous sommes quatre."
+            }
+          ]
+        },
+        {
+          "texte": "Extension du parcours pratique — bouteilles d’eau fermées vendues au comptoir. Apprendre la lecture complète ; 本 ne remplace pas 杯 pour une boisson servie au verre.",
+          "formes": [
+            {
+              "jp": "水を一本ください。",
+              "kana": "みずをいっぽんください。",
+              "romaji": "mizu o ippon kudasai.",
+              "fr": "Une bouteille d’eau, s’il vous plaît."
+            },
+            {
+              "jp": "水を二本ください。",
+              "kana": "みずをにほんください。",
+              "romaji": "mizu o nihon kudasai.",
+              "fr": "Deux bouteilles d’eau, s’il vous plaît."
+            },
+            {
+              "jp": "水を三本ください。",
+              "kana": "みずをさんぼんください。",
+              "romaji": "mizu o sanbon kudasai.",
+              "fr": "Trois bouteilles d’eau, s’il vous plaît."
+            }
+          ]
         }
       ],
       "pieges": [
@@ -7725,7 +7777,7 @@
         "G12",
         "G17"
       ],
-      "pour_aller_plus_loin": "",
+      "pour_aller_plus_loin": "Le parcours pratique « Commander et compter », dans l’Atelier, enseigne six situations, puis propose 72 exercices indépendants de la progression par leçon. Les quatre exercices de cette fiche sont conservés.",
       "lecons": [
         "N15",
         "N27",
