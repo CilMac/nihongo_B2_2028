@@ -168,9 +168,9 @@ function renderSimpleDecorticage(segments) {
   const complement=extra || hasBase;
   return `<tr><td class="jp" lang="ja">${jp(part.jp)}</td>
   <td class="analysis-reading"><button class="kana kana-audio" lang="ja" data-speak="${esc(part.audioKana || part.kana)}" aria-label="Écouter : ${esc(part.kana)}">${esc(part.kana || 'Lecture à préciser')}<span aria-hidden="true"> ♪</span></button><span class="romaji">${esc(Romaji.display(part.romaji || 'Lecture à préciser'))}</span></td>
-  <td class="analysis-meaning"><div class="fr"><span>${esc(part.fr)}</span>${role && role!==part.fr ? `<span class="analysis-simple-role">${esc(role)}</span>` : ''}</div>
+  <td class="analysis-meaning"><div class="fr"><span>${esc(part.fr)}</span>${role && role!==part.fr ? `<span class="analysis-simple-role">${esc(ExplanationReadings.explain(role))}</span>` : ''}</div>
   ${complement ? `<details class="analysis-extra"><summary aria-label="Complément pour ${esc(part.jp)}" title="En savoir plus"><span aria-hidden="true">⌄</span></summary>
-  ${extra ? `<p class="fr">${esc(extra)}</p>` : ''}
+  ${extra ? `<p class="fr">${esc(ExplanationReadings.explain(extra))}</p>` : ''}
   ${hasBase ? `<p class="muted">Forme de dictionnaire</p>${block({jp:base.mot,kana:base.kana,romaji:base.romaji,fr:base.fr},{audio:false})}` : ''}
   </details>` : ''}
   ${part.wordId ? `<a class="analysis-word-link dictionary-icon" href="#dictionnaire/${esc(part.wordId)}" aria-label="Voir ${esc(part.jp)} dans le dictionnaire" title="Voir dans le dictionnaire"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3h15v18H6a2 2 0 0 1-2-2V3Zm0 14h15M8 3v14"/><path d="M11 7h5m-5 4h5"/></svg></a>` : ''}</td></tr>`;
@@ -184,7 +184,7 @@ function renderDecorticage(row) {
  ${result.structure ? `<p>${esc(result.structure)}</p>` : ''}
  ${result.literal ? `<div class="analysis-literal"><h3>Dans l’ordre japonais</h3><p class="romaji analysis-romaji">${esc(analysisBracketedRomaji(row,result))}</p><p class="literal-gloss fr"><em>(${esc(result.literal)})</em></p><p class="muted">Lecture indicative dans l’ordre japonais ; les crochets précisent le rôle ou la forme.</p></div>` : ''}
  ${renderSimpleDecorticage(result.segments)}
- ${result.note ? `<details class="analysis-context"><summary>Précision de contexte</summary><p class="fr">${esc(result.note)}</p></details>` : ''}
+ ${result.note ? `<details class="analysis-context"><summary>Précision de contexte</summary><p class="fr">${esc(ExplanationReadings.explain(result.note))}</p></details>` : ''}
  <details class="analysis-method"><summary>Sources et méthode</summary>
  <p>Le calcul se fait dans votre navigateur, sans appel à une IA. La traduction vient de la leçon. ${result.literalOrigin === 'automatic' ? 'La lecture dans l’ordre japonais est assemblée automatiquement ; certains sens et rôles demandent encore le contexte.' : 'La lecture dans l’ordre japonais a été préparée pour cet exemple.'}</p>
  <ul>${Object.entries(result.counts).filter(([,n])=>n).map(([key,n])=>`<li>${labels[key]} : ${n} groupe${n>1?'s':''}.</li>`).join('')}</ul>

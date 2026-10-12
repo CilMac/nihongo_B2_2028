@@ -234,7 +234,7 @@ function guideNoteMarkup(text,node,format=guideMarked){
   const match=part.match(/^\[note (\d+)\]$/i);if(!match)return format(part);
   const note=guideData?.footnotes.find(n=>String(n.number)===match[1]);if(!note)return format(part);
   const id=(typeof node==='string'?node:guideNodeIds.get(node)||'guide')+'-note-'+match[1];
-  return `<button type="button" class="guide-note-call" popovertarget="${id}" aria-label="Lire la note ${match[1]}">[${match[1]}]</button><span popover id="${id}" class="guide-note-popover" lang="fr"><strong>Note ${match[1]}</strong><span>${esc(note.text)}</span><button type="button" popovertarget="${id}" popovertargetaction="hide">Fermer</button></span>`;
+  return `<button type="button" class="guide-note-call" popovertarget="${id}" aria-label="Lire la note ${match[1]}">[${match[1]}]</button><span popover id="${id}" class="guide-note-popover" lang="fr"><strong>Note ${match[1]}</strong><span>${esc(ExplanationReadings.explain(note.text))}</span><button type="button" popovertarget="${id}" popovertargetaction="hide">Fermer</button></span>`;
  }).join('');
 }
 function guideReadingText(node){
@@ -264,7 +264,7 @@ function guideParagraphContent(node,marked=false){
   if(/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u.test(r.text)&&!/[a-zA-ZÀ-ÖØ-öø-ÿ]/.test(r.text))return `<span class="guide-japanese" lang="ja"><button class="guide-speak" data-speak="${esc(r.text)}" aria-label="Écouter : ${esc(r.text)}">${fragment} ♪</button></span>`;
   return fragment;
  }).join(''):guideNoteMarkup(text,node,format);
- return `<p>${content}</p>`;
+ return ExplanationReadings.html(`<p>${content}</p>`);
 }
 // Liste fermée des 20 correspondances relues ; aucune découpe globale des barres.
 const guideReviewedPairs={
@@ -378,7 +378,7 @@ function guideRenderTable(node,chapter,id,context,favorite){
    }).join('')}</tr>`;
   });
  }).join('');
- return `${['tpc-22','tpc-23'].includes(chapter)?'<p class="guide-table-explanation">Les traductions utilisent « je » comme exemple ; le sujet et le temps présent ou futur dépendent du contexte. La forme en て relie le verbe à la suite.</p>':''}<div id="${id}" class="guide-table-scroll${cards?' guide-table-cards':''}" tabindex="0" role="region" aria-label="${esc(title)} — tableau"><table class="guide-table"><caption>${esc(title)} ${favorite}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
+ return `${['tpc-22','tpc-23'].includes(chapter)?'<p class="guide-table-explanation">Les traductions utilisent « je » comme exemple ; le sujet et le temps présent ou futur dépendent du contexte. La forme en て (te) relie le verbe à la suite.</p>':''}<div id="${id}" class="guide-table-scroll${cards?' guide-table-cards':''}" tabindex="0" role="region" aria-label="${esc(title)} — tableau"><table class="guide-table"><caption>${esc(title)} ${favorite}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 function guideHome(){
  const order=['Introduction','Initiation','Conversation','Les indispensables'];
@@ -596,9 +596,9 @@ function guideSpoken(text){
 }
 function guideEditorialNote(id){
  const note=guideEditorial.nodes[id]?.note;
- return note?`<aside class="guide-editorial-note"><strong>Repère de lecture</strong> ${esc(note)}</aside>`:'';
+ return note?`<aside class="guide-editorial-note"><strong>Repère de lecture</strong> ${esc(ExplanationReadings.explain(note))}</aside>`:'';
 }
-function guideVocabularyNote(v){return v.note?`<aside class="guide-editorial-note">${esc(v.note)}</aside>`:'';}
+function guideVocabularyNote(v){return v.note?`<aside class="guide-editorial-note">${esc(ExplanationReadings.explain(v.note))}</aside>`:'';}
 function guideGroupedVocabulary(v,lexicon=false){
  return `<article class="${lexicon?'guide-lexicon-row':'guide-vocab-row'} guide-grouped-entry"${lexicon?` data-lexicon-id="${esc(v.id)}"`:''}><div>${guideExpressionVariantBody(v.table)}</div><div class="guide-vocab-source">${guideFavoriteStar(guideFavoriteKey(v.table.chapter.id,v.sourceId))}<small>${esc(v.table.chapter.title)} · ${esc(v.section)}</small><a href="#guide/${v.table.chapter.id}/${v.sourceId}">Voir dans le guide →</a></div></article>`;
 }

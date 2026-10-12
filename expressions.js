@@ -51,8 +51,8 @@
    <div class="card-head"><span class="number">${esc(e.category)}</span><div class="card-actions">${star(favorite(collection,e.id))}<button type="button" class="expression-listen" data-speak="${esc(e.japanese)}" aria-label="Écouter en synthèse : ${esc(e.japanese)}">▶</button></div></div>
    ${block({jp:e.japanese,kana:e.kana,romaji:e.romaji,fr:e.fr},{audio:false,audioText:e.japanese})}
    <p class="expression-register"><span class="pill">${esc(e.register)}</span></p>
-   ${e.caution?`<p class="expression-caution"><strong>À savoir :</strong> ${esc(e.caution)}</p>`:''}
-   <details><summary>Contexte et nuance</summary><p>${esc(e.usage)}</p><p>${esc(e.note)}</p></details>
+   ${e.caution?`<p class="expression-caution"><strong>À savoir :</strong> ${esc(ExplanationReadings.explain(e.caution))}</p>`:''}
+   <details><summary>Contexte et nuance</summary><p>${esc(ExplanationReadings.explain(e.usage))}</p><p>${esc(ExplanationReadings.explain(e.note))}</p></details>
    ${searchId?`<p class="corpus-actions"><a href="${href(collection,e.id)}" data-corpus-open="${esc(searchId)}">Ouvrir le passage →</a></p>`:''}
   </article>`;
  }

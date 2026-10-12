@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "title": "Commander et compter",
   "origin": "Parcours éditorial indépendant de la progression des leçons",
   "phrases": {
@@ -1423,12 +1423,47 @@
               0,
               1
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            },
+            {
+              "jp": "四人",
+              "kana": "よにん",
+              "romaji": "yonin"
+            },
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            },
+            {
+              "jp": "して",
+              "kana": "して",
+              "romaji": "shite"
+            }
+          ],
+          "answerLength": 2,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "accueil-02",
           "kind": "C",
-          "prompt": "Vous étiez trois, une amie vous rejoint. Annoncez le nouvel effectif.",
+          "prompt": "Une amie rejoint votre groupe de trois. Transformez la phrase pour annoncer le nouvel effectif.",
           "target": "P04",
           "explanation": "四人 se lit yonin : vous êtes désormais quatre, sans 様 pour votre groupe.",
           "mode": "order",
@@ -1437,7 +1472,43 @@
               0,
               1
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "四人",
+              "kana": "よにん",
+              "romaji": "yonin"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            },
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            },
+            {
+              "jp": "して",
+              "kana": "して",
+              "romaji": "shite"
+            }
+          ],
+          "answerLength": 2,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "P03"
         },
         {
           "id": "accueil-03",
@@ -1449,63 +1520,138 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            },
+            {
+              "jp": "して",
+              "kana": "して",
+              "romaji": "shite"
+            },
+            {
+              "jp": "います。",
+              "kana": "います。",
+              "romaji": "imasu."
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "四人",
+              "kana": "よにん",
+              "romaji": "yonin"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "accueil-04",
           "kind": "C",
-          "prompt": "Cette fois vous n’avez pas réservé. Utilisez していません.",
+          "prompt": "Transformez cette réponse : cette fois, vous n’avez pas de réservation.",
           "target": "P06",
           "explanation": "していません est la réponse négative apprise ; しています affirmerait une réservation.",
           "mode": "order",
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            },
+            {
+              "jp": "して",
+              "kana": "して",
+              "romaji": "shite"
+            },
+            {
+              "jp": "いません。",
+              "kana": "いません。",
+              "romaji": "imasen."
+            },
+            {
+              "jp": "います。",
+              "kana": "います。",
+              "romaji": "imasu."
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "P05"
         },
         {
           "id": "accueil-05",
           "kind": "P",
-          "prompt": "Le personnel pose la réservation comme thème. Complétez avec la particule de thème.",
+          "prompt": "Le personnel pose la réservation comme thème. Retrouvez la particule de thème.",
           "target": "Qreservation",
           "explanation": "は pose ici 予約 comme thème ; une question avec が serait aussi possible dans un autre cadrage.",
           "mode": "particle",
           "fragment": "は",
           "answer": "は",
-          "options": [
-            "は",
-            "を",
-            "に"
-          ],
           "masked": {
             "jp": "予約［…］ありますか。",
             "kana": "よやく［…］ありますか。",
             "romaji": "yoyaku […]  arimasu ka."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "accueil-06",
           "kind": "P",
-          "prompt": "Annoncez l’existence d’une réservation avec la structure Nが あります enseignée.",
+          "prompt": "Annoncez l’existence d’une réservation : retrouvez la particule de la structure étudiée.",
           "target": "Rreservation",
           "explanation": "が marque ce dont on annonce l’existence. は pourrait changer la mise en contexte ; il n’est pas proposé comme faute universelle.",
           "mode": "particle",
           "fragment": "が",
           "answer": "が",
-          "options": [
-            "が",
-            "を",
-            "に"
-          ],
           "masked": {
             "jp": "予約［…］あります。",
             "kana": "よやく［…］あります。",
             "romaji": "yoyaku […]  arimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "accueil-07",
@@ -1513,14 +1659,50 @@
           "prompt": "Vous êtes trois. Répondez au personnel.",
           "target": "P03",
           "explanation": "三人です répond à la question de nombre ; répéter 何名様ですか ne donne pas votre effectif.",
-          "mode": "choice",
-          "options": [
-            "P03",
-            "P04",
-            "P01"
-          ],
+          "mode": "order",
           "context": "P01",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "四人",
+              "kana": "よにん",
+              "romaji": "yonin"
+            },
+            {
+              "jp": "何名様",
+              "kana": "なんめいさま",
+              "romaji": "nanmei sama"
+            },
+            {
+              "jp": "です",
+              "kana": "です",
+              "romaji": "desu"
+            },
+            {
+              "jp": "か。",
+              "kana": "か。",
+              "romaji": "ka."
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ],
+          "answerLength": 2,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "accueil-08",
@@ -1528,14 +1710,56 @@
           "prompt": "Vous venez d’annoncer quatre personnes. Vous n’avez pas réservé : répondez maintenant à cette question.",
           "target": "P06",
           "explanation": "Le nombre a déjà été donné. La nouvelle question porte sur la réservation.",
-          "mode": "choice",
-          "options": [
-            "P04",
-            "P05",
-            "P06"
-          ],
+          "mode": "order",
           "context": "Qreservation",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            },
+            {
+              "jp": "して",
+              "kana": "して",
+              "romaji": "shite"
+            },
+            {
+              "jp": "いません。",
+              "kana": "いません。",
+              "romaji": "imasen."
+            },
+            {
+              "jp": "四人",
+              "kana": "よにん",
+              "romaji": "yonin"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "います。",
+              "kana": "います。",
+              "romaji": "imasu."
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "accueil-09",
@@ -1543,14 +1767,50 @@
           "prompt": "Le personnel vous croit seul, mais vous êtes trois. Rectifiez.",
           "target": "P03",
           "explanation": "お一人様ですか demande si vous êtes seul. Donnez le vrai nombre.",
-          "mode": "choice",
-          "options": [
-            "yes",
-            "P03",
-            "P02"
-          ],
+          "mode": "order",
           "context": "Qseul",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "はい。",
+              "kana": "はい。",
+              "romaji": "hai."
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            },
+            {
+              "jp": "四人",
+              "kana": "よにん",
+              "romaji": "yonin"
+            },
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ],
+          "answerLength": 2,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "accueil-10",
@@ -1558,14 +1818,56 @@
           "prompt": "Vous avez une réservation. Quelle réponse correspond à la question ?",
           "target": "P05",
           "explanation": "Répondez sur la réservation et non sur le nombre de personnes.",
-          "mode": "choice",
-          "options": [
-            "P05",
-            "P03",
-            "P06"
-          ],
+          "mode": "order",
           "context": "Qreservation",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            },
+            {
+              "jp": "して",
+              "kana": "して",
+              "romaji": "shite"
+            },
+            {
+              "jp": "います。",
+              "kana": "います。",
+              "romaji": "imasu."
+            },
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "いません。",
+              "kana": "いません。",
+              "romaji": "imasen."
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "accueil-11",
@@ -1573,14 +1875,50 @@
           "prompt": "Vous voulez annoncer trois personnes. Remplacez la réponse inadaptée.",
           "target": "P03",
           "explanation": "つ compte ici des unités ; pour des personnes, 三人 se lit sannin.",
-          "mode": "choice",
-          "options": [
-            "P03",
-            "P04",
-            "wrongPeople"
-          ],
+          "mode": "order",
           "context": null,
-          "wrong": "wrongPeople"
+          "wrong": "wrongPeople",
+          "bank": [
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "四人",
+              "kana": "よにん",
+              "romaji": "yonin"
+            },
+            {
+              "jp": "三つ",
+              "kana": "みっつ",
+              "romaji": "mittsu"
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            },
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ],
+          "answerLength": 2,
+          "activity": "Corriger et reconstruire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "accueil-12",
@@ -1588,14 +1926,50 @@
           "prompt": "Annoncez votre propre groupe de trois sans honorifique envers vous-même.",
           "target": "P03",
           "explanation": "Le personnel honore les clients avec 様. Dans votre réponse pour vous-même, 三人です suffit.",
-          "mode": "choice",
-          "options": [
-            "wrongHonor",
-            "P03",
-            "P02"
-          ],
+          "mode": "order",
           "context": null,
-          "wrong": "wrongHonor"
+          "wrong": "wrongHonor",
+          "bank": [
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "三名様",
+              "kana": "さんめいさま",
+              "romaji": "sanmei sama"
+            },
+            {
+              "jp": "二人",
+              "kana": "ふたり",
+              "romaji": "futari"
+            },
+            {
+              "jp": "四人",
+              "kana": "よにん",
+              "romaji": "yonin"
+            },
+            {
+              "jp": "予約",
+              "kana": "よやく",
+              "romaji": "yoyaku"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ],
+          "answerLength": 2,
+          "activity": "Corriger et reconstruire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         }
       ],
       "support": [
@@ -1658,9 +2032,50 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "お水",
+              "kana": "おみず",
+              "romaji": "omizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "コーヒー",
+              "kana": "コーヒー",
+              "romaji": "koohii"
+            },
+            {
+              "jp": "二つ",
+              "kana": "ふたつ",
+              "romaji": "futatsu"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "ビール",
+              "kana": "ビール",
+              "romaji": "biiru"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "boissons-02",
@@ -1672,23 +2087,106 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "ホットコーヒー",
+              "kana": "ホットコーヒー",
+              "romaji": "hotto koohii"
+            },
+            {
+              "jp": "に",
+              "kana": "に",
+              "romaji": "ni"
+            },
+            {
+              "jp": "します。",
+              "kana": "します。",
+              "romaji": "shimasu."
+            },
+            {
+              "jp": "お水",
+              "kana": "おみず",
+              "romaji": "omizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "コーヒー",
+              "kana": "コーヒー",
+              "romaji": "koohii"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "boissons-03",
           "kind": "C",
-          "prompt": "Vous changez d’avis : choisissez le café glacé, avec にします.",
+          "prompt": "Vous changez d’avis : transformez votre choix en café glacé.",
           "target": "P12",
           "explanation": "アイスコーヒー est le café glacé ; la structure de choix reste にします.",
           "mode": "order",
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "アイスコーヒー",
+              "kana": "アイスコーヒー",
+              "romaji": "aisu koohii"
+            },
+            {
+              "jp": "に",
+              "kana": "に",
+              "romaji": "ni"
+            },
+            {
+              "jp": "します。",
+              "kana": "します。",
+              "romaji": "shimasu."
+            },
+            {
+              "jp": "ホットコーヒー",
+              "kana": "ホットコーヒー",
+              "romaji": "hotto koohii"
+            },
+            {
+              "jp": "お水",
+              "kana": "おみず",
+              "romaji": "omizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "P11"
         },
         {
           "id": "boissons-04",
@@ -1701,14 +2199,61 @@
             [
               0,
               1,
-              2
+              2,
+              3
             ],
             [
-              1,
+              2,
               0,
-              2
+              1,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "日本酒",
+              "kana": "にほんしゅ",
+              "romaji": "nihonshu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "一杯",
+              "kana": "いっぱい",
+              "romaji": "ippai"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "お水",
+              "kana": "おみず",
+              "romaji": "omizu"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "コーヒー",
+              "kana": "コーヒー",
+              "romaji": "koohii"
+            },
+            {
+              "jp": "二つ",
+              "kana": "ふたつ",
+              "romaji": "futatsu"
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "boissons-05",
@@ -1722,15 +2267,74 @@
               0,
               1,
               2,
-              3
+              3,
+              4,
+              5
             ],
             [
+              3,
+              4,
               2,
-              1,
               0,
-              3
+              1,
+              5
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "コーヒー",
+              "kana": "コーヒー",
+              "romaji": "koohii"
+            },
+            {
+              "jp": "二つ",
+              "kana": "ふたつ",
+              "romaji": "futatsu"
+            },
+            {
+              "jp": "と",
+              "kana": "と",
+              "romaji": "to"
+            },
+            {
+              "jp": "日本酒",
+              "kana": "にほんしゅ",
+              "romaji": "nihonshu"
+            },
+            {
+              "jp": "一杯",
+              "kana": "いっぱい",
+              "romaji": "ippai"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "お水",
+              "kana": "おみず",
+              "romaji": "omizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "ビール",
+              "kana": "ビール",
+              "romaji": "biiru"
+            }
+          ],
+          "answerLength": 6,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "boissons-06",
@@ -1742,49 +2346,82 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "もう",
+              "kana": "もう",
+              "romaji": "mou"
+            },
+            {
+              "jp": "一杯",
+              "kana": "いっぱい",
+              "romaji": "ippai"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "お水",
+              "kana": "おみず",
+              "romaji": "omizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "コーヒー",
+              "kana": "コーヒー",
+              "romaji": "koohii"
+            },
+            {
+              "jp": "二つ",
+              "kana": "ふたつ",
+              "romaji": "futatsu"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "boissons-07",
           "kind": "P",
-          "prompt": "Demandez deux cafés dans la construction explicite Nを数量ください.",
+          "prompt": "Deux cafés, s’il vous plaît : retrouvez la particule qui marque le produit demandé, sans omission orale.",
           "target": "P08",
           "explanation": "を suit le produit demandé. Son omission orale peut être naturelle, mais cette consigne exerce la construction explicite.",
           "mode": "particle",
           "fragment": "を",
           "answer": "を",
-          "options": [
-            "を",
-            "に",
-            "で"
-          ],
           "masked": {
             "jp": "コーヒー［…］二つください。",
             "kana": "コーヒー［…］ふたつください。",
             "romaji": "koohii […]  futatsu kudasai."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "boissons-08",
           "kind": "P",
-          "prompt": "Annoncez votre choix de café chaud avec Nにします.",
+          "prompt": "Vous choisissez le café chaud : retrouvez la particule du choix.",
           "target": "P11",
           "explanation": "に rattache le choix à します, sans exprimer une destination.",
           "mode": "particle",
           "fragment": "に",
           "answer": "に",
-          "options": [
-            "に",
-            "を",
-            "で"
-          ],
           "masked": {
             "jp": "ホットコーヒー［…］します。",
             "kana": "ホットコーヒー［…］します。",
             "romaji": "hotto koohii […]  shimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "boissons-09",
@@ -1795,51 +2432,85 @@
           "mode": "particle",
           "fragment": "と",
           "answer": "と",
-          "options": [
-            "と",
-            "に",
-            "が"
-          ],
           "masked": {
             "jp": "コーヒー二つ［…］ビール一つください。",
             "kana": "コーヒーふたつ［…］ビールひとつください。",
             "romaji": "koohii futatsu […]  biiru hitotsu kudasai."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "boissons-10",
           "kind": "P",
-          "prompt": "Pour choisir le café glacé, complétez cette phrase en します. Une demande en ください utiliserait を.",
+          "prompt": "Vous choisissez le café glacé : retrouvez la particule qui convient au verbe final.",
           "target": "P12",
           "explanation": "Le verbe final décide de la construction : にします pour le choix, をください pour la demande.",
           "mode": "particle",
           "fragment": "に",
           "answer": "に",
-          "options": [
-            "に",
-            "を",
-            "が"
-          ],
           "masked": {
             "jp": "アイスコーヒー［…］します。",
             "kana": "アイスコーヒー［…］します。",
             "romaji": "aisu koohii […]  shimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "boissons-11",
           "kind": "D",
-          "prompt": "Vous vouliez bien un café chaud. Confirmez sans changer la commande.",
-          "target": "yes",
-          "explanation": "はい confirme le café chaud annoncé ; choisir le café glacé modifierait la commande.",
-          "mode": "choice",
-          "options": [
-            "yes",
-            "P12",
-            "P40"
-          ],
+          "prompt": "Confirmez votre choix en reformulant : vous prenez un café chaud. Employez la construction de choix.",
+          "target": "P11",
+          "explanation": "ホットコーヒーにします reformule le choix confirmé. Un simple はい serait naturel, mais ici on exerce la phrase de choix complète.",
+          "mode": "order",
           "context": "Qhot",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "ホットコーヒー",
+              "kana": "ホットコーヒー",
+              "romaji": "hotto koohii"
+            },
+            {
+              "jp": "に",
+              "kana": "に",
+              "romaji": "ni"
+            },
+            {
+              "jp": "します。",
+              "kana": "します。",
+              "romaji": "shimasu."
+            },
+            {
+              "jp": "はい。",
+              "kana": "はい。",
+              "romaji": "hai."
+            },
+            {
+              "jp": "アイスコーヒー",
+              "kana": "アイスコーヒー",
+              "romaji": "aisu koohii"
+            },
+            {
+              "jp": "ごちそうさま",
+              "kana": "ごちそうさま",
+              "romaji": "gochisousama"
+            },
+            {
+              "jp": "でした。",
+              "kana": "でした。",
+              "romaji": "deshita."
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "boissons-12",
@@ -1847,14 +2518,50 @@
           "prompt": "Vous commandez trois verres de bière. Répondez à la question de quantité.",
           "target": "threeglass",
           "explanation": "何杯 demande un nombre de verres. 三杯 se lit sanbai ; 三人 compterait des personnes.",
-          "mode": "choice",
-          "options": [
-            "threeglass",
-            "oneglass",
-            "P03"
-          ],
+          "mode": "order",
           "context": "Qglasses",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "三杯",
+              "kana": "さんばい",
+              "romaji": "sanbai"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "一杯",
+              "kana": "いっぱい",
+              "romaji": "ippai"
+            },
+            {
+              "jp": "三人",
+              "kana": "さんにん",
+              "romaji": "sannin"
+            },
+            {
+              "jp": "お水",
+              "kana": "おみず",
+              "romaji": "omizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ],
+          "answerLength": 2,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         }
       ],
       "support": [
@@ -1924,9 +2631,50 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "メニュー",
+              "kana": "メニュー",
+              "romaji": "menyuu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "この",
+              "kana": "この",
+              "romaji": "kono"
+            },
+            {
+              "jp": "定食",
+              "kana": "ていしょく",
+              "romaji": "teishoku"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "plats-02",
@@ -1938,23 +2686,112 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "この",
+              "kana": "この",
+              "romaji": "kono"
+            },
+            {
+              "jp": "定食",
+              "kana": "ていしょく",
+              "romaji": "teishoku"
+            },
+            {
+              "jp": "に",
+              "kana": "に",
+              "romaji": "ni"
+            },
+            {
+              "jp": "します。",
+              "kana": "します。",
+              "romaji": "shimasu."
+            },
+            {
+              "jp": "メニュー",
+              "kana": "メニュー",
+              "romaji": "menyuu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "plats-03",
           "kind": "C",
-          "prompt": "Vous choisissez finalement le curry. Utilisez にします.",
+          "prompt": "Changez le plat choisi : vous prenez maintenant le curry.",
           "target": "P17",
           "explanation": "カレー remplace le menu choisi ; にします conserve la fonction de choix.",
           "mode": "order",
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "カレー",
+              "kana": "カレー",
+              "romaji": "karee"
+            },
+            {
+              "jp": "に",
+              "kana": "に",
+              "romaji": "ni"
+            },
+            {
+              "jp": "します。",
+              "kana": "します。",
+              "romaji": "shimasu."
+            },
+            {
+              "jp": "この",
+              "kana": "この",
+              "romaji": "kono"
+            },
+            {
+              "jp": "定食",
+              "kana": "ていしょく",
+              "romaji": "teishoku"
+            },
+            {
+              "jp": "メニュー",
+              "kana": "メニュー",
+              "romaji": "menyuu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "P16"
         },
         {
           "id": "plats-04",
@@ -1966,9 +2803,62 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2,
+              3,
+              4
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "おすすめ",
+              "kana": "おすすめ",
+              "romaji": "osusume"
+            },
+            {
+              "jp": "は",
+              "kana": "は",
+              "romaji": "wa"
+            },
+            {
+              "jp": "何",
+              "kana": "なん",
+              "romaji": "nan"
+            },
+            {
+              "jp": "です",
+              "kana": "です",
+              "romaji": "desu"
+            },
+            {
+              "jp": "か。",
+              "kana": "か。",
+              "romaji": "ka."
+            },
+            {
+              "jp": "メニュー",
+              "kana": "メニュー",
+              "romaji": "menyuu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            }
+          ],
+          "answerLength": 5,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "plats-05",
@@ -1981,49 +2871,100 @@
             [
               0,
               1,
-              2
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              1,
+              0,
+              3,
+              4
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "ご飯",
+              "kana": "ごはん",
+              "romaji": "gohan"
+            },
+            {
+              "jp": "と",
+              "kana": "と",
+              "romaji": "to"
+            },
+            {
+              "jp": "みそ汁",
+              "kana": "みそしる",
+              "romaji": "misoshiru"
+            },
+            {
+              "jp": "が",
+              "kana": "が",
+              "romaji": "ga"
+            },
+            {
+              "jp": "つきます。",
+              "kana": "つきます。",
+              "romaji": "tsukimasu."
+            },
+            {
+              "jp": "メニュー",
+              "kana": "メニュー",
+              "romaji": "menyuu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            }
+          ],
+          "answerLength": 5,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "plats-06",
           "kind": "P",
-          "prompt": "Demandez la carte avec la structure explicite en を.",
+          "prompt": "Demandez la carte : retrouvez la particule de l’objet demandé, sans omission orale.",
           "target": "P14",
           "explanation": "を suit メニュー, objet de la demande.",
           "mode": "particle",
           "fragment": "を",
           "answer": "を",
-          "options": [
-            "を",
-            "に",
-            "が"
-          ],
           "masked": {
             "jp": "メニュー［…］お願いします。",
             "kana": "メニュー［…］おねがいします。",
             "romaji": "menyuu […]  onegai shimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "plats-07",
           "kind": "P",
-          "prompt": "Choisissez ce menu complet avec にします.",
+          "prompt": "Vous choisissez ce menu complet : retrouvez la particule du choix.",
           "target": "P16",
           "explanation": "に rattache le menu choisi à します.",
           "mode": "particle",
           "fragment": "に",
           "answer": "に",
-          "options": [
-            "に",
-            "を",
-            "で"
-          ],
           "masked": {
             "jp": "この定食［…］します。",
             "kana": "このていしょく［…］します。",
             "romaji": "kono teishoku […]  shimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "plats-08",
@@ -2034,16 +2975,12 @@
           "mode": "particle",
           "fragment": "と",
           "answer": "と",
-          "options": [
-            "と",
-            "に",
-            "を"
-          ],
           "masked": {
             "jp": "ご飯［…］みそ汁がつきます。",
             "kana": "ごはん［…］みそしるがつきます。",
             "romaji": "gohan […]  misoshiru ga tsukimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "plats-09",
@@ -2054,36 +2991,28 @@
           "mode": "particle",
           "fragment": "は",
           "answer": "は",
-          "options": [
-            "は",
-            "を",
-            "に"
-          ],
           "masked": {
             "jp": "うどん［…］ありますか。",
             "kana": "うどん［…］ありますか。",
             "romaji": "udon […]  arimasu ka."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "plats-10",
           "kind": "P",
-          "prompt": "Annoncez ce qui est compris, avec la structure Nがつきます apprise.",
+          "prompt": "Annoncez ce qui accompagne le menu : retrouvez la particule du groupe sujet, sans en faire un thème.",
           "target": "P20",
           "explanation": "が marque ce qui accompagne le menu. を ne s’emploie pas avec ce sens de つきます.",
           "mode": "particle",
           "fragment": "が",
           "answer": "が",
-          "options": [
-            "が",
-            "を",
-            "に"
-          ],
           "masked": {
             "jp": "ご飯とみそ汁［…］つきます。",
             "kana": "ごはんとみそしる［…］つきます。",
             "romaji": "gohan to misoshiru […]  tsukimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "plats-11",
@@ -2091,14 +3020,56 @@
           "prompt": "Le personnel annonce les udon disponibles. Choisissez précisément ce plat.",
           "target": "udonChoice",
           "explanation": "うどんにします annonce votre choix des udon.",
-          "mode": "choice",
-          "options": [
-            "udonChoice",
-            "P17",
-            "P34"
-          ],
+          "mode": "order",
           "context": "udonOK",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "うどん",
+              "kana": "うどん",
+              "romaji": "udon"
+            },
+            {
+              "jp": "に",
+              "kana": "に",
+              "romaji": "ni"
+            },
+            {
+              "jp": "します。",
+              "kana": "します。",
+              "romaji": "shimasu."
+            },
+            {
+              "jp": "カレー",
+              "kana": "カレー",
+              "romaji": "karee"
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "plats-12",
@@ -2106,14 +3077,62 @@
           "prompt": "Vous voulez le menu complet montré sur la carte. Répondez à la question.",
           "target": "P16",
           "explanation": "この定食にします répond au choix demandé ; l’addition et la recommandation sont d’autres actes.",
-          "mode": "choice",
-          "options": [
-            "P16",
-            "P34",
-            "P18"
-          ],
+          "mode": "order",
           "context": "Qchoice",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "この",
+              "kana": "この",
+              "romaji": "kono"
+            },
+            {
+              "jp": "定食",
+              "kana": "ていしょく",
+              "romaji": "teishoku"
+            },
+            {
+              "jp": "に",
+              "kana": "に",
+              "romaji": "ni"
+            },
+            {
+              "jp": "します。",
+              "kana": "します。",
+              "romaji": "shimasu."
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "おすすめ",
+              "kana": "おすすめ",
+              "romaji": "osusume"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "answerLength": 4,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         }
       ],
       "support": [
@@ -2177,19 +3196,66 @@
             [
               0,
               1,
-              2
+              2,
+              3
             ],
             [
-              1,
+              2,
               0,
-              2
+              1,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "四つ",
+              "kana": "よっつ",
+              "romaji": "yottsu"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "五つ",
+              "kana": "いつつ",
+              "romaji": "itsutsu"
+            },
+            {
+              "jp": "水",
+              "kana": "みず",
+              "romaji": "mizu"
+            },
+            {
+              "jp": "一本",
+              "kana": "いっぽん",
+              "romaji": "ippon"
+            },
+            {
+              "jp": "二本",
+              "kana": "にほん",
+              "romaji": "nihon"
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "quantites-02",
           "kind": "C",
-          "prompt": "Passez de quatre à cinq portions de l’article montré.",
+          "prompt": "Transformez la commande : cinq portions au lieu de quatre.",
           "target": "P22",
           "explanation": "五つ se lit itsutsu : seule la quantité change.",
           "mode": "order",
@@ -2197,14 +3263,62 @@
             [
               0,
               1,
-              2
+              2,
+              3
             ],
             [
-              1,
+              2,
               0,
-              2
+              1,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "五つ",
+              "kana": "いつつ",
+              "romaji": "itsutsu"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "四つ",
+              "kana": "よっつ",
+              "romaji": "yottsu"
+            },
+            {
+              "jp": "水",
+              "kana": "みず",
+              "romaji": "mizu"
+            },
+            {
+              "jp": "一本",
+              "kana": "いっぽん",
+              "romaji": "ippon"
+            },
+            {
+              "jp": "二本",
+              "kana": "にほん",
+              "romaji": "nihon"
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "P21"
         },
         {
           "id": "quantites-03",
@@ -2217,19 +3331,66 @@
             [
               0,
               1,
-              2
+              2,
+              3
             ],
             [
-              1,
+              2,
               0,
-              2
+              1,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "水",
+              "kana": "みず",
+              "romaji": "mizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "一本",
+              "kana": "いっぽん",
+              "romaji": "ippon"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            },
+            {
+              "jp": "四つ",
+              "kana": "よっつ",
+              "romaji": "yottsu"
+            },
+            {
+              "jp": "五つ",
+              "kana": "いつつ",
+              "romaji": "itsutsu"
+            },
+            {
+              "jp": "二本",
+              "kana": "にほん",
+              "romaji": "nihon"
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "quantites-04",
           "kind": "C",
-          "prompt": "Dans la même boutique, demandez deux bouteilles d’eau.",
+          "prompt": "Transformez la commande : deux bouteilles d’eau au lieu d’une.",
           "target": "P24",
           "explanation": "二本 se lit nihon, et non nippon. Le nombre fait varier la lecture.",
           "mode": "order",
@@ -2237,19 +3398,67 @@
             [
               0,
               1,
-              2
+              2,
+              3
             ],
             [
-              1,
+              2,
               0,
-              2
+              1,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "水",
+              "kana": "みず",
+              "romaji": "mizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "二本",
+              "kana": "にほん",
+              "romaji": "nihon"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "一本",
+              "kana": "いっぽん",
+              "romaji": "ippon"
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            },
+            {
+              "jp": "四つ",
+              "kana": "よっつ",
+              "romaji": "yottsu"
+            },
+            {
+              "jp": "五つ",
+              "kana": "いつつ",
+              "romaji": "itsutsu"
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "P23"
         },
         {
           "id": "quantites-05",
           "kind": "C",
-          "prompt": "Demandez maintenant trois bouteilles d’eau.",
+          "prompt": "Transformez la commande : trois bouteilles d’eau au lieu de deux.",
           "target": "P25",
           "explanation": "三本 se lit sanbon ; le son de 本 change à nouveau.",
           "mode": "order",
@@ -2257,14 +3466,62 @@
             [
               0,
               1,
-              2
+              2,
+              3
             ],
             [
-              1,
+              2,
               0,
-              2
+              1,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "水",
+              "kana": "みず",
+              "romaji": "mizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "三本",
+              "kana": "さんぼん",
+              "romaji": "sanbon"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "二本",
+              "kana": "にほん",
+              "romaji": "nihon"
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            },
+            {
+              "jp": "四つ",
+              "kana": "よっつ",
+              "romaji": "yottsu"
+            },
+            {
+              "jp": "五つ",
+              "kana": "いつつ",
+              "romaji": "itsutsu"
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "P24"
         },
         {
           "id": "quantites-06",
@@ -2277,29 +3534,71 @@
             [
               0,
               1,
-              2
+              2,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "二つ",
+              "kana": "ふたつ",
+              "romaji": "futatsu"
+            },
+            {
+              "jp": "ではなく、",
+              "kana": "ではなく、",
+              "romaji": "de wa naku,"
+            },
+            {
+              "jp": "三つ",
+              "kana": "みっつ",
+              "romaji": "mittsu"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "四つ",
+              "kana": "よっつ",
+              "romaji": "yottsu"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "quantites-07",
           "kind": "P",
-          "prompt": "Demandez deux bouteilles avec la structure explicite Nを数量ください.",
+          "prompt": "Demandez deux bouteilles d’eau : marquez explicitement l’objet demandé.",
           "target": "P24",
           "explanation": "を reste avec 水, avant la quantité.",
           "mode": "particle",
           "fragment": "を",
           "answer": "を",
-          "options": [
-            "を",
-            "に",
-            "で"
-          ],
           "masked": {
             "jp": "水［…］二本ください。",
             "kana": "みず［…］にほんください。",
             "romaji": "mizu […]  nihon kudasai."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "quantites-08",
@@ -2310,36 +3609,28 @@
           "mode": "particle",
           "fragment": "と",
           "answer": "と",
-          "options": [
-            "と",
-            "が",
-            "に"
-          ],
           "masked": {
             "jp": "水二本［…］サンドイッチ三つください。",
             "kana": "みずにほん［…］サンドイッチみっつください。",
             "romaji": "mizu nihon […]  sandoicchi mittsu kudasai."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "quantites-09",
           "kind": "P",
-          "prompt": "Faut-il ajouter une particule après 二本 dans cette demande ? Choisissez ∅ pour ne rien ajouter.",
+          "prompt": "Après la quantité, faut-il une particule ? Écrivez la particule ou 0 pour ne rien ajouter.",
           "target": "P24",
           "explanation": "La quantité 二本 se place directement avant ください, sans particule ajoutée.",
           "mode": "after",
           "fragment": "二本",
           "answer": "∅",
-          "options": [
-            "∅",
-            "を",
-            "の"
-          ],
           "masked": {
             "jp": "水を二本［…］ください。",
             "kana": "みずをにほん［…］ください。",
             "romaji": "mizu o nihon […] kudasai."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "quantites-10",
@@ -2357,17 +3648,12 @@
             "と",
             "∅"
           ],
-          "options": [
-            "と",
-            "を",
-            "に",
-            "∅"
-          ],
           "masked": {
             "jp": "水二本［1］サンドイッチ三つ［2］ください。",
             "kana": "みずにほん［1］サンドイッチみっつ［2］ください。",
             "romaji": "mizu nihon [1] sandoicchi mittsu [2] kudasai."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "quantites-11",
@@ -2375,14 +3661,62 @@
           "prompt": "Vous aviez demandé trois portions au total. Répondez à cette confirmation erronée.",
           "target": "P27",
           "explanation": "Rectifiez le total avec ではなく ; もう一つ ajouterait une unité sans expliciter le malentendu.",
-          "mode": "choice",
-          "options": [
-            "P27",
-            "yes",
-            "P26"
-          ],
+          "mode": "order",
           "context": "Qtwo",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "二つ",
+              "kana": "ふたつ",
+              "romaji": "futatsu"
+            },
+            {
+              "jp": "ではなく、",
+              "kana": "ではなく、",
+              "romaji": "de wa naku,"
+            },
+            {
+              "jp": "三つ",
+              "kana": "みっつ",
+              "romaji": "mittsu"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "はい。",
+              "kana": "はい。",
+              "romaji": "hai."
+            },
+            {
+              "jp": "もう一つ",
+              "kana": "もうひとつ",
+              "romaji": "mou hitotsu"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "answerLength": 4,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "quantites-12",
@@ -2390,14 +3724,68 @@
           "prompt": "Vous achetez trois bouteilles fermées. Corrigez la phrase qui demande des verres.",
           "target": "P25",
           "explanation": "三杯 compte les verres de boisson ; dans cette vente en bouteilles, 三本 convient.",
-          "mode": "choice",
-          "options": [
-            "P25",
-            "wrongBottles",
-            "P24"
-          ],
+          "mode": "order",
           "context": null,
-          "wrong": "wrongBottles"
+          "wrong": "wrongBottles",
+          "bank": [
+            {
+              "jp": "水",
+              "kana": "みず",
+              "romaji": "mizu"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "三本",
+              "kana": "さんぼん",
+              "romaji": "sanbon"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "三杯",
+              "kana": "さんばい",
+              "romaji": "sanbai"
+            },
+            {
+              "jp": "二本",
+              "kana": "にほん",
+              "romaji": "nihon"
+            },
+            {
+              "jp": "これ",
+              "kana": "これ",
+              "romaji": "kore"
+            },
+            {
+              "jp": "四つ",
+              "kana": "よっつ",
+              "romaji": "yottsu"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              2,
+              0,
+              1,
+              3
+            ]
+          ],
+          "answerLength": 4,
+          "activity": "Corriger et reconstruire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         }
       ],
       "support": [
@@ -2465,9 +3853,50 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "持ち帰り",
+              "kana": "もちかえり",
+              "romaji": "mochikaeri"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko"
+            },
+            {
+              "jp": "食べます。",
+              "kana": "たべます。",
+              "romaji": "tabemasu."
+            },
+            {
+              "jp": "サンドイッチ",
+              "kana": "サンドイッチ",
+              "romaji": "sandoicchi"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "emporter-02",
@@ -2479,9 +3908,50 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "食べます。",
+              "kana": "たべます。",
+              "romaji": "tabemasu."
+            },
+            {
+              "jp": "持ち帰り",
+              "kana": "もちかえり",
+              "romaji": "mochikaeri"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "サンドイッチ",
+              "kana": "サンドイッチ",
+              "romaji": "sandoicchi"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "emporter-03",
@@ -2494,14 +3964,61 @@
             [
               0,
               1,
-              2
+              2,
+              3
             ],
             [
-              1,
+              2,
               0,
-              2
+              1,
+              3
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "サンドイッチ",
+              "kana": "サンドイッチ",
+              "romaji": "sandoicchi"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "二つ",
+              "kana": "ふたつ",
+              "romaji": "futatsu"
+            },
+            {
+              "jp": "ください。",
+              "kana": "ください。",
+              "romaji": "kudasai."
+            },
+            {
+              "jp": "持ち帰り",
+              "kana": "もちかえり",
+              "romaji": "mochikaeri"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko"
+            }
+          ],
+          "answerLength": 4,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "emporter-04",
@@ -2513,23 +4030,106 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "袋",
+              "kana": "ふくろ",
+              "romaji": "fukuro"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "持ち帰り",
+              "kana": "もちかえり",
+              "romaji": "mochikaeri"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko"
+            },
+            {
+              "jp": "食べます。",
+              "kana": "たべます。",
+              "romaji": "tabemasu."
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "emporter-05",
           "kind": "C",
-          "prompt": "Demandez une cuillère avec お願いします.",
+          "prompt": "Gardez la formule de demande, mais demandez une cuillère au lieu du sac.",
           "target": "P33",
           "explanation": "スプーン est la cuillère demandée ; ce n’est pas un compteur.",
           "mode": "order",
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "スプーン",
+              "kana": "スプーン",
+              "romaji": "supuun"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "袋",
+              "kana": "ふくろ",
+              "romaji": "fukuro"
+            },
+            {
+              "jp": "持ち帰り",
+              "kana": "もちかえり",
+              "romaji": "mochikaeri"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "P32"
         },
         {
           "id": "emporter-06",
@@ -2540,16 +4140,12 @@
           "mode": "particle",
           "fragment": "で",
           "answer": "で",
-          "options": [
-            "で",
-            "に",
-            "を"
-          ],
           "masked": {
             "jp": "持ち帰り［…］お願いします。",
             "kana": "もちかえり［…］おねがいします。",
             "romaji": "mochikaeri […]  onegai shimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "emporter-07",
@@ -2560,56 +4156,44 @@
           "mode": "particle",
           "fragment": "で",
           "answer": "で",
-          "options": [
-            "で",
-            "に",
-            "を"
-          ],
           "masked": {
             "jp": "ここ［…］食べます。",
             "kana": "ここ［…］たべます。",
             "romaji": "koko […]  tabemasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "emporter-08",
           "kind": "P",
-          "prompt": "Utilisez la structure explicite Nを数量ください pour les sandwiches.",
+          "prompt": "Deux sandwiches, s’il vous plaît : marquez explicitement l’objet demandé.",
           "target": "P31",
           "explanation": "を désigne ce que vous demandez, avant la quantité.",
           "mode": "particle",
           "fragment": "を",
           "answer": "を",
-          "options": [
-            "を",
-            "に",
-            "で"
-          ],
           "masked": {
             "jp": "サンドイッチ［…］二つください。",
             "kana": "サンドイッチ［…］ふたつください。",
             "romaji": "sandoicchi […]  futatsu kudasai."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "emporter-09",
           "kind": "P",
-          "prompt": "Demandez une cuillère avec la structure explicite Nをお願いします.",
+          "prompt": "Une cuillère, s’il vous plaît : marquez explicitement l’objet demandé.",
           "target": "P33",
           "explanation": "を marque ici l’objet demandé.",
           "mode": "particle",
           "fragment": "を",
           "answer": "を",
-          "options": [
-            "を",
-            "に",
-            "が"
-          ],
           "masked": {
             "jp": "スプーン［…］お願いします。",
             "kana": "スプーン［…］おねがいします。",
             "romaji": "supuun […]  onegai shimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "emporter-10",
@@ -2617,14 +4201,56 @@
           "prompt": "Vous voulez emporter votre commande. Répondez au personnel.",
           "target": "P29",
           "explanation": "La question porte sur une consommation sur place ; indiquez clairement 持ち帰り.",
-          "mode": "choice",
-          "options": [
-            "P29",
-            "P30",
-            "P34"
-          ],
+          "mode": "order",
           "context": "P28",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "持ち帰り",
+              "kana": "もちかえり",
+              "romaji": "mochikaeri"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko"
+            },
+            {
+              "jp": "食べます。",
+              "kana": "たべます。",
+              "romaji": "tabemasu."
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "emporter-11",
@@ -2632,14 +4258,56 @@
           "prompt": "Vous aviez choisi de manger ici. Le personnel croit que c’est à emporter. Répondez en maintenant votre choix.",
           "target": "P30",
           "explanation": "ここで食べます rétablit le choix de manger ici.",
-          "mode": "choice",
-          "options": [
-            "P30",
-            "yes",
-            "P29"
-          ],
+          "mode": "order",
           "context": "Qtake",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "食べます。",
+              "kana": "たべます。",
+              "romaji": "tabemasu."
+            },
+            {
+              "jp": "はい。",
+              "kana": "はい。",
+              "romaji": "hai."
+            },
+            {
+              "jp": "持ち帰り",
+              "kana": "もちかえり",
+              "romaji": "mochikaeri"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "サンドイッチ",
+              "kana": "サンドイッチ",
+              "romaji": "sandoicchi"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "emporter-12",
@@ -2647,14 +4315,56 @@
           "prompt": "Vous devez partir avec votre commande. Remplacez la réponse « je mange ici ».",
           "target": "P29",
           "explanation": "持ち帰りでお願いします correspond à emporter ; demander un sac seul ne précise pas cette modalité.",
-          "mode": "choice",
-          "options": [
-            "P29",
-            "P30",
-            "P32"
-          ],
+          "mode": "order",
           "context": null,
-          "wrong": "P30"
+          "wrong": "P30",
+          "bank": [
+            {
+              "jp": "持ち帰り",
+              "kana": "もちかえり",
+              "romaji": "mochikaeri"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "ここ",
+              "kana": "ここ",
+              "romaji": "koko"
+            },
+            {
+              "jp": "食べます。",
+              "kana": "たべます。",
+              "romaji": "tabemasu."
+            },
+            {
+              "jp": "袋",
+              "kana": "ふくろ",
+              "romaji": "fukuro"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Corriger et reconstruire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         }
       ],
       "support": [
@@ -2720,9 +4430,50 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "全部",
+              "kana": "ぜんぶ",
+              "romaji": "zenbu"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "いくら",
+              "kana": "いくら",
+              "romaji": "ikura"
+            },
+            {
+              "jp": "です",
+              "kana": "です",
+              "romaji": "desu"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "paiement-02",
@@ -2734,23 +4485,118 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2,
+              3,
+              4
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "全部",
+              "kana": "ぜんぶ",
+              "romaji": "zenbu"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "いくら",
+              "kana": "いくら",
+              "romaji": "ikura"
+            },
+            {
+              "jp": "です",
+              "kana": "です",
+              "romaji": "desu"
+            },
+            {
+              "jp": "か。",
+              "kana": "か。",
+              "romaji": "ka."
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "千五百",
+              "kana": "せんごひゃく",
+              "romaji": "sen gohyaku"
+            }
+          ],
+          "answerLength": 5,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "paiement-03",
           "kind": "C",
-          "prompt": "Annoncez que vous paierez en espèces.",
+          "prompt": "Changez le moyen de paiement : vous payez maintenant en espèces.",
           "target": "P38",
           "explanation": "現金で précise le moyen ; 払います annonce le paiement.",
           "mode": "order",
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "現金",
+              "kana": "げんきん",
+              "romaji": "genkin"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "払います。",
+              "kana": "はらいます。",
+              "romaji": "haraimasu."
+            },
+            {
+              "jp": "カード",
+              "kana": "カード",
+              "romaji": "kaado"
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Transformer",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés.",
+          "source": "payCard"
         },
         {
           "id": "paiement-04",
@@ -2762,29 +4608,66 @@
           "orders": [
             [
               0,
-              1
+              1,
+              2
             ]
-          ]
+          ],
+          "bank": [
+            {
+              "jp": "別々",
+              "kana": "べつべつ",
+              "romaji": "betsubetsu"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "全部",
+              "kana": "ぜんぶ",
+              "romaji": "zenbu"
+            },
+            {
+              "jp": "いくら",
+              "kana": "いくら",
+              "romaji": "ikura"
+            }
+          ],
+          "answerLength": 3,
+          "activity": "Construire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "paiement-05",
           "kind": "P",
-          "prompt": "Demandez l’addition avec la structure explicite Nをお願いします.",
+          "prompt": "Demandez l’addition : marquez explicitement l’objet demandé.",
           "target": "P34",
           "explanation": "を marque ce qui est demandé : l’addition.",
           "mode": "particle",
           "fragment": "を",
           "answer": "を",
-          "options": [
-            "を",
-            "に",
-            "が"
-          ],
           "masked": {
             "jp": "お会計［…］お願いします。",
             "kana": "おかいけい［…］おねがいします。",
             "romaji": "okaikei […]  onegai shimasu."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "paiement-06",
@@ -2795,52 +4678,40 @@
           "mode": "particle",
           "fragment": "で",
           "answer": "で",
-          "options": [
-            "で",
-            "を",
-            "に"
-          ],
           "masked": {
             "jp": "カード［…］払えますか。",
             "kana": "カード［…］はらえますか。",
             "romaji": "kaado […]  haraemasu ka."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "paiement-07",
           "kind": "P",
-          "prompt": "Complétez « en tout ». Ce で ne désigne pas un moyen de paiement.",
+          "prompt": "Complétez l’expression « en tout », dans la question sur le prix.",
           "target": "P35",
           "explanation": "全部で est l’expression « en tout » ; il faut expliquer son emploi séparément de カードで.",
           "mode": "particle",
           "fragment": "で",
           "answer": "で",
-          "options": [
-            "で",
-            "を",
-            "が"
-          ],
           "masked": {
             "jp": "全部［…］いくらですか。",
             "kana": "ぜんぶ［…］いくらですか。",
             "romaji": "zenbu […]  ikura desu ka."
-          }
+          },
+          "activity": "Retrouver les particules"
         },
         {
           "id": "paiement-08",
           "kind": "D",
-          "prompt": "Écoutez le montant annoncé et choisissez le total correspondant.",
+          "prompt": "Écoutez le montant annoncé et écrivez le nombre de yens, en chiffres.",
           "target": "P36",
           "explanation": "千五百 = mille cinq cents ; 三千 se lit sanzen et vaut trois mille.",
           "mode": "amount",
-          "options": [
-            "500 ¥",
-            "1 500 ¥",
-            "3 000 ¥"
-          ],
           "context": "P36",
           "wrong": null,
-          "answer": "1 500 ¥"
+          "answer": "1500",
+          "activity": "Comprendre le montant"
         },
         {
           "id": "paiement-09",
@@ -2848,14 +4719,56 @@
           "prompt": "La boutique accepte les espèces. Après cette réponse sur la carte, annoncez un moyen accepté.",
           "target": "P38",
           "explanation": "カードは使えません indique que la carte n’est pas utilisable. Ici, répondez que vous payez en espèces.",
-          "mode": "choice",
-          "options": [
-            "payCard",
-            "P38",
-            "P37"
-          ],
+          "mode": "order",
           "context": "cardNo",
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "現金",
+              "kana": "げんきん",
+              "romaji": "genkin"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "払います。",
+              "kana": "はらいます。",
+              "romaji": "haraimasu."
+            },
+            {
+              "jp": "カード",
+              "kana": "カード",
+              "romaji": "kaado"
+            },
+            {
+              "jp": "払えます",
+              "kana": "はらえます",
+              "romaji": "haraemasu"
+            },
+            {
+              "jp": "か。",
+              "kana": "か。",
+              "romaji": "ka."
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "paiement-10",
@@ -2863,14 +4776,50 @@
           "prompt": "Le paiement est terminé et vous partez. Remerciez pour le repas.",
           "target": "P40",
           "explanation": "ごちそうさまでした est le remerciement après le repas ; l’addition a déjà été réglée.",
-          "mode": "choice",
-          "options": [
-            "P40",
-            "P34",
-            "P35"
-          ],
+          "mode": "order",
           "context": null,
-          "wrong": null
+          "wrong": null,
+          "bank": [
+            {
+              "jp": "ごちそうさま",
+              "kana": "ごちそうさま",
+              "romaji": "gochisousama"
+            },
+            {
+              "jp": "でした。",
+              "kana": "でした。",
+              "romaji": "deshita."
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "全部",
+              "kana": "ぜんぶ",
+              "romaji": "zenbu"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ],
+          "answerLength": 2,
+          "activity": "Répondre en situation",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "paiement-11",
@@ -2878,14 +4827,56 @@
           "prompt": "Vous connaissez déjà le prix. Vous vouliez demander l’addition, pas demander le total. Corrigez.",
           "target": "P34",
           "explanation": "お会計をお願いします demande l’addition ; 全部でいくらですか demande le montant.",
-          "mode": "choice",
-          "options": [
-            "P34",
-            "P35",
-            "P37"
-          ],
+          "mode": "order",
           "context": null,
-          "wrong": "P35"
+          "wrong": "P35",
+          "bank": [
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            },
+            {
+              "jp": "お願いします。",
+              "kana": "おねがいします。",
+              "romaji": "onegai shimasu."
+            },
+            {
+              "jp": "全部",
+              "kana": "ぜんぶ",
+              "romaji": "zenbu"
+            },
+            {
+              "jp": "で",
+              "kana": "で",
+              "romaji": "de"
+            },
+            {
+              "jp": "いくら",
+              "kana": "いくら",
+              "romaji": "ikura"
+            },
+            {
+              "jp": "です",
+              "kana": "です",
+              "romaji": "desu"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Corriger et reconstruire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         },
         {
           "id": "paiement-12",
@@ -2893,14 +4884,56 @@
           "prompt": "Le total est 1 500 yens. Corrigez la particule inutile dans le montant.",
           "target": "P36",
           "explanation": "千五百円 associe directement le nombre et 円, sans の.",
-          "mode": "choice",
-          "options": [
-            "P36",
-            "wrongYen",
-            "3000"
-          ],
+          "mode": "order",
           "context": null,
-          "wrong": "wrongYen"
+          "wrong": "wrongYen",
+          "bank": [
+            {
+              "jp": "千五百",
+              "kana": "せんごひゃく",
+              "romaji": "sen gohyaku"
+            },
+            {
+              "jp": "円",
+              "kana": "えん",
+              "romaji": "en"
+            },
+            {
+              "jp": "です。",
+              "kana": "です。",
+              "romaji": "desu."
+            },
+            {
+              "jp": "千五百の円",
+              "kana": "せんごひゃくのえん",
+              "romaji": "sen gohyaku no en"
+            },
+            {
+              "jp": "三千円",
+              "kana": "さんぜんえん",
+              "romaji": "sanzen en"
+            },
+            {
+              "jp": "お会計",
+              "kana": "おかいけい",
+              "romaji": "okaikei"
+            },
+            {
+              "jp": "を",
+              "kana": "を",
+              "romaji": "o"
+            }
+          ],
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "answerLength": 3,
+          "activity": "Corriger et reconstruire",
+          "constraint": "Construisez avec les éléments proposés ; certains sont inutiles. Plusieurs formulations seraient possibles en conversation : cet exercice vérifie les assemblages préparés."
         }
       ],
       "support": [
