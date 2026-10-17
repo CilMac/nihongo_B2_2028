@@ -1465,7 +1465,7 @@
           "kind": "C",
           "prompt": "Une amie rejoint votre groupe de trois. Transformez la phrase pour annoncer le nouvel effectif.",
           "target": "P04",
-          "explanation": "四人 se lit yonin : vous êtes désormais quatre, sans 様 pour votre groupe.",
+          "explanation": "四人 (yonin) : vous êtes désormais quatre, sans 様 pour votre groupe.",
           "mode": "order",
           "orders": [
             [
@@ -1874,7 +1874,7 @@
           "kind": "R",
           "prompt": "Vous voulez annoncer trois personnes. Remplacez la réponse inadaptée.",
           "target": "P03",
-          "explanation": "つ compte ici des unités ; pour des personnes, 三人 se lit sannin.",
+          "explanation": "つ compte ici des unités ; pour des personnes, 三人 (sannin).",
           "mode": "order",
           "context": null,
           "wrong": "wrongPeople",
@@ -1985,7 +1985,7 @@
       "context": "La carte propose eau, cafés chauds ou glacés, bière au verre et saké au verre.",
       "notes": [
         "Demander : boisson + を + quantité + ください. を marque ce que vous demandez. Avec お願いします, une demande telle que お水をお願いします est également polie.",
-        "一つ・二つ・三つ se lisent hitotsu, futatsu, mittsu. Ici つ compte les consommations commandées. 一杯・二杯・三杯 se lisent ippai, nihai, sanbai : 杯 compte les tasses ou verres de boisson. Deux cafés peuvent se commander avec 二つ ou 二杯 ; l’un n’est pas automatiquement une erreur.",
+        "一つ (hitotsu)・二つ (futatsu)・三つ (mittsu). Ici つ compte les consommations commandées. 一杯 (ippai)・二杯 (nihai)・三杯 (sanbai) : 杯 compte les tasses ou verres de boisson. Deux cafés peuvent se commander avec 二つ ou 二杯 ; l’un n’est pas automatiquement une erreur.",
         "Choisir : ホットコーヒーにします, « je prends le café chaud ». にします annonce une décision ; ce に n’indique pas un déplacement. ホット = chaud, アイス = glacé ; 日本酒（にほんしゅ, nihonshu）= saké japonais.",
         "Dans une liste orale, コーヒー二つと日本酒一杯ください relie les commandes avec と et omet を. Chaque quantité reste liée à sa boisson. Les deux groupes peuvent changer d’ordre.",
         "もう一杯お願いします ajoute encore un verre de la boisson déjà identifiée. 何杯（なんばい, nanbai）demande combien de verres. ですね sert ici à confirmer une information."
@@ -2193,7 +2193,7 @@
           "kind": "C",
           "prompt": "Commandez un verre de saké. La carte le sert au verre.",
           "target": "P10",
-          "explanation": "一杯 se lit ippai et compte ici le verre de saké servi.",
+          "explanation": "一杯 (ippai) compte ici le verre de saké servi.",
           "mode": "order",
           "orders": [
             [
@@ -2517,7 +2517,7 @@
           "kind": "D",
           "prompt": "Vous commandez trois verres de bière. Répondez à la question de quantité.",
           "target": "threeglass",
-          "explanation": "何杯 demande un nombre de verres. 三杯 se lit sanbai ; 三人 compterait des personnes.",
+          "explanation": "何杯 demande un nombre de verres. 三杯 (sanbai) compte ici trois verres ; 三人 compterait des personnes.",
           "mode": "order",
           "context": "Qglasses",
           "wrong": null,
@@ -3147,7 +3147,7 @@
       "title": "Préciser les quantités",
       "context": "Au comptoir, vous montrez des portions et achetez des bouteilles d’eau fermées. Vous rectifiez une confirmation erronée.",
       "notes": [
-        "La série utile : 一つ hitotsu, 二つ futatsu, 三つ mittsu, 四つ yottsu, 五つ itsutsu. Ce n’est pas une façon universelle de compter tous les objets.",
+        "La série utile : 一つ (hitotsu), 二つ (futatsu), 三つ (mittsu), 四つ (yottsu), 五つ (itsutsu). Ce n’est pas une façon universelle de compter tous les objets.",
         "Pour les bouteilles : 一本（いっぽん, ippon）, 二本（にほん, nihon）, 三本（さんぼん, sanbon）. Le son de 本 change ; apprenez la quantité entière. Ici 水（みず, mizu）est explicitement vendu en bouteilles ; au restaurant, de l’eau servie au verre utiliserait un autre contexte.",
         "Dans 水を二本ください, を reste avec 水. Aucune particule n’est nécessaire après 二本. L’ordre 二本、水をください peut aussi mettre la quantité en avant ; les deux ordres préparés sont acceptés.",
         "Pour deux produits : 水二本とサンドイッチ三つください. Lier les deux groupes avec と ; ne pas attribuer trois bouteilles à l’eau en inversant les groupes.",
@@ -3190,7 +3190,7 @@
           "kind": "C",
           "prompt": "Vous montrez un article et en voulez quatre.",
           "target": "P21",
-          "explanation": "四つ se lit yottsu. を accompagne これ ; la quantité ne reçoit pas de particule.",
+          "explanation": "四つ (yottsu). を accompagne これ ; la quantité ne reçoit pas de particule.",
           "mode": "order",
           "orders": [
             [
@@ -3257,7 +3257,7 @@
           "kind": "C",
           "prompt": "Transformez la commande : cinq portions au lieu de quatre.",
           "target": "P22",
-          "explanation": "五つ se lit itsutsu : seule la quantité change.",
+          "explanation": "五つ (itsutsu) : seule la quantité change.",
           "mode": "order",
           "orders": [
             [
@@ -3325,7 +3325,7 @@
           "kind": "C",
           "prompt": "Au comptoir, l’eau est vendue en bouteilles fermées. Demandez-en une.",
           "target": "P23",
-          "explanation": "一本 se lit ippon ; 本 compte ici les bouteilles.",
+          "explanation": "一本 (ippon) ; 本 compte ici les bouteilles.",
           "mode": "order",
           "orders": [
             [
@@ -3392,7 +3392,7 @@
           "kind": "C",
           "prompt": "Transformez la commande : deux bouteilles d’eau au lieu d’une.",
           "target": "P24",
-          "explanation": "二本 se lit nihon, et non nippon. Le nombre fait varier la lecture.",
+          "explanation": "二本 (nihon), et non nippon. Le nombre fait varier la lecture.",
           "mode": "order",
           "orders": [
             [
@@ -3460,7 +3460,7 @@
           "kind": "C",
           "prompt": "Transformez la commande : trois bouteilles d’eau au lieu de deux.",
           "target": "P25",
-          "explanation": "三本 se lit sanbon ; le son de 本 change à nouveau.",
+          "explanation": "三本 (sanbon) ; le son de 本 change à nouveau.",
           "mode": "order",
           "orders": [
             [
@@ -4025,7 +4025,7 @@
           "kind": "C",
           "prompt": "Vous avez besoin d’un sac. Demandez-le avec お願いします.",
           "target": "P32",
-          "explanation": "袋 se lit fukuro ; を le rattache à la demande.",
+          "explanation": "袋 (fukuro) signifie « sac » ; を le rattache à la demande.",
           "mode": "order",
           "orders": [
             [
@@ -4706,7 +4706,7 @@
           "kind": "D",
           "prompt": "Écoutez le montant annoncé et écrivez le nombre de yens, en chiffres.",
           "target": "P36",
-          "explanation": "千五百 = mille cinq cents ; 三千 se lit sanzen et vaut trois mille.",
+          "explanation": "千五百 = mille cinq cents ; 三千 (sanzen) vaut trois mille.",
           "mode": "amount",
           "context": "P36",
           "wrong": null,

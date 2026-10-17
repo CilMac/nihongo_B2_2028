@@ -15,7 +15,7 @@
  }
  async function load(){
   if(data)return data;
-  if(!loading)loading=fetch('parcours-commander.json?v=20261012-difficulte').then(r=>{if(!r.ok)throw Error('Chargement impossible');return r.json();}).then(d=>{data=d;return d;}).catch(e=>{loading=null;throw e;});
+  if(!loading)loading=fetch('parcours-commander.json?v=20261017-lot-c').then(r=>{if(!r.ok)throw Error('Chargement impossible');return r.json();}).then(d=>{data=d;return d;}).catch(e=>{loading=null;throw e;});
   return loading;
  }
  function sentence(id,translation=true){return block(data.phrases[id],{fr:translation,audio:true});}

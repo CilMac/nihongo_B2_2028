@@ -1025,7 +1025,26 @@
   "日本経済新聞": "Nihon Keizai Shinbun",
   "水平線": "suiheisen",
   "行きましよう": "ikimashou, graphie usuelle 行きましょう",
-  "食べましょうか": "tabemashou ka"
+  "食べましょうか": "tabemashou ka",
+  "入れる": "ireru",
+  "おかわり": "okawari",
+  "辛い": "karai",
+  "手伝う": "tetsudau",
+  "ておく": "te oku",
+  "忘れていた": "wasurete ita",
+  "っけ": "kke",
+  "昼寝": "hirune",
+  "電気": "denki",
+  "やむ": "yamu",
+  "リラックスする": "rirakkusu suru",
+  "かも": "kamo",
+  "かもしれない": "kamo shirenai",
+  "そうだよね": "sou da yo ne",
+  "なんでもいい": "nandemo ii",
+  "どうでもいい": "dou demo ii",
+  "気楽に": "kiraku ni",
+  "行こう": "ikou",
+  "お疲れ様": "otsukaresama"
 };
  const run=/[一-鿿ぁ-ゖァ-ヺー々]+/g;
  function explain(value){

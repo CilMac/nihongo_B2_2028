@@ -37,7 +37,7 @@
   if(pending[collection])return pending[collection];
   pending[collection]=(async()=>{
    const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),8000);
-   try{const r=await fetch(collections[collection].file+'?v=20261007',{cache:'no-cache',signal:controller.signal});if(!r.ok)throw Error('HTTP '+r.status);const entries=validate(await r.json(),collection);return cache[collection]={entries,error:false};}
+   try{const r=await fetch(collections[collection].file+'?v=20261017-ajouts',{cache:'no-cache',signal:controller.signal});if(!r.ok)throw Error('HTTP '+r.status);const entries=validate(await r.json(),collection);return cache[collection]={entries,error:false};}
    catch{return cache[collection]={entries:[],error:true};}
    finally{clearTimeout(timeout);delete pending[collection];}
   })();return pending[collection];

@@ -7663,7 +7663,7 @@
         }
       ],
       "pieges": [
-        "二つ se lit futatsu ; 二人 se lit futari ; 二杯 se lit nihai. Le nombre seul ne suffit pas à choisir la lecture.",
+        "二つ (futatsu) ; 二人 (futari) ; 二杯 (nihai). Le nombre seul ne suffit pas à choisir la lecture.",
         "Dans une commande de café, 二つ et 二杯 peuvent tous deux convenir selon le contexte : deux consommations ou deux tasses. Ne pas considérer automatiquement l’une des deux formulations comme fausse.",
         "Le personnel emploie 様 dans 何名様ですか. Pour annoncer son propre groupe, répondre simplement 一人です ou 二人です, sans 様.",
         "Dans une commande mixte, chaque quantité reste liée à son produit : deux cafés et une bière ne deviennent pas un café et deux bières quand on inverse l’ordre.",
@@ -7740,7 +7740,7 @@
           }
         ],
         "bonne_reponse": "choix-2",
-        "explication": "人 compte les personnes : 二人 se lit ふたり (futari). つ compte ici des unités ; 杯 des boissons servies.",
+        "explication": "人 compte les personnes : 二人 (ふたり, futari). つ compte ici des unités ; 杯 des boissons servies.",
         "origine": "exercice créé pour cette fiche",
         "affichage": {
           "romaji": "toujours activable, y compris avant la réponse",
@@ -7812,7 +7812,7 @@
             }
           ],
           "bonne_reponse": "choix-2",
-          "explication": "人 compte les personnes : 二人 se lit ふたり (futari). つ compte ici des unités ; 杯 des boissons servies.",
+          "explication": "人 compte les personnes : 二人 (ふたり, futari). つ compte ici des unités ; 杯 des boissons servies.",
           "origine": "exercice créé pour cette fiche",
           "affichage": {
             "romaji": "toujours activable, y compris avant la réponse",
@@ -7846,7 +7846,7 @@
             }
           ],
           "bonne_reponse": "choix-3",
-          "explication": "三杯 se lit sanbai. Les autres lectures sont ippai pour 一杯 et nihai pour 二杯.",
+          "explication": "Trois verres : 三杯 (sanbai). Comparer avec 一杯 (ippai) et 二杯 (nihai).",
           "origine": "exercice créé pour cette fiche",
           "affichage": {
             "romaji": "toujours activable, y compris avant la réponse",
