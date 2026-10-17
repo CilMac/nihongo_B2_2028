@@ -31,8 +31,9 @@
 .choice:has(.choose-answer[aria-pressed=true]) {border:2px solid #917baa;background:#f5f0fa;}
 .choose-answer {margin-top:12px;background:var(--lavender);}
 
-/* Boutons individuels conservés : retirer cette règle pour les réafficher. */
+/* La lecture kana sert de commande ; son relais apparaît si elle est masquée. */
 .audio[data-speak] {display:none;}
+.hide-kana .reading-audio-fallback {display:inline-flex;}
 
 /* Décorticage : lecture progressive, mêmes réglages que les leçons. */
 .sentence-analysis>summary{padding:10px 12px;border-radius:9px;background:var(--lavender);color:#4f405e;min-height:44px;}
@@ -789,7 +790,15 @@ body.generated-help-open{overflow:hidden}
 @media(max-width:600px){.practice-dialogue article:nth-child(even){margin-left:8px}.practice-options{flex-direction:column}.practice-navigation{align-items:stretch}.practice-bank button,.practice-answer button{font-size:16px}}
 
 /* Lectures révélées volontairement dans le parcours ; les corrigés restent complets. */
-.practice-no-readings .kana,.practice-no-readings .romaji,.practice-no-readings .practice-reading{display:none!important}
+#practice-work:not(.practice-no-readings) .kana,
+#practice-work:not(.practice-no-readings) .romaji,
+#practice-feedback .kana,#practice-feedback .romaji,#practice-feedback .fr{display:block}
+#practice-work.practice-no-readings :is(.practice-task,.practice-stimulus) :is(.kana,.romaji),
+#practice-work.practice-no-readings .practice-reading{display:none}
+/* Le corrigé possède toujours ses kana : ni doublon audio ni japonais de secours. */
+#practice-feedback .reading-audio-fallback{display:none}
+#practice-feedback .jp-fallback{display:none}
+#practice-feedback .kana-idem{display:inline}
 .practice-task input{max-width:100%;width:12em;box-sizing:border-box;font-size:20px;padding:10px;border:1px solid var(--line);border-radius:6px}
 
 /* Boutons pastel : fond commun sauge, aides lavande et navigation bleue. */

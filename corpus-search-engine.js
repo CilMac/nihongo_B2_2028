@@ -78,7 +78,7 @@
    const seen=new Set();d.parts=d.parts.filter(p=>{const key=p.lang+'|'+p.secret+'|'+p.text;if(seen.has(key))return false;seen.add(key);return true;});
    if(!d.parts.length)return;
    d.lessons=d.lessons||[];d.category=d.category||'';d.chapter=d.chapter||'';d.kinds=d.kinds||[d.kind];d.themes=d.themes||[];
-   d.keys={all:norm([d.title,d.location,...d.lessons.map(n=>'N'+n),...d.parts.map(p=>p.text),...(d.source==='expressions'?(d.searchParts||[]).map(p=>p.text):[])].join('\n'))};
+   d.keys={all:norm([d.title,d.location,...d.lessons.map(n=>'N'+n),...d.parts.map(p=>p.text),...(['expressions','guide'].includes(d.source)?(d.searchParts||[]).map(p=>p.text):[])].join('\n'))};
    for(const lang of ['ja','romaji','fr'])d.keys[lang]=norm([...d.parts,...(d.searchParts||[])].filter(p=>p.lang===lang).map(p=>p.text).join('\n'));
    d.titleKey=compact(d.title);d.signature=d.kind==='phrase'&&['lecons','dictionnaire'].includes(d.source)&&d.audioRef?d.audioRef+'|'+compact(d.parts.filter(p=>p.lang==='ja').map(p=>p.text).join('|'))+'|'+compact(d.parts.filter(p=>p.lang==='fr').map(p=>p.text).join('|')):d.id;docs.push(d);
   }

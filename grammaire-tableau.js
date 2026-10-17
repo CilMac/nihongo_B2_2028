@@ -3,7 +3,7 @@
 // Un rendu commun aux fiches, avec une matrice particulière pour les démonstratifs.
 function grammarReading(t){
  const same=t.jp.replace(/\s/g,'')===t.kana.replace(/\s/g,'');
- return `<div class="grammar-reading"><button class="kana kana-audio" lang="ja" data-speak="${esc(t.audioKana||t.kana)}" aria-label="Écouter : ${esc(t.kana)}">${esc(t.kana)}<span aria-hidden="true"> ♪</span></button><span class="jp ${same?'same-reading':''}" lang="ja">${jp(t.jp)}</span><span class="romaji">${esc(Romaji.display(t.romaji))}</span></div>`;
+ return `<div class="grammar-reading"><button class="kana kana-audio" lang="ja" data-speak="${esc(t.audioKana||t.kana)}" aria-label="Écouter : ${esc(t.kana)}">${esc(t.kana)}<span aria-hidden="true"> ♪</span></button><span class="jp ${same?'same-reading':''}" lang="ja">${jp(t.jp)}</span><span class="romaji">${esc(Romaji.display(t.romaji))}</span>${readingAudioFallback(t.audioKana||t.kana)}</div>`;
 }
 function grammarReferences(sources){return sources.map(s=>`<p><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.organisme)} · ${esc(s.titre)}</a><br><small>${esc(s.section||'')}</small></p>`).join('');}
 function grammarMatrix(f){
