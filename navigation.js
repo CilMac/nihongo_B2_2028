@@ -12,6 +12,7 @@
   closeSections();
   if(narrow.matches)sectionsPanel.append(tabs);else dock.insertBefore(tabs,sections);
   sections.hidden=!narrow.matches;
+  requestAnimationFrame(()=>window.updateNavigationTab?.());
  }
  sections.onclick=()=>{
   for(const id of ['saved','settings']){document.getElementById(id).hidden=true;document.getElementById(id+'-toggle').setAttribute('aria-expanded','false');}
@@ -74,7 +75,21 @@
  window.addEventListener('resize',scheduleCommands,{passive:true});
  new MutationObserver(scheduleCommands).observe(document.getElementById('main'),{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','open']});
  dialog.addEventListener('close',scheduleCommands);
- window.updateNavigationTab=()=>{updateCommands();const active=tabs.querySelector('[aria-current=page]');if(!active)return;sections.title='Rubrique actuelle : '+active.textContent.trim();if(narrow.matches)return;const a=active.getBoundingClientRect(),t=tabs.getBoundingClientRect();if(a.right>t.right)tabs.scrollLeft+=a.right-t.right;if(a.left<t.left)tabs.scrollLeft+=a.left-t.left;};
+ const tabsHint=document.createElement('p');tabsHint.className='tabs-scroll-hint';tabsHint.id='tabs-scroll-hint';tabsHint.hidden=true;dock.append(tabsHint);tabs.setAttribute('aria-describedby',tabsHint.id);
+ function updateTabsHint(){
+  const overflow=!narrow.matches&&tabs.scrollWidth>tabs.clientWidth+2;
+  tabsHint.hidden=!overflow;
+  if(overflow){const left=tabs.scrollLeft>2,right=tabs.scrollLeft+tabs.clientWidth<tabs.scrollWidth-2;
+   const label=left&&right?'← Faire défiler les rubriques →':left?'← Autres rubriques':'Autres rubriques →';
+   if(tabsHint.textContent!==label)tabsHint.textContent=label;
+  }
+ }
+ tabs.addEventListener('scroll',updateTabsHint,{passive:true});
+ window.updateNavigationTab=()=>{updateCommands();const active=tabs.querySelector('[aria-current=page]');if(!active)return;sections.title='Rubrique actuelle : '+active.textContent.trim();if(narrow.matches){updateTabsHint();return;}const a=active.getBoundingClientRect(),t=tabs.getBoundingClientRect();if(a.right>t.right)tabs.scrollLeft+=a.right-t.right;if(a.left<t.left)tabs.scrollLeft+=a.left-t.left;updateTabsHint();};
+ let tabsFrame=0;
+ const refreshTabs=()=>{if(!tabsFrame)tabsFrame=requestAnimationFrame(()=>{tabsFrame=0;window.updateNavigationTab();});};
+ window.addEventListener('resize',refreshTabs,{passive:true});
+ if(typeof ResizeObserver!=='undefined')new ResizeObserver(refreshTabs).observe(tabs);
  window.updateNavigationTab();
  search.setAttribute('aria-haspopup','dialog');search.setAttribute('aria-controls','corpus-search');search.setAttribute('aria-expanded','false');
  search.onclick=()=>{closeDisplay();for(const id of ['saved','settings']){document.getElementById(id).hidden=true;document.getElementById(id+'-toggle').setAttribute('aria-expanded','false');}window.CorpusSearch.open();};
@@ -85,6 +100,26 @@
  window.addEventListener('scroll',compact,{passive:true});compact();
  // Keep the lesson sidebar below the actual header, including compact mode
  // and contextual return controls. Only the sidebar consumes this measurement.
+ const tableHints=new Map();let tablesFrame=0;
+ function refreshTableHints(){
+  tablesFrame=0;
+  for(const [table,hint] of tableHints)if(!table.isConnected){tableResize?.unobserve(table);hint.remove();tableHints.delete(table);}
+  for(const table of document.querySelectorAll('.guide-table-scroll')){
+   let hint=tableHints.get(table);
+   if(!hint){hint=document.createElement('p');hint.className='table-scroll-hint';hint.hidden=true;table.before(hint);tableHints.set(table,hint);tableResize?.observe(table);table.addEventListener('scroll',scheduleTableHints,{passive:true});}
+   const overflow=table.clientWidth>0&&table.scrollWidth>table.clientWidth+2;
+   hint.hidden=!overflow;
+   if(overflow){const left=table.scrollLeft>2,right=table.scrollLeft+table.clientWidth<table.scrollWidth-2;
+    const label=right?'Glisser pour voir la suite →':left?'← Glisser pour revenir au début':'';
+    if(hint.textContent!==label)hint.textContent=label;
+   }
+  }
+ }
+ function scheduleTableHints(){if(!tablesFrame)tablesFrame=requestAnimationFrame(refreshTableHints);}
+ const tableResize=typeof ResizeObserver!=='undefined'?new ResizeObserver(scheduleTableHints):null;
+ new MutationObserver(scheduleTableHints).observe(document.body,{childList:true,subtree:true});
+ document.addEventListener('toggle',scheduleTableHints,true);
+ window.addEventListener('resize',scheduleTableHints,{passive:true});scheduleTableHints();
  const measureDock=()=>document.documentElement.style.setProperty('--navigation-height',Math.ceil(dock.getBoundingClientRect().height)+'px');
  if(typeof ResizeObserver!=='undefined')new ResizeObserver(measureDock).observe(dock);
  window.addEventListener('resize',measureDock,{passive:true});measureDock();

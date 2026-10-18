@@ -44,14 +44,31 @@
  }
  async function loadAll(){await Promise.all(Object.keys(collections).map(load));return Object.entries(collections).flatMap(([key])=>records(key,cache[key].entries));}
  function failed(){return Object.keys(collections).filter(k=>cache[k]?.error);}
- function card(e,collection,{searchId=''}={}){
+ function matchExcerpt(e,query){
+  const terms=key(query).trim().replace(/^['"]|['"]$/g,'').split(/\s+/).filter(Boolean);
+  if(!terms.length)return '';
+  // Montrer pourquoi une note repliée répond à la recherche, sans ouvrir toute la carte.
+  for(const field of ['usage','note']){
+   const full=ExplanationReadings.explain(e[field]);
+   const position=Math.max(0,terms.map(t=>key(full).indexOf(t)).filter(i=>i>=0).sort((a,b)=>a-b)[0]||0);
+   const start=Math.max(0,position-65),end=Math.min(full.length,start+260);
+   const text=(start?'…':'')+full.slice(start,end)+(end<full.length?'…':'');
+   const words=text.split(/(\s+|[·,;:!?()«»])/u);
+   let found=false;
+   const html=words.map(word=>{const hit=word.trim()&&terms.some(t=>key(word).includes(t));if(hit)found=true;return hit?'<mark>'+esc(word)+'</mark>':esc(word);}).join('');
+   if(found)return '<p class="expression-match"><strong>Dans le contexte :</strong> '+html+'</p>';
+  }
+  return '';
+ }
+ function card(e,collection,{searchId='',query=''}={}){
   const identity=searchId?'data-corpus-id="'+esc(searchId)+'"':'id="expression-'+esc(e.id)+'"';
   return `<article class="card expression-card${searchId?' corpus-card':''}" ${identity}>
    ${searchId?`<p class="corpus-location">Expression · ${esc(collections[collection].title)}</p>`:''}
    <div class="card-head"><span class="number">${esc(e.category)}</span><div class="card-actions">${star(favorite(collection,e.id))}<button type="button" class="expression-listen" data-speak="${esc(e.japanese)}" aria-label="Écouter en synthèse : ${esc(e.japanese)}">▶</button></div></div>
-   ${block({jp:e.japanese,kana:e.kana,romaji:e.romaji,fr:e.fr},{audio:false,audioText:e.japanese})}
+   ${block({jp:e.japanese,kana:e.kana,romaji:e.romaji,fr:e.fr},{passiveReading:true,audioText:e.japanese})}
    <p class="expression-register"><span class="pill">${esc(e.register)}</span></p>
    ${e.caution?`<p class="expression-caution"><strong>À savoir :</strong> ${esc(ExplanationReadings.explain(e.caution))}</p>`:''}
+   ${matchExcerpt(e,query)}
    <details><summary>Contexte et nuance</summary><p>${esc(ExplanationReadings.explain(e.usage))}</p><p>${esc(ExplanationReadings.explain(e.note))}</p></details>
    ${searchId?`<p class="corpus-actions"><a href="${href(collection,e.id)}" data-corpus-open="${esc(searchId)}">Ouvrir le passage →</a></p>`:''}
   </article>`;
@@ -65,14 +82,14 @@
   window.closeNavigationCommands?.();
   const selected=r.line?result.entries.find(e=>e.id===r.line):null;
   const view=views[collection];
-  main.innerHTML=intro('COMPRENDRE · ÉCHANGER','Expressions',c.subtitle)+`<div class="toolbar expressions-tools"><div class="expression-collections" role="group" aria-label="Collection d’expressions">${Object.entries(collections).map(([key,c])=>`<button type="button" data-expression-collection="${key}" aria-pressed="${collection===key}">${esc(c.title)}</button>`).join('')}</div>${r.line?'':`<input id="expression-search" type="search" aria-label="Rechercher une expression" placeholder="Japonais, romaji, français ou situation…" value="${esc(view.query)}"><select id="expression-category" aria-label="Catégorie d’expressions"><option value="">Toutes les catégories</option>${[...new Set(result.entries.map(e=>e.category))].sort((a,b)=>a.localeCompare(b,'fr')).map(cat=>`<option value="${esc(cat)}" ${view.category===cat?'selected':''}>${esc(cat)}</option>`).join('')}</select><label><input type="checkbox" id="expression-favorites" ${view.onlyFavorites?'checked':''}> Mes favoris</label>`}</div><p class="muted expression-help">${collection==='quotidien'?'Des phrases surtout familières, à employer entre proches.':'Des réactions à comprendre en contexte. Le registre et le ton comptent ; aucune citation de série.'} Écoute en synthèse vocale.</p>${r.line?`<p><a data-context-return href="${href(collection)}">← Toutes les expressions · ${esc(c.title)}</a></p>`:''}<p id="expression-count" class="muted" role="status"></p><div id="expression-results" class="grid"></div>`;
+  main.innerHTML=intro('COMPRENDRE · ÉCHANGER','Expressions',c.subtitle)+`<div class="toolbar expressions-tools"><div class="expression-collections" role="group" aria-label="Collection d’expressions">${Object.entries(collections).map(([key,c])=>`<button type="button" data-expression-collection="${key}" aria-pressed="${collection===key}">${esc(c.title)}</button>`).join('')}</div>${r.line?'':`<input id="expression-search" type="search" aria-label="Rechercher une expression" placeholder="Japonais, romaji, français ou situation…" value="${esc(view.query)}"><select id="expression-category" aria-label="Catégorie d’expressions"><option value="">Toutes les catégories</option>${[...new Set(result.entries.map(e=>e.category))].sort((a,b)=>a.localeCompare(b,'fr')).map(cat=>`<option value="${esc(cat)}" ${view.category===cat?'selected':''}>${esc(cat)}</option>`).join('')}</select><label><input type="checkbox" id="expression-favorites" ${view.onlyFavorites?'checked':''}> Mes favoris</label>`}</div><p class="muted expression-help">${collection==='quotidien'?'Des phrases surtout familières, à employer entre proches.':'Des réactions à comprendre en contexte. Le registre et le ton comptent ; aucune citation de série.'} Écoute en synthèse vocale.</p>${r.line?`<p><a data-expression-browse="${collection}" href="${href(collection)}">← Toutes les expressions · ${esc(c.title)}</a></p>`:''}<p id="expression-count" class="muted" role="status"></p><div id="expression-results" class="grid"></div>`;
   const host=document.getElementById('expression-results');
   function results(){
    if(!host.isConnected||route().tab!=='expressions')return;
    if(result.error){document.getElementById('expression-count').textContent='Collection indisponible';host.innerHTML=`<div class="panel empty"><p>La collection ${esc(c.title)} n’a pas pu être chargée. L’autre collection et les autres rubriques restent accessibles.</p><button type="button" id="expression-retry">Réessayer</button></div>`;document.getElementById('expression-retry').onclick=()=>{delete cache[collection];render(r);root.dispatchEvent(new Event('expressions-retry'));};return;}
    const list=r.line?(selected?[selected]:[]):result.entries.filter(e=>(!view.category||e.category===view.category)&&(!view.onlyFavorites||favorites.has(favorite(collection,e.id)))&&matches(e,view.query));
    document.getElementById('expression-count').textContent=list.length+' expression'+(list.length>1?'s':'')+' · '+c.title;
-   host.innerHTML=list.length?list.map(e=>card(e,collection)).join(''):`<p class="panel empty">${r.line?'Cette expression est introuvable. Revenez à la collection.':'Aucune expression trouvée. Essayez un autre terme ou retirez un filtre.'}</p>`;
+   host.innerHTML=list.length?list.map(e=>card(e,collection,{query:r.line?'':view.query})).join(''):`<p class="panel empty">${r.line?'Cette expression est introuvable. Revenez à la collection.':'Aucune expression trouvée. Essayez un autre terme ou retirez un filtre.'}</p>`;
   }
   host.refreshResults=results;results();
   main.querySelectorAll('[data-expression-collection]').forEach(b=>b.onclick=()=>{location.hash=href(b.dataset.expressionCollection);});
@@ -91,7 +108,7 @@
   if(missing.size)Promise.all([...missing].map(load)).then(()=>renderFavorites());
   return '<section class="expression-saved"><h3>Expressions</h3>'+html+'</section>';
  }
- const api={collections,validate,matches,records,romajiAliases,load,loadAll,failed,retryFailed:async()=>{for(const key of failed())delete cache[key];const records=await loadAll();renderFavorites();return records;},render,card,favoritesHTML,invalidate:()=>{renderVersion++;},refreshFavorites:()=>{
+ const api={resetView:key=>{if(views[key])Object.assign(views[key],{query:'',category:'',onlyFavorites:false});},collections,validate,matches,records,romajiAliases,load,loadAll,failed,retryFailed:async()=>{for(const key of failed())delete cache[key];const records=await loadAll();renderFavorites();return records;},render,card,favoritesHTML,invalidate:()=>{renderVersion++;},refreshFavorites:()=>{
   const input=document.getElementById('expression-favorites'),host=document.getElementById('expression-results');
   if(!input?.checked||!host)return;
   const open=[...host.querySelectorAll('article')].filter(el=>el.querySelector('details')?.open).map(el=>el.id);
