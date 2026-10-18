@@ -1,0 +1,411 @@
+{
+  "schemaVersion": "editorial-sidecar-1.0",
+  "status": "annotations-editoriales-acceptees-pour-integration-locale-publication-non-autorisee",
+  "sourceSituationId": "t08-s24-ryokan",
+  "sourceTurnCount": 80,
+  "notesClosedByDefault": true,
+  "highlightPolicy": "Aucun repérage visible tant que le dépliant À comprendre de cette réplique est fermé ; mise en évidence éphémère des seuls extraits focus dans jp/kanaDisplay/romaji lorsque ouvert, sans insertion de balisage dans les champs originaux.",
+  "separateFromExistingVocabulary": true,
+  "sourceUnchanged": true,
+  "notes": [
+    {
+      "id": "note-ryokan-e1",
+      "label": "E1",
+      "turnId": "t08-s24-ryokan-n1-a-02",
+      "level": "n1",
+      "title": "Une action devient le sujet",
+      "bodyFr": "Le petit *no*, placé après le verbe, transforme « se relever » en une action dont on parle : c’est **le fait de se relever** qui est difficile. C’est une construction très utile pour parler de ce qu’on aime, de ce qu’on trouve facile ou pénible.",
+      "focus": [
+        {
+          "jp": "起き上がるのが",
+          "kana": "おきあがるのが",
+          "kanaDisplay": "おきあがる の が",
+          "romaji": "okiagaru no ga"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-e2",
+      "label": "E2",
+      "turnId": "t08-s24-ryokan-n1-c-02",
+      "level": "n1",
+      "title": "Relier deux actions sans traduction mécanique",
+      "bodyFr": "La forme en *-te* relie ici le fait de mettre un yukata et celui de dîner. Selon le contexte, elle peut donner une idée de succession ou de manière. En français, **« dîner en yukata »** est plus naturel qu’une traduction mécanique en deux actions séparées.",
+      "focus": [
+        {
+          "jp": "浴衣を着て",
+          "kana": "ゆかたをきて",
+          "kanaDisplay": "ゆかた を きて",
+          "romaji": "Yukata o kite"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-e3",
+      "label": "E3",
+      "turnId": "t08-s24-ryokan-n1-fin-02",
+      "level": "n1",
+      "title": "Dire ce qu’on aimerait faire plus tard",
+      "bodyFr": "La terminaison *-tai* sert à exprimer **ce que le sujet souhaite faire**. Ici, elle s’ajoute au verbe « voyager ». C’est une manière simple de parler de ses projets ; plus loin, nous la distinguerons de *-te hoshii*, qui concerne l’action souhaitée d’une autre personne.",
+      "focus": [
+        {
+          "jp": "旅行したい",
+          "kana": "りょこうしたい",
+          "kanaDisplay": "りょこう したい",
+          "romaji": "ryokō shitai"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-e4",
+      "label": "E4",
+      "turnId": "t08-s24-ryokan-n1-c-03",
+      "level": "n1",
+      "title": "« Le fait de… aussi » : une nuance utile",
+      "bodyFr": "On retrouve la transformation d’un verbe en activité grâce à *no*, mais cette fois avec *mo* (« aussi »). CilMac ajoute le **plaisir de marcher sur les tatamis** à d’autres bons souvenirs. La différence entre *no ga* et *no mo* aide à relier naturellement plusieurs idées.",
+      "focus": [
+        {
+          "jp": "歩くのも",
+          "kana": "あるくのも",
+          "kanaDisplay": "あるく の も",
+          "romaji": "aruku no mo"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c1",
+      "label": "C1",
+      "turnId": "t08-s24-ryokan-n2-a-01",
+      "level": "n2",
+      "title": "Expliquer son expérience sans être abrupt",
+      "bodyFr": "La finale *n desu* présente la difficulté comme une **explication personnelle**, plutôt qu’un constat sec. Le *ga* relie ici le côté agréable du futon et la difficulté du réveil, avec une opposition douce. Ces tournures sont fréquentes dans les récits amicaux.",
+      "focus": [
+        {
+          "jp": "気持ちよかったんですが",
+          "kana": "きもちよかったんですが",
+          "kanaDisplay": "きもちよかったんですが",
+          "romaji": "kimochi yokatta n desu ga"
+        },
+        {
+          "jp": "大変だったんです",
+          "kana": "たいへんだったんです",
+          "kanaDisplay": "たいへん だったんです",
+          "romaji": "taihen datta n desu"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c2",
+      "label": "C2",
+      "turnId": "t08-s24-ryokan-n2-a-02",
+      "level": "n2",
+      "title": "Parler d’une conséquence habituelle",
+      "bodyFr": "Ici, *to* exprime une conséquence assez générale : **si on n’est pas habitué, c’est difficile**. Ce n’est pas une hypothèse imaginaire ni une promesse pour l’avenir ; Yuki décrit ce qui se produit normalement dans cette situation.",
+      "focus": [
+        {
+          "jp": "慣れていないと",
+          "kana": "なれていないと",
+          "kanaDisplay": "なれて いない と",
+          "romaji": "narete inai to"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c3",
+      "label": "C3",
+      "turnId": "t08-s24-ryokan-n2-a-05",
+      "level": "n2",
+      "title": "Rapporter une question et dire « pour voir »",
+      "bodyFr": "Le *tte* introduit les paroles ou la question qu’on rapporte, sur un ton plus conversationnel que la citation formelle. Plus loin, la construction *-te miru* indique **essayer pour voir ce que ça donne** : CilMac a posé sa question à ChatGPT par curiosité. C’est bien plus réutilisable que le seul vocabulaire de la gravité !",
+      "focus": [
+        {
+          "jp": "強いんですかって",
+          "kana": "つよいんですかって",
+          "kanaDisplay": "つよいんですか って",
+          "romaji": "tsuyoi n desu ka tte"
+        },
+        {
+          "jp": "聞いてみた",
+          "kana": "きいてみた",
+          "kanaDisplay": "きいて みた",
+          "romaji": "kiite mita"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c4",
+      "label": "C4",
+      "turnId": "t08-s24-ryokan-n2-c-01",
+      "level": "n2",
+      "title": "Présenter une impression avec tact",
+      "bodyFr": "La tournure *ki ga shimashita* permet d’exprimer **un ressenti subjectif** : « j’ai eu l’impression que… ». CilMac ne prétend pas que l’établissement imposait objectivement un rythme insupportable ; il raconte son expérience. Très utile pour formuler une critique sans généraliser.",
+      "focus": [
+        {
+          "jp": "ちょっと急いだ気がしました",
+          "kana": "ちょっといそいだきがしました",
+          "kanaDisplay": "ちょっと いそいだ き が しました",
+          "romaji": "chotto isoida ki ga shimashita"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c5",
+      "label": "C5",
+      "turnId": "t08-s24-ryokan-n2-d-05",
+      "level": "n2",
+      "title": "Transformer une qualité en idée abstraite",
+      "bodyFr": "La terminaison *-sa* forme ici un nom abstrait à partir d’une qualité : **la valeur de quelque chose, le fait de l’apprécier**. CilMac dit plaisamment qu’il a découvert à quel point une simple chaise pouvait être précieuse. Ce n’est pas une formule de remerciement adressée à la chaise !",
+      "focus": [
+        {
+          "jp": "椅子のありがたさ",
+          "kana": "いすのありがたさ",
+          "kanaDisplay": "いす の ありがたさ",
+          "romaji": "Isu no arigatasa"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c6",
+      "label": "C6",
+      "turnId": "t08-s24-ryokan-n2-o-04",
+      "level": "n2",
+      "title": "Inviter quelqu’un à raconter",
+      "bodyFr": "Ici, le verbe « écouter » est employé sous une forme qui signifie littéralement **« laisse-moi entendre »**. Avec *kudasai*, cela devient une invitation très naturelle : **« Raconte-moi ! »**. C’est une façon de relancer quelqu’un sans orienter à l’avance sa réponse.",
+      "focus": [
+        {
+          "jp": "聞かせてください",
+          "kana": "きかせてください",
+          "kanaDisplay": "きかせて ください",
+          "romaji": "Kikasete kudasai"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c7",
+      "label": "C7",
+      "turnId": "t08-s24-ryokan-n2-a-08",
+      "level": "n2",
+      "title": "Accepter une possibilité sans s’engager",
+      "bodyFr": "*Kamo shiremasen* exprime une **possibilité**, pas une certitude. Après la plaisanterie de Plume, CilMac concède avec humour que son explication par la gravité n’est peut-être pas la bonne. Très pratique pour nuancer une réponse ou éviter un désaccord frontal.",
+      "focus": [
+        {
+          "jp": "そうかもしれません",
+          "kana": "そうかもしれません",
+          "kanaDisplay": "そう かも しれません",
+          "romaji": "Sō kamo shiremasen"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c8",
+      "label": "C8",
+      "turnId": "t08-s24-ryokan-n2-b-01",
+      "level": "n2",
+      "title": "Faire sentir que les plats arrivent successivement",
+      "bodyFr": "La construction *-te kuru* peut présenter une action comme venant vers le locuteur ou comme un changement qui se développe. Ici, *dete kita* suggère que les plats **arrivaient au fil du repas**. La formule donne du mouvement au récit ; elle n’est pas seulement l’équivalent neutre de « il y avait ».",
+      "focus": [
+        {
+          "jp": "少しずつ出てきた",
+          "kana": "すこしずつでてきた",
+          "kanaDisplay": "すこしずつ でて きた",
+          "romaji": "sukoshi zutsu dete kita"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c9",
+      "label": "C9",
+      "turnId": "t08-s24-ryokan-n2-d-03",
+      "level": "n2",
+      "title": "Dire « pas beaucoup » plutôt que « aucun »",
+      "bodyFr": "L’adverbe *amari* se rencontre très souvent avec une **forme négative** : il donne l’idée de « pas tellement » ou « pas beaucoup ». La réponse de Plume reste donc mesurée : elle ne dit pas qu’il n’existe absolument aucune pièce avec tatamis en France.",
+      "focus": [
+        {
+          "jp": "あまりありません",
+          "kana": "あまりありません",
+          "kanaDisplay": "あまり ありません",
+          "romaji": "Amari arimasen"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-c10",
+      "label": "C10",
+      "turnId": "t08-s24-ryokan-n2-d-03",
+      "level": "n2",
+      "title": "Imaginer une situation avec *-tara*",
+      "bodyFr": "Avec *-tara*, on envisage ici une **situation hypothétique** : si nous avions des tatamis chez nous, ce serait chouette. Contrairement au *to* d’une conséquence habituelle, la phrase ne décrit pas une règle générale : elle imagine une possibilité.",
+      "focus": [
+        {
+          "jp": "家にあったら",
+          "kana": "いえにあったら",
+          "kanaDisplay": "いえ に あったら",
+          "romaji": "ie ni attara"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d1",
+      "label": "D1",
+      "turnId": "t08-s24-ryokan-n3-a-01",
+      "level": "n3",
+      "title": "Vouloir faire ou vouloir que cela soit fait",
+      "bodyFr": "La forme en *-te* suivie de *hoshii* exprime un **souhait concernant l’action d’autrui** : CilMac souhaite que les traditions soient préservées, sans désigner précisément qui doit le faire. À distinguer de la forme en *-tai*, qui sert à exprimer **ce que l’on veut faire soi-même**.",
+      "focus": [
+        {
+          "jp": "残してほしいです",
+          "kana": "のこしてほしいです",
+          "kanaDisplay": "のこして ほしい です",
+          "romaji": "nokoshite hoshii desu"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d2",
+      "label": "D2",
+      "turnId": "t08-s24-ryokan-n3-b-03",
+      "level": "n3",
+      "title": "Exprimer la valeur d’une occasion",
+      "bodyFr": "*Sekkaku* suggère une **occasion précieuse**, parfois le temps ou les efforts investis pour en profiter. Ici, Plume sous-entend : « puisqu’on avait enfin cette chance de voyager, autant pouvoir en profiter à notre rythme ». Cette petite nuance de regret ou d’occasion manquée n’apparaît pas entièrement dans la traduction littérale.",
+      "focus": [
+        {
+          "jp": "せっかくの旅行だったので",
+          "kana": "せっかくのりょこうだったので",
+          "kanaDisplay": "せっかく の りょこう だった ので",
+          "romaji": "Sekkaku no ryokō datta node"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d3",
+      "label": "D3",
+      "turnId": "t08-s24-ryokan-n3-c-01",
+      "level": "n3",
+      "title": "Donner des exemples, pas une liste complète",
+      "bodyFr": "La construction en *-tari … -tari suru* cite **quelques actions représentatives** : s’asseoir au sol, puis se relever. Elle n’affirme pas que ce sont les seules difficultés possibles. Elle sera précieuse pour parler de ses loisirs, de ses habitudes ou des choses qu’on a faites en voyage.",
+      "focus": [
+        {
+          "jp": "座ったり、立ち上がったりする",
+          "kana": "すわったり、たちあがったりする",
+          "kanaDisplay": "すわったり、たちあがったり する",
+          "romaji": "suwattari, tachiagattari suru"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d4",
+      "label": "D4",
+      "turnId": "t08-s24-ryokan-n3-c-04",
+      "level": "n3",
+      "title": "Concilier deux choses",
+      "bodyFr": "La forme en *-nagara* signifie ici **« tout en »** : préserver les traditions **tout en** trouvant des aménagements. Elle sert aussi à parler de deux actions menées simultanément. La fin de phrase reste prudente : Yuki suggère que cela **semble possible**, sans affirmer que ce sera toujours facile.",
+      "focus": [
+        {
+          "jp": "守りながら",
+          "kana": "まもりながら",
+          "kanaDisplay": "まもりながら",
+          "romaji": "mamorinagara"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d5",
+      "label": "D5",
+      "turnId": "t08-s24-ryokan-n3-c-05",
+      "level": "n3",
+      "title": "Exprimer qu’une contrainte n’est pas nécessaire",
+      "bodyFr": "La construction avec *hitsuyō wa nai* signifie **« il n’est pas nécessaire de… »**. Elle ne correspond pas à une interdiction. Plume peut ainsi défendre un principe — profiter d’une culture sans se mettre en difficulté — sans dicter aux autres ce qu’ils doivent faire.",
+      "focus": [
+        {
+          "jp": "無理をする必要はない",
+          "kana": "むりをするひつようはない",
+          "kanaDisplay": "むり を する ひつよう は ない",
+          "romaji": "muri o suru hitsuyō wa nai"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d6",
+      "label": "D6",
+      "turnId": "t08-s24-ryokan-n3-o-01",
+      "level": "n3",
+      "title": "Demander un avis, pas une bonne réponse",
+      "bodyFr": "La construction *… to omoimasu ka* (« que pensez-vous de… ? ») introduit une **question d’opinion**. Yuki ne demande pas de réciter les qualités objectives d’un ryokan ; elle invite ses amis à exprimer leur point de vue. C’est un excellent outil pour passer du récit à la discussion.",
+      "focus": [
+        {
+          "jp": "どんな良さがあると思いますか",
+          "kana": "どんなよさがあるとおもいますか",
+          "kanaDisplay": "どんな よさ が ある と おもいますか",
+          "romaji": "donna yosa ga aru to omoimasu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d7",
+      "label": "D7",
+      "turnId": "t08-s24-ryokan-n3-o-02",
+      "level": "n3",
+      "title": "Dire « à travers une expérience »",
+      "bodyFr": "La tournure *o tōshite* permet de dire qu’on découvre ou comprend quelque chose **à travers une activité ou une expérience**. Plume parle ici du contact avec la culture japonaise grâce aux tatamis, au yukata et aux repas, et non d’un simple déplacement physique.",
+      "focus": [
+        {
+          "jp": "食事を通して",
+          "kana": "しょくじをとおして",
+          "kanaDisplay": "しょくじ を とおして",
+          "romaji": "shokuji o tōshite"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d8",
+      "label": "D8",
+      "turnId": "t08-s24-ryokan-n3-o-03",
+      "level": "n3",
+      "title": "Introduire clairement le sujet de sa réflexion",
+      "bodyFr": "*Ni tsuite* sert à annoncer **le sujet dont on parle ou auquel on réfléchit**. CilMac ne dit pas seulement qu’il réfléchissait : il précise que sa réflexion concernait le confort. C’est une tournure très pratique pour discuter de culture, de société ou d’actualité.",
+      "focus": [
+        {
+          "jp": "快適さについて",
+          "kana": "かいてきさについて",
+          "kanaDisplay": "かいてきさ について",
+          "romaji": "kaitekisa ni tsuite"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d9",
+      "label": "D9",
+      "turnId": "t08-s24-ryokan-n3-a-01",
+      "level": "n3",
+      "title": "Exprimer qu’une action devient plus facile",
+      "bodyFr": "Le suffixe *-yasui*, ajouté à la base d’un verbe, signifie **« facile à… »**. Ici, il s’agit d’un établissement où il serait plus facile de séjourner. On peut utiliser la même construction pour parler de choses faciles à lire, à comprendre ou à utiliser.",
+      "focus": [
+        {
+          "jp": "泊まりやすい",
+          "kana": "とまりやすい",
+          "kanaDisplay": "とまりやすい",
+          "romaji": "tomariyasui"
+        }
+      ]
+    },
+    {
+      "id": "note-ryokan-d10",
+      "label": "D10",
+      "turnId": "t08-s24-ryokan-n3-c-03",
+      "level": "n3",
+      "title": "Proposer une solution avec *-ba*",
+      "bodyFr": "La forme conditionnelle *-ba* introduit ici une **condition suffisante pour améliorer la situation** : avec des barres d’appui ou des chaises, les choses seraient plus faciles. C’est une formulation utile pour discuter d’aménagements ou de solutions, plutôt que de se limiter à décrire un problème.",
+      "focus": [
+        {
+          "jp": "あれば",
+          "kana": "あれば",
+          "kanaDisplay": "あれば",
+          "romaji": "areba"
+        }
+      ]
+    }
+  ],
+  "displayLabel": "🌸 À comprendre",
+  "highlightOnlyWhileOpen": true,
+  "comment": "Aucune modification des repliques source; schema technique libre d adaptation sous controle de correspondance."
+}

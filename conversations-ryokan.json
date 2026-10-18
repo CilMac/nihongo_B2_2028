@@ -1,0 +1,1299 @@
+{
+  "schemaVersion": 1,
+  "status": "integrated",
+  "editorialVersion": "0.2",
+  "linguisticStatus": "reviewed-by-chatgpt-v0.2",
+  "publicationApproved": false,
+  "editorialSource": {
+    "prototype": "PROTOTYPE_ENTRE_AMIS_SITUATION_02_RYOKAN_TAKAYAMA_V02_RELU.md",
+    "version": "0.2",
+    "reviewDate": "2026-10-18",
+    "linguisticReview": "reviewed-by-chatgpt-v0.2-user-approved-subject-and-dialogue",
+    "readingHandling": "kana is kanaDisplay with spacing removed; no source text altered",
+    "namingNote": "Tech ID t08-s24-ryokan is a proposal from pedagogical cartography; Codex must confirm no collision in its actual register."
+  },
+  "situation": {
+    "id": "t08-s24-ryokan",
+    "theme": "Voyages et retrouvailles",
+    "title": "Le ryokan de Takayama… et la gravité !",
+    "context": "Appel amical fictif entre CilMac, Plume et Yuki. Souvenirs librement adaptés du séjour à Takayama. La plaisanterie sur la gravité n’est pas une affirmation scientifique.",
+    "participants": {
+      "cilmac": "CilMac",
+      "plume": "Plume",
+      "yuki": "Yuki"
+    },
+    "levels": [
+      {
+        "id": "essentiel",
+        "sourceId": "n1",
+        "title": "Essentiel",
+        "objective": "évoquer une expérience, dire ce que l’on a aimé et signaler une difficulté avec des phrases courtes.",
+        "opening": [
+          "t08-s24-ryokan-n1-o-01",
+          "t08-s24-ryokan-n1-o-02",
+          "t08-s24-ryokan-n1-o-03"
+        ],
+        "ending": [
+          "t08-s24-ryokan-n1-fin-01",
+          "t08-s24-ryokan-n1-fin-02",
+          "t08-s24-ryokan-n1-fin-03"
+        ],
+        "supportTurnIds": [],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Le futon : confortable, mais…",
+            "turnIds": [
+              "t08-s24-ryokan-n1-a-01",
+              "t08-s24-ryokan-n1-a-02",
+              "t08-s24-ryokan-n1-a-03",
+              "t08-s24-ryokan-n1-a-04"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Le repas",
+            "turnIds": [
+              "t08-s24-ryokan-n1-b-01",
+              "t08-s24-ryokan-n1-b-02",
+              "t08-s24-ryokan-n1-b-03",
+              "t08-s24-ryokan-n1-b-04"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "C",
+            "title": "Le yukata et les tatamis",
+            "turnIds": [
+              "t08-s24-ryokan-n1-c-01",
+              "t08-s24-ryokan-n1-c-02",
+              "t08-s24-ryokan-n1-c-03",
+              "t08-s24-ryokan-n1-c-04"
+            ],
+            "clarifications": []
+          }
+        ]
+      },
+      {
+        "id": "conversation",
+        "sourceId": "n2",
+        "title": "Conversation",
+        "objective": "raconter un souvenir amusant, rebondir sur une réponse, comparer des habitudes et demander une répétition.",
+        "opening": [
+          "t08-s24-ryokan-n2-o-01",
+          "t08-s24-ryokan-n2-o-02",
+          "t08-s24-ryokan-n2-o-03",
+          "t08-s24-ryokan-n2-o-04"
+        ],
+        "ending": [
+          "t08-s24-ryokan-n2-fin-01",
+          "t08-s24-ryokan-n2-fin-02",
+          "t08-s24-ryokan-n2-fin-03"
+        ],
+        "supportTurnIds": [],
+        "branches": [
+          {
+            "id": "A",
+            "title": "La gravité de Takayama (anecdote humoristique)",
+            "turnIds": [
+              "t08-s24-ryokan-n2-a-01",
+              "t08-s24-ryokan-n2-a-02",
+              "t08-s24-ryokan-n2-a-03",
+              "t08-s24-ryokan-n2-a-04",
+              "t08-s24-ryokan-n2-a-05",
+              "t08-s24-ryokan-n2-a-06",
+              "t08-s24-ryokan-n2-a-07",
+              "t08-s24-ryokan-n2-a-08"
+            ],
+            "clarifications": [
+              {
+                "id": "t08-s24-ryokan-n2-clar-a-02",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-a-02",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-a-02",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-a-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-a-02",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t08-s24-ryokan-n2-clar-a-04",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-a-04",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-a-04",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-a-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-a-04",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t08-s24-ryokan-n2-clar-a-06",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-a-06",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-a-06",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-a-07",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-a-06",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Dîner japonais, saké et cuisine française",
+            "turnIds": [
+              "t08-s24-ryokan-n2-b-01",
+              "t08-s24-ryokan-n2-b-02",
+              "t08-s24-ryokan-n2-b-03",
+              "t08-s24-ryokan-n2-b-04",
+              "t08-s24-ryokan-n2-b-05",
+              "t08-s24-ryokan-n2-b-06",
+              "t08-s24-ryokan-n2-b-07",
+              "t08-s24-ryokan-n2-b-08"
+            ],
+            "clarifications": [
+              {
+                "id": "t08-s24-ryokan-n2-clar-b-02",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-b-02",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-b-02",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-b-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-b-02",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t08-s24-ryokan-n2-clar-b-05",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-b-05",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-b-05",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-b-06",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-b-05",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t08-s24-ryokan-n2-clar-b-07",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-b-07",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-b-07",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-b-08",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-b-07",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Des horaires un peu trop précis",
+            "turnIds": [
+              "t08-s24-ryokan-n2-c-01",
+              "t08-s24-ryokan-n2-c-02",
+              "t08-s24-ryokan-n2-c-03",
+              "t08-s24-ryokan-n2-c-04",
+              "t08-s24-ryokan-n2-c-05",
+              "t08-s24-ryokan-n2-c-06"
+            ],
+            "clarifications": [
+              {
+                "id": "t08-s24-ryokan-n2-clar-c-02",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-c-02",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-c-02",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-c-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-c-02",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t08-s24-ryokan-n2-clar-c-04",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-c-04",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-c-04",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-c-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-c-04",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Le tatami en France ?",
+            "turnIds": [
+              "t08-s24-ryokan-n2-d-01",
+              "t08-s24-ryokan-n2-d-02",
+              "t08-s24-ryokan-n2-d-03",
+              "t08-s24-ryokan-n2-d-04",
+              "t08-s24-ryokan-n2-d-05",
+              "t08-s24-ryokan-n2-d-06"
+            ],
+            "clarifications": [
+              {
+                "id": "t08-s24-ryokan-n2-clar-d-02",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-d-02",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-d-02",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-d-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-d-02",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t08-s24-ryokan-n2-clar-d-04",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-d-04",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-d-04",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-d-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-d-04",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t08-s24-ryokan-n2-clar-d-06",
+                "insertionAfterTurnId": "t08-s24-ryokan-n2-d-06",
+                "requestTurnId": "t08-s24-ryokan-n2-clar-01",
+                "ackTurnId": "t08-s24-ryokan-n2-clar-02",
+                "repeatTurnId": "t08-s24-ryokan-n2-d-06",
+                "resumeAtTurnId": "t08-s24-ryokan-n2-fin-01",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t08-s24-ryokan-n2-d-06",
+                "turnIds": [
+                  "t08-s24-ryokan-n2-clar-01",
+                  "t08-s24-ryokan-n2-clar-02"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "discussion",
+        "sourceId": "n3",
+        "title": "Discussion",
+        "objective": "exprimer un avis personnel sur les traditions, le confort, l’autonomie et l’accessibilité.",
+        "opening": [
+          "t08-s24-ryokan-n3-o-01",
+          "t08-s24-ryokan-n3-o-02",
+          "t08-s24-ryokan-n3-o-03",
+          "t08-s24-ryokan-n3-o-04"
+        ],
+        "ending": [
+          "t08-s24-ryokan-n3-fin-01",
+          "t08-s24-ryokan-n3-fin-02",
+          "t08-s24-ryokan-n3-fin-03",
+          "t08-s24-ryokan-n3-fin-04"
+        ],
+        "supportTurnIds": [],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Tradition et confort, sans choisir l’un contre l’autre",
+            "turnIds": [
+              "t08-s24-ryokan-n3-a-01",
+              "t08-s24-ryokan-n3-a-02",
+              "t08-s24-ryokan-n3-a-03",
+              "t08-s24-ryokan-n3-a-04",
+              "t08-s24-ryokan-n3-a-05"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Le temps libre pendant les voyages",
+            "turnIds": [
+              "t08-s24-ryokan-n3-b-01",
+              "t08-s24-ryokan-n3-b-02",
+              "t08-s24-ryokan-n3-b-03",
+              "t08-s24-ryokan-n3-b-04",
+              "t08-s24-ryokan-n3-b-05",
+              "t08-s24-ryokan-n3-b-06"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "C",
+            "title": "Accessibilité, âge et autonomie",
+            "turnIds": [
+              "t08-s24-ryokan-n3-c-01",
+              "t08-s24-ryokan-n3-c-02",
+              "t08-s24-ryokan-n3-c-03",
+              "t08-s24-ryokan-n3-c-04",
+              "t08-s24-ryokan-n3-c-05",
+              "t08-s24-ryokan-n3-c-06"
+            ],
+            "clarifications": []
+          }
+        ]
+      }
+    ]
+  },
+  "turns": {
+    "t08-s24-ryokan-n1-o-01": {
+      "id": "t08-s24-ryokan-n1-o-01",
+      "editorialRef": "E-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "高山の旅館はどうでしたか。",
+      "kana": "たかやまのりょかんはどうでしたか。",
+      "kanaDisplay": "たかやま の りょかん は どう でしたか。",
+      "romaji": "Takayama no ryokan wa dō deshita ka.",
+      "fr": "Comment avez-vous trouvé le ryokan à Takayama ?"
+    },
+    "t08-s24-ryokan-n1-o-02": {
+      "id": "t08-s24-ryokan-n1-o-02",
+      "editorialRef": "E-O-02",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "とてもよかったです。畳の部屋が好きでした。",
+      "kana": "とてもよかったです。たたみのへやがすきでした。",
+      "kanaDisplay": "とても よかった です。たたみ の へや が すき でした。",
+      "romaji": "Totemo yokatta desu. Tatami no heya ga suki deshita.",
+      "fr": "C’était très bien. J’ai beaucoup aimé la chambre avec tatamis."
+    },
+    "t08-s24-ryokan-n1-o-03": {
+      "id": "t08-s24-ryokan-n1-o-03",
+      "editorialRef": "E-O-03",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "私もです。おもしろい経験でした。",
+      "kana": "わたしもです。おもしろいけいけんでした。",
+      "kanaDisplay": "わたし も です。おもしろい けいけん でした。",
+      "romaji": "Watashi mo desu. Omoshiroi keiken deshita.",
+      "fr": "Moi aussi. C’était une expérience intéressante."
+    },
+    "t08-s24-ryokan-n1-a-01": {
+      "id": "t08-s24-ryokan-n1-a-01",
+      "editorialRef": "E-A-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "布団はどうでしたか。",
+      "kana": "ふとんはどうでしたか。",
+      "kanaDisplay": "ふとん は どう でしたか。",
+      "romaji": "Futon wa dō deshita ka.",
+      "fr": "Et le futon, comment c’était ?"
+    },
+    "t08-s24-ryokan-n1-a-02": {
+      "id": "t08-s24-ryokan-n1-a-02",
+      "editorialRef": "E-A-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "気持ちよかったです。でも、起き上がるのが大変でした。",
+      "kana": "きもちよかったです。でも、おきあがるのがたいへんでした。",
+      "kanaDisplay": "きもちよかった です。でも、おきあがる の が たいへん でした。",
+      "romaji": "Kimochi yokatta desu. Demo, okiagaru no ga taihen deshita.",
+      "fr": "Il était confortable. Mais se redresser pour se lever était difficile."
+    },
+    "t08-s24-ryokan-n1-a-03": {
+      "id": "t08-s24-ryokan-n1-a-03",
+      "editorialRef": "E-A-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私もです！次はベッドがいいです。",
+      "kana": "わたしもです！つぎはベッドがいいです。",
+      "kanaDisplay": "わたし も です！つぎ は ベッド が いい です。",
+      "romaji": "Watashi mo desu! Tsugi wa beddo ga ii desu.",
+      "fr": "Moi aussi ! La prochaine fois, je préférerais un lit."
+    },
+    "t08-s24-ryokan-n1-a-04": {
+      "id": "t08-s24-ryokan-n1-a-04",
+      "editorialRef": "E-A-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "あはは、そうなんですね！",
+      "kana": "あはは、そうなんですね！",
+      "kanaDisplay": "あはは、そうなんですね！",
+      "romaji": "Ahaha, sō nan desu ne!",
+      "fr": "Ah ah ! Je vois !"
+    },
+    "t08-s24-ryokan-n1-b-01": {
+      "id": "t08-s24-ryokan-n1-b-01",
+      "editorialRef": "E-B-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "食事はどうでしたか。",
+      "kana": "しょくじはどうでしたか。",
+      "kanaDisplay": "しょくじ は どう でしたか。",
+      "romaji": "Shokuji wa dō deshita ka.",
+      "fr": "Et les repas, comment c’était ?"
+    },
+    "t08-s24-ryokan-n1-b-02": {
+      "id": "t08-s24-ryokan-n1-b-02",
+      "editorialRef": "E-B-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "とてもおいしかったです。料理がたくさんありました。",
+      "kana": "とてもおいしかったです。りょうりがたくさんありました。",
+      "kanaDisplay": "とても おいしかった です。りょうり が たくさん ありました。",
+      "romaji": "Totemo oishikatta desu. Ryōri ga takusan arimashita.",
+      "fr": "C’était délicieux. Il y avait beaucoup de plats."
+    },
+    "t08-s24-ryokan-n1-b-03": {
+      "id": "t08-s24-ryokan-n1-b-03",
+      "editorialRef": "E-B-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "日本酒もおいしかったです！",
+      "kana": "にほんしゅもおいしかったです！",
+      "kanaDisplay": "にほんしゅ も おいしかった です！",
+      "romaji": "Nihonshu mo oishikatta desu!",
+      "fr": "Le saké était délicieux aussi !"
+    },
+    "t08-s24-ryokan-n1-b-04": {
+      "id": "t08-s24-ryokan-n1-b-04",
+      "editorialRef": "E-B-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "いいですね！私も日本酒が好きです。",
+      "kana": "いいですね！わたしもにほんしゅがすきです。",
+      "kanaDisplay": "いい です ね！わたし も にほんしゅ が すき です。",
+      "romaji": "Ii desu ne! Watashi mo nihonshu ga suki desu.",
+      "fr": "Ça donne envie ! Moi aussi, j’aime le saké."
+    },
+    "t08-s24-ryokan-n1-c-01": {
+      "id": "t08-s24-ryokan-n1-c-01",
+      "editorialRef": "E-C-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "浴衣は着ましたか。",
+      "kana": "ゆかたはきましたか。",
+      "kanaDisplay": "ゆかた は きましたか。",
+      "romaji": "Yukata wa kimashita ka.",
+      "fr": "Vous avez porté un yukata ?"
+    },
+    "t08-s24-ryokan-n1-c-02": {
+      "id": "t08-s24-ryokan-n1-c-02",
+      "editorialRef": "E-C-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "はい。浴衣を着て、夕食を食べました。",
+      "kana": "はい。ゆかたをきて、ゆうしょくをたべました。",
+      "kanaDisplay": "はい。ゆかた を きて、ゆうしょく を たべました。",
+      "romaji": "Hai. Yukata o kite, yūshoku o tabemashita.",
+      "fr": "Oui. Nous avons dîné en yukata."
+    },
+    "t08-s24-ryokan-n1-c-03": {
+      "id": "t08-s24-ryokan-n1-c-03",
+      "editorialRef": "E-C-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "畳の上を歩くのも楽しかったです。",
+      "kana": "たたみのうえをあるくのもたのしかったです。",
+      "kanaDisplay": "たたみ の うえ を あるく の も たのしかった です。",
+      "romaji": "Tatami no ue o aruku no mo tanoshikatta desu.",
+      "fr": "J’ai aussi beaucoup aimé marcher sur les tatamis."
+    },
+    "t08-s24-ryokan-n1-c-04": {
+      "id": "t08-s24-ryokan-n1-c-04",
+      "editorialRef": "E-C-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "すてきな思い出ですね。",
+      "kana": "すてきなおもいでですね。",
+      "kanaDisplay": "すてきな おもいで です ね。",
+      "romaji": "Suteki na omoide desu ne.",
+      "fr": "C’est un joli souvenir."
+    },
+    "t08-s24-ryokan-n1-fin-01": {
+      "id": "t08-s24-ryokan-n1-fin-01",
+      "editorialRef": "E-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "いろいろな経験ができましたね。",
+      "kana": "いろいろなけいけんができましたね。",
+      "kanaDisplay": "いろいろな けいけん が できました ね。",
+      "romaji": "Iroiro na keiken ga dekimashita ne.",
+      "fr": "Vous avez vécu toutes sortes de choses !"
+    },
+    "t08-s24-ryokan-n1-fin-02": {
+      "id": "t08-s24-ryokan-n1-fin-02",
+      "editorialRef": "E-F-02",
+      "speakerId": "cilmac",
+      "function": "conclusion",
+      "jp": "はい。次はもっとゆっくり旅行したいです。",
+      "kana": "はい。つぎはもっとゆっくりりょこうしたいです。",
+      "kanaDisplay": "はい。つぎ は もっと ゆっくり りょこう したい です。",
+      "romaji": "Hai. Tsugi wa motto yukkuri ryokō shitai desu.",
+      "fr": "Oui. La prochaine fois, on aimerait voyager plus tranquillement."
+    },
+    "t08-s24-ryokan-n1-fin-03": {
+      "id": "t08-s24-ryokan-n1-fin-03",
+      "editorialRef": "E-F-03",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "私もです。また日本に行きたいです。",
+      "kana": "わたしもです。またにほんにいきたいです。",
+      "kanaDisplay": "わたし も です。また にほん に いきたい です。",
+      "romaji": "Watashi mo desu. Mata Nihon ni ikitai desu.",
+      "fr": "Moi aussi. J’aimerais retourner au Japon."
+    },
+    "t08-s24-ryokan-n2-o-01": {
+      "id": "t08-s24-ryokan-n2-o-01",
+      "editorialRef": "C-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "高山の旅館で、いちばん印象に残ったことは何ですか。",
+      "kana": "たかやまのりょかんで、いちばんいんしょうにのこったことはなんですか。",
+      "kanaDisplay": "たかやま の りょかん で、いちばん いんしょう に のこった こと は なん ですか。",
+      "romaji": "Takayama no ryokan de, ichiban inshō ni nokotta koto wa nan desu ka.",
+      "fr": "Qu’est-ce qui vous a le plus marqués au ryokan de Takayama ?"
+    },
+    "t08-s24-ryokan-n2-o-02": {
+      "id": "t08-s24-ryokan-n2-o-02",
+      "editorialRef": "C-O-02",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "畳の部屋も、夕食もすてきでした。",
+      "kana": "たたみのへやも、ゆうしょくもすてきでした。",
+      "kanaDisplay": "たたみ の へや も、ゆうしょく も すてき でした。",
+      "romaji": "Tatami no heya mo, yūshoku mo suteki deshita.",
+      "fr": "La chambre avec tatamis était magnifique, et le dîner aussi."
+    },
+    "t08-s24-ryokan-n2-o-03": {
+      "id": "t08-s24-ryokan-n2-o-03",
+      "editorialRef": "C-O-03",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "楽しいことも、ちょっと困ったこともありました。",
+      "kana": "たのしいことも、ちょっとこまったこともありました。",
+      "kanaDisplay": "たのしい こと も、ちょっと こまった こと も ありました。",
+      "romaji": "Tanoshii koto mo, chotto komatta koto mo arimashita.",
+      "fr": "Il y a eu des moments agréables, mais aussi quelques petites difficultés."
+    },
+    "t08-s24-ryokan-n2-o-04": {
+      "id": "t08-s24-ryokan-n2-o-04",
+      "editorialRef": "C-O-04",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "そうなんですか。聞かせてください。",
+      "kana": "そうなんですか。きかせてください。",
+      "kanaDisplay": "そうなんですか。きかせて ください。",
+      "romaji": "Sō nan desu ka. Kikasete kudasai.",
+      "fr": "Ah oui ? Raconte-moi !"
+    },
+    "t08-s24-ryokan-n2-a-01": {
+      "id": "t08-s24-ryokan-n2-a-01",
+      "editorialRef": "C-A-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "布団は気持ちよかったんですが、朝、起き上がるのが大変だったんです。",
+      "kana": "ふとんはきもちよかったんですが、あさ、おきあがるのがたいへんだったんです。",
+      "kanaDisplay": "ふとん は きもちよかったんですが、あさ、おきあがる の が たいへん だったんです。",
+      "romaji": "Futon wa kimochi yokatta n desu ga, asa, okiagaru no ga taihen datta n desu.",
+      "fr": "Le futon était confortable, mais le matin, j’avais du mal à me relever."
+    },
+    "t08-s24-ryokan-n2-a-02": {
+      "id": "t08-s24-ryokan-n2-a-02",
+      "editorialRef": "C-A-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "布団から起き上がるのは、慣れていないと大変ですよね。",
+      "kana": "ふとんからおきあがるのは、なれていないとたいへんですよね。",
+      "kanaDisplay": "ふとん から おきあがる の は、なれて いない と たいへん です よ ね。",
+      "romaji": "Futon kara okiagaru no wa, narete inai to taihen desu yo ne.",
+      "fr": "Se relever d’un futon, quand on n’en a pas l’habitude, ce n’est pas facile."
+    },
+    "t08-s24-ryokan-n2-a-03": {
+      "id": "t08-s24-ryokan-n2-a-03",
+      "editorialRef": "C-A-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "それで、ちょっと変なことを考えたんです。",
+      "kana": "それで、ちょっとへんなことをかんがえたんです。",
+      "kanaDisplay": "それで、ちょっと へんな こと を かんがえたんです。",
+      "romaji": "Sore de, chotto hen na koto o kangaeta n desu.",
+      "fr": "Alors, j’ai eu une drôle d’idée."
+    },
+    "t08-s24-ryokan-n2-a-04": {
+      "id": "t08-s24-ryokan-n2-a-04",
+      "editorialRef": "C-A-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "えっ、どんなことですか。",
+      "kana": "えっ、どんなことですか。",
+      "kanaDisplay": "えっ、どんな こと ですか。",
+      "romaji": "E, donna koto desu ka.",
+      "fr": "Ah bon ? Laquelle ?"
+    },
+    "t08-s24-ryokan-n2-a-05": {
+      "id": "t08-s24-ryokan-n2-a-05",
+      "editorialRef": "C-A-05",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "高山では、ほかの町より重力が強いんですかって、ChatGPTに聞いてみたんです。",
+      "kana": "たかやまでは、ほかのまちよりじゅうりょくがつよいんですかって、チャットジーピーティーにきいてみたんです。",
+      "kanaDisplay": "たかやま では、ほか の まち より じゅうりょく が つよいんですか って、チャットジーピーティー に きいて みたんです。",
+      "romaji": "Takayama de wa, hoka no machi yori jūryoku ga tsuyoi n desu ka tte, Chatto Jī Pī Tī ni kiite mita n desu.",
+      "fr": "J’ai même demandé à ChatGPT si la gravité était plus forte à Takayama que dans les autres villes !"
+    },
+    "t08-s24-ryokan-n2-a-06": {
+      "id": "t08-s24-ryokan-n2-a-06",
+      "editorialRef": "C-A-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "あはは！重力のせいにしたんですね！",
+      "kana": "あはは！じゅうりょくのせいにしたんですね！",
+      "kanaDisplay": "あはは！じゅうりょく の せい に したんですね！",
+      "romaji": "Ahaha! Jūryoku no sei ni shita n desu ne!",
+      "fr": "Ah ah ! Tu as donc accusé la gravité !"
+    },
+    "t08-s24-ryokan-n2-a-07": {
+      "id": "t08-s24-ryokan-n2-a-07",
+      "editorialRef": "C-A-07",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "私も起き上がるのが大変でした。でも、重力のせいじゃないと思いますよ！",
+      "kana": "わたしもおきあがるのがたいへんでした。でも、じゅうりょくのせいじゃないとおもいますよ！",
+      "kanaDisplay": "わたし も おきあがる の が たいへん でした。でも、じゅうりょく の せい じゃない と おもいます よ！",
+      "romaji": "Watashi mo okiagaru no ga taihen deshita. Demo, jūryoku no sei janai to omoimasu yo!",
+      "fr": "Moi aussi, j’ai eu du mal à me relever. Mais je ne pense pas que la gravité y soit pour quelque chose !"
+    },
+    "t08-s24-ryokan-n2-a-08": {
+      "id": "t08-s24-ryokan-n2-a-08",
+      "editorialRef": "C-A-08",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "そうかもしれませんね。次はベッドにします！",
+      "kana": "そうかもしれませんね。つぎはベッドにします！",
+      "kanaDisplay": "そう かも しれません ね。つぎ は ベッド に します！",
+      "romaji": "Sō kamo shiremasen ne. Tsugi wa beddo ni shimasu!",
+      "fr": "C’est possible… La prochaine fois, je choisis un lit !"
+    },
+    "t08-s24-ryokan-n2-b-01": {
+      "id": "t08-s24-ryokan-n2-b-01",
+      "editorialRef": "C-B-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "夕食では、いろいろな料理が少しずつ出てきたんです。",
+      "kana": "ゆうしょくでは、いろいろなりょうりがすこしずつでてきたんです。",
+      "kanaDisplay": "ゆうしょく では、いろいろな りょうり が すこしずつ でて きたんです。",
+      "romaji": "Yūshoku de wa, iroiro na ryōri ga sukoshi zutsu dete kita n desu.",
+      "fr": "Au dîner, on nous a servi toutes sortes de plats en petites portions."
+    },
+    "t08-s24-ryokan-n2-b-02": {
+      "id": "t08-s24-ryokan-n2-b-02",
+      "editorialRef": "C-B-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "それは楽しそうですね。特に何がおいしかったですか。",
+      "kana": "それはたのしそうですね。とくになにがおいしかったですか。",
+      "kanaDisplay": "それ は たのしそう です ね。とくに なに が おいしかった ですか。",
+      "romaji": "Sore wa tanoshisō desu ne. Toku ni nani ga oishikatta desu ka.",
+      "fr": "Ça devait être agréable ! Qu’avez-vous particulièrement aimé ?"
+    },
+    "t08-s24-ryokan-n2-b-03": {
+      "id": "t08-s24-ryokan-n2-b-03",
+      "editorialRef": "C-B-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "お刺身です。盛り付けもきれいでした。",
+      "kana": "おさしみです。もりつけもきれいでした。",
+      "kanaDisplay": "おさしみ です。もりつけ も きれい でした。",
+      "romaji": "Osashimi desu. Moritsuke mo kirei deshita.",
+      "fr": "Les sashimis. La présentation était très belle aussi."
+    },
+    "t08-s24-ryokan-n2-b-04": {
+      "id": "t08-s24-ryokan-n2-b-04",
+      "editorialRef": "C-B-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私は日本酒も楽しみました。料理によく合いましたよ。",
+      "kana": "わたしはにほんしゅもたのしみました。りょうりによくあいましたよ。",
+      "kanaDisplay": "わたし は にほんしゅ も たのしみました。りょうり に よく あいました よ。",
+      "romaji": "Watashi wa nihonshu mo tanoshimashita. Ryōri ni yoku aimashita yo.",
+      "fr": "Et moi, j’ai aussi apprécié le saké. Il accompagnait très bien les plats."
+    },
+    "t08-s24-ryokan-n2-b-05": {
+      "id": "t08-s24-ryokan-n2-b-05",
+      "editorialRef": "C-B-05",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "フランスでも日本酒を飲むんですか。",
+      "kana": "フランスでもにほんしゅをのむんですか。",
+      "kanaDisplay": "フランス でも にほんしゅ を のむんですか。",
+      "romaji": "Furansu demo nihonshu o nomu n desu ka.",
+      "fr": "Vous buvez aussi du saké en France ?"
+    },
+    "t08-s24-ryokan-n2-b-06": {
+      "id": "t08-s24-ryokan-n2-b-06",
+      "editorialRef": "C-B-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "はい、ときどき飲みます。いつか一緒に飲みたいですね。",
+      "kana": "はい、ときどきのみます。いつかいっしょにのみたいですね。",
+      "kanaDisplay": "はい、ときどき のみます。いつか いっしょに のみたい です ね。",
+      "romaji": "Hai, tokidoki nomimasu. Itsuka issho ni nomitai desu ne.",
+      "fr": "Oui, de temps en temps. J’aimerais bien qu’on en boive ensemble un jour."
+    },
+    "t08-s24-ryokan-n2-b-07": {
+      "id": "t08-s24-ryokan-n2-b-07",
+      "editorialRef": "C-B-07",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ぜひ！フランスの料理とも合わせてみたいです。",
+      "kana": "ぜひ！フランスのりょうりともあわせてみたいです。",
+      "kanaDisplay": "ぜひ！フランス の りょうり とも あわせて みたい です。",
+      "romaji": "Zehi! Furansu no ryōri tomo awasete mitai desu.",
+      "fr": "Avec plaisir ! J’aimerais aussi essayer le saké avec des plats français."
+    },
+    "t08-s24-ryokan-n2-b-08": {
+      "id": "t08-s24-ryokan-n2-b-08",
+      "editorialRef": "C-B-08",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そのときは、私が料理を作りますね！",
+      "kana": "そのときは、わたしがりょうりをつくりますね！",
+      "kanaDisplay": "その とき は、わたし が りょうり を つくります ね！",
+      "romaji": "Sono toki wa, watashi ga ryōri o tsukurimasu ne!",
+      "fr": "Ce jour-là, je préparerai le repas !"
+    },
+    "t08-s24-ryokan-n2-c-01": {
+      "id": "t08-s24-ryokan-n2-c-01",
+      "editorialRef": "C-C-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "夕食の時間が決まっていて、ちょっと急いだ気がしました。",
+      "kana": "ゆうしょくのじかんがきまっていて、ちょっといそいだきがしました。",
+      "kanaDisplay": "ゆうしょく の じかん が きまって いて、ちょっと いそいだ き が しました。",
+      "romaji": "Yūshoku no jikan ga kimatte ite, chotto isoida ki ga shimashita.",
+      "fr": "L’heure du dîner était fixée, et j’ai eu l’impression de devoir me dépêcher."
+    },
+    "t08-s24-ryokan-n2-c-02": {
+      "id": "t08-s24-ryokan-n2-c-02",
+      "editorialRef": "C-C-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そうだったんですね。もう少し自由に過ごしたかったですか。",
+      "kana": "そうだったんですね。もうすこしじゆうにすごしたかったですか。",
+      "kanaDisplay": "そう だったんです ね。もう すこし じゆう に すごしたかった ですか。",
+      "romaji": "Sō datta n desu ne. Mō sukoshi jiyū ni sugoshitakatta desu ka.",
+      "fr": "Ah, je vois. Tu aurais préféré être un peu plus libre de ton temps ?"
+    },
+    "t08-s24-ryokan-n2-c-03": {
+      "id": "t08-s24-ryokan-n2-c-03",
+      "editorialRef": "C-C-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "はい。でも、雰囲気はとてもすてきでした。",
+      "kana": "はい。でも、ふんいきはとてもすてきでした。",
+      "kanaDisplay": "はい。でも、ふんいき は とても すてき でした。",
+      "romaji": "Hai. Demo, fun’iki wa totemo suteki deshita.",
+      "fr": "Oui. Mais l’ambiance était vraiment magnifique."
+    },
+    "t08-s24-ryokan-n2-c-04": {
+      "id": "t08-s24-ryokan-n2-c-04",
+      "editorialRef": "C-C-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "旅行では、自由な時間も大切ですよね。",
+      "kana": "りょこうでは、じゆうなじかんもたいせつですよね。",
+      "kanaDisplay": "りょこう では、じゆうな じかん も たいせつ です よ ね。",
+      "romaji": "Ryokō de wa, jiyū na jikan mo taisetsu desu yo ne.",
+      "fr": "En voyage, c’est important aussi d’avoir du temps libre."
+    },
+    "t08-s24-ryokan-n2-c-05": {
+      "id": "t08-s24-ryokan-n2-c-05",
+      "editorialRef": "C-C-05",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "そうですね。次は、時間に余裕のある宿がいいです。",
+      "kana": "そうですね。つぎは、じかんによゆうのあるやどがいいです。",
+      "kanaDisplay": "そう です ね。つぎ は、じかん に よゆう の ある やど が いい です。",
+      "romaji": "Sō desu ne. Tsugi wa, jikan ni yoyū no aru yado ga ii desu.",
+      "fr": "Exactement. La prochaine fois, j’aimerais un hébergement où l’on soit moins pressés."
+    },
+    "t08-s24-ryokan-n2-c-06": {
+      "id": "t08-s24-ryokan-n2-c-06",
+      "editorialRef": "C-C-06",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そして、同じ場所にもっと長く泊まりたいですね。",
+      "kana": "そして、おなじばしょにもっとながくとまりたいですね。",
+      "kanaDisplay": "そして、おなじ ばしょ に もっと ながく とまりたい です ね。",
+      "romaji": "Soshite, onaji basho ni motto nagaku tomaritai desu ne.",
+      "fr": "Et j’aimerais aussi rester plus longtemps au même endroit."
+    },
+    "t08-s24-ryokan-n2-d-01": {
+      "id": "t08-s24-ryokan-n2-d-01",
+      "editorialRef": "C-D-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "畳の上を歩くと、とても気持ちがよかったんです。",
+      "kana": "たたみのうえをあるくと、とてもきもちがよかったんです。",
+      "kanaDisplay": "たたみ の うえ を あるく と、とても きもち が よかったんです。",
+      "romaji": "Tatami no ue o aruku to, totemo kimochi ga yokatta n desu.",
+      "fr": "Marcher sur les tatamis était vraiment agréable."
+    },
+    "t08-s24-ryokan-n2-d-02": {
+      "id": "t08-s24-ryokan-n2-d-02",
+      "editorialRef": "C-D-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "フランスの家にも、畳の部屋がありますか。",
+      "kana": "フランスのいえにも、たたみのへやがありますか。",
+      "kanaDisplay": "フランス の いえ にも、たたみ の へや が ありますか。",
+      "romaji": "Furansu no ie ni mo, tatami no heya ga arimasu ka.",
+      "fr": "Il y a aussi des pièces avec tatamis dans les maisons françaises ?"
+    },
+    "t08-s24-ryokan-n2-d-03": {
+      "id": "t08-s24-ryokan-n2-d-03",
+      "editorialRef": "C-D-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "あまりありません。でも、家にあったらすてきですね。",
+      "kana": "あまりありません。でも、いえにあったらすてきですね。",
+      "kanaDisplay": "あまり ありません。でも、いえ に あったら すてき です ね。",
+      "romaji": "Amari arimasen. Demo, ie ni attara suteki desu ne.",
+      "fr": "Pas beaucoup. Mais ce serait chouette d’en avoir chez soi."
+    },
+    "t08-s24-ryokan-n2-d-04": {
+      "id": "t08-s24-ryokan-n2-d-04",
+      "editorialRef": "C-D-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そうなんですね。畳に座るのはどうでしたか。",
+      "kana": "そうなんですね。たたみにすわるのはどうでしたか。",
+      "kanaDisplay": "そうなんです ね。たたみ に すわる の は どう でしたか。",
+      "romaji": "Sō nan desu ne. Tatami ni suwaru no wa dō deshita ka.",
+      "fr": "Je vois. Et vous asseoir sur les tatamis, ça allait ?"
+    },
+    "t08-s24-ryokan-n2-d-05": {
+      "id": "t08-s24-ryokan-n2-d-05",
+      "editorialRef": "C-D-05",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "少し大変でした。椅子のありがたさがわかりました！",
+      "kana": "すこしたいへんでした。いすのありがたさがわかりました！",
+      "kanaDisplay": "すこし たいへん でした。いす の ありがたさ が わかりました！",
+      "romaji": "Sukoshi taihen deshita. Isu no arigatasa ga wakarimashita!",
+      "fr": "Pas toujours facile. J’ai redécouvert les avantages d’une chaise !"
+    },
+    "t08-s24-ryokan-n2-d-06": {
+      "id": "t08-s24-ryokan-n2-d-06",
+      "editorialRef": "C-D-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "あはは！それも旅の発見ですね。",
+      "kana": "あはは！それもたびのはっけんですね。",
+      "kanaDisplay": "あはは！それ も たび の はっけん です ね。",
+      "romaji": "Ahaha! Sore mo tabi no hakken desu ne.",
+      "fr": "Ah ah ! Voilà aussi une découverte de voyage !"
+    },
+    "t08-s24-ryokan-n2-fin-01": {
+      "id": "t08-s24-ryokan-n2-fin-01",
+      "editorialRef": "C-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "いろいろなお話が聞けて、楽しかったです。",
+      "kana": "いろいろなおはなしがきけて、たのしかったです。",
+      "kanaDisplay": "いろいろな おはなし が きけて、たのしかった です。",
+      "romaji": "Iroiro na ohanashi ga kikete, tanoshikatta desu.",
+      "fr": "J’ai beaucoup aimé vous écouter raconter toutes ces histoires."
+    },
+    "t08-s24-ryokan-n2-fin-02": {
+      "id": "t08-s24-ryokan-n2-fin-02",
+      "editorialRef": "C-F-02",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "次はもっとゆっくり日本を旅したいです。",
+      "kana": "つぎはもっとゆっくりにほんをたびしたいです。",
+      "kanaDisplay": "つぎ は もっと ゆっくり にほん を たび したい です。",
+      "romaji": "Tsugi wa motto yukkuri Nihon o tabi shitai desu.",
+      "fr": "La prochaine fois, on aimerait découvrir le Japon plus tranquillement."
+    },
+    "t08-s24-ryokan-n2-fin-03": {
+      "id": "t08-s24-ryokan-n2-fin-03",
+      "editorialRef": "C-F-03",
+      "speakerId": "cilmac",
+      "function": "conclusion",
+      "jp": "そのときは、おすすめを教えてください！",
+      "kana": "そのときは、おすすめをおしえてください！",
+      "kanaDisplay": "その とき は、おすすめ を おしえて ください！",
+      "romaji": "Sono toki wa, osusume o oshiete kudasai!",
+      "fr": "À ce moment-là, donne-nous tes recommandations !"
+    },
+    "t08-s24-ryokan-n2-clar-01": {
+      "id": "t08-s24-ryokan-n2-clar-01",
+      "editorialRef": "C-R-01",
+      "speakerId": "cilmac",
+      "function": "clarification",
+      "jp": "すみません、もう一度ゆっくり言ってもらえますか。",
+      "kana": "すみません、もういちどゆっくりいってもらえますか。",
+      "kanaDisplay": "すみません、もう いちど ゆっくり いって もらえますか。",
+      "romaji": "Sumimasen, mō ichido yukkuri itte moraemasu ka.",
+      "fr": "Pardon, tu peux répéter plus lentement ?"
+    },
+    "t08-s24-ryokan-n2-clar-02": {
+      "id": "t08-s24-ryokan-n2-clar-02",
+      "editorialRef": "C-R-02",
+      "speakerId": "yuki",
+      "function": "clarification",
+      "jp": "もちろんです。ゆっくり言いますね。",
+      "kana": "もちろんです。ゆっくりいいますね。",
+      "kanaDisplay": "もちろん です。ゆっくり いいます ね。",
+      "romaji": "Mochiron desu. Yukkuri iimasu ne.",
+      "fr": "Bien sûr, je vais répéter doucement."
+    },
+    "t08-s24-ryokan-n3-o-01": {
+      "id": "t08-s24-ryokan-n3-o-01",
+      "editorialRef": "D-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "昔ながらの旅館には、どんな良さがあると思いますか。",
+      "kana": "むかしながらのりょかんには、どんなよさがあるとおもいますか。",
+      "kanaDisplay": "むかしながら の りょかん には、どんな よさ が ある と おもいますか。",
+      "romaji": "Mukashi nagara no ryokan ni wa, donna yosa ga aru to omoimasu ka.",
+      "fr": "À votre avis, qu’est-ce qui fait le charme d’un ryokan traditionnel ?"
+    },
+    "t08-s24-ryokan-n3-o-02": {
+      "id": "t08-s24-ryokan-n3-o-02",
+      "editorialRef": "D-O-02",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "畳や浴衣、食事を通して、日本の文化を身近に感じました。",
+      "kana": "たたみやゆかた、しょくじをとおして、にほんのぶんかをみぢかにかんじました。",
+      "kanaDisplay": "たたみ や ゆかた、しょくじ を とおして、にほん の ぶんか を みぢか に かんじました。",
+      "romaji": "Tatami ya yukata, shokuji o tōshite, Nihon no bunka o mijika ni kanjimashita.",
+      "fr": "Avec les tatamis, le yukata et les repas, j’ai eu l’impression de découvrir la culture japonaise de près."
+    },
+    "t08-s24-ryokan-n3-o-03": {
+      "id": "t08-s24-ryokan-n3-o-03",
+      "editorialRef": "D-O-03",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "私も好きでした。ただ、快適さについて考えることもありました。",
+      "kana": "わたしもすきでした。ただ、かいてきさについてかんがえることもありました。",
+      "kanaDisplay": "わたし も すき でした。ただ、かいてきさ について かんがえる こと も ありました。",
+      "romaji": "Watashi mo suki deshita. Tada, kaitekisa ni tsuite kangaeru koto mo arimashita.",
+      "fr": "J’ai beaucoup aimé aussi. Mais cela m’a fait réfléchir à la question du confort."
+    },
+    "t08-s24-ryokan-n3-o-04": {
+      "id": "t08-s24-ryokan-n3-o-04",
+      "editorialRef": "D-O-04",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "たとえば、どんなことですか。",
+      "kana": "たとえば、どんなことですか。",
+      "kanaDisplay": "たとえば、どんな こと ですか。",
+      "romaji": "Tatoeba, donna koto desu ka.",
+      "fr": "Par exemple ?"
+    },
+    "t08-s24-ryokan-n3-a-01": {
+      "id": "t08-s24-ryokan-n3-a-01",
+      "editorialRef": "D-A-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "伝統は残してほしいです。でも、ベッドや椅子を選べると、もっと泊まりやすいと思います。",
+      "kana": "でんとうはのこしてほしいです。でも、ベッドやいすをえらべると、もっととまりやすいとおもいます。",
+      "kanaDisplay": "でんとう は のこして ほしい です。でも、ベッド や いす を えらべる と、もっと とまりやすい と おもいます。",
+      "romaji": "Dentō wa nokoshite hoshii desu. Demo, beddo ya isu o eraberu to, motto tomariyasui to omoimasu.",
+      "fr": "J’aimerais qu’on préserve les traditions. Mais pouvoir choisir un lit ou une chaise rendrait le séjour plus facile."
+    },
+    "t08-s24-ryokan-n3-a-02": {
+      "id": "t08-s24-ryokan-n3-a-02",
+      "editorialRef": "D-A-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そうですね。選択肢があると、いろいろな人が楽しめそうですね。",
+      "kana": "そうですね。せんたくしがあると、いろいろなひとがたのしめそうですね。",
+      "kanaDisplay": "そう です ね。せんたくし が ある と、いろいろな ひと が たのしめそう です ね。",
+      "romaji": "Sō desu ne. Sentakushi ga aru to, iroiro na hito ga tanoshimesō desu ne.",
+      "fr": "Oui. Avec plusieurs options, davantage de personnes pourraient en profiter."
+    },
+    "t08-s24-ryokan-n3-a-03": {
+      "id": "t08-s24-ryokan-n3-a-03",
+      "editorialRef": "D-A-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "私は畳の雰囲気を残してほしいです。あの感じが好きなので。",
+      "kana": "わたしはたたみのふんいきをのこしてほしいです。あのかんじがすきなので。",
+      "kanaDisplay": "わたし は たたみ の ふんいき を のこして ほしい です。あの かんじ が すき なので。",
+      "romaji": "Watashi wa tatami no fun’iki o nokoshite hoshii desu. Ano kanji ga suki na node.",
+      "fr": "Moi, j’aimerais garder l’ambiance des tatamis. J’aime tellement cette atmosphère."
+    },
+    "t08-s24-ryokan-n3-a-04": {
+      "id": "t08-s24-ryokan-n3-a-04",
+      "editorialRef": "D-A-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "畳の部屋にベッドを置く方法もありますね。",
+      "kana": "たたみのへやにベッドをおくほうほうもありますね。",
+      "kanaDisplay": "たたみ の へや に ベッド を おく ほうほう も あります ね。",
+      "romaji": "Tatami no heya ni beddo o oku hōhō mo arimasu ne.",
+      "fr": "On peut aussi envisager un lit dans une chambre avec tatamis."
+    },
+    "t08-s24-ryokan-n3-a-05": {
+      "id": "t08-s24-ryokan-n3-a-05",
+      "editorialRef": "D-A-05",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "それなら、また泊まりたいです！",
+      "kana": "それなら、またとまりたいです！",
+      "kanaDisplay": "それ なら、また とまりたい です！",
+      "romaji": "Sore nara, mata tomaritai desu!",
+      "fr": "Dans ce cas, je serais partant pour y retourner !"
+    },
+    "t08-s24-ryokan-n3-b-01": {
+      "id": "t08-s24-ryokan-n3-b-01",
+      "editorialRef": "D-B-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "食事の時間が決まっていたので、少し落ち着きませんでした。",
+      "kana": "しょくじのじかんがきまっていたので、すこしおちつきませんでした。",
+      "kanaDisplay": "しょくじ の じかん が きまって いた ので、すこし おちつきません でした。",
+      "romaji": "Shokuji no jikan ga kimatte ita node, sukoshi ochitsukimasen deshita.",
+      "fr": "Comme les horaires des repas étaient fixés, je ne me suis pas senti complètement libre de mon temps."
+    },
+    "t08-s24-ryokan-n3-b-02": {
+      "id": "t08-s24-ryokan-n3-b-02",
+      "editorialRef": "D-B-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "時間が決まっていると、旅行中でも急いでしまうことがありますね。",
+      "kana": "じかんがきまっていると、りょこうちゅうでもいそいでしまうことがありますね。",
+      "kanaDisplay": "じかん が きまって いる と、りょこうちゅう でも いそいで しまう こと が あります ね。",
+      "romaji": "Jikan ga kimatte iru to, ryokōchū demo isoide shimau koto ga arimasu ne.",
+      "fr": "Quand les horaires sont imposés, on peut finir par se presser, même en vacances."
+    },
+    "t08-s24-ryokan-n3-b-03": {
+      "id": "t08-s24-ryokan-n3-b-03",
+      "editorialRef": "D-B-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "はい。せっかくの旅行だったので、もう少し自分たちのペースで過ごしたかったです。",
+      "kana": "はい。せっかくのりょこうだったので、もうすこしじぶんたちのペースですごしたかったです。",
+      "kanaDisplay": "はい。せっかく の りょこう だった ので、もう すこし じぶんたち の ペース で すごしたかった です。",
+      "romaji": "Hai. Sekkaku no ryokō datta node, mō sukoshi jibuntachi no pēsu de sugoshitakatta desu.",
+      "fr": "Oui. Puisqu’on était en voyage, j’aurais préféré qu’on vive un peu plus à notre rythme."
+    },
+    "t08-s24-ryokan-n3-b-04": {
+      "id": "t08-s24-ryokan-n3-b-04",
+      "editorialRef": "D-B-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "フランスの宿では、もう少し自由に過ごせますか。",
+      "kana": "フランスのやどでは、もうすこしじゆうにすごせますか。",
+      "kanaDisplay": "フランス の やど では、もう すこし じゆう に すごせますか。",
+      "romaji": "Furansu no yado de wa, mō sukoshi jiyū ni sugosemasu ka.",
+      "fr": "Dans les hébergements français, peut-on organiser son temps plus librement ?"
+    },
+    "t08-s24-ryokan-n3-b-05": {
+      "id": "t08-s24-ryokan-n3-b-05",
+      "editorialRef": "D-B-05",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "宿によりますね。でも、私たちは時間を自由に使えるところが好きです。",
+      "kana": "やどによりますね。でも、わたしたちはじかんをじゆうにつかえるところがすきです。",
+      "kanaDisplay": "やど に よります ね。でも、わたしたち は じかん を じゆう に つかえる ところ が すき です。",
+      "romaji": "Yado ni yorimasu ne. Demo, watashitachi wa jikan o jiyū ni tsukaeru tokoro ga suki desu.",
+      "fr": "Ça dépend des établissements. Mais nous aimons les endroits où l’on peut organiser librement son temps."
+    },
+    "t08-s24-ryokan-n3-b-06": {
+      "id": "t08-s24-ryokan-n3-b-06",
+      "editorialRef": "D-B-06",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "次は、予定を少なめにしたいですね。",
+      "kana": "つぎは、よていをすくなめにしたいですね。",
+      "kanaDisplay": "つぎ は、よてい を すくなめ に したい です ね。",
+      "romaji": "Tsugi wa, yotei o sukuname ni shitai desu ne.",
+      "fr": "La prochaine fois, j’aimerais prévoir moins d’activités."
+    },
+    "t08-s24-ryokan-n3-c-01": {
+      "id": "t08-s24-ryokan-n3-c-01",
+      "editorialRef": "D-C-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "床に座ったり、立ち上がったりするのが大変な人もいますよね。",
+      "kana": "ゆかにすわったり、たちあがったりするのがたいへんなひともいますよね。",
+      "kanaDisplay": "ゆか に すわったり、たちあがったり する の が たいへんな ひと も います よ ね。",
+      "romaji": "Yuka ni suwattari, tachiagattari suru no ga taihen na hito mo imasu yo ne.",
+      "fr": "Pour certaines personnes, s’asseoir par terre ou se relever peut être difficile."
+    },
+    "t08-s24-ryokan-n3-c-02": {
+      "id": "t08-s24-ryokan-n3-c-02",
+      "editorialRef": "D-C-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そうですね。いろいろな人が泊まりやすい旅館だといいですね。",
+      "kana": "そうですね。いろいろなひとがとまりやすいりょかんだといいですね。",
+      "kanaDisplay": "そう です ね。いろいろな ひと が とまりやすい りょかん だと いい です ね。",
+      "romaji": "Sō desu ne. Iroiro na hito ga tomariyasui ryokan da to ii desu ne.",
+      "fr": "Oui. Ce serait bien que les ryokan puissent accueillir confortablement des personnes très différentes."
+    },
+    "t08-s24-ryokan-n3-c-03": {
+      "id": "t08-s24-ryokan-n3-c-03",
+      "editorialRef": "D-C-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "手すりや椅子があれば、もっと楽になると思います。",
+      "kana": "てすりやいすがあれば、もっとらくになるとおもいます。",
+      "kanaDisplay": "てすり や いす が あれば、もっと らく に なる と おもいます。",
+      "romaji": "Tesuri ya isu ga areba, motto raku ni naru to omoimasu.",
+      "fr": "Avec des barres d’appui ou des chaises, ce serait plus facile, je pense."
+    },
+    "t08-s24-ryokan-n3-c-04": {
+      "id": "t08-s24-ryokan-n3-c-04",
+      "editorialRef": "D-C-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "伝統を守りながら、工夫することはできそうですね。",
+      "kana": "でんとうをまもりながら、くふうすることはできそうですね。",
+      "kanaDisplay": "でんとう を まもりながら、くふう する こと は できそう です ね。",
+      "romaji": "Dentō o mamorinagara, kufū suru koto wa dekisō desu ne.",
+      "fr": "On pourrait sans doute trouver des aménagements tout en préservant les traditions."
+    },
+    "t08-s24-ryokan-n3-c-05": {
+      "id": "t08-s24-ryokan-n3-c-05",
+      "editorialRef": "D-C-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "文化を楽しむために、無理をする必要はないと思います。",
+      "kana": "ぶんかをたのしむために、むりをするひつようはないとおもいます。",
+      "kanaDisplay": "ぶんか を たのしむ ため に、むり を する ひつよう は ない と おもいます。",
+      "romaji": "Bunka o tanoshimu tame ni, muri o suru hitsuyō wa nai to omoimasu.",
+      "fr": "Je pense qu’on ne devrait pas avoir à se mettre en difficulté pour profiter d’une culture."
+    },
+    "t08-s24-ryokan-n3-c-06": {
+      "id": "t08-s24-ryokan-n3-c-06",
+      "editorialRef": "D-C-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "そのとおりですね。自分に合った方法を選びたいです。",
+      "kana": "そのとおりですね。じぶんにあったほうほうをえらびたいです。",
+      "kanaDisplay": "その とおり です ね。じぶん に あった ほうほう を えらびたい です。",
+      "romaji": "Sono tōri desu ne. Jibun ni atta hōhō o erabitai desu.",
+      "fr": "Tout à fait. Je préfère pouvoir choisir ce qui me convient."
+    },
+    "t08-s24-ryokan-n3-fin-01": {
+      "id": "t08-s24-ryokan-n3-fin-01",
+      "editorialRef": "D-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "話していると、またいろいろ聞いてみたくなりますね。",
+      "kana": "はなしていると、またいろいろきいてみたくなりますね。",
+      "kanaDisplay": "はなして いる と、また いろいろ きいて みたく なります ね。",
+      "romaji": "Hanashite iru to, mata iroiro kiite mitaku narimasu ne.",
+      "fr": "Quand on discute, ça donne envie de poser encore plein de questions !"
+    },
+    "t08-s24-ryokan-n3-fin-02": {
+      "id": "t08-s24-ryokan-n3-fin-02",
+      "editorialRef": "D-F-02",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "次は日本の食べ物の話をしましょう！",
+      "kana": "つぎはにほんのたべもののはなしをしましょう！",
+      "kanaDisplay": "つぎ は にほん の たべもの の はなし を しましょう！",
+      "romaji": "Tsugi wa Nihon no tabemono no hanashi o shimashō!",
+      "fr": "La prochaine fois, parlons de cuisine japonaise !"
+    },
+    "t08-s24-ryokan-n3-fin-03": {
+      "id": "t08-s24-ryokan-n3-fin-03",
+      "editorialRef": "D-F-03",
+      "speakerId": "cilmac",
+      "function": "conclusion",
+      "jp": "いいですね。日本酒の話も忘れずに！",
+      "kana": "いいですね。にほんしゅのはなしもわすれずに！",
+      "kanaDisplay": "いい です ね。にほんしゅ の はなし も わすれず に！",
+      "romaji": "Ii desu ne. Nihonshu no hanashi mo wasurezu ni!",
+      "fr": "Excellente idée ! Sans oublier le saké !"
+    },
+    "t08-s24-ryokan-n3-fin-04": {
+      "id": "t08-s24-ryokan-n3-fin-04",
+      "editorialRef": "D-F-04",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "もちろんです！",
+      "kana": "もちろんです！",
+      "kanaDisplay": "もちろん です！",
+      "romaji": "Mochiron desu!",
+      "fr": "Évidemment !"
+    }
+  }
+}

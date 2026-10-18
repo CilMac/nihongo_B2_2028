@@ -52,3 +52,9 @@ body.conversations-active .shell{max-width:1280px}
 .conversation-word-reading{color:var(--muted);margin-left:8px}
 
 .conversation-word-romaji{color:#193e78;font-style:italic;margin-left:8px}
+.conversation-notes{margin-top:10px;border-top:1px solid var(--line);padding-top:6px}
+.conversation-notes summary{min-height:44px;cursor:pointer;color:var(--muted);font-size:14px;padding:8px 0}
+.conversation-note{padding:10px 14px;margin:10px 0;background:#f7f2f6;border-left:3px solid #c7a9bd;border-radius:6px;overflow-wrap:anywhere}
+.conversation-note h3{font-size:16px;margin:0 0 8px}
+.conversation-note p{margin:0;line-height:1.65}
+.conversation-focus{background:#f6e4a6;color:inherit;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}

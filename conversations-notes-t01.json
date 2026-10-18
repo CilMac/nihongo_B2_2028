@@ -1,0 +1,450 @@
+{
+  "schemaVersion": "editorial-sidecar-1.0",
+  "status": "annotations-editoriales-acceptees-pour-integration-locale-publication-non-autorisee",
+  "sourceSituationId": "t01-s02",
+  "sourceVersion": "v1.0-validée-linguistiquement-par-ChatGPT",
+  "sourceTurnCount": 80,
+  "sourceUnchanged": true,
+  "notesClosedByDefault": true,
+  "highlightPolicy": "Aucun repérage visible quand À comprendre est fermé. À l’ouverture, mise en évidence éphémère des extraits focus sur les lignes jp/kanaDisplay/romaji actuellement visibles ; si une aide est masquée, ne pas la forcer à apparaître. Aucun balisage inséré dans les textes linguistiques.",
+  "separateFromExistingVocabulary": true,
+  "notes": [
+    {
+      "id": "note-t01-s02-e1",
+      "label": "E1",
+      "turnId": "t01-s02-n1-a-02",
+      "level": "n1",
+      "title": "La particule de direction se lit « e »",
+      "bodyFr": "La particule de direction *e* s’écrit avec le kana habituellement lu *he*. Elle marque ici la destination du déplacement. La particule *ni* peut aussi marquer une destination, avec une nuance différente selon le contexte. L’important à retenir ici est que le signe employé pour *e* ne se prononce pas *he* lorsqu’il sert de particule.",
+      "focus": [
+        {
+          "jp": "どこへ行きましたか",
+          "kana": "どこへいきましたか",
+          "kanaDisplay": "どこ へ いきましたか",
+          "romaji": "Doko e ikimashita ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-e2",
+      "label": "E2",
+      "turnId": "t01-s02-n1-b-02",
+      "level": "n1",
+      "title": "Relier la raison et son résultat",
+      "bodyFr": "L’adjectif en *-i* prend ici la forme **-kute** pour relier deux informations : beaucoup de travail, puis la fatigue. Cette forme ne veut pas dire automatiquement « parce que », mais le lien de cause à effet est naturel dans cette phrase. Très utile pour raconter une journée ou une semaine.",
+      "focus": [
+        {
+          "jp": "忙しくて",
+          "kana": "いそがしくて",
+          "kanaDisplay": "いそがしくて",
+          "romaji": "isogashikute"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-e3",
+      "label": "E3",
+      "turnId": "t01-s02-n1-b-03",
+      "level": "n1",
+      "title": "Conseiller avec douceur : « ne fais pas… »",
+      "bodyFr": "La construction **forme négative en -naide + kudasai** sert à demander ou conseiller de **ne pas faire quelque chose**. Ici, Yuki reçoit un conseil bienveillant, adouci par la particule finale *ne*. Ce n’est pas un ordre sévère.",
+      "focus": [
+        {
+          "jp": "無理しないでください",
+          "kana": "むりしないでください",
+          "kanaDisplay": "むり しないで ください",
+          "romaji": "Muri shinaide kudasai"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-e4",
+      "label": "E4",
+      "turnId": "t01-s02-n1-d-03",
+      "level": "n1",
+      "title": "Un état connu et un mot qu’on reconnaît",
+      "bodyFr": "**Shitte iru** décrit ici un **état** : les mots que Plume connaît déjà. La terminaison *-te iru* ne désigne donc pas toujours une action en cours. Plus loin, *kikoeru* exprime le fait d’entendre ou de percevoir quelque chose, sans insister sur l’effort d’écoute. Les deux formes expliquent pourquoi elle reconnaît parfois un mot dans une série.",
+      "focus": [
+        {
+          "jp": "知っている言葉",
+          "kana": "しっていることば",
+          "kanaDisplay": "しっている ことば",
+          "romaji": "shitte iru kotoba"
+        },
+        {
+          "jp": "聞こえます",
+          "kana": "きこえます",
+          "kanaDisplay": "きこえます",
+          "romaji": "kikoemasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c1",
+      "label": "C1",
+      "turnId": "t01-s02-n2-a-01",
+      "level": "n2",
+      "title": "Décrire une activité en cours ou habituelle",
+      "bodyFr": "Avec **-te imasu**, *tsukutte imasu* peut évoquer une activité **en cours** ou quelque chose que l’on fait **régulièrement en ce moment**, selon le contexte. CilMac ne dit pas qu’il est nécessairement devant son ordinateur à l’instant où il parle.",
+      "focus": [
+        {
+          "jp": "作っています",
+          "kana": "つくっています",
+          "kanaDisplay": "つくっています",
+          "romaji": "tsukutte imasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c2",
+      "label": "C2",
+      "turnId": "t01-s02-n2-a-02",
+      "level": "n2",
+      "title": "« Ça a l’air… » plutôt que « c’est… »",
+      "bodyFr": "La terminaison **-sō** appliquée ici à un adjectif exprime une **impression** : cela paraît intéressant d’après ce que CilMac vient de raconter. Ce *-sō* ne sert pas simplement à répéter une information entendue ; la ressemblance avec d’autres emplois de *sō desu* peut prêter à confusion.",
+      "focus": [
+        {
+          "jp": "面白そう",
+          "kana": "おもしろそう",
+          "kanaDisplay": "おもしろそう",
+          "romaji": "omoshirosō"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c3",
+      "label": "C3",
+      "turnId": "t01-s02-n2-a-03",
+      "level": "n2",
+      "title": "Donner des exemples, pas une liste exhaustive",
+      "bodyFr": "La construction **-tari … -tari** énumère des **exemples d’activités**. Ici, le sens est « on peut, entre autres, apprendre des mots et s’entraîner à converser ». La phrase n’implique pas que le site ne permette que ces deux choses.",
+      "focus": [
+        {
+          "jp": "覚えたり",
+          "kana": "おぼえたり",
+          "kanaDisplay": "おぼえたり",
+          "romaji": "oboetari"
+        },
+        {
+          "jp": "練習をしたり",
+          "kana": "れんしゅうをしたり",
+          "kanaDisplay": "れんしゅう を したり",
+          "romaji": "renshū o shitari"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c4",
+      "label": "C4",
+      "turnId": "t01-s02-n2-a-04",
+      "level": "n2",
+      "title": "Combiner « essayer pour voir » et « avoir envie »",
+      "bodyFr": "Deux idées se superposent : **-te miru** (« faire l’essai pour voir ») et **-tai** (« avoir envie de »). *Mite mitai* ne répète donc pas simplement deux fois « voir » : Yuki aimerait **aller jeter un œil au site pour découvrir comment il fonctionne**.",
+      "focus": [
+        {
+          "jp": "見てみたい",
+          "kana": "みてみたい",
+          "kanaDisplay": "みてみたい",
+          "romaji": "mite mitai"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c5",
+      "label": "C5",
+      "turnId": "t01-s02-n2-b-03",
+      "level": "n2",
+      "title": "Une possibilité qui semble réalisable",
+      "bodyFr": "Le verbe **toreru** est la forme potentielle de *toru* : ici, « pouvoir prendre » des congés. Avec **-sō**, la question devient « est-ce que ça semble possible ? ». C’est moins abrupt que de demander si Yuki prendra réellement des vacances.",
+      "focus": [
+        {
+          "jp": "取れそうですか",
+          "kana": "とれそうですか",
+          "kanaDisplay": "とれそうですか",
+          "romaji": "toresō desu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c6",
+      "label": "C6",
+      "turnId": "t01-s02-n2-b-04",
+      "level": "n2",
+      "title": "La difficulté exprimée avec une forme négative",
+      "bodyFr": "**Nakanaka** accompagné d’une forme **négative** marque souvent une difficulté persistante : on voudrait pouvoir faire quelque chose, mais cela ne se réalise pas facilement. Il n’exprime pas ici une impossibilité absolue de prendre des congés.",
+      "focus": [
+        {
+          "jp": "なかなか取れません",
+          "kana": "なかなかとれません",
+          "kanaDisplay": "なかなか とれません",
+          "romaji": "nakanaka toremasen"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c7",
+      "label": "C7",
+      "turnId": "t01-s02-n2-c-02",
+      "level": "n2",
+      "title": "Montrer qu’on vient de comprendre",
+      "bodyFr": "**Nan desu ne** marque ici la **prise de conscience** : Yuki comprend que Plume aime les séries coréennes et le lui manifeste. Avec l’adjectif nominal *suki*, on emploie **nan**, et non le simple *n*, avant *desu*. Très utile pour montrer qu’on écoute vraiment.",
+      "focus": [
+        {
+          "jp": "好きなんですね",
+          "kana": "すきなんですね",
+          "kanaDisplay": "すき なん です ね",
+          "romaji": "suki nan desu ne"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c8",
+      "label": "C8",
+      "turnId": "t01-s02-n2-c-03",
+      "level": "n2",
+      "title": "Parler d’une intention passée",
+      "bodyFr": "**-yō to omou** sert à exprimer l’idée de **faire quelque chose**. La forme passée progressive **-yō to omotte ita** montre que le projet existait **à cette époque**, sans affirmer qu’il a été réalisé. Cela explique parfaitement le détour par la Corée dans le récit de Plume.",
+      "focus": [
+        {
+          "jp": "旅行しようと思っていたんです",
+          "kana": "りょこうしようとおもっていたんです",
+          "kanaDisplay": "りょこう しよう と おもっていたん です",
+          "romaji": "ryokō shiyō to omotte ita n desu"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c9",
+      "label": "C9",
+      "turnId": "t01-s02-n2-f-01",
+      "level": "n2",
+      "title": "Décrire un nom avec une proposition entière",
+      "bodyFr": "En japonais, l’information qui précise **quel nom** on désigne se place **avant** ce nom : littéralement « une série [dans laquelle Satō Takeru apparaît] ». Il n’est pas nécessaire d’ajouter l’équivalent français de « qui » ou « dans laquelle ». Cette construction est fondamentale pour raconter et décrire.",
+      "focus": [
+        {
+          "jp": "佐藤健さんが出ているドラマ",
+          "kana": "さとうたけるさんがでているドラマ",
+          "kanaDisplay": "さとうたけるさん が でている ドラマ",
+          "romaji": "Satō Takeru-san ga dete iru dorama"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c10",
+      "label": "C10",
+      "turnId": "t01-s02-n2-f-04",
+      "level": "n2",
+      "title": "Entendre des sons ou saisir ce qui est dit ?",
+      "bodyFr": "**Kikitoru** signifie **saisir à l’oreille**, distinguer les paroles. Sa forme potentielle ici demande si les mots sont compréhensibles à l’écoute. Ce n’est pas tout à fait *kikoeru* (« parvenir à l’oreille »), rencontré au niveau Essentiel. On peut entendre une phrase sans parvenir à en saisir les mots.",
+      "focus": [
+        {
+          "jp": "聞き取れますか",
+          "kana": "ききとれますか",
+          "kanaDisplay": "ききとれますか",
+          "romaji": "kikitoremasu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-c11",
+      "label": "C11",
+      "turnId": "t01-s02-n2-clar-01",
+      "level": "n2",
+      "title": "Demander poliment un service",
+      "bodyFr": "La construction **-te moraemasu ka** demande si l’interlocuteur peut **faire quelque chose pour nous**. Ici, elle rend la demande de répétition plus douce qu’un ordre. Le *mō ichido* de la phrase indique qu’il s’agit bien de **répéter**, pas seulement de parler moins vite.",
+      "focus": [
+        {
+          "jp": "言ってもらえますか",
+          "kana": "いってもらえますか",
+          "kanaDisplay": "いって もらえますか",
+          "romaji": "itte moraemasu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d1",
+      "label": "D1",
+      "turnId": "t01-s02-n3-o-03",
+      "level": "n3",
+      "title": "Exprimer son opinion : un petit « da » à ne pas oublier",
+      "bodyFr": "Avant **to omou** (« je pense que… »), un adjectif nominal comme *taisetsu* se construit généralement avec **da** au registre courant : *taisetsu da to omoimasu*. On ne transporte donc pas mécaniquement le *desu* de la fin d’une phrase à l’intérieur de « je pense que… ».",
+      "focus": [
+        {
+          "jp": "大切だと思います",
+          "kana": "たいせつだとおもいます",
+          "kanaDisplay": "たいせつ だ と おもいます",
+          "romaji": "taisetsu da to omoimasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d2",
+      "label": "D2",
+      "turnId": "t01-s02-n3-o-04",
+      "level": "n3",
+      "title": "Comparer deux façons de passer son temps",
+      "bodyFr": "La construction **verbe + hō ga suki** permet de dire **quelle option on préfère**. Le verbe peut rester sous forme neutre devant *hō*. Ici, CilMac propose deux manières de passer le week-end ; ce n’est pas une opposition entre deux personnes.",
+      "focus": [
+        {
+          "jp": "予定を入れるほうが好きですか",
+          "kana": "よていをいれるほうがすきですか",
+          "kanaDisplay": "よてい を いれる ほう が すき ですか",
+          "romaji": "yotei o ireru hō ga suki desu ka"
+        },
+        {
+          "jp": "ゆっくり過ごすほうが好きですか",
+          "kana": "ゆっくりすごすほうがすきですか",
+          "kanaDisplay": "ゆっくり すごす ほう が すき ですか",
+          "romaji": "yukkuri sugosu hō ga suki desu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d3",
+      "label": "D3",
+      "turnId": "t01-s02-n3-a-01",
+      "level": "n3",
+      "title": "Quand une action entraîne habituellement un effet",
+      "bodyFr": "La structure **verbe neutre + to** exprime ici une conséquence **habituelle** : rencontrer des amis lui redonne de l’énergie. Comme dans un automatisme, l’effet suit naturellement l’action. À distinguer des conditions imaginaires ou des souhaits.",
+      "focus": [
+        {
+          "jp": "友達に会うと",
+          "kana": "ともだちにあうと",
+          "kanaDisplay": "ともだち に あう と",
+          "romaji": "Tomodachi ni au to"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d4",
+      "label": "D4",
+      "turnId": "t01-s02-n3-a-03",
+      "level": "n3",
+      "title": "Dire qu’on aime faire quelque chose",
+      "bodyFr": "Le petit **no** transforme une action (*suru*, « faire ») en activité dont on peut dire qu’on l’aime. Avec **no ga suki**, on parle donc du **fait de faire quelque chose**, et pas seulement d’un objet apprécié.",
+      "focus": [
+        {
+          "jp": "何をするのが好きですか",
+          "kana": "なにをするのがすきですか",
+          "kanaDisplay": "なに を する の が すき ですか",
+          "romaji": "nani o suru no ga suki desu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d5",
+      "label": "D5",
+      "turnId": "t01-s02-n3-b-01",
+      "level": "n3",
+      "title": "« Rien » se construit avec une négation",
+      "bodyFr": "**Nani mo** combiné avec un verbe **négatif** donne l’idée de « ne rien… ». Ce qui compte est l’ensemble **nani mo + shinai**, pas le seul mot *nani*. La construction aide à comprendre beaucoup de phrases sur les activités, les envies ou leur absence.",
+      "focus": [
+        {
+          "jp": "何もしない時間",
+          "kana": "なにもしないじかん",
+          "kanaDisplay": "なに も しない じかん",
+          "romaji": "Nani mo shinai jikan"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d6",
+      "label": "D6",
+      "turnId": "t01-s02-n3-b-02",
+      "level": "n3",
+      "title": "Une action qui nous échappe un peu",
+      "bodyFr": "**Tsui** suggère qu’on agit **sans vraiment y penser** ; la terminaison **-te shimau** peut ajouter une nuance d’action achevée ou **involontaire / regrettée**. Ensemble, elles rendent très bien le réflexe de CilMac : il rouvre presque automatiquement son ordinateur.",
+      "focus": [
+        {
+          "jp": "ついパソコンを開いてしまいます",
+          "kana": "ついパソコンをひらいてしまいます",
+          "kanaDisplay": "つい パソコン を ひらいてしまいます",
+          "romaji": "tsui pasokon o hiraite shimaimasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d7",
+      "label": "D7",
+      "turnId": "t01-s02-n3-b-04",
+      "level": "n3",
+      "title": "Dire « il faut » avec une forme négative",
+      "bodyFr": "**-nai to ikemasen** signifie littéralement, en simplifiant, « si je ne le fais pas, ça ne va pas » ; dans l’usage, cela exprime une **obligation** ou une nécessité. Ici, CilMac plaisante sur le besoin de fermer son ordinateur de temps à autre.",
+      "focus": [
+        {
+          "jp": "閉じないといけません",
+          "kana": "とじないといけません",
+          "kanaDisplay": "とじないと いけません",
+          "romaji": "tojinai to ikemasen"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d8",
+      "label": "D8",
+      "turnId": "t01-s02-n3-c-01",
+      "level": "n3",
+      "title": "Répondre sans choisir : « ça dépend »",
+      "bodyFr": "La tournure **-ni yorimasu** sert à dire **« ça dépend de… »**. Elle permet de ne pas choisir artificiellement entre deux réponses : Yuki explique que sa préférence dépend de son humeur. Très pratique pour discuter de goûts et d’opinions nuancées.",
+      "focus": [
+        {
+          "jp": "気分によります",
+          "kana": "きぶんによります",
+          "kanaDisplay": "きぶん に よります",
+          "romaji": "kibun ni yorimasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d9",
+      "label": "D9",
+      "turnId": "t01-s02-n3-c-04",
+      "level": "n3",
+      "title": "Adapter une décision et exprimer la possibilité",
+      "bodyFr": "**-ni awasete** indique qu’on **s’adapte à un critère** : ici, l’humeur. **Kimeraremasu** est la forme potentielle de *kimeru* : « pouvoir décider ». La combinaison sert à reformuler la stratégie de Yuki avec précision, plutôt qu’à donner un simple avis.",
+      "focus": [
+        {
+          "jp": "気分に合わせて決められます",
+          "kana": "きぶんにあわせてきめられます",
+          "kanaDisplay": "きぶん に あわせて きめられます",
+          "romaji": "kibun ni awasete kimeraremasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d10",
+      "label": "D10",
+      "turnId": "t01-s02-n3-d-04",
+      "level": "n3",
+      "title": "Parler de la fréquence d’une habitude",
+      "bodyFr": "**Verbe neutre + koto ga ōi** exprime qu’une activité se produit **souvent**. Ici, cela signifie « je regarde souvent des séries », et non « il existe beaucoup de séries ». La tournure est très réutilisable pour raconter ses habitudes.",
+      "focus": [
+        {
+          "jp": "見ることが多い",
+          "kana": "みることがおおい",
+          "kanaDisplay": "みる こと が おおい",
+          "romaji": "miru koto ga ōi"
+        }
+      ]
+    },
+    {
+      "id": "note-t01-s02-d11",
+      "label": "D11",
+      "turnId": "t01-s02-n3-fin-04",
+      "level": "n3",
+      "title": "Attendre quelque chose avec plaisir",
+      "bodyFr": "**Tanoshimi ni shite imasu** est une façon naturelle de dire qu’on **attend avec plaisir** un événement futur. Ce n’est pas simplement « je suis en train de m’amuser ». Très utile dans les messages amicaux et pour conclure chaleureusement une conversation.",
+      "focus": [
+        {
+          "jp": "楽しみにしています",
+          "kana": "たのしみにしています",
+          "kanaDisplay": "たのしみに しています",
+          "romaji": "Tanoshimi ni shite imasu"
+        }
+      ]
+    }
+  ],
+  "displayLabel": "🌸 À comprendre",
+  "highlightOnlyWhileOpen": true,
+  "comment": "Aucune modification des repliques source; schema technique libre d adaptation sous controle de correspondance."
+}
