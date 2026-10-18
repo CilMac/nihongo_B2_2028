@@ -1,0 +1,1367 @@
+{
+  "schemaVersion": 1,
+  "status": "integrated",
+  "editorialVersion": "1.0",
+  "linguisticStatus": "reviewed-and-approved-by-chatgpt-v1.0",
+  "publicationApproved": false,
+  "editorialSource": {
+    "prototype": "PROTOTYPE_CONVERSATIONS_ENTRE_AMIS_T01_S02_VERSION_1_0_RELU.md",
+    "readings": "kana source + kanaDisplay relus et contrôlés pour 80 répliques",
+    "version": "1.0",
+    "linguisticReview": "completed-by-chatgpt-2026-10-18-no-native-review-requested",
+    "kanaSegmentation": "reviewed-by-chatgpt-mechanical-same-reading-verified",
+    "supersedes": "v0.13 (lot non encore transmis à Codex)"
+  },
+  "situation": {
+    "id": "T01-S02",
+    "theme": "Prendre des nouvelles",
+    "title": "Prendre des nouvelles et raconter sa semaine",
+    "context": "Appel oral fictif à distance. Selon la branche, Plume participe directement à l’échange ; une seule branche est visible à la fois.",
+    "participants": {
+      "cilmac": "CilMac",
+      "plume": "Plume",
+      "yuki": "Yuki"
+    },
+    "levels": [
+      {
+        "id": "essentiel",
+        "sourceId": "n1",
+        "title": "Essentiel",
+        "objective": "Prendre des nouvelles, répondre, réagir et relancer avec des phrases courtes.",
+        "opening": [
+          "t01-s02-n1-o-01",
+          "t01-s02-n1-o-02",
+          "t01-s02-n1-o-03"
+        ],
+        "ending": [
+          "t01-s02-n1-fin-01",
+          "t01-s02-n1-fin-02"
+        ],
+        "supportTurnIds": [
+          "t01-s02-n1-clar-01"
+        ],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Une bonne semaine",
+            "turnIds": [
+              "t01-s02-n1-a-01",
+              "t01-s02-n1-a-02",
+              "t01-s02-n1-a-03"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Des rythmes différents : Yuki travaille beaucoup",
+            "turnIds": [
+              "t01-s02-n1-b-01",
+              "t01-s02-n1-b-02",
+              "t01-s02-n1-b-03"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "C",
+            "title": "Des souvenirs du Japon",
+            "turnIds": [
+              "t01-s02-n1-c-01",
+              "t01-s02-n1-c-02",
+              "t01-s02-n1-c-03"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "D",
+            "title": "Séries japonaises en version originale",
+            "turnIds": [
+              "t01-s02-n1-d-01",
+              "t01-s02-n1-d-02",
+              "t01-s02-n1-d-03"
+            ],
+            "clarifications": []
+          }
+        ]
+      },
+      {
+        "id": "conversation",
+        "sourceId": "n2",
+        "title": "Conversation",
+        "objective": "Raconter une activité, poser des questions adaptées, relancer et faire préciser.",
+        "opening": [
+          "t01-s02-n2-o-01",
+          "t01-s02-n2-o-02",
+          "t01-s02-n2-o-03"
+        ],
+        "ending": [
+          "t01-s02-n2-fin-01",
+          "t01-s02-n2-fin-02"
+        ],
+        "supportTurnIds": [],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Mes sites Web pour apprendre le japonais",
+            "turnIds": [
+              "t01-s02-n2-a-01",
+              "t01-s02-n2-a-02",
+              "t01-s02-n2-a-03",
+              "t01-s02-n2-a-04",
+              "t01-s02-n2-a-05"
+            ],
+            "clarifications": [
+              {
+                "id": "t01-s02-n2-clar-a-02",
+                "insertionAfterTurnId": "t01-s02-n2-a-02",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-a-02",
+                "resumeAtTurnId": "t01-s02-n2-a-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-a-02",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t01-s02-n2-clar-a-04",
+                "insertionAfterTurnId": "t01-s02-n2-a-04",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-a-04",
+                "resumeAtTurnId": "t01-s02-n2-a-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-a-04",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Yuki a eu beaucoup de travail",
+            "turnIds": [
+              "t01-s02-n2-b-01",
+              "t01-s02-n2-b-02",
+              "t01-s02-n2-b-03",
+              "t01-s02-n2-b-04",
+              "t01-s02-n2-b-05"
+            ],
+            "clarifications": [
+              {
+                "id": "t01-s02-n2-clar-b-02",
+                "insertionAfterTurnId": "t01-s02-n2-b-02",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-b-02",
+                "resumeAtTurnId": "t01-s02-n2-b-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-b-02",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t01-s02-n2-clar-b-04",
+                "insertionAfterTurnId": "t01-s02-n2-b-04",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-b-04",
+                "resumeAtTurnId": "t01-s02-n2-b-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-b-04",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Plume, la cuisine et les séries coréennes",
+            "turnIds": [
+              "t01-s02-n2-c-01",
+              "t01-s02-n2-c-02",
+              "t01-s02-n2-c-03",
+              "t01-s02-n2-c-04",
+              "t01-s02-n2-c-05"
+            ],
+            "clarifications": [
+              {
+                "id": "t01-s02-n2-clar-c-02",
+                "insertionAfterTurnId": "t01-s02-n2-c-02",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-c-02",
+                "resumeAtTurnId": "t01-s02-n2-c-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-c-02",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t01-s02-n2-clar-c-04",
+                "insertionAfterTurnId": "t01-s02-n2-c-04",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-c-04",
+                "resumeAtTurnId": "t01-s02-n2-c-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-c-04",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Les saveurs du Japon",
+            "turnIds": [
+              "t01-s02-n2-d-01",
+              "t01-s02-n2-d-02",
+              "t01-s02-n2-d-03",
+              "t01-s02-n2-d-04",
+              "t01-s02-n2-d-05"
+            ],
+            "clarifications": [
+              {
+                "id": "t01-s02-n2-clar-d-02",
+                "insertionAfterTurnId": "t01-s02-n2-d-02",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-d-02",
+                "resumeAtTurnId": "t01-s02-n2-d-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-d-02",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t01-s02-n2-clar-d-04",
+                "insertionAfterTurnId": "t01-s02-n2-d-04",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-d-04",
+                "resumeAtTurnId": "t01-s02-n2-d-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-d-04",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "E",
+            "title": "Yuki raconte un concert",
+            "turnIds": [
+              "t01-s02-n2-e-01",
+              "t01-s02-n2-e-02",
+              "t01-s02-n2-e-03",
+              "t01-s02-n2-e-04",
+              "t01-s02-n2-e-05"
+            ],
+            "clarifications": [
+              {
+                "id": "t01-s02-n2-clar-e-02",
+                "insertionAfterTurnId": "t01-s02-n2-e-02",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-e-02",
+                "resumeAtTurnId": "t01-s02-n2-e-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-e-02",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t01-s02-n2-clar-e-04",
+                "insertionAfterTurnId": "t01-s02-n2-e-04",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-e-04",
+                "resumeAtTurnId": "t01-s02-n2-e-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-e-04",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "F",
+            "title": "Satō Takeru et les séries japonaises en version originale",
+            "turnIds": [
+              "t01-s02-n2-f-01",
+              "t01-s02-n2-f-02",
+              "t01-s02-n2-f-03",
+              "t01-s02-n2-f-04",
+              "t01-s02-n2-f-05"
+            ],
+            "clarifications": [
+              {
+                "id": "t01-s02-n2-clar-f-02",
+                "insertionAfterTurnId": "t01-s02-n2-f-02",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-f-02",
+                "resumeAtTurnId": "t01-s02-n2-f-03",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-f-02",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              },
+              {
+                "id": "t01-s02-n2-clar-f-04",
+                "insertionAfterTurnId": "t01-s02-n2-f-04",
+                "requestTurnId": "t01-s02-n2-clar-01",
+                "ackTurnId": "t01-s02-n2-clar-02",
+                "repeatTurnId": "t01-s02-n2-f-04",
+                "resumeAtTurnId": "t01-s02-n2-f-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t01-s02-n2-f-04",
+                "turnIds": [
+                  "t01-s02-n2-clar-01",
+                  "t01-s02-n2-clar-02"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "discussion",
+        "sourceId": "n3",
+        "title": "Discussion",
+        "objective": "Exprimer des préférences, accueillir un avis différent, expliquer et nuancer.",
+        "opening": [
+          "t01-s02-n3-o-01",
+          "t01-s02-n3-o-02",
+          "t01-s02-n3-o-03",
+          "t01-s02-n3-o-04"
+        ],
+        "ending": [
+          "t01-s02-n3-fin-01",
+          "t01-s02-n3-fin-02",
+          "t01-s02-n3-fin-03",
+          "t01-s02-n3-fin-04"
+        ],
+        "supportTurnIds": [],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Préférer les week-ends actifs",
+            "turnIds": [
+              "t01-s02-n3-a-01",
+              "t01-s02-n3-a-02",
+              "t01-s02-n3-a-03",
+              "t01-s02-n3-a-04"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Préférer les week-ends calmes",
+            "turnIds": [
+              "t01-s02-n3-b-01",
+              "t01-s02-n3-b-02",
+              "t01-s02-n3-b-03",
+              "t01-s02-n3-b-04"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "C",
+            "title": "Ça dépend des semaines",
+            "turnIds": [
+              "t01-s02-n3-c-01",
+              "t01-s02-n3-c-02",
+              "t01-s02-n3-c-03",
+              "t01-s02-n3-c-04"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "D",
+            "title": "Préférer les concerts pour décompresser",
+            "turnIds": [
+              "t01-s02-n3-d-01",
+              "t01-s02-n3-d-02",
+              "t01-s02-n3-d-03",
+              "t01-s02-n3-d-04",
+              "t01-s02-n3-d-05"
+            ],
+            "clarifications": []
+          }
+        ]
+      }
+    ]
+  },
+  "turns": {
+    "t01-s02-n1-o-01": {
+      "id": "t01-s02-n1-o-01",
+      "editorialRef": "N1-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture cordiale entre amis en contact régulier",
+      "jp": "こんにちは。元気ですか。",
+      "kana": "こんにちは。げんきですか。",
+      "kanaDisplay": "こんにちは。げんき ですか。",
+      "romaji": "Konnichiwa. Genki desu ka.",
+      "fr": "Bonjour ! Tu vas bien ?"
+    },
+    "t01-s02-n1-o-02": {
+      "id": "t01-s02-n1-o-02",
+      "editorialRef": "N1-O-02",
+      "speakerId": "cilmac",
+      "function": "réponse + relance",
+      "jp": "はい、元気です。ゆきさんは？",
+      "kana": "はい、げんきです。ゆきさんは？",
+      "kanaDisplay": "はい、げんき です。ゆきさん は？",
+      "romaji": "Hai, genki desu. Yuki-san wa?",
+      "fr": "Oui, je vais bien. Et toi, Yuki ?"
+    },
+    "t01-s02-n1-o-03": {
+      "id": "t01-s02-n1-o-03",
+      "editorialRef": "N1-O-03",
+      "speakerId": "yuki",
+      "function": "réponse + question",
+      "jp": "私も元気です。今週はどうでしたか。",
+      "kana": "わたしもげんきです。こんしゅうはどうでしたか。",
+      "kanaDisplay": "わたし も げんき です。こんしゅう は どうでしたか。",
+      "romaji": "Watashi mo genki desu. Konshū wa dō deshita ka.",
+      "fr": "Moi aussi, ça va. Comment s’est passée ta semaine ?"
+    },
+    "t01-s02-n1-a-01": {
+      "id": "t01-s02-n1-a-01",
+      "editorialRef": "N1-A-01",
+      "speakerId": "cilmac",
+      "function": "récit bref",
+      "jp": "楽しかったです。友達と散歩しました。",
+      "kana": "たのしかったです。ともだちとさんぽしました。",
+      "kanaDisplay": "たのしかった です。ともだち と さんぽ しました。",
+      "romaji": "Tanoshikatta desu. Tomodachi to sanpo shimashita.",
+      "fr": "C’était chouette. Je me suis promené avec un ami."
+    },
+    "t01-s02-n1-a-02": {
+      "id": "t01-s02-n1-a-02",
+      "editorialRef": "N1-A-02",
+      "speakerId": "yuki",
+      "function": "réaction + relance",
+      "jp": "いいですね！どこへ行きましたか。",
+      "kana": "いいですね！どこへいきましたか。",
+      "kanaDisplay": "いい です ね！どこ へ いきましたか。",
+      "romaji": "Ii desu ne! Doko e ikimashita ka.",
+      "fr": "Sympa ! Vous êtes allés où ?"
+    },
+    "t01-s02-n1-a-03": {
+      "id": "t01-s02-n1-a-03",
+      "editorialRef": "N1-A-03",
+      "speakerId": "cilmac",
+      "function": "précision",
+      "jp": "公園へ行きました。",
+      "kana": "こうえんへいきました。",
+      "kanaDisplay": "こうえん へ いきました。",
+      "romaji": "Kōen e ikimashita.",
+      "fr": "Au parc."
+    },
+    "t01-s02-n1-b-01": {
+      "id": "t01-s02-n1-b-01",
+      "editorialRef": "N1-B-01",
+      "speakerId": "cilmac",
+      "function": "semaine tranquille + relance",
+      "jp": "今週はゆっくりできました。ゆきさんは？",
+      "kana": "こんしゅうはゆっくりできました。ゆきさんは？",
+      "kanaDisplay": "こんしゅう は ゆっくり できました。ゆきさん は？",
+      "romaji": "Konshū wa yukkuri dekimashita. Yuki-san wa?",
+      "fr": "Cette semaine, j’ai pu prendre mon temps. Et toi, Yuki ?"
+    },
+    "t01-s02-n1-b-02": {
+      "id": "t01-s02-n1-b-02",
+      "editorialRef": "N1-B-02",
+      "speakerId": "yuki",
+      "function": "fatigue professionnelle fictive",
+      "jp": "仕事が忙しくて、疲れました。",
+      "kana": "しごとがいそがしくて、つかれました。",
+      "kanaDisplay": "しごと が いそがしくて、つかれました。",
+      "romaji": "Shigoto ga isogashikute, tsukaremashita.",
+      "fr": "J’ai eu beaucoup de travail et je suis fatiguée."
+    },
+    "t01-s02-n1-b-03": {
+      "id": "t01-s02-n1-b-03",
+      "editorialRef": "N1-B-03",
+      "speakerId": "cilmac",
+      "function": "empathie",
+      "jp": "それは大変でしたね。無理しないでくださいね。",
+      "kana": "それはたいへんでしたね。むりしないでくださいね。",
+      "kanaDisplay": "それ は たいへん でした ね。むり しないで ください ね。",
+      "romaji": "Sore wa taihen deshita ne. Muri shinaide kudasai ne.",
+      "fr": "Ça a dû être fatigant. Ne te surmène pas, surtout."
+    },
+    "t01-s02-n1-c-01": {
+      "id": "t01-s02-n1-c-01",
+      "editorialRef": "N1-C-01",
+      "speakerId": "cilmac",
+      "function": "récit personnel",
+      "jp": "この前、プルームと日本の写真を見ました。",
+      "kana": "このまえ、プルームとにほんのしゃしんをみました。",
+      "kanaDisplay": "このまえ、プルーム と にほん の しゃしん を みました。",
+      "romaji": "Kono mae, Purūmu to Nihon no shashin o mimashita.",
+      "fr": "L’autre jour, Plume et moi avons regardé des photos du Japon."
+    },
+    "t01-s02-n1-c-02": {
+      "id": "t01-s02-n1-c-02",
+      "editorialRef": "N1-C-02",
+      "speakerId": "yuki",
+      "function": "réaction + question",
+      "jp": "いいですね！どんな写真ですか。",
+      "kana": "いいですね！どんなしゃしんですか。",
+      "kanaDisplay": "いい です ね！どんな しゃしん ですか。",
+      "romaji": "Ii desu ne! Donna shashin desu ka.",
+      "fr": "Ah, sympa ! Quel genre de photos ?"
+    },
+    "t01-s02-n1-c-03": {
+      "id": "t01-s02-n1-c-03",
+      "editorialRef": "N1-C-03",
+      "speakerId": "cilmac",
+      "function": "précision",
+      "jp": "お寺と電車の写真です。しまかぜの写真もありました。",
+      "kana": "おてらとでんしゃのしゃしんです。しまかぜのしゃしんもありました。",
+      "kanaDisplay": "おてら と でんしゃ の しゃしん です。しまかぜ の しゃしん も ありました。",
+      "romaji": "Otera to densha no shashin desu. Shimakaze no shashin mo arimashita.",
+      "fr": "Des temples et des trains. Il y avait aussi des photos du Shimakaze."
+    },
+    "t01-s02-n1-d-01": {
+      "id": "t01-s02-n1-d-01",
+      "editorialRef": "N1-D-01",
+      "speakerId": "cilmac",
+      "function": "activité partagée",
+      "jp": "この前、プルームと日本のドラマを見ました。",
+      "kana": "このまえ、プルームとにほんのドラマをみました。",
+      "kanaDisplay": "このまえ、プルーム と にほん の ドラマ を みました。",
+      "romaji": "Kono mae, Purūmu to Nihon no dorama o mimashita.",
+      "fr": "L’autre jour, j’ai regardé une série japonaise avec Plume."
+    },
+    "t01-s02-n1-d-02": {
+      "id": "t01-s02-n1-d-02",
+      "editorialRef": "N1-D-02",
+      "speakerId": "yuki",
+      "function": "question directe à Plume",
+      "jp": "プルームさん、日本語で見ましたか。",
+      "kana": "プルームさん、にほんごでみましたか。",
+      "kanaDisplay": "プルームさん、にほんご で みましたか。",
+      "romaji": "Purūmu-san, Nihongo de mimashita ka.",
+      "fr": "Plume, vous avez regardé la série en japonais ?",
+      "addresseeIds": [
+        "plume"
+      ]
+    },
+    "t01-s02-n1-d-03": {
+      "id": "t01-s02-n1-d-03",
+      "editorialRef": "N1-D-03",
+      "speakerId": "plume",
+      "function": "réponse de Plume à Yuki, compréhension en VO",
+      "jp": "はい。時々、知っている言葉が聞こえます。",
+      "kana": "はい。ときどき、しっていることばがきこえます。",
+      "kanaDisplay": "はい。ときどき、しっている ことば が きこえます。",
+      "romaji": "Hai. Tokidoki, shitte iru kotoba ga kikoemasu.",
+      "fr": "Oui. Parfois, je reconnais des mots."
+    },
+    "t01-s02-n1-fin-01": {
+      "id": "t01-s02-n1-fin-01",
+      "editorialRef": "N1-FIN-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "また話しましょう。",
+      "kana": "またはなしましょう。",
+      "kanaDisplay": "また はなしましょう。",
+      "romaji": "Mata hanashimashō.",
+      "fr": "On se reparle bientôt."
+    },
+    "t01-s02-n1-fin-02": {
+      "id": "t01-s02-n1-fin-02",
+      "editorialRef": "N1-FIN-02",
+      "speakerId": "cilmac",
+      "function": "clôture",
+      "jp": "はい、また！",
+      "kana": "はい、また！",
+      "kanaDisplay": "はい、また！",
+      "romaji": "Hai, mata!",
+      "fr": "Oui, à bientôt !"
+    },
+    "t01-s02-n1-clar-01": {
+      "id": "t01-s02-n1-clar-01",
+      "editorialRef": "N1-CLAR-01",
+      "speakerId": "cilmac",
+      "function": "réparation",
+      "jp": "すみません、もう一度お願いします。",
+      "kana": "すみません、もういちどおねがいします。",
+      "kanaDisplay": "すみません、もう いちど おねがいします。",
+      "romaji": "Sumimasen, mō ichido onegai shimasu.",
+      "fr": "Pardon, encore une fois, s’il te plaît."
+    },
+    "t01-s02-n2-o-01": {
+      "id": "t01-s02-n2-o-01",
+      "editorialRef": "N2-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "最近、どうですか。",
+      "kana": "さいきん、どうですか。",
+      "kanaDisplay": "さいきん、どう ですか。",
+      "romaji": "Saikin, dō desu ka.",
+      "fr": "Quoi de neuf ces temps-ci ?"
+    },
+    "t01-s02-n2-o-02": {
+      "id": "t01-s02-n2-o-02",
+      "editorialRef": "N2-O-02",
+      "speakerId": "cilmac",
+      "function": "réponse + relance",
+      "jp": "元気です。ゆきさんは？",
+      "kana": "げんきです。ゆきさんは？",
+      "kanaDisplay": "げんき です。ゆきさん は？",
+      "romaji": "Genki desu. Yuki-san wa?",
+      "fr": "Ça va. Et toi, Yuki ?"
+    },
+    "t01-s02-n2-o-03": {
+      "id": "t01-s02-n2-o-03",
+      "editorialRef": "N2-O-03",
+      "speakerId": "yuki",
+      "function": "réponse + question ouverte",
+      "jp": "私も元気です。今週は何かありましたか。",
+      "kana": "わたしもげんきです。こんしゅうはなにかありましたか。",
+      "kanaDisplay": "わたし も げんき です。こんしゅう は なにか ありましたか。",
+      "romaji": "Watashi mo genki desu. Konshū wa nanika arimashita ka.",
+      "fr": "Moi aussi. Il s’est passé quelque chose cette semaine ?"
+    },
+    "t01-s02-n2-a-01": {
+      "id": "t01-s02-n2-a-01",
+      "editorialRef": "N2-A-01",
+      "speakerId": "cilmac",
+      "function": "récit sur un loisir",
+      "jp": "最近、AIを使ってウェブサイトを作っています。日本語の勉強のためのサイトです。",
+      "kana": "さいきん、エーアイをつかってウェブサイトをつくっています。にほんごのべんきょうのためのサイトです。",
+      "kanaDisplay": "さいきん、エーアイ を つかって ウェブサイト を つくっています。にほんご の べんきょう の ため の サイト です。",
+      "romaji": "Saikin, ē-ai o tsukatte webusaito o tsukutte imasu. Nihongo no benkyō no tame no saito desu.",
+      "fr": "Ces temps-ci, je crée des sites Web avec l’IA. J’en fais notamment un pour apprendre le japonais."
+    },
+    "t01-s02-n2-a-02": {
+      "id": "t01-s02-n2-a-02",
+      "editorialRef": "N2-A-02",
+      "speakerId": "yuki",
+      "function": "intérêt + question",
+      "jp": "へえ、面白そうですね！どんなことができますか。",
+      "kana": "へえ、おもしろそうですね！どんなことができますか。",
+      "kanaDisplay": "へえ、おもしろそう です ね！どんな こと が できますか。",
+      "romaji": "Hē, omoshirosō desu ne! Donna koto ga dekimasu ka.",
+      "fr": "Ah, ça a l’air intéressant ! Qu’est-ce qu’on peut y faire ?"
+    },
+    "t01-s02-n2-a-03": {
+      "id": "t01-s02-n2-a-03",
+      "editorialRef": "N2-A-03",
+      "speakerId": "cilmac",
+      "function": "explication",
+      "jp": "単語を覚えたり、会話の練習をしたりできます。",
+      "kana": "たんごをおぼえたり、かいわのれんしゅうをしたりできます。",
+      "kanaDisplay": "たんご を おぼえたり、かいわ の れんしゅう を したり できます。",
+      "romaji": "Tango o oboetari, kaiwa no renshū o shitari dekimasu.",
+      "fr": "On peut y apprendre du vocabulaire et s’entraîner à converser."
+    },
+    "t01-s02-n2-a-04": {
+      "id": "t01-s02-n2-a-04",
+      "editorialRef": "N2-A-04",
+      "speakerId": "yuki",
+      "function": "réaction chaleureuse",
+      "jp": "いいですね！私も見てみたいです。",
+      "kana": "いいですね！わたしもみてみたいです。",
+      "kanaDisplay": "いい です ね！わたし も みてみたい です。",
+      "romaji": "Ii desu ne! Watashi mo mite mitai desu.",
+      "fr": "C’est chouette ! J’aimerais bien voir ça."
+    },
+    "t01-s02-n2-a-05": {
+      "id": "t01-s02-n2-a-05",
+      "editorialRef": "N2-A-05",
+      "speakerId": "cilmac",
+      "function": "réponse amicale",
+      "jp": "もちろんです。今度、リンクを送りますね。",
+      "kana": "もちろんです。こんど、リンクをおくりますね。",
+      "kanaDisplay": "もちろん です。こんど、リンク を おくります ね。",
+      "romaji": "Mochiron desu. Kondo, rinku o okurimasu ne.",
+      "fr": "Bien sûr. Je t’enverrai le lien."
+    },
+    "t01-s02-n2-b-01": {
+      "id": "t01-s02-n2-b-01",
+      "editorialRef": "N2-B-01",
+      "speakerId": "cilmac",
+      "function": "contraste + question",
+      "jp": "私はいつもどおり、のんびり過ごしました。ゆきさんは？",
+      "kana": "わたしはいつもどおり、のんびりすごしました。ゆきさんは？",
+      "kanaDisplay": "わたし は いつもどおり、のんびり すごしました。ゆきさん は？",
+      "romaji": "Watashi wa itsumo dōri, nonbiri sugoshimashita. Yuki-san wa?",
+      "fr": "Moi, comme d’habitude, j’ai pris mon temps. Et toi ?"
+    },
+    "t01-s02-n2-b-02": {
+      "id": "t01-s02-n2-b-02",
+      "editorialRef": "N2-B-02",
+      "speakerId": "yuki",
+      "function": "fatigue au travail (fiction)",
+      "jp": "仕事が忙しくて、今週はちょっと疲れました。",
+      "kana": "しごとがいそがしくて、こんしゅうはちょっとつかれました。",
+      "kanaDisplay": "しごと が いそがしくて、こんしゅう は ちょっと つかれました。",
+      "romaji": "Shigoto ga isogashikute, konshū wa chotto tsukaremashita.",
+      "fr": "Le travail m’a beaucoup occupée et je suis un peu fatiguée."
+    },
+    "t01-s02-n2-b-03": {
+      "id": "t01-s02-n2-b-03",
+      "editorialRef": "N2-B-03",
+      "speakerId": "cilmac",
+      "function": "intérêt et sollicitude",
+      "jp": "大変でしたね。休みは取れそうですか。",
+      "kana": "たいへんでしたね。やすみはとれそうですか。",
+      "kanaDisplay": "たいへん でした ね。やすみ は とれそうですか。",
+      "romaji": "Taihen deshita ne. Yasumi wa toresō desu ka.",
+      "fr": "Ça a dû être éprouvant. Tu penses pouvoir prendre un peu de repos ?"
+    },
+    "t01-s02-n2-b-04": {
+      "id": "t01-s02-n2-b-04",
+      "editorialRef": "N2-B-04",
+      "speakerId": "yuki",
+      "function": "nuance sur les congés (fiction)",
+      "jp": "週末は休めます。でも、長い休みはなかなか取れません。",
+      "kana": "しゅうまつはやすめます。でも、ながいやすみはなかなかとれません。",
+      "kanaDisplay": "しゅうまつ は やすめます。でも、ながい やすみ は なかなか とれません。",
+      "romaji": "Shūmatsu wa yasumemasu. Demo, nagai yasumi wa nakanaka toremasen.",
+      "fr": "Ce week-end, oui. Mais j’ai du mal à prendre de longs congés."
+    },
+    "t01-s02-n2-b-05": {
+      "id": "t01-s02-n2-b-05",
+      "editorialRef": "N2-B-05",
+      "speakerId": "cilmac",
+      "function": "compassion",
+      "jp": "そうですか。無理しないでくださいね。",
+      "kana": "そうですか。むりしないでくださいね。",
+      "kanaDisplay": "そう ですか。むり しないで ください ね。",
+      "romaji": "Sō desu ka. Muri shinaide kudasai ne.",
+      "fr": "Je vois. Prends soin de toi, surtout."
+    },
+    "t01-s02-n2-c-01": {
+      "id": "t01-s02-n2-c-01",
+      "editorialRef": "N2-C-01",
+      "speakerId": "cilmac",
+      "function": "réponse + présentation du quotidien",
+      "jp": "今週もいつもどおりでした。プルームは午前中によく料理をします。午後は韓国ドラマを見ています。",
+      "kana": "こんしゅうもいつもどおりでした。プルームはごぜんちゅうによくりょうりをします。ごごはかんこくドラマをみています。",
+      "kanaDisplay": "こんしゅう も いつもどおり でした。プルーム は ごぜんちゅう に よく りょうり を します。ごご は かんこく ドラマ を みています。",
+      "romaji": "Konshū mo itsumo dōri deshita. Purūmu wa gozenchū ni yoku ryōri o shimasu. Gogo wa Kankoku dorama o mite imasu.",
+      "fr": "Cette semaine, rien de spécial. Le matin, Plume cuisine souvent. L’après-midi, elle regarde des séries coréennes."
+    },
+    "t01-s02-n2-c-02": {
+      "id": "t01-s02-n2-c-02",
+      "editorialRef": "N2-C-02",
+      "speakerId": "yuki",
+      "function": "s’adresse à Plume",
+      "jp": "プルームさん、韓国ドラマが好きなんですね。",
+      "kana": "プルームさん、かんこくドラマがすきなんですね。",
+      "kanaDisplay": "プルームさん、かんこく ドラマ が すき なん です ね。",
+      "romaji": "Purūmu-san, Kankoku dorama ga suki nan desu ne.",
+      "fr": "Plume, tu aimes donc les séries coréennes !",
+      "addresseeIds": [
+        "plume"
+      ]
+    },
+    "t01-s02-n2-c-03": {
+      "id": "t01-s02-n2-c-03",
+      "editorialRef": "N2-C-03",
+      "speakerId": "plume",
+      "function": "souvenir d’une idée de voyage",
+      "jp": "はい、大好きです。それで、最初は韓国へ旅行しようと思っていたんです。",
+      "kana": "はい、だいすきです。それで、さいしょはかんこくへりょこうしようとおもっていたんです。",
+      "kanaDisplay": "はい、だいすき です。それで、さいしょ は かんこく へ りょこう しよう と おもっていたん です。",
+      "romaji": "Hai, daisuki desu. Sore de, saisho wa Kankoku e ryokō shiyō to omotte ita n desu.",
+      "fr": "Oui, je les adore ! C’est d’ailleurs comme ça qu’au départ, nous avions envisagé un voyage en Corée."
+    },
+    "t01-s02-n2-c-04": {
+      "id": "t01-s02-n2-c-04",
+      "editorialRef": "N2-C-04",
+      "speakerId": "yuki",
+      "function": "étonnement + rebond",
+      "jp": "そうなんですか！でも、結局、日本に来たんですね。",
+      "kana": "そうなんですか！でも、けっきょく、にほんにきたんですね。",
+      "kanaDisplay": "そう なん ですか！でも、けっきょく、にほん に きたん です ね。",
+      "romaji": "Sō nan desu ka! Demo, kekkyoku, Nihon ni kita n desu ne.",
+      "fr": "Ah bon ! Et finalement, vous êtes venus au Japon !"
+    },
+    "t01-s02-n2-c-05": {
+      "id": "t01-s02-n2-c-05",
+      "editorialRef": "N2-C-05",
+      "speakerId": "cilmac",
+      "function": "confirmation enthousiaste",
+      "jp": "そうなんです。日本に行って、本当によかったです。",
+      "kana": "そうなんです。にほんにいって、ほんとうによかったです。",
+      "kanaDisplay": "そう なん です。にほん に いって、ほんとうに よかった です。",
+      "romaji": "Sō nan desu. Nihon ni itte, hontō ni yokatta desu.",
+      "fr": "Exactement. Et nous avons été vraiment heureux d’y aller."
+    },
+    "t01-s02-n2-d-01": {
+      "id": "t01-s02-n2-d-01",
+      "editorialRef": "N2-D-01",
+      "speakerId": "cilmac",
+      "function": "souvenir spontané",
+      "jp": "この前、プルームと日本料理の話をしました。",
+      "kana": "このまえ、プルームとにほんりょうりのはなしをしました。",
+      "kanaDisplay": "このまえ、プルーム と にほんりょうり の はなし を しました。",
+      "romaji": "Kono mae, Purūmu to Nihon ryōri no hanashi o shimashita.",
+      "fr": "L’autre jour, Plume et moi avons parlé de cuisine japonaise."
+    },
+    "t01-s02-n2-d-02": {
+      "id": "t01-s02-n2-d-02",
+      "editorialRef": "N2-D-02",
+      "speakerId": "yuki",
+      "function": "question gastronomique directe à Plume",
+      "jp": "プルームさん、日本で何が一番おいしかったですか。",
+      "kana": "プルームさん、にほんでなにがいちばんおいしかったですか。",
+      "kanaDisplay": "プルームさん、にほん で なに が いちばん おいしかった ですか。",
+      "romaji": "Purūmu-san, Nihon de nani ga ichiban oishikatta desu ka.",
+      "fr": "Plume, qu’est-ce que tu as préféré manger au Japon ?",
+      "addresseeIds": [
+        "plume"
+      ]
+    },
+    "t01-s02-n2-d-03": {
+      "id": "t01-s02-n2-d-03",
+      "editorialRef": "N2-D-03",
+      "speakerId": "plume",
+      "function": "préférences gastronomiques de Plume",
+      "jp": "マグロのお刺身、特に大トロが最高でした。神戸牛もおいしかったです。",
+      "kana": "マグロのおさしみ、とくにおおトロがさいこうでした。こうべぎゅうもおいしかったです。",
+      "kanaDisplay": "マグロ の おさしみ、とくに おおトロ が さいこう でした。こうべぎゅう も おいしかった です。",
+      "romaji": "Maguro no osashimi, toku ni ōtoro ga saikō deshita. Kōbe-gyū mo oishikatta desu.",
+      "fr": "Les sashimis de thon, surtout le thon gras, étaient extraordinaires. Le bœuf de Kobe aussi était délicieux."
+    },
+    "t01-s02-n2-d-04": {
+      "id": "t01-s02-n2-d-04",
+      "editorialRef": "N2-D-04",
+      "speakerId": "yuki",
+      "function": "goût partagé + question",
+      "jp": "私もおいしい料理と日本酒が大好きです。居酒屋にも行きましたか。",
+      "kana": "わたしもおいしいりょうりとにほんしゅがだいすきです。いざかやにもいきましたか。",
+      "kanaDisplay": "わたし も おいしい りょうり と にほんしゅ が だいすき です。いざかや にも いきましたか。",
+      "romaji": "Watashi mo oishii ryōri to nihonshu ga daisuki desu. Izakaya ni mo ikimashita ka.",
+      "fr": "Moi aussi, j’adore la bonne cuisine et le saké ! Vous êtes aussi allés dans des izakaya ?"
+    },
+    "t01-s02-n2-d-05": {
+      "id": "t01-s02-n2-d-05",
+      "editorialRef": "N2-D-05",
+      "speakerId": "cilmac",
+      "function": "souvenir + complicité",
+      "jp": "はい、何度も行きました。お刺身と日本酒は最高でした！",
+      "kana": "はい、なんどもいきました。おさしみとにほんしゅはさいこうでした！",
+      "kanaDisplay": "はい、なんど も いきました。おさしみ と にほんしゅ は さいこう でした！",
+      "romaji": "Hai, nando mo ikimashita. Osashimi to nihonshu wa saikō deshita!",
+      "fr": "Oui, plusieurs fois ! Les sashimis avec le saké, c’était formidable !"
+    },
+    "t01-s02-n2-e-01": {
+      "id": "t01-s02-n2-e-01",
+      "editorialRef": "N2-E-01",
+      "speakerId": "cilmac",
+      "function": "relance sur le week-end",
+      "jp": "私はいつもどおりでした。ゆきさんは週末、何をしましたか。",
+      "kana": "わたしはいつもどおりでした。ゆきさんはしゅうまつ、なにをしましたか。",
+      "kanaDisplay": "わたし は いつもどおり でした。ゆきさん は しゅうまつ、なに を しましたか。",
+      "romaji": "Watashi wa itsumo dōri deshita. Yuki-san wa shūmatsu, nani o shimashita ka.",
+      "fr": "De mon côté, rien de spécial. Et toi, Yuki, qu’est-ce que tu as fait ce week-end ?"
+    },
+    "t01-s02-n2-e-02": {
+      "id": "t01-s02-n2-e-02",
+      "editorialRef": "N2-E-02",
+      "speakerId": "yuki",
+      "function": "anecdote fictive",
+      "jp": "日本のバンドのライブに行きました。すごく楽しかったです！",
+      "kana": "にほんのバンドのライブにいきました。すごくたのしかったです！",
+      "kanaDisplay": "にほん の バンド の ライブ に いきました。すごく たのしかった です！",
+      "romaji": "Nihon no bando no raibu ni ikimashita. Sugoku tanoshikatta desu!",
+      "fr": "Je suis allée voir un groupe japonais en concert. C’était génial !"
+    },
+    "t01-s02-n2-e-03": {
+      "id": "t01-s02-n2-e-03",
+      "editorialRef": "N2-E-03",
+      "speakerId": "plume",
+      "function": "relance de Plume sur la musique coréenne",
+      "jp": "いいですね！韓国のグループも好きですか。",
+      "kana": "いいですね！かんこくのグループもすきですか。",
+      "kanaDisplay": "いい です ね！かんこく の グループ も すき ですか。",
+      "romaji": "Ii desu ne! Kankoku no gurūpu mo suki desu ka.",
+      "fr": "Super ! Tu aimes aussi les groupes coréens ?"
+    },
+    "t01-s02-n2-e-04": {
+      "id": "t01-s02-n2-e-04",
+      "editorialRef": "N2-E-04",
+      "speakerId": "yuki",
+      "function": "préférence partagée",
+      "jp": "はい、韓国のグループも日本のバンドも大好きです。",
+      "kana": "はい、かんこくのグループもにほんのバンドもだいすきです。",
+      "kanaDisplay": "はい、かんこく の グループ も にほん の バンド も だいすき です。",
+      "romaji": "Hai, Kankoku no gurūpu mo Nihon no bando mo daisuki desu.",
+      "fr": "Oui, j’adore les groupes coréens aussi bien que les groupes japonais."
+    },
+    "t01-s02-n2-e-05": {
+      "id": "t01-s02-n2-e-05",
+      "editorialRef": "N2-E-05",
+      "speakerId": "cilmac",
+      "function": "ouverture vers une autre fois",
+      "jp": "今度、おすすめの曲を教えてください。",
+      "kana": "こんど、おすすめのきょくをおしえてください。",
+      "kanaDisplay": "こんど、おすすめ の きょく を おしえて ください。",
+      "romaji": "Kondo, osusume no kyoku o oshiete kudasai.",
+      "fr": "La prochaine fois, fais-moi découvrir quelques chansons que tu aimes !"
+    },
+    "t01-s02-n2-f-01": {
+      "id": "t01-s02-n2-f-01",
+      "editorialRef": "N2-F-01",
+      "speakerId": "cilmac",
+      "function": "sujet de conversation",
+      "jp": "最近、プルームと佐藤健さんが出ているドラマを見ました。",
+      "kana": "さいきん、プルームとさとうたけるさんがでているドラマをみました。",
+      "kanaDisplay": "さいきん、プルーム と さとうたけるさん が でている ドラマ を みました。",
+      "romaji": "Saikin, Purūmu to Satō Takeru-san ga dete iru dorama o mimashita.",
+      "fr": "Récemment, Plume et moi avons regardé une série avec Satō Takeru."
+    },
+    "t01-s02-n2-f-02": {
+      "id": "t01-s02-n2-f-02",
+      "editorialRef": "N2-F-02",
+      "speakerId": "yuki",
+      "function": "enthousiasme partagé",
+      "jp": "佐藤健さん、大好きです！演技も歌もすてきですよね。",
+      "kana": "さとうたけるさん、だいすきです！えんぎもうたもすてきですよね。",
+      "kanaDisplay": "さとうたけるさん、だいすき です！えんぎ も うた も すてき です よ ね。",
+      "romaji": "Satō Takeru-san, daisuki desu! Engi mo uta mo suteki desu yo ne.",
+      "fr": "J’adore Satō Takeru ! Il joue et chante vraiment bien, tu ne trouves pas ?"
+    },
+    "t01-s02-n2-f-03": {
+      "id": "t01-s02-n2-f-03",
+      "editorialRef": "N2-F-03",
+      "speakerId": "plume",
+      "function": "découverte et pratique de la VO",
+      "jp": "はい！私たちはドラマで知りました。日本語で見ています。",
+      "kana": "はい！わたしたちはドラマでしりました。にほんごでみています。",
+      "kanaDisplay": "はい！わたしたち は ドラマ で しりました。にほんご で みています。",
+      "romaji": "Hai! Watashitachi wa dorama de shirimashita. Nihongo de mite imasu.",
+      "fr": "Oui ! Nous l’avons découvert grâce aux séries. On les regarde en japonais, en version originale."
+    },
+    "t01-s02-n2-f-04": {
+      "id": "t01-s02-n2-f-04",
+      "editorialRef": "N2-F-04",
+      "speakerId": "yuki",
+      "function": "question à propos de l’écoute",
+      "jp": "日本語のセリフは聞き取れますか。",
+      "kana": "にほんごのセリフはききとれますか。",
+      "kanaDisplay": "にほんご の セリフ は ききとれますか。",
+      "romaji": "Nihongo no serifu wa kikitoremasu ka.",
+      "fr": "Vous arrivez à distinguer ce qu’ils disent en japonais ?",
+      "addresseeIds": [
+        "cilmac",
+        "plume"
+      ]
+    },
+    "t01-s02-n2-f-05": {
+      "id": "t01-s02-n2-f-05",
+      "editorialRef": "N2-F-05",
+      "speakerId": "cilmac",
+      "function": "réponse réaliste et légère",
+      "jp": "時々、知っている言葉が聞こえます。でも、まだまだです！",
+      "kana": "ときどき、しっていることばがきこえます。でも、まだまだです！",
+      "kanaDisplay": "ときどき、しっている ことば が きこえます。でも、まだまだ です！",
+      "romaji": "Tokidoki, shitte iru kotoba ga kikoemasu. Demo, mada mada desu!",
+      "fr": "Parfois, je reconnais quelques mots. Mais j’ai encore du chemin à faire !"
+    },
+    "t01-s02-n2-clar-01": {
+      "id": "t01-s02-n2-clar-01",
+      "editorialRef": "N2-CLAR-01",
+      "speakerId": "cilmac",
+      "function": "demande de clarification",
+      "jp": "すみません、もう一度ゆっくり言ってもらえますか。",
+      "kana": "すみません、もういちどゆっくりいってもらえますか。",
+      "kanaDisplay": "すみません、もう いちど ゆっくり いって もらえますか。",
+      "romaji": "Sumimasen, mō ichido yukkuri itte moraemasu ka.",
+      "fr": "Pardon, tu peux répéter plus lentement ?"
+    },
+    "t01-s02-n2-clar-02": {
+      "id": "t01-s02-n2-clar-02",
+      "editorialRef": "N2-CLAR-02",
+      "speakerId": "yuki",
+      "function": "accueil de la demande",
+      "jp": "はい、ゆっくり言いますね。",
+      "kana": "はい、ゆっくりいいますね。",
+      "kanaDisplay": "はい、ゆっくり いいます ね。",
+      "romaji": "Hai, yukkuri iimasu ne.",
+      "fr": "Oui, je vais le redire lentement."
+    },
+    "t01-s02-n2-fin-01": {
+      "id": "t01-s02-n2-fin-01",
+      "editorialRef": "N2-FIN-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "また近いうちに話しましょう。",
+      "kana": "またちかいうちにはなしましょう。",
+      "kanaDisplay": "また ちかいうちに はなしましょう。",
+      "romaji": "Mata chikai uchi ni hanashimashō.",
+      "fr": "On se reparle bientôt."
+    },
+    "t01-s02-n2-fin-02": {
+      "id": "t01-s02-n2-fin-02",
+      "editorialRef": "N2-FIN-02",
+      "speakerId": "cilmac",
+      "function": "clôture",
+      "jp": "ぜひ。またね。",
+      "kana": "ぜひ。またね。",
+      "kanaDisplay": "ぜひ。また ね。",
+      "romaji": "Zehi. Mata ne.",
+      "fr": "Avec plaisir. À bientôt !"
+    },
+    "t01-s02-n3-o-01": {
+      "id": "t01-s02-n3-o-01",
+      "editorialRef": "N3-O-01",
+      "speakerId": "yuki",
+      "function": "anecdote + ressenti",
+      "jp": "今週は仕事が忙しかったです。週末になって、ほっとしています。",
+      "kana": "こんしゅうはしごとがいそがしかったです。しゅうまつになって、ほっとしています。",
+      "kanaDisplay": "こんしゅう は しごと が いそがしかった です。しゅうまつ に なって、ほっと しています。",
+      "romaji": "Konshū wa shigoto ga isogashikatta desu. Shūmatsu ni natte, hotto shite imasu.",
+      "fr": "J’ai eu beaucoup de travail cette semaine. Je suis soulagée que ce soit enfin le week-end."
+    },
+    "t01-s02-n3-o-02": {
+      "id": "t01-s02-n3-o-02",
+      "editorialRef": "N3-O-02",
+      "speakerId": "cilmac",
+      "function": "empathie + question",
+      "jp": "大変でしたね。週末はゆっくりできそうですか。",
+      "kana": "たいへんでしたね。しゅうまつはゆっくりできそうですか。",
+      "kanaDisplay": "たいへん でした ね。しゅうまつ は ゆっくり できそう ですか。",
+      "romaji": "Taihen deshita ne. Shūmatsu wa yukkuri dekisō desu ka.",
+      "fr": "Ça a dû être dur. Tu penses pouvoir souffler ce week-end ?"
+    },
+    "t01-s02-n3-o-03": {
+      "id": "t01-s02-n3-o-03",
+      "editorialRef": "N3-O-03",
+      "speakerId": "yuki",
+      "function": "opinion personnelle",
+      "jp": "はい。最近、休む時間も大切だと思います。",
+      "kana": "はい。さいきん、やすむじかんもたいせつだとおもいます。",
+      "kanaDisplay": "はい。さいきん、やすむ じかん も たいせつ だ と おもいます。",
+      "romaji": "Hai. Saikin, yasumu jikan mo taisetsu da to omoimasu.",
+      "fr": "Oui. Ces derniers temps, je me dis que prendre le temps de se reposer, c’est important aussi."
+    },
+    "t01-s02-n3-o-04": {
+      "id": "t01-s02-n3-o-04",
+      "editorialRef": "N3-O-04",
+      "speakerId": "cilmac",
+      "function": "question ouverte + choix",
+      "jp": "そうですね。ちなみに、週末は予定を入れるほうが好きですか。それとも、ゆっくり過ごすほうが好きですか。",
+      "kana": "そうですね。ちなみに、しゅうまつはよていをいれるほうがすきですか。それとも、ゆっくりすごすほうがすきですか。",
+      "kanaDisplay": "そう です ね。ちなみに、しゅうまつ は よてい を いれる ほう が すき ですか。それとも、ゆっくり すごす ほう が すき ですか。",
+      "romaji": "Sō desu ne. Chinami ni, shūmatsu wa yotei o ireru hō ga suki desu ka. Soretomo, yukkuri sugosu hō ga suki desu ka.",
+      "fr": "C’est vrai. Au fait, le week-end, tu préfères avoir des choses de prévues ou prendre ton temps ?"
+    },
+    "t01-s02-n3-a-01": {
+      "id": "t01-s02-n3-a-01",
+      "editorialRef": "N3-A-01",
+      "speakerId": "yuki",
+      "function": "préférence + raison",
+      "jp": "予定があるほうが好きです。友達に会うと、元気が出ます。",
+      "kana": "よていがあるほうがすきです。ともだちにあうと、げんきがでます。",
+      "kanaDisplay": "よてい が ある ほう が すき です。ともだち に あう と、げんき が でます。",
+      "romaji": "Yotei ga aru hō ga suki desu. Tomodachi ni au to, genki ga demasu.",
+      "fr": "Je préfère avoir des choses de prévues. Voir mes amis me donne de l’énergie."
+    },
+    "t01-s02-n3-a-02": {
+      "id": "t01-s02-n3-a-02",
+      "editorialRef": "N3-A-02",
+      "speakerId": "cilmac",
+      "function": "compréhension + avis différent",
+      "jp": "なるほど。私は家でウェブサイトを作る時間も好きです。",
+      "kana": "なるほど。わたしはいえでウェブサイトをつくるじかんもすきです。",
+      "kanaDisplay": "なるほど。わたし は いえ で ウェブサイト を つくる じかん も すき です。",
+      "romaji": "Naruhodo. Watashi wa ie de webusaito o tsukuru jikan mo suki desu.",
+      "fr": "Je vois. Moi, j’aime aussi passer du temps à créer des sites Web chez moi."
+    },
+    "t01-s02-n3-a-03": {
+      "id": "t01-s02-n3-a-03",
+      "editorialRef": "N3-A-03",
+      "speakerId": "yuki",
+      "function": "Yuki sollicite directement Plume",
+      "jp": "そうなんですね。プルームさんは週末、何をするのが好きですか。",
+      "kana": "そうなんですね。プルームさんはしゅうまつ、なにをするのがすきですか。",
+      "kanaDisplay": "そう なん です ね。プルームさん は しゅうまつ、なに を する の が すき ですか。",
+      "romaji": "Sō nan desu ne. Purūmu-san wa shūmatsu, nani o suru no ga suki desu ka.",
+      "fr": "Ah oui ! Et toi, Plume, qu’est-ce que tu aimes faire le week-end ?",
+      "addresseeIds": [
+        "plume"
+      ]
+    },
+    "t01-s02-n3-a-04": {
+      "id": "t01-s02-n3-a-04",
+      "editorialRef": "N3-A-04",
+      "speakerId": "plume",
+      "function": "Plume exprime sa préférence personnelle",
+      "jp": "料理をしたり、ドラマを見たりするのが好きです。",
+      "kana": "りょうりをしたり、ドラマをみたりするのがすきです。",
+      "kanaDisplay": "りょうり を したり、ドラマ を みたり する の が すき です。",
+      "romaji": "Ryōri o shitari, dorama o mitari suru no ga suki desu.",
+      "fr": "J’aime cuisiner et regarder des séries."
+    },
+    "t01-s02-n3-b-01": {
+      "id": "t01-s02-n3-b-01",
+      "editorialRef": "N3-B-01",
+      "speakerId": "yuki",
+      "function": "préférence + raison",
+      "jp": "予定のない週末が好きです。何もしない時間が必要なんです。",
+      "kana": "よていのないしゅうまつがすきです。なにもしないじかんがひつようなんです。",
+      "kanaDisplay": "よてい の ない しゅうまつ が すき です。なに も しない じかん が ひつよう なん です。",
+      "romaji": "Yotei no nai shūmatsu ga suki desu. Nani mo shinai jikan ga hitsuyō nan desu.",
+      "fr": "Je préfère les week-ends sans programme. J’ai besoin de moments où je ne fais rien."
+    },
+    "t01-s02-n3-b-02": {
+      "id": "t01-s02-n3-b-02",
+      "editorialRef": "N3-B-02",
+      "speakerId": "cilmac",
+      "function": "compréhension + avis différent",
+      "jp": "わかります。私は時間があると、ついパソコンを開いてしまいます。",
+      "kana": "わかります。わたしはじかんがあると、ついパソコンをひらいてしまいます。",
+      "kanaDisplay": "わかります。わたし は じかん が ある と、つい パソコン を ひらいてしまいます。",
+      "romaji": "Wakarimasu. Watashi wa jikan ga aru to, tsui pasokon o hiraite shimaimasu.",
+      "fr": "Je comprends. Moi, dès que j’ai un moment, je finis par ouvrir mon ordinateur."
+    },
+    "t01-s02-n3-b-03": {
+      "id": "t01-s02-n3-b-03",
+      "editorialRef": "N3-B-03",
+      "speakerId": "yuki",
+      "function": "accord partiel + nuance",
+      "jp": "それもいいですね。でも、何もしない時間も大切ですよ。",
+      "kana": "それもいいですね。でも、なにもしないじかんもたいせつですよ。",
+      "kanaDisplay": "それ も いい です ね。でも、なに も しない じかん も たいせつ です よ。",
+      "romaji": "Sore mo ii desu ne. Demo, nani mo shinai jikan mo taisetsu desu yo.",
+      "fr": "C’est bien aussi. Mais c’est important d’avoir des moments où on ne fait rien."
+    },
+    "t01-s02-n3-b-04": {
+      "id": "t01-s02-n3-b-04",
+      "editorialRef": "N3-B-04",
+      "speakerId": "cilmac",
+      "function": "concession",
+      "jp": "確かに。たまにはパソコンを閉じないといけませんね。",
+      "kana": "たしかに。たまにはパソコンをとじないといけませんね。",
+      "kanaDisplay": "たしかに。たまには パソコン を とじないと いけません ね。",
+      "romaji": "Tashika ni. Tama ni wa pasokon o tojinai to ikemasen ne.",
+      "fr": "C’est vrai. Il faudrait que je ferme l’ordinateur de temps en temps !"
+    },
+    "t01-s02-n3-c-01": {
+      "id": "t01-s02-n3-c-01",
+      "editorialRef": "N3-C-01",
+      "speakerId": "yuki",
+      "function": "avis nuancé",
+      "jp": "どちらも好きです。その時の気分によります。",
+      "kana": "どちらもすきです。そのときのきぶんによります。",
+      "kanaDisplay": "どちら も すき です。その とき の きぶん に よります。",
+      "romaji": "Dochira mo suki desu. Sono toki no kibun ni yorimasu.",
+      "fr": "J’aime les deux. Ça dépend de mon humeur du moment."
+    },
+    "t01-s02-n3-c-02": {
+      "id": "t01-s02-n3-c-02",
+      "editorialRef": "N3-C-02",
+      "speakerId": "cilmac",
+      "function": "accord + comparaison",
+      "jp": "たしかに。疲れている時と元気な時では違いますね。",
+      "kana": "たしかに。つかれているときとげんきなときではちがいますね。",
+      "kanaDisplay": "たしかに。つかれている とき と げんき な とき では ちがいます ね。",
+      "romaji": "Tashika ni. Tsukarete iru toki to genki na toki de wa chigaimasu ne.",
+      "fr": "C’est vrai. Ce n’est pas pareil selon qu’on est fatigué ou en forme."
+    },
+    "t01-s02-n3-c-03": {
+      "id": "t01-s02-n3-c-03",
+      "editorialRef": "N3-C-03",
+      "speakerId": "yuki",
+      "function": "conséquence personnelle",
+      "jp": "はい。だから、週末の予定はあまり早く決めないんです。",
+      "kana": "はい。だから、しゅうまつのよていはあまりはやくきめないんです。",
+      "kanaDisplay": "はい。だから、しゅうまつ の よてい は あまり はやく きめないん です。",
+      "romaji": "Hai. Dakara, shūmatsu no yotei wa amari hayaku kimenai n desu.",
+      "fr": "Oui. C’est pour ça que je n’organise pas mes week-ends trop longtemps à l’avance."
+    },
+    "t01-s02-n3-c-04": {
+      "id": "t01-s02-n3-c-04",
+      "editorialRef": "N3-C-04",
+      "speakerId": "cilmac",
+      "function": "reformulation",
+      "jp": "なるほど。それなら、気分に合わせて決められますね。",
+      "kana": "なるほど。それなら、きぶんにあわせてきめられますね。",
+      "kanaDisplay": "なるほど。それなら、きぶん に あわせて きめられます ね。",
+      "romaji": "Naruhodo. Sore nara, kibun ni awasete kimeraremasu ne.",
+      "fr": "Je comprends. Comme ça, tu peux décider en fonction de ton humeur."
+    },
+    "t01-s02-n3-d-01": {
+      "id": "t01-s02-n3-d-01",
+      "editorialRef": "N3-D-01",
+      "speakerId": "yuki",
+      "function": "préférence de week-end explicitement reliée aux concerts",
+      "jp": "週末は予定があるほうが好きです。特に友達とコンサートに行くのが好きです。",
+      "kana": "しゅうまつはよていがあるほうがすきです。とくにともだちとコンサートにいくのがすきです。",
+      "kanaDisplay": "しゅうまつ は よてい が ある ほう が すき です。とくに ともだち と コンサート に いく の が すき です。",
+      "romaji": "Shūmatsu wa yotei ga aru hō ga suki desu. Toku ni tomodachi to konsāto ni iku no ga suki desu.",
+      "fr": "Je préfère les week-ends où j’ai des projets. J’aime particulièrement aller à des concerts avec des amis."
+    },
+    "t01-s02-n3-d-02": {
+      "id": "t01-s02-n3-d-02",
+      "editorialRef": "N3-D-02",
+      "speakerId": "cilmac",
+      "function": "curiosité et comparaison",
+      "jp": "いいですね。日本のバンドと韓国のグループ、どちらが好きですか。",
+      "kana": "いいですね。にほんのバンドとかんこくのグループ、どちらがすきですか。",
+      "kanaDisplay": "いい です ね。にほん の バンド と かんこく の グループ、どちら が すき ですか。",
+      "romaji": "Ii desu ne. Nihon no bando to Kankoku no gurūpu, dochira ga suki desu ka.",
+      "fr": "Ça doit être sympa ! Tu préfères les groupes japonais ou coréens ?"
+    },
+    "t01-s02-n3-d-03": {
+      "id": "t01-s02-n3-d-03",
+      "editorialRef": "N3-D-03",
+      "speakerId": "yuki",
+      "function": "réponse nuancée",
+      "jp": "どちらも好きです。日本の音楽も韓国の音楽もよく聴きます。",
+      "kana": "どちらもすきです。にほんのおんがくもかんこくのおんがくもよくききます。",
+      "kanaDisplay": "どちら も すき です。にほん の おんがく も かんこく の おんがく も よく ききます。",
+      "romaji": "Dochira mo suki desu. Nihon no ongaku mo Kankoku no ongaku mo yoku kikimasu.",
+      "fr": "J’aime les deux ! J’écoute souvent de la musique japonaise et coréenne."
+    },
+    "t01-s02-n3-d-04": {
+      "id": "t01-s02-n3-d-04",
+      "editorialRef": "N3-D-04",
+      "speakerId": "plume",
+      "function": "Plume réagit aux préférences musicales et relance",
+      "jp": "私は家で韓国ドラマを見ることが多いです。今度、おすすめの曲を教えてください。",
+      "kana": "わたしはいえでかんこくドラマをみることがおおいです。こんど、おすすめのきょくをおしえてください。",
+      "kanaDisplay": "わたし は いえ で かんこく ドラマ を みる こと が おおい です。こんど、おすすめ の きょく を おしえて ください。",
+      "romaji": "Watashi wa ie de Kankoku dorama o miru koto ga ōi desu. Kondo, osusume no kyoku o oshiete kudasai.",
+      "fr": "Moi, je regarde souvent des séries coréennes à la maison. La prochaine fois, fais-moi découvrir des chansons que tu aimes !"
+    },
+    "t01-s02-n3-fin-01": {
+      "id": "t01-s02-n3-fin-01",
+      "editorialRef": "N3-FIN-01",
+      "speakerId": "yuki",
+      "function": "transition",
+      "jp": "ところで、来週は何か予定がありますか。",
+      "kana": "ところで、らいしゅうはなにかよていがありますか。",
+      "kanaDisplay": "ところで、らいしゅう は なにか よてい が ありますか。",
+      "romaji": "Tokoro de, raishū wa nanika yotei ga arimasu ka.",
+      "fr": "Au fait, tu as quelque chose de prévu la semaine prochaine ?"
+    },
+    "t01-s02-n3-fin-02": {
+      "id": "t01-s02-n3-fin-02",
+      "editorialRef": "N3-FIN-02",
+      "speakerId": "cilmac",
+      "function": "réponse + proposition",
+      "jp": "特に予定はありません。家でまたサイトを作ると思います。また話しましょう。",
+      "kana": "とくによていはありません。いえでまたサイトをつくるとおもいます。またはなしましょう。",
+      "kanaDisplay": "とくに よてい は ありません。いえ で また サイト を つくる と おもいます。また はなしましょう。",
+      "romaji": "Toku ni yotei wa arimasen. Ie de mata saito o tsukuru to omoimasu. Mata hanashimashō.",
+      "fr": "Rien de spécial. Je pense continuer mes sites chez moi. Et on se reparle !"
+    },
+    "t01-s02-n3-fin-03": {
+      "id": "t01-s02-n3-fin-03",
+      "editorialRef": "N3-FIN-03",
+      "speakerId": "yuki",
+      "function": "acceptation",
+      "jp": "ぜひ。またメッセージを送りますね。",
+      "kana": "ぜひ。またメッセージをおくりますね。",
+      "kanaDisplay": "ぜひ。また メッセージ を おくります ね。",
+      "romaji": "Zehi. Mata messēji o okurimasu ne.",
+      "fr": "Avec plaisir ! Je t’enverrai un message."
+    },
+    "t01-s02-n3-fin-04": {
+      "id": "t01-s02-n3-fin-04",
+      "editorialRef": "N3-FIN-04",
+      "speakerId": "cilmac",
+      "function": "clôture",
+      "jp": "楽しみにしています。",
+      "kana": "たのしみにしています。",
+      "kanaDisplay": "たのしみに しています。",
+      "romaji": "Tanoshimi ni shite imasu.",
+      "fr": "J’attends ton message avec plaisir."
+    },
+    "t01-s02-n3-d-05": {
+      "id": "t01-s02-n3-d-05",
+      "editorialRef": "N3-D-05",
+      "speakerId": "yuki",
+      "addresseeIds": [
+        "plume"
+      ],
+      "function": "réponse à la demande de Plume avant la fin commune",
+      "jp": "もちろんです。今度、おすすめの曲を送りますね。",
+      "kana": "もちろんです。こんど、おすすめのきょくをおくりますね。",
+      "kanaDisplay": "もちろん です。こんど、おすすめ の きょく を おくります ね。",
+      "romaji": "Mochiron desu. Kondo, osusume no kyoku o okurimasu ne.",
+      "fr": "Bien sûr. La prochaine fois, je t’enverrai quelques chansons que j’aime !"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+/* Présentation propre aux conversations : aucune règle sur les lectures historiques. */
+body.conversations-active .shell{max-width:1280px}
+.conversation-levels{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.conversation-levels a{padding:10px 16px;border:1px solid var(--line);border-radius:10px;text-decoration:none;background:#fffefb;min-height:44px}
+.conversation-levels a[aria-current]{background:var(--sage);border-color:#8ca18a}
+.conversation-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:22px;align-items:start}
+.conversation-branches{grid-column:2;grid-row:1;margin:0;padding:14px;background:#fffefb;border:1px solid var(--line);border-radius:14px;position:sticky;top:calc(var(--navigation-height,160px) + 12px)}
+.conversation-branches summary{min-height:44px;overflow-wrap:anywhere}
+.conversation-branches summary span{display:block;font-size:13px;color:var(--muted);padding-top:6px}
+.conversation-choices{display:grid;gap:8px;margin-top:12px}
+.conversation-choices button{text-align:left;width:100%;background:#fffefb;min-height:44px}
+.conversation-choices button[aria-pressed=true]{background:var(--sage);border-color:#8ca18a}
+.conversation-choices small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.conversation-reader{grid-column:1;grid-row:1;min-width:0}
+.conversation-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:12px 0;margin-bottom:16px;border-block:1px solid var(--line)}
+.conversation-tools button{font-size:14px}
+#conversation-aid-status{font-size:13px;color:var(--muted)}
+.conversation-turn{background:#fffefb;border:1px solid var(--line);border-left:4px solid #a7bdc7;border-radius:14px;padding:16px 20px;margin:0 0 16px;overflow-wrap:anywhere;scroll-margin-top:calc(var(--navigation-height,160px) + 20px)}
+.conversation-turn[data-speaker=cilmac]{border-left-color:#9ab28d}
+.conversation-turn[data-speaker=plume]{border-left-color:#b8a1c8}
+.conversation-turn-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.conversation-turn-head strong{font-weight:550}
+.conversation-turn-head small{font-size:12px;color:var(--muted);margin-right:8px}
+.conversation-local{display:flex;gap:5px;flex-wrap:wrap}
+.conversation-local button{min-height:44px;min-width:44px;font-size:13px;padding:7px 10px;background:#fffefb}
+.conversation-local button[aria-pressed=true]{background:var(--sage)}
+.conversation-local button[aria-pressed=false]{background:#f5f3ef;color:#6b7269}
+.conversation-local .audio{background:var(--blue)}
+.conversation-jp{font:400 var(--jp-size)/1.65 var(--jp-font);color:#231f1b;margin:5px 0 10px}
+.conversation-jp .kanji{color:#af2424}
+.conversation-kana{font-size:calc(var(--jp-size) * .75);line-height:1.65;color:#49724f;margin:7px 0}
+.conversation-romaji{font:italic calc(var(--jp-size) * .75)/1.5 Georgia,serif;color:#193e78;margin:7px 0}
+.conversation-fr{font-size:calc(var(--jp-size) * .75);line-height:1.5;margin:9px 0 0}
+#conversations [hidden]{display:none!important}
+.conversation-clarification summary{min-height:44px;display:flex;align-items:center}
+.conversation-clarification .conversation-turn{margin-top:12px;padding:12px}
+#conversation-branch-title{scroll-margin-top:calc(var(--navigation-height,160px) + 20px)}
+@media(max-width:999px){.conversation-layout{grid-template-columns:1fr}.conversation-branches{grid-column:1;grid-row:1;position:static}.conversation-reader{grid-column:1;grid-row:2}.conversation-choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.conversation-turn{padding:13px}.conversation-local{width:100%}.conversation-local button{flex:1;padding:7px 6px}.conversation-choices{grid-template-columns:1fr}.conversation-clarification .conversation-turn{padding:8px}.conversation-layout{gap:14px}}
+@media(max-height:650px){.conversation-branches{position:static}}
+@media(max-width:360px){.conversation-local button{font-size:12px;white-space:nowrap}.conversation-local .audio{flex:0 0 44px}}
+
+.conversation-kana.kana-audio{display:block;width:100%;text-align:left;background:transparent;border:0;padding:0;cursor:pointer;min-height:44px}
+.conversation-kana[hidden]{display:none!important}

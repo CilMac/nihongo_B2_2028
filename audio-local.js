@@ -76,7 +76,7 @@ function stopAudio(message=''){
  $('#stop-audio').disabled=true;$('#audio-status').textContent=message;updatePauseButton();
  document.querySelectorAll('.speaking').forEach(x=>x.classList.remove('speaking'));
 }
-function speak(items){
+function speak(items,{onComplete}={}){
  stopAudio();const run=audioRun;let index=0;
  $('#stop-audio').disabled=false;
  const active=()=>run===audioRun;
@@ -105,7 +105,7 @@ function speak(items){
   if(item.extra){const seek=document.getElementById('extra-seek');if(seek){seek.disabled=true;seek.value=0;}}
   if(!item.text){stopAudio('Le texte nécessaire à la synthèse est indisponible.');return;}
   if(!speech){stopAudio('La synthèse vocale est indisponible pour cette lecture.');return;}
-  const u=new SpeechSynthesisUtterance(item.text);currentUtterance=u;u.lang='ja-JP';u.rate=Number(settings.rate);
+  const u=new SpeechSynthesisUtterance(item.text);currentUtterance=u;u.lang='ja-JP';u.rate=Math.max(.1,Math.min(2,Number(settings.rate)*(Number.isFinite(item.rateFactor)?item.rateFactor:1)));
   u.voice=voices.find(v=>v.voiceURI===settings.voice)||voices.find(v=>/kyoko|hana|haruka|mizuki|female/i.test(v.name))||voices[0]||null;
   $('#audio-status').textContent=`Écoute ${index} / ${items.length} · ${fallback?'enregistrement indisponible · ':''}synthèse · ${u.voice?.name||'voix du navigateur'}`;
   u.onend=advance;u.onerror=e=>{if(active()&&e.error!=='canceled'&&e.error!=='interrupted')stopAudio('Lecture impossible. Essayez une autre voix japonaise dans les réglages.');};
@@ -114,10 +114,10 @@ function speak(items){
  async function next(){
   if(!active())return;
   if(audioPlayback.paused){deferred=next;return;}
-  if(index>=items.length){stopAudio('Écoute terminée.');return;}
+  if(index>=items.length){stopAudio('Écoute terminée.');onComplete?.();return;}
   const raw=items[index++],item=typeof raw==='string'?{text:raw}:raw;
   if(item.extra){selectComplement(item.key);document.getElementById('extra-current').textContent=item.label;const seek=document.getElementById('extra-seek');if(seek){seek.disabled=true;seek.value=0;}}
-  let file=settings.audioMode==='recorded'&&(item.extra?item.file:(selectedAudioFiles?selectedAudioFiles[item.ref]:(localAudioHost&&localAudioFiles?.[item.ref])));
+  let file=!item.syntheticOnly&&settings.audioMode==='recorded'&&(item.extra?item.file:(selectedAudioFiles?selectedAudioFiles[item.ref]:(localAudioHost&&localAudioFiles?.[item.ref])));
   if(!file||failedRecordings.has(file)){synthetic(item,!!file);return;}
   const recordingKey=file;
   if(item.extra&&typeof file==='string'){try{const response=await fetch('fichiers_audio_complet/'+file.split('/').map(encodeURIComponent).join('/'));if(!response.ok)throw new Error();file=await response.blob();if(!active())return;}catch{if(active()){failedRecordings.add(recordingKey);synthetic(item,true);}return;}}
