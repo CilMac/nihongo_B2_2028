@@ -42,3 +42,13 @@ body.conversations-active .shell{max-width:1280px}
 
 .conversation-kana.kana-audio{display:block;width:100%;text-align:left;background:transparent;border:0;padding:0;cursor:pointer;min-height:44px}
 .conversation-kana[hidden]{display:none!important}
+
+.conversation-words{margin-top:12px;border-top:1px solid var(--line);padding-top:6px}
+.conversation-words summary{font-size:14px;color:var(--muted);cursor:pointer;min-height:44px;display:flex;align-items:center}
+.conversation-words summary::before{content:'▸';margin-right:8px}
+.conversation-words[open] summary::before{content:'▾'}
+.conversation-word-list{padding-left:22px;line-height:1.7}
+.conversation-word-list li{margin:8px 0;overflow-wrap:anywhere}
+.conversation-word-reading{color:var(--muted);margin-left:8px}
+
+.conversation-word-romaji{color:#193e78;font-style:italic;margin-left:8px}

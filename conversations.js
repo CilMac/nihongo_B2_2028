@@ -41,6 +41,25 @@
  // Une entrée par situation ; chaque fichier reste indépendant du lecteur.
  const sources={'T01-S02':'conversations.json'};
  const loaded=new Map(),pending=new Map();
+ function createWordLookup(vocabulary,engine){
+  const byId=new Map(vocabulary.map(w=>[w.id,w]));
+  const key=s=>String(s||'').normalize('NFC').replace(/\s/g,'');
+  return turn=>{
+   const result=engine.analyze({Japonais:turn.jp,Kana:turn.kanaDisplay,Romaji:turn.romaji}),seen=new Set(),words=[];
+   for(const segment of result.segments){
+    const word=byId.get(segment.wordId);
+    if(!segment.known||segment.origin!=='dictionary'||!word||!word.fr||!word.kana||key(segment.jp)!==key(word.mot)||key(segment.kana)!==key(word.kana)||seen.has(word.id))continue;
+    seen.add(word.id);words.push(word);
+   }
+   return words;
+  };
+ }
+ let wordLookup=null;
+ function wordsHTML(turn){
+  if(!wordLookup)wordLookup=createWordLookup(vocab,DecorticageAuto.create(vocab));
+  const words=wordLookup(turn);
+  return words.length?`<ul class="conversation-word-list">${words.map(w=>`<li><span lang="ja">${jp(w.mot)}</span> <span class="conversation-word-reading" lang="ja">${esc(w.kana)}</span>${w.romaji?` <span class="conversation-word-romaji">${esc(Romaji.display(w.romaji))}</span>`:''} — ${esc(w.fr)}</li>`).join('')}</ul><p class="muted">Sens du dictionnaire ; à lire selon le contexte. Seuls les mots reconnus sont affichés.</p>`:'<p class="muted">Aucun mot reconnu avec certitude dans le dictionnaire pour cette réplique.</p>';
+ }
  let data=null,version=0,current=null;
  function invalidate(){version++;}
  async function load(id){
@@ -64,7 +83,7 @@
  }
  function turnHTML(id,number,prefix='conversation',clarification=null){
   const t=data.turns[id],name=data.situation.participants[t.speakerId],key=prefix+'-'+id;
-  return `<article class="conversation-turn" id="${key}" data-turn="${id}" data-instance="${key}" data-speaker="${esc(t.speakerId)}" tabindex="-1" aria-label="Réplique ${number}, ${esc(name)}"><div class="conversation-turn-head"><strong><small>${number}</small> ${esc(name)}${t.addresseeIds?' → '+t.addresseeIds.map(x=>esc(data.situation.participants[x])).join(', '):''}</strong><div class="conversation-local" role="group" aria-label="Aides de la réplique ${number}">${fields.map(k=>`<button type="button" data-conversation-aid="${k}" aria-pressed="${visible(current,key,k)}" aria-controls="${key}-${k}" aria-label="${visible(current,key,k)?'Masquer':'Afficher'} ${labels[k]} pour cette réplique">${labels[k]}</button>`).join('')}<button type="button" class="audio" data-conversation-play="${id}" aria-label="Écouter la réplique ${number} en japonais">▶</button></div></div><p class="conversation-jp" lang="ja">${jp(t.jp)}</p>${fields.map(k=>k==='kana'?`<button type="button" class="conversation-kana kana-audio" id="${key}-kana" lang="ja" data-conversation-play="${id}" aria-label="Écouter : ${esc(t.kanaDisplay)}" ${visible(current,key,k)?'':'hidden'}>${esc(t.kanaDisplay)}<span aria-hidden="true"> ♪</span></button>`:`<p class="conversation-${k}" id="${key}-${k}" ${visible(current,key,k)?'':'hidden'}>${esc(t[k])}</p>`).join('')}${clarification?`<details class="conversation-clarification"><summary>Demander de répéter plus lentement</summary>${clarification.turnIds.map((rid,i)=>turnHTML(rid,'↳ '+(i+1),'repair-'+clarification.id)).join('')}<p>Yuki répète sa réplique ci-dessus, puis ${esc(data.situation.participants[data.turns[clarification.resumeAtTurnId].speakerId])} poursuit l’échange.</p><button type="button" class="audio" data-conversation-repeat="${clarification.id}">▶ Écouter la demande et la répétition lente</button> <button type="button" data-conversation-resume="${clarification.id}">Reprendre le dialogue ↓</button></details>`:''}</article>`;
+  return `<article class="conversation-turn" id="${key}" data-turn="${id}" data-instance="${key}" data-speaker="${esc(t.speakerId)}" tabindex="-1" aria-label="Réplique ${number}, ${esc(name)}"><div class="conversation-turn-head"><strong><small>${number}</small> ${esc(name)}${t.addresseeIds?' → '+t.addresseeIds.map(x=>esc(data.situation.participants[x])).join(', '):''}</strong><div class="conversation-local" role="group" aria-label="Aides de la réplique ${number}">${fields.map(k=>`<button type="button" data-conversation-aid="${k}" aria-pressed="${visible(current,key,k)}" aria-controls="${key}-${k}" aria-label="${visible(current,key,k)?'Masquer':'Afficher'} ${labels[k]} pour cette réplique">${labels[k]}</button>`).join('')}<button type="button" class="audio" data-conversation-play="${id}" aria-label="Écouter la réplique ${number} en japonais">▶</button></div></div><p class="conversation-jp" lang="ja">${jp(t.jp)}</p>${fields.map(k=>k==='kana'?`<button type="button" class="conversation-kana kana-audio" id="${key}-kana" lang="ja" data-conversation-play="${id}" aria-label="Écouter : ${esc(t.kanaDisplay)}" ${visible(current,key,k)?'':'hidden'}>${esc(t.kanaDisplay)}<span aria-hidden="true"> ♪</span></button>`:`<p class="conversation-${k}" id="${key}-${k}" ${visible(current,key,k)?'':'hidden'}>${esc(t[k])}</p>`).join('')}<details class="conversation-words" data-conversation-words="${id}"><summary>Voir les mots connus</summary><div></div></details>${clarification?`<details class="conversation-clarification"><summary>Demander de répéter plus lentement</summary>${clarification.turnIds.map((rid,i)=>turnHTML(rid,'↳ '+(i+1),'repair-'+clarification.id)).join('')}<p>Yuki répète sa réplique ci-dessus, puis ${esc(data.situation.participants[data.turns[clarification.resumeAtTurnId].speakerId])} poursuit l’échange.</p><button type="button" class="audio" data-conversation-repeat="${clarification.id}">▶ Écouter la demande et la répétition lente</button> <button type="button" data-conversation-resume="${clarification.id}">Reprendre le dialogue ↓</button></details>`:''}</article>`;
  }
  function status(){
   const host=document.getElementById('conversations');if(!host)return;
@@ -76,7 +95,8 @@
   const branch=level.branches.find(b=>b.id===current.branchId),s=data.situation,ids=path(level,branch),wide=matchMedia('(min-width:1000px)').matches;
   const people=[...new Set(ids.map(id=>data.turns[id].speakerId))].map(id=>s.participants[id]).join(', ');
   document.getElementById('main').innerHTML=`<div id="conversations"><a href="#conversations">← Les situations</a>${intro('CONVERSATIONS ENTRE AMIS',s.title,s.context)}<nav class="conversation-levels" aria-label="Niveaux">${s.levels.map(l=>`<a href="#conversations/${s.id}/${l.id}" ${l===level?'aria-current="page"':''}>${esc(l.title)}</a>`).join('')}</nav><div class="conversation-layout"><details class="conversation-branches" ${wide?'open':''}><summary>Branches · <span>${esc(branch.title)}</span></summary><div class="conversation-choices">${level.branches.map(b=>`<button type="button" data-conversation-branch="${b.id}" aria-pressed="${b===branch}">${esc(b.title)}<small>${[...new Set(b.turnIds.map(id=>data.turns[id].speakerId))].map(id=>esc(s.participants[id])).join(' · ')}</small></button>`).join('')}</div><p class="muted">Début commun → branche choisie → fin commune</p></details><section class="conversation-reader" aria-label="Dialogue"><div class="conversation-tools"><button type="button" data-conversation-restart>Recommencer</button><button type="button" class="audio" data-conversation-all>▶ Tout écouter</button><button type="button" data-conversation-stop>■ Arrêter</button><span id="conversation-aid-status" role="status"></span></div><p class="muted">${esc(people)} · ${ids.length} tours · Japonais cordial</p><h2>Début commun</h2>${level.opening.map((id,i)=>turnHTML(id,i+1)).join('')}<h2 id="conversation-branch-title" tabindex="-1">${esc(branch.title)}</h2>${branch.turnIds.map((id,i)=>turnHTML(id,level.opening.length+i+1,'conversation',branch.clarifications.find(c=>c.afterTurnId===id))).join('')}<h2>Fin commune</h2>${level.ending.map((id,i)=>turnHTML(id,level.opening.length+branch.turnIds.length+i+1)).join('')}${level.supportTurnIds?.length?`<details class="conversation-clarification"><summary>Une phrase pour demander de répéter</summary>${level.supportTurnIds.map((id,i)=>turnHTML(id,'Aide '+(i+1),'support')).join('')}</details>`:''}<button type="button" data-conversation-restart>Recommencer ce dialogue ↑</button></section></div></div>`;
-  status();document.getElementById('conversations').onclick=e=>{
+  status();document.getElementById('conversations').addEventListener('toggle',e=>{const panel=e.target;if(!panel.matches('[data-conversation-words]')||!panel.open||panel.dataset.loaded)return;panel.querySelector('div').innerHTML=wordsHTML(data.turns[panel.dataset.conversationWords]);panel.dataset.loaded='true';},true);
+  document.getElementById('conversations').onclick=e=>{
    const b=e.target.closest('button');if(!b)return;
    if(b.dataset.conversationAid){const id=b.closest('[data-turn]').dataset.instance;preserveReading(()=>{toggleLocal(current,id,b.dataset.conversationAid);refreshVisibility();});}
    if(b.dataset.conversationBranch){stopAudio();selectBranch(current,b.dataset.conversationBranch);draw(level);const heading=document.getElementById('conversation-branch-title');heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});}
@@ -101,6 +121,6 @@
   if(r.id!==s.id||!level){document.getElementById('main').innerHTML='<section class="panel"><h1>Conversation introuvable</h1><a href="#conversations">Revenir aux situations</a></section>';return;}
   if(!current||current.situationId!==s.id||current.levelId!==level.id){current=createState(level,{kana:settings.kana,romaji:settings.romaji,fr:settings.fr});current.situationId=s.id;}draw(level);
  }
- const api={validate,createState,visible,toggleLocal,toggleAll,selectBranch,restart,path,repeatItems,setGlobal,applyGlobal,render,invalidate,syncContext};root.Conversations=api;
+ const api={createWordLookup,validate,createState,visible,toggleLocal,toggleAll,selectBranch,restart,path,repeatItems,setGlobal,applyGlobal,render,invalidate,syncContext};root.Conversations=api;
  if(typeof module==='object'&&module.exports)module.exports=api;
 })(typeof window==='undefined'?globalThis:window);
