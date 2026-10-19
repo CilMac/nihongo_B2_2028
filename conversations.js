@@ -2,7 +2,7 @@
 (function(root){
  'use strict';
  const fields=['kana','romaji','fr'],labels={kana:'Kana',romaji:'Romaji',fr:'Français'};
- const participantEmojis=Object.freeze({cilmac:'📷',plume:'🪶',yuki:'⛩️'});
+ const participantEmojis=Object.freeze({cilmac:'🌐',plume:'👩‍🍳',yuki:'⛩️'});
  function participantHTML(id,name){const emoji=participantEmojis[id];return `<span class="conversation-participant">${emoji?`<span class="conversation-participant-emoji" aria-hidden="true">${emoji}</span> `:''}${esc(name)}</span>`;}
  function validate(d){
   const fail=m=>{throw Error('Conversations : '+m);};
@@ -24,7 +24,7 @@
     if(!b.id||!b.title||ids.has(b.id))fail('branche invalide');ids.add(b.id);refs(b.turnIds);
     const path=[...l.opening,...b.turnIds,...l.ending];if(new Set(path).size!==path.length)fail('réplique répétée dans le parcours');
     const clarificationIds=new Set();for(const c of b.clarifications||[]){if(!/^[A-Za-z0-9-]+$/.test(c.id)||clarificationIds.has(c.id))fail('clarification dupliquée');clarificationIds.add(c.id);if(c.kind&&!['meaning','repeat'].includes(c.kind))fail('type de clarification inconnu');refs(c.turnIds);const at=b.turnIds.indexOf(c.afterTurnId);
-     if(at<0||d.turns[c.afterTurnId].speakerId!=='yuki'||c.repeatTurnId!==c.afterTurnId||c.resumeAtTurnId!==(b.turnIds[at+1]||l.ending[0]))fail('raccordement de clarification invalide');
+     if(at<0||(c.kind!=='meaning'&&d.turns[c.afterTurnId].speakerId!=='yuki')||c.repeatTurnId!==c.afterTurnId||c.resumeAtTurnId!==(b.turnIds[at+1]||l.ending[0]))fail('raccordement de clarification invalide');
     }
    }
   }
@@ -42,8 +42,8 @@
  function repeatItems(data,c){const items=c.turnIds.map(id=>({text:data.turns[id].jp,syntheticOnly:true}));return c.kind==='meaning'?items:[...items,{text:data.turns[c.repeatTurnId].jp,syntheticOnly:true,rateFactor:.72}];}
  function supportTurns(level){const used=new Set(level.branches.flatMap(b=>b.clarifications.flatMap(c=>c.turnIds)));return (level.supportTurnIds||[]).filter(id=>!used.has(id));}
  // Une entrée par situation ; chaque fichier reste indépendant du lecteur.
- const sources={'T01-S02':'conversations.json','t08-s24-ryokan':'conversations-ryokan.json','t03-s07':'conversations-meteo.json'};
- const noteSources={'T01-S02':'conversations-notes-t01.json','t08-s24-ryokan':'conversations-notes-ryokan.json','t03-s07':'conversations-notes-meteo.json'};
+ const sources={'T01-S02':'conversations.json','t08-s24-ryokan':'conversations-ryokan.json','t03-s07':'conversations-meteo.json','t07-s20':'conversations-chocolat.json'};
+ const noteSources={'T01-S02':'conversations-notes-t01.json','t08-s24-ryokan':'conversations-notes-ryokan.json','t03-s07':'conversations-notes-meteo.json','t07-s20':'conversations-notes-chocolat.json'};
  const loaded=new Map(),pending=new Map();
  function validateNotes(dataset,sidecar){
   if(sidecar.sourceSituationId!==dataset.situation.id.toLowerCase()||!Array.isArray(sidecar.notes))throw Error('Notes : situation incorrecte');

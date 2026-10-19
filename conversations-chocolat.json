@@ -1,0 +1,1762 @@
+{
+  "schemaVersion": 1,
+  "status": "local-integration-review",
+  "editorialVersion": "0.4-candidate-revised",
+  "linguisticStatus": "reviewed-by-chatgpt-pending-external-native-validation",
+  "publicationApproved": false,
+  "editorialSource": {
+    "basis": "Versions Essentiel 0.2, Conversation 0.3 révisée (pâté lorrain), Discussion 0.4 approuvées en conversation, 19 octobre 2026",
+    "readings": "kana continu dérivé de kanaDisplay révisé ; romaji relu ; aucune certification de prononciation native",
+    "recipe": "Fiche image de Chantal fournie par l’utilisateur ; température de cuisson de la tarte 150 °C confirmée oralement, et non écrite explicitement sur la fiche",
+    "review": "Contrôles automatiques de champs, branches, ancrages et collisions ; voir T07-S20-REVUE.md",
+    "namingNote": "Identifiant t07-s20 candidat conforme à la cartographie. Codex doit contrôler les collisions et l’intégration locale.",
+    "anecdote": "Anecdote de pâté lorrain fournie et autorisée pour l’illustration pédagogique. Dialogues fictifs, aucune attribution à une amie japonaise réelle.",
+    "privacy": "Chantal et Luberon autorisés par l’utilisateur ; Yuki fictive, aucun échange privé attribué à une amie japonaise réelle."
+  },
+  "situation": {
+    "id": "t07-s20",
+    "theme": "Cuisine et gastronomie",
+    "title": "Plume, tu nous donnes ta recette ?",
+    "context": "Appels amicaux fictifs à distance entre CilMac, Plume et Yuki. Recette de tarte au chocolat avec amandes grillées transmise par Chantal, ancienne hôte dans le Luberon. Anecdote de pâté lorrain adaptée comme dialogue fictif. Les goûts et expériences attribués à Yuki sont inventés. Une seule branche visible à la fois.",
+    "participants": {
+      "cilmac": "CilMac",
+      "plume": "Plume",
+      "yuki": "Yuki"
+    },
+    "levels": [
+      {
+        "id": "essentiel",
+        "sourceId": "n1",
+        "title": "Essentiel",
+        "objective": "Découvrir une tarte, identifier les ingrédients, exprimer ses goûts, réagir et poser des questions.",
+        "opening": [
+          "t07-s20-n1-o-01",
+          "t07-s20-n1-o-02",
+          "t07-s20-n1-o-03",
+          "t07-s20-n1-o-04"
+        ],
+        "ending": [
+          "t07-s20-n1-fin-01",
+          "t07-s20-n1-fin-02"
+        ],
+        "supportTurnIds": [],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Du chocolat noir !",
+            "turnIds": [
+              "t07-s20-n1-a-01",
+              "t07-s20-n1-a-02",
+              "t07-s20-n1-a-03",
+              "t07-s20-n1-a-04",
+              "t07-s20-n1-a-05",
+              "t07-s20-n1-a-06",
+              "t07-s20-n1-a-07"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Des amandes dans la tarte ?",
+            "turnIds": [
+              "t07-s20-n1-b-01",
+              "t07-s20-n1-b-02",
+              "t07-s20-n1-b-03",
+              "t07-s20-n1-b-04",
+              "t07-s20-n1-b-05",
+              "t07-s20-n1-b-06",
+              "t07-s20-n1-b-07"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "C",
+            "title": "Il me manque un ingrédient !",
+            "turnIds": [
+              "t07-s20-n1-c-01",
+              "t07-s20-n1-c-02",
+              "t07-s20-n1-c-03",
+              "t07-s20-n1-c-04",
+              "t07-s20-n1-c-05",
+              "t07-s20-n1-c-06",
+              "t07-s20-n1-c-07"
+            ],
+            "clarifications": []
+          }
+        ]
+      },
+      {
+        "id": "conversation",
+        "sourceId": "n2",
+        "title": "Conversation",
+        "objective": "Comprendre une recette, déduire une information implicite, expliquer un geste, raconter un incident et préciser les ingrédients.",
+        "opening": [
+          "t07-s20-n2-o-01",
+          "t07-s20-n2-o-02",
+          "t07-s20-n2-o-03",
+          "t07-s20-n2-o-04"
+        ],
+        "ending": [
+          "t07-s20-n2-fin-01",
+          "t07-s20-n2-fin-02",
+          "t07-s20-n2-fin-03"
+        ],
+        "supportTurnIds": [
+          "t07-s20-n2-clar-b-01",
+          "t07-s20-n2-clar-b-02"
+        ],
+        "branches": [
+          {
+            "id": "A",
+            "title": "La préparation pas à pas",
+            "turnIds": [
+              "t07-s20-n2-a-01",
+              "t07-s20-n2-a-02",
+              "t07-s20-n2-a-03",
+              "t07-s20-n2-a-04",
+              "t07-s20-n2-a-05",
+              "t07-s20-n2-a-06",
+              "t07-s20-n2-a-07",
+              "t07-s20-n2-a-08",
+              "t07-s20-n2-a-09",
+              "t07-s20-n2-a-10",
+              "t07-s20-n2-a-11",
+              "t07-s20-n2-a-12"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Le secret des amandes grillées",
+            "turnIds": [
+              "t07-s20-n2-b-01",
+              "t07-s20-n2-b-02",
+              "t07-s20-n2-b-03",
+              "t07-s20-n2-b-04",
+              "t07-s20-n2-b-05",
+              "t07-s20-n2-b-06",
+              "t07-s20-n2-b-07",
+              "t07-s20-n2-b-08",
+              "t07-s20-n2-b-09"
+            ],
+            "clarifications": [
+              {
+                "id": "t07-s20-n2-clar-b-05",
+                "kind": "meaning",
+                "insertionAfterTurnId": "t07-s20-n2-b-05",
+                "requestTurnId": "t07-s20-n2-clar-b-01",
+                "ackTurnId": "t07-s20-n2-clar-b-02",
+                "repeatTurnId": "t07-s20-n2-b-05",
+                "resumeAtTurnId": "t07-s20-n2-b-06",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t07-s20-n2-b-05",
+                "turnIds": [
+                  "t07-s20-n2-clar-b-01",
+                  "t07-s20-n2-clar-b-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Le pâté lorrain de Noël… et la mauvaise pâte !",
+            "turnIds": [
+              "t07-s20-n2-c-01",
+              "t07-s20-n2-c-02",
+              "t07-s20-n2-c-03",
+              "t07-s20-n2-c-04",
+              "t07-s20-n2-c-05",
+              "t07-s20-n2-c-06",
+              "t07-s20-n2-c-07",
+              "t07-s20-n2-c-08",
+              "t07-s20-n2-c-09",
+              "t07-s20-n2-c-10",
+              "t07-s20-n2-c-11",
+              "t07-s20-n2-c-12",
+              "t07-s20-n2-c-13",
+              "t07-s20-n2-c-14",
+              "t07-s20-n2-c-15"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "D",
+            "title": "Et si Yuki préparait la tarte au Japon ?",
+            "turnIds": [
+              "t07-s20-n2-d-01",
+              "t07-s20-n2-d-02",
+              "t07-s20-n2-d-03",
+              "t07-s20-n2-d-04",
+              "t07-s20-n2-d-05",
+              "t07-s20-n2-d-06",
+              "t07-s20-n2-d-07",
+              "t07-s20-n2-d-08",
+              "t07-s20-n2-d-09",
+              "t07-s20-n2-d-10",
+              "t07-s20-n2-d-11"
+            ],
+            "clarifications": []
+          }
+        ]
+      },
+      {
+        "id": "discussion",
+        "sourceId": "n3",
+        "title": "Discussion",
+        "objective": "Partager le souvenir d’une recette, argumenter sur son adaptation et comparer des goûts sans généraliser.",
+        "opening": [
+          "t07-s20-n3-o-01",
+          "t07-s20-n3-o-02",
+          "t07-s20-n3-o-03",
+          "t07-s20-n3-o-04"
+        ],
+        "ending": [
+          "t07-s20-n3-fin-01",
+          "t07-s20-n3-fin-02",
+          "t07-s20-n3-fin-03",
+          "t07-s20-n3-fin-04"
+        ],
+        "supportTurnIds": [
+          "t07-s20-n3-clar-b-01",
+          "t07-s20-n3-clar-b-02",
+          "t07-s20-n3-clar-c-01",
+          "t07-s20-n3-clar-c-02"
+        ],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Une recette, c’est aussi un souvenir",
+            "turnIds": [
+              "t07-s20-n3-a-01",
+              "t07-s20-n3-a-02",
+              "t07-s20-n3-a-03",
+              "t07-s20-n3-a-04",
+              "t07-s20-n3-a-05",
+              "t07-s20-n3-a-06",
+              "t07-s20-n3-a-07",
+              "t07-s20-n3-a-08",
+              "t07-s20-n3-a-09",
+              "t07-s20-n3-a-10",
+              "t07-s20-n3-a-11"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Faut-il respecter une recette à la lettre ?",
+            "turnIds": [
+              "t07-s20-n3-b-01",
+              "t07-s20-n3-b-02",
+              "t07-s20-n3-b-03",
+              "t07-s20-n3-b-04",
+              "t07-s20-n3-b-05",
+              "t07-s20-n3-b-06",
+              "t07-s20-n3-b-07",
+              "t07-s20-n3-b-08",
+              "t07-s20-n3-b-09",
+              "t07-s20-n3-b-10",
+              "t07-s20-n3-b-11"
+            ],
+            "clarifications": [
+              {
+                "id": "t07-s20-n3-clar-b-04",
+                "kind": "meaning",
+                "insertionAfterTurnId": "t07-s20-n3-b-04",
+                "requestTurnId": "t07-s20-n3-clar-b-01",
+                "ackTurnId": "t07-s20-n3-clar-b-02",
+                "repeatTurnId": "t07-s20-n3-b-04",
+                "resumeAtTurnId": "t07-s20-n3-b-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t07-s20-n3-b-04",
+                "turnIds": [
+                  "t07-s20-n3-clar-b-01",
+                  "t07-s20-n3-clar-b-02"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Les desserts français et japonais",
+            "turnIds": [
+              "t07-s20-n3-c-01",
+              "t07-s20-n3-c-02",
+              "t07-s20-n3-c-03",
+              "t07-s20-n3-c-04",
+              "t07-s20-n3-c-05",
+              "t07-s20-n3-c-06",
+              "t07-s20-n3-c-07",
+              "t07-s20-n3-c-08",
+              "t07-s20-n3-c-09",
+              "t07-s20-n3-c-10",
+              "t07-s20-n3-c-11",
+              "t07-s20-n3-c-12",
+              "t07-s20-n3-c-13"
+            ],
+            "clarifications": [
+              {
+                "id": "t07-s20-n3-clar-c-04",
+                "kind": "meaning",
+                "insertionAfterTurnId": "t07-s20-n3-c-04",
+                "requestTurnId": "t07-s20-n3-clar-c-01",
+                "ackTurnId": "t07-s20-n3-clar-c-02",
+                "repeatTurnId": "t07-s20-n3-c-04",
+                "resumeAtTurnId": "t07-s20-n3-c-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t07-s20-n3-c-04",
+                "turnIds": [
+                  "t07-s20-n3-clar-c-01",
+                  "t07-s20-n3-clar-c-02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "turns": {
+    "t07-s20-n1-o-01": {
+      "id": "t07-s20-n1-o-01",
+      "editorialRef": "E-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "プルームさん、今日は何を作っているんですか。",
+      "kana": "プルームさん、きょうはなにをつくっているんですか。",
+      "kanaDisplay": "プルームさん、きょう は なに を つくって いるんですか。",
+      "romaji": "Purūmu-san, kyō wa nani o tsukutte iru n desu ka.",
+      "fr": "Plume, qu'est-ce que tu prépares aujourd'hui ?"
+    },
+    "t07-s20-n1-o-02": {
+      "id": "t07-s20-n1-o-02",
+      "editorialRef": "E-O-02",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "チョコレートのタルトを作っています。",
+      "kana": "チョコレートのタルトをつくっています。",
+      "kanaDisplay": "チョコレート の タルト を つくって います。",
+      "romaji": "Chokorēto no taruto o tsukutte imasu.",
+      "fr": "Je prépare une tarte au chocolat."
+    },
+    "t07-s20-n1-o-03": {
+      "id": "t07-s20-n1-o-03",
+      "editorialRef": "E-O-03",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "シャンタルさんのレシピなんです。",
+      "kana": "シャンタルさんのレシピなんです。",
+      "kanaDisplay": "シャンタルさん の レシピ なんです。",
+      "romaji": "Shantaru-san no reshipi nan desu.",
+      "fr": "C'est une recette de Chantal."
+    },
+    "t07-s20-n1-o-04": {
+      "id": "t07-s20-n1-o-04",
+      "editorialRef": "E-O-04",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "へえ、おいしそう！何が入っているんですか。",
+      "kana": "へえ、おいしそう！なにがはいっているんですか。",
+      "kanaDisplay": "へえ、おいしそう！なに が はいって いるんですか。",
+      "romaji": "Hee, oishisō! Nani ga haitte iru n desu ka.",
+      "fr": "Oh, ça a l'air bon ! Qu'est-ce qu'il y a dedans ?"
+    },
+    "t07-s20-n1-a-01": {
+      "id": "t07-s20-n1-a-01",
+      "editorialRef": "E-A-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "チョコレートとバターと卵、それから砂糖が入っています。",
+      "kana": "チョコレートとバターとたまご、それからさとうがはいっています。",
+      "kanaDisplay": "チョコレート と バター と たまご、それから さとう が はいって います。",
+      "romaji": "Chokorēto to batā to tamago, sorekara satō ga haitte imasu.",
+      "fr": "Il y a du chocolat, du beurre, des œufs et du sucre."
+    },
+    "t07-s20-n1-a-02": {
+      "id": "t07-s20-n1-a-02",
+      "editorialRef": "E-A-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "どんなチョコレートを使うんですか。",
+      "kana": "どんなチョコレートをつかうんですか。",
+      "kanaDisplay": "どんな チョコレート を つかうんですか。",
+      "romaji": "Donna chokorēto o tsukau n desu ka.",
+      "fr": "Tu utilises quel type de chocolat ?"
+    },
+    "t07-s20-n1-a-03": {
+      "id": "t07-s20-n1-a-03",
+      "editorialRef": "E-A-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "カカオ70パーセントのチョコレートです。",
+      "kana": "カカオななじゅっパーセントのチョコレートです。",
+      "kanaDisplay": "カカオ ななじゅっパーセント の チョコレート です。",
+      "romaji": "Kakao nanajuppāsento no chokorēto desu.",
+      "fr": "Du chocolat à 70 % de cacao."
+    },
+    "t07-s20-n1-a-04": {
+      "id": "t07-s20-n1-a-04",
+      "editorialRef": "E-A-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私は甘いチョコレートも好きですが、このタルトは特に好きです。",
+      "kana": "わたしはあまいチョコレートもすきですが、このタルトはとくにすきです。",
+      "kanaDisplay": "わたし は あまい チョコレート も すき です が、この タルト は とくに すき です。",
+      "romaji": "Watashi wa amai chokorēto mo suki desu ga, kono taruto wa toku ni suki desu.",
+      "fr": "J'aime aussi le chocolat plus sucré, mais cette tarte, je l'adore !"
+    },
+    "t07-s20-n1-a-05": {
+      "id": "t07-s20-n1-a-05",
+      "editorialRef": "E-A-05",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "へえ、そんなにおいしいんですか。",
+      "kana": "へえ、そんなにおいしいんですか。",
+      "kanaDisplay": "へえ、そんなに おいしいんですか。",
+      "romaji": "Hee, sonna ni oishii n desu ka.",
+      "fr": "Ah, elle est si bonne que ça ?"
+    },
+    "t07-s20-n1-a-06": {
+      "id": "t07-s20-n1-a-06",
+      "editorialRef": "E-A-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "はい！一切れじゃ足りません！",
+      "kana": "はい！ひときれじゃたりません！",
+      "kanaDisplay": "はい！ひときれ じゃ たりません！",
+      "romaji": "Hai! Hitokire ja tarimasen!",
+      "fr": "Oh oui ! Une part, ça ne me suffit pas !"
+    },
+    "t07-s20-n1-a-07": {
+      "id": "t07-s20-n1-a-07",
+      "editorialRef": "E-A-07",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "シルマック、まだできていないよ！",
+      "kana": "シルマック、まだできていないよ！",
+      "kanaDisplay": "シルマック、まだ できて いない よ！",
+      "romaji": "Shirumakku, mada dekite inai yo!",
+      "fr": "CilMac, elle n'est même pas encore prête !"
+    },
+    "t07-s20-n1-b-01": {
+      "id": "t07-s20-n1-b-01",
+      "editorialRef": "E-B-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "チョコレートとアーモンドがたっぷり入っています。",
+      "kana": "チョコレートとアーモンドがたっぷりはいっています。",
+      "kanaDisplay": "チョコレート と アーモンド が たっぷり はいって います。",
+      "romaji": "Chokorēto to āmondo ga tappuri haitte imasu.",
+      "fr": "Il y a beaucoup de chocolat et d'amandes."
+    },
+    "t07-s20-n1-b-02": {
+      "id": "t07-s20-n1-b-02",
+      "editorialRef": "E-B-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "えっ、アーモンドも入っているんですか。",
+      "kana": "えっ、アーモンドもはいっているんですか。",
+      "kanaDisplay": "えっ、アーモンド も はいって いるんですか。",
+      "romaji": "E, āmondo mo haitte iru n desu ka.",
+      "fr": "Ah, il y a aussi des amandes ?"
+    },
+    "t07-s20-n1-b-03": {
+      "id": "t07-s20-n1-b-03",
+      "editorialRef": "E-B-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "はい。皮付きのアーモンドを使います。",
+      "kana": "はい。かわつきのアーモンドをつかいます。",
+      "kanaDisplay": "はい。かわつき の アーモンド を つかいます。",
+      "romaji": "Hai. Kawatsuki no āmondo o tsukaimasu.",
+      "fr": "Oui. J'utilise des amandes avec leur peau."
+    },
+    "t07-s20-n1-b-04": {
+      "id": "t07-s20-n1-b-04",
+      "editorialRef": "E-B-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そのまま入れるんですか。",
+      "kana": "そのままいれるんですか。",
+      "kanaDisplay": "そのまま いれるんですか。",
+      "romaji": "Sono mama ireru n desu ka.",
+      "fr": "Tu les mets telles quelles ?"
+    },
+    "t07-s20-n1-b-05": {
+      "id": "t07-s20-n1-b-05",
+      "editorialRef": "E-B-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "いいえ。先にオーブンで焼いて、粗く砕きます。",
+      "kana": "いいえ。さきにオーブンでやいて、あらくくだきます。",
+      "kanaDisplay": "いいえ。さき に オーブン で やいて、あらく くだきます。",
+      "romaji": "Iie. Saki ni ōbun de yaite, araku kudakimasu.",
+      "fr": "Non. Je les fais d'abord griller au four, puis je les concasse grossièrement."
+    },
+    "t07-s20-n1-b-06": {
+      "id": "t07-s20-n1-b-06",
+      "editorialRef": "E-B-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私は、あのカリカリした食感が好きです！",
+      "kana": "わたしは、あのカリカリしたしょっかんがすきです！",
+      "kanaDisplay": "わたし は、あの カリカリ した しょっかん が すき です！",
+      "romaji": "Watashi wa, ano karikari shita shokkan ga suki desu!",
+      "fr": "Moi, j'adore ce côté croquant !"
+    },
+    "t07-s20-n1-b-07": {
+      "id": "t07-s20-n1-b-07",
+      "editorialRef": "E-B-07",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "なるほど。チョコレートとアーモンド、いい組み合わせですね！",
+      "kana": "なるほど。チョコレートとアーモンド、いいくみあわせですね！",
+      "kanaDisplay": "なるほど。チョコレート と アーモンド、いい くみあわせ です ね！",
+      "romaji": "Naruhodo. Chokorēto to āmondo, ii kumiawase desu ne!",
+      "fr": "Je vois ! Chocolat et amandes, ça va bien ensemble !"
+    },
+    "t07-s20-n1-c-01": {
+      "id": "t07-s20-n1-c-01",
+      "editorialRef": "E-C-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "チョコレート、バター、砂糖、卵、アーモンド、それからタルトの生地を使います。",
+      "kana": "チョコレート、バター、さとう、たまご、アーモンド、それからタルトのきじをつかいます。",
+      "kanaDisplay": "チョコレート、バター、さとう、たまご、アーモンド、それから タルト の きじ を つかいます。",
+      "romaji": "Chokorēto, batā, satō, tamago, āmondo, sorekara taruto no kiji o tsukaimasu.",
+      "fr": "Il faut du chocolat, du beurre, du sucre, des œufs, des amandes et une pâte à tarte."
+    },
+    "t07-s20-n1-c-02": {
+      "id": "t07-s20-n1-c-02",
+      "editorialRef": "E-C-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "作ってみたいです。でも、家にアーモンドがありません。",
+      "kana": "つくってみたいです。でも、いえにアーモンドがありません。",
+      "kanaDisplay": "つくって みたい です。でも、いえ に アーモンド が ありません。",
+      "romaji": "Tsukutte mitai desu. Demo, ie ni āmondo ga arimasen.",
+      "fr": "J'aimerais essayer de la faire. Mais je n'ai pas d'amandes à la maison."
+    },
+    "t07-s20-n1-c-03": {
+      "id": "t07-s20-n1-c-03",
+      "editorialRef": "E-C-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "アーモンドなしでも作れますか、プルーム？",
+      "kana": "アーモンドなしでもつくれますか、プルーム？",
+      "kanaDisplay": "アーモンド なし でも つくれますか、プルーム？",
+      "romaji": "Āmondo nashi demo tsukuremasu ka, Purūmu?",
+      "fr": "On peut la préparer sans amandes, Plume ?"
+    },
+    "t07-s20-n1-c-04": {
+      "id": "t07-s20-n1-c-04",
+      "editorialRef": "E-C-04",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "このレシピでは、アーモンドが大切なんです。",
+      "kana": "このレシピでは、アーモンドがたいせつなんです。",
+      "kanaDisplay": "この レシピ では、アーモンド が たいせつ なんです。",
+      "romaji": "Kono reshipi de wa, āmondo ga taisetsu nan desu.",
+      "fr": "Dans cette recette, les amandes sont importantes."
+    },
+    "t07-s20-n1-c-05": {
+      "id": "t07-s20-n1-c-05",
+      "editorialRef": "E-C-05",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "じゃあ、アーモンドを買ってから作ります。",
+      "kana": "じゃあ、アーモンドをかってからつくります。",
+      "kanaDisplay": "じゃあ、アーモンド を かって から つくります。",
+      "romaji": "Jā, āmondo o katte kara tsukurimasu.",
+      "fr": "Alors, j'en achèterai avant de la préparer."
+    },
+    "t07-s20-n1-c-06": {
+      "id": "t07-s20-n1-c-06",
+      "editorialRef": "E-C-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "できたら、写真を見せてくださいね！",
+      "kana": "できたら、しゃしんをみせてくださいね！",
+      "kanaDisplay": "できたら、しゃしん を みせて ください ね！",
+      "romaji": "Dekitara, shashin o misete kudasai ne!",
+      "fr": "Quand elle sera prête, montre-nous une photo !"
+    },
+    "t07-s20-n1-c-07": {
+      "id": "t07-s20-n1-c-07",
+      "editorialRef": "E-C-07",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "もちろん！うまくできるといいな。",
+      "kana": "もちろん！うまくできるといいな。",
+      "kanaDisplay": "もちろん！うまく できる と いい な。",
+      "romaji": "Mochiron! Umaku dekiru to ii na.",
+      "fr": "Bien sûr ! J'espère que je vais la réussir !"
+    },
+    "t07-s20-n1-fin-01": {
+      "id": "t07-s20-n1-fin-01",
+      "editorialRef": "E-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "なんだかおなかがすいてきました！",
+      "kana": "なんだかおなかがすいてきました！",
+      "kanaDisplay": "なんだか おなか が すいて きました！",
+      "romaji": "Nandaka onaka ga suite kimashita!",
+      "fr": "Tout ça me donne faim !"
+    },
+    "t07-s20-n1-fin-02": {
+      "id": "t07-s20-n1-fin-02",
+      "editorialRef": "E-F-02",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "ふふ、今度は作り方も教えるね。",
+      "kana": "ふふ、こんどはつくりかたもおしえるね。",
+      "kanaDisplay": "ふふ、こんど は つくりかた も おしえる ね。",
+      "romaji": "Fufu, kondo wa tsukurikata mo oshieru ne.",
+      "fr": "Hé hé, la prochaine fois, je t'expliquerai aussi comment on la prépare !"
+    },
+    "t07-s20-n2-o-01": {
+      "id": "t07-s20-n2-o-01",
+      "editorialRef": "C-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "プルームさん、この前のチョコレートタルトのレシピ、もう少し教えてもらえますか。",
+      "kana": "プルームさん、このまえのチョコレートタルトのレシピ、もうすこしおしえてもらえますか。",
+      "kanaDisplay": "プルームさん、このまえ の チョコレートタルト の レシピ、もう すこし おしえて もらえますか。",
+      "romaji": "Purūmu-san, kono mae no chokorēto taruto no reshipi, mō sukoshi oshiete moraemasu ka.",
+      "fr": "Plume, tu peux m'expliquer un peu mieux la recette de ta tarte au chocolat ?"
+    },
+    "t07-s20-n2-o-02": {
+      "id": "t07-s20-n2-o-02",
+      "editorialRef": "C-O-02",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "もちろん！シャンタルさんのレシピだよ。手元にある？",
+      "kana": "もちろん！シャンタルさんのレシピだよ。てもとにある？",
+      "kanaDisplay": "もちろん！シャンタルさん の レシピ だ よ。てもと に ある？",
+      "romaji": "Mochiron! Shantaru-san no reshipi da yo. Temoto ni aru?",
+      "fr": "Bien sûr ! C'est la recette de Chantal. Tu l'as sous les yeux ?"
+    },
+    "t07-s20-n2-o-03": {
+      "id": "t07-s20-n2-o-03",
+      "editorialRef": "C-O-03",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "はい、見ています。でも、少し分からないところがあります。",
+      "kana": "はい、みています。でも、すこしわからないところがあります。",
+      "kanaDisplay": "はい、みて います。でも、すこし わからない ところ が あります。",
+      "romaji": "Hai, mite imasu. Demo, sukoshi wakaranai tokoro ga arimasu.",
+      "fr": "Oui, je l'ai devant moi. Mais il y a deux ou trois choses que je ne comprends pas."
+    },
+    "t07-s20-n2-o-04": {
+      "id": "t07-s20-n2-o-04",
+      "editorialRef": "C-O-04",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "じゃあ、何でも聞いて！僕は食べる係だけどね。",
+      "kana": "じゃあ、なんでもきいて！ぼくはたべるかかりだけどね。",
+      "kanaDisplay": "じゃあ、なんでも きいて！ぼく は たべる かかり だけど ね。",
+      "romaji": "Jā, nan demo kiite! Boku wa taberu kakari da kedo ne.",
+      "fr": "Alors, demande tout ce que tu veux ! Bon, moi, je suis surtout chargé de la dégustation !"
+    },
+    "t07-s20-n2-a-01": {
+      "id": "t07-s20-n2-a-01",
+      "editorialRef": "C-A-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "まず、アーモンドを150度のオーブンで15分から20分焼くの。",
+      "kana": "まず、アーモンドをひゃくごじゅうどのオーブンでじゅうごふんからにじゅっぷんやくの。",
+      "kanaDisplay": "まず、アーモンド を ひゃくごじゅうど の オーブン で じゅうごふん から にじゅっぷん やく の。",
+      "romaji": "Mazu, āmondo o hyaku gojū-do no ōbun de jūgo-fun kara nijuppun yaku no.",
+      "fr": "D'abord, je fais griller les amandes au four à 150 °C pendant quinze à vingt minutes."
+    },
+    "t07-s20-n2-a-02": {
+      "id": "t07-s20-n2-a-02",
+      "editorialRef": "C-A-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "アーモンドを先に焼くんですね。皮は取りますか。",
+      "kana": "アーモンドをさきにやくんですね。かわはとりますか。",
+      "kanaDisplay": "アーモンド を さき に やくんです ね。かわ は とりますか。",
+      "romaji": "Āmondo o saki ni yaku n desu ne. Kawa wa torimasu ka.",
+      "fr": "Tu fais donc griller les amandes en premier. Tu enlèves leur peau ?"
+    },
+    "t07-s20-n2-a-03": {
+      "id": "t07-s20-n2-a-03",
+      "editorialRef": "C-A-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "ううん、皮はそのまま。焼いたら、粗く砕くの。",
+      "kana": "ううん、かわはそのまま。やいたら、あらくくだくの。",
+      "kanaDisplay": "ううん、かわ は そのまま。やいたら、あらく くだく の。",
+      "romaji": "Uun, kawa wa sono mama. Yaitara, araku kudaku no.",
+      "fr": "Non, je garde leur peau. Une fois grillées, je les concasse grossièrement."
+    },
+    "t07-s20-n2-a-04": {
+      "id": "t07-s20-n2-a-04",
+      "editorialRef": "C-A-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "細かい粉にしないのがポイントだよね。",
+      "kana": "こまかいこなにしないのがポイントだよね。",
+      "kanaDisplay": "こまかい こな に しない の が ポイント だ よね。",
+      "romaji": "Komakai kona ni shinai no ga pointo da yo ne.",
+      "fr": "Le truc, c'est de ne pas les réduire en poudre trop fine, hein !"
+    },
+    "t07-s20-n2-a-05": {
+      "id": "t07-s20-n2-a-05",
+      "editorialRef": "C-A-05",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "なるほど。チョコレートはどうしますか。",
+      "kana": "なるほど。チョコレートはどうしますか。",
+      "kanaDisplay": "なるほど。チョコレート は どう しますか。",
+      "romaji": "Naruhodo. Chokorēto wa dō shimasu ka.",
+      "fr": "Je vois. Et pour le chocolat, comment tu fais ?"
+    },
+    "t07-s20-n2-a-06": {
+      "id": "t07-s20-n2-a-06",
+      "editorialRef": "C-A-06",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "チョコレートとバターを弱火で溶かして、少し冷ましてから卵と砂糖を加えてよく混ぜるの。",
+      "kana": "チョコレートとバターをよわびでとかして、すこしさましてからたまごとさとうをくわえてよくまぜるの。",
+      "kanaDisplay": "チョコレート と バター を よわび で とかして、すこし さまして から たまご と さとう を くわえて よく まぜる の。",
+      "romaji": "Chokorēto to batā o yowabi de tokashite, sukoshi samashite kara tamago to satō o kuwaete yoku mazeru no.",
+      "fr": "Je fais fondre le chocolat avec le beurre à feu doux. Je laisse refroidir un peu, puis j'ajoute les œufs entiers et le sucre et je mélange bien."
+    },
+    "t07-s20-n2-a-07": {
+      "id": "t07-s20-n2-a-07",
+      "editorialRef": "C-A-07",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "それから、砕いたアーモンドを入れるんですね。",
+      "kana": "それから、くだいたアーモンドをいれるんですね。",
+      "kanaDisplay": "それから、くだいた アーモンド を いれるんです ね。",
+      "romaji": "Sorekara, kudaita āmondo o ireru n desu ne.",
+      "fr": "Ensuite, tu ajoutes les amandes concassées, c'est bien ça ?"
+    },
+    "t07-s20-n2-a-08": {
+      "id": "t07-s20-n2-a-08",
+      "editorialRef": "C-A-08",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そう。バターを塗ったタルト型にサブレ生地を敷いて、フォークで穴を開けるの。それからチョコレートの生地を流し入れるよ。",
+      "kana": "そう。バターをぬったタルトがたにサブレきじをしいて、フォークであなをあけるの。それからチョコレートのきじをながしいれるよ。",
+      "kanaDisplay": "そう。バター を ぬった タルトがた に サブレきじ を しいて、フォーク で あな を あける の。それから チョコレート の きじ を ながしいれる よ。",
+      "romaji": "Sō. Batā o nutta taruto-gata ni sabure kiji o shiite, fōku de ana o akeru no. Sorekara chokorēto no kiji o nagashiireru yo.",
+      "fr": "Exactement. Je garnis un moule beurré de pâte sablée, je la pique avec une fourchette, puis je verse la préparation au chocolat."
+    },
+    "t07-s20-n2-a-09": {
+      "id": "t07-s20-n2-a-09",
+      "editorialRef": "C-A-09",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "それから、タルトを40分焼くの。",
+      "kana": "それから、タルトをよんじゅっぷんやくの。",
+      "kanaDisplay": "それから、タルト を よんじゅっぷん やく の。",
+      "romaji": "Sorekara, taruto o yonjuppun yaku no.",
+      "fr": "Ensuite, je fais cuire la tarte pendant quarante minutes."
+    },
+    "t07-s20-n2-a-10": {
+      "id": "t07-s20-n2-a-10",
+      "editorialRef": "C-A-10",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "あれ？タルトを焼く温度は書いてないですね。アーモンドと同じ150度ですか。",
+      "kana": "あれ？タルトをやくおんどはかいてないですね。アーモンドとおなじひゃくごじゅうどですか。",
+      "kanaDisplay": "あれ？タルト を やく おんど は かいて ない です ね。アーモンド と おなじ ひゃくごじゅうど ですか。",
+      "romaji": "Are? Taruto o yaku ondo wa kaite nai desu ne. Āmondo to onaji hyaku gojū-do desu ka.",
+      "fr": "Tiens ? La température de cuisson de la tarte n'est pas indiquée. C'est bien 150 °C, comme pour les amandes ?"
+    },
+    "t07-s20-n2-a-11": {
+      "id": "t07-s20-n2-a-11",
+      "editorialRef": "C-A-11",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "うん、そのとおり。オーブンはつけたままだから、150度で40分だよ。最後にナイフの先を刺して、焼けたか確認するの。",
+      "kana": "うん、そのとおり。オーブンはつけたままだから、ひゃくごじゅうどでよんじゅっぷんだよ。さいごにナイフのさきをさして、やけたかかくにんするの。",
+      "kanaDisplay": "うん、その とおり。オーブン は つけた まま だから、ひゃくごじゅうど で よんじゅっぷん だ よ。さいご に ナイフ の さき を さして、やけた か かくにん する の。",
+      "romaji": "Un, sono tōri. Ōbun wa tsuketa mama da kara, hyaku gojū-do de yonjuppun da yo. Saigo ni naifu no saki o sashite, yaketa ka kakunin suru no.",
+      "fr": "Oui, exactement. Comme on laisse le four allumé, c'est bien 150 °C pendant quarante minutes. À la fin, je vérifie la cuisson avec la pointe d'un couteau."
+    },
+    "t07-s20-n2-a-12": {
+      "id": "t07-s20-n2-a-12",
+      "editorialRef": "C-A-12",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "僕なら、40分たってから気づくよ！",
+      "kana": "ぼくなら、よんじゅっぷんたってからきづくよ！",
+      "kanaDisplay": "ぼく なら、よんじゅっぷん たって から きづく よ！",
+      "romaji": "Boku nara, yonjuppun tatte kara kizuku yo!",
+      "fr": "Moi, je m'en serais aperçu au bout des quarante minutes !"
+    },
+    "t07-s20-n2-b-01": {
+      "id": "t07-s20-n2-b-01",
+      "editorialRef": "C-B-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "レシピに「皮付きのアーモンド」とありますね。皮は取らないんですか。",
+      "kana": "レシピに「かわつきのアーモンド」とありますね。かわはとらないんですか。",
+      "kanaDisplay": "レシピ に「かわつき の アーモンド」と あります ね。かわ は とらないんですか。",
+      "romaji": "Reshipi ni \"kawatsuki no āmondo\" to arimasu ne. Kawa wa toranai n desu ka.",
+      "fr": "Dans la recette, il est écrit « amandes avec leur peau ». Tu ne l'enlèves pas ?"
+    },
+    "t07-s20-n2-b-02": {
+      "id": "t07-s20-n2-b-02",
+      "editorialRef": "C-B-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "うん、取らないよ。皮ごとオーブンで焼くの。",
+      "kana": "うん、とらないよ。かわごとオーブンでやくの。",
+      "kanaDisplay": "うん、とらない よ。かわごと オーブン で やく の。",
+      "romaji": "Un, toranai yo. Kawagoto ōbun de yaku no.",
+      "fr": "Non, je garde la peau et je les fais griller comme ça au four."
+    },
+    "t07-s20-n2-b-03": {
+      "id": "t07-s20-n2-b-03",
+      "editorialRef": "C-B-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "焼いていると、いい香りがしてくるんだよね。",
+      "kana": "やいていると、いいかおりがしてくるんだよね。",
+      "kanaDisplay": "やいて いる と、いい かおり が して くるんだ よね。",
+      "romaji": "Yaite iru to, ii kaori ga shite kuru n da yo ne.",
+      "fr": "Et pendant qu'elles grillent, ça commence à sentir drôlement bon !"
+    },
+    "t07-s20-n2-b-04": {
+      "id": "t07-s20-n2-b-04",
+      "editorialRef": "C-B-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そのあと、細かい粉にするんですか。",
+      "kana": "そのあと、こまかいこなにするんですか。",
+      "kanaDisplay": "その あと、こまかい こな に するんですか。",
+      "romaji": "Sono ato, komakai kona ni suru n desu ka.",
+      "fr": "Ensuite, tu les réduis en poudre fine ?"
+    },
+    "t07-s20-n2-b-05": {
+      "id": "t07-s20-n2-b-05",
+      "editorialRef": "C-B-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "ううん、粉にはしないよ。粗く砕くの。",
+      "kana": "ううん、こなにはしないよ。あらくくだくの。",
+      "kanaDisplay": "ううん、こな には しない よ。あらく くだく の。",
+      "romaji": "Uun, kona ni wa shinai yo. Araku kudaku no.",
+      "fr": "Non, pas en poudre. Je les concasse grossièrement."
+    },
+    "t07-s20-n2-b-06": {
+      "id": "t07-s20-n2-b-06",
+      "editorialRef": "C-B-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ああ、だから食べるときにカリカリするんですね。",
+      "kana": "ああ、だからたべるときにカリカリするんですね。",
+      "kanaDisplay": "ああ、だから たべる とき に カリカリ するんです ね。",
+      "romaji": "Ā, dakara taberu toki ni karikari suru n desu ne.",
+      "fr": "Ah, c'est donc pour ça que ça croque quand on mange la tarte !"
+    },
+    "t07-s20-n2-b-07": {
+      "id": "t07-s20-n2-b-07",
+      "editorialRef": "C-B-07",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そう。その食感が好きなの。",
+      "kana": "そう。そのしょっかんがすきなの。",
+      "kanaDisplay": "そう。その しょっかん が すき なの。",
+      "romaji": "Sō. Sono shokkan ga suki na no.",
+      "fr": "Exactement. C'est cette texture que j'aime."
+    },
+    "t07-s20-n2-b-08": {
+      "id": "t07-s20-n2-b-08",
+      "editorialRef": "C-B-08",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "僕は、つまみ食いしないように気をつけないとね。",
+      "kana": "ぼくは、つまみぐいしないようにきをつけないとね。",
+      "kanaDisplay": "ぼく は、つまみぐい しない ように き を つけない と ね。",
+      "romaji": "Boku wa, tsumamigui shinai yō ni ki o tsukenai to ne.",
+      "fr": "Et moi, il faut que je fasse attention à ne pas grignoter les amandes en douce !"
+    },
+    "t07-s20-n2-b-09": {
+      "id": "t07-s20-n2-b-09",
+      "editorialRef": "C-B-09",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "シルマック、タルトに入れる分は残してね！",
+      "kana": "シルマック、タルトにいれるぶんはのこしてね！",
+      "kanaDisplay": "シルマック、タルト に いれる ぶん は のこして ね！",
+      "romaji": "Shirumakku, taruto ni ireru bun wa nokoshite ne!",
+      "fr": "CilMac, laisse-en assez pour la tarte !"
+    },
+    "t07-s20-n2-c-01": {
+      "id": "t07-s20-n2-c-01",
+      "editorialRef": "C-C-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ところで、パイ生地とサブレ生地は、どう違うんですか。",
+      "kana": "ところで、パイきじとサブレきじは、どうちがうんですか。",
+      "kanaDisplay": "ところで、パイきじ と サブレきじ は、どう ちがうんですか。",
+      "romaji": "Tokoro de, pai kiji to sabure kiji wa, dō chigau n desu ka.",
+      "fr": "Au fait, quelle est la différence entre la pâte feuilletée et la pâte sablée ?"
+    },
+    "t07-s20-n2-c-02": {
+      "id": "t07-s20-n2-c-02",
+      "editorialRef": "C-C-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "フランスで売っているパイ生地は、ほとんど甘くないの。お菓子にも塩味の料理にも使えるよ。",
+      "kana": "フランスでうっているパイきじは、ほとんどあまくないの。おかしにもしおあじのりょうりにもつかえるよ。",
+      "kanaDisplay": "フランス で うって いる パイきじ は、ほとんど あまくない の。おかし にも しおあじ の りょうり にも つかえる よ。",
+      "romaji": "Furansu de utte iru pai kiji wa, hotondo amakunai no. Okashi ni mo shioaji no ryōri ni mo tsukaeru yo.",
+      "fr": "En France, les pâtes feuilletées du commerce sont pratiquement neutres. On peut les utiliser pour des desserts ou des plats salés."
+    },
+    "t07-s20-n2-c-03": {
+      "id": "t07-s20-n2-c-03",
+      "editorialRef": "C-C-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "でも、うちで買うサブレ生地は甘いから、お菓子に使うの。",
+      "kana": "でも、うちでかうサブレきじはあまいから、おかしにつかうの。",
+      "kanaDisplay": "でも、うち で かう サブレきじ は あまい から、おかし に つかう の。",
+      "romaji": "Demo, uchi de kau sabure kiji wa amai kara, okashi ni tsukau no.",
+      "fr": "En revanche, les pâtes sablées qu'on achète sont sucrées : on les utilise pour les desserts."
+    },
+    "t07-s20-n2-c-04": {
+      "id": "t07-s20-n2-c-04",
+      "editorialRef": "C-C-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "あ、思い出した！昔、クリスマスに大失敗したことがあるんだ。",
+      "kana": "あ、おもいだした！むかし、クリスマスにだいしっぱいしたことがあるんだ。",
+      "kanaDisplay": "あ、おもいだした！むかし、クリスマス に だいしっぱい した こと が あるんだ。",
+      "romaji": "A, omoidashita! Mukashi, Kurisumasu ni daishippai shita koto ga aru n da.",
+      "fr": "Ah, ça me rappelle quelque chose ! Un Noël, j'ai fait une énorme bourde !"
+    },
+    "t07-s20-n2-c-05": {
+      "id": "t07-s20-n2-c-05",
+      "editorialRef": "C-C-05",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "えっ、何があったんですか。",
+      "kana": "えっ、なにがあったんですか。",
+      "kanaDisplay": "えっ、なに が あったんですか。",
+      "romaji": "E, nani ga atta n desu ka.",
+      "fr": "Ah bon ? Qu'est-ce qui s'est passé ?"
+    },
+    "t07-s20-n2-c-06": {
+      "id": "t07-s20-n2-c-06",
+      "editorialRef": "C-C-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "うちの家族は、ロレーヌ地方の「パテ・ロラン」が大好きなんだ。",
+      "kana": "うちのかぞくは、ロレーヌちほうの「パテ・ロラン」がだいすきなんだ。",
+      "kanaDisplay": "うち の かぞく は、ロレーヌちほう の「パテ・ロラン」が だいすき なんだ。",
+      "romaji": "Uchi no kazoku wa, Rorēnu chihō no \"Pate Roran\" ga daisuki nan da.",
+      "fr": "Dans la famille, on adore le pâté lorrain, une spécialité de Lorraine."
+    },
+    "t07-s20-n2-c-07": {
+      "id": "t07-s20-n2-c-07",
+      "editorialRef": "C-C-07",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "前によく行っていたパン屋さんにレシピを教えてもらって、時々作っているんだ。",
+      "kana": "まえによくいっていたパンやさんにレシピをおしえてもらって、ときどきつくっているんだ。",
+      "kanaDisplay": "まえ に よく いって いた パンやさん に レシピ を おしえて もらって、ときどき つくって いるんだ。",
+      "romaji": "Mae ni yoku itte ita pan'ya-san ni reshipi o oshiete moratte, tokidoki tsukutte iru n da.",
+      "fr": "J'avais réussi à obtenir la recette de notre ancien boulanger, alors j'en prépare de temps en temps."
+    },
+    "t07-s20-n2-c-08": {
+      "id": "t07-s20-n2-c-08",
+      "editorialRef": "C-C-08",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "肉を二枚のパイ生地ではさんで焼く料理なの。上も下もパイ生地だよ。",
+      "kana": "にくをにまいのパイきじではさんでやくりょうりなの。うえもしたもパイきじだよ。",
+      "kanaDisplay": "にく を にまい の パイきじ で はさんで やく りょうり なの。うえ も した も パイきじ だ よ。",
+      "romaji": "Niku o nimai no pai kiji de hasande yaku ryōri na no. Ue mo shita mo pai kiji da yo.",
+      "fr": "C'est un plat où la viande cuit entre deux pâtes feuilletées : une en dessous et une au-dessus."
+    },
+    "t07-s20-n2-c-09": {
+      "id": "t07-s20-n2-c-09",
+      "editorialRef": "C-C-09",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "ある年のクリスマスに家族のために作ったんだけど、一口食べたら、何か変だったんだ。",
+      "kana": "あるとしのクリスマスにかぞくのためにつくったんだけど、ひとくちたべたら、なにかへんだったんだ。",
+      "kanaDisplay": "ある とし の クリスマス に かぞく の ため に つくったんだけど、ひとくち たべたら、なにか へん だったんだ。",
+      "romaji": "Aru toshi no Kurisumasu ni kazoku no tame ni tsukutta n da kedo, hitokuchi tabetara, nanika hen datta n da.",
+      "fr": "Un Noël, j'en avais préparé pour toute la famille. Mais dès la première bouchée, j'ai trouvé le goût bizarre…"
+    },
+    "t07-s20-n2-c-10": {
+      "id": "t07-s20-n2-c-10",
+      "editorialRef": "C-C-10",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "えっ、何が変だったんですか。",
+      "kana": "えっ、なにがへんだったんですか。",
+      "kanaDisplay": "えっ、なに が へん だったんですか。",
+      "romaji": "E, nani ga hen datta n desu ka.",
+      "fr": "Ah bon ? Qu'est-ce qui n'allait pas ?"
+    },
+    "t07-s20-n2-c-11": {
+      "id": "t07-s20-n2-c-11",
+      "editorialRef": "C-C-11",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "上にのせたのが、パイ生地じゃなくて、甘いサブレ生地だったんだ！",
+      "kana": "うえにのせたのが、パイきじじゃなくて、あまいサブレきじだったんだ！",
+      "kanaDisplay": "うえ に のせた の が、パイきじ じゃなくて、あまい サブレきじ だったんだ！",
+      "romaji": "Ue ni noseta no ga, pai kiji ja nakute, amai sabure kiji datta n da!",
+      "fr": "Sur le dessus, j'avais mis une pâte sablée SUCRÉE à la place de la pâte feuilletée !"
+    },
+    "t07-s20-n2-c-12": {
+      "id": "t07-s20-n2-c-12",
+      "editorialRef": "C-C-12",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "うわあ！肉料理なのに、上は甘い生地だったんですね！",
+      "kana": "うわあ！にくりょうりなのに、うえはあまいきじだったんですね！",
+      "kanaDisplay": "うわあ！にくりょうり なのに、うえ は あまい きじ だったんです ね！",
+      "romaji": "Uwā! Niku ryōri na no ni, ue wa amai kiji datta n desu ne!",
+      "fr": "Oh là là ! Un plat de viande, avec une pâte sucrée par-dessus !"
+    },
+    "t07-s20-n2-c-13": {
+      "id": "t07-s20-n2-c-13",
+      "editorialRef": "C-C-13",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "みんなで大笑いしたよ。シルマックはすごく恥ずかしそうだったけどね！",
+      "kana": "みんなでおおわらいしたよ。シルマックはすごくはずかしそうだったけどね！",
+      "kanaDisplay": "みんな で おおわらい した よ。シルマック は すごく はずかしそう だった けど ね！",
+      "romaji": "Minna de ōwarai shita yo. Shirumakku wa sugoku hazukashisō datta kedo ne!",
+      "fr": "Tout le monde a éclaté de rire ! Et CilMac était mort de honte !"
+    },
+    "t07-s20-n2-c-14": {
+      "id": "t07-s20-n2-c-14",
+      "editorialRef": "C-C-14",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "本当に恥ずかしかった！でも、今ではいい笑い話だよ。",
+      "kana": "ほんとうにはずかしかった！でも、いまではいいわらいばなしだよ。",
+      "kanaDisplay": "ほんとうに はずかしかった！でも、いま では いい わらいばなし だ よ。",
+      "romaji": "Hontō ni hazukashikatta! Demo, ima de wa ii waraibanashi da yo.",
+      "fr": "La honte absolue ! Mais aujourd'hui, ça nous fait bien rigoler !"
+    },
+    "t07-s20-n2-c-15": {
+      "id": "t07-s20-n2-c-15",
+      "editorialRef": "C-C-15",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ふふ。私も生地を買うときは、よく確かめます！",
+      "kana": "ふふ。わたしもきじをかうときは、よくたしかめます！",
+      "kanaDisplay": "ふふ。わたし も きじ を かう とき は、よく たしかめます！",
+      "romaji": "Fufu. Watashi mo kiji o kau toki wa, yoku tashikamemasu!",
+      "fr": "Hé hé ! Moi aussi, je vérifierai bien la pâte avant de l'acheter !"
+    },
+    "t07-s20-n2-d-01": {
+      "id": "t07-s20-n2-d-01",
+      "editorialRef": "C-D-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "東京でも作ってみたいんですが、材料の量を確認してもいいですか。",
+      "kana": "とうきょうでもつくってみたいんですが、ざいりょうのりょうをかくにんしてもいいですか。",
+      "kanaDisplay": "とうきょう でも つくって みたいんですが、ざいりょう の りょう を かくにん しても いい ですか。",
+      "romaji": "Tōkyō demo tsukutte mitai n desu ga, zairyō no ryō o kakunin shite mo ii desu ka.",
+      "fr": "J'aimerais essayer de la faire à Tokyo. Tu peux me confirmer les quantités ?"
+    },
+    "t07-s20-n2-d-02": {
+      "id": "t07-s20-n2-d-02",
+      "editorialRef": "C-D-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "もちろん。チョコレート220グラム、バター100グラム、砂糖150グラム、卵3個だよ。",
+      "kana": "もちろん。チョコレートにひゃくにじゅうグラム、バターひゃくグラム、さとうひゃくごじゅうグラム、たまごさんこだよ。",
+      "kanaDisplay": "もちろん。チョコレート にひゃくにじゅうグラム、バター ひゃくグラム、さとう ひゃくごじゅうグラム、たまご さんこ だ よ。",
+      "romaji": "Mochiron. Chokorēto nihyaku nijū guramu, batā hyaku guramu, satō hyaku gojū guramu, tamago san-ko da yo.",
+      "fr": "Bien sûr. 220 grammes de chocolat, 100 grammes de beurre, 150 grammes de sucre et trois œufs."
+    },
+    "t07-s20-n2-d-03": {
+      "id": "t07-s20-n2-d-03",
+      "editorialRef": "C-D-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "アーモンドは150グラム。あと、タルト用のサブレ生地が一枚だよ。",
+      "kana": "アーモンドはひゃくごじゅうグラム。あと、タルトようのサブレきじがいちまいだよ。",
+      "kanaDisplay": "アーモンド は ひゃくごじゅうグラム。あと、タルトよう の サブレきじ が いちまい だ よ。",
+      "romaji": "Āmondo wa hyaku gojū guramu. Ato, taruto-yō no sabure kiji ga ichimai da yo.",
+      "fr": "Il faut aussi 150 grammes d'amandes et une pâte sablée pour la tarte."
+    },
+    "t07-s20-n2-d-04": {
+      "id": "t07-s20-n2-d-04",
+      "editorialRef": "C-D-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "「サブレ生地」って、パイシートと同じですか。",
+      "kana": "「サブレきじ」って、パイシートとおなじですか。",
+      "kanaDisplay": "「サブレきじ」って、パイシート と おなじ ですか。",
+      "romaji": "\"Sabure kiji\" tte, pai shīto to onaji desu ka.",
+      "fr": "La pâte sablée, c'est la même chose qu'une pâte feuilletée toute prête ?"
+    },
+    "t07-s20-n2-d-05": {
+      "id": "t07-s20-n2-d-05",
+      "editorialRef": "C-D-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "ちょっと違うよ。私が買うサブレ生地は、もっとほろっとしていて、甘いの。",
+      "kana": "ちょっとちがうよ。わたしがかうサブレきじは、もっとほろっとしていて、あまいの。",
+      "kanaDisplay": "ちょっと ちがう よ。わたし が かう サブレきじ は、もっと ほろっと して いて、あまい の。",
+      "romaji": "Chotto chigau yo. Watashi ga kau sabure kiji wa, motto horotto shite ite, amai no.",
+      "fr": "Pas tout à fait. La pâte sablée que j'achète est plus friable et, surtout, elle est sucrée."
+    },
+    "t07-s20-n2-d-06": {
+      "id": "t07-s20-n2-d-06",
+      "editorialRef": "C-D-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "なるほど。近くのお店で売っているか、探してみます。",
+      "kana": "なるほど。ちかくのおみせでうっているか、さがしてみます。",
+      "kanaDisplay": "なるほど。ちかく の おみせ で うって いる か、さがして みます。",
+      "romaji": "Naruhodo. Chikaku no omise de utte iru ka, sagashite mimasu.",
+      "fr": "Je vois. Je vais regarder si j'en trouve dans les magasins près de chez moi."
+    },
+    "t07-s20-n2-d-07": {
+      "id": "t07-s20-n2-d-07",
+      "editorialRef": "C-D-07",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "見つからなかったら、どうする？",
+      "kana": "みつからなかったら、どうする？",
+      "kanaDisplay": "みつからなかったら、どう する？",
+      "romaji": "Mitsukaranakattara, dō suru?",
+      "fr": "Et si tu n'en trouves pas, tu fais comment ?"
+    },
+    "t07-s20-n2-d-08": {
+      "id": "t07-s20-n2-d-08",
+      "editorialRef": "C-D-08",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "別の生地でも作れるかもしれないけど、味や食感は変わると思う。",
+      "kana": "べつのきじでもつくれるかもしれないけど、あじやしょっかんはかわるとおもう。",
+      "kanaDisplay": "べつ の きじ でも つくれる かもしれない けど、あじ や しょっかん は かわる と おもう。",
+      "romaji": "Betsu no kiji demo tsukureru kamo shirenai kedo, aji ya shokkan wa kawaru to omou.",
+      "fr": "On pourrait peut-être essayer une autre pâte, mais je pense que le goût et la texture seraient différents."
+    },
+    "t07-s20-n2-d-09": {
+      "id": "t07-s20-n2-d-09",
+      "editorialRef": "C-D-09",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "じゃあ、最初はレシピどおりに作ってみたいです。",
+      "kana": "じゃあ、さいしょはレシピどおりにつくってみたいです。",
+      "kanaDisplay": "じゃあ、さいしょ は レシピどおり に つくって みたい です。",
+      "romaji": "Jā, saisho wa reshipi dōri ni tsukutte mitai desu.",
+      "fr": "Alors, pour mon premier essai, je préfère suivre la recette."
+    },
+    "t07-s20-n2-d-10": {
+      "id": "t07-s20-n2-d-10",
+      "editorialRef": "C-D-10",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "できたら、写真を送ってね。食べられないのが残念だけど！",
+      "kana": "できたら、しゃしんをおくってね。たべられないのがざんねんだけど！",
+      "kanaDisplay": "できたら、しゃしん を おくって ね。たべられない の が ざんねん だけど！",
+      "romaji": "Dekitara, shashin o okutte ne. Taberarenai no ga zannen da kedo!",
+      "fr": "Envoie-nous une photo quand elle sera prête. Dommage qu'on ne puisse pas y goûter !"
+    },
+    "t07-s20-n2-d-11": {
+      "id": "t07-s20-n2-d-11",
+      "editorialRef": "C-D-11",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ふふ、いつか一緒に食べたいですね。",
+      "kana": "ふふ、いつかいっしょにたべたいですね。",
+      "kanaDisplay": "ふふ、いつか いっしょ に たべたい です ね。",
+      "romaji": "Fufu, itsuka issho ni tabetai desu ne.",
+      "fr": "Hé hé ! J'aimerais bien qu'on en mange ensemble un jour."
+    },
+    "t07-s20-n2-fin-01": {
+      "id": "t07-s20-n2-fin-01",
+      "editorialRef": "C-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "話を聞いていたら、ますます作りたくなりました！",
+      "kana": "はなしをきいていたら、ますますつくりたくなりました！",
+      "kanaDisplay": "はなし を きいて いたら、ますます つくりたく なりました！",
+      "romaji": "Hanashi o kiite itara, masumasu tsukuritaku narimashita!",
+      "fr": "Plus je vous écoute, plus j'ai envie d'essayer de la faire !"
+    },
+    "t07-s20-n2-fin-02": {
+      "id": "t07-s20-n2-fin-02",
+      "editorialRef": "C-F-02",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "分からないことがあったら、いつでも聞いてね。",
+      "kana": "わからないことがあったら、いつでもきいてね。",
+      "kanaDisplay": "わからない こと が あったら、いつでも きいて ね。",
+      "romaji": "Wakaranai koto ga attara, itsu demo kiite ne.",
+      "fr": "Si tu as d'autres questions, n'hésite pas à me demander !"
+    },
+    "t07-s20-n2-fin-03": {
+      "id": "t07-s20-n2-fin-03",
+      "editorialRef": "C-F-03",
+      "speakerId": "cilmac",
+      "function": "conclusion",
+      "jp": "僕はそろそろタルトを食べたいな！",
+      "kana": "ぼくはそろそろタルトをたべたいな！",
+      "kanaDisplay": "ぼく は そろそろ タルト を たべたい な！",
+      "romaji": "Boku wa sorosoro taruto o tabetai na!",
+      "fr": "Et moi, je mangerais bien une part de tarte maintenant !"
+    },
+    "t07-s20-n2-clar-b-01": {
+      "id": "t07-s20-n2-clar-b-01",
+      "editorialRef": "C-R-01",
+      "speakerId": "yuki",
+      "function": "clarification",
+      "jp": "「粗く」って、どのくらいですか。",
+      "kana": "「あらく」って、どのくらいですか。",
+      "kanaDisplay": "「あらく」って、どの くらい ですか。",
+      "romaji": "\"Araku\" tte, dono kurai desu ka.",
+      "fr": "« Grossièrement », ça veut dire jusqu'à quel point ?"
+    },
+    "t07-s20-n2-clar-b-02": {
+      "id": "t07-s20-n2-clar-b-02",
+      "editorialRef": "C-R-02",
+      "speakerId": "plume",
+      "function": "clarification",
+      "jp": "小さな粒が少し残るくらいだよ。",
+      "kana": "ちいさなつぶがすこしのこるくらいだよ。",
+      "kanaDisplay": "ちいさな つぶ が すこし のこる くらい だ よ。",
+      "romaji": "Chiisana tsubu ga sukoshi nokoru kurai da yo.",
+      "fr": "Il faut qu'il reste de petits morceaux."
+    },
+    "t07-s20-n3-o-01": {
+      "id": "t07-s20-n3-o-01",
+      "editorialRef": "D-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "この前のタルトの話、まだ気になってるんです。",
+      "kana": "このまえのタルトのはなし、まだきになってるんです。",
+      "kanaDisplay": "このまえ の タルト の はなし、まだ き に なってるんです。",
+      "romaji": "Kono mae no taruto no hanashi, mada ki ni natteru n desu.",
+      "fr": "Je repense encore à cette histoire de tarte, l'autre jour."
+    },
+    "t07-s20-n3-o-02": {
+      "id": "t07-s20-n3-o-02",
+      "editorialRef": "D-O-02",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "ふふ、まだ作ってみたい？",
+      "kana": "ふふ、まだつくってみたい？",
+      "kanaDisplay": "ふふ、まだ つくって みたい？",
+      "romaji": "Fufu, mada tsukutte mitai?",
+      "fr": "Hé hé ! Tu as toujours envie d'essayer de la faire ?"
+    },
+    "t07-s20-n3-o-03": {
+      "id": "t07-s20-n3-o-03",
+      "editorialRef": "D-O-03",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "うん。でも、作り方だけじゃなくて、いろいろ聞きたいな。",
+      "kana": "うん。でも、つくりかただけじゃなくて、いろいろききたいな。",
+      "kanaDisplay": "うん。でも、つくりかた だけ じゃなくて、いろいろ ききたい な。",
+      "romaji": "Un. Demo, tsukurikata dake ja nakute, iroiro kikitai na.",
+      "fr": "Oui ! Mais j'aimerais aussi te poser d'autres questions, pas seulement sur la préparation."
+    },
+    "t07-s20-n3-o-04": {
+      "id": "t07-s20-n3-o-04",
+      "editorialRef": "D-O-04",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "じゃあ、今日はタルトから話が広がりそうだね！",
+      "kana": "じゃあ、きょうはタルトからはなしがひろがりそうだね！",
+      "kanaDisplay": "じゃあ、きょう は タルト から はなし が ひろがりそう だ ね！",
+      "romaji": "Jā, kyō wa taruto kara hanashi ga hirogarisō da ne!",
+      "fr": "Alors, cette tarte va encore nous donner plein de choses à raconter !"
+    },
+    "t07-s20-n3-a-01": {
+      "id": "t07-s20-n3-a-01",
+      "editorialRef": "D-A-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そういえば、シャンタルさんのレシピだって言ってたよね。",
+      "kana": "そういえば、シャンタルさんのレシピだっていってたよね。",
+      "kanaDisplay": "そういえば、シャンタルさん の レシピ だって いってた よね。",
+      "romaji": "Sō ieba, Shantaru-san no reshipi datte itteta yo ne.",
+      "fr": "Au fait, tu m'avais dit que c'était la recette de Chantal, non ?"
+    },
+    "t07-s20-n3-a-02": {
+      "id": "t07-s20-n3-a-02",
+      "editorialRef": "D-A-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "うん。フランスのリュベロン地方で、宿をやっていた人なの。",
+      "kana": "うん。フランスのリュベロンちほうで、やどをやっていたひとなの。",
+      "kanaDisplay": "うん。フランス の リュベロンちほう で、やど を やって いた ひと なの。",
+      "romaji": "Un. Furansu no Ryuberon chihō de, yado o yatte ita hito na no.",
+      "fr": "Oui. Elle tenait une chambre d'hôtes dans le Luberon, en France."
+    },
+    "t07-s20-n3-a-03": {
+      "id": "t07-s20-n3-a-03",
+      "editorialRef": "D-A-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "こういうレシピって、料理だけじゃなくて、思い出も残るよね。",
+      "kana": "こういうレシピって、りょうりだけじゃなくて、おもいでものこるよね。",
+      "kanaDisplay": "こういう レシピ って、りょうり だけ じゃなくて、おもいで も のこる よね。",
+      "romaji": "Kō iu reshipi tte, ryōri dake ja nakute, omoide mo nokoru yo ne.",
+      "fr": "Avec une recette comme celle-là, on garde aussi des souvenirs, pas seulement un plat."
+    },
+    "t07-s20-n3-a-04": {
+      "id": "t07-s20-n3-a-04",
+      "editorialRef": "D-A-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "分かる。どうして、このレシピを今も作っているの？",
+      "kana": "わかる。どうして、このレシピをいまもつくっているの？",
+      "kanaDisplay": "わかる。どうして、この レシピ を いま も つくって いる の？",
+      "romaji": "Wakaru. Dōshite, kono reshipi o ima mo tsukutte iru no?",
+      "fr": "Je comprends. Et pourquoi tu continues à faire cette recette aujourd'hui ?"
+    },
+    "t07-s20-n3-a-05": {
+      "id": "t07-s20-n3-a-05",
+      "editorialRef": "D-A-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "おいしいから、もちろん。でも、人からもらったレシピは、ちょっと特別なんだよね。",
+      "kana": "おいしいから、もちろん。でも、ひとからもらったレシピは、ちょっととくべつなんだよね。",
+      "kanaDisplay": "おいしい から、もちろん。でも、ひと から もらった レシピ は、ちょっと とくべつ なんだ よね。",
+      "romaji": "Oishii kara, mochiron. Demo, hito kara moratta reshipi wa, chotto tokubetsu nan da yo ne.",
+      "fr": "Parce qu'elle est délicieuse, évidemment ! Mais une recette transmise par quelqu'un, ça a quelque chose de particulier."
+    },
+    "t07-s20-n3-a-06": {
+      "id": "t07-s20-n3-a-06",
+      "editorialRef": "D-A-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "私も、友達から教えてもらったスープを時々作るよ。",
+      "kana": "わたしも、ともだちからおしえてもらったスープをときどきつくるよ。",
+      "kanaDisplay": "わたし も、ともだち から おしえて もらった スープ を ときどき つくる よ。",
+      "romaji": "Watashi mo, tomodachi kara oshiete moratta sūpu o tokidoki tsukuru yo.",
+      "fr": "Moi aussi, je fais parfois une soupe dont une amie m'a donné la recette."
+    },
+    "t07-s20-n3-a-07": {
+      "id": "t07-s20-n3-a-07",
+      "editorialRef": "D-A-07",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "へえ、どんなスープ？",
+      "kana": "へえ、どんなスープ？",
+      "kanaDisplay": "へえ、どんな スープ？",
+      "romaji": "Hee, donna sūpu?",
+      "fr": "Ah oui ? Quelle sorte de soupe ?"
+    },
+    "t07-s20-n3-a-08": {
+      "id": "t07-s20-n3-a-08",
+      "editorialRef": "D-A-08",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "野菜のスープ。簡単だけど、疲れた日にはほっとするの。",
+      "kana": "やさいのスープ。かんたんだけど、つかれたひにはほっとするの。",
+      "kanaDisplay": "やさい の スープ。かんたん だけど、つかれた ひ には ほっと する の。",
+      "romaji": "Yasai no sūpu. Kantan da kedo, tsukareta hi ni wa hotto suru no.",
+      "fr": "Une soupe de légumes. C'est simple, mais les jours où je suis fatiguée, ça me fait du bien."
+    },
+    "t07-s20-n3-a-09": {
+      "id": "t07-s20-n3-a-09",
+      "editorialRef": "D-A-09",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "分かる。料理の味だけじゃなくて、そのときのことも思い出すんだよね。",
+      "kana": "わかる。りょうりのあじだけじゃなくて、そのときのこともおもいだすんだよね。",
+      "kanaDisplay": "わかる。りょうり の あじ だけ じゃなくて、その とき の こと も おもいだすんだ よね。",
+      "romaji": "Wakaru. Ryōri no aji dake ja nakute, sono toki no koto mo omoidasu n da yo ne.",
+      "fr": "Je comprends. On retrouve le goût du plat, mais aussi le souvenir de la personne et du moment où on a découvert la recette."
+    },
+    "t07-s20-n3-a-10": {
+      "id": "t07-s20-n3-a-10",
+      "editorialRef": "D-A-10",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そうそう！だから、そのレシピはずっと残しておきたいの。",
+      "kana": "そうそう！だから、そのレシピはずっとのこしておきたいの。",
+      "kanaDisplay": "そうそう！だから、その レシピ は ずっと のこして おきたい の。",
+      "romaji": "Sō sō! Dakara, sono reshipi wa zutto nokoshite okitai no.",
+      "fr": "Exactement ! C'est pour ça que j'ai envie de garder cette recette précieusement."
+    },
+    "t07-s20-n3-a-11": {
+      "id": "t07-s20-n3-a-11",
+      "editorialRef": "D-A-11",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "じゃあ、今度はユキのスープも教えてよ！",
+      "kana": "じゃあ、こんどはユキのスープもおしえてよ！",
+      "kanaDisplay": "じゃあ、こんど は ユキ の スープ も おしえて よ！",
+      "romaji": "Jā, kondo wa Yuki no sūpu mo oshiete yo!",
+      "fr": "Alors, la prochaine fois, tu nous donneras aussi ta recette de soupe !"
+    },
+    "t07-s20-n3-b-01": {
+      "id": "t07-s20-n3-b-01",
+      "editorialRef": "D-B-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ちょっと聞いてもいい？このタルト、私には少し甘そうなの。",
+      "kana": "ちょっときいてもいい？このタルト、わたしにはすこしあまそうなの。",
+      "kanaDisplay": "ちょっと きいても いい？この タルト、わたし には すこし あまそう なの。",
+      "romaji": "Chotto kiite mo ii? Kono taruto, watashi ni wa sukoshi amasō na no.",
+      "fr": "Je peux te poser une question ? J'ai peur que cette tarte soit un peu trop sucrée pour moi."
+    },
+    "t07-s20-n3-b-02": {
+      "id": "t07-s20-n3-b-02",
+      "editorialRef": "D-B-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "もちろん。甘さは好みだからね。何が気になる？",
+      "kana": "もちろん。あまさはこのみだからね。なにがきになる？",
+      "kanaDisplay": "もちろん。あまさ は このみ だから ね。なに が き に なる？",
+      "romaji": "Mochiron. Amasa wa konomi da kara ne. Nani ga ki ni naru?",
+      "fr": "Bien sûr. Pour le sucre, chacun ses goûts ! Qu'est-ce qui te tracasse ?"
+    },
+    "t07-s20-n3-b-03": {
+      "id": "t07-s20-n3-b-03",
+      "editorialRef": "D-B-03",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "砂糖を少し減らしたら、どうなると思う？",
+      "kana": "さとうをすこしへらしたら、どうなるとおもう？",
+      "kanaDisplay": "さとう を すこし へらしたら、どう なる と おもう？",
+      "romaji": "Satō o sukoshi herashitara, dō naru to omou?",
+      "fr": "À ton avis, qu'est-ce qui se passerait si je réduisais un peu le sucre ?"
+    },
+    "t07-s20-n3-b-04": {
+      "id": "t07-s20-n3-b-04",
+      "editorialRef": "D-B-04",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "味は変わるだろうね。でも、実際に作ってみないと、食感までは分からないな。",
+      "kana": "あじはかわるだろうね。でも、じっさいにつくってみないと、しょっかんまではわからないな。",
+      "kanaDisplay": "あじ は かわる だろう ね。でも、じっさい に つくって みない と、しょっかん まで は わからない な。",
+      "romaji": "Aji wa kawaru darō ne. Demo, jissai ni tsukutte minai to, shokkan made wa wakaranai na.",
+      "fr": "Le goût changerait probablement. Mais pour savoir ce que ça ferait à la texture, il faudrait essayer."
+    },
+    "t07-s20-n3-b-05": {
+      "id": "t07-s20-n3-b-05",
+      "editorialRef": "D-B-05",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "僕なら、まず元のレシピどおりに作るかな。",
+      "kana": "ぼくなら、まずもとのレシピどおりにつくるかな。",
+      "kanaDisplay": "ぼく なら、まず もと の レシピどおり に つくる かな。",
+      "romaji": "Boku nara, mazu moto no reshipi dōri ni tsukuru kana.",
+      "fr": "À ta place, je commencerais par suivre la recette originale."
+    },
+    "t07-s20-n3-b-06": {
+      "id": "t07-s20-n3-b-06",
+      "editorialRef": "D-B-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "確かに。まず元の味を知ってから変えたほうがいいかもね。",
+      "kana": "たしかに。まずもとのあじをしってからかえたほうがいいかもね。",
+      "kanaDisplay": "たしかに。まず もと の あじ を しって から かえた ほう が いい かも ね。",
+      "romaji": "Tashika ni. Mazu moto no aji o shitte kara kaeta hō ga ii kamo ne.",
+      "fr": "C'est vrai. Je ferais peut-être mieux de goûter la version originale avant de la modifier."
+    },
+    "t07-s20-n3-b-07": {
+      "id": "t07-s20-n3-b-07",
+      "editorialRef": "D-B-07",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "うん。でも、自分の好みに合わせるのも楽しいよ。",
+      "kana": "うん。でも、じぶんのこのみにあわせるのもたのしいよ。",
+      "kanaDisplay": "うん。でも、じぶん の このみ に あわせる の も たのしい よ。",
+      "romaji": "Un. Demo, jibun no konomi ni awaseru no mo tanoshii yo.",
+      "fr": "Oui. Mais adapter une recette à ses propres goûts, c'est agréable aussi."
+    },
+    "t07-s20-n3-b-08": {
+      "id": "t07-s20-n3-b-08",
+      "editorialRef": "D-B-08",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "ただし、アーモンドは忘れないでね！",
+      "kana": "ただし、アーモンドはわすれないでね！",
+      "kanaDisplay": "ただし、アーモンド は わすれないで ね！",
+      "romaji": "Tadashi, āmondo wa wasurenaide ne!",
+      "fr": "À une condition : ne pas oublier les amandes !"
+    },
+    "t07-s20-n3-b-09": {
+      "id": "t07-s20-n3-b-09",
+      "editorialRef": "D-B-09",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ふふ、あのカリカリした食感が大事なんだったね。",
+      "kana": "ふふ、あのカリカリしたしょっかんがだいじなんだったね。",
+      "kanaDisplay": "ふふ、あの カリカリ した しょっかん が だいじ なんだった ね。",
+      "romaji": "Fufu, ano karikari shita shokkan ga daiji nan datta ne.",
+      "fr": "Hé hé ! Ah oui, c'est vrai, le fameux croquant des amandes !"
+    },
+    "t07-s20-n3-b-10": {
+      "id": "t07-s20-n3-b-10",
+      "editorialRef": "D-B-10",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そう。まずは同じように作って、それから自分の味を見つければいいと思う。",
+      "kana": "そう。まずはおなじようにつくって、それからじぶんのあじをみつければいいとおもう。",
+      "kanaDisplay": "そう。まず は おなじ ように つくって、それから じぶん の あじ を みつければ いい と おもう。",
+      "romaji": "Sō. Mazu wa onaji yō ni tsukutte, sorekara jibun no aji o mitsukereba ii to omou.",
+      "fr": "Voilà. Commence par la recette d'origine, puis trouve petit à petit ta propre version."
+    },
+    "t07-s20-n3-b-11": {
+      "id": "t07-s20-n3-b-11",
+      "editorialRef": "D-B-11",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "じゃあ、食べ比べの日が必要だね！",
+      "kana": "じゃあ、たべくらべのひがひつようだね！",
+      "kanaDisplay": "じゃあ、たべくらべ の ひ が ひつよう だ ね！",
+      "romaji": "Jā, tabekurabe no hi ga hitsuyō da ne!",
+      "fr": "Alors, il va falloir organiser une dégustation comparative !"
+    },
+    "t07-s20-n3-c-01": {
+      "id": "t07-s20-n3-c-01",
+      "editorialRef": "D-C-01",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ところで、フランスではチョコレートのデザートが人気なの？",
+      "kana": "ところで、フランスではチョコレートのデザートがにんきなの？",
+      "kanaDisplay": "ところで、フランス では チョコレート の デザート が にんき なの？",
+      "romaji": "Tokoro de, Furansu de wa chokorēto no dezāto ga ninki na no?",
+      "fr": "Au fait, les desserts au chocolat sont populaires en France ?"
+    },
+    "t07-s20-n3-c-02": {
+      "id": "t07-s20-n3-c-02",
+      "editorialRef": "D-C-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "人気はあると思うけど、好みは人それぞれだよ。",
+      "kana": "にんきはあるとおもうけど、このみはひとそれぞれだよ。",
+      "kanaDisplay": "にんき は ある と おもう けど、このみ は ひとそれぞれ だ よ。",
+      "romaji": "Ninki wa aru to omou kedo, konomi wa hito sorezore da yo.",
+      "fr": "Je pense que oui, mais chacun a ses préférences."
+    },
+    "t07-s20-n3-c-03": {
+      "id": "t07-s20-n3-c-03",
+      "editorialRef": "D-C-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "僕はチョコレート派。特に、このタルトは好きだな。",
+      "kana": "ぼくはチョコレートは。とくに、このタルトはすきだな。",
+      "kanaDisplay": "ぼく は チョコレートは。とくに、この タルト は すき だ な。",
+      "romaji": "Boku wa chokorēto-ha. Toku ni, kono taruto wa suki da na.",
+      "fr": "Moi, je suis plutôt chocolat. Et cette tarte, je l'aime particulièrement !"
+    },
+    "t07-s20-n3-c-04": {
+      "id": "t07-s20-n3-c-04",
+      "editorialRef": "D-C-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "私はあんこを使ったお菓子も好きだよ。",
+      "kana": "わたしはあんこをつかったおかしもすきだよ。",
+      "kanaDisplay": "わたし は あんこ を つかった おかし も すき だ よ。",
+      "romaji": "Watashi wa anko o tsukatta okashi mo suki da yo.",
+      "fr": "Moi, j'aime aussi les pâtisseries à l'anko, la pâte de haricots rouges sucrée."
+    },
+    "t07-s20-n3-c-05": {
+      "id": "t07-s20-n3-c-05",
+      "editorialRef": "D-C-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "あんこって、どんな味がするの？",
+      "kana": "あんこって、どんなあじがするの？",
+      "kanaDisplay": "あんこ って、どんな あじ が する の？",
+      "romaji": "Anko tte, donna aji ga suru no?",
+      "fr": "Et ça a quel goût, l'anko ?"
+    },
+    "t07-s20-n3-c-06": {
+      "id": "t07-s20-n3-c-06",
+      "editorialRef": "D-C-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "甘いけど、チョコレートとはまた違うおいしさがあるの。",
+      "kana": "あまいけど、チョコレートとはまたちがうおいしさがあるの。",
+      "kanaDisplay": "あまい けど、チョコレート とは また ちがう おいしさ が ある の。",
+      "romaji": "Amai kedo, chokorēto to wa mata chigau oishisa ga aru no.",
+      "fr": "C'est sucré, mais c'est une saveur très différente de celle du chocolat, et tout aussi agréable."
+    },
+    "t07-s20-n3-c-07": {
+      "id": "t07-s20-n3-c-07",
+      "editorialRef": "D-C-07",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "豆で甘いものを作るって、面白いよね。",
+      "kana": "まめであまいものをつくるって、おもしろいよね。",
+      "kanaDisplay": "まめ で あまい もの を つくる って、おもしろい よね。",
+      "romaji": "Mame de amai mono o tsukuru tte, omoshiroi yo ne.",
+      "fr": "C'est amusant, cette idée de préparer des desserts avec des haricots !"
+    },
+    "t07-s20-n3-c-08": {
+      "id": "t07-s20-n3-c-08",
+      "editorialRef": "D-C-08",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そうかな？私は子どものころから食べてたから、普通に感じるな。",
+      "kana": "そうかな？わたしはこどものころからたべてたから、ふつうにかんじるな。",
+      "kanaDisplay": "そう かな？わたし は こども の ころ から たべてた から、ふつう に かんじる な。",
+      "romaji": "Sō kana? Watashi wa kodomo no koro kara tabeteta kara, futsū ni kanjiru na.",
+      "fr": "Ah bon ? Moi, j'en mange depuis l'enfance, alors ça me paraît tout à fait normal."
+    },
+    "t07-s20-n3-c-09": {
+      "id": "t07-s20-n3-c-09",
+      "editorialRef": "D-C-09",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そういう違いがあるから、食べ比べると楽しいんだよね。",
+      "kana": "そういうちがいがあるから、たべくらべるとたのしいんだよね。",
+      "kanaDisplay": "そういう ちがい が ある から、たべくらべる と たのしいんだ よね。",
+      "romaji": "Sō iu chigai ga aru kara, tabekuraberu to tanoshii n da yo ne.",
+      "fr": "C'est justement parce que nos habitudes sont différentes que c'est amusant de goûter les spécialités des autres."
+    },
+    "t07-s20-n3-c-10": {
+      "id": "t07-s20-n3-c-10",
+      "editorialRef": "D-C-10",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "じゃあ、いつか一緒に食べ比べしようよ。",
+      "kana": "じゃあ、いつかいっしょにたべくらべしようよ。",
+      "kanaDisplay": "じゃあ、いつか いっしょ に たべくらべ しよう よ。",
+      "romaji": "Jā, itsuka issho ni tabekurabe shiyō yo.",
+      "fr": "Alors, un jour, organisons une dégustation ensemble !"
+    },
+    "t07-s20-n3-c-11": {
+      "id": "t07-s20-n3-c-11",
+      "editorialRef": "D-C-11",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "いいね！私は和菓子を持っていくね。",
+      "kana": "いいね！わたしはわがしをもっていくね。",
+      "kanaDisplay": "いい ね！わたし は わがし を もって いく ね。",
+      "romaji": "Ii ne! Watashi wa wagashi o motte iku ne.",
+      "fr": "Bonne idée ! Moi, j'apporterai des pâtisseries japonaises."
+    },
+    "t07-s20-n3-c-12": {
+      "id": "t07-s20-n3-c-12",
+      "editorialRef": "D-C-12",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "じゃあ、私はタルトを焼いて待ってるよ！",
+      "kana": "じゃあ、わたしはタルトをやいてまってるよ！",
+      "kanaDisplay": "じゃあ、わたし は タルト を やいて まってる よ！",
+      "romaji": "Jā, watashi wa taruto o yaite matteru yo!",
+      "fr": "Et moi, je préparerai la tarte pour t'accueillir !"
+    },
+    "t07-s20-n3-c-13": {
+      "id": "t07-s20-n3-c-13",
+      "editorialRef": "D-C-13",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "僕は大きなお皿を用意するよ！",
+      "kana": "ぼくはおおきなおさらをよういするよ！",
+      "kanaDisplay": "ぼく は おおきな おさら を ようい する よ！",
+      "romaji": "Boku wa ōkina osara o yōi suru yo!",
+      "fr": "Et moi, je m'occupe des grandes assiettes !"
+    },
+    "t07-s20-n3-fin-01": {
+      "id": "t07-s20-n3-fin-01",
+      "editorialRef": "D-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "今日はレシピだけじゃなくて、いろいろな話が聞けてよかった。",
+      "kana": "きょうはレシピだけじゃなくて、いろいろなはなしがきけてよかった。",
+      "kanaDisplay": "きょう は レシピ だけ じゃなくて、いろいろな はなし が きけて よかった。",
+      "romaji": "Kyō wa reshipi dake ja nakute, iroiro na hanashi ga kikete yokatta.",
+      "fr": "Je suis contente ! J'ai appris plein de choses aujourd'hui, pas seulement la recette."
+    },
+    "t07-s20-n3-fin-02": {
+      "id": "t07-s20-n3-fin-02",
+      "editorialRef": "D-F-02",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "タルトを作ったら、感想を教えてね。",
+      "kana": "タルトをつくったら、かんそうをおしえてね。",
+      "kanaDisplay": "タルト を つくったら、かんそう を おしえて ね。",
+      "romaji": "Taruto o tsukuttara, kansō o oshiete ne.",
+      "fr": "Quand tu auras essayé la tarte, dis-moi ce que tu en penses !"
+    },
+    "t07-s20-n3-fin-03": {
+      "id": "t07-s20-n3-fin-03",
+      "editorialRef": "D-F-03",
+      "speakerId": "cilmac",
+      "function": "conclusion",
+      "jp": "でも、写真だけじゃおなかはいっぱいにならないよ！",
+      "kana": "でも、しゃしんだけじゃおなかはいっぱいにならないよ！",
+      "kanaDisplay": "でも、しゃしん だけ じゃ おなか は いっぱい に ならない よ！",
+      "romaji": "Demo, shashin dake ja onaka wa ippai ni naranai yo!",
+      "fr": "Mais attention, une photo ne me remplira pas l'estomac !"
+    },
+    "t07-s20-n3-fin-04": {
+      "id": "t07-s20-n3-fin-04",
+      "editorialRef": "D-F-04",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "ふふ、分かった。いつか一緒に食べようね。またね！",
+      "kana": "ふふ、わかった。いつかいっしょにたべようね。またね！",
+      "kanaDisplay": "ふふ、わかった。いつか いっしょ に たべよう ね。また ね！",
+      "romaji": "Fufu, wakatta. Itsuka issho ni tabeyō ne. Mata ne!",
+      "fr": "Hé hé, entendu ! On en mangera ensemble un jour. À bientôt !"
+    },
+    "t07-s20-n3-clar-b-01": {
+      "id": "t07-s20-n3-clar-b-01",
+      "editorialRef": "D-R-01",
+      "speakerId": "yuki",
+      "function": "clarification",
+      "jp": "つまり、砂糖を減らすと、味だけじゃなくて食感も変わるかもしれないってこと？",
+      "kana": "つまり、さとうをへらすと、あじだけじゃなくてしょっかんもかわるかもしれないってこと？",
+      "kanaDisplay": "つまり、さとう を へらす と、あじ だけ じゃなくて しょっかん も かわる かもしれない って こと？",
+      "romaji": "Tsumari, satō o herasu to, aji dake ja nakute shokkan mo kawaru kamo shirenai tte koto?",
+      "fr": "Donc tu veux dire que réduire le sucre pourrait modifier la texture, et pas seulement le goût ?"
+    },
+    "t07-s20-n3-clar-b-02": {
+      "id": "t07-s20-n3-clar-b-02",
+      "editorialRef": "D-R-02",
+      "speakerId": "plume",
+      "function": "clarification",
+      "jp": "そう。でも、どのくらい変わるかは、試してみないと分からないよ。",
+      "kana": "そう。でも、どのくらいかわるかは、ためしてみないとわからないよ。",
+      "kanaDisplay": "そう。でも、どの くらい かわる か は、ためして みない と わからない よ。",
+      "romaji": "Sō. Demo, dono kurai kawaru ka wa, tameshite minai to wakaranai yo.",
+      "fr": "Oui, c'est possible. Mais sans essayer, impossible de dire à quel point."
+    },
+    "t07-s20-n3-clar-c-01": {
+      "id": "t07-s20-n3-clar-c-01",
+      "editorialRef": "D-R-01",
+      "speakerId": "cilmac",
+      "function": "clarification",
+      "jp": "あんこって、何から作るの？",
+      "kana": "あんこって、なにからつくるの？",
+      "kanaDisplay": "あんこ って、なに から つくる の？",
+      "romaji": "Anko tte, nani kara tsukuru no?",
+      "fr": "L'anko, c'est fait avec quoi ?"
+    },
+    "t07-s20-n3-clar-c-02": {
+      "id": "t07-s20-n3-clar-c-02",
+      "editorialRef": "D-R-02",
+      "speakerId": "yuki",
+      "function": "clarification",
+      "jp": "小豆という豆を煮て、砂糖を加えて作ることが多いよ。",
+      "kana": "あずきというまめをにて、さとうをくわえてつくることがおおいよ。",
+      "kanaDisplay": "あずき と いう まめ を にて、さとう を くわえて つくる こと が おおい よ。",
+      "romaji": "Azuki to iu mame o nite, satō o kuwaete tsukuru koto ga ōi yo.",
+      "fr": "En général, on fait cuire des haricots azuki et on ajoute du sucre."
+    }
+  }
+}

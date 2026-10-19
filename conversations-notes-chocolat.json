@@ -1,0 +1,412 @@
+{
+  "schemaVersion": "editorial-sidecar-1.0",
+  "status": "candidate-annotations-for-review-publication-not-approved",
+  "sourceSituationId": "t07-s20",
+  "sourceVersion": "0.4-candidate-revised",
+  "sourceTurnCount": 130,
+  "sourceUnchanged": true,
+  "notesClosedByDefault": true,
+  "highlightPolicy": "Aucun repérage permanent. Mise en évidence éphémère des fragments focus en japonais, kana et romaji uniquement lorsque le dépliant À comprendre est ouvert. Ne pas afficher de vocabulaire supplémentaire.",
+  "separateFromExistingVocabulary": true,
+  "notes": [
+    {
+      "id": "note-t07-s20-e1",
+      "label": "E1",
+      "turnId": "t07-s20-n1-o-04",
+      "level": "n1",
+      "title": "Demander ce que contient un plat",
+      "bodyFr": "Le verbe *hairu* sert ici à dire qu’un ingrédient se trouve dans une préparation. Avec la tournure explicative de la question, Yuki invite Plume à présenter les ingrédients. Cette question est également réutilisable pour le contenu d’un sac ou d’un colis.",
+      "focus": [
+        {
+          "jp": "何が入っているんですか",
+          "kana": "なにがはいっているんですか",
+          "kanaDisplay": "なに が はいって いるんですか",
+          "romaji": "Nani ga haitte iru n desu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-e2",
+      "label": "E2",
+      "turnId": "t07-s20-n1-a-06",
+      "level": "n1",
+      "title": "Une part ne suffit pas",
+      "bodyFr": "*Hitokire* désigne une tranche ou une part. *Ja* est ici la contraction orale de *de wa*, dans une phrase négative. CilMac exagère sa gourmandise pour plaisanter.",
+      "focus": [
+        {
+          "jp": "一切れじゃ足りません",
+          "kana": "ひときれじゃたりません",
+          "kanaDisplay": "ひときれ じゃ たりません",
+          "romaji": "Hitokire ja tarimasen"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-e3",
+      "label": "E3",
+      "turnId": "t07-s20-n1-b-04",
+      "level": "n1",
+      "title": "Vérifier si un ingrédient est utilisé tel quel",
+      "bodyFr": "*Sono mama* veut dire « tel quel, sans le modifier ». La question de Yuki ne demande pas simplement de répéter : elle confirme son hypothèse sur la préparation. La réponse distingue les amandes entières des amandes torréfiées puis concassées.",
+      "focus": [
+        {
+          "jp": "そのまま入れるんですか",
+          "kana": "そのままいれるんですか",
+          "kanaDisplay": "そのまま いれるんですか",
+          "romaji": "Sono mama ireru n desu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-e4",
+      "label": "E4",
+      "turnId": "t07-s20-n1-b-05",
+      "level": "n1",
+      "title": "Enchaîner deux opérations",
+      "bodyFr": "*Saki ni* situe la première étape. La forme en *-te* relie les actions : d’abord griller les amandes, ensuite les concasser grossièrement, sans les réduire en poudre.",
+      "focus": [
+        {
+          "jp": "先にオーブンで焼いて、粗く砕きます",
+          "kana": "さきにオーブンでやいて、あらくくだきます",
+          "kanaDisplay": "さき に オーブン で やいて、あらく くだきます",
+          "romaji": "Saki ni ōbun de yaite, araku kudakimasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-e5",
+      "label": "E5",
+      "turnId": "t07-s20-n1-c-02",
+      "level": "n1",
+      "title": "Avoir envie d’essayer une action",
+      "bodyFr": "*Tsukutte miru* signifie « essayer de préparer pour voir ce que cela donne ». Avec *-tai*, Yuki exprime son envie de tenter la recette plutôt qu’un projet déjà décidé.",
+      "focus": [
+        {
+          "jp": "作ってみたいです",
+          "kana": "つくってみたいです",
+          "kanaDisplay": "つくって みたい です",
+          "romaji": "Tsukutte mitai desu"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-e6",
+      "label": "E6",
+      "turnId": "t07-s20-n1-c-07",
+      "level": "n1",
+      "title": "Exprimer un espoir spontané",
+      "bodyFr": "La construction *-to ii* exprime un souhait : « pourvu que cela se passe bien ». La particule finale *na* marque ici une pensée personnelle et familière, adaptée à des amis.",
+      "focus": [
+        {
+          "jp": "うまくできるといいな",
+          "kana": "うまくできるといいな",
+          "kanaDisplay": "うまく できる と いい な",
+          "romaji": "Umaku dekiru to ii na"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c1",
+      "label": "C1",
+      "turnId": "t07-s20-n2-a-01",
+      "level": "n2",
+      "title": "Température et durée : écouter les nombres",
+      "bodyFr": "*Hyaku gojū-do* désigne 150 degrés ; *jūgo-fun kara nijuppun* indique une durée de quinze à vingt minutes. Dans la même recette, 40 minutes se dit *yonjuppun* et 220 grammes se lit *nihyaku nijū guramu*. À l’oral, bien distinguer les chiffres et les unités.",
+      "focus": [
+        {
+          "jp": "150度",
+          "kana": "ひゃくごじゅうど",
+          "kanaDisplay": "ひゃくごじゅうど",
+          "romaji": "hyaku gojū-do"
+        },
+        {
+          "jp": "15分から20分",
+          "kana": "じゅうごふんからにじゅっぷん",
+          "kanaDisplay": "じゅうごふん から にじゅっぷん",
+          "romaji": "jūgo-fun kara nijuppun"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c2",
+      "label": "C2",
+      "turnId": "t07-s20-n2-a-10",
+      "level": "n2",
+      "title": "Déduire une consigne puis demander confirmation",
+      "bodyFr": "Yuki constate que la température de cuisson de la tarte n’est pas écrite sur la fiche. Elle fait l’hypothèse qu’elle est identique à celle des amandes, puis pose une question de confirmation. Cette stratégie s’applique aussi à un horaire, un itinéraire ou une consigne incomplète.",
+      "focus": [
+        {
+          "jp": "アーモンドと同じ150度ですか",
+          "kana": "アーモンドとおなじひゃくごじゅうどですか",
+          "kanaDisplay": "アーモンド と おなじ ひゃくごじゅうど ですか",
+          "romaji": "Āmondo to onaji hyaku gojū-do desu ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c3",
+      "label": "C3",
+      "turnId": "t07-s20-n2-a-11",
+      "level": "n2",
+      "title": "Maintenir un état : laisser le four allumé",
+      "bodyFr": "La construction *-ta mama* présente un état maintenu après une action. Ici, le four, une fois allumé, reste en marche ; Plume confirme donc 150 °C pendant 40 minutes. Cette précision a été donnée oralement par l’utilisateur : elle n’est pas explicitement chiffrée pour la tarte sur la fiche originale.",
+      "focus": [
+        {
+          "jp": "オーブンはつけたまま",
+          "kana": "オーブンはつけたまま",
+          "kanaDisplay": "オーブン は つけた まま",
+          "romaji": "Ōbun wa tsuketa mama"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c4",
+      "label": "C4",
+      "turnId": "t07-s20-n2-b-02",
+      "level": "n2",
+      "title": "Conserver la peau des amandes",
+      "bodyFr": "*Kawagoto* veut dire « avec la peau ». Plus tard, *araku kudaku* (« concasser grossièrement ») précise qu’on doit laisser de petits morceaux, et non une poudre fine. Ce sont deux informations différentes, toutes deux nécessaires à la bonne compréhension de la recette.",
+      "focus": [
+        {
+          "jp": "皮ごとオーブンで焼く",
+          "kana": "かわごとオーブンでやく",
+          "kanaDisplay": "かわごと オーブン で やく",
+          "romaji": "Kawagoto ōbun de yaku"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c5",
+      "label": "C5",
+      "turnId": "t07-s20-n2-b-08",
+      "level": "n2",
+      "title": "Une obligation laissée sous-entendue",
+      "bodyFr": "À l’oral familier, *-nai to* peut terminer une phrase sans qu’on exprime toute la suite (« sinon, ce sera embêtant »). Ici, CilMac plaisante : il va devoir résister à l’envie de grignoter les amandes.",
+      "focus": [
+        {
+          "jp": "気をつけないと",
+          "kana": "きをつけないと",
+          "kanaDisplay": "き を つけない と",
+          "romaji": "ki o tsukenai to"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c6",
+      "label": "C6",
+      "turnId": "t07-s20-n2-c-04",
+      "level": "n2",
+      "title": "Introduire un souvenir personnel",
+      "bodyFr": "La structure *-ta koto ga aru* exprime une expérience déjà vécue. Ici, CilMac s’en sert pour annoncer une grosse erreur passée et susciter la curiosité de Yuki avant de raconter le pâté lorrain de Noël.",
+      "focus": [
+        {
+          "jp": "大失敗したことがある",
+          "kana": "だいしっぱいしたことがある",
+          "kanaDisplay": "だいしっぱい した こと が ある",
+          "romaji": "daishippai shita koto ga aru"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c7",
+      "label": "C7",
+      "turnId": "t07-s20-n2-c-07",
+      "level": "n2",
+      "title": "Une recette reçue de quelqu’un",
+      "bodyFr": "La construction *-te morau* met l’accent sur le fait de recevoir un service : le boulanger a expliqué sa recette à CilMac. Dans la proposition relative, on peut évoquer la personne qui a transmis ce savoir sans construire une phrase passive française.",
+      "focus": [
+        {
+          "jp": "レシピを教えてもらって",
+          "kana": "レシピをおしえてもらって",
+          "kanaDisplay": "レシピ を おしえて もらって",
+          "romaji": "reshipi o oshiete moratte"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c8",
+      "label": "C8",
+      "turnId": "t07-s20-n2-d-04",
+      "level": "n2",
+      "title": "Distinguer pâte sablée et pâte feuilletée",
+      "bodyFr": "Dans cet échange, *sabure kiji* désigne la pâte sablée sucrée achetée par Plume ; *pai shīto* renvoie à une feuille de pâte feuilletée vendue prête à l’emploi. Les deux ne sont pas interchangeables : elles diffèrent par leur composition, leur texture et, dans le cas décrit, leur goût.",
+      "focus": [
+        {
+          "jp": "サブレ生地",
+          "kana": "サブレきじ",
+          "kanaDisplay": "サブレきじ",
+          "romaji": "Sabure kiji"
+        },
+        {
+          "jp": "パイシート",
+          "kana": "パイシート",
+          "kanaDisplay": "パイシート",
+          "romaji": "pai shīto"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-c9",
+      "label": "C9",
+      "turnId": "t07-s20-n2-d-09",
+      "level": "n2",
+      "title": "Suivre une recette à la lettre",
+      "bodyFr": "*Reshipi dōri ni* signifie « conformément à la recette ». La même construction peut servir pour une instruction, un programme ou un itinéraire. Yuki préfère d’abord réaliser la version originale avant d’envisager des adaptations.",
+      "focus": [
+        {
+          "jp": "レシピどおりに作ってみたい",
+          "kana": "レシピどおりにつくってみたい",
+          "kanaDisplay": "レシピどおり に つくって みたい",
+          "romaji": "reshipi dōri ni tsukutte mitai"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d1",
+      "label": "D1",
+      "turnId": "t07-s20-n3-a-01",
+      "level": "n3",
+      "title": "Revenir naturellement à un sujet antérieur",
+      "bodyFr": "*Sō ieba* veut dire « Au fait, maintenant que j’y pense… ». Cette phrase passerelle permet de reprendre une information déjà entendue sans changer de sujet abruptement.",
+      "focus": [
+        {
+          "jp": "そういえば",
+          "kana": "そういえば",
+          "kanaDisplay": "そういえば",
+          "romaji": "Sō ieba"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d2",
+      "label": "D2",
+      "turnId": "t07-s20-n3-a-02",
+      "level": "n3",
+      "title": "Évoquer une ancienne activité prolongée",
+      "bodyFr": "La forme *-te ita* peut évoquer une activité ou une situation qui durait dans le passé. Ici, Plume présente l’activité passée de Chantal dans le Luberon, sans donner d’autres informations privées.",
+      "focus": [
+        {
+          "jp": "宿をやっていた",
+          "kana": "やどをやっていた",
+          "kanaDisplay": "やど を やって いた",
+          "romaji": "yado o yatte ita"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d3",
+      "label": "D3",
+      "turnId": "t07-s20-n3-a-10",
+      "level": "n3",
+      "title": "Conserver quelque chose pour plus tard",
+      "bodyFr": "*Nokoshite oku* signifie ici « conserver en vue de l’avenir ». En ajoutant *-tai*, Yuki exprime le souhait de garder précieusement la recette que son amie lui a transmise.",
+      "focus": [
+        {
+          "jp": "残しておきたい",
+          "kana": "のこしておきたい",
+          "kanaDisplay": "のこして おきたい",
+          "romaji": "nokoshite okitai"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d4",
+      "label": "D4",
+      "turnId": "t07-s20-n3-b-04",
+      "level": "n3",
+      "title": "Ne pas pouvoir savoir sans essayer",
+      "bodyFr": "La forme négative suivie de *to* pose une condition nécessaire : il faut tester la recette pour vérifier son effet sur la texture. Cette structure sert bien au-delà de la cuisine.",
+      "focus": [
+        {
+          "jp": "作ってみないと",
+          "kana": "つくってみないと",
+          "kanaDisplay": "つくって みない と",
+          "romaji": "tsukutte minai to"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d5",
+      "label": "D5",
+      "turnId": "t07-s20-n3-b-04",
+      "level": "n3",
+      "title": "Exprimer une supposition prudente",
+      "bodyFr": "*Darō* marque ici une estimation et non un résultat expérimental établi. Plume s’attend à un changement de goût, mais reste prudente sur la texture tant qu’aucun essai n’a été effectué.",
+      "focus": [
+        {
+          "jp": "変わるだろう",
+          "kana": "かわるだろう",
+          "kanaDisplay": "かわる だろう",
+          "romaji": "kawaru darō"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d6",
+      "label": "D6",
+      "turnId": "t07-s20-n3-b-07",
+      "level": "n3",
+      "title": "Adapter quelque chose à ses préférences",
+      "bodyFr": "*Konomi ni awaseru* signifie « adapter à ses goûts ». Le verbe *awaseru* peut aussi s’employer pour adapter un horaire, un rythme ou une activité aux besoins de quelqu’un.",
+      "focus": [
+        {
+          "jp": "自分の好みに合わせる",
+          "kana": "じぶんのこのみにあわせる",
+          "kanaDisplay": "じぶん の このみ に あわせる",
+          "romaji": "jibun no konomi ni awaseru"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d7",
+      "label": "D7",
+      "turnId": "t07-s20-n3-c-02",
+      "level": "n3",
+      "title": "Reconnaître que chacun a ses goûts",
+      "bodyFr": "*Konomi wa hito sorezore* est une expression passerelle très utile : une préférence dépend des personnes, même à l’intérieur d’un même pays ou d’une famille. Plume évite de généraliser ses goûts à toute la France.",
+      "focus": [
+        {
+          "jp": "好みは人それぞれ",
+          "kana": "このみはひとそれぞれ",
+          "kanaDisplay": "このみ は ひとそれぞれ",
+          "romaji": "konomi wa hito sorezore"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d8",
+      "label": "D8",
+      "turnId": "t07-s20-n3-c-03",
+      "level": "n3",
+      "title": "Être du camp des amateurs de…",
+      "bodyFr": "Le suffixe *-ha* écrit 派 désigne une tendance ou une préférence : « plutôt du côté de… ». Dans *chokorēto-ha*, il se prononce *ha* et non *wa* ; ne pas le confondre avec la particule de thème, bien que les deux puissent être représentés par は dans les lectures kana.",
+      "focus": [
+        {
+          "jp": "チョコレート派",
+          "kana": "チョコレートは",
+          "kanaDisplay": "チョコレートは",
+          "romaji": "chokorēto-ha"
+        }
+      ]
+    },
+    {
+      "id": "note-t07-s20-d9",
+      "label": "D9",
+      "turnId": "t07-s20-n3-c-06",
+      "level": "n3",
+      "title": "Comparer des saveurs sans les classer",
+      "bodyFr": "*To wa mata chigau* souligne une autre sorte de saveur, sans affirmer que l’une est supérieure à l’autre. Pratique pour expliquer des goûts personnels et parler de différences culturelles avec nuance.",
+      "focus": [
+        {
+          "jp": "チョコレートとはまた違うおいしさ",
+          "kana": "チョコレートとはまたちがうおいしさ",
+          "kanaDisplay": "チョコレート とは また ちがう おいしさ",
+          "romaji": "chokorēto to wa mata chigau oishisa"
+        }
+      ]
+    }
+  ],
+  "displayLabel": "🌸 À comprendre",
+  "highlightOnlyWhileOpen": true,
+  "comment": "Annotations relues pour les textes des trois niveaux. Aucune publication autorisée avant contrôle de Codex, vérification linguistique des nuances délicates et accord explicite de CilMac."
+}
