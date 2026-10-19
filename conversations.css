@@ -66,3 +66,6 @@ body.conversations-active .shell{max-width:1280px}
 .conversation-focus[data-focus-color]{background:var(--focus-color)}
 .conversation-note .conversation-note-part{margin:12px 0;padding-left:10px;border-left:4px solid var(--focus-color)}
 .conversation-note-number{display:inline-block;background:var(--focus-color);color:#343c38;padding:0 6px;border-radius:4px;font-size:13px;font-weight:600}
+
+.conversation-participant{white-space:nowrap}
+.conversation-participant-emoji{font-size:.95em;font-weight:400}

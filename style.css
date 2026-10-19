@@ -821,3 +821,6 @@ body.generated-help-open{overflow:hidden}
  .commands-heading{gap:8px;padding:8px 12px}
  .commands-heading h2{font-size:16px;line-height:1.3;min-width:0}
 }
+
+/* Garder une marge après le dernier onglet, y compris après rotation sur tablette. */
+.navigation-dock .tabs{min-width:0;max-width:100%;padding-inline:12px;scroll-padding-inline:12px;box-sizing:border-box}

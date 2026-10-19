@@ -85,11 +85,13 @@
   }
  }
  tabs.addEventListener('scroll',updateTabsHint,{passive:true});
- window.updateNavigationTab=()=>{updateCommands();const active=tabs.querySelector('[aria-current=page]');if(!active)return;sections.title='Rubrique actuelle : '+active.textContent.trim();if(narrow.matches){updateTabsHint();return;}const a=active.getBoundingClientRect(),t=tabs.getBoundingClientRect();if(a.right>t.right)tabs.scrollLeft+=a.right-t.right;if(a.left<t.left)tabs.scrollLeft+=a.left-t.left;updateTabsHint();};
+ window.updateNavigationTab=()=>{updateCommands();const active=tabs.querySelector('[aria-current=page]');if(!active)return;sections.title='Rubrique actuelle : '+active.textContent.trim();if(narrow.matches){updateTabsHint();return;}const a=active.getBoundingClientRect(),t=tabs.getBoundingClientRect();const right=Math.min(t.right,document.documentElement.clientWidth)-12,left=Math.max(t.left,0)+12;if(a.right>right)tabs.scrollLeft+=a.right-right;if(a.left<left)tabs.scrollLeft+=a.left-left;updateTabsHint();};
  let tabsFrame=0;
  const refreshTabs=()=>{if(!tabsFrame)tabsFrame=requestAnimationFrame(()=>{tabsFrame=0;window.updateNavigationTab();});};
  window.addEventListener('resize',refreshTabs,{passive:true});
- if(typeof ResizeObserver!=='undefined')new ResizeObserver(refreshTabs).observe(tabs);
+ if(typeof ResizeObserver!=='undefined'){const observer=new ResizeObserver(refreshTabs);observer.observe(tabs);tabs.querySelectorAll('.source-group').forEach(group=>observer.observe(group));}
+ document.fonts?.ready.then(refreshTabs);
+ window.visualViewport?.addEventListener('resize',refreshTabs,{passive:true});
  window.updateNavigationTab();
  search.setAttribute('aria-haspopup','dialog');search.setAttribute('aria-controls','corpus-search');search.setAttribute('aria-expanded','false');
  search.onclick=()=>{closeDisplay();for(const id of ['saved','settings']){document.getElementById(id).hidden=true;document.getElementById(id+'-toggle').setAttribute('aria-expanded','false');}window.CorpusSearch.open();};
