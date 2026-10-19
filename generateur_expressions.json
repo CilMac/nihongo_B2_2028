@@ -1,0 +1,692 @@
+{
+  "schema_version": "2.0",
+  "slot_pools": {
+    "scene_01": [
+      {
+        "jp": "ううん、まだ眠い。",
+        "kana": "ううん、まだ ねむい。",
+        "romaji": "uun, mada nemui.",
+        "fr": "Non, j’ai encore sommeil."
+      },
+      {
+        "jp": "うん、朝ごはんを食べる。",
+        "kana": "うん、あさごはん を たべる。",
+        "romaji": "un, asagohan o taberu.",
+        "fr": "Oui, je vais prendre le petit-déjeuner."
+      },
+      {
+        "jp": "うん、シャワーを浴びる。",
+        "kana": "うん、しゃわー を あびる。",
+        "romaji": "un, shawā o abiru.",
+        "fr": "Oui, je vais prendre une douche."
+      }
+    ],
+    "scene_02": [
+      {
+        "jp": "うん、お願い。",
+        "kana": "うん、おねがい。",
+        "romaji": "un, onegai.",
+        "fr": "Oui, s’il te plaît."
+      },
+      {
+        "jp": "ううん、お茶にする。",
+        "kana": "ううん、おちゃ に する。",
+        "romaji": "uun, ocha ni suru.",
+        "fr": "Non, je vais prendre du thé."
+      },
+      {
+        "jp": "ううん、水にする。",
+        "kana": "ううん、みず に する。",
+        "romaji": "uun, mizu ni suru.",
+        "fr": "Non, je vais prendre de l’eau."
+      }
+    ],
+    "scene_03": [
+      {
+        "jp": "ラーメンにしよう。",
+        "kana": "らーめん に しよう。",
+        "romaji": "rāmen ni shiyō.",
+        "fr": "Prenons des ramen."
+      },
+      {
+        "jp": "そばにしよう。",
+        "kana": "そば に しよう。",
+        "romaji": "soba ni shiyō.",
+        "fr": "Prenons des soba."
+      },
+      {
+        "jp": "カレーにしよう。",
+        "kana": "かれー に しよう。",
+        "romaji": "karē ni shiyō.",
+        "fr": "Prenons du curry."
+      }
+    ],
+    "scene_04": [
+      {
+        "jp": "牛乳がないよ。",
+        "kana": "ぎゅうにゅう が ない よ。",
+        "romaji": "gyūnyū ga nai yo.",
+        "fr": "Il n’y a plus de lait."
+      },
+      {
+        "jp": "パンがないよ。",
+        "kana": "ぱん が ない よ。",
+        "romaji": "pan ga nai yo.",
+        "fr": "Il n’y a plus de pain."
+      },
+      {
+        "jp": "卵がないよ。",
+        "kana": "たまご が ない よ。",
+        "romaji": "tamago ga nai yo.",
+        "fr": "Il n’y a plus d’œufs."
+      }
+    ],
+    "scene_05": [
+      {
+        "jp": "うん、歩こう。",
+        "kana": "うん、あるこう。",
+        "romaji": "un, arukō.",
+        "fr": "Oui, allons-y à pied."
+      },
+      {
+        "jp": "ううん、電車で行こう。",
+        "kana": "ううん、でんしゃ で いこう。",
+        "romaji": "uun, densha de ikō.",
+        "fr": "Non, allons-y en train."
+      },
+      {
+        "jp": "ううん、タクシーで行こう。",
+        "kana": "ううん、たくしー で いこう。",
+        "romaji": "uun, takushī de ikō.",
+        "fr": "Non, allons-y en taxi."
+      }
+    ],
+    "scene_06": [
+      {
+        "jp": "うん、行こう。",
+        "kana": "うん、いこう。",
+        "romaji": "un, ikō.",
+        "fr": "Oui, allons-y."
+      },
+      {
+        "jp": "ちょっと待って。",
+        "kana": "ちょっと まって。",
+        "romaji": "chotto matte.",
+        "fr": "Attends un peu."
+      },
+      {
+        "jp": "もう少し待って。",
+        "kana": "もう すこし まって。",
+        "romaji": "mō sukoshi matte.",
+        "fr": "Attends encore un peu."
+      }
+    ],
+    "scene_07": [
+      {
+        "jp": "傘を持っていこう。",
+        "kana": "かさ を もって いこう。",
+        "romaji": "kasa o motte ikō.",
+        "fr": "Prenons un parapluie."
+      },
+      {
+        "jp": "タクシーで行こう。",
+        "kana": "たくしー で いこう。",
+        "romaji": "takushī de ikō.",
+        "fr": "Allons-y en taxi."
+      },
+      {
+        "jp": "少し待とう。",
+        "kana": "すこし まとう。",
+        "romaji": "sukoshi matō.",
+        "fr": "Attendons un peu."
+      }
+    ],
+    "scene_08": [
+      {
+        "jp": "あと五分だよ。",
+        "kana": "あと ごふん だ よ。",
+        "romaji": "ato gofun da yo.",
+        "fr": "Encore cinq minutes."
+      },
+      {
+        "jp": "あと十分だよ。",
+        "kana": "あと じゅっぷん だ よ。",
+        "romaji": "ato juppun da yo.",
+        "fr": "Encore dix minutes."
+      },
+      {
+        "jp": "あと十五分だよ。",
+        "kana": "あと じゅうごふん だ よ。",
+        "romaji": "ato jūgofun da yo.",
+        "fr": "Encore quinze minutes."
+      }
+    ],
+    "scene_09": [
+      {
+        "jp": "少し休もう。",
+        "kana": "すこし やすもう。",
+        "romaji": "sukoshi yasumō.",
+        "fr": "Reposons-nous un peu."
+      },
+      {
+        "jp": "カフェに入ろう。",
+        "kana": "かふぇ に はいろう。",
+        "romaji": "kafe ni hairō.",
+        "fr": "Entrons dans un café."
+      },
+      {
+        "jp": "ホテルに帰ろう。",
+        "kana": "ほてる に かえろう。",
+        "romaji": "hoteru ni kaerō.",
+        "fr": "Rentrons à l’hôtel."
+      }
+    ],
+    "scene_10": [
+      {
+        "jp": "はい、少々お待ちください。",
+        "kana": "はい、しょうしょう おまち ください。",
+        "romaji": "hai, shōshō omachi kudasai.",
+        "fr": "Oui, veuillez patienter un instant."
+      },
+      {
+        "jp": "はい、今行きます。",
+        "kana": "はい、いま いきます。",
+        "romaji": "hai, ima ikimasu.",
+        "fr": "Oui, j’arrive."
+      },
+      {
+        "jp": "はい、大丈夫ですか。",
+        "kana": "はい、だいじょうぶ です か。",
+        "romaji": "hai, daijōbu desu ka.",
+        "fr": "Oui, est-ce que ça va ?"
+      }
+    ],
+    "scene_11": [
+      {
+        "jp": "一つお願いします。",
+        "kana": "ひとつ おねがいします。",
+        "romaji": "hitotsu onegaishimasu.",
+        "fr": "Un, s’il vous plaît."
+      },
+      {
+        "jp": "二つお願いします。",
+        "kana": "ふたつ おねがいします。",
+        "romaji": "futatsu onegaishimasu.",
+        "fr": "Deux, s’il vous plaît."
+      },
+      {
+        "jp": "三つお願いします。",
+        "kana": "みっつ おねがいします。",
+        "romaji": "mittsu onegaishimasu.",
+        "fr": "Trois, s’il vous plaît."
+      }
+    ],
+    "scene_12": [
+      {
+        "jp": "とてもおいしかったです。",
+        "kana": "とても おいしかった です。",
+        "romaji": "totemo oishikatta desu.",
+        "fr": "C’était très bon."
+      },
+      {
+        "jp": "また来ます。",
+        "kana": "また きます。",
+        "romaji": "mata kimasu.",
+        "fr": "Je reviendrai."
+      },
+      {
+        "jp": "ありがとうございました。",
+        "kana": "ありがとう ございました。",
+        "romaji": "arigatō gozaimashita.",
+        "fr": "Merci beaucoup."
+      }
+    ]
+  },
+  "templates": [
+    {
+      "id": "EX01",
+      "label": "Se lever",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Au réveil, entre deux proches partageant le logement. La première personne pose la question ; la seconde répond. Registre familier.",
+      "slots": {
+        "reply": "scene_01"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q005",
+          "japanese": "もう起きる？",
+          "adapted": false
+        }
+      ],
+      "notes": "もう signifie ici « maintenant / déjà ». Les réponses familières conviennent entre proches.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "もう起きる？\n{reply.jp}",
+      "kana_pattern": "もう おきる？\n{reply.kana}",
+      "romaji_pattern": "mou okiru?\n{reply.romaji}",
+      "french_pattern": "Tu te lèves maintenant ?\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "もう起きる？\n",
+          "kana_pattern": "もう おきる？\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX02",
+      "label": "Proposer un café",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Au petit-déjeuner, entre proches. La personne qui prépare les boissons propose un café ; l’autre répond. Registre familier.",
+      "slots": {
+        "reply": "scene_02"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q006",
+          "japanese": "コーヒー飲む？",
+          "adapted": false
+        }
+      ],
+      "notes": "飲む？ sert ici à proposer une boisson. お願い est une réponse familière pour accepter.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "コーヒー飲む？\n{reply.jp}",
+      "kana_pattern": "こーひー のむ？\n{reply.kana}",
+      "romaji_pattern": "koohii nomu?\n{reply.romaji}",
+      "french_pattern": "Tu veux un café ?\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "コーヒー飲む？\n",
+          "kana_pattern": "こーひー のむ？\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX03",
+      "label": "Choisir le repas",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Deux proches choisissent leur repas dans un quartier où ces plats sont disponibles. La seconde personne propose un choix. Registre familier.",
+      "slots": {
+        "reply": "scene_03"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q009",
+          "japanese": "何食べる？",
+          "adapted": false
+        }
+      ],
+      "notes": "にしよう exprime une proposition : « choisissons / prenons… ».",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "何食べる？\n{reply.jp}",
+      "kana_pattern": "なに たべる？\n{reply.kana}",
+      "romaji_pattern": "nani taberu?\n{reply.romaji}",
+      "french_pattern": "On mange quoi ?\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "何食べる？\n",
+          "kana_pattern": "なに たべる？\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX04",
+      "label": "Faire les courses",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Dans un logement avec cuisine, avant les courses : une personne demande ce qui manque, l’autre répond. Registre familier.",
+      "slots": {
+        "reply": "scene_04"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q028",
+          "japanese": "何か買うものある？",
+          "adapted": false
+        }
+      ],
+      "notes": "ないよ signale à l’autre qu’un produit manque. L’omission de la particule est courante dans cet échange familier.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "何か買うものある？\n{reply.jp}",
+      "kana_pattern": "なにか かう もの ある？\n{reply.kana}",
+      "romaji_pattern": "nanika kau mono aru?\n{reply.romaji}",
+      "french_pattern": "Il y a quelque chose à acheter ?\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "何か買うものある？\n",
+          "kana_pattern": "なにか かう もの ある？\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX05",
+      "label": "Choisir le trajet",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Deux proches décident comment rejoindre leur destination. Marche, train et taxi sont des options possibles sur ce trajet. Registre familier.",
+      "slots": {
+        "reply": "scene_05"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q032",
+          "japanese": "歩いて行く？",
+          "adapted": false
+        }
+      ],
+      "notes": "歩いて indique le déplacement à pied ; で indique le moyen de transport. La réponse reste liée au choix du trajet.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "歩いて行く？\n{reply.jp}",
+      "kana_pattern": "あるいて いく？\n{reply.kana}",
+      "romaji_pattern": "aruite iku?\n{reply.romaji}",
+      "french_pattern": "On y va à pied ?\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "歩いて行く？\n",
+          "kana_pattern": "あるいて いく？\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX06",
+      "label": "Se préparer à sortir",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Avant de quitter le logement : une personne attend son compagnon ou sa compagne. Registre familier.",
+      "slots": {
+        "reply": "scene_06"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q070",
+          "japanese": "準備できた？",
+          "adapted": false
+        }
+      ],
+      "notes": "できた？ demande si la préparation est terminée. もう少し signifie « encore un peu ».",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "準備できた？\n{reply.jp}",
+      "kana_pattern": "じゅんび できた？\n{reply.kana}",
+      "romaji_pattern": "junbi dekita?\n{reply.romaji}",
+      "french_pattern": "Tu es prêt ?\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "準備できた？\n",
+          "kana_pattern": "じゅんび できた？\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX07",
+      "label": "Sortir sous la pluie",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Deux proches regardent dehors avant de sortir ; il pleut. La seconde personne propose une solution. Registre familier.",
+      "slots": {
+        "reply": "scene_07"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q050",
+          "japanese": "雨降ってる。",
+          "adapted": false
+        }
+      ],
+      "notes": "よう marque ici une proposition commune. Les variantes sont des réactions possibles à la pluie.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "雨降ってる。\n{reply.jp}",
+      "kana_pattern": "あめ ふってる。\n{reply.kana}",
+      "romaji_pattern": "ame futteru.\n{reply.romaji}",
+      "french_pattern": "Il pleut.\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "雨降ってる。\n",
+          "kana_pattern": "あめ ふってる。\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX08",
+      "label": "Attendre le train",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Sur le quai, entre proches : la première personne demande dans combien de temps le train arrive. L’autre consulte l’affichage. Registre familier.",
+      "slots": {
+        "reply": "scene_08"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q079",
+          "japanese": "あと何分？",
+          "adapted": false
+        }
+      ],
+      "notes": "あと signifie ici le temps restant. 分 se lit différemment selon le nombre : ごふん, じゅっぷん, じゅうごふん.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "あと何分？\n{reply.jp}",
+      "kana_pattern": "あと なんぷん？\n{reply.kana}",
+      "romaji_pattern": "ato nanpun?\n{reply.romaji}",
+      "french_pattern": "Encore combien de minutes ?\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "あと何分？\n",
+          "kana_pattern": "あと なんぷん？\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX09",
+      "label": "Faire une pause",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "Après une promenade, une personne dit sa fatigue à un proche. Celui-ci propose une pause ou le retour au logement. Registre familier.",
+      "slots": {
+        "reply": "scene_09"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q061",
+          "japanese": "疲れた。",
+          "adapted": false
+        }
+      ],
+      "notes": "疲れた décrit ici l’état de fatigue. La seconde réplique propose une action adaptée.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "疲れた。\n{reply.jp}",
+      "kana_pattern": "つかれた。\n{reply.kana}",
+      "romaji_pattern": "tsukareta.\n{reply.romaji}",
+      "french_pattern": "Je suis crevé / fatigué.\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "疲れた。\n",
+          "kana_pattern": "つかれた。\n",
+          "role_fr": "Expression source conservée · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX10",
+      "label": "Demander de l’aide",
+      "weight": 1,
+      "dialogue": true,
+      "context_fr": "À la réception de l’hôtel, avec un bagage difficile à porter : le client demande de l’aide au personnel. Registre poli ; la seconde réplique est celle du personnel.",
+      "slots": {
+        "reply": "scene_10"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q039",
+          "japanese": "ちょっと手伝って。",
+          "adapted": true
+        }
+      ],
+      "notes": "La source ちょっと手伝って est familière. Ici, すみません introduit la demande et ください la rend polie. La source reste intacte dans Expressions.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "すみません、ちょっと手伝ってください。\n{reply.jp}",
+      "kana_pattern": "すみません、ちょっと てつだって ください。\n{reply.kana}",
+      "romaji_pattern": "sumimasen, chotto tetsudatte kudasai.\n{reply.romaji}",
+      "french_pattern": "Excusez-moi, pouvez-vous m’aider un peu ?\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "すみません、ちょっと手伝ってください。\n",
+          "kana_pattern": "すみません、ちょっと てつだって ください。\n",
+          "role_fr": "Adaptation polie de l’expression source · première personne"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Réponse composée · seconde personne"
+        }
+      ]
+    },
+    {
+      "id": "EX11",
+      "label": "Commander du thé",
+      "weight": 1,
+      "dialogue": false,
+      "context_fr": "Dans un café qui propose du thé : le client annonce son choix puis le nombre de boissons pour sa table. Les deux phrases sont dites par le client. Registre poli.",
+      "slots": {
+        "reply": "scene_11"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q007",
+          "japanese": "お茶にする？",
+          "adapted": true
+        }
+      ],
+      "notes": "La question familière お茶にする？ devient ici l’affirmation polie お茶にします。 : « Je choisis du thé. » つ compte les commandes ; ce n’est pas le compteur spécifique des tasses.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "お茶にします。\n{reply.jp}",
+      "kana_pattern": "おちゃ に します。\n{reply.kana}",
+      "romaji_pattern": "ocha ni shimasu.\n{reply.romaji}",
+      "french_pattern": "Je vais prendre du thé.\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "お茶にします。\n",
+          "kana_pattern": "おちゃ に します。\n",
+          "role_fr": "Adaptation polie de l’expression source"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Suite composée · même personne"
+        }
+      ]
+    },
+    {
+      "id": "EX12",
+      "label": "Remercier après le repas",
+      "weight": 1,
+      "dialogue": false,
+      "context_fr": "En quittant le restaurant : le client remercie le personnel après son repas. Les deux phrases sont dites par le client. Registre poli.",
+      "slots": {
+        "reply": "scene_12"
+      },
+      "constraints": [],
+      "expression_refs": [
+        {
+          "collection": "quotidien",
+          "id": "Q018",
+          "japanese": "ごちそうさま。",
+          "adapted": true
+        }
+      ],
+      "notes": "ごちそうさまでした est la forme polie retenue ici après le repas. La source familière ごちそうさま reste conservée dans Expressions.",
+      "translation_note": "La suite est composée pour cette scène ; elle ne provient pas du corpus Expressions.",
+      "japanese_pattern": "ごちそうさまでした。\n{reply.jp}",
+      "kana_pattern": "ごちそうさまでした。\n{reply.kana}",
+      "romaji_pattern": "gochisōsama deshita.\n{reply.romaji}",
+      "french_pattern": "Merci pour le repas.\n{reply.fr}",
+      "segments": [
+        {
+          "japanese_pattern": "ごちそうさまでした。\n",
+          "kana_pattern": "ごちそうさまでした。\n",
+          "role_fr": "Adaptation polie de l’expression source"
+        },
+        {
+          "japanese_pattern": "{reply.jp}",
+          "kana_pattern": "{reply.kana}",
+          "role_fr": "Suite composée · même personne"
+        }
+      ]
+    }
+  ],
+  "levels": {}
+}
