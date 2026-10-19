@@ -34,10 +34,9 @@ function star(id){const selected=id.startsWith('guidefav:')?guideHasFavorite(id)
 function jp(text){return esc(text).replace(/\p{Script=Han}+/gu,'<span class="kanji">$&</span>');}
 function block(t,{fr=true,repeatJapanese=false,rawRomaji=false,audioText=null,passiveReading=false}={}) {
  const audioRef=sentenceAudioRef(t);
- const sameText = String(t.jp).normalize('NFC').replace(/\s/g, '') === String(t.kana).normalize('NFC').replace(/\s/g, '');
- const japanese = sameText&&!repeatJapanese ? `<span class="kana-idem" lang="fr" title="Identique au texte kana">---</span><span class="jp-fallback">${jp(t.jp)}</span>` : jp(t.jp);
+ const japanese = jp(t.jp);
  const kanaLine=!passiveReading?`<button type="button" class="kana kana-audio" lang="ja" data-speak="${esc(audioText || t.audioKana || t.kana)}" data-audio-ref="${esc(audioRef)}" aria-label="Écouter : ${esc(t.kana)}">${esc(t.kana)}<span class="sound-note" aria-hidden="true"> ♪</span></button>`:`<p class="kana" lang="ja">${esc(t.kana)}</p>`;
- return `<div class="language-block">${kanaLine}<p class="jp" lang="ja">${japanese}</p><p class="romaji">${esc(rawRomaji?t.romaji:Romaji.display(t.romaji))}</p>${fr?`<p class="fr">${esc(t.fr)}</p>`:''}${!passiveReading?readingAudioFallback(audioText || t.audioKana || t.kana,audioRef):''}</div>`;
+ return `<div class="language-block"><p class="jp" lang="ja">${japanese}</p>${kanaLine}<p class="romaji">${esc(rawRomaji?t.romaji:Romaji.display(t.romaji))}</p>${fr?`<p class="fr">${esc(t.fr)}</p>`:''}${!passiveReading?readingAudioFallback(audioText || t.audioKana || t.kana,audioRef):''}</div>`;
 }
 function intro(k,title,description){return `<div class="intro"><div class="eyebrow">${k}</div><div class="intro-heading"><h1>${esc(title)}</h1></div><p>${esc(description)}</p></div>`;}
 function route(){

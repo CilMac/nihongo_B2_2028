@@ -294,8 +294,8 @@ function renderGeneratedQuestion(target,s){
  <div class="atelier-options generated-reading-controls" aria-label="Aides de lecture">${[['kana','les kana'],['romaji','le romaji'],['fr','la traduction'],['hint','un indice']].map(([key,label])=>`<button data-generated-reading="${key}" aria-expanded="${reading[key]}" aria-controls="generated-${key}"><span aria-hidden="true">${reading[key]?'✓':'＋'}</span> ${reading[key]?'Masquer':'Afficher'} ${label}</button>`).join('')}</div>
  <div id="generated-hint" class="note" ${reading.hint?'':'hidden'}><strong>${esc(q.title)}</strong><p>${esc(q.context)}</p></div>
  <div id="generated-text" class="${q.dialogue?'generated-dialogue':''}">
+ <p class="listening-japanese" lang="ja">${jp(q.jp)}</p>
  <p id="generated-kana" class="listening-kana" lang="ja" ${reading.kana?'':'hidden'}><button class="generated-kana-audio" data-speak="${esc(q.jp)}" aria-label="Écouter la phrase">${esc(q.kana)} ♪</button></p>
- <p class="listening-japanese" lang="ja">${same&&reading.kana?'<span class="kana-idem" lang="fr">---</span>':jp(q.jp)}</p>
  <p id="generated-romaji" class="listening-romaji" ${reading.romaji?'':'hidden'}>${esc(Romaji.display(q.romaji))}</p>
  <p id="generated-fr" ${reading.fr?'':'hidden'}>${esc(q.fr)}</p></div>
  <button data-speak="${esc(q.jp)}">▶ Écouter</button><p class="muted">Écoute par synthèse vocale. Les aides sont indépendantes du menu œil.</p>
@@ -412,8 +412,8 @@ function renderListeningQuestion(target,s){
  <div class="atelier-options"><button id="listening-play">▶ Écouter / réécouter</button><button id="listening-pause" disabled>Ⅱ Pause</button><button id="listening-stop" disabled>■ Arrêter</button></div>
  <div class="atelier-options">${Object.entries(labels).map(([key,label])=>`<button data-listening-reveal="${key}" aria-expanded="${state[key]}" aria-controls="listening-text">${state[key]?'Masquer':'Afficher'} ${label}</button>`).join('')}</div>
  <div id="listening-text" aria-live="polite">
+ ${state.jp?`<p class="listening-japanese" lang="ja">${jp(r.Japonais)}</p>`:''}
  ${state.kana?`<p class="listening-kana" lang="ja">${esc(r.Kana)}</p>`:''}
- ${state.jp?`<p class="listening-japanese" lang="ja">${same&&state.kana?'<span class="kana-idem" lang="fr" title="Identique au texte kana">---</span>':jp(r.Japonais)}</p>`:''}
  ${state.romaji?`<p class="listening-romaji">${esc(Romaji.display(r.Romaji))}</p>`:''}
  ${state.fr?`<p>${esc(r.Français)}</p>`:''}
  ${!state.jp&&!state.kana&&!state.romaji&&!state.fr?'<p class="muted">Le texte est masqué. Vous pouvez afficher une aide à tout moment.</p>':''}</div>

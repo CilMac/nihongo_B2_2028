@@ -1,0 +1,1520 @@
+{
+  "schemaVersion": 1,
+  "status": "local-integration-review",
+  "editorialVersion": "0.3-candidate",
+  "linguisticStatus": "reviewed-by-chatgpt-pending-user-confirmation-of-consolidation",
+  "publicationApproved": false,
+  "editorialSource": {
+    "basis": "Versions Essentiel 0.1, Conversation 0.2 corrigée et Discussion 0.3, validées par CilMac en conversation",
+    "readings": "kana continu dérivé des segments relus de kanaDisplay",
+    "review": "contrôles automatiques de format et relecture éditoriale sans certification native",
+    "namingNote": "Identifiant t03-s07 proposé selon la cartographie ; Codex vérifie les collisions avant intégration",
+    "changeLog": "voir T03-S07-REVUE.md"
+  },
+  "situation": {
+    "id": "t03-s07",
+    "theme": "Météo et bien-être",
+    "title": "On avait prévu une promenade, mais…",
+    "context": "Appel amical fictif entre CilMac, Plume et Yuki. Changement de programme à cause du temps, promenade et discussion sur les saisons. Géographie authentique, personnages fictifs, anecdotes librement adaptées. Les propos climatiques expriment les perceptions fictives des personnages, non un constat scientifique.",
+    "participants": {
+      "cilmac": "CilMac",
+      "plume": "Plume",
+      "yuki": "Yuki"
+    },
+    "levels": [
+      {
+        "id": "essentiel",
+        "sourceId": "n1",
+        "title": "Essentiel",
+        "objective": "Décrire le temps, exprimer un projet, réagir à un imprévu et proposer une solution.",
+        "opening": [
+          "t03-s07-n1-o-01",
+          "t03-s07-n1-o-02",
+          "t03-s07-n1-o-03",
+          "t03-s07-n1-o-04"
+        ],
+        "ending": [
+          "t03-s07-n1-fin-01",
+          "t03-s07-n1-fin-02"
+        ],
+        "supportTurnIds": [],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Finalement, il fait beau !",
+            "turnIds": [
+              "t03-s07-n1-a-01",
+              "t03-s07-n1-a-02",
+              "t03-s07-n1-a-03",
+              "t03-s07-n1-a-04",
+              "t03-s07-n1-a-05",
+              "t03-s07-n1-a-06",
+              "t03-s07-n1-a-07"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Il pleut vraiment",
+            "turnIds": [
+              "t03-s07-n1-b-01",
+              "t03-s07-n1-b-02",
+              "t03-s07-n1-b-03",
+              "t03-s07-n1-b-04",
+              "t03-s07-n1-b-05",
+              "t03-s07-n1-b-06",
+              "t03-s07-n1-b-07"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "C",
+            "title": "On sort quand même ?",
+            "turnIds": [
+              "t03-s07-n1-c-01",
+              "t03-s07-n1-c-02",
+              "t03-s07-n1-c-03",
+              "t03-s07-n1-c-04",
+              "t03-s07-n1-c-05",
+              "t03-s07-n1-c-06",
+              "t03-s07-n1-c-07"
+            ],
+            "clarifications": []
+          }
+        ]
+      },
+      {
+        "id": "conversation",
+        "sourceId": "n2",
+        "title": "Conversation",
+        "objective": "Raconter un imprévu, défendre une préférence, relancer et demander des précisions.",
+        "opening": [
+          "t03-s07-n2-o-01",
+          "t03-s07-n2-o-02",
+          "t03-s07-n2-o-03",
+          "t03-s07-n2-o-04"
+        ],
+        "ending": [
+          "t03-s07-n2-fin-01",
+          "t03-s07-n2-fin-02",
+          "t03-s07-n2-fin-03"
+        ],
+        "supportTurnIds": [
+          "t03-s07-n2-clar-d-04-request",
+          "t03-s07-n2-clar-d-04-answer"
+        ],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Plume n'était pas très convaincue",
+            "turnIds": [
+              "t03-s07-n2-a-01",
+              "t03-s07-n2-a-02",
+              "t03-s07-n2-a-03",
+              "t03-s07-n2-a-04",
+              "t03-s07-n2-a-05",
+              "t03-s07-n2-a-06",
+              "t03-s07-n2-a-07",
+              "t03-s07-n2-a-08"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "B",
+            "title": "Une averse au mauvais moment",
+            "turnIds": [
+              "t03-s07-n2-b-01",
+              "t03-s07-n2-b-02",
+              "t03-s07-n2-b-03",
+              "t03-s07-n2-b-04",
+              "t03-s07-n2-b-05",
+              "t03-s07-n2-b-06",
+              "t03-s07-n2-b-07",
+              "t03-s07-n2-b-08"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "C",
+            "title": "La pluie a aussi ses bons côtés",
+            "turnIds": [
+              "t03-s07-n2-c-01",
+              "t03-s07-n2-c-02",
+              "t03-s07-n2-c-03",
+              "t03-s07-n2-c-04",
+              "t03-s07-n2-c-05",
+              "t03-s07-n2-c-06",
+              "t03-s07-n2-c-07",
+              "t03-s07-n2-c-08"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "D",
+            "title": "Et à Tokyo, Yuki a changé de programme !",
+            "turnIds": [
+              "t03-s07-n2-d-01",
+              "t03-s07-n2-d-02",
+              "t03-s07-n2-d-03",
+              "t03-s07-n2-d-04",
+              "t03-s07-n2-d-05",
+              "t03-s07-n2-d-06",
+              "t03-s07-n2-d-07",
+              "t03-s07-n2-d-08",
+              "t03-s07-n2-d-09"
+            ],
+            "clarifications": [
+              {
+                "id": "t03-s07-n2-clar-d-04",
+                "insertionAfterTurnId": "t03-s07-n2-d-04",
+                "requestTurnId": "t03-s07-n2-clar-d-04-request",
+                "ackTurnId": "t03-s07-n2-clar-d-04-answer",
+                "repeatTurnId": "t03-s07-n2-d-04",
+                "resumeAtTurnId": "t03-s07-n2-d-05",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t03-s07-n2-d-04",
+                "turnIds": [
+                  "t03-s07-n2-clar-d-04-request",
+                  "t03-s07-n2-clar-d-04-answer"
+                ],
+                "kind": "meaning"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "discussion",
+        "sourceId": "n3",
+        "title": "Discussion",
+        "objective": "Exprimer des opinions, discuter de préférences, de prévisions et de l’adaptation au temps, avec des nuances.",
+        "opening": [
+          "t03-s07-n3-o-01",
+          "t03-s07-n3-o-02",
+          "t03-s07-n3-o-03",
+          "t03-s07-n3-o-04"
+        ],
+        "ending": [
+          "t03-s07-n3-fin-01",
+          "t03-s07-n3-fin-02",
+          "t03-s07-n3-fin-03",
+          "t03-s07-n3-fin-04"
+        ],
+        "supportTurnIds": [
+          "t03-s07-n3-clar-a-03-request",
+          "t03-s07-n3-clar-a-03-answer",
+          "t03-s07-n3-clar-c-05-request",
+          "t03-s07-n3-clar-c-05-answer"
+        ],
+        "branches": [
+          {
+            "id": "A",
+            "title": "Peut-on faire confiance aux prévisions ?",
+            "turnIds": [
+              "t03-s07-n3-a-01",
+              "t03-s07-n3-a-02",
+              "t03-s07-n3-a-03",
+              "t03-s07-n3-a-04",
+              "t03-s07-n3-a-05",
+              "t03-s07-n3-a-06",
+              "t03-s07-n3-a-07",
+              "t03-s07-n3-a-08",
+              "t03-s07-n3-a-09"
+            ],
+            "clarifications": [
+              {
+                "id": "t03-s07-n3-clar-a-03",
+                "insertionAfterTurnId": "t03-s07-n3-a-03",
+                "requestTurnId": "t03-s07-n3-clar-a-03-request",
+                "ackTurnId": "t03-s07-n3-clar-a-03-answer",
+                "repeatTurnId": "t03-s07-n3-a-03",
+                "resumeAtTurnId": "t03-s07-n3-a-04",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t03-s07-n3-a-03",
+                "turnIds": [
+                  "t03-s07-n3-clar-a-03-request",
+                  "t03-s07-n3-clar-a-03-answer"
+                ],
+                "kind": "meaning"
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Quelle est la plus belle saison ?",
+            "turnIds": [
+              "t03-s07-n3-b-01",
+              "t03-s07-n3-b-02",
+              "t03-s07-n3-b-03",
+              "t03-s07-n3-b-04",
+              "t03-s07-n3-b-05",
+              "t03-s07-n3-b-06",
+              "t03-s07-n3-b-07",
+              "t03-s07-n3-b-08",
+              "t03-s07-n3-b-09"
+            ],
+            "clarifications": []
+          },
+          {
+            "id": "C",
+            "title": "Le temps change, nos habitudes aussi",
+            "turnIds": [
+              "t03-s07-n3-c-01",
+              "t03-s07-n3-c-02",
+              "t03-s07-n3-c-03",
+              "t03-s07-n3-c-04",
+              "t03-s07-n3-c-05",
+              "t03-s07-n3-c-06",
+              "t03-s07-n3-c-07",
+              "t03-s07-n3-c-08",
+              "t03-s07-n3-c-09",
+              "t03-s07-n3-c-10",
+              "t03-s07-n3-c-11"
+            ],
+            "clarifications": [
+              {
+                "id": "t03-s07-n3-clar-c-05",
+                "insertionAfterTurnId": "t03-s07-n3-c-05",
+                "requestTurnId": "t03-s07-n3-clar-c-05-request",
+                "ackTurnId": "t03-s07-n3-clar-c-05-answer",
+                "repeatTurnId": "t03-s07-n3-c-05",
+                "resumeAtTurnId": "t03-s07-n3-c-06",
+                "audioRepeat": {
+                  "source": "repeatTurnId",
+                  "rate": "temporarily-slower-than-current",
+                  "mustNotChangeGlobalRate": true
+                },
+                "afterTurnId": "t03-s07-n3-c-05",
+                "turnIds": [
+                  "t03-s07-n3-clar-c-05-request",
+                  "t03-s07-n3-clar-c-05-answer"
+                ],
+                "kind": "meaning"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "turns": {
+    "t03-s07-n1-o-01": {
+      "id": "t03-s07-n1-o-01",
+      "editorialRef": "E-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "こんにちは！そちらは今日、どんな天気ですか。",
+      "kana": "こんにちは！そちらはきょう、どんなてんきですか。",
+      "kanaDisplay": "こんにちは！そちらは きょう、どんな てんき ですか。",
+      "romaji": "Konnichiwa! Sochira wa kyō, donna tenki desu ka.",
+      "fr": "Bonjour ! Quel temps fait-il chez vous aujourd'hui ?"
+    },
+    "t03-s07-n1-o-02": {
+      "id": "t03-s07-n1-o-02",
+      "editorialRef": "E-O-02",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "こんにちは。朝は曇っていました。",
+      "kana": "こんにちは。あさはくもっていました。",
+      "kanaDisplay": "こんにちは。あさ は くもって いました。",
+      "romaji": "Konnichiwa. Asa wa kumotte imashita.",
+      "fr": "Bonjour ! Ce matin, le ciel était couvert."
+    },
+    "t03-s07-n1-o-03": {
+      "id": "t03-s07-n1-o-03",
+      "editorialRef": "E-O-03",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "午後は散歩に行く予定です。",
+      "kana": "ごごはさんぽにいくよていです。",
+      "kanaDisplay": "ごご は さんぽ に いく よてい です。",
+      "romaji": "Gogo wa sanpo ni iku yotei desu.",
+      "fr": "On a prévu d'aller se promener cet après-midi."
+    },
+    "t03-s07-n1-o-04": {
+      "id": "t03-s07-n1-o-04",
+      "editorialRef": "E-O-04",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "いいですね！今はどうですか。",
+      "kana": "いいですね！いまはどうですか。",
+      "kanaDisplay": "いいですね！いま は どう ですか。",
+      "romaji": "Ii desu ne! Ima wa dō desu ka.",
+      "fr": "Sympa ! Et maintenant, quel temps fait-il ?"
+    },
+    "t03-s07-n1-a-01": {
+      "id": "t03-s07-n1-a-01",
+      "editorialRef": "E-A-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "雨の予報でしたが、今は晴れています。",
+      "kana": "あめのよほうでしたが、いまははれています。",
+      "kanaDisplay": "あめ の よほう でした が、いま は はれて います。",
+      "romaji": "Ame no yohō deshita ga, ima wa harete imasu.",
+      "fr": "On annonçait de la pluie, mais maintenant il fait beau."
+    },
+    "t03-s07-n1-a-02": {
+      "id": "t03-s07-n1-a-02",
+      "editorialRef": "E-A-02",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "よかった！散歩に行けますね。",
+      "kana": "よかった！さんぽにいけますね。",
+      "kanaDisplay": "よかった！さんぽ に いけます ね。",
+      "romaji": "Yokatta! Sanpo ni ikemasu ne.",
+      "fr": "Super ! On va pouvoir se promener !"
+    },
+    "t03-s07-n1-a-03": {
+      "id": "t03-s07-n1-a-03",
+      "editorialRef": "E-A-03",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そうですか！どこへ行きますか。",
+      "kana": "そうですか！どこへいきますか。",
+      "kanaDisplay": "そう ですか！どこ へ いきますか。",
+      "romaji": "Sō desu ka! Doko e ikimasu ka.",
+      "fr": "Ah, d'accord ! Vous allez où ?"
+    },
+    "t03-s07-n1-a-04": {
+      "id": "t03-s07-n1-a-04",
+      "editorialRef": "E-A-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "近くの公園に行きます。",
+      "kana": "ちかくのこうえんにいきます。",
+      "kanaDisplay": "ちかく の こうえん に いきます。",
+      "romaji": "Chikaku no kōen ni ikimasu.",
+      "fr": "On va au parc près de chez nous."
+    },
+    "t03-s07-n1-a-05": {
+      "id": "t03-s07-n1-a-05",
+      "editorialRef": "E-A-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "私はその公園が好きです。",
+      "kana": "わたしはそのこうえんがすきです。",
+      "kanaDisplay": "わたし は その こうえん が すき です。",
+      "romaji": "Watashi wa sono kōen ga suki desu.",
+      "fr": "Moi, j'aime ce parc."
+    },
+    "t03-s07-n1-a-06": {
+      "id": "t03-s07-n1-a-06",
+      "editorialRef": "E-A-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "写真も撮りますか。",
+      "kana": "しゃしんもとりますか。",
+      "kanaDisplay": "しゃしん も とりますか。",
+      "romaji": "Shashin mo torimasu ka.",
+      "fr": "Vous allez aussi prendre des photos ?"
+    },
+    "t03-s07-n1-a-07": {
+      "id": "t03-s07-n1-a-07",
+      "editorialRef": "E-A-07",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "はい。きれいな景色を撮りたいです。",
+      "kana": "はい。きれいなけしきをとりたいです。",
+      "kanaDisplay": "はい。きれいな けしき を とりたい です。",
+      "romaji": "Hai. Kirei na keshiki o toritai desu.",
+      "fr": "Oui. J'aimerais photographier de beaux paysages."
+    },
+    "t03-s07-n1-b-01": {
+      "id": "t03-s07-n1-b-01",
+      "editorialRef": "E-B-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "今は雨が降っています。",
+      "kana": "いまはあめがふっています。",
+      "kanaDisplay": "いま は あめ が ふって います。",
+      "romaji": "Ima wa ame ga futte imasu.",
+      "fr": "Maintenant, il pleut."
+    },
+    "t03-s07-n1-b-02": {
+      "id": "t03-s07-n1-b-02",
+      "editorialRef": "E-B-02",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "ああ、残念です。散歩はやめましょうか。",
+      "kana": "ああ、ざんねんです。さんぽはやめましょうか。",
+      "kanaDisplay": "ああ、ざんねん です。さんぽ は やめましょうか。",
+      "romaji": "Ā, zannen desu. Sanpo wa yamemashō ka.",
+      "fr": "Ah, dommage ! On renonce à la promenade ?"
+    },
+    "t03-s07-n1-b-03": {
+      "id": "t03-s07-n1-b-03",
+      "editorialRef": "E-B-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そうしましょう。今日は家にいましょう。",
+      "kana": "そうしましょう。きょうはいえにいましょう。",
+      "kanaDisplay": "そう しましょう。きょう は いえ に いましょう。",
+      "romaji": "Sō shimashō. Kyō wa ie ni imashō.",
+      "fr": "D'accord. Restons à la maison aujourd'hui."
+    },
+    "t03-s07-n1-b-04": {
+      "id": "t03-s07-n1-b-04",
+      "editorialRef": "E-B-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "じゃあ、家で何をしますか。",
+      "kana": "じゃあ、いえでなにをしますか。",
+      "kanaDisplay": "じゃあ、いえ で なに を しますか。",
+      "romaji": "Jā, ie de nani o shimasu ka.",
+      "fr": "Alors, qu'allez-vous faire à la maison ?"
+    },
+    "t03-s07-n1-b-05": {
+      "id": "t03-s07-n1-b-05",
+      "editorialRef": "E-B-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "りんごのケーキを作りたいです。",
+      "kana": "りんごのケーキをつくりたいです。",
+      "kanaDisplay": "りんご の ケーキ を つくりたい です。",
+      "romaji": "Ringo no kēki o tsukuritai desu.",
+      "fr": "J'aimerais faire un gâteau aux pommes."
+    },
+    "t03-s07-n1-b-06": {
+      "id": "t03-s07-n1-b-06",
+      "editorialRef": "E-B-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "いいですね！私はコーヒーを入れます。",
+      "kana": "いいですね！わたしはコーヒーをいれます。",
+      "kanaDisplay": "いいですね！わたし は コーヒー を いれます。",
+      "romaji": "Ii desu ne! Watashi wa kōhī o iremasu.",
+      "fr": "Bonne idée ! Moi, je préparerai le café."
+    },
+    "t03-s07-n1-b-07": {
+      "id": "t03-s07-n1-b-07",
+      "editorialRef": "E-B-07",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "それも楽しそうですね！",
+      "kana": "それもたのしそうですね！",
+      "kanaDisplay": "それ も たのしそう です ね！",
+      "romaji": "Sore mo tanoshisō desu ne!",
+      "fr": "Ça a l'air sympa aussi !"
+    },
+    "t03-s07-n1-c-01": {
+      "id": "t03-s07-n1-c-01",
+      "editorialRef": "E-C-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "まだ曇っています。雨が降るかもしれません。",
+      "kana": "まだくもっています。あめがふるかもしれません。",
+      "kanaDisplay": "まだ くもって います。あめ が ふる かもしれません。",
+      "romaji": "Mada kumotte imasu. Ame ga furu kamo shiremasen.",
+      "fr": "Le ciel est encore couvert. Il pourrait pleuvoir."
+    },
+    "t03-s07-n1-c-02": {
+      "id": "t03-s07-n1-c-02",
+      "editorialRef": "E-C-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "ちょっと心配です。",
+      "kana": "ちょっとしんぱいです。",
+      "kanaDisplay": "ちょっと しんぱい です。",
+      "romaji": "Chotto shinpai desu.",
+      "fr": "Ça m'inquiète un peu."
+    },
+    "t03-s07-n1-c-03": {
+      "id": "t03-s07-n1-c-03",
+      "editorialRef": "E-C-03",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "散歩はやめますか。",
+      "kana": "さんぽはやめますか。",
+      "kanaDisplay": "さんぽ は やめますか。",
+      "romaji": "Sanpo wa yamemasu ka.",
+      "fr": "Vous allez renoncer à la promenade ?"
+    },
+    "t03-s07-n1-c-04": {
+      "id": "t03-s07-n1-c-04",
+      "editorialRef": "E-C-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "うーん、少しだけ歩きたいです。",
+      "kana": "うーん、すこしだけあるきたいです。",
+      "kanaDisplay": "うーん、すこし だけ あるきたい です。",
+      "romaji": "Ūn, sukoshi dake arukitai desu.",
+      "fr": "Hmm, j'aimerais quand même marcher un peu."
+    },
+    "t03-s07-n1-c-05": {
+      "id": "t03-s07-n1-c-05",
+      "editorialRef": "E-C-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "じゃあ、家の近くを歩きましょう。",
+      "kana": "じゃあ、いえのちかくをあるきましょう。",
+      "kanaDisplay": "じゃあ、いえ の ちかく を あるきましょう。",
+      "romaji": "Jā, ie no chikaku o arukimashō.",
+      "fr": "Alors, faisons une promenade près de la maison."
+    },
+    "t03-s07-n1-c-06": {
+      "id": "t03-s07-n1-c-06",
+      "editorialRef": "E-C-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "そうですね。雨が降ったら、すぐ帰りましょう。",
+      "kana": "そうですね。あめがふったら、すぐかえりましょう。",
+      "kanaDisplay": "そう です ね。あめ が ふったら、すぐ かえりましょう。",
+      "romaji": "Sō desu ne. Ame ga futtara, sugu kaerimashō.",
+      "fr": "Oui. S'il pleut, rentrons tout de suite."
+    },
+    "t03-s07-n1-c-07": {
+      "id": "t03-s07-n1-c-07",
+      "editorialRef": "E-C-07",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "それなら安心ですね。気をつけて！",
+      "kana": "それならあんしんですね。きをつけて！",
+      "kanaDisplay": "それなら あんしん です ね。き を つけて！",
+      "romaji": "Sore nara anshin desu ne. Ki o tsukete!",
+      "fr": "Dans ce cas, c'est rassurant. Faites attention à vous !"
+    },
+    "t03-s07-n1-fin-01": {
+      "id": "t03-s07-n1-fin-01",
+      "editorialRef": "E-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "どうなったか、また教えてくださいね。",
+      "kana": "どうなったか、またおしえてくださいね。",
+      "kanaDisplay": "どう なった か、また おしえて ください ね。",
+      "romaji": "Dō natta ka, mata oshiete kudasai ne.",
+      "fr": "Vous me raconterez comment ça s'est passé !"
+    },
+    "t03-s07-n1-fin-02": {
+      "id": "t03-s07-n1-fin-02",
+      "editorialRef": "E-F-02",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "はい、またね！",
+      "kana": "はい、またね！",
+      "kanaDisplay": "はい、また ね！",
+      "romaji": "Hai, mata ne!",
+      "fr": "Oui, à bientôt !"
+    },
+    "t03-s07-n2-o-01": {
+      "id": "t03-s07-n2-o-01",
+      "editorialRef": "C-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "この前の散歩、どうでしたか。",
+      "kana": "このまえのさんぽ、どうでしたか。",
+      "kanaDisplay": "このまえ の さんぽ、どう でしたか。",
+      "romaji": "Kono mae no sanpo, dō deshita ka.",
+      "fr": "Et votre promenade de l'autre jour, comment ça s'est passé ?"
+    },
+    "t03-s07-n2-o-02": {
+      "id": "t03-s07-n2-o-02",
+      "editorialRef": "C-O-02",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "はい、行けたんですが、ちょっと予定が変わったんです。",
+      "kana": "はい、いけたんですが、ちょっとよていがかわったんです。",
+      "kanaDisplay": "はい、いけたんですが、ちょっと よてい が かわったんです。",
+      "romaji": "Hai, iketa n desu ga, chotto yotei ga kawatta n desu.",
+      "fr": "On a pu sortir, mais on a dû un peu changer nos plans."
+    },
+    "t03-s07-n2-o-03": {
+      "id": "t03-s07-n2-o-03",
+      "editorialRef": "C-O-03",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "天気が変わりやすくて、ちょっと大変でした。",
+      "kana": "てんきがかわりやすくて、ちょっとたいへんでした。",
+      "kanaDisplay": "てんき が かわりやすくて、ちょっと たいへん でした。",
+      "romaji": "Tenki ga kawariyasukute, chotto taihen deshita.",
+      "fr": "Le temps était changeant, ça nous a un peu compliqué les choses."
+    },
+    "t03-s07-n2-o-04": {
+      "id": "t03-s07-n2-o-04",
+      "editorialRef": "C-O-04",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "そうなんですか。何があったんですか。",
+      "kana": "そうなんですか。なにがあったんですか。",
+      "kanaDisplay": "そう なんですか。なに が あったんですか。",
+      "romaji": "Sō nan desu ka. Nani ga atta n desu ka.",
+      "fr": "Ah bon ? Qu'est-ce qui s'est passé ?"
+    },
+    "t03-s07-n2-a-01": {
+      "id": "t03-s07-n2-a-01",
+      "editorialRef": "C-A-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私は少しくらい曇っていても、歩きたかったんです。",
+      "kana": "わたしはすこしくらいくもっていても、あるきたかったんです。",
+      "kanaDisplay": "わたし は すこし くらい くもって いても、あるきたかったんです。",
+      "romaji": "Watashi wa sukoshi kurai kumotte ite mo, arukitakatta n desu.",
+      "fr": "Moi, je voulais marcher, même s'il faisait un peu gris."
+    },
+    "t03-s07-n2-a-02": {
+      "id": "t03-s07-n2-a-02",
+      "editorialRef": "C-A-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "でも、雨が降りそうだったので、私は少し待ちたかったんです。",
+      "kana": "でも、あめがふりそうだったので、わたしはすこしまちたかったんです。",
+      "kanaDisplay": "でも、あめ が ふりそう だったので、わたし は すこし まちたかったんです。",
+      "romaji": "Demo, ame ga furisō datta node, watashi wa sukoshi machitakatta n desu.",
+      "fr": "Mais ça sentait la pluie, alors je préférais attendre un peu."
+    },
+    "t03-s07-n2-a-03": {
+      "id": "t03-s07-n2-a-03",
+      "editorialRef": "C-A-03",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "なるほど。結局、どうしたんですか。",
+      "kana": "なるほど。けっきょく、どうしたんですか。",
+      "kanaDisplay": "なるほど。けっきょく、どう したんですか。",
+      "romaji": "Naruhodo. Kekkyoku, dō shita n desu ka.",
+      "fr": "Je vois. Et finalement, vous avez fait quoi ?"
+    },
+    "t03-s07-n2-a-04": {
+      "id": "t03-s07-n2-a-04",
+      "editorialRef": "C-A-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "まず家でコーヒーを飲んで、様子を見ました。",
+      "kana": "まずいえでコーヒーをのんで、ようすをみました。",
+      "kanaDisplay": "まず いえ で コーヒー を のんで、ようす を みました。",
+      "romaji": "Mazu ie de kōhī o nonde, yōsu o mimashita.",
+      "fr": "On a d'abord bu un café à la maison, pour voir comment le temps évoluait."
+    },
+    "t03-s07-n2-a-05": {
+      "id": "t03-s07-n2-a-05",
+      "editorialRef": "C-A-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "しばらくしたら、空が明るくなったんです。",
+      "kana": "しばらくしたら、そらがあかるくなったんです。",
+      "kanaDisplay": "しばらく したら、そら が あかるく なったんです。",
+      "romaji": "Shibaraku shitara, sora ga akaruku natta n desu.",
+      "fr": "Et au bout d'un moment, le ciel s'est éclairci."
+    },
+    "t03-s07-n2-a-06": {
+      "id": "t03-s07-n2-a-06",
+      "editorialRef": "C-A-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "じゃあ、待って正解でしたね！",
+      "kana": "じゃあ、まってせいかいでしたね！",
+      "kanaDisplay": "じゃあ、まって せいかい でした ね！",
+      "romaji": "Jā, matte seikai deshita ne!",
+      "fr": "Alors vous avez bien fait d'attendre !"
+    },
+    "t03-s07-n2-a-07": {
+      "id": "t03-s07-n2-a-07",
+      "editorialRef": "C-A-07",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "ええ。プルームの言うとおりでした。急がなくてよかったです。",
+      "kana": "ええ。プルームのいうとおりでした。いそがなくてよかったです。",
+      "kanaDisplay": "ええ。プルーム の いう とおり でした。いそがなくて よかった です。",
+      "romaji": "Ee. Purūmu no iu tōri deshita. Isoganakute yokatta desu.",
+      "fr": "Oui, Plume avait raison. Heureusement qu'on ne s'est pas précipités."
+    },
+    "t03-s07-n2-a-08": {
+      "id": "t03-s07-n2-a-08",
+      "editorialRef": "C-A-08",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "シルマックは、たまには私の言うことも聞いてくれるんですよ。",
+      "kana": "シルマックは、たまにはわたしのいうこともきいてくれるんですよ。",
+      "kanaDisplay": "シルマック は、たまには わたし の いう こと も きいて くれるんですよ。",
+      "romaji": "Shirumakku wa, tama ni wa watashi no iu koto mo kiite kureru n desu yo.",
+      "fr": "CilMac m'écoute de temps en temps, tu sais !"
+    },
+    "t03-s07-n2-b-01": {
+      "id": "t03-s07-n2-b-01",
+      "editorialRef": "C-B-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "最初は、雨が降っていなかったんです。",
+      "kana": "さいしょは、あめがふっていなかったんです。",
+      "kanaDisplay": "さいしょ は、あめ が ふって いなかったんです。",
+      "romaji": "Saisho wa, ame ga futte inakatta n desu.",
+      "fr": "Au début, il ne pleuvait pas."
+    },
+    "t03-s07-n2-b-02": {
+      "id": "t03-s07-n2-b-02",
+      "editorialRef": "C-B-02",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "それで、傘を持たずに出かけました。",
+      "kana": "それで、かさをもたずにでかけました。",
+      "kanaDisplay": "それで、かさ を もたずに でかけました。",
+      "romaji": "Sore de, kasa o motazu ni dekakemashita.",
+      "fr": "Alors on est sortis sans prendre de parapluie."
+    },
+    "t03-s07-n2-b-03": {
+      "id": "t03-s07-n2-b-03",
+      "editorialRef": "C-B-03",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "えっ、途中で降り始めたんですか。",
+      "kana": "えっ、とちゅうでふりはじめたんですか。",
+      "kanaDisplay": "えっ、とちゅう で ふりはじめたんですか。",
+      "romaji": "E, tochū de furi hajimeta n desu ka.",
+      "fr": "Ah ! Il s'est mis à pleuvoir en route ?"
+    },
+    "t03-s07-n2-b-04": {
+      "id": "t03-s07-n2-b-04",
+      "editorialRef": "C-B-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "はい。急に土砂降りになって、二人ともびしょぬれでした。",
+      "kana": "はい。きゅうにどしゃぶりになって、ふたりともびしょぬれでした。",
+      "kanaDisplay": "はい。きゅうに どしゃぶり に なって、ふたり とも びしょぬれ でした。",
+      "romaji": "Hai. Kyū ni doshaburi ni natte, futari tomo bishonure deshita.",
+      "fr": "Oui ! D'un coup, il s'est mis à pleuvoir à verse. On était trempés tous les deux !"
+    },
+    "t03-s07-n2-b-05": {
+      "id": "t03-s07-n2-b-05",
+      "editorialRef": "C-B-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "しかも、シルマックは「もう少し歩こう」って言ったんですよ。",
+      "kana": "しかも、シルマックは「もうすこしあるこう」っていったんですよ。",
+      "kanaDisplay": "しかも、シルマック は「もう すこし あるこう」って いったんですよ。",
+      "romaji": "Shikamo, Shirumakku wa \"mō sukoshi arukō\" tte itta n desu yo.",
+      "fr": "Et en plus, CilMac a lancé : « Marchons encore un peu ! »"
+    },
+    "t03-s07-n2-b-06": {
+      "id": "t03-s07-n2-b-06",
+      "editorialRef": "C-B-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "えっ、そんな雨の中で？",
+      "kana": "えっ、そんなあめのなかで？",
+      "kanaDisplay": "えっ、そんな あめ の なか で？",
+      "romaji": "E, sonna ame no naka de?",
+      "fr": "Sous une pluie pareille ?!"
+    },
+    "t03-s07-n2-b-07": {
+      "id": "t03-s07-n2-b-07",
+      "editorialRef": "C-B-07",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "でも、五分後には私が「もう帰ろう！」と言っていました。",
+      "kana": "でも、ごふんごにはわたしが「もうかえろう！」といっていました。",
+      "kanaDisplay": "でも、ごふんご には わたし が「もう かえろう！」と いって いました。",
+      "romaji": "Demo, gofun go ni wa watashi ga \"mō kaerō!\" to itte imashita.",
+      "fr": "Mais cinq minutes plus tard, c'est moi qui disais : « On rentre ! »"
+    },
+    "t03-s07-n2-b-08": {
+      "id": "t03-s07-n2-b-08",
+      "editorialRef": "C-B-08",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "家に帰って、温かいスープを飲んで、やっと落ち着きました。",
+      "kana": "いえにかえって、あたたかいスープをのんで、やっとおちつきました。",
+      "kanaDisplay": "いえ に かえって、あたたかい スープ を のんで、やっと おちつきました。",
+      "romaji": "Ie ni kaette, atatakai sūpu o nonde, yatto ochitsukimashita.",
+      "fr": "On est rentrés, on a pris une soupe chaude et on a enfin pu souffler."
+    },
+    "t03-s07-n2-c-01": {
+      "id": "t03-s07-n2-c-01",
+      "editorialRef": "C-C-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "実は、雨がやんでから散歩したんです。",
+      "kana": "じつは、あめがやんでからさんぽしたんです。",
+      "kanaDisplay": "じつは、あめ が やんで から さんぽ したんです。",
+      "romaji": "Jitsu wa, ame ga yande kara sanpo shita n desu.",
+      "fr": "En fait, on a attendu que la pluie s'arrête pour se promener."
+    },
+    "t03-s07-n2-c-02": {
+      "id": "t03-s07-n2-c-02",
+      "editorialRef": "C-C-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "雨のあとに歩くのって、気持ちよさそうですね。",
+      "kana": "あめのあとにあるくのって、きもちよさそうですね。",
+      "kanaDisplay": "あめ の あと に あるく のって、きもちよさそう です ね。",
+      "romaji": "Ame no ato ni aruku no tte, kimochi yosasō desu ne.",
+      "fr": "Une promenade après la pluie, ça doit être agréable !"
+    },
+    "t03-s07-n2-c-03": {
+      "id": "t03-s07-n2-c-03",
+      "editorialRef": "C-C-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "道はまだぬれていましたけど、空気がすっきりしていました。",
+      "kana": "みちはまだぬれていましたけど、くうきがすっきりしていました。",
+      "kanaDisplay": "みち は まだ ぬれて いました けど、くうき が すっきり して いました。",
+      "romaji": "Michi wa mada nurete imashita kedo, kūki ga sukkiri shite imashita.",
+      "fr": "Le chemin était encore mouillé, mais l'air était frais et agréable."
+    },
+    "t03-s07-n2-c-04": {
+      "id": "t03-s07-n2-c-04",
+      "editorialRef": "C-C-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "水たまりに木が映っていて、思わず写真を撮りました。",
+      "kana": "みずたまりにきがうつっていて、おもわずしゃしんをとりました。",
+      "kanaDisplay": "みずたまり に き が うつって いて、おもわず しゃしん を とりました。",
+      "romaji": "Mizutamari ni ki ga utsutte ite, omowazu shashin o torimashita.",
+      "fr": "Un arbre se reflétait dans une flaque d'eau. J'ai pris une photo presque sans réfléchir."
+    },
+    "t03-s07-n2-c-05": {
+      "id": "t03-s07-n2-c-05",
+      "editorialRef": "C-C-05",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "いいですね！プルームさんは、散歩のとき何を見るのが好きですか。",
+      "kana": "いいですね！プルームさんは、さんぽのときなにをみるのがすきですか。",
+      "kanaDisplay": "いい です ね！プルームさん は、さんぽ の とき なに を みる の が すき ですか。",
+      "romaji": "Ii desu ne! Purūmu-san wa, sanpo no toki nani o miru no ga suki desu ka.",
+      "fr": "C'est joli ! Et toi, Plume, qu'est-ce que tu aimes observer pendant les promenades ?"
+    },
+    "t03-s07-n2-c-06": {
+      "id": "t03-s07-n2-c-06",
+      "editorialRef": "C-C-06",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "私は花や鳥を見つけるのが好きです。",
+      "kana": "わたしははなやとりをみつけるのがすきです。",
+      "kanaDisplay": "わたし は はな や とり を みつける の が すき です。",
+      "romaji": "Watashi wa hana ya tori o mitsukeru no ga suki desu.",
+      "fr": "Moi, j'aime repérer les fleurs et les oiseaux."
+    },
+    "t03-s07-n2-c-07": {
+      "id": "t03-s07-n2-c-07",
+      "editorialRef": "C-C-07",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私は写真ばかり撮って、花を見逃すことがあります。",
+      "kana": "わたしはしゃしんばかりとって、はなをみのがすことがあります。",
+      "kanaDisplay": "わたし は しゃしん ばかり とって、はな を みのがす こと が あります。",
+      "romaji": "Watashi wa shashin bakari totte, hana o minogasu koto ga arimasu.",
+      "fr": "Moi, à force de prendre des photos, ça m'arrive de ne même pas remarquer les fleurs !"
+    },
+    "t03-s07-n2-c-08": {
+      "id": "t03-s07-n2-c-08",
+      "editorialRef": "C-C-08",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ふふ、お二人で歩くと、いろいろなものに気づけますね。",
+      "kana": "ふふ、おふたりであるくと、いろいろなものにきづけますね。",
+      "kanaDisplay": "ふふ、おふたり で あるく と、いろいろな もの に きづけます ね。",
+      "romaji": "Fufu, ofutari de aruku to, iroiro na mono ni kizukemasu ne.",
+      "fr": "Hé hé, à deux, vous remarquez davantage de choses !"
+    },
+    "t03-s07-n2-d-01": {
+      "id": "t03-s07-n2-d-01",
+      "editorialRef": "C-D-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私たちは少し歩きましたが、風が強くて早めに帰りました。",
+      "kana": "わたしたちはすこしあるきましたが、かぜがつよくてはやめにかえりました。",
+      "kanaDisplay": "わたしたち は すこし あるきました が、かぜ が つよくて はやめ に かえりました。",
+      "romaji": "Watashitachi wa sukoshi arukimashita ga, kaze ga tsuyokute hayame ni kaerimashita.",
+      "fr": "Nous, on a marché un peu, mais il y avait tellement de vent qu'on est rentrés plus tôt."
+    },
+    "t03-s07-n2-d-02": {
+      "id": "t03-s07-n2-d-02",
+      "editorialRef": "C-D-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "そうだったんですね。実は私も、この前の週末に予定を変えたんです。",
+      "kana": "そうだったんですね。じつはわたしも、このまえのしゅうまつによていをかえたんです。",
+      "kanaDisplay": "そう だったんです ね。じつは わたし も、このまえ の しゅうまつ に よてい を かえたんです。",
+      "romaji": "Sō datta n desu ne. Jitsu wa watashi mo, kono mae no shūmatsu ni yotei o kaeta n desu.",
+      "fr": "Ah oui, je vois. Figurez-vous que moi aussi, j'ai changé de programme le week-end dernier."
+    },
+    "t03-s07-n2-d-03": {
+      "id": "t03-s07-n2-d-03",
+      "editorialRef": "C-D-03",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "へえ、どこかへ行く予定だったんですか。",
+      "kana": "へえ、どこかへいくよていだったんですか。",
+      "kanaDisplay": "へえ、どこか へ いく よてい だったんですか。",
+      "romaji": "Hee, dokoka e iku yotei datta n desu ka.",
+      "fr": "Ah bon ? Tu avais prévu une sortie ?"
+    },
+    "t03-s07-n2-d-04": {
+      "id": "t03-s07-n2-d-04",
+      "editorialRef": "C-D-04",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "友達と公園のイベントに行く予定だったんですが、雨で中止になったんです。",
+      "kana": "ともだちとこうえんのイベントにいくよていだったんですが、あめでちゅうしになったんです。",
+      "kanaDisplay": "ともだち と こうえん の イベント に いく よてい だったんですが、あめ で ちゅうし に なったんです。",
+      "romaji": "Tomodachi to kōen no ibento ni iku yotei datta n desu ga, ame de chūshi ni natta n desu.",
+      "fr": "J'avais prévu d'aller à un événement dans un parc avec des amis, mais il a été annulé à cause de la pluie."
+    },
+    "t03-s07-n2-d-05": {
+      "id": "t03-s07-n2-d-05",
+      "editorialRef": "C-D-05",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "それは残念でしたね。代わりに何をしましたか。",
+      "kana": "それはざんねんでしたね。かわりになにをしましたか。",
+      "kanaDisplay": "それ は ざんねん でした ね。かわり に なに を しましたか。",
+      "romaji": "Sore wa zannen deshita ne. Kawari ni nani o shimashita ka.",
+      "fr": "Ah, dommage ! Et vous avez fait quoi à la place ?"
+    },
+    "t03-s07-n2-d-06": {
+      "id": "t03-s07-n2-d-06",
+      "editorialRef": "C-D-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "近くの喫茶店に入って、ずっとおしゃべりしていました。",
+      "kana": "ちかくのきっさてんにはいって、ずっとおしゃべりしていました。",
+      "kanaDisplay": "ちかく の きっさてん に はいって、ずっと おしゃべり して いました。",
+      "romaji": "Chikaku no kissaten ni haitte, zutto oshaberi shite imashita.",
+      "fr": "On s'est installés dans un café tout près et on a papoté pendant un bon moment."
+    },
+    "t03-s07-n2-d-07": {
+      "id": "t03-s07-n2-d-07",
+      "editorialRef": "C-D-07",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "いいですね。何の話をしたんですか。",
+      "kana": "いいですね。なんのはなしをしたんですか。",
+      "kanaDisplay": "いい です ね。なん の はなし を したんですか。",
+      "romaji": "Ii desu ne. Nan no hanashi o shita n desu ka.",
+      "fr": "Sympa ! Vous avez parlé de quoi ?"
+    },
+    "t03-s07-n2-d-08": {
+      "id": "t03-s07-n2-d-08",
+      "editorialRef": "C-D-08",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "音楽の話です。気がついたら、二時間もたっていました！",
+      "kana": "おんがくのはなしです。きがついたら、にじかんもたっていました！",
+      "kanaDisplay": "おんがく の はなし です。き が ついたら、にじかん も たって いました！",
+      "romaji": "Ongaku no hanashi desu. Ki ga tsuitara, nijikan mo tatte imashita!",
+      "fr": "De musique ! On n'a même pas vu passer les deux heures !"
+    },
+    "t03-s07-n2-d-09": {
+      "id": "t03-s07-n2-d-09",
+      "editorialRef": "C-D-09",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "雨のおかげで、ゆっくり話せたんですね。",
+      "kana": "あめのおかげで、ゆっくりはなせたんですね。",
+      "kanaDisplay": "あめ の おかげ で、ゆっくり はなせたんです ね。",
+      "romaji": "Ame no okage de, yukkuri hanaseta n desu ne.",
+      "fr": "Finalement, grâce à la pluie, vous avez pu prendre le temps de discuter !"
+    },
+    "t03-s07-n2-fin-01": {
+      "id": "t03-s07-n2-fin-01",
+      "editorialRef": "C-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "天気は、なかなか思いどおりになりませんね。",
+      "kana": "てんきは、なかなかおもいどおりになりませんね。",
+      "kanaDisplay": "てんき は、なかなか おもいどおり に なりません ね。",
+      "romaji": "Tenki wa, nakanaka omoidōri ni narimasen ne.",
+      "fr": "Décidément, le temps n'en fait qu'à sa tête !"
+    },
+    "t03-s07-n2-fin-02": {
+      "id": "t03-s07-n2-fin-02",
+      "editorialRef": "C-F-02",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "でも、予定が変わるのも悪くないですね。",
+      "kana": "でも、よていがかわるのもわるくないですね。",
+      "kanaDisplay": "でも、よてい が かわる の も わるくない です ね。",
+      "romaji": "Demo, yotei ga kawaru no mo warukunai desu ne.",
+      "fr": "Mais changer de programme, ce n'est pas forcément une mauvaise chose."
+    },
+    "t03-s07-n2-fin-03": {
+      "id": "t03-s07-n2-fin-03",
+      "editorialRef": "C-F-03",
+      "speakerId": "cilmac",
+      "function": "conclusion",
+      "jp": "そうですね。また話しましょう！",
+      "kana": "そうですね。またはなしましょう！",
+      "kanaDisplay": "そう です ね。また はなしましょう！",
+      "romaji": "Sō desu ne. Mata hanashimashō!",
+      "fr": "C'est vrai. On se reparle bientôt !"
+    },
+    "t03-s07-n3-o-01": {
+      "id": "t03-s07-n3-o-01",
+      "editorialRef": "D-O-01",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "最近、出かける前に空をよく見るんです。",
+      "kana": "さいきん、でかけるまえにそらをよくみるんです。",
+      "kanaDisplay": "さいきん、でかける まえ に そら を よく みるんです。",
+      "romaji": "Saikin, dekakeru mae ni sora o yoku miru n desu.",
+      "fr": "Ces temps-ci, je regarde souvent le ciel avant de sortir."
+    },
+    "t03-s07-n3-o-02": {
+      "id": "t03-s07-n3-o-02",
+      "editorialRef": "D-O-02",
+      "speakerId": "plume",
+      "function": "ouverture",
+      "jp": "そうなんですね。私たちも、天気によって予定を変えることがあります。",
+      "kana": "そうなんですね。わたしたちも、てんきによってよていをかえることがあります。",
+      "kanaDisplay": "そう なんです ね。わたしたち も、てんき によって よてい を かえる こと が あります。",
+      "romaji": "Sō nan desu ne. Watashitachi mo, tenki ni yotte yotei o kaeru koto ga arimasu.",
+      "fr": "Ah oui. Nous aussi, ça nous arrive de changer de programme selon le temps."
+    },
+    "t03-s07-n3-o-03": {
+      "id": "t03-s07-n3-o-03",
+      "editorialRef": "D-O-03",
+      "speakerId": "cilmac",
+      "function": "ouverture",
+      "jp": "私は少しの雨なら歩きたいんですけどね。",
+      "kana": "わたしはすこしのあめならあるきたいんですけどね。",
+      "kanaDisplay": "わたし は すこし の あめ なら あるきたいんです けど ね。",
+      "romaji": "Watashi wa sukoshi no ame nara arukitai n desu kedo ne.",
+      "fr": "Moi, s'il pleut juste un peu, j'ai quand même envie de marcher."
+    },
+    "t03-s07-n3-o-04": {
+      "id": "t03-s07-n3-o-04",
+      "editorialRef": "D-O-04",
+      "speakerId": "yuki",
+      "function": "ouverture",
+      "jp": "どんなときに予定を変えるんですか。",
+      "kana": "どんなときによていをかえるんですか。",
+      "kanaDisplay": "どんな とき に よてい を かえるんですか。",
+      "romaji": "Donna toki ni yotei o kaeru n desu ka.",
+      "fr": "Qu'est-ce qui vous fait changer vos plans ?"
+    },
+    "t03-s07-n3-a-01": {
+      "id": "t03-s07-n3-a-01",
+      "editorialRef": "D-A-01",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "まず天気予報を見ます。でも、予報が外れることもありますね。",
+      "kana": "まずてんきよほうをみます。でも、よほうがはずれることもありますね。",
+      "kanaDisplay": "まず てんきよほう を みます。でも、よほう が はずれる こと も あります ね。",
+      "romaji": "Mazu tenki yohō o mimasu. Demo, yohō ga hazureru koto mo arimasu ne.",
+      "fr": "Je commence par regarder les prévisions. Mais il arrive qu'elles se trompent."
+    },
+    "t03-s07-n3-a-02": {
+      "id": "t03-s07-n3-a-02",
+      "editorialRef": "D-A-02",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "でも私は、見ないより見たほうがいいと思います。傘を持つかどうか決められますから。",
+      "kana": "でもわたしは、みないよりみたほうがいいとおもいます。かさをもつかどうかきめられますから。",
+      "kanaDisplay": "でも わたし は、みない より みた ほう が いい と おもいます。かさ を もつ か どうか きめられます から。",
+      "romaji": "Demo watashi wa, minai yori mita hō ga ii to omoimasu. Kasa o motsu ka dō ka kimeraremasu kara.",
+      "fr": "Moi, je pense quand même que c'est mieux de les consulter. Au moins, on peut décider si on emporte un parapluie."
+    },
+    "t03-s07-n3-a-03": {
+      "id": "t03-s07-n3-a-03",
+      "editorialRef": "D-A-03",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "私も参考にします。でも、予報を信じすぎないようにしています。",
+      "kana": "わたしもさんこうにします。でも、よほうをしんじすぎないようにしています。",
+      "kanaDisplay": "わたし も さんこう に します。でも、よほう を しんじすぎない ように しています。",
+      "romaji": "Watashi mo sankō ni shimasu. Demo, yohō o shinji suginai yō ni shite imasu.",
+      "fr": "Moi aussi, je m'en sers. Mais j'essaie de ne pas leur faire une confiance aveugle."
+    },
+    "t03-s07-n3-a-04": {
+      "id": "t03-s07-n3-a-04",
+      "editorialRef": "D-A-04",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私は雨の予報でも、空が明るいと出かけたくなります。",
+      "kana": "わたしはあめのよほうでも、そらがあかるいとでかけたくなります。",
+      "kanaDisplay": "わたし は あめ の よほう でも、そら が あかるい と でかけたく なります。",
+      "romaji": "Watashi wa ame no yohō demo, sora ga akarui to dekaketaku narimasu.",
+      "fr": "Moi, même s'ils annoncent de la pluie, dès que le ciel s'éclaircit, j'ai envie de sortir."
+    },
+    "t03-s07-n3-a-05": {
+      "id": "t03-s07-n3-a-05",
+      "editorialRef": "D-A-05",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "それで、急に雨に降られたこともあるよね。",
+      "kana": "それで、きゅうにあめにふられたこともあるよね。",
+      "kanaDisplay": "それで、きゅうに あめ に ふられた こと も ある よね。",
+      "romaji": "Sore de, kyū ni ame ni furareta koto mo aru yo ne.",
+      "fr": "Et c'est comme ça que tu t'es déjà fait surprendre par la pluie, hein !"
+    },
+    "t03-s07-n3-a-06": {
+      "id": "t03-s07-n3-a-06",
+      "editorialRef": "D-A-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "ありますね。プルームの言うことを聞けばよかったです。",
+      "kana": "ありますね。プルームのいうことをきけばよかったです。",
+      "kanaDisplay": "あります ね。プルーム の いう こと を きけば よかった です。",
+      "romaji": "Arimasu ne. Purūmu no iu koto o kikeba yokatta desu.",
+      "fr": "C'est vrai ! J'aurais mieux fait d'écouter Plume."
+    },
+    "t03-s07-n3-a-07": {
+      "id": "t03-s07-n3-a-07",
+      "editorialRef": "D-A-07",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "ふふ、天気予報だけじゃなくて、二人で相談するのも大事ですね。",
+      "kana": "ふふ、てんきよほうだけじゃなくて、ふたりでそうだんするのもだいじですね。",
+      "kanaDisplay": "ふふ、てんきよほう だけ じゃなくて、ふたり で そうだん する の も だいじ です ね。",
+      "romaji": "Fufu, tenki yohō dake ja nakute, futari de sōdan suru no mo daiji desu ne.",
+      "fr": "Hé hé ! Ce n'est pas seulement la météo qui compte, c'est aussi important de vous mettre d'accord tous les deux !"
+    },
+    "t03-s07-n3-a-08": {
+      "id": "t03-s07-n3-a-08",
+      "editorialRef": "D-A-08",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そうですね。でも、シルマックはいつも「あと五分だけ」と言うんです。",
+      "kana": "そうですね。でも、シルマックはいつも「あとごふんだけ」というんです。",
+      "kanaDisplay": "そう です ね。でも、シルマック は いつも「あと ごふん だけ」と いうんです。",
+      "romaji": "Sō desu ne. Demo, Shirumakku wa itsumo \"ato gofun dake\" to iu n desu.",
+      "fr": "Oui, mais CilMac me dit toujours : « Encore cinq petites minutes ! »"
+    },
+    "t03-s07-n3-a-09": {
+      "id": "t03-s07-n3-a-09",
+      "editorialRef": "D-A-09",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "プルーム、次はちゃんと傘を持っていくよ！",
+      "kana": "プルーム、つぎはちゃんとかさをもっていくよ！",
+      "kanaDisplay": "プルーム、つぎ は ちゃんと かさ を もって いく よ！",
+      "romaji": "Purūmu, tsugi wa chanto kasa o motte iku yo!",
+      "fr": "Plume, promis, la prochaine fois, je prends un parapluie !"
+    },
+    "t03-s07-n3-b-01": {
+      "id": "t03-s07-n3-b-01",
+      "editorialRef": "D-B-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "季節によりますね。春は花が咲くので、少しくらいの雨なら歩きたいです。",
+      "kana": "きせつによりますね。はるははながさくので、すこしくらいのあめならあるきたいです。",
+      "kanaDisplay": "きせつ に よります ね。はる は はな が さく ので、すこし くらい の あめ なら あるきたい です。",
+      "romaji": "Kisetsu ni yorimasu ne. Haru wa hana ga saku node, sukoshi kurai no ame nara arukitai desu.",
+      "fr": "Ça dépend de la saison. Au printemps, avec toutes les fleurs, j'ai envie de marcher même s'il pleut un peu."
+    },
+    "t03-s07-n3-b-02": {
+      "id": "t03-s07-n3-b-02",
+      "editorialRef": "D-B-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "なるほど。シルマックさんは、どの季節が好きですか。",
+      "kana": "なるほど。シルマックさんは、どのきせつがすきですか。",
+      "kanaDisplay": "なるほど。シルマックさん は、どの きせつ が すき ですか。",
+      "romaji": "Naruhodo. Shirumakku-san wa, dono kisetsu ga suki desu ka.",
+      "fr": "Je vois. Et toi, CilMac, tu préfères quelle saison ?"
+    },
+    "t03-s07-n3-b-03": {
+      "id": "t03-s07-n3-b-03",
+      "editorialRef": "D-B-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私は秋ですね。写真を撮るなら、秋の光が好きです。",
+      "kana": "わたしはあきですね。しゃしんをとるなら、あきのひかりがすきです。",
+      "kanaDisplay": "わたし は あき です ね。しゃしん を とる なら、あき の ひかり が すき です。",
+      "romaji": "Watashi wa aki desu ne. Shashin o toru nara, aki no hikari ga suki desu.",
+      "fr": "Moi, c'est l'automne. Pour la photo, j'adore la lumière de cette saison."
+    },
+    "t03-s07-n3-b-04": {
+      "id": "t03-s07-n3-b-04",
+      "editorialRef": "D-B-04",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "でも、秋は日が短いから、のんびりしていると暗くなりますよ。",
+      "kana": "でも、あきはひがみじかいから、のんびりしているとくらくなりますよ。",
+      "kanaDisplay": "でも、あき は ひ が みじかい から、のんびり して いる と くらく なります よ。",
+      "romaji": "Demo, aki wa hi ga mijikai kara, nonbiri shite iru to kuraku narimasu yo.",
+      "fr": "Oui, mais en automne, les journées sont courtes. Si tu traînes trop, il fait vite sombre !"
+    },
+    "t03-s07-n3-b-05": {
+      "id": "t03-s07-n3-b-05",
+      "editorialRef": "D-B-05",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "そうですね。でも、つい「あと一枚だけ」と思ってしまいます。",
+      "kana": "そうですね。でも、つい「あといちまいだけ」とおもってしまいます。",
+      "kanaDisplay": "そう です ね。でも、つい「あと いちまい だけ」と おもって しまいます。",
+      "romaji": "Sō desu ne. Demo, tsui \"ato ichimai dake\" to omotte shimaimasu.",
+      "fr": "C'est vrai ! Mais je me dis toujours : « Allez, encore une photo ! »"
+    },
+    "t03-s07-n3-b-06": {
+      "id": "t03-s07-n3-b-06",
+      "editorialRef": "D-B-06",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "私は冬も好きです。寒くても、空がきれいな日には外に出たくなります。",
+      "kana": "わたしはふゆもすきです。さむくても、そらがきれいなひにはそとにでたくなります。",
+      "kanaDisplay": "わたし は ふゆ も すき です。さむくても、そら が きれい な ひ には そと に でたく なります。",
+      "romaji": "Watashi wa fuyu mo suki desu. Samukute mo, sora ga kirei na hi ni wa soto ni detaku narimasu.",
+      "fr": "Moi, j'aime aussi l'hiver. Même s'il fait froid, quand le ciel est beau, ça me donne envie de sortir."
+    },
+    "t03-s07-n3-b-07": {
+      "id": "t03-s07-n3-b-07",
+      "editorialRef": "D-B-07",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "へえ、冬ですか！寒い日は家で温かいお茶を飲みたいです。",
+      "kana": "へえ、ふゆですか！さむいひはいえであたたかいおちゃをのみたいです。",
+      "kanaDisplay": "へえ、ふゆ ですか！さむい ひ は いえ で あたたかい おちゃ を のみたい です。",
+      "romaji": "Hee, fuyu desu ka! Samui hi wa ie de atatakai ocha o nomitai desu.",
+      "fr": "Ah oui, l'hiver ! Moi, quand il fait froid, je préfère un bon thé chaud à la maison."
+    },
+    "t03-s07-n3-b-08": {
+      "id": "t03-s07-n3-b-08",
+      "editorialRef": "D-B-08",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "それもいいですね。好きな季節と、出かけたい季節は違うのかもしれませんね。",
+      "kana": "それもいいですね。すきなきせつと、でかけたいきせつはちがうのかもしれませんね。",
+      "kanaDisplay": "それ も いい です ね。すき な きせつ と、でかけたい きせつ は ちがう の かもしれません ね。",
+      "romaji": "Sore mo ii desu ne. Suki na kisetsu to, dekaketai kisetsu wa chigau no kamo shiremasen ne.",
+      "fr": "C'est sympa aussi. Finalement, la saison qu'on préfère n'est peut-être pas toujours celle où on a envie de sortir !"
+    },
+    "t03-s07-n3-b-09": {
+      "id": "t03-s07-n3-b-09",
+      "editorialRef": "D-B-09",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "秋が好きですが、春の花も撮りたいです。結局、一年中歩きたいんですね！",
+      "kana": "あきがすきですが、はるのはなもとりたいです。けっきょく、いちねんじゅうあるきたいんですね！",
+      "kanaDisplay": "あき が すき です が、はる の はな も とりたい です。けっきょく、いちねんじゅう あるきたいんです ね！",
+      "romaji": "Aki ga suki desu ga, haru no hana mo toritai desu. Kekkyoku, ichinenjū arukitai n desu ne!",
+      "fr": "J'aime l'automne, mais j'ai aussi envie de photographier les fleurs au printemps. En fait, je crois que j'ai envie de me promener toute l'année !"
+    },
+    "t03-s07-n3-c-01": {
+      "id": "t03-s07-n3-c-01",
+      "editorialRef": "D-C-01",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "暑すぎる日は、午後の散歩をやめることが多いです。",
+      "kana": "あつすぎるひは、ごごのさんぽをやめることがおおいです。",
+      "kanaDisplay": "あつすぎる ひ は、ごご の さんぽ を やめる こと が おおい です。",
+      "romaji": "Atsusugiru hi wa, gogo no sanpo o yameru koto ga ōi desu.",
+      "fr": "Quand il fait vraiment trop chaud, on renonce souvent à la promenade de l'après-midi."
+    },
+    "t03-s07-n3-c-02": {
+      "id": "t03-s07-n3-c-02",
+      "editorialRef": "D-C-02",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "私は暑い日には、朝早く出かけるようにしています。",
+      "kana": "わたしはあついひには、あさはやくでかけるようにしています。",
+      "kanaDisplay": "わたし は あつい ひ には、あさ はやく でかける ように しています。",
+      "romaji": "Watashi wa atsui hi ni wa, asa hayaku dekakeru yō ni shite imasu.",
+      "fr": "Moi, quand il fait chaud, j'essaie de sortir tôt le matin."
+    },
+    "t03-s07-n3-c-03": {
+      "id": "t03-s07-n3-c-03",
+      "editorialRef": "D-C-03",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "なるほど。私たちは日陰の多い道を選ぶこともあります。",
+      "kana": "なるほど。わたしたちはひかげのおおいみちをえらぶこともあります。",
+      "kanaDisplay": "なるほど。わたしたち は ひかげ の おおい みち を えらぶ こと も あります。",
+      "romaji": "Naruhodo. Watashitachi wa hikage no ōi michi o erabu koto mo arimasu.",
+      "fr": "Je vois. De notre côté, on choisit parfois des chemins bien ombragés."
+    },
+    "t03-s07-n3-c-04": {
+      "id": "t03-s07-n3-c-04",
+      "editorialRef": "D-C-04",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "でも、無理をしてまで散歩する必要はないと思います。",
+      "kana": "でも、むりをしてまでさんぽするひつようはないとおもいます。",
+      "kanaDisplay": "でも、むり を して まで さんぽ する ひつよう は ない と おもいます。",
+      "romaji": "Demo, muri o shite made sanpo suru hitsuyō wa nai to omoimasu.",
+      "fr": "Mais je ne pense pas qu'il faille se forcer à sortir juste pour faire une promenade."
+    },
+    "t03-s07-n3-c-05": {
+      "id": "t03-s07-n3-c-05",
+      "editorialRef": "D-C-05",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "最近は、昔より暑い日が多い気がします。でも、気のせいかもしれません。",
+      "kana": "さいきんは、むかしよりあついひがおおいきがします。でも、きのせいかもしれません。",
+      "kanaDisplay": "さいきん は、むかし より あつい ひ が おおい き が します。でも、き の せい かもしれません。",
+      "romaji": "Saikin wa, mukashi yori atsui hi ga ōi ki ga shimasu. Demo, ki no sei kamo shiremasen.",
+      "fr": "J'ai l'impression qu'il y a plus de journées chaudes qu'avant. Mais c'est peut-être simplement une impression."
+    },
+    "t03-s07-n3-c-06": {
+      "id": "t03-s07-n3-c-06",
+      "editorialRef": "D-C-06",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "私もそう感じます。でも、一日や二日の天気だけでは、気候が変わったかどうかは分かりませんよね。",
+      "kana": "わたしもそうかんじます。でも、いちにちやふつかのてんきだけでは、きこうがかわったかどうかはわかりませんよね。",
+      "kanaDisplay": "わたし も そう かんじます。でも、いちにち や ふつか の てんき だけ では、きこう が かわった か どうか は わかりません よね。",
+      "romaji": "Watashi mo sō kanjimasu. Demo, ichinichi ya futsuka no tenki dake de wa, kikō ga kawatta ka dō ka wa wakarimasen yo ne.",
+      "fr": "J'ai aussi cette impression. Mais un ou deux jours de météo ne suffisent pas à savoir si le climat change, n'est-ce pas ?"
+    },
+    "t03-s07-n3-c-07": {
+      "id": "t03-s07-n3-c-07",
+      "editorialRef": "D-C-07",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "そうですね。難しい話ですけど、私ももう少し知りたいです。",
+      "kana": "そうですね。むずかしいはなしですけど、わたしももうすこししりたいです。",
+      "kanaDisplay": "そう です ね。むずかしい はなし です けど、わたし も もう すこし しりたい です。",
+      "romaji": "Sō desu ne. Muzukashii hanashi desu kedo, watashi mo mō sukoshi shiritai desu.",
+      "fr": "Oui. C'est un sujet compliqué, mais j'aimerais moi aussi en comprendre davantage."
+    },
+    "t03-s07-n3-c-08": {
+      "id": "t03-s07-n3-c-08",
+      "editorialRef": "D-C-08",
+      "speakerId": "yuki",
+      "function": "dialogue",
+      "jp": "確かに。でも、毎日の暮らしでできる工夫はありますよね。",
+      "kana": "たしかに。でも、まいにちのくらしでできるくふうはありますよね。",
+      "kanaDisplay": "たしかに。でも、まいにち の くらし で できる くふう は あります よね。",
+      "romaji": "Tashika ni. Demo, mainichi no kurashi de dekiru kufū wa arimasu yo ne.",
+      "fr": "C'est vrai. Mais on peut toujours trouver quelques astuces pour s'adapter au quotidien."
+    },
+    "t03-s07-n3-c-09": {
+      "id": "t03-s07-n3-c-09",
+      "editorialRef": "D-C-09",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "じゃあ、暑い日は朝の散歩にしましょうか。",
+      "kana": "じゃあ、あついひはあさのさんぽにしましょうか。",
+      "kanaDisplay": "じゃあ、あつい ひ は あさ の さんぽ に しましょうか。",
+      "romaji": "Jā, atsui hi wa asa no sanpo ni shimashō ka.",
+      "fr": "Alors, quand il fait chaud, on ferait notre promenade le matin ?"
+    },
+    "t03-s07-n3-c-10": {
+      "id": "t03-s07-n3-c-10",
+      "editorialRef": "D-C-10",
+      "speakerId": "plume",
+      "function": "dialogue",
+      "jp": "シルマック、そんなに早く起きられる？",
+      "kana": "シルマック、そんなにはやくおきられる？",
+      "kanaDisplay": "シルマック、そんなに はやく おきられる？",
+      "romaji": "Shirumakku, sonna ni hayaku okirareru?",
+      "fr": "CilMac, tu crois vraiment que tu arriveras à te lever aussi tôt ?"
+    },
+    "t03-s07-n3-c-11": {
+      "id": "t03-s07-n3-c-11",
+      "editorialRef": "D-C-11",
+      "speakerId": "cilmac",
+      "function": "dialogue",
+      "jp": "それは……ちょっと自信がありません！",
+      "kana": "それは……ちょっとじしんがありません！",
+      "kanaDisplay": "それ は……ちょっと じしん が ありません！",
+      "romaji": "Sore wa... chotto jishin ga arimasen!",
+      "fr": "Alors là… je ne suis pas très sûr de moi !"
+    },
+    "t03-s07-n3-fin-01": {
+      "id": "t03-s07-n3-fin-01",
+      "editorialRef": "D-F-01",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "次に散歩に行ったら、また話を聞かせてくださいね。",
+      "kana": "つぎにさんぽにいったら、またはなしをきかせてくださいね。",
+      "kanaDisplay": "つぎ に さんぽ に いったら、また はなし を きかせて ください ね。",
+      "romaji": "Tsugi ni sanpo ni ittara, mata hanashi o kikasete kudasai ne.",
+      "fr": "La prochaine fois que vous irez vous promener, racontez-moi !"
+    },
+    "t03-s07-n3-fin-02": {
+      "id": "t03-s07-n3-fin-02",
+      "editorialRef": "D-F-02",
+      "speakerId": "plume",
+      "function": "conclusion",
+      "jp": "もちろん！今度は天気がいいといいですね。",
+      "kana": "もちろん！こんどはてんきがいいといいですね。",
+      "kanaDisplay": "もちろん！こんど は てんき が いい と いい です ね。",
+      "romaji": "Mochiron! Kondo wa tenki ga ii to ii desu ne.",
+      "fr": "Avec plaisir ! Espérons qu'il fasse beau cette fois."
+    },
+    "t03-s07-n3-fin-03": {
+      "id": "t03-s07-n3-fin-03",
+      "editorialRef": "D-F-03",
+      "speakerId": "cilmac",
+      "function": "conclusion",
+      "jp": "晴れの日でも雨の日でも、話すことはありますね。",
+      "kana": "はれのひでもあめのひでも、はなすことはありますね。",
+      "kanaDisplay": "はれ の ひ でも あめ の ひ でも、はなす こと は あります ね。",
+      "romaji": "Hare no hi demo ame no hi demo, hanasu koto wa arimasu ne.",
+      "fr": "Qu'il pleuve ou qu'il fasse beau, on aura toujours quelque chose à raconter !"
+    },
+    "t03-s07-n3-fin-04": {
+      "id": "t03-s07-n3-fin-04",
+      "editorialRef": "D-F-04",
+      "speakerId": "yuki",
+      "function": "conclusion",
+      "jp": "ふふ、そうですね。じゃあ、またね！",
+      "kana": "ふふ、そうですね。じゃあ、またね！",
+      "kanaDisplay": "ふふ、そう です ね。じゃあ、また ね！",
+      "romaji": "Fufu, sō desu ne. Jā, mata ne!",
+      "fr": "Hé hé, c'est vrai ! À bientôt !"
+    },
+    "t03-s07-n2-clar-d-04-request": {
+      "id": "t03-s07-n2-clar-d-04-request",
+      "editorialRef": "C-CLAR-D",
+      "speakerId": "cilmac",
+      "function": "clarification",
+      "jp": "すみません、「中止」って、どういう意味ですか。",
+      "kana": "すみません、「ちゅうし」って、どういういみですか。",
+      "kanaDisplay": "すみません、「ちゅうし」って、どういう いみ ですか。",
+      "romaji": "Sumimasen, \"chūshi\" tte, dō iu imi desu ka.",
+      "fr": "Pardon, le mot « chūshi », ça veut dire quoi ?"
+    },
+    "t03-s07-n2-clar-d-04-answer": {
+      "id": "t03-s07-n2-clar-d-04-answer",
+      "editorialRef": "C-CLAR-D",
+      "speakerId": "yuki",
+      "function": "clarification",
+      "jp": "予定していたイベントが、なくなったということです。",
+      "kana": "よていしていたイベントが、なくなったということです。",
+      "kanaDisplay": "よてい していた イベント が、なくなった と いう こと です。",
+      "romaji": "Yotei shite ita ibento ga, nakunatta to iu koto desu.",
+      "fr": "Ça veut dire que l’événement prévu n’a pas eu lieu."
+    },
+    "t03-s07-n3-clar-a-03-request": {
+      "id": "t03-s07-n3-clar-a-03-request",
+      "editorialRef": "D-CLAR-A",
+      "speakerId": "plume",
+      "function": "clarification",
+      "jp": "それは、予報を見ないということですか。",
+      "kana": "それは、よほうをみないということですか。",
+      "kanaDisplay": "それ は、よほう を みない と いう こと ですか。",
+      "romaji": "Sore wa, yohō o minai to iu koto desu ka.",
+      "fr": "Tu veux dire que tu ne regardes pas les prévisions ?"
+    },
+    "t03-s07-n3-clar-a-03-answer": {
+      "id": "t03-s07-n3-clar-a-03-answer",
+      "editorialRef": "D-CLAR-A",
+      "speakerId": "yuki",
+      "function": "clarification",
+      "jp": "いいえ、見ますよ。でも、必ず当たるとは思わないんです。",
+      "kana": "いいえ、みますよ。でも、かならずあたるとはおもわないんです。",
+      "kanaDisplay": "いいえ、みます よ。でも、かならず あたる と は おもわないんです。",
+      "romaji": "Iie, mimasu yo. Demo, kanarazu ataru to wa omowanai n desu.",
+      "fr": "Si, je les regarde ! Mais je ne pense pas qu’elles soient toujours justes."
+    },
+    "t03-s07-n3-clar-c-05-request": {
+      "id": "t03-s07-n3-clar-c-05-request",
+      "editorialRef": "D-CLAR-C",
+      "speakerId": "cilmac",
+      "function": "clarification",
+      "jp": "「気のせい」って、どういう意味ですか。",
+      "kana": "「きのせい」って、どういういみですか。",
+      "kanaDisplay": "「き の せい」って、どういう いみ ですか。",
+      "romaji": "\"Ki no sei\" tte, dō iu imi desu ka.",
+      "fr": "L’expression « ki no sei », ça veut dire quoi ?"
+    },
+    "t03-s07-n3-clar-c-05-answer": {
+      "id": "t03-s07-n3-clar-c-05-answer",
+      "editorialRef": "D-CLAR-C",
+      "speakerId": "yuki",
+      "function": "clarification",
+      "jp": "本当はそうじゃないかもしれない、という意味です。",
+      "kana": "ほんとうはそうじゃないかもしれない、といういみです。",
+      "kanaDisplay": "ほんとう は そう じゃない かもしれない、と いう いみ です。",
+      "romaji": "Hontō wa sō ja nai kamo shirenai, to iu imi desu.",
+      "fr": "Ça veut dire que ce qu’on ressent n’est pas forcément la réalité."
+    }
+  }
+}

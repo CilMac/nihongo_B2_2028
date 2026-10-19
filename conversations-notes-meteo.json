@@ -1,0 +1,384 @@
+{
+  "schemaVersion": "editorial-sidecar-1.0",
+  "status": "candidate-annotations-for-review-publication-not-approved",
+  "sourceSituationId": "t03-s07",
+  "sourceVersion": "0.3-candidate",
+  "sourceTurnCount": 110,
+  "sourceUnchanged": true,
+  "notesClosedByDefault": true,
+  "highlightPolicy": "Aucun repérage permanent. Mise en évidence éphémère des fragments focus en japonais, kana et romaji uniquement quand le dépliant À comprendre est ouvert. Ne pas forcer les aides masquées.",
+  "separateFromExistingVocabulary": true,
+  "notes": [
+    {
+      "id": "note-t03-s07-e1",
+      "label": "E1",
+      "turnId": "t03-s07-n1-o-03",
+      "level": "n1",
+      "title": "Un projet prévu, pas simplement une envie",
+      "bodyFr": "La tournure *-yotei desu* présente une action prévue, avec le verbe à la forme neutre placé devant *yotei*. Le projet peut encore être modifié : la météo l’illustre.",
+      "focus": [
+        {
+          "jp": "行く予定です",
+          "kana": "いくよていです",
+          "kanaDisplay": "いく よてい です",
+          "romaji": "iku yotei desu"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-e2",
+      "label": "E2",
+      "turnId": "t03-s07-n1-a-02",
+      "level": "n1",
+      "title": "Pouvoir faire quelque chose",
+      "bodyFr": "*Ikemasu* est la forme potentielle polie d’« aller ». Le locuteur se réjouit ici que la promenade soit devenue possible, et pas seulement du fait qu’il ira.",
+      "focus": [
+        {
+          "jp": "行けます",
+          "kana": "いけます",
+          "kanaDisplay": "いけます",
+          "romaji": "ikemasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-e3",
+      "label": "E3",
+      "turnId": "t03-s07-n1-b-02",
+      "level": "n1",
+      "title": "Proposer une décision commune",
+      "bodyFr": "La finale *-mashō ka* soumet ici une action à l’avis de l’autre : « On renonce ? ». Elle est plus ouverte qu’une affirmation décidant seule pour tout le monde.",
+      "focus": [
+        {
+          "jp": "やめましょうか",
+          "kana": "やめましょうか",
+          "kanaDisplay": "やめましょうか",
+          "romaji": "yamemashō ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-e4",
+      "label": "E4",
+      "turnId": "t03-s07-n1-c-01",
+      "level": "n1",
+      "title": "Évoquer une possibilité incertaine",
+      "bodyFr": "*Kamo shiremasen* signifie « il se peut que… » et ne présente pas la pluie comme certaine. Très utile pour les prévisions et les projets.",
+      "focus": [
+        {
+          "jp": "降るかもしれません",
+          "kana": "ふるかもしれません",
+          "kanaDisplay": "ふる かもしれません",
+          "romaji": "furu kamo shiremasen"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-e5",
+      "label": "E5",
+      "turnId": "t03-s07-n1-c-05",
+      "level": "n1",
+      "title": "Marquer un espace parcouru",
+      "bodyFr": "La particule *o* peut marquer un espace traversé ou parcouru et non pas seulement l’objet d’une action. Ici, la promenade se fait aux environs de la maison.",
+      "focus": [
+        {
+          "jp": "近くを歩きましょう",
+          "kana": "ちかくをあるきましょう",
+          "kanaDisplay": "ちかく を あるきましょう",
+          "romaji": "chikaku o arukimashō"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-e6",
+      "label": "E6",
+      "turnId": "t03-s07-n1-c-06",
+      "level": "n1",
+      "title": "Si jamais il se met à pleuvoir",
+      "bodyFr": "La forme *-tara* permet d’envisager une condition. Elle repose formellement sur la forme passée, mais cette proposition parle ici d’une pluie future éventuelle.",
+      "focus": [
+        {
+          "jp": "雨が降ったら",
+          "kana": "あめがふったら",
+          "kanaDisplay": "あめ が ふったら",
+          "romaji": "Ame ga futtara"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c1",
+      "label": "C1",
+      "turnId": "t03-s07-n2-a-01",
+      "level": "n2",
+      "title": "Faire quelque chose malgré une situation",
+      "bodyFr": "La construction *-te mo* exprime qu’une circonstance ne change pas la volonté principale : marcher malgré un ciel gris.",
+      "focus": [
+        {
+          "jp": "曇っていても",
+          "kana": "くもっていても",
+          "kanaDisplay": "くもって いても",
+          "romaji": "kumotte ite mo"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c2",
+      "label": "C2",
+      "turnId": "t03-s07-n2-a-04",
+      "level": "n2",
+      "title": "Attendre pour voir comment cela évolue",
+      "bodyFr": "*Yōsu o miru* signifie observer comment la situation évolue, sans nécessairement regarder quelque chose littéralement. On diffère la décision en attendant des signes.",
+      "focus": [
+        {
+          "jp": "様子を見ました",
+          "kana": "ようすをみました",
+          "kanaDisplay": "ようす を みました",
+          "romaji": "yōsu o mimashita"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c3",
+      "label": "C3",
+      "turnId": "t03-s07-n2-a-07",
+      "level": "n2",
+      "title": "Se féliciter de ne pas avoir agi",
+      "bodyFr": "La forme négative en *-nakute* suivie de *yokatta* exprime le soulagement rétrospectif : on est content de ne pas s’être précipité.",
+      "focus": [
+        {
+          "jp": "急がなくてよかった",
+          "kana": "いそがなくてよかった",
+          "kanaDisplay": "いそがなくて よかった",
+          "romaji": "Isoganakute yokatta"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c4",
+      "label": "C4",
+      "turnId": "t03-s07-n2-b-02",
+      "level": "n2",
+      "title": "Sortir sans emporter quelque chose",
+      "bodyFr": "La construction *-zu ni* signifie faire une action sans accomplir l’autre. Ici, le parapluie n’a pas été emporté pendant la sortie. Cet emploi rejoint *-naide*, mais sa formation diffère.",
+      "focus": [
+        {
+          "jp": "傘を持たずに",
+          "kana": "かさをもたずに",
+          "kanaDisplay": "かさ を もたずに",
+          "romaji": "kasa o motazu ni"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c5",
+      "label": "C5",
+      "turnId": "t03-s07-n2-b-03",
+      "level": "n2",
+      "title": "Indiquer le début d’une action",
+      "bodyFr": "La base verbale est suivie de *hajimeru* (« commencer »), ici au passé : il ne pleuvait pas au départ, puis la pluie a commencé.",
+      "focus": [
+        {
+          "jp": "降り始めた",
+          "kana": "ふりはじめた",
+          "kanaDisplay": "ふりはじめた",
+          "romaji": "furi hajimeta"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c6",
+      "label": "C6",
+      "turnId": "t03-s07-n2-c-04",
+      "level": "n2",
+      "title": "Réagir presque sans réfléchir",
+      "bodyFr": "*Omowazu* exprime une réaction spontanée provoquée par une perception ou une émotion. Le reflet a donné envie de photographier immédiatement.",
+      "focus": [
+        {
+          "jp": "思わず写真を撮りました",
+          "kana": "おもわずしゃしんをとりました",
+          "kanaDisplay": "おもわず しゃしん を とりました",
+          "romaji": "omowazu shashin o torimashita"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c7",
+      "label": "C7",
+      "turnId": "t03-s07-n2-c-07",
+      "level": "n2",
+      "title": "Insister sur une activité trop présente",
+      "bodyFr": "*Bakari* met l’accent sur la place presque exclusive d’une activité. Le ton peut exprimer de l’autodérision, comme ici à propos de la photographie.",
+      "focus": [
+        {
+          "jp": "写真ばかり撮って",
+          "kana": "しゃしんばかりとって",
+          "kanaDisplay": "しゃしん ばかり とって",
+          "romaji": "shashin bakari totte"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c8",
+      "label": "C8",
+      "turnId": "t03-s07-n2-d-08",
+      "level": "n2",
+      "title": "Sans s’en rendre compte, le temps a passé",
+      "bodyFr": "*Ki ga tsuitara* introduit la prise de conscience d’un résultat inattendu. Avec *mo* après « deux heures », Yuki souligne sa surprise devant la durée.",
+      "focus": [
+        {
+          "jp": "気がついたら",
+          "kana": "きがついたら",
+          "kanaDisplay": "き が ついたら",
+          "romaji": "Ki ga tsuitara"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-c9",
+      "label": "C9",
+      "turnId": "t03-s07-n2-d-09",
+      "level": "n2",
+      "title": "Transformer un contretemps en chance",
+      "bodyFr": "*Okage de* présente la circonstance comme une cause bénéfique. La pluie a d’abord annulé la sortie, mais elle a rendu possible une longue conversation. À distinguer de *sei de*, souvent négatif.",
+      "focus": [
+        {
+          "jp": "雨のおかげで",
+          "kana": "あめのおかげで",
+          "kanaDisplay": "あめ の おかげ で",
+          "romaji": "Ame no okage de"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-d1",
+      "label": "D1",
+      "turnId": "t03-s07-n3-a-02",
+      "level": "n3",
+      "title": "Comparer deux façons de faire",
+      "bodyFr": "*A yori B no hō ga ii* présente B comme préférable à A. Le passé en *-ta* employé avant *hō* ne décrit pas nécessairement une action passée.",
+      "focus": [
+        {
+          "jp": "見ないより見たほうがいい",
+          "kana": "みないよりみたほうがいい",
+          "kanaDisplay": "みない より みた ほう が いい",
+          "romaji": "minai yori mita hō ga ii"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-d2",
+      "label": "D2",
+      "turnId": "t03-s07-n3-a-03",
+      "level": "n3",
+      "title": "S’efforcer de conserver une habitude",
+      "bodyFr": "La construction *-yō ni shite imasu* exprime un effort habituel et intentionnel. Elle revient dans C2 lorsqu’Yuki explique qu’elle essaie de sortir tôt.",
+      "focus": [
+        {
+          "jp": "信じすぎないようにしています",
+          "kana": "しんじすぎないようにしています",
+          "kanaDisplay": "しんじすぎない ように しています",
+          "romaji": "shinji suginai yō ni shite imasu"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-d3",
+      "label": "D3",
+      "turnId": "t03-s07-n3-a-05",
+      "level": "n3",
+      "title": "Subir la pluie",
+      "bodyFr": "*Ame ni furareru* est un passif dit « d’affectation » : il montre qu’on est touché par la pluie, sans nécessiter une traduction passive en français.",
+      "focus": [
+        {
+          "jp": "雨に降られた",
+          "kana": "あめにふられた",
+          "kanaDisplay": "あめ に ふられた",
+          "romaji": "ame ni furareta"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-d4",
+      "label": "D4",
+      "turnId": "t03-s07-n3-a-06",
+      "level": "n3",
+      "title": "Exprimer un regret",
+      "bodyFr": "La conditionnelle en *-ba* suivie de *yokatta* sert ici à dire qu’on aurait mieux fait d’écouter Plume. Elle exprime un regret après coup.",
+      "focus": [
+        {
+          "jp": "聞けばよかった",
+          "kana": "きけばよかった",
+          "kanaDisplay": "きけば よかった",
+          "romaji": "kikeba yokatta"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-d5",
+      "label": "D5",
+      "turnId": "t03-s07-n3-b-03",
+      "level": "n3",
+      "title": "Poser le cadre d’une préférence",
+      "bodyFr": "*Nara* peut indiquer le domaine auquel s’applique l’avis. CilMac privilégie la lumière d’automne quand il s’agit de photographier, sans prétendre que l’automne est toujours préférable.",
+      "focus": [
+        {
+          "jp": "写真を撮るなら",
+          "kana": "しゃしんをとるなら",
+          "kanaDisplay": "しゃしん を とる なら",
+          "romaji": "Shashin o toru nara"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-d6",
+      "label": "D6",
+      "turnId": "t03-s07-n3-c-04",
+      "level": "n3",
+      "title": "Jusqu’à se forcer : une limite à l’effort",
+      "bodyFr": "Le *made* dans *muri o shite made* marque la limite d’un effort qu’on considère excessif. Plume n’est pas opposée à marcher : elle refuse de le faire au prix d’une contrainte disproportionnée.",
+      "focus": [
+        {
+          "jp": "無理をしてまで",
+          "kana": "むりをしてまで",
+          "kanaDisplay": "むり を して まで",
+          "romaji": "muri o shite made"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-d7",
+      "label": "D7",
+      "turnId": "t03-s07-n3-c-06",
+      "level": "n3",
+      "title": "Intégrer une question indirecte",
+      "bodyFr": "*Ka dō ka* introduit « si… ou non » au sein d’une autre phrase. Ici, la question est de savoir si une tendance climatique a changé ; une ou deux journées ne suffisent pas à répondre.",
+      "focus": [
+        {
+          "jp": "気候が変わったかどうか",
+          "kana": "きこうがかわったかどうか",
+          "kanaDisplay": "きこう が かわった か どうか",
+          "romaji": "kikō ga kawatta ka dō ka"
+        }
+      ]
+    },
+    {
+      "id": "note-t03-s07-d8",
+      "label": "D8",
+      "turnId": "t03-s07-n3-c-10",
+      "level": "n3",
+      "title": "Demander si quelqu’un est capable de le faire",
+      "bodyFr": "*Okirareru* est la forme potentielle de « se lever ». La question se termine familièrement sans *desu/masu*, entre proches, sans pronom pour « tu ».",
+      "focus": [
+        {
+          "jp": "起きられる",
+          "kana": "おきられる",
+          "kanaDisplay": "おきられる",
+          "romaji": "okirareru"
+        }
+      ]
+    }
+  ],
+  "displayLabel": "🌸 À comprendre",
+  "highlightOnlyWhileOpen": true,
+  "comment": "Le format de notes suit les sidecars existants. Ces données sont à faire confirmer par CilMac puis à remettre à Codex ; aucune publication autorisée."
+}

@@ -58,3 +58,11 @@ body.conversations-active .shell{max-width:1280px}
 .conversation-note h3{font-size:16px;margin:0 0 8px}
 .conversation-note p{margin:0;line-height:1.65}
 .conversation-focus{background:#f6e4a6;color:inherit;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+[data-focus-color="0"]{--focus-color:#f6e4a6}
+[data-focus-color="1"]{--focus-color:#cee7f5}
+[data-focus-color="2"]{--focus-color:#e1d6f2}
+[data-focus-color="3"]{--focus-color:#d7e9c5}
+.conversation-focus[data-focus-color]{background:var(--focus-color)}
+.conversation-note .conversation-note-part{margin:12px 0;padding-left:10px;border-left:4px solid var(--focus-color)}
+.conversation-note-number{display:inline-block;background:var(--focus-color);color:#343c38;padding:0 6px;border-radius:4px;font-size:13px;font-weight:600}

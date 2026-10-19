@@ -56,10 +56,6 @@
 
 .lesson-grammar-link{margin:14px 0}.aside .lesson-grammar-link a{margin:4px 0}.aside .grammar-evidence{font-size:12px;color:var(--muted)}
 
-.language-block .kana-idem {color:#af2424;font-size:calc(var(--jp-size) * .82);}
-.language-block .jp-fallback{display:none;}
-.hide-kana .language-block .kana-idem{display:none;}
-.hide-kana .language-block .jp-fallback{display:inline;}
 
 .atelier-catalogs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:12px 0 22px}.atelier-catalogs details{margin:0;border:1px solid var(--line);padding:12px;border-radius:10px;background:#f6f7f1;min-width:0}.atelier-catalogs summary{min-height:44px}.atelier-catalog{max-height:480px;overflow:auto;overflow-wrap:anywhere}.atelier-catalog ul{list-style:none;padding:0;margin:0}.atelier-catalog li{border-top:1px solid var(--line);padding:14px 4px}@media(max-width:760px){.atelier-catalogs{grid-template-columns:1fr}}
 
@@ -486,7 +482,6 @@ html{overflow-anchor:none}
 .listening-kana{color:#326345}
 .listening-romaji{font-family:Georgia,serif;font-size:1.2em;font-style:italic;color:#173d75;overflow-wrap:anywhere}
 #listening-text{margin:18px 0}
-.listening-japanese .kana-idem{color:#af2424;font-size:calc(var(--jp-size) * .82)}
 
 /* Première prise en main : rubriques explicites et activités près de la leçon. */
 #sections-toggle{grid-column:2;grid-row:2;justify-self:start;min-height:44px;background:var(--sage);font-size:14px;margin-bottom:4px}
@@ -797,8 +792,6 @@ body.generated-help-open{overflow:hidden}
 #practice-work.practice-no-readings .practice-reading{display:none}
 /* Le corrigé possède toujours ses kana : ni doublon audio ni japonais de secours. */
 #practice-feedback .reading-audio-fallback{display:none}
-#practice-feedback .jp-fallback{display:none}
-#practice-feedback .kana-idem{display:inline}
 .practice-task input{max-width:100%;width:12em;box-sizing:border-box;font-size:20px;padding:10px;border:1px solid var(--line);border-radius:6px}
 
 /* Boutons pastel : fond commun sauge, aides lavande et navigation bleue. */
