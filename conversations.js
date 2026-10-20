@@ -3,7 +3,7 @@
  'use strict';
  const fields=['kana','romaji','fr'],labels={kana:'Kana',romaji:'Romaji',fr:'Français'};
  const participantEmojis=Object.freeze({cilmac:'🌐',plume:'👩‍🍳',yuki:'⛩️'});
- function participantHTML(id,name){const emoji=participantEmojis[id];return `<span class="conversation-participant">${emoji?`<span class="conversation-participant-emoji" aria-hidden="true">${emoji}</span> `:''}${esc(name)}</span>`;}
+ function participantHTML(id,name){const emoji=participantEmojis[id];return `<span class="conversation-participant">${emoji?`<span class="conversation-participant-emoji" aria-hidden="true">${emoji}</span> `:''}${id==='yuki'?'<span lang="ja">ゆき</span>':esc(name)}</span>`;}
  function validate(d){
   const fail=m=>{throw Error('Conversations : '+m);};
   if(d?.schemaVersion!==1||(!['integrated','local-integration-review'].includes(d.status)||d.publicationApproved!==false)||!d.editorialVersion||!d.situation||!d.turns)fail('format de conversation invalide');
